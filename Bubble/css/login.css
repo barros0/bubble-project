@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,300,700');
+  
+*{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Montserrat", sans-serif;
+    }
+    
+body {
+    min-height:100vh;
+    width:100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    position: relative;
+    background-color: rgb(236, 236, 236);
+    }
+  
+    
+
+
+ /*===============================================================================================================================================================*/
+ /*HOME*/
+    
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+}
+
+
+.caixas-home{
+    border: 2px solid #0094ff;
+    height: 65%;
+    width: 60%;
+    box-shadow: 0 0 4em grey;
+    border-radius: 5%;
+}
+
+
+.caixa1-home{
+    width: 35%;
+    height: 100%;
+    border-right: 2px solid #0094ff;
+   
+}
+
+.caixa2-home{
+    width: 50%;
+    height: 100%;
+    
+}
+
+.logo-caixa{
+    width: 20%;
+}
