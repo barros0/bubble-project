@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,300,700');
-  
-*{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Montserrat", sans-serif;
-    }
-    
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
 body {
-    min-height:100vh;
-    width:100%;
+    min-height: 100vh;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     overflow-x: hidden;
     position: relative;
     background-color: rgb(236, 236, 236);
-    }
-  
-    
+}
 
 
- /*===============================================================================================================================================================*/
- /*HOME*/
-    
-.home{
+
+
+/*===============================================================================================================================================================*/
+/*HOME*/
+
+.home {
     width: 100%;
     height: 85vh;
     display: flex;
@@ -39,7 +39,7 @@ body {
 
 
 
-.caixa1-home{
+.caixa1-home {
     width: 35%;
     height: 100%;
     border-right: 1px solid #0094ff;
@@ -48,10 +48,10 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
-   
+
 }
 
-.caixa2-home{
+.caixa2-home {
     width: 50%;
     height: 100%;
     position: relative;
@@ -63,7 +63,7 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
-    
+
 
 }
 
@@ -74,27 +74,28 @@ body {
 /*SECACAO DA ESQUERDA*/
 
 
-.logo-caixa{
+.logo-caixa {
     width: 40%;
     margin-bottom: 10%;
 }
 
-.caixa1-home span{
+.caixa1-home span {
     font-weight: bold;
-    color:#0094ff;
-  
+    color: #0094ff;
+
 }
 
-.caixa1-home{
+.caixa1-home {
     font-size: 28px;
     padding: 5%;
 
 }
 
-p{
+p {
     margin: 5%;
 }
-.texto-pagina{
+
+.texto-pagina {
     font-size: 16px;
 }
 
@@ -102,18 +103,18 @@ p{
 /*=========================================================================================================================================================*/
 /*FORMULARIO*/
 
-.botao-caixa{
+.botao-caixa {
     width: 220px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #0074c72d;
-    border-radius:30px;
+    border-radius: 30px;
     display: flex;
     flex-direction: row;
-    
+    justify-content: space-between;
 }
 
-.botoes-form{
+.botoes-form {
     padding: 10px 30px;
     cursor: pointer;
     background: transparent;
@@ -122,26 +123,24 @@ p{
     position: relative;
 }
 
-#fundo-botoes{
+#fundo-botoes {
     top: 0;
     left: 0;
     position: absolute;
-    width: 110px;
+    width: 50%;
     height: 100%;
     background: linear-gradient(to right, #0074c7, #7ac7ff);
     border-radius: 30px;
     transition: .05s;
 }
 
-.formulario-login{
-    top: 180px;
-    position: absolute;
-    width: 280px;
+.formulario-login {
+    width: 70%;
     transition: .5s;
 
 }
 
-.form-input{
+.form-input {
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
@@ -153,7 +152,7 @@ p{
     background: transparent;
 }
 
-.botao-submeter{
+.botao-submeter {
     width: 85%;
     padding: 10px 30px;
     cursor: pointer;
@@ -165,40 +164,42 @@ p{
     border-radius: 30px;
 }
 
-.check-box{
-    margin: 30px 10px 30px 0;
+.check-box {
+    margin: 10px 10px 30px 0;
 }
 
-.formulario-login span{
+#checkbox {
+    user-select: none;
+}
+
+.formulario-login span {
     color: #777;
     font-size: 12px;
-    bottom: 68px;
-    position: absolute;
 }
 
 
-#register{
+#register {
     display: none;
 }
 
-input{ 
+input {
     color: #777;
     font-size: 12px;
     bottom: 68px;
 }
 
-label{
+label {
     color: #777;
     font-size: 12px;
     bottom: 68px;
 }
 
-option{
+option {
     color: black;
-    
+
 }
 
-select{
+select {
     color: #777;
     font-size: 12px;
     bottom: 68px;
@@ -208,7 +209,7 @@ select{
 /*=====================================================================================================================================================*/
 /*FOOTER*/
 
-.footer{
+.footer {
     width: 100%;
     height: 15vh;
     background-color: white;
@@ -219,26 +220,25 @@ select{
     flex-direction: column;
 }
 
-#footer-informacoes{
+#footer-informacoes {
     display: flex;
     flex-direction: row;
-    margin-bottom: 1%; 
+    margin-bottom: 1%;
 }
 
-.footer a{
+.footer a {
     text-decoration: none;
     margin: 2%;
     color: #777;
     font-size: 14px;
-    
+
 }
 
-.footer a:hover{
+.footer a:hover {
     text-decoration: underline;
 }
 
-#footer-copyright{
+#footer-copyright {
     color: #777;
     font-size: 12px;
 }
-

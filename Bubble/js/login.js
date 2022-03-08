@@ -5,11 +5,11 @@ var z = document.getElementById('fundo-botoes');
 function register(){
     x.style.display = "none";
     y.style.display = "block";
-    z.style.left = "110px";
+    z.style.left = "50%";
 }
 
 function login(){
     x.style.display = "block";
     y.style.display = "none";
-    z.style.left = "0px";
+    z.style.left = "0%";
 }
