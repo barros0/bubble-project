@@ -27,7 +27,7 @@ body {
     
 .home{
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,8 +67,35 @@ body {
 
 }
 
+
+
+
+/*========================================================================================================================================================*/
+/*SECACAO DA ESQUERDA*/
+
+
 .logo-caixa{
-    width: 45%;
+    width: 40%;
+    margin-bottom: 10%;
+}
+
+.caixa1-home span{
+    font-weight: bold;
+    color:#0094ff;
+  
+}
+
+.caixa1-home{
+    font-size: 28px;
+    padding: 5%;
+
+}
+
+p{
+    margin: 5%;
+}
+.texto-pagina{
+    font-size: 16px;
 }
 
 
@@ -83,7 +110,7 @@ body {
     border-radius:30px;
     display: flex;
     flex-direction: row;
-    margin-bottom: 84%
+    
 }
 
 .botoes-form{
@@ -165,3 +192,53 @@ label{
     font-size: 12px;
     bottom: 68px;
 }
+
+option{
+    color: black;
+    
+}
+
+select{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+}
+
+
+/*=====================================================================================================================================================*/
+/*FOOTER*/
+
+.footer{
+    width: 100%;
+    height: 15vh;
+    background-color: white;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#footer-informacoes{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1%; 
+}
+
+.footer a{
+    text-decoration: none;
+    margin: 2%;
+    color: #777;
+    font-size: 14px;
+    
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+#footer-copyright{
+    color: #777;
+    font-size: 12px;
+}
+
