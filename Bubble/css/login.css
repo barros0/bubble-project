@@ -38,15 +38,6 @@ body {
 }
 
 
-.caixas-home{
-    border: 1px solid rgba(145, 145, 145, 0.678);
-    height: 65%;
-    width: 60%;
-    box-shadow: 0 0 4em grey;
-    display: flex;
-    flex-direction: row;
-}
-
 
 .caixa1-home{
     width: 35%;
@@ -67,6 +58,12 @@ body {
     margin: 6% auto;
     padding: 5px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
 
 }
 
@@ -82,10 +79,11 @@ body {
     width: 220px;
     margin: 35px auto;
     position: relative;
-    box-shadow: 0 0 20px 9px #ff61241f;
+    box-shadow: 0 0 20px 9px #0074c72d;
     border-radius:30px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 84%
 }
 
 .botoes-form{
@@ -154,4 +152,16 @@ body {
 
 #register{
     display: none;
+}
+
+input{ 
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+}
+
+label{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
 }
