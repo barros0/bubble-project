@@ -39,27 +39,119 @@ body {
 
 
 .caixas-home{
-    border: 2px solid #0094ff;
+    border: 1px solid rgba(145, 145, 145, 0.678);
     height: 65%;
     width: 60%;
     box-shadow: 0 0 4em grey;
-    border-radius: 5%;
+    display: flex;
+    flex-direction: row;
 }
 
 
 .caixa1-home{
     width: 35%;
     height: 100%;
-    border-right: 2px solid #0094ff;
+    border-right: 1px solid #0094ff;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
    
 }
 
 .caixa2-home{
     width: 50%;
     height: 100%;
-    
+    position: relative;
+    margin: 6% auto;
+    padding: 5px;
+    overflow: hidden;
+
 }
 
 .logo-caixa{
-    width: 20%;
+    width: 45%;
+}
+
+
+/*=========================================================================================================================================================*/
+/*FORMULARIO*/
+
+.botao-caixa{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius:30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.botoes-form{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#fundo-botoes{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #0074c7, #7ac7ff);
+    border-radius: 30px;
+    transition: .05s;
+}
+
+.formulario-login{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+
+}
+
+.form-input{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.botao-submeter{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #0074c7, #7ac7ff);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.check-box{
+    margin: 30px 10px 30px 0;
+}
+
+.formulario-login span{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+
+#register{
+    display: none;
 }

@@ -21,12 +21,40 @@
 
         </div>
 
-        <div class="caixa2-home"></div>
+        <div class="caixa2-home">
+
+            <div class="botao-caixa">
+                <div id="fundo-botoes"></div>
+                <button type="button" class="botoes-form" onclick="login()">Login</button>
+                <button type="button" class="botoes-form" onclick="register()">Junta-te</button>
+            </div>
+
+            <form id="login" action="formulario" class="formulario-login">
+
+                <input type="email" class="form-input" placeholder="E-Mail" required>
+                <input type="text" class="form-input" placeholder="Password" required>
+                <input type="checkbox" class="check-box"><span>Lembrar-me da Password</span>
+                <button type="submit" class="botao-submeter">Login</button>
+
+            </form>
+
+            <form id="register" action="formulario" class="formulario-login">
+
+                <input type="text" class="form-input" placeholder="Nome de Utilizador" required>
+                <input type="email" class="form-input" placeholder="E-Mail" required>
+                <input type="text" class="form-input" placeholder="Password" required>
+                <input type="checkbox" class="check-box"><span>Concorda com os nossos termos?</span>
+                <button type="submit" class="botao-submeter">Regista-te</button>
+
+            </form>
+
+
+        </div>
         </div>
 
     </div>
 
-
+<script src="js/login.js"></script>
 
 </body>
 </html>
