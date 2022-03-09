@@ -1,30 +1,125 @@
 /*css geral*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
-  
-  html {
-    scroll-behavior: smooth;
-  }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: #f0f2f5;
+
+}
 
 /*wrapper da pagina*/
 .conteudo {
-    max-width: 90%;
-    width: 90%;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    margin-right: auto;
-    margin-left: auto;  
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #f0f2f5;
 }
 
 /*barra lateral das mensagens*/
 .barra-listagem-mensagens {
-    width: 35%;
-    max-width: 35%;
-    z-index: 1;
-    height: 100%;
-    position: fixed;
-    top: 0;
+  width: 25%;
+  max-width: 25%;
+  z-index: 1;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+}
+
+/*inicio chats*/
+
+.inicio-chats {
+  padding: 30px 30px 0px 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.novo-chat {
+  width: 50px;
+  height: 50px;
+  background-color: #00b1ff;
+  color: #fff;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease 1s;
+}
+
+.novo-chat:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/*pesquisa de conversas*/
+
+.form-pesquisa {
+  width: 100%;
+  display: flex;
+}
+
+.pesquisa-mensagens {
+  padding: 30px;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.pesquisa {
+  font-size: 15px;
+  border-radius: 20px;
+  width: 100%;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat 13px center;
+  padding: 9px 4px 9px 40px;
+}
+
+.botao-pesquisa {
+  float: right;
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-pesquisa:hover {
+  background: #ccc;
+}
+
+/*mensagens*/
+
+.wrap-conteudo-mensagens {
+  max-width: 75%;
+  width: 75%;
+  margin-left: 25%;
+}
+
+.conteudo-mensagens {
+  max-width: 90%;
+  width: 90%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100px;
+  background: #fff;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
 }
