@@ -71,7 +71,7 @@ body {
 
 
 .logo-caixa {
-    width: 40%;
+    width: 50%;
     margin-bottom: 10%;
 }
 
@@ -84,57 +84,14 @@ body {
 .caixa1-home {
     font-size: 28px;
     padding: 5%;
-
-}
-
-p {
-    margin: 5%;
-}
-
-.texto-pagina {
-    font-size: 16px;
-}
-
-.caixa-logo{
-    width: 100%;
-    height: 50%;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
-    
-}
-
-.caixa-texto{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-    
 
 }
 
-#portatil{
-    position: absolute;
-    width: 35%;
-    margin-top: -4%;
-}
 
-
-
-.seccao-texto{
-    width: 50%;
-    height: 100%;
-    text-align: left;
-    font-size: 25px;
-    padding: 2%;
-}
-
-
-.seccao-foto{
-    width: 50%;
-    height: 100%;
-}
 
 
 /*=========================================================================================================================================================*/
@@ -142,9 +99,9 @@ p {
 
 .botao-caixa {
     width: 220px;
+    background-color: white;
     margin: 35px auto;
     position: relative;
-    box-shadow: 0 0 20px 9px #0074c72d;
     border-radius: 30px;
     display: flex;
     flex-direction: row;
@@ -166,7 +123,7 @@ p {
     position: absolute;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to right, #0074c7, #7ac7ff);
+    background-color: #0094ff;
     border-radius: 30px;
     transition: .05s;
 }
@@ -187,6 +144,12 @@ p {
     border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
+    transition: all 150ms ease-in-out;
+}
+
+.form-input:hover{
+    transform: scale(1.05);
+    transition: all 150ms ease-in-out;
 }
 
 .botao-submeter {
@@ -195,26 +158,24 @@ p {
     cursor: pointer;
     display: block;
     margin: auto;
-    background: linear-gradient(to right, #0074c7, #7ac7ff);
+    background-color: #0094ff;
     border: 0;
     outline: none;
     border-radius: 30px;
     color:white;
     border: 0;
-    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-  -webkit-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
-    
+    transition: all 150ms ease-in-out;
 }
 
 
 .botao-submeter:hover{
-    background: transparent;
-    background-color: transparent;
-    color:#0074c7;
+    background-color: #0074c7;
     border: 0;
-    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+    transition: all 300ms ease-in-out;
+    transform: scale(1.01);
 }
+
+
 
 .check-box {
     margin: 10px 10px 30px 0;
@@ -268,6 +229,9 @@ select {
     font-size: 12px;
     bottom: 68px;
 }
+
+
+
 
 
 /*=====================================================================================================================================================*/
