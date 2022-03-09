@@ -184,6 +184,21 @@ p {
     border: 0;
     outline: none;
     border-radius: 30px;
+    color:white;
+    border: 0;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+    
+}
+
+
+.botao-submeter:hover{
+    background: transparent;
+    background-color: transparent;
+    color:#0074c7;
+    border: 0;
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
 
 .check-box {
@@ -193,6 +208,18 @@ p {
 #checkbox {
     user-select: none;
 }
+
+#checkbox span{
+        font-weight: bold;
+        color: #0094ff;   
+}
+
+
+#checkbox span:hover{
+    text-decoration: underline;  
+}
+
+
 
 .formulario-login span {
     color: #777;
