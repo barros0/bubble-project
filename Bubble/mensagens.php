@@ -14,6 +14,8 @@
     <title>Bubbles | Mensagens</title>
 </head>
 <body>
+<?php include 'header.php';?>
+
 <noscript>Por Favor ative o JavaScript nas definições do seu Browser. Pode consultar como o fazer clicando <a href="https://support.google.com/adsense/answer/12654" target="_blank">aqui</a> </noscript>
 <div class="conteudo">
     <div class="barra-listagem-mensagens">
