@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="shortcut icon" type="image/jpg" href="img/logo.ico"/>-->
+    <!--CSS-->
     <link rel="stylesheet" href="css/mensagens.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/header.css">
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,7 @@
     <title>Bubbles | Mensagens</title>
 </head>
 <body>
+    
 <?php include 'header.php';?>
 
 <noscript>Por Favor ative o JavaScript nas definições do seu Browser. Pode consultar como o fazer clicando <a href="https://support.google.com/adsense/answer/12654" target="_blank">aqui</a> </noscript>
