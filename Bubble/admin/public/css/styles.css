@@ -22,6 +22,10 @@ body {
     background-color: var(--fundo);
 }
 
+.h100{
+    height: 100%;
+}
+
 p {
     color: var(--dark);
 }
@@ -52,6 +56,15 @@ small {
 img{
     max-height: 100%;
     max-width: 100%;
+}
+
+.active{
+    background-color: var(--azul) !important;
+}
+
+.nav-pills .nav-link:hover{
+    background-color: var(--azul);
+    color: var(--branco) !important;
 }
 
 .menu ul {

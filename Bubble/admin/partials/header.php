@@ -53,24 +53,45 @@
     </div>
 
 </div>
-<div class="flex">
+<div class="flex h100">
 
-<nav class="menu">
+<nav class="menu d-flex flex-column p-3 bg-light">
 
-    <div class="title text-center">
+
+    <a href="/" class="title d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
         <img src="../public/img/logo.png" alt="Bubble">
-        <h2>Dashboard</h2>
-    </div>
+        <span class="fs-4">Dashboard</span>
+    </a>
 
+    <hr>
 
-    <div class="navigation">
+    <ul class="nav nav-pills flex-column mb-auto navigation">
+        <li>
+            <a href="#" class="nav-link link-dark active">
+                <i class="fa fa-clock"></i>
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link link-dark">
+                <i class="fa fa-users"></i>
+                Utilizadores
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link link-dark">
+                <i class="fa fa-pen"></i>
+                Publicações
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link link-dark">
+                <i class="fa fa-warning"></i>
+                Reports
+            </a>
+        </li>
+    </ul>
 
-        <ul>
-            <li>Dashboard</li>
-
-        </ul>
-
-    </div>
 </nav>
 
 <main class="container">
