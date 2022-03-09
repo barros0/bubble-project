@@ -65,32 +65,6 @@ body {
 
 }
 
-.caixa-logo{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.caixa-texto{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-    
-
-}
-
-#portatil{
-    position: absolute;
-    width: 30%;
-    margin-left: 17%;
-    margin-top: -6%;
-}
-
 
 /*========================================================================================================================================================*/
 /*SECACAO DA ESQUERDA*/
@@ -119,6 +93,47 @@ p {
 
 .texto-pagina {
     font-size: 16px;
+}
+
+.caixa-logo{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.caixa-texto{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+#portatil{
+    position: absolute;
+    width: 35%;
+    margin-top: -4%;
+}
+
+
+
+.seccao-texto{
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    font-size: 25px;
+    padding: 2%;
+}
+
+
+.seccao-foto{
+    width: 50%;
+    height: 100%;
 }
 
 
