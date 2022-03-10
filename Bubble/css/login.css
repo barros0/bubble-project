@@ -27,14 +27,17 @@ body {
 
 .home {
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
-
+    background: url("..//img/login/background-login.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 
@@ -42,7 +45,6 @@ body {
 .caixa1-home {
     width: 35%;
     height: 100%;
-    border-right: 1px solid #0094ff;
     display: flex;
     flex-direction: column;
 
@@ -50,8 +52,8 @@ body {
 }
 
 .caixa2-home {
-    width: 50%;
-    height: 100%;
+    width: 35%;
+    height: auto;
     position: relative;
     margin: 6% auto;
     padding: 5px;
@@ -61,7 +63,8 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
-
+    background-color: white;
+    border-radius: 25px;
 
 }
 
@@ -165,6 +168,7 @@ body {
     color:white;
     border: 0;
     transition: all 150ms ease-in-out;
+    margin-bottom: 30px;
 }
 
 

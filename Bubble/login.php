@@ -51,7 +51,6 @@
 
                 <input type="text" class="form-input" placeholder="Nome" required>
                 <input type="text" class="form-input" placeholder="Sobrenome" required>
-                <input type="text" class="form-input" placeholder="Nome de Utilizador" required>
                 <input type="email" class="form-input" placeholder="E-Mail" required>
                 <input type="text" class="form-input" placeholder="Número de Telemóvel" required>
                 <input type="text" class="form-input" placeholder="Password" required>
