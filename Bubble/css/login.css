@@ -99,7 +99,7 @@ body {
     font-size: 120px;
     font-family: 'Lobster', cursive;
     color: white;
-    text-shadow: 10px 8px #0074c7;
+    text-shadow: 10px 8px #0180db;
 }
 
 
@@ -112,7 +112,7 @@ body {
     background-color: white;
     margin: 35px auto;
     position: relative;
-    border-radius: 30px;
+    border-radius: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -134,7 +134,7 @@ body {
     width: 50%;
     height: 100%;
     background-color: #0094ff;
-    border-radius: 30px;
+    border-radius: 15px;
     transition: .05s;
 }
 
@@ -171,7 +171,7 @@ body {
     background-color: #0094ff;
     border: 0;
     outline: none;
-    border-radius: 30px;
+    border-radius: 15px;
     color:white;
     border: 0;
     transition: all 150ms ease-in-out;
