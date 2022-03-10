@@ -2,6 +2,8 @@ nav {
     position: sticky;
     top: 0;
     border-bottom: 2px solid #F0F2F5;
+    z-index: 99;
+
 }
 
 #nav {
@@ -13,6 +15,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
+    
 }
 
 #nav a {
