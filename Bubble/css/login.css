@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,300,700');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 * {
     box-sizing: border-box;
@@ -94,6 +95,12 @@ body {
 
 }
 
+.caixa1-home p{
+    font-size: 120px;
+    font-family: 'Lobster', cursive;
+    color: white;
+    text-shadow: 10px 8px #0074c7;
+}
 
 
 

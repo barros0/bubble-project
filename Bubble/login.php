@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <title>Bubble | Login</title>
 
 </head>
@@ -19,8 +22,8 @@
 
         <div class="caixa1-home">
 
-
-            <img class='logo-caixa' src="img/logo.png" alt="logo">
+            <p>bubble</p>
+           <!--  <img class='logo-caixa' src="img/logo.png" alt="logo"> !-->
         
 
         </div>
@@ -30,7 +33,7 @@
             <div class="botao-caixa">
                 <div id="fundo-botoes"></div>
                 <button type="button" class="botoes-form" onclick="login()">Login</button>
-                <button type="button" class="botoes-form" onclick="register()">Junta-te</button>
+                <button type="button" class="botoes-form" onclick="register()">Sign Up</button>
             </div>
 
             <form id="login" action="formulario" class="formulario-login">
