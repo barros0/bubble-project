@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,300,700');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 * {
     box-sizing: border-box;
@@ -25,16 +26,26 @@ body {
 /*===============================================================================================================================================================*/
 /*HOME*/
 
-.home {
+.home{
+    display: flex;
+    flex-direction: column;
+    background: url("..//img/login/background-login.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
-    height: 85vh;
+    height: 100vh;
+}
+
+.home2 {
+    width: 100%;
+    height:90%;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
-
 }
 
 
@@ -42,7 +53,6 @@ body {
 .caixa1-home {
     width: 35%;
     height: 100%;
-    border-right: 1px solid #0094ff;
     display: flex;
     flex-direction: column;
 
@@ -50,8 +60,8 @@ body {
 }
 
 .caixa2-home {
-    width: 50%;
-    height: 100%;
+    width: 35%;
+    height: auto;
     position: relative;
     margin: 6% auto;
     padding: 5px;
@@ -61,7 +71,8 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
-
+    background-color: white;
+    border-radius: 25px;
 
 }
 
@@ -82,8 +93,6 @@ body {
 }
 
 .caixa1-home {
-    font-size: 28px;
-    padding: 5%;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -91,6 +100,12 @@ body {
 
 }
 
+.caixa1-home p{
+    font-size: 120px;
+    font-family: 'Lobster', cursive;
+    color: white;
+    text-shadow: 10px 8px #0180db;
+}
 
 
 
@@ -102,7 +117,7 @@ body {
     background-color: white;
     margin: 35px auto;
     position: relative;
-    border-radius: 30px;
+    border-radius: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -124,7 +139,7 @@ body {
     width: 50%;
     height: 100%;
     background-color: #0094ff;
-    border-radius: 30px;
+    border-radius: 15px;
     transition: .05s;
 }
 
@@ -161,10 +176,11 @@ body {
     background-color: #0094ff;
     border: 0;
     outline: none;
-    border-radius: 30px;
+    border-radius: 15px;
     color:white;
     border: 0;
     transition: all 150ms ease-in-out;
+    margin-bottom: 30px;
 }
 
 
@@ -248,33 +264,41 @@ select {
 }
 
 
+.label-nomes{
+    display: flex;
+    flex-direction: row;
+    
+}
 
-
+#label-nome{
+    margin-right: 5px;
+}
 
 /*=====================================================================================================================================================*/
 /*FOOTER*/
 
 .footer {
     width: 100%;
-    height: 15vh;
-    background-color: white;
     display: flex;
+    background-color: transparent;
     align-content: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 3;
+
 }
 
 #footer-informacoes {
     display: flex;
     flex-direction: row;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
 }
 
 .footer a {
     text-decoration: none;
     margin: 2%;
-    color: #777;
+    color: white;
     font-size: 14px;
 
 }
@@ -284,6 +308,7 @@ select {
 }
 
 #footer-copyright {
-    color: #777;
+    color: white;
     font-size: 12px;
+    margin-bottom: 15px;
 }
