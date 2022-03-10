@@ -21,7 +21,7 @@
 
             <div class="wrap-pessoa">
                 <div class="foto-perfil">
-
+                    <img src="" alt="Foto de Perfil">
                 </div>
 
             </div>

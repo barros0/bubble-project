@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 
+
+<?php
+
+    //Buscar estes valores a base de dados para colocar nas tags
+
+    $palavrasChave = ""; //palavras chaves
+    $descricaoSite = ""; //descrição do site
+    $nomePagina = ""; //nome da Página
+    $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
+
+?>
+
 <head>
     <!--Meta Tags-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" <?php echo $descricaoSite ?> ">
+    <meta name="keywords" content=" <?php echo $palavrasChave ?> ">
     <!--Icon-->
     <link rel="shortcut icon" type="image/jpg" href="img/logo.ico" />
     <!--CSS Geral-->
@@ -20,10 +34,6 @@
 
     <?php
 
-    $pagina = basename($_SERVER["REQUEST_URI"]);
-
-    $nomePagina = "";
-
     if ($pagina == 'mensagens.php') {   ?>
 
         <link rel="stylesheet" href="css/mensagens.css">
@@ -31,7 +41,9 @@
     <?php
 
         $nomePagina = "Mensagens";
+
     } else if ($pagina == 'index.php') {
+
     }
 
     ?>
