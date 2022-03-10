@@ -22,7 +22,7 @@ nav {
     margin-left: 10px;
 }
 
-.navbar {
+.barranav {
     width: 80%;
     display: flex;
     align-items: center;
@@ -30,17 +30,17 @@ nav {
     justify-content: center;
 }
 
-.navbar li {
+.barranav li {
     position: relative;
     padding: 25px;
 }
 
-.navbar li:hover {
+.barranav li:hover {
     position: relative;
     color: #0094ff;
 }
 
-.navbar li:after {
+.barranav li:after {
     content: "";
     position: absolute;
     left: 50%;
@@ -53,7 +53,7 @@ nav {
     transition: transform 250ms;
 }
 
-.navbar li:hover:after {
+.barranav li:hover:after {
     transform: translateX(-50%) scaleX(1);
 }
 
@@ -192,4 +192,22 @@ nav {
 #ver_perfil_span {
     font-weight: 400;
     font-size: 15px;
+}
+
+noscript {
+    padding: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+    display: block;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    background: #00b1ff;
+    z-index: 99;
+    color: white;
+}
+
+noscript a{
+    color: white;
 }
