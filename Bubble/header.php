@@ -10,7 +10,7 @@
     <link rel="shortcut icon" type="image/jpg" href="img/logo.ico" />
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="bootstrap-5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
