@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+body {
+    background-color: #404040;
+}
+
+.parts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left {
+    background-color: #18191A;
+    width: 25%;
+    margin-right: 20px;
+}
+
+.right {
+    width: 20%;
+    margin: 30px 20px 0 20px;
+}
+
+.center {
+    margin-top: 30px;
+    width: 45%;
+    border-radius: 40px;
+}
+
+.weather {
+    color: #bdbdbd;
+    background-color: #18191A;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.weather_loca h2 {
+    text-align: center;
+    font-weight: 300;
+    padding: 10px;
+    color: #0094ff;
+}
+
+.weather_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather_info h4 {
+    font-size: 4rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.weather_info img {
+    width: 25%;
+    height: 25%;
+}
+
+.more_info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.more_info h2 {
+    color: black;
+    font-size: 20px;
+}
+
+.more_info i {
+    font-size: 20px;
+}
+
+.humidade, .vento, .uv {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.humidade_span, .vento_span {
+    display: flex;
+    flex-direction: row;
+}
+
+.header_post {
+    padding: 30px;
+    padding-left: 25px;
+    display: flex;
+    height: 40px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.circles {
+    margin: 6px;
+    padding: 7px;
+    height: 10px;
+    border-radius: 100%;
+    width: 10px;
+}
+
+.one {
+    background-color: #FF5F5A;
+}
+
+.two {
+    background-color: #FFBE2E;
+}
+
+.three {
+    background-color: #2ACA44;
+}
+
+.textarea {
+    margin: 30px;
+    border-bottom: 2px solid #F0F2F5;
+}
+
+.textarea textarea {
+    color: black;
+    border: 0;
+    width: 100%;
+    resize: none;
+    height: 100px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    overflow: hidden;
+    border-color: transparent;
+    background-color: #3A3B3C;
+    border-radius: 10px;
+}
+
+.textarea textarea:focus {
+    outline: none;
+}
+
+.post_img {
+    margin: 30px;
+}
+
+.upload_img {
+    margin: 0px 30px 30px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.upload_btn {
+    display: flex;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #0095ffb9;
+    background-color: #F0F2F5;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload_img:hover .upload_btn {
+    background-color: #dedede;
+}
+
+.upload_img input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.img_post {
+    display: none;
+    width: auto;
+    margin: 30px;
+    border: 2px solid #F0F2F5;
+    position: relative;
+    height: 100px;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px dashed #c2cdda;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img_post i {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 30px;
+    color: #0095ffb9;
+}
+
+#img_post {
+    width: 10%;
+}
+
+.post {
+    background-color: #18191A;
+    border-radius: 25px;
+}
+
+/*nav #242526 background #404040 cenas #18191A items #3A3B3C items hover #4E4F50 letra #bdbdbd*/

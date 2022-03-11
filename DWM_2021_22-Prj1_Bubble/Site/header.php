@@ -24,13 +24,9 @@
     <link rel="shortcut icon" type="image/jpg" href="img/logo.ico" />
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">-->
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <!--Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap" rel="stylesheet">
     <!--Mudar título da página e folha de estilos conforme a página-->
 
     <?php
@@ -45,8 +41,12 @@
 
     } else if ($pagina == 'index.php') {
 
-    }
+    }else if ($pagina == 'feed.php'){ ?>
 
+        <link rel="stylesheet" href="css/feed.css">
+
+    <?php
+}
     ?>
 
     <!--Mudar o título da página-->
@@ -56,11 +56,10 @@
 </head>
 
 <body>
-
     <header>
     <nav>
         <div id="nav">
-            <a href="feed.html"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
+            <a href="feed.php"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
             <span id="space"></span>
             <ul class="barranav">
                 <li><i class='bx bx-home-alt'></i></li>
@@ -89,7 +88,7 @@
             </ul>
         </div>
     </nav>
-    </header>
+</header>
 
     <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar como o fazer clicando <a href="https://support.microsoft.com/pt-pt/office/ativar-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361" target="_blank">aqui</a> </noscript>
-    
+</body>
