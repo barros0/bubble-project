@@ -57,7 +57,10 @@
                 </div>
                 <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
                 <input type="text" class="form-input"  name="telemovel" placeholder="Número de Telemóvel" required>
-                <input type="text" class="form-input" name="password" placeholder="Password" required>
+                <div class="label-passwords">
+                <input type="text" id="label-password" class="form-input" name="password" placeholder="Password" required>
+                <input type="text" id="label-password" class="form-input" name="password1" placeholder="Confirmar Password" required>
+                </div>
                 <input type="date" class="form-input" name="data" placeholder="Data de Nascimento" required>
                 <label for="sexo">O seu género é:</label>
                 <select name="sexo" class="form-input" id="sexo">
