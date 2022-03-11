@@ -25,6 +25,7 @@
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +60,7 @@
     <header>
     <nav>
         <div id="nav">
-            <a href="feed.html"><img class="logo" src="img/logo_bubble_2.svg" alt="logo"></a>
+            <a href="feed.html"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
             <span id="space"></span>
             <ul class="barranav">
                 <li><i class='bx bx-home-alt'></i></li>
@@ -69,14 +70,14 @@
             </ul>
             <div class="icon_perfil">
                 <div class="perfil">
-                    <img class="img_perfil" src="img/download.png" alt="fotoperfil">
+                    <img class="img_perfil" src="img/header/download.png" alt="fotoperfil">
                     <p>Joãozinho</p>
                 </div>
             </div>
         </div>
         <div class="popup_perfil">
             <ul>
-                <li><a href="#"><img src="img/download.png" alt="fotoperfil">
+                <li><a href="#"><img src="img/header/download.png" alt="fotoperfil">
                         <div id="ver_perfil"><span>Joãozinho</span><span id="ver_perfil_span">Ver Perfil</span>
                         </div>
                     </a>
