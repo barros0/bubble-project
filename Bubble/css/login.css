@@ -130,7 +130,10 @@ body {
     border: 0;
     outline: none;
     position: relative;
+    transition: all 150ms ease-in-out;
 }
+
+
 
 #fundo-botoes {
     top: 0;
