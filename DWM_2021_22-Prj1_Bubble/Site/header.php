@@ -14,7 +14,7 @@ $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 
 $fotoPerfil = ""; //url da foto de perfil
 $nome = "Joãozinho"; //nome do user
-$sobreNome = "Barrinhos"; //sobrenome do user
+$sobreNome = "Mineiro"; //sobrenome do user
 $admin = ""; //verificar se o utilizador é admin
 
 ?>
