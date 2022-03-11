@@ -37,7 +37,7 @@
                     <h2><span id="location"></span>, <span id="tempo"></span></h2>
                     <div class="weather_info">
                         <img id="icon" src="#" alt="icon">
-                        <h4><span id="graus"></span><sup>º</sup>C</h4>
+                        <h4><span id="graus"></span><span>º</span>C</h4>
                     </div>
                 </div>
             </div>
