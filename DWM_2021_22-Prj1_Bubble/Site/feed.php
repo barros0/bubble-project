@@ -4,24 +4,29 @@
 
         </div>
         <div class="center">
-            <div class="post">
+            <div  class="post">
                 <div class="header_post">
                     <div class="circles one"></div>
                     <div class="circles two"></div>
                     <div class="circles three"></div>
                 </div>
-                <form id="post">
+                <form method="POST" id="post">
                     <div class="textarea">
-                        <textarea name="textarea" id="textarea" placeholder="Em que estás a pensar?"></textarea>
+                        <textarea name="textarea" id="textarea" placeholder="O que estás a programar?"></textarea>
                     </div>
                     <div class="img_post">
                         <img id="img_post" src="#" alt="photo_post">
                         <i id="cancel_btn" class='bx bx-x'></i>
                     </div>
+                    <div class="buttons_post">
                     <div class="upload_img" onchange="previewFile()">
                         <button class="upload_btn"><i class='bx bx-plus'></i></button>
                         <input id="input_file" type="file" accept="image/png,image/jpeg,image/bmp,image/gif"
                             name="myfile">
+                    </div>
+                    <div class="post_button">
+                    <button id="post_btn" type="submit" name="post">Publicar</button>
+                    </div>
                     </div>
                 </form>
             </div>
