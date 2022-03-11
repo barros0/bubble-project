@@ -10,7 +10,7 @@ $descricaoSite = ""; //descrição do site
 $nomePagina = "Mensagens"; //nome da Página
 $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 
-//dados do utilizador 
+//buscar os dados do utilizador na base de dados
 
 $fotoPerfil = ""; //url da foto de perfil
 $nome = "Joãozinho"; //nome do user
@@ -82,7 +82,7 @@ $admin = ""; //verificar se o utilizador é admin
             <div class="popup_perfil">
                 <ul>
                     <li><a href="#"><img src="img/header/download.png" alt="fotoperfil">
-                            <div id="ver_perfil"><span class="nome-popup"> <?php echo $nome ?> <?php echo $sobreNome?> </span><span id="ver_perfil_span">Ver Perfil</span>
+                            <div id="ver_perfil"><span class="nome-popup"> <?php echo $nome ?> <?php echo $sobreNome ?> </span><span id="ver_perfil_span">Ver Perfil</span>
                             </div>
                         </a>
                     </li>
