@@ -17,7 +17,6 @@ body {
     margin: 0 auto;
     overflow-x: hidden;
     position: relative;
-    background-color: rgb(236, 236, 236);
 }
 
 
@@ -71,7 +70,7 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #4F4F4F;
     border-radius: 25px;
 
 }
@@ -114,7 +113,7 @@ body {
 
 .botao-caixa {
     width: 220px;
-    background-color: white;
+    background-color: #4F4F4F;
     margin: 35px auto;
     position: relative;
     border-radius: 15px;
@@ -131,6 +130,7 @@ body {
     outline: none;
     position: relative;
     transition: all 150ms ease-in-out;
+    color: white;
 }
 
 
@@ -159,10 +159,11 @@ body {
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid white;
     outline: none;
     background: transparent;
     transition: all 150ms ease-in-out;
+    color: white;
 }
 
 .form-input:hover{
@@ -233,7 +234,7 @@ body {
 
 
 .formulario-login span {
-    color: #777;
+    color: white;
     font-size: 12px;
 }
 
@@ -243,14 +244,14 @@ body {
 }
 
 input {
-    color: #777;
+    color: white;
     font-size: 12px;
     bottom: 68px;
 
 }
 
 label {
-    color: #777;
+    color: white;
     font-size: 12px;
     bottom: 68px;
 }
@@ -261,7 +262,7 @@ option {
 }
 
 select {
-    color: #777;
+    color: white;
     font-size: 12px;
     bottom: 68px;
 }
@@ -276,6 +277,11 @@ select {
 #label-nome{
     margin-right: 5px;
 }
+
+input::placeholder{
+    color: white;
+  }
+
 
 /*=====================================================================================================================================================*/
 /*FOOTER*/
