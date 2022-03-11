@@ -31,7 +31,7 @@ nav {
     margin-left: 10px;
 }
 
-.navbar {
+.barranav {
     width: 80%;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ nav {
     justify-content: center;
 }
 
-.navbar li {
+.barranav li {
     display: flex;
     position: relative;
     font-size: 22px;
@@ -50,12 +50,12 @@ nav {
     align-items: center;
 }
 
-.navbar li:hover {
+.barranav li:hover {
     position: relative;
     color: #0094ff;
 }
 
-.navbar li:after {
+.barranav li:after {
     content: "";
     position: absolute;
     left: 50%;
@@ -68,7 +68,7 @@ nav {
     transition: transform 250ms;
 }
 
-.navbar li:hover:after {
+.barranav li:hover:after {
     transform: translateX(-50%) scaleX(1);
 }
 
