@@ -30,7 +30,7 @@ $admin = ""; //verificar se o utilizador é admin
     <link rel="shortcut icon" type="image/jpg" href="img/logo.ico" />
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">-->
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <!--Mudar folha de estilos conforme a página-->

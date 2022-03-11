@@ -25,6 +25,47 @@ body {
   margin-right: 20px;
 }
 
+.left ul a {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  color: #bdbdbd;
+  text-decoration: none;
+  align-items: center;
+}
+
+.left ul a.verperfil {
+  color: white;
+}
+
+.left ul a i {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.left li {
+  cursor: pointer;
+  display: flex;
+  height: 90px;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left li:hover a {
+  border-radius: 10px;
+  background-color: rgb(88, 88, 88);
+}
+
+.left .avatar {
+  background-color: #1a8cd8;
+  padding: 2px;
+  border-radius: 100%;
+  width: 15%;
+  margin-right: 10px;
+}
+
 .right {
   width: 20%;
   margin: 30px 20px 0 20px;
@@ -68,38 +109,6 @@ body {
 .weather_info img {
   width: 25%;
   height: 25%;
-}
-
-.more_info {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.more_info h2 {
-  color: black;
-  font-size: 20px;
-}
-
-.more_info i {
-  font-size: 20px;
-}
-
-.humidade,
-.vento,
-.uv {
-  width: 33.3%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.humidade_span,
-.vento_span {
-  display: flex;
-  flex-direction: row;
 }
 
 .header_post {
@@ -155,6 +164,7 @@ body {
 textarea::placeholder {
   color: #bdbdbd;
 }
+
 .textarea textarea:focus {
   outline: none;
 }
@@ -226,6 +236,7 @@ textarea::placeholder {
   background-color: #404040;
   border-radius: 25px;
 }
+
 .buttons_post {
   display: flex;
   justify-content: space-between;
