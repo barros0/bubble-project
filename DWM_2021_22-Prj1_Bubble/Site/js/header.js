@@ -9,7 +9,7 @@ $(document).ready(function () {
         }
         else {
             $(".popup_perfil").css("display", "none");
-            $(".perfil").css("color", "black");
+            $(".perfil").css("color", "#bdbdbd");
         };
     });
 });
