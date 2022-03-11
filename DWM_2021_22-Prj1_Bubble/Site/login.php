@@ -22,8 +22,8 @@
 
         <div class="caixa1-home">
 
-            <p>bubble</p>
-           <!--  <img class='logo-caixa' src="img/logo.png" alt="logo"> !-->
+            
+           <img class='logo-caixa' src="img/logo_bubble.svg" alt="logo">
         
 
         </div>
