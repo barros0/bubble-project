@@ -278,6 +278,17 @@ select {
     margin-right: 5px;
 }
 
+.label-passwords{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#label-password{
+    margin-right: 5px;
+}
+
+
 input::placeholder{
     color: white;
   }
