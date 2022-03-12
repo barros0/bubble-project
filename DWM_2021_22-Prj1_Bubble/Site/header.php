@@ -39,15 +39,15 @@ $admin = ""; //verificar se o utilizador é admin
 
     if ($pagina == 'mensagens.php') {   ?>
 
-        <link rel="stylesheet" href="css/mensagens.css">
+    <link rel="stylesheet" href="css/mensagens.css">
 
     <?php
+    
+    } else if ($pagina == 'feed.php') { 
+        $nomePagina = "Pagina Principal"
+        ?>
 
-    } else if ($pagina == 'index.php') {
-
-    } else if ($pagina == 'feed.php') { ?>
-
-        <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="css/feed.css">
 
     <?php
 
@@ -82,7 +82,8 @@ $admin = ""; //verificar se o utilizador é admin
             <div class="popup_perfil">
                 <ul>
                     <li><a href="#"><img src="img/header/download.png" alt="fotoperfil">
-                            <div id="ver_perfil"><span class="nome-popup"> <?php echo $nome ?> <?php echo $sobreNome ?> </span><span id="ver_perfil_span">Ver Perfil</span>
+                            <div id="ver_perfil"><span class="nome-popup"> <?php echo $nome ?> <?php echo $sobreNome ?>
+                                </span><span id="ver_perfil_span">Ver Perfil</span>
                             </div>
                         </a>
                     </li>
@@ -95,6 +96,9 @@ $admin = ""; //verificar se o utilizador é admin
         </nav>
     </header>
 
-    <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar como o fazer clicando <a href="https://support.microsoft.com/pt-pt/office/ativar-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361" target="_blank">aqui</a> </noscript>
+    <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar
+        como o fazer clicando <a
+            href="https://support.microsoft.com/pt-pt/office/ativar-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361"
+            target="_blank">aqui</a> </noscript>
 
 </body>

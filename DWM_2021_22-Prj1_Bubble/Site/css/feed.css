@@ -259,17 +259,37 @@ textarea::placeholder {
 }
 
 .post {
-  width: 45%;
+  margin-top: 30px;
+  width: 100%;
   background-color: #404040;
   border-radius: 25px;
 }
 
-.post_info {
-  padding: 30px;
-  padding-left: 25px;
+.user_post_info {
+  padding: 10px;
+  height: 70px;
+}
+
+.post_user_avatar {
   display: flex;
-  height: 40px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+}
+
+.post_user_avatar img {
+  width: 6%;
+  border-radius: 100%;
+}
+
+.post_user_info {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.post_user_name{
+  font-size: 20px;
+}
+
+.post_user_date{
+font-size: 13px;
 }

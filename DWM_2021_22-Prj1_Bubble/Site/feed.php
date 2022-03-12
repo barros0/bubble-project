@@ -41,8 +41,14 @@
             </form>
         </div>
         <div class="post">
-            <div class="post_info">
-                
+            <div class="user_post_info">
+                <div class="post_user_avatar">
+                    <img src="img/header/download.png" alt="foto_perfil_user">
+                    <div class="post_user_info">
+                        <p class="post_user_name">Joãozinho Mineiro</p>
+                        <p class="post_user_date">Publicado - 24/10/2022 15:55</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
