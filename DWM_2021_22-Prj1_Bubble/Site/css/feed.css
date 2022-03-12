@@ -232,7 +232,7 @@ textarea::placeholder {
   width: 10%;
 }
 
-.post {
+.make_post {
   background-color: #404040;
   border-radius: 25px;
 }
@@ -256,4 +256,20 @@ textarea::placeholder {
   overflow: hidden;
   display: inline-block;
   border-radius: 10px;
+}
+
+.post {
+  width: 45%;
+  background-color: #404040;
+  border-radius: 25px;
+}
+
+.post_info {
+  padding: 30px;
+  padding-left: 25px;
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }

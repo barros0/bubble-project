@@ -14,7 +14,7 @@
         </ul>
     </div>
     <div class="center">
-        <div class="post">
+        <div class="make_post">
             <div class="header_post">
                 <div class="circles one"></div>
                 <div class="circles two"></div>
@@ -39,6 +39,11 @@
                     </div>
                 </div>
             </form>
+        </div>
+        <div class="post">
+            <div class="post_info">
+                
+            </div>
         </div>
     </div>
     <div class="right">
