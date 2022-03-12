@@ -1,0 +1,6 @@
+Background : #1C1C1C
+Parcelas : #404040
+Items : #4F4F4F
+items:hover : rgb(88, 88, 88)
+Azul : #1a8cd8
+Palavras : #bdbdbd
