@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+body {
+  background-color: #1c1c1c;
+}
+
+.parts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left {
+  background-color: #404040;
+  width: 25%;
+  margin-right: 20px;
+}
+
+.left ul a {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  color: #bdbdbd;
+  text-decoration: none;
+  align-items: center;
+}
+
+.left ul a.verperfil {
+  color: white;
+}
+
+.left ul a i {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.left li {
+  cursor: pointer;
+  display: flex;
+  height: 90px;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left li:hover a {
+  border-radius: 10px;
+  background-color: rgb(88, 88, 88);
+}
+
+.left .avatar {
+  background-color: #1a8cd8;
+  padding: 2px;
+  border-radius: 100%;
+  width: 15%;
+  margin-right: 10px;
+}
+
+.right {
+  width: 20%;
+  margin: 30px 20px 0 20px;
+}
+
+.center {
+  margin-top: 30px;
+  width: 45%;
+  border-radius: 40px;
+}
+
+.weather {
+  color: #bdbdbd;
+  background-color: #404040;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.weather_loca h2 {
+  text-align: center;
+  font-weight: 300;
+  padding: 10px;
+  color: #1a8cd8;
+}
+
+.weather_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather_info h4 {
+  font-size: 4rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.weather_info img {
+  width: 25%;
+  height: 25%;
+}
+
+.header_post {
+  padding: 30px;
+  padding-left: 25px;
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.circles {
+  margin: 6px;
+  padding: 7px;
+  height: 10px;
+  border-radius: 100%;
+  width: 10px;
+}
+
+.one {
+  background-color: #ff5f5a;
+}
+
+.two {
+  background-color: #ffbe2e;
+}
+
+.three {
+  background-color: #2aca44;
+}
+
+.textarea {
+  margin: 30px;
+  border-bottom: 2px solid #1a8cd8;
+}
+
+.textarea textarea {
+  color: #bdbdbd;
+  border: 0;
+  width: 100%;
+  resize: none;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  overflow: hidden;
+  border-color: transparent;
+  background-color: #4f4f4f;
+  border-radius: 10px;
+}
+
+textarea::placeholder {
+  color: #bdbdbd;
+}
+
+.textarea textarea:focus {
+  outline: none;
+}
+
+.post_img {
+  margin: 30px;
+}
+
+.upload_img {
+  margin: 0px 30px 30px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload_btn {
+  display: flex;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #bdbdbd;
+  background-color: #4f4f4f;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload_img:hover .upload_btn {
+  background-color: rgb(88, 88, 88);
+}
+
+.upload_img input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.img_post {
+  display: none;
+  width: auto;
+  margin: 30px;
+  position: relative;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px dashed #1a8cd8;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img_post i {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 30px;
+  color: #1a8cd8;
+}
+
+#img_post {
+  width: 10%;
+}
+
+.make_post {
+  background-color: #404040;
+  border-radius: 25px;
+}
+
+.buttons_post {
+  display: flex;
+  justify-content: space-between;
+}
+
+#post_btn {
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-color: #1a8cd8;
+  width: 100px;
+  height: 40px;
+  margin: 0px 30px 30px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.post {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #404040;
+  border-radius: 25px;
+}
+
+.user_post_info {
+  padding: 10px;
+  height: 70px;
+}
+
+.post_user_avatar {
+  display: flex;
+}
+
+.post_user_avatar img {
+  width: 6%;
+  border-radius: 100%;
+}
+
+.post_user_info {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.post_user_name{
+  font-size: 20px;
+}
+
+.post_user_date{
+font-size: 13px;
+}
