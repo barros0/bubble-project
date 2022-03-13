@@ -49,6 +49,26 @@
                         <p class="post_user_date">Publicado - 24/10/2022 15:55</p>
                     </div>
                 </div>
+                <div class="post_user_img">
+                </div>
+                <div class="post_number_likes_comments">
+                    <i class='bx bx-heart'></i>
+                    <p>32 Gostos</p>
+                </div>
+                <div class="post_like_comment_share">
+                    <div id="like">
+                        <i class='bx bx-heart'></i>
+                        <p>Gostar</p>
+                    </div>
+                    <div id="comment">
+                        <i class='bx bx-comment'></i>
+                        <p>Comentar</p>
+                    </div>
+                    <div id="share">
+                        <i class='bx bx-share'></i>
+                        <p>Partilhar</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
