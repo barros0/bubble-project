@@ -5,7 +5,7 @@ $(document).ready(function () {
 
         if (a == "none") {
             $(".popup_perfil").css("display", "block");
-            $(".perfil").css("color", "#0094ff");
+            $(".perfil").css("color", "#00ff8a");
         }
         else {
             $(".popup_perfil").css("display", "none");

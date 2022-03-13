@@ -54,7 +54,7 @@ nav,header{
 
 .barranav li:hover {
   position: relative;
-  color: #1a8cd8;
+  color: #00ff8a;
 }
 
 .barranav li:after {
@@ -66,7 +66,7 @@ nav,header{
   transform-origin: 50% 50%;
   width: 100%;
   height: 2px;
-  background-color: #1a8cd8;
+  background-color: #00ff8a;
   transition: transform 250ms;
 }
 
@@ -95,7 +95,7 @@ nav,header{
   height: 45px;
   border-radius: 100%;
   margin-right: 10px;
-  background-color: #1a8cd8;
+  background-color: #00ff8a;
   padding: 2px;
 }
 
@@ -182,7 +182,7 @@ nav,header{
 
 .perfil:hover {
   position: relative;
-  color: #1a8cd8;
+  color: #00ff8a;
 }
 
 .perfil:after {
@@ -194,7 +194,7 @@ nav,header{
   transform-origin: 50% 50%;
   width: 100%;
   height: 2px;
-  background-color: #1a8cd8;
+  background-color: #00ff8a;
   transition: transform 250ms;
 }
 

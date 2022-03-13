@@ -341,3 +341,7 @@ textarea::placeholder {
   align-items: center;
   flex-direction: row;
 }
+
+#like i, #comment i, #share i {
+  padding: 5px;
+}
