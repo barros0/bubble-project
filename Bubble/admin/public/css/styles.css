@@ -160,6 +160,44 @@ img{
 }
 
 
+/** LOGIN **/
+
+.login{
+    display: flex;
+    height:100%;
+}
+
+
+.login .left{
+    background-color: var(--branco);
+    height: 100%;
+    width: 40%;
+}
+
+.login .right{
+    background-color: var(--azul);
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login .form-login{
+    margin-top: -150px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.login .form-login input{
+    background-color: white;
+    border: 1px solid var(--dark);
+
+}
+
 
 
 
