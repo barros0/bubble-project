@@ -64,7 +64,7 @@ $admin = ""; //verificar se o utilizador é admin
     <header>
         <nav>
             <div id="nav">
-                <a href="feed.php"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
+                <a href="feed.php"><img class="logo" src="img/header/logo_bubble2.svg" alt="logo"></a>
                 <span id="space"></span>
                 <ul class="barranav">
                     <li><i class='bx bx-home-alt'></i></li>

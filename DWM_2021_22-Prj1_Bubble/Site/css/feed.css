@@ -65,7 +65,7 @@ body {
 }
 
 .left .avatar {
-  background-color: #E411FF;
+  background-color: #00ff8a;
   padding: 2px;
   border-radius: 100%;
   width: 17%;
@@ -220,7 +220,7 @@ textarea::placeholder {
   position: relative;
   height: 100px;
   border-radius: 10px;
-  border: 2px dashed #E411FF;
+  border: 2px dashed #00ff8a;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -231,7 +231,7 @@ textarea::placeholder {
   top: 3px;
   right: 3px;
   font-size: 30px;
-  color: #E411FF;
+  color: #00ff8a;
 }
 
 #img_post {
@@ -254,7 +254,7 @@ textarea::placeholder {
   cursor: pointer;
   border: 0;
   outline: none;
-  background-color: #E411FF;
+  background-color: #00ff8a;
   width: 100px;
   height: 40px;
   margin: 0px 30px 30px;

@@ -6,7 +6,7 @@
                         alt="fotoperfil">Joãozinho Mineiro</a>
             </li>
             <li><a href=""><i class='bx bx-group'></i>Amigos</a></li>
-            <li><a href=""><i class='bx bx-comment-dots'></i>Tópicos</a></li>
+            <li><a href=""><i class='bx bx-hash'></i>Tópicos</a></li>
             <li><a href=""><i class='bx bx-buildings'></i>Empresas</a></li>
             <li><a href=""><i class='bx bxs-megaphone'></i>Oferta de Emprego</a></li>
             <li><a href=""><i class='bx bx-calendar-event'></i>Eventos</a></li>
