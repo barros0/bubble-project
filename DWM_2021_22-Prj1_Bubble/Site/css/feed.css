@@ -24,11 +24,13 @@ body {
   width: 25%;
   margin-right: 20px;
 }
-.left ul{
+
+.left ul {
   margin-top: 20px;
   position: fixed;
   width: 25%;
 }
+
 .left ul a {
   padding: 10px;
   width: 100%;
@@ -280,9 +282,11 @@ textarea::placeholder {
 }
 
 .post_user_avatar img {
-  width:55px;
+  width: 55px;
   height: 55px;
+  padding: 2px;
   border-radius: 100%;
+  background-color: #00ff8a;
 }
 
 .post_user_info {
@@ -320,16 +324,18 @@ textarea::placeholder {
 }
 
 .post_number_likes_comments i {
+  color: #00ff8a;
   padding: 5px;
 }
 
-.post_like_comment_share{
+.post_like_comment_share {
   display: flex;
   justify-content: space-around;
   border-top: 2px solid white;
   padding: 10px;
 }
-#like,#comment,#share{
+
+#like, #comment, #share {
   display: flex;
   justify-content: center;
   align-items: center;
