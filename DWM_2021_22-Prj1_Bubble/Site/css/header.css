@@ -130,7 +130,7 @@ nav, header {
   right: 0;
   position: absolute;
   text-decoration: none;
-  width: 20%;
+  width: auto;
 }
 
 .popup_perfil a {

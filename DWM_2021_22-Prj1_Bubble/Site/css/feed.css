@@ -237,7 +237,7 @@ textarea::placeholder {
 }
 
 #img_post {
-  width: 10%;
+  width: 20%;
 }
 
 .make_post {
@@ -251,7 +251,7 @@ textarea::placeholder {
 }
 
 #post_btn {
-  font-size: 15px;
+  font-size: 17px;
   color: white;
   cursor: pointer;
   border: 0;
