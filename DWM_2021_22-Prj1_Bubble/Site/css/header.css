@@ -78,8 +78,11 @@ nav, header {
   display: flex;
   max-width: 100%;
   max-height: 100%;
+  min-width: 120px;
+  min-height: 70px;
   width: 150px;
   height: 70px;
+  
 }
 
 .icon_perfil {
