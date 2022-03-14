@@ -1,17 +1,33 @@
-<?php include 'header.php'; ?>
+<?php 
+
+include 'header.php'; 
+
+//buscar detalhes na base de dados
+
+$idMensagem = ""; //id da mensagem
+$nomePessoa = ""; //nome do destinatario
+$mensagem = ""; //mensagens enviadas
+$dataMensagem = ""; //data do envio da mensagem
+$vista = ""; //verifica se a mensagem foi enviada
+$dataVista = ""; //data da visualizacao da mensagem
+$dataEnvio = ""; //data do envio da mensagem
+$fotos = ""; //src de fotos enviadas
+
+?>
 
 <div class="conteudo">
     <div class="barra-listagem-mensagens">
         <div class="pesquisa-fixed">
 
-            <div class="inicio-chats">
+         <!--   <div class="inicio-chats">
                 <h2><strong>Chats</strong></h2>
                 <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
-            </div>
+            </div> -->
 
             <div class="pesquisa-mensagens">
                 <form class="form-pesquisa" action="#">
-                    <input class="pesquisa" type="search" placeholder="Pesquisar Conversas..." name="search">
+                    <div class="fundo-pesquisa"><input class="pesquisa" type="search" placeholder="Pesquisar Conversas..." name="search"></div>
+                    <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
                 </form>
             </div>
 
@@ -21,7 +37,12 @@
 
             <div class="wrap-pessoa">
                 <div class="foto-perfil">
-                    <img src="" alt="Foto de Perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021</span> <span class="hora-envio">11:23</span></div></div>
                 </div>
 
             </div>
