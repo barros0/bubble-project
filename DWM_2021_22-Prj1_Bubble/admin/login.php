@@ -18,17 +18,29 @@
     </div>
 
     <div class="right col-12">
-        <form class="form-login col-12" action="dologin.php">
-            <div class="col-12">
-                <div class="col-12">
-                    <label class="col-12" for="email">Email</label>
-                    <input class="border" name="email" type="email" id="email">
+        <div class="login-area col-12" action="dologin.php">
+                <div class="login-titulo">
+                    <h1><strong>Login</strong></h1>
+                </div>
+            <form class="form-login col-12" action="dologin.php">
+                <div class="login-inputs">
+
+                <div class="col-12 grupo-form">
+                    <label class="bt_icon" for="email"><i class="fa fa-envelope"></i></label>
+                    <input placeholder="Email" class="border" name="email" type="email" id="email">
                 </div>
 
-                <div class="col-12">
-                    <label class="col-12" for="password">Password</label>
-                    <input class="border" name="password" type="password" id="password">
+                <div class="col-12 grupo-form">
+                    <label class="bt_icon" for="password"><i class="fa fa-lock"></i></label>
+                    <input placeholder="Password" class="border" name="password" type="password" id="password">
                 </div>
+
+                    <div class="col-12 grupo-form">
+                        <button type="submit" class="btn-round">
+                            Entrar
+                        </button>
+                    </div>
+            </form>
             </div>
         </form>
     </div>

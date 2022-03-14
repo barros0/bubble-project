@@ -31,11 +31,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DWM_2021_22-Prj1_Bubble/admin/partials" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\projeto\DWM_2021_22-Prj1_Bubble\admin\partials" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\projeto-php-sql\Bubble\admin" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\projeto-php-sql\Bubble\admin\login" />
@@ -52,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646777750060</updated>
       <workItem from="1646777755893" duration="1993000" />
+      <workItem from="1647195539187" duration="12175000" />
     </task>
     <servers />
   </component>

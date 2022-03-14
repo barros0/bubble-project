@@ -96,3 +96,16 @@
 
     <main class="container">
 
+        <div class="top-bar">
+
+            <div hidden class="mini-menu border" id="mini-menu">
+
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li><a href="#"><i class="fa fa-key"></i> Terminar sessão</a></li>
+                </ul>
+            </div>
+
+        </div>
