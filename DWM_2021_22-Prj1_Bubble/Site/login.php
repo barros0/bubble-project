@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
-    <link rel="preconnect" href="httpass$password://fonts.googleapis.com">
-    <link rel="preconnect" href="httpass$password://fonts.gstatic.com" crossorigin>
-    <link href="httpass$password://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <title>Bubble | Login</title>
 
 </head>
