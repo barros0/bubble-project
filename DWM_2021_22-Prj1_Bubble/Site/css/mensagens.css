@@ -30,7 +30,7 @@ body {
 
 /*barra lateral das mensagens*/
 .barra-listagem-mensagens {
-  width: 25%;
+  width: 30%;
   max-width: 25%;
   z-index: 1;
   height: 100%;
@@ -40,15 +40,7 @@ body {
 
 }
 
-/*inicio chats*/
 
-.inicio-chats {
-  padding: 0px 0px 30px 0px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 .novo-chat {
   width: 30px;
@@ -72,7 +64,7 @@ body {
 /*pesquisa de conversas*/
 
 .pesquisa-fixed {
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -140,13 +132,20 @@ body {
 
 /*listagem chats*/
 .listagem-chats {
-  padding: 20px;
+  padding: 10px;
 }
 
 /*mensagens na barra*/
+.foto-perfil-container{
+width: 30%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
 .foto-perfil {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   border-radius: 10px;
 }
 
@@ -159,20 +158,24 @@ body {
 .wrap-pessoa {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
 }
 
 .detalhes-conversa {
-  width: 75%;
+  width: 70%;
 }
 
 .nome-pessoa {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
+}
+
+span.mensagem {
+  font-size: 15px;
 }
 
 .detalhes-horas {
   display: flex;
   justify-content: flex-end;
+  font-size: 12px;
 }
