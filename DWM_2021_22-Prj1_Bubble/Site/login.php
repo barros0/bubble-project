@@ -15,77 +15,79 @@
 
     <div class="home">
 
-    <div class="home2">
+        <div class="home2">
 
-        <div class="caixa1-home">
+            <div class="caixa1-home">
 
-            
-           <img class='logo-caixa' src="img/header/logo_bubble2.svg" alt="logo">
-        
 
-        </div>
+                <img class='logo-caixa' src="img/header/logo_bubble2.svg" alt="logo">
 
-        <div class="caixa2-home">
 
-            <div class="botao-caixa">
-                <div id="fundo-botoes"></div>
-                <button type="button" class="botoes-form" onclick="login()">Login</button>
-                <button type="button" class="botoes-form" onclick="register()">Sign Up</button>
             </div>
 
-            <form method="POST" id="login" action="formulario" class="formulario-login">
+            <div class="caixa2-home">
 
-                <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
-                <input type="text" class="form-input" name="nome" placeholder="Password" required>
-                <label id="checkbox">
-                    
-                    <input type="checkbox" class="check-box">
-                    Manter Sessão Iniciada
-                </label>
-                <button type="submit" name="entrarconta" class="botao-submeter">Iniciar Sessão</button>
-
-            </form>
-
-            <form method="POST"  id="register" action="formulario" class="formulario-login">
-
-                <div class="label-nomes">
-                <input type="text" id="label-nome" class="form-input" name="nome" placeholder="Nome" required>
-                <input type="text" class="form-input" name="sobrenome" placeholder="Sobrenome" required>
+                <div class="botao-caixa">
+                    <div id="fundo-botoes"></div>
+                    <button type="button" class="botoes-form" onclick="login()">Login</button>
+                    <button type="button" class="botoes-form" onclick="register()">Sign Up</button>
                 </div>
-                <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
-                <input type="text" class="form-input"  name="telemovel" placeholder="Número de Telemóvel" required>
-                <div class="label-passwords">
-                <input type="text" id="label-password" class="form-input" name="password" placeholder="Password" required>
-                <input type="text" id="label-password" class="form-input" name="password1" placeholder="Confirmar Password" required>
-                </div>
-                <input type="date" class="form-input" name="data" placeholder="Data de Nascimento" required>
-                <label for="sexo">O seu género é:</label>
-                <select name="sexo" class="form-input" id="sexo">
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="Outro">Outro</option>
-                </select>
-                <label id="checkbox">
-                    <input type="checkbox" class="check-box">
-                   Concorda com os nossos <span> Termos & Condições</span>?
-                </label>
-                
-                <button type="submit" name="registarconta" class="botao-submeter">Regista-te</button>
 
-            </form>
+                <form method="POST" id="login" action="formulario" class="formulario-login">
+
+                    <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
+                    <input type="text" class="form-input" name="nome" placeholder="Password" required>
+                    <label id="checkbox">
+
+                        <input type="checkbox" class="check-box">
+                        Manter Sessão Iniciada
+                    </label>
+                    <button type="submit" name="entrarconta" class="botao-submeter">Iniciar Sessão</button>
+
+                </form>
+
+                <form method="POST" id="register" action="formulario" class="formulario-login">
+
+                    <div class="label-nomes">
+                        <input type="text" id="label-nome" class="form-input" name="nome" placeholder="Nome" required>
+                        <input type="text" class="form-input" name="sobrenome" placeholder="Sobrenome" required>
+                    </div>
+                    <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
+                    <input type="text" class="form-input" name="telemovel" placeholder="Número de Telemóvel" required>
+                    <div class="label-passwords">
+                        <input type="text" id="label-password" class="form-input" name="password" placeholder="Password"
+                            required>
+                        <input type="text" id="label-password" class="form-input" name="password1"
+                            placeholder="Confirmar Password" required>
+                    </div>
+                    <input type="date" class="form-input" name="data" placeholder="Data de Nascimento" required>
+                    <label for="sexo">O seu género é:</label>
+                    <select name="sexo" class="form-input" id="sexo">
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <label id="checkbox">
+                        <input type="checkbox" class="check-box">
+                        Concorda com os nossos <span> Termos & Condições</span>?
+                    </label>
+
+                    <button type="submit" name="registarconta" class="botao-submeter">Regista-te</button>
+
+                </form>
 
 
-        </div>
+            </div>
         </div>
 
         <div class="footer">
 
-        <div id="footer-informacoes"><a href="feed.php">Feed</a><a href="faqs.html"> FAQs</a><a
-                href="ajuda.html">Ajuda</a><a href="termos.html">Termos</a><a href="definicoes.html">Definições</a>
-        </div>
-        <div id="footer-copyright">© 2022 Bubble. All rights reserved</div>
+            <div id="footer-informacoes"><a href="feed.php">Feed</a><a href="faqs.html"> FAQs</a><a
+                    href="ajuda.html">Ajuda</a><a href="termos.html">Termos</a><a href="definicoes.html">Definições</a>
+            </div>
+            <div id="footer-copyright">© 2022 Bubble. All rights reserved</div>
 
-    </div>
+        </div>
 
 
     </div>
@@ -164,11 +166,11 @@ $sexo=$_POST["sexo"];
 if ($_POST["password"]<>$_POST["password1"])
    {
    ?>
-   <div  style="width:400px">
-   <h1>A password não coincide</h1>
-   <p><button  type="button"> <a style="text-decoration: none" href="login.php">Alterar</button></p>
-   </div>
-   <?php
+<div style="width:400px">
+    <h1>A password não coincide</h1>
+    <p><button type="button"> <a style="text-decoration: none" href="login.php">Alterar</button></p>
+</div>
+<?php
    exit;
    }
    
@@ -186,21 +188,21 @@ if ($jaexiste==0)
    die('Erro: '. mysqli_error($ligaBD));
    }
    ?>
-   <br>
-   <div  style="width:400px">
-   <div class='text1'>Utilizador criado</div>
-  <br>
-  </div>
-  <?php
+<br>
+<div style="width:400px">
+    <div class='text1'>Utilizador criado</div>
+    <br>
+</div>
+<?php
   mysqli_close($ligaBD);
   }
   else	
   {
   ?>
-  <br>
-  <div>Utilizador já existe</div>
-  </div>
-  <?php
+<br>
+<div>Utilizador já existe</div>
+</div>
+<?php
   } 
 
 }

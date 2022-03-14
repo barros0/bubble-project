@@ -84,7 +84,7 @@ body {
 
 .caixa1-home span {
     font-weight: bold;
-    color: #0094ff;
+    color: #00ff8a;
 
 }
 
@@ -95,13 +95,6 @@ body {
     align-items: center;
 
 }
-
-.caixa1-home p {
-    font-size: 120px;
-    color: white;
-    text-shadow: 10px 8px #0180db;
-}
-
 
 
 /*=========================================================================================================================================================*/
@@ -127,6 +120,7 @@ body {
     position: relative;
     transition: all 150ms ease-in-out;
     color: white;
+    width: 110px;
 }
 
 
@@ -137,7 +131,7 @@ body {
     position: absolute;
     width: 50%;
     height: 100%;
-    background-color: #0094ff;
+    background-color: #00ff8a;
     border-radius: 15px;
     transition: .05s;
 }
@@ -173,7 +167,7 @@ body {
     cursor: pointer;
     display: block;
     margin: auto;
-    background-color: #0094ff;
+    background-color: #00ff8a;
     border: 0;
     outline: none;
     border-radius: 15px;
@@ -185,7 +179,7 @@ body {
 
 
 .botao-submeter:hover {
-    background-color: #0074c7;
+    background-color: #00d372;
     border: 0;
     transition: all 300ms ease-in-out;
     transform: scale(1.01);
@@ -200,7 +194,7 @@ body {
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
-    border: 1px solid #0094ff;
+    border: 1px solid #00ff8a;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
@@ -210,7 +204,7 @@ body {
 }
 
 .check-box:checked {
-    background-color: #0094ff;
+    background-color: #00ff8a;
 }
 
 #checkbox {
@@ -219,7 +213,7 @@ body {
 
 #checkbox span {
     font-weight: bold;
-    color: #0094ff;
+    color: #00ff8a;
 }
 
 
