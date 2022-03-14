@@ -120,6 +120,7 @@ body {
     position: relative;
     transition: all 150ms ease-in-out;
     color: white;
+    width: 110px;
 }
 
 
