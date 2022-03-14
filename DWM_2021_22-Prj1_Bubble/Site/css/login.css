@@ -141,7 +141,9 @@ body {
     transition: .5s;
 
 }
-
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
 .form-input {
     width: 100%;
     padding: 10px 0;
