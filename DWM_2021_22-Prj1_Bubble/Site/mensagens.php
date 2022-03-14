@@ -44,6 +44,8 @@ $fotos = ""; //src de fotos enviadas
 
             </div>
 
+            
+
         </div>
 
     </div>
