@@ -23,7 +23,7 @@
         <div class="caixa1-home">
 
             
-           <img class='logo-caixa' src="img/logo_bubble.svg" alt="logo">
+           <img class='logo-caixa' src="img/header/logo_bubble2.svg" alt="logo">
         
 
         </div>
@@ -83,7 +83,7 @@
 
         <div class="footer">
 
-        <div id="footer-informacoes"><a href="feed.html">Feed</a><a href="faqs.html"> FAQs</a><a
+        <div id="footer-informacoes"><a href="feed.php">Feed</a><a href="faqs.html"> FAQs</a><a
                 href="ajuda.html">Ajuda</a><a href="termos.html">Termos</a><a href="definicoes.html">Definições</a>
         </div>
         <div id="footer-copyright">© 2022 Bubble. All rights reserved</div>
