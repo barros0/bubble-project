@@ -1,3 +1,12 @@
+<?php
+$path = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+$path .=$_SERVER["SERVER_NAME"]. '/projeto/DWM_2021_22-Prj1_Bubble/admin'/*dirname($_SERVER["PHP_SELF"])*/;
+
+$ppath = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+$ppath .=$_SERVER["SERVER_NAME"]. '/projeto/DWM_2021_22-Prj1_Bubble/site'/*dirname($_SERVER["PHP_SELF"])*/;
+
+?>
+
 <html lang="pt-pt" dir="ltr">
 <head>
     <meta charset="utf-8">
@@ -13,8 +22,8 @@
 
 <main class="login">
 
-    <div class="left flex align-content-center justify-content-center">
-        <img src="./public/img/logo.png" alt="Logo">
+    <div class="logo left flex align-content-center justify-content-center">
+        <img src="<?php echo($ppath) ?>/img/logo_bubble.svg" alt="Logo">
     </div>
 
     <div class="right col-12">

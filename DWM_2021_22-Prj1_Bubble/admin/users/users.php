@@ -1,6 +1,32 @@
 <?php
-include('./partials/header.php');
+include('../partials/header.php');
 ?>
+
+<div class="filter-bar">
+
+    <div class="filter">
+        <input type="text" placeholder="Id">
+    </div>
+
+    <div class="filter">
+        <input type="text" placeholder="Id">
+    </div>
+
+    <div class="filter">
+        <input type="text" placeholder="Id">
+    </div>
+
+    <div class="filter">
+        <input type="text" placeholder="Id">
+    </div>
+
+    <div class="filter">
+        <input type="text" placeholder="Id">
+    </div>
+
+
+</div>
+
 
 <div class="table-responsive">
     <table class="table">
@@ -29,5 +55,5 @@ include('./partials/header.php');
 
 
 <?php
-include('./partials/footer.php');
+include('../partials/footer.php');
 ?>

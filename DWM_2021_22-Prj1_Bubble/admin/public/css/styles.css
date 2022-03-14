@@ -1,13 +1,21 @@
 :root {
-    --branco: #ffffff;
+    --white: #ffffff;
     --fundo: #f0f2f5;
-    --azul: #00b1ff;
-    --dark: #000000;
-    --cizento: #4F4F4F;
+    --verde: #00ff8a;
+    --verdeh: rgb(88, 88, 88);
+    --dark: #1C1C1C;
+    --cizento: #404040;
+    --sgrey: #404040;
+    --swhite: #bdbdbd;
+
 }
 
 li {
     list-style: none;
+}
+
+a, li{
+    color: var(--white);
 }
 
 * {
@@ -50,12 +58,7 @@ small {
     display: flex;
 }
 
-.menu {
-    background-color: var(--branco);
-    width: 350px;
-    height: 100%;
-    padding-top: 50px;
-}
+
 
 img {
     max-height: 100%;
@@ -78,28 +81,6 @@ img {
     margin: 40px;
 }
 
-.active {
-    background-color: var(--azul) !important;
-}
-
-.nav-pills .nav-link:hover {
-    background-color: var(--azul);
-    color: var(--branco) !important;
-}
-
-.menu ul {
-    text-align: left;
-}
-
-.menu ul li {
-    list-style: none;
-    color: var(--dark);
-}
-
-.menu .title {
-    width: 100%;
-    height: 60px;
-}
 
 .card {
     width: 100%;
@@ -121,7 +102,7 @@ img {
     z-index: 20;
     width: 100%;
     height: 40px;
-    background-color: var(--branco);
+    background-color: var(--white);
     margin-right: 4%;
 }
 
@@ -136,44 +117,7 @@ img {
 }
 
 .bw {
-    background-color: var(--branco);
-}
-
-.mini-menu {
-    background-color: var(--branco);
-    display: none;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-.mini-menu a {
-    text-decoration: none;
-    color: var(--dark);
-}
-
-.top-bar .user {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.top-bar .user .user-img {
-    border-radius: 50%;
-    overflow: hidden;
-    object-position: center;
-    object-fit: cover;
-    height: 40px;
-    width: 40px;
-}
-
-.mini-menu a:hover {
-    color: var(--azul);
-}
-
-.mini-menu.show {
-    display: block;
+    background-color: var(--white);
 }
 
 /** LOGIN **/
@@ -184,13 +128,20 @@ img {
 }
 
 .login .left {
-    background-color: var(--branco);
+    background-color: var(--white);
+    height: 100%;
+    width: 40%;
+}
+
+.login .left .logo{
+    padding: 20px;
+    background-color: var(--white);
     height: 100%;
     width: 40%;
 }
 
 .login .right {
-    background-color: var(--azul);
+    background-color: var(--verde);
     width: 60%;
     display: flex;
     justify-content: center;
@@ -204,7 +155,7 @@ img {
     margin-top: -150px;
     width: 350px;
     height: 400px;
-    background-color: var(--branco);
+    background-color: var(--white);
     padding-left: 30px;
     padding-right: 30px;
 
@@ -244,8 +195,8 @@ img {
 .btn-round {
     height: 40px;
     border-radius: 25px;
-    background-color: var(--azul);
-    color: var(--branco);
+    background-color: var(--verde);
+    color: var(--white);
     width: 220px;
 }
 
@@ -287,11 +238,11 @@ img {
 }
 
 .bw {
-    background-color: var(--branco);
+    background-color: var(--white);
 }
 
 .mini-menu {
-    background-color: var(--branco);
+    background-color: var(--white);
     display: none;
     height: 150px;
     display: flex;
@@ -320,8 +271,15 @@ img {
     margin-right: 10px;
 }
 
+.radius-50{
+    border-radius: 50%;
+    overflow: hidden;
+    object-position: center;
+    object-fit: cover;
+}
+
 .mini-menu a:hover {
-    color: var(--azul);
+    color: var(--verde);
 }
 
 .mini-menu.show {
@@ -337,14 +295,14 @@ img {
 
 .mini-card {
     width: 250px;
-    background-color: var(--branco);
+    background-color: var(--white);
     padding: 10px;
     color: var(--dark);
 }
 
 .stats-bar {
     height: 200px;
-    background-color: var(--branco);
+    background-color: var(--white);
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -380,7 +338,7 @@ img {
 }
 
 .stats-bar .info .icon i {
-    color: var(--azul);
+    color: var(--verde);
     font-size: 25px;
 }
 
@@ -393,7 +351,7 @@ img {
 
 .alerts .alert {
     width: 450px;
-    background-color: var(--branco);
+    background-color: var(--white);
     display: flex;
     padding: 0px;
     min-height: 50px;
@@ -415,7 +373,7 @@ img {
 }
 
 .alerts .alert .icon i {
-    color: var(--branco);
+    color: var(--white);
 }
 
 
@@ -429,6 +387,13 @@ img {
 
 .sucess .icon{
     background-color: green;
+}
+
+
+.user-img-big{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
 }
 
 
