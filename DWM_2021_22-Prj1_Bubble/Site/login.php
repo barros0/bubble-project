@@ -23,7 +23,7 @@
         <div class="caixa1-home">
 
             
-           <img class='logo-caixa' src="img/logo_bubble.svg" alt="logo">
+           <img class='logo-caixa' src="img/header/logo_bubble2.svg" alt="logo">
         
 
         </div>
