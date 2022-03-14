@@ -175,7 +175,7 @@ textarea::placeholder {
   color: #bdbdbd;
 }
 
-.textarea textarea:focus {
+textarea:focus {
   outline: none;
 }
 
@@ -280,7 +280,7 @@ textarea::placeholder {
 }
 
 .user_post_info {
-  padding: 10px;
+  padding: 10px 10px 0;
 }
 
 .post_user_avatar {
@@ -340,7 +340,7 @@ textarea::placeholder {
   display: flex;
   justify-content: space-around;
   border-top: 2px solid white;
-  padding: 10px;
+  padding: 15px 10px 10px 10px;
 }
 
 #like, #comment, #share {
@@ -358,4 +358,27 @@ textarea::placeholder {
 
 #like:hover, #comment:hover, #share:hover {
   background-color: rgb(88, 88, 88);
+}
+
+.comment_section form {
+  padding: 15px;
+  border-top: 2px solid white;
+}
+
+.comment_section textarea {
+  color: #bdbdbd;
+  border: 0;
+  width: 100%;
+  resize: none;
+  height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  overflow: hidden;
+  border-color: transparent;
+  background-color: #4f4f4f;
+  border-radius: 10px;
+}
+
+.comment_limit {
+  text-align: right;
 }
