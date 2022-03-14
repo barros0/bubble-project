@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,300,700');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -25,7 +22,7 @@ body {
 /*===============================================================================================================================================================*/
 /*HOME*/
 
-.home{
+.home {
     display: flex;
     flex-direction: column;
     background: url("..//img/login/background-login.jpg");
@@ -38,7 +35,7 @@ body {
 
 .home2 {
     width: 100%;
-    height:90%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +84,7 @@ body {
 
 .caixa1-home span {
     font-weight: bold;
-    color: #00ff8a;
+    color: #0094ff;
 
 }
 
@@ -99,6 +96,12 @@ body {
 
 }
 
+.caixa1-home p {
+    font-size: 120px;
+    font-family: 'Lobster', cursive;
+    color: white;
+    text-shadow: 10px 8px #0180db;
+}
 
 
 
@@ -135,7 +138,7 @@ body {
     position: absolute;
     width: 50%;
     height: 100%;
-    background-color: #00ff8a;
+    background-color: #0094ff;
     border-radius: 15px;
     transition: .05s;
 }
@@ -160,7 +163,7 @@ body {
     color: white;
 }
 
-.form-input:hover{
+.form-input:hover {
     transform: scale(1.05);
     transition: all 150ms ease-in-out;
 }
@@ -171,19 +174,19 @@ body {
     cursor: pointer;
     display: block;
     margin: auto;
-    background-color: #00ff8a;
+    background-color: #0094ff;
     border: 0;
     outline: none;
     border-radius: 15px;
-    color:white;
+    color: white;
     border: 0;
     transition: all 150ms ease-in-out;
     margin-bottom: 30px;
 }
 
 
-.botao-submeter:hover{
-    background-color: #00d372;
+.botao-submeter:hover {
+    background-color: #0074c7;
     border: 0;
     transition: all 300ms ease-in-out;
     transform: scale(1.01);
@@ -198,7 +201,7 @@ body {
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
-    border: 1px solid #00ff8a;
+    border: 1px solid #0094ff;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
@@ -208,21 +211,21 @@ body {
 }
 
 .check-box:checked {
-    background-color: #00ff8a;
+    background-color: #0094ff;
 }
 
 #checkbox {
     user-select: none;
 }
 
-#checkbox span{
-        font-weight: bold;
-        color: #00ff8a;   
+#checkbox span {
+    font-weight: bold;
+    color: #0094ff;
 }
 
 
-#checkbox span:hover{
-    text-decoration: underline;  
+#checkbox span:hover {
+    text-decoration: underline;
 }
 
 
@@ -262,30 +265,30 @@ select {
 }
 
 
-.label-nomes{
+.label-nomes {
     display: flex;
     flex-direction: row;
-    
+
 }
 
-#label-nome{
+#label-nome {
     margin-right: 5px;
 }
 
-.label-passwords{
+.label-passwords {
     display: flex;
     flex-direction: row;
-    
+
 }
 
-#label-password{
+#label-password {
     margin-right: 5px;
 }
 
 
-input::placeholder{
+input::placeholder {
     color: white;
-  }
+}
 
 
 /*=====================================================================================================================================================*/
