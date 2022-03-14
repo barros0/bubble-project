@@ -3,4 +3,5 @@ Parcelas : #404040
 Items : #4F4F4F
 items:hover : rgb(88, 88, 88)
 Verde : #00ff8a
+verde:hover : #00d372
 Palavras : #bdbdbd
