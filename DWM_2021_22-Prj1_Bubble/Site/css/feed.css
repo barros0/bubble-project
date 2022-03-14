@@ -23,12 +23,14 @@ body {
   background-color: #404040;
   width: 25%;
   margin-right: 20px;
+  min-width: 250px;
 }
 
 .left ul {
   margin-top: 20px;
   position: fixed;
   width: 25%;
+  min-width: 250px;
 }
 
 .left ul a {
