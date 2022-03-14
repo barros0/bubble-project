@@ -84,6 +84,8 @@ body {
 }
 
 .weather {
+  position: fixed;
+  width: 20%;
   color: #bdbdbd;
   background-color: #404040;
   padding: 20px;
