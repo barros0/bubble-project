@@ -100,5 +100,3 @@ $admin = ""; //verificar se o utilizador é admin
         como o fazer clicando <a
             href="https://support.microsoft.com/pt-pt/office/ativar-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361"
             target="_blank">aqui</a> </noscript>
-
-</body>
