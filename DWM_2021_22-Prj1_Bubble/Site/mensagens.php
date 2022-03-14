@@ -20,7 +20,7 @@ $fotos = ""; //src de fotos enviadas
         <div class="pesquisa-fixed">
 
             <div class="pesquisa-mensagens">
-                <form class="form-pesquisa" action="#">
+                <form class="form-pesquisa" action="#" method="POST">
                     <div class="fundo-pesquisa"><input class="pesquisa" type="search" placeholder="Pesquisar Conversas..." name="search"></div>
                     <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
                 </form>
@@ -44,6 +44,145 @@ $fotos = ""; //src de fotos enviadas
 
             </div>
 
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="wrap-pessoa">
+                <div class="foto-perfil-container">
+                <div class="foto-perfil">
+                    <img src="img/header/download.png" alt="Foto de Perfil">
+                </div>
+                </div>
+                <div class="detalhes-conversa">
+                    <div class="nome-pessoa">Joãozinho Mineiro</div>
+                    <div class="detalhes-mensagem"><span class="mensagem">Olá, estou agora a comer a tua...</span>
+                    <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div></div>
+                </div>
+
+            </div>
             
 
         </div>

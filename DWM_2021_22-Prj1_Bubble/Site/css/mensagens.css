@@ -38,6 +38,8 @@ body {
   top: 0;
   background-color: #404040;
   color: #bdbdbd;
+  overflow: auto;
+
 }
 
 .novo-chat {
@@ -61,6 +63,11 @@ body {
 
 .pesquisa-fixed {
   padding: 20px 10px 20px;
+  position: sticky;
+    background: #404040;
+    top: 0;
+    border-bottom: solid #00ff8a;
+
 }
 
 .form-pesquisa {
@@ -119,12 +126,13 @@ body {
     background: #404040;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
-    margin: 30px;
-}
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 /*listagem chats*/
 .listagem-chats {
-  height: 90px;
   padding: 10px;
 }
 
@@ -151,6 +159,10 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-sizing: border-box;
+  border-bottom: solid;
 
 }
 
@@ -171,4 +183,27 @@ span.mensagem {
   display: flex;
   justify-content: flex-end;
   font-size: 12px;
+}
+
+/*scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 50%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00ff8a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
