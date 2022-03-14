@@ -265,7 +265,7 @@ textarea::placeholder {
   border-radius: 10px;
 }
 
-#post_btn:hover{
+#post_btn:hover {
   background-color: #00d372
 }
 
@@ -344,10 +344,16 @@ textarea::placeholder {
 #like, #comment, #share {
   display: flex;
   justify-content: center;
+  padding: 10px;
   align-items: center;
   flex-direction: row;
+  border-radius: 15px;
 }
 
 #like i, #comment i, #share i {
   padding: 5px;
+}
+
+#like:hover, #comment:hover, #share:hover {
+  background-color: rgb(88, 88, 88);
 }
