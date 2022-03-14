@@ -9,16 +9,110 @@
 }
 
 body {
-    min-height: 100vh;
-    width: 100%;
-    height: 100%;
     margin: 0 auto;
     overflow-x: hidden;
     position: relative;
+    background-color: #1C1C1C;
+}
+
+
+/*==========================================================================================================================0*/
+/*LATERAL*/
+.left {
+    background-color: #404040;
+    width: 25%;
+    margin-right: 20px;
+  }
+  
+  .left ul {
+    margin-top: 20px;
+    position: fixed;
+    width: 25%;
+  }
+  
+  .left ul a {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    color: #bdbdbd;
+    text-decoration: none;
+    align-items: center;
+  }
+  
+  .left ul a.verperfil {
+    color: white;
+  }
+  
+  .left ul a i {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+  
+  .left li {
+    cursor: pointer;
+    display: flex;
+    height: 80px;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .left li:hover a {
+    border-radius: 10px;
+    background-color: rgb(88, 88, 88);
+  }
+  
+  .left .avatar {
+    background-color: #00ff8a;
+    padding: 2px;
+    border-radius: 100%;
+    width: 17%;
+    margin-right: 10px;
+  }
+
+/*===============================================================================================================================================================*/
+/*HOME*/
+
+.home{
+    display: flex;
+    flex-direction: row;
+}
+
+.caixas-eventos1{
+  max-width: 100%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  
 }
 
 
 
 
-/*===============================================================================================================================================================*/
-/*HOME*/
+/*====================================================================================================================================================================================================*/  
+/*CAIXAS*/
+
+.caixas{
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+
+#imagem-caixa{
+    width: 100%;
+    height: 65%;
+    background-color: white;
+}
+
+#descricao-caixa{
+    width: 100%;
+    height: 35%;
+    background-color: red;
+}
