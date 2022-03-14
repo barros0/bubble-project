@@ -9,7 +9,7 @@
   user-select: none;
 }
 
-nav,header{
+nav, header {
   z-index: 99;
   position: sticky;
   top: 0;
@@ -83,7 +83,7 @@ nav,header{
 }
 
 .icon_perfil {
-  width: 10%;
+  width: auto;
   margin-right: 15px;
 }
 
@@ -131,6 +131,7 @@ nav,header{
 }
 
 .popup_perfil a {
+  padding-right: 50px;
   display: flex;
   align-items: center;
   text-decoration: none;
