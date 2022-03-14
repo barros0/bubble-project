@@ -10,13 +10,11 @@
 html {
   scroll-behavior: smooth;
   height: 100%;
-
 }
 
-body{
-  background-color: #f0f2f5;
+body {
+  background-color: #1c1c1c;
   height: 100%;
-
 }
 
 /*wrapper da pagina*/
@@ -27,7 +25,7 @@ body{
   display: flex;
   margin-right: auto;
   margin-left: auto;
-  background-color: #f0f2f5;
+  background-color: #1c1c1c;
 }
 
 /*barra lateral das mensagens*/
@@ -37,7 +35,9 @@ body{
   z-index: 1;
   height: 100%;
   top: 0;
-  background-color: #fff;
+  background-color: #404040;
+  color: #bdbdbd;
+
 }
 
 /*inicio chats*/
@@ -51,11 +51,12 @@ body{
 }
 
 .novo-chat {
-  width: 50px;
-  height: 50px;
-  background-color: #00b1ff;
-  color: #fff;
-  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  background-color: #00ff8a;
+  color: #1c1c1c;
+  border-radius: 10px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,19 +66,21 @@ body{
 .novo-chat:hover {
   cursor: pointer;
   transform: scale(1.1);
+  background-color: rgb(88, 88, 88);
 }
 
 /*pesquisa de conversas*/
 
-.pesquisa-fixed{
-  padding: 30px 30px 0px 30px;
+.pesquisa-fixed {
+  padding: 20px;
   box-sizing: border-box;
-
 }
 
 .form-pesquisa {
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .pesquisa-mensagens {
@@ -95,6 +98,11 @@ body{
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
     no-repeat 13px center;
   padding: 9px 4px 9px 40px;
+}
+
+.fundo-pesquisa {
+  background-color: #fff;
+  border-radius: 20px;
 }
 
 .botao-pesquisa {
@@ -125,13 +133,46 @@ body{
   margin-right: auto;
   margin-left: auto;
   height: 100%;
-  background: #fff;
+  background: #404040;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
 }
 
 /*listagem chats*/
-.listagem-chats{
-  padding: 0px 30px 30px 30px;
+.listagem-chats {
+  padding: 20px;
+}
 
+/*mensagens na barra*/
+.foto-perfil {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+}
+
+.foto-perfil img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.wrap-pessoa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.detalhes-conversa {
+  width: 75%;
+}
+
+.nome-pessoa {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.detalhes-horas {
+  display: flex;
+  justify-content: flex-end;
 }
