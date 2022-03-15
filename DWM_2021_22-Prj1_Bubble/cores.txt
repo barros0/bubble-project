@@ -5,3 +5,4 @@ items:hover : rgb(88, 88, 88)
 Verde : #00ff8a
 verde:hover : #00d372
 Palavras : #bdbdbd
+nav : #333333
