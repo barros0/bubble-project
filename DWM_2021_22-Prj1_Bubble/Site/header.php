@@ -75,6 +75,7 @@ $admin = ""; //verificar se o utilizador é admin
                     <li><i class='bx bx-chat'></i></li>
                     <li><i class='bx bx-bell'></i></li>
                 </ul>
+                <div id="space"></div>
                 <div class="icon_perfil">
                     <div class="perfil">
                         <img class="img_perfil" src="img/header/download.png" alt="fotoperfil">
