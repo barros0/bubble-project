@@ -280,6 +280,8 @@ textarea:focus {
 }
 
 .user_post_info {
+  margin-bottom: 30px;
+  /*PARA REMOVER DEPOIS DA APRESENTAÇÃO*/
   padding: 10px 10px 0;
 }
 
@@ -340,16 +342,16 @@ textarea:focus {
   display: flex;
   justify-content: space-around;
   border-top: 2px solid white;
-  padding: 15px 10px 10px 10px;
+  padding: 10px;
 }
 
 #like, #comment, #share {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
   align-items: center;
   flex-direction: row;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 #like i, #comment i, #share i {
@@ -380,5 +382,9 @@ textarea:focus {
 }
 
 .comment_limit {
+  padding: 5px;
+  color: #bdbdbd;
+  margin-right: 1px;
+  margin-top: -30px;
   text-align: right;
 }
