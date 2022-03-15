@@ -6,4 +6,13 @@ $(document).ready(function () {
         $("#mini-menu").toggleClass('.show')
     })
 
+    $("#preloader").fadeOut(500)
+
+
+    function dark(){
+        $(":root").get(0).style.setProperty("--white", "#1C1C1C");
+        $(":root").get(0).style.setProperty("--dark", "#404040");
+   }
+
+
 })
