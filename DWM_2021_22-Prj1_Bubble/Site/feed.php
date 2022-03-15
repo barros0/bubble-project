@@ -40,7 +40,7 @@
                 </div>
             </form>
         </div>
-        <div class="post">
+        <div class="post one">
             <div class="user_post_info">
                 <div class="post_user_avatar">
                     <img src="img/header/download.png" alt="foto_perfil_user">
@@ -71,14 +71,14 @@
                 </div>
                 <div class="comment_section">
                     <form action="">
-                        <textarea  data-limit=255 name="textarea" class="comment_textarea"
+                        <textarea data-limit=255 name="textarea" class="comment_textarea"
                             placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/250</p>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="post">
+        <div class="post two">
             <div class="user_post_info">
                 <div class="post_user_avatar">
                     <img src="img/header/download.png" alt="foto_perfil_user">
@@ -109,7 +109,7 @@
                 </div>
                 <div class="comment_section">
                     <form action="">
-                        
+
                         <textarea data-limit=255 name="textarea" class="comment_textarea"
                             placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/250</p>
