@@ -27,7 +27,7 @@ $admin = ""; //verificar se o utilizador é admin
     <meta name="description" content=" <?php echo $descricaoSite ?> ">
     <meta name="keywords" content=" <?php echo $palavrasChave ?> ">
     <!--FavIcon-->
-    <link rel="shortcut icon" type="image/jpg" href="img/logo.ico" />
+    <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/header.css">
     <!--<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">-->
@@ -64,11 +64,13 @@ $admin = ""; //verificar se o utilizador é admin
     <header>
         <nav>
             <div id="nav">
-                <a href="feed.php"><img class="logo" src="img/header/logo_bubble2.svg" alt="logo"></a>
-                <form method="POST" id="search_bar">
-                    <div class="fundo_pesquisa"><input class="pesquisa" type="search" placeholder="Pesquisar Algo..."
-                            name="search"></div>
-                </form>
+                <a href="feed.php"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
+                <div class="searchbar">
+                    <form class="searchbar_form" action="#" method="POST">
+                        <div class="searchbar_fundo"><input class="search" type="search"
+                                placeholder="Pesquisar  ..." name="search"></div>
+                    </form>
+                </div>
                 <ul class="barranav">
                     <li><i class='bx bx-home-alt'></i></li>
                     <li><i class='bx bx-store-alt'></i></li>
