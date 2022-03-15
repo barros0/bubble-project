@@ -228,3 +228,7 @@ nav, header {
 #space{
   width: 10%;
 }
+
+.fundo_pesquisa input{
+  width: 100%;
+}

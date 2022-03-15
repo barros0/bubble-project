@@ -1,15 +1,15 @@
 var x = document.getElementById("login");
 var y = document.getElementById("register");
-var z = document.getElementById('fundo-botoes');
+var z = document.getElementById("fundo-botoes");
 
-function register(){
-    x.style.display = "none";
-    y.style.display = "block";
-    z.style.left = "50%";
+function register() {
+  x.style.display = "none";
+  y.style.display = "block";
+  z.style.left = "50%";
 }
 
-function login(){
-    x.style.display = "block";
-    y.style.display = "none";
-    z.style.left = "0%";
+function login() {
+  x.style.display = "block";
+  y.style.display = "none";
+  z.style.left = "0%";
 }

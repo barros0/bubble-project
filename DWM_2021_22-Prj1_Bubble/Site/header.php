@@ -66,8 +66,8 @@ $admin = ""; //verificar se o utilizador é admin
             <div id="nav">
                 <a href="feed.php"><img class="logo" src="img/header/logo_bubble2.svg" alt="logo"></a>
                 <form method="POST" id="search_bar">
-                    <div class="fundo-pesquisa"><input class="pesquisa" type="search"
-                            placeholder="Pesquisar Algo..." name="search"></div>
+                    <div class="fundo_pesquisa"><input class="pesquisa" type="search" placeholder="Pesquisar Algo..."
+                            name="search"></div>
                 </form>
                 <ul class="barranav">
                     <li><i class='bx bx-home-alt'></i></li>

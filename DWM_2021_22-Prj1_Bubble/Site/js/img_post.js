@@ -1,23 +1,23 @@
 function previewFile() {
-    var preview = document.getElementById('img_post');
-    var file = document.querySelector('input[type=file]').files[0];
-    var cancel = $("#cancel_btn")
-    var reader = new FileReader();
+  var preview = document.getElementById("img_post");
+  var file = document.querySelector("input[type=file]").files[0];
+  var cancel = $("#cancel_btn");
+  var reader = new FileReader();
 
-    cancel.click(function RemoveImg() {
-        $(".img_post").css("display", "none")
-        preview.src = "";
-    });
+  cancel.click(function RemoveImg() {
+    $(".img_post").css("display", "none");
+    preview.src = "";
+  });
 
-    reader.onloadend = function () {
-        preview.src = reader.result;
-    }
+  reader.onloadend = function () {
+    preview.src = reader.result;
+  };
 
-    if (file) {
-        $(".img_post").css("display", "flex")
-        reader.readAsDataURL(file);
-    } else {
-        $(".img_post").css("display", "none")
-        preview.src = "";
-    }
+  if (file) {
+    $(".img_post").css("display", "flex");
+    reader.readAsDataURL(file);
+  } else {
+    $(".img_post").css("display", "none");
+    preview.src = "";
+  }
 }
