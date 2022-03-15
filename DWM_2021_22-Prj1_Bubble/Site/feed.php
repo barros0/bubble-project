@@ -40,7 +40,7 @@
                 </div>
             </form>
         </div>
-        <div class="post one">
+        <div class="post">
             <div class="user_post_info">
                 <div class="post_user_avatar">
                     <img src="img/header/download.png" alt="foto_perfil_user">
@@ -71,45 +71,6 @@
                 </div>
                 <div class="comment_section">
                     <form action="">
-                        <textarea data-limit=255 name="textarea" class="comment_textarea"
-                            placeholder="Comente Algo"></textarea>
-                        <p class="comment_limit"> <span class="current_chars">0</span>/250</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="post two">
-            <div class="user_post_info">
-                <div class="post_user_avatar">
-                    <img src="img/header/download.png" alt="foto_perfil_user">
-                    <div class="post_user_info">
-                        <p class="post_user_name">Joãozinho Mineiro</p>
-                        <p class="post_user_date">Publicado - 24/10/2022 15:55</p>
-                    </div>
-                </div>
-                <div class="post_user_img">
-                </div>
-                <div class="post_number_likes_comments">
-                    <i class='bx bx-heart'></i>
-                    <p>32 Gostos</p>
-                </div>
-                <div class="post_like_comment_share">
-                    <div id="like">
-                        <i class='bx bx-heart'></i>
-                        <p>Gostar</p>
-                    </div>
-                    <div class="comment" id="comment">
-                        <i class='bx bx-comment'></i>
-                        <p>Comentar</p>
-                    </div>
-                    <div id="share">
-                        <i class='bx bx-share'></i>
-                        <p>Partilhar</p>
-                    </div>
-                </div>
-                <div class="comment_section">
-                    <form action="">
-
                         <textarea data-limit=255 name="textarea" class="comment_textarea"
                             placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/250</p>
