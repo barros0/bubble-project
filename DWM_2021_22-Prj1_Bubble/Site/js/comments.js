@@ -29,11 +29,3 @@ $(document).ready(function () {
 
 */
 
-$(document).ready(function () {
-  $(".comment_textarea").each(function () {
-    $(this).keyup(function () {
-      var $input = $(this);
-      $input.attr("data-countchar");
-    });
-  });
-});

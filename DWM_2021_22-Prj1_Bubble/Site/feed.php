@@ -71,7 +71,7 @@
                 </div>
                 <div class="comment_section">
                     <form action="">
-                        <textarea data-countchar="" data-countchar-limit="255" name="textarea" class="comment_textarea"
+                        <textarea  data-limit=255 name="textarea" class="comment_textarea"
                             placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/250</p>
                     </form>
@@ -109,7 +109,8 @@
                 </div>
                 <div class="comment_section">
                     <form action="">
-                        <textarea data-countchar="" data-countchar-limit="255" name="textarea" class="comment_textarea"
+                        
+                        <textarea data-limit=255 name="textarea" class="comment_textarea"
                             placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/250</p>
                     </form>
@@ -128,6 +129,8 @@
             </div>
         </div>
     </div>
+
+
 
     <?php include 'footer.php'; ?>
     <script src="js/comments.js"></script>
