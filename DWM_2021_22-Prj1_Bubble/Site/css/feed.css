@@ -78,8 +78,10 @@ body {
 }
 
 .right {
+  display: flex;
   width: 25%;
-  margin: 30px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .center {
@@ -91,16 +93,13 @@ body {
 }
 
 .weather, .make_post {
+  margin-top: 30px;
   position: relative;
-  width: 100%;
+  width: 80%;
   color: #bdbdbd;
   background-color: #404040;
   padding: 20px;
   border-radius: 25px;
-}
-
-.make_post{
-  margin-top: 30px;
 }
 
 .weather_loca h2 {
@@ -284,8 +283,6 @@ textarea:focus {
 }
 
 .user_post_info {
-  margin-bottom: 30px;
-  /*PARA REMOVER DEPOIS DA APRESENTAÇÃO*/
   padding: 10px 10px 0;
 }
 
