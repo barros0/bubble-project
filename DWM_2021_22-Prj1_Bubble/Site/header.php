@@ -65,17 +65,18 @@ $admin = ""; //verificar se o utilizador é admin
         <nav>
             <div id="nav">
                 <a href="feed.php"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
-                <div class="searchbar">
+                <!--<div class="searchbar">
                     <form class="searchbar_form" action="#" method="POST">
                         <div class="searchbar_fundo"><input class="search" type="search" placeholder="Pesquisar..."
                                 name="search"></div>
                     </form>
-                </div>
+                </div>-->
                 <ul class="barranav">
                     <li><i class='bx bx-home-alt'></i></li>
                     <li><i class='bx bx-store-alt'></i></li>
                     <li><i class='bx bx-chat'></i></li>
                     <li><i class='bx bx-bell'></i></li>
+                    <li><i class='bx bx-search'></i></li>
                 </ul>
                 <div id="space"></div>
                 <div class="icon_perfil">
