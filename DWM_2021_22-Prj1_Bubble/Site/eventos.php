@@ -30,17 +30,107 @@
         </ul>
     </div>
 
-<div class="caixas-eventos1">
-    <div class="caixas" >
-        <div id="imagem-caixa">   </div>
-        <div id="descricao-caixa">  </div>
+<div class="center">
 
+
+<div class="caixas-eventos1">
+   
+
+<div class="caixa">
+  <div class="caixa-inner">
+    <div class="caixa-frente">
+    <img class="imagens" src="img/eventos/web-summit.jpeg" alt="websummit">
     </div>
-  
+    <div class="caixa-costas">
+      <h1>Web Summit 2022</h1>
+      <p>Terça-feira, 1 de Novembro</p>
+      <p>Sexta-feira, 4 de Novembro</p>
+      <button type="button" class="botao-caixacostas">Visitar</button>
+    </div>
+  </div>
+</div>
+
+<div class="caixa">
+  <div class="caixa-inner">
+    <div class="caixa-frente">
+    <img class="imagens" src="img/eventos/web-summit.jpeg" alt="websummit">
+    </div>
+    <div class="caixa-costas">
+      <h1>Web Summit 2022</h1>
+      <p>Terça-feira, 1 de Novembro</p>
+      <p>Sexta-feira, 4 de Novembro</p>
+      <button type="button" class="botao-caixacostas">Visitar</button>
+    </div>
+  </div>
+</div>
+
+<div class="caixa">
+  <div class="caixa-inner">
+    <div class="caixa-frente">
+    <img class="imagens" src="img/eventos/web-summit.jpeg" alt="websummit">
+    </div>
+    <div class="caixa-costas">
+      <h1>Web Summit 2022</h1>
+      <p>Terça-feira, 1 de Novembro</p>
+      <p>Sexta-feira, 4 de Novembro</p>
+      <button type="button" class="botao-caixacostas">Visitar</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="caixas-eventos1">
+   
+
+<div class="caixa">
+  <div class="caixa-inner">
+    <div class="caixa-frente">
+    <img class="imagens" src="img/eventos/web-summit.jpeg" alt="websummit">
+    </div>
+    <div class="caixa-costas">
+      <h1>Web Summit 2022</h1>
+      <p>Terça-feira, 1 de Novembro</p>
+      <p>Sexta-feira, 4 de Novembro</p>
+      <button type="button" class="botao-caixacostas">Visitar</button>
+    </div>
+  </div>
+</div>
+
+<div class="caixa">
+  <div class="caixa-inner">
+    <div class="caixa-frente">
+    <img class="imagens" src="img/eventos/web-summit.jpeg" alt="websummit">
+    </div>
+    <div class="caixa-costas">
+      <h1>Web Summit 2022</h1>
+      <p>Terça-feira, 1 de Novembro</p>
+      <p>Sexta-feira, 4 de Novembro</p>
+      <button type="button" class="botao-caixacostas">Visitar</button>
+    </div>
+  </div>
+</div>
+
+<div class="caixa">
+  <div class="caixa-inner">
+    <div class="caixa-frente">
+    <img class="imagens" src="img/eventos/web-summit.jpeg" alt="websummit">
+    </div>
+    <div class="caixa-costas">
+      <h1>Web Summit 2022</h1>
+      <p>Terça-feira, 1 de Novembro</p>
+      <p>Sexta-feira, 4 de Novembro</p>
+      <button type="button" class="botao-caixacostas">Visitar</button>
+    </div>
+  </div>
+</div>
+
+
 </div>
 
 
 
+</div>
 </div>
 
 

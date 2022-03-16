@@ -21,7 +21,7 @@ body {
 .left {
     background-color: #404040;
     width: 25%;
-    margin-right: 20px;
+    
   }
   
   .left ul {
@@ -79,15 +79,18 @@ body {
     flex-direction: row;
 }
 
-.caixas-eventos1{
-  max-width: 100%;
+
+.center {
   display: flex;
-  margin: auto;
-  justify-content: center;
+  width: 75%;
+  height: auto;
+  border-radius: 15px;
+  flex-direction: column;
   align-items: center;
-  height: 60%;
-  
+  background-color: #404040 ;
+  margin: 20px;
 }
+
 
 
 
@@ -95,24 +98,102 @@ body {
 /*====================================================================================================================================================================================================*/  
 /*CAIXAS*/
 
-.caixas{
-  width: 400px;
-  height: 600px;
+
+.caixas-eventos1{
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  margin: auto;
+}
+
+
+.caixa {
+  background-color: transparent;
+  width: 350px;
+  height: 500px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; 
+  border: 0;
+  margin: 50px;
+}
+
+
+.caixa-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  
+}
+
+
+.caixa:hover .caixa-inner {
+  transform: rotateY(180deg);
+}
+
+
+.caixa-frente, .caixa-costas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+
+.caixa-frente {
+  background-color: #bbb;
+  color: black;
+}
+
+.caixa-costas {
+  background-color:  #1C1C1C;
+  color: white;
+  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  
-  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-
-#imagem-caixa{
-    width: 100%;
-    height: 65%;
-    background-color: white;
+.imagens{
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
 }
 
-#descricao-caixa{
-    width: 100%;
-    height: 35%;
-    background-color: red;
+.botao-caixacostas {
+  width: 70%;
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: #00ff8a;
+  border: 0;
+  outline: none;
+  border-radius: 15px;
+  color: black;
+  border: 0;
+  transition: all 150ms ease-in-out;
+  margin-top: 100px;
+}
+
+h1{
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.caixa-costas p{
+  margin-bottom: 3px;
+}
+
+.botao-caixacostas:hover {
+  background-color: #00d372;
+  border: 0;
+  transition: all 300ms ease-in-out;
+  transform: scale(1.01);
 }
