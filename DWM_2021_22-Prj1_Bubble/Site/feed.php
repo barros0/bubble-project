@@ -14,7 +14,7 @@
         </ul>
     </div>
     <div class="center">
-       
+
         <div class="post">
             <div class="user_post_info">
                 <div class="post_user_avatar">
@@ -48,7 +48,7 @@
                     <form action="">
                         <textarea data-limit=255 name="textarea" class="comment_textarea"
                             placeholder="Comente Algo"></textarea>
-                        <p class="comment_limit"> <span class="current_chars">0</span>/250</p>
+                        <p class="comment_limit"> <span class="current_chars">0</span>/255</p>
                     </form>
                 </div>
             </div>
