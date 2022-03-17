@@ -184,26 +184,3 @@ span.mensagem {
   justify-content: flex-end;
   font-size: 12px;
 }
-
-/*scrollbar */
-
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 50%;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #00ff8a;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}

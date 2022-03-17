@@ -14,6 +14,11 @@ include('./partials/header.php');
 
 
     <h2>Bem-vindo</h2>
+
+    <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+    </label>
 </div>
 
 
