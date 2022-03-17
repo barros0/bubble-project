@@ -2,7 +2,7 @@
     --white: #ffffff;
     --fundo: #f0f2f5;
     --verde: #00ff8a;
-    --verdeh: rgb(88, 88, 88);
+    --verdeh: #00d372;
     --dark: #1C1C1C;
     --cizento: #404040;
     --sgrey: #404040;
@@ -478,24 +478,53 @@ img {
     margin: 0;
 }
 
+.table-header h2{
+    font-weight: bold;
+    color: var(--verdeh);
+}
+
 .table{
     background-color: var(--white);
     padding: 20px;
     border-radius: 25px;
+    border: none !important;
 }
 .table thead{
-    background-color: var(--swhite);
+    background-color: var(--verdeh);
+    border: none !important;
 }
+
+.table caption{
+    border: none !important;
+}
+
+.table>:not(:first-child) {
+    border: none !important;
+}
+
 
 
 .table thead tr{
-    color: var(--dark);
+    color: var(--white);
 }
 
 .table tbody, .table thead, .table tbody, .table td,
 .table tfoot, .table th, .table thead, .table tr{
-    border: none !important;
+    border: none;
 }
+
+.table tr{
+    border-bottom: 1px solid var(--verdeh);
+}
+
+.table tr td{
+    padding: 10px;
+}
+
+.table tr:nth-last-child(1){
+    border-bottom: none;
+}
+
 
 .mini-card{
     /*margin: 10px;*/
@@ -503,6 +532,84 @@ img {
     min-height: 120px;
     color: var(--white);
     border-radius: 10px;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider input:checked + .slider {
+    background-color: var(--verde);
+}
+
+.slider input:focus + .slider {
+    box-shadow: 0 0 1px var(--verde);
+}
+
+.slider input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.modal{
+    z-index: 50;
+    position: absolute;
+    border-radius: 25px;
+    background-color: var(--dark);
+
+}
+
+.modal .modal-head{
+    border-bottom: 1px solid var(--verde);
+    height: 50px;
+    width: 100%;
+    padding: 10px;
 }
 
 
