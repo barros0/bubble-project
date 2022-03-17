@@ -240,9 +240,21 @@ nav, header {
 }
 
 .pop_search{
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
   height: 40px;
   border: 0;
   outline: none;
+}
+
+.searchbar_form{
+  width: 50%;
+}
+.searchbar_fundo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*input[type="search"]::-webkit-search-cancel-button {
