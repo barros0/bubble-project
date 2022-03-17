@@ -111,8 +111,8 @@ body {
 
 .caixa {
   background-color: transparent;
-  width: 350px;
-  height: 350px;
+  width: 280px;
+  height: 280px;
   border: 0;
   perspective: 1000px; 
   margin: 30px;
@@ -182,7 +182,7 @@ body {
   color: black;
   border: 0;
   transition: all 150ms ease-in-out;
-  margin-top: 100px;
+  margin-top: 20px;
   text-decoration: none;
 }
 
