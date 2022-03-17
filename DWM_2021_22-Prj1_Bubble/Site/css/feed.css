@@ -33,7 +33,7 @@ body {
 }
 
 .left ul a {
-  padding: 10px;
+  padding: 20px;
   width: 100%;
   display: flex;
   list-style: none;
@@ -353,6 +353,39 @@ textarea:focus {
   align-items: center;
   flex-direction: row;
   border-radius: 5px;
+}
+
+.active {
+  color: #00ff8a;
+  transform: scale(1);
+  animation: animate .5s steps(28) 1;
+}
+
+@keyframes animate {
+  0% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+
+  25% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+
+  50% {
+    background-color: transparent;
+    transform: scale(1.2);
+  }
+
+  75% {
+    background-color: transparent;
+    transform: scale(1.2);
+  }
+
+  100% {
+    background-color: transparent;
+    transform: scale(1);
+  }
 }
 
 #like i, #comment i, #share i {

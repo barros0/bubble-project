@@ -65,18 +65,12 @@ $admin = ""; //verificar se o utilizador é admin
         <nav>
             <div id="nav">
                 <a href="feed.php"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
-                <!--<div class="searchbar">
-                    <form class="searchbar_form" action="#" method="POST">
-                        <div class="searchbar_fundo"><input class="search" type="search" placeholder="Pesquisar..."
-                                name="search"></div>
-                    </form>
-                </div>-->
                 <ul class="barranav">
                     <li><i class='bx bx-home-alt'></i></li>
                     <li><i class='bx bx-store-alt'></i></li>
                     <li><i class='bx bx-chat'></i></li>
                     <li><i class='bx bx-bell'></i></li>
-                    <li><i class='bx bx-search'></i></li>
+                    <li id="searchbar"><i class='bx bx-search'></i></li>
                 </ul>
                 <div id="space"></div>
                 <div class="icon_perfil">
@@ -84,6 +78,14 @@ $admin = ""; //verificar se o utilizador é admin
                         <img class="img_perfil" src="img/header/download.png" alt="fotoperfil">
                         <p class="nomeuser"> <?php echo $nome ?> </p>
                     </div>
+                </div>
+            </div>
+            <div class="popup_searchbar">
+                <div class="wrapper_searchbar">
+                    <form class="searchbar_form" action="#" method="POST">
+                        <div class="searchbar_fundo"><input class="pop_search" type="search" placeholder="Pesquisar..."
+                                name="search"></div>
+                    </form>
                 </div>
             </div>
             <div class="popup_perfil">

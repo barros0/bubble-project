@@ -27,12 +27,12 @@
                 <div class="post_user_img">
                 </div>
                 <div class="post_number_likes_comments">
-                    <i class='bx bx-heart'></i>
-                    <p>32 Gostos</p>
+                    <i class='bx bx-heart' id="liked"></i>
+                    <p><span id="number_likes">32</span> Gostos</p>
                 </div>
                 <div class="post_like_comment_share">
                     <div id="like">
-                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-heart' id="liked_info"></i>
                         <p>Gostar</p>
                     </div>
                     <div class="comment" id="comment">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="comment_section">
                     <form action="">
-                        <textarea data-limit=255 name="textarea" class="comment_textarea"
+                        <textarea data-limit=255 maxlength="255" name="textarea" class="comment_textarea"
                             placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/255</p>
                     </form>
@@ -72,7 +72,8 @@
             </div>
             <form method="POST" id="post">
                 <div class="textarea">
-                    <textarea name="textarea" id="textarea" placeholder="O que estás a programar?"></textarea>
+                    <textarea maxlength="255" name="textarea" id="textarea"
+                        placeholder="O que estás a programar?"></textarea>
                 </div>
                 <div class="img_post">
                     <img id="img_post" src="#" alt="photo_post">
@@ -95,6 +96,7 @@
 
 
     <?php include 'footer.php'; ?>
+    <script src="js/like.js"></script>
     <script src="js/comments.js"></script>
     <script src="js/img_post.js"></script>
     <script src="js/weather.js"></script>
