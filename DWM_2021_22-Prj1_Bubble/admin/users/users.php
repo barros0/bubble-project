@@ -29,8 +29,37 @@ include('../partials/header.php');
 
 
     <div class="table-responsive">
-        <div class="table-header">
+        <div class="table-header row">
+            <div class="titulo col-10">
             <h2>fdfd</h2>
+            </div>
+
+            <div class="filtro col-2">
+                <a href="#" class="filter filter-close">
+                <i class="fa fa-filter"></i>
+                Filtros
+                </a>
+
+                <div class="filter-w">
+
+                  <div class="filtros">
+                      <div class="filter-line">
+                          <div class="icon">
+                              <i class="fa fa-envelope"></i>
+                          </div>
+                          <input type="text" placeholder="Email">
+                      </div>
+                  </div>
+
+
+                    <div class="opt">
+                        <input type="button" value="Fechar"
+                               class="btn disable">
+                        <input type="button" value="Filtrar"
+                               class="btn">
+                    </div>
+                </div>
+            </div>
         </div>
         <table class="table">
             <caption>Lista de utilizadores</caption>

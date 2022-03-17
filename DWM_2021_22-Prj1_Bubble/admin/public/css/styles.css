@@ -14,7 +14,7 @@ li {
     list-style: none;
 }
 
-a, li{
+a, li {
     color: var(--white);
 }
 
@@ -37,12 +37,12 @@ p {
     color: var(--dark);
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--verde);
 }
 
-a:hover{
+a:hover {
     color: var(--verdeh);
 }
 
@@ -69,14 +69,13 @@ small {
 }
 
 
-
 img {
     max-height: 100%;
     max-width: 100%;
 }
 
 
-.preloader{
+.preloader {
     background-color: var(--dark);
     width: 100%;
     height: 100%;
@@ -84,7 +83,8 @@ img {
     position: absolute;
     transition-duration: 0.4s;
 }
-.preloader .center{
+
+.preloader .center {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -92,7 +92,7 @@ img {
     transform: translate(-50%, -50%);
 }
 
-.preloader .logo{
+.preloader .logo {
     max-width: 500px;
     animation: anim-logo-preloader 3s ease-out infinite normal;
     margin: auto;
@@ -104,15 +104,23 @@ img {
 
 
 @keyframes anim-logo-preloader {
-    0%{max-width: 500px;}
-    25%{max-width: 600px;}
-    40%{max-width: 600px;}
-    80%{max-width: 500px;}
+    0% {
+        max-width: 500px;
+    }
+    25% {
+        max-width: 600px;
+    }
+    40% {
+        max-width: 600px;
+    }
+    80% {
+        max-width: 500px;
+    }
 
 }
 
 
-.preloader .bar{
+.preloader .bar {
     text-align: center;
     margin: 40px;
     width: 350px;
@@ -134,8 +142,6 @@ img {
         background-position: -200% 0;
     }
 }
-
-
 
 
 .m10 {
@@ -206,7 +212,7 @@ img {
     width: 40%;
 }
 
-.login .left .logo{
+.login .left .logo {
     padding: 20px;
     background-color: var(--white);
     height: 100%;
@@ -271,6 +277,27 @@ img {
     background-color: var(--verde);
     color: var(--white);
     width: 220px;
+}
+
+.btn {
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--verde);
+    color: var(--white);
+    max-width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--verdeh);
+}
+
+.btn.disable {
+    background-color: var(--cizento);
+    color: var(--white);
+}
+
+.btn.disable:hover {
+    background-color: var(--sgrey);
 }
 
 
@@ -344,7 +371,7 @@ img {
     margin-right: 10px;
 }
 
-.radius-50{
+.radius-50 {
     border-radius: 50%;
     overflow: hidden;
     object-position: center;
@@ -454,23 +481,27 @@ img {
     background-color: red;
 }
 
-.warning .icon{
+.warning .icon {
     background-color: goldenrod;
 }
 
-.sucess .icon{
+.sucess .icon {
     background-color: green;
 }
 
 
-.user-img-big{
+.user-img-big {
     width: 150px;
     height: 150px;
     margin: 20px;
 }
 
 
-.table-header{
+.table-responsive {
+    overflow: visible;
+}
+
+.table-header {
     border: none !important;
     border-radius: 25px 25px 0px 0px;
     background-color: var(--white);
@@ -478,55 +509,55 @@ img {
     margin: 0;
 }
 
-.table-header h2{
+.table-header h2 {
     font-weight: bold;
     color: var(--verdeh);
 }
 
-.table{
+.table {
     background-color: var(--white);
     padding: 20px;
     border-radius: 25px;
     border: none !important;
 }
-.table thead{
+
+.table thead {
     background-color: var(--verdeh);
     border: none !important;
 }
 
-.table caption{
+.table caption {
     border: none !important;
 }
 
-.table>:not(:first-child) {
+.table > :not(:first-child) {
     border: none !important;
 }
 
 
-
-.table thead tr{
+.table thead tr {
     color: var(--white);
 }
 
 .table tbody, .table thead, .table tbody, .table td,
-.table tfoot, .table th, .table thead, .table tr{
+.table tfoot, .table th, .table thead, .table tr {
     border: none;
 }
 
-.table tr{
+.table tr {
     border-bottom: 1px solid var(--verdeh);
 }
 
-.table tr td{
+.table tr td {
     padding: 10px;
 }
 
-.table tr:nth-last-child(1){
+.table tr:nth-last-child(1) {
     border-bottom: none;
 }
 
 
-.mini-card{
+.mini-card {
     /*margin: 10px;*/
     padding: 6px;
     min-height: 120px;
@@ -547,7 +578,6 @@ img {
     width: 0;
     height: 0;
 }
-
 
 
 .slider {
@@ -597,7 +627,7 @@ img {
     border-radius: 50%;
 }
 
-.modal{
+.modal {
     z-index: 50;
     position: absolute;
     border-radius: 25px;
@@ -605,11 +635,51 @@ img {
 
 }
 
-.modal .modal-head{
+.modal .modal-head {
     border-bottom: 1px solid var(--verde);
     height: 50px;
     width: 100%;
     padding: 10px;
 }
+
+
+.filter-w {
+    transition: transform 0.1s ease, opacity 0.1s ease;
+    transform-origin: 0 0;
+    transform: scale(0.5);
+    opacity: 0;
+    position: relative;
+
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--verdeh);
+    margin-right: 20px;
+    right: 100px;
+    min-width: 250px;
+}
+
+.filter-w .filter-line input{
+
+}
+
+.filter-w .filter-line input::placeholder{
+color: var(--verde);
+}
+
+.filter-w .opt{
+    display: flex;
+    justify-content: center;
+}
+
+.filter-w .opt .btn{
+    width: 50%;
+}
+
+.filter-w.open {
+    transform: scale(1);
+    opacity: 1;
+}
+
 
 
