@@ -27,7 +27,7 @@ $admin = ""; //verificar se o utilizador é admin
     <meta name="description" content=" <?php echo $descricaoSite ?> ">
     <meta name="keywords" content=" <?php echo $palavrasChave ?> ">
     <!--FavIcon-->
-    <link rel="shortcut icon" type="image/jpg" href="img/logo.ico" />
+    <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/header.css">
     <!--<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">-->
@@ -64,22 +64,28 @@ $admin = ""; //verificar se o utilizador é admin
     <header>
         <nav>
             <div id="nav">
-                <a href="feed.php"><img class="logo" src="img/header/logo_bubble2.svg" alt="logo"></a>
-                <form method="POST" id="search_bar">
-                    <div class="fundo-pesquisa"><input class="pesquisa" type="search"
-                            placeholder="Pesquisar Algo..." name="search"></div>
-                </form>
+                <a href="feed.php"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
                 <ul class="barranav">
                     <li><i class='bx bx-home-alt'></i></li>
                     <li><i class='bx bx-store-alt'></i></li>
                     <li><i class='bx bx-chat'></i></li>
                     <li><i class='bx bx-bell'></i></li>
+                    <li id="searchbar"><i class='bx bx-search'></i></li>
                 </ul>
+                <div id="space"></div>
                 <div class="icon_perfil">
                     <div class="perfil">
                         <img class="img_perfil" src="img/header/download.png" alt="fotoperfil">
                         <p class="nomeuser"> <?php echo $nome ?> </p>
                     </div>
+                </div>
+            </div>
+            <div class="popup_searchbar">
+                <div class="wrapper_searchbar">
+                    <form class="searchbar_form" action="#" method="POST">
+                        <div class="searchbar_fundo"><input class="pop_search" type="search" placeholder="Pesquisar..."
+                                name="search"></div>
+                    </form>
                 </div>
             </div>
             <div class="popup_perfil">

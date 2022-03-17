@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/header/logo_small_bubble.ico" type="image/x-icon">
     <title>Bubble | Login</title>
 
 </head>
@@ -20,7 +20,7 @@
             <div class="caixa1-home">
 
 
-                <img class='logo-caixa' src="img/header/logo_bubble2.svg" alt="logo">
+                <img class='logo-caixa' src="img/header/logo_bubble.svg" alt="logo">
 
 
             </div>

@@ -20,21 +20,20 @@ body {
 }
 
 .left {
-  background-color: #404040;
+  /* background-color: #404040; */
   width: 25%;
-  margin-right: 20px;
   min-width: 250px;
 }
 
 .left ul {
   margin-top: 20px;
   position: fixed;
-  width: 25%;
+  width: 20%;
   min-width: 250px;
 }
 
 .left ul a {
-  padding: 10px;
+  padding: 20px;
   width: 100%;
   display: flex;
   list-style: none;
@@ -48,8 +47,10 @@ body {
 }
 
 .left ul a i {
-  font-size: 2rem;
+  width: 30px;
+  font-size: 1.6rem;
   margin-right: 10px;
+  height: 30px;
 }
 
 .left li {
@@ -70,24 +71,31 @@ body {
   background-color: #00ff8a;
   padding: 2px;
   border-radius: 100%;
-  width: 17%;
+  width: 30px;
   margin-right: 10px;
+  height: 30px;
+  display: flex;
 }
 
 .right {
-  width: 20%;
-  margin: 30px 20px 0 20px;
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .center {
-  margin-top: 30px;
-  width: 45%;
+  display: flex;
+  width: 50%;
   border-radius: 40px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.weather {
-  position: fixed;
-  width: 20%;
+.weather, .make_post {
+  margin-top: 30px;
+  position: relative;
+  width: 80%;
   color: #bdbdbd;
   background-color: #404040;
   padding: 20px;
@@ -242,11 +250,6 @@ textarea:focus {
   width: 20%;
 }
 
-.make_post {
-  background-color: #404040;
-  border-radius: 25px;
-}
-
 .buttons_post {
   display: flex;
   justify-content: space-between;
@@ -274,9 +277,9 @@ textarea:focus {
 .post {
   margin-top: 30px;
   color: white;
-  width: 100%;
+  width: 80%;
   background-color: #404040;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 .user_post_info {
@@ -290,15 +293,15 @@ textarea:focus {
 }
 
 .post_user_avatar img {
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   padding: 2px;
   border-radius: 100%;
   background-color: #00ff8a;
 }
 
 .post_user_info {
-  height: 60px;
+  height: 40px;
   padding-left: 10px;
   display: flex;
   flex-direction: column;
@@ -318,7 +321,7 @@ textarea:focus {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 25px;
+  border-radius: 15px;
   margin-top: 15px;
   width: 100%;
   height: 400px;
@@ -340,16 +343,49 @@ textarea:focus {
   display: flex;
   justify-content: space-around;
   border-top: 2px solid white;
-  padding: 15px 10px 10px 10px;
+  padding: 10px;
 }
 
 #like, #comment, #share {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
   align-items: center;
   flex-direction: row;
-  border-radius: 15px;
+  border-radius: 5px;
+}
+
+.active {
+  color: #00ff8a;
+  transform: scale(1);
+  animation: animate .5s steps(28) 1;
+}
+
+@keyframes animate {
+  0% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+
+  25% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+
+  50% {
+    background-color: transparent;
+    transform: scale(1.2);
+  }
+
+  75% {
+    background-color: transparent;
+    transform: scale(1.2);
+  }
+
+  100% {
+    background-color: transparent;
+    transform: scale(1);
+  }
 }
 
 #like i, #comment i, #share i {
@@ -376,9 +412,13 @@ textarea:focus {
   overflow: hidden;
   border-color: transparent;
   background-color: #4f4f4f;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .comment_limit {
+  padding: 5px;
+  color: #bdbdbd;
+  margin-right: 1px;
+  margin-top: -30px;
   text-align: right;
 }
