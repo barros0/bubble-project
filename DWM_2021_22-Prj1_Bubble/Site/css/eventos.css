@@ -152,6 +152,7 @@ body {
 .caixa-frente {
   background-color: #bbb;
   color: black;
+  
 }
 
 .caixa-costas {
@@ -163,12 +164,14 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .imagens{
   border-radius: 15px;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .botao-caixacostas {
