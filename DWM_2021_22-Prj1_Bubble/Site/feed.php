@@ -29,6 +29,9 @@
                         <p class="post_user_date">Publicado - 24/10/2022 15:55</p>
                     </div>
                 </div>
+                <div class="post_text">
+                    Boa noite, so queria informar os meus devs que estou a desenvolver um app para todas as igrejas catolicas que suportem a comunidade nao binaria das baleias do rio liz.
+                </div>
                 <div class="post_user_img">
                 </div>
                 <div class="post_number_likes_comments">
@@ -57,6 +60,10 @@
                     </form>
                 </div>
             </div>
+            <div class="comment_user_avatar">
+                    <img src="img/header/download.png" alt="foto_perfil_user">
+                    <div></div>
+                </div>
         </div>
     </div>
     <div class="right">
