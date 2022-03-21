@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/eventos.css">
     <link rel="shortcut icon" href="img/header/logo_small_bubble.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/27dd9727ef.js" crossorigin="anonymous"></script>
     <title>Bubble | Eventos</title>
 
 </head>
@@ -32,6 +33,10 @@
 
 <div class="center">
 
+<div class="caixa-adicionar">
+  <button id="botao-adicionar" class="botao-caixacostas" onclick="adicionarevento()"><i class="fa-solid fa-plus"></i>  Adicionar Evento</button>
+
+</div>
 
 <div class="caixas-eventos1">
    
@@ -56,7 +61,7 @@
     <img class="imagens" src="img/eventos/cisco.png" alt="cisco">
     </div>
     <div class="caixa-costas">
-      <h1>Cisco Live | Digital</h1>
+      <h1>Cisco Live</h1>
       <p>Quarta-feira, 30 de Marco</p>
       <p>Quinta-feira, 31 de Marco</p>
       <a href="https://www.ciscolive.com/" class="botao-caixacostas">Visitar</a>
@@ -111,9 +116,7 @@
   </div>
 </div>
 
-<div class="caixa" id="caixa-adicionar">
-    <img class="imagens" id="adicionar" src="img/eventos/adicionar.svg" alt="websummit">
-    </div>
+
 
 
 </div>
