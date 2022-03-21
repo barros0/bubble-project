@@ -238,6 +238,12 @@ nav, header {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
+/*
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
 
 .pop_search{
   padding: 10px;
