@@ -23,8 +23,6 @@ include('../partials/header.php');
         <div class="filter">
             <input type="text" placeholder="Id">
         </div>
-
-
     </div>
 
 
