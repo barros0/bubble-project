@@ -14,13 +14,13 @@ body {
 }
 
 .parts {
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .left {
-  /* background-color: #404040; */
   width: 25%;
   min-width: 250px;
 }
@@ -75,6 +75,26 @@ body {
   margin-right: 10px;
   height: 30px;
   display: flex;
+}
+
+.left .footer_left {
+  font-size: 13px;
+  color: #bdbdbd;
+  padding: 10px;
+  bottom: 0;
+  position: fixed;
+  width: 20%;
+  height: 60px;
+}
+
+.footer_left a {
+  font-size: 13px;
+  color: #bdbdbd;
+  text-decoration: none;
+}
+
+.footer_left a:hover {
+  text-decoration: underline;
 }
 
 .right {
