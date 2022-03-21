@@ -83,8 +83,9 @@ body {
 .center {
   display: flex;
   width: 75%;
-  height: auto;
-  border-radius: 15px;
+  height: 100%;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
   flex-direction: column;
   align-items: center;
   background-color: #404040 ;
@@ -105,15 +106,15 @@ body {
   border-radius: 15px;
   flex-direction: row;
   align-items: center;
-  background-color: #1C1C1C;
-  margin: 30px;
-  justify-content: flex-start;
+  background-color: transparent;
+  margin-top: 30px;
+  justify-content: center;
   align-content: center;
   
 }
 
 #botao-adicionar{
-  width: 200px;
+  width: 210px;
   font-size: 15px;
   margin-top: 0;
 }
