@@ -6,7 +6,7 @@ include('../partials/header.php');
 
 
 <div class="bw">
-<form method="post" enctype="multipart/form-data" action="./update_user.php">
+<form method="post" enctype="multipart/form-data" action="users/update_user.php">
 
         <div class="radius-50 user-img-big">
             <img src="https://thispersondoesnotexist.com/image" alt="">

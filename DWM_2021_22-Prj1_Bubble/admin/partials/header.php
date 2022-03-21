@@ -21,7 +21,7 @@ $ppath .= $_SERVER["SERVER_NAME"] . '/projeto/DWM_2021_22-Prj1_Bubble/site'/*dir
     <meta charset="utf-8">
     <title>Admin</title>
 
-    <link rel="stylesheet" href="<?php echo($path) ?>/public/bootstrap-5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/bootstrap-5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo($path) ?>/public/css/styles.css">
     <link rel="stylesheet" href="<?php echo($path) ?>/public/css/menu.css">
     <link rel="stylesheet" href="<?php echo($path) ?>/public/fontawesome-6.0.0/css/all.css">
@@ -34,7 +34,7 @@ $ppath .= $_SERVER["SERVER_NAME"] . '/projeto/DWM_2021_22-Prj1_Bubble/site'/*dir
 
 <div class="preloader" id="preloader">
     <div class="center">
-        <img class="logo" src="<?php echo($ppath) ?>/img/logo_bubble.svg" alt="">
+        <img class="logo" src="../public/images/logo_bubble.svg" alt="">
         <span class="bar"></span>
     </div>
 </div>

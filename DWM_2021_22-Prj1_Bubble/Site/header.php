@@ -102,8 +102,12 @@ $admin = ""; //verificar se o utilizador é admin
                     <li><a href="#"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
                 </ul>
             </div>
+
         </nav>
+
     </header>
+
+
 
     <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar
         como o fazer clicando <a
