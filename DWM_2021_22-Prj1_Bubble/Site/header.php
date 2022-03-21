@@ -30,7 +30,7 @@ $admin = ""; //verificar se o utilizador é admin
     <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/header.css">
-    <!--<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <!--Mudar folha de estilos conforme a página-->
@@ -62,7 +62,7 @@ $admin = ""; //verificar se o utilizador é admin
 
 <body>
     <header>
-        <nav>
+      <nav>
             <div id="nav">
                 <a href="feed.php"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
                 <ul class="barranav">
@@ -102,8 +102,12 @@ $admin = ""; //verificar se o utilizador é admin
                     <li><a href="#"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
                 </ul>
             </div>
+            
         </nav>
+       
     </header>
+
+    
 
     <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar
         como o fazer clicando <a
