@@ -37,6 +37,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -44,6 +45,7 @@
       <recent name="C:\xampp\htdocs\projeto\DWM_2021_22-Prj1_Bubble\admin\partials" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\projeto\DWM_2021_22-Prj1_Bubble\admin" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\projeto-php-sql\Bubble\admin" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\projeto-php-sql\Bubble\admin\login" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\projeto-php-sql\Bubble\admin\public" />
@@ -63,7 +65,7 @@
       <workItem from="1647253351345" duration="4621000" />
       <workItem from="1647300108953" duration="4204000" />
       <workItem from="1647422361933" duration="7365000" />
-      <workItem from="1647858267961" duration="1359000" />
+      <workItem from="1647858267961" duration="14207000" />
     </task>
     <servers />
   </component>
