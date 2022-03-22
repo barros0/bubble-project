@@ -30,7 +30,8 @@
                     </div>
                 </div>
                 <div class="post_text">
-                    Boa noite, so queria informar os meus devs que estou a desenvolver um app para todas as igrejas catolicas que suportem a comunidade nao binaria das baleias do rio liz.
+                    Boa noite, so queria informar os meus devs que estou a desenvolver um app para todas as igrejas
+                    catolicas que suportem a comunidade nao binaria das baleias do rio liz.
                 </div>
                 <div class="post_user_img">
                 </div>
@@ -60,10 +61,17 @@
                     </form>
                 </div>
             </div>
-            <div class="comment_user_avatar">
+            <div class="comment_user">
+                <div class="comment_user_avatar">
                     <img src="img/header/download.png" alt="foto_perfil_user">
-                    <div></div>
+                    <div class="comment_text">
+                        <div class="comment_user_name">Rute Baguete</div>
+                        HAHAHHAHAHAH MANO, baril mas curtia mais de uma cena para ver a população mosaica que defeca
+                        mais
+                        que 3 vezes por dia
+                    </div>
                 </div>
+            </div>
         </div>
     </div>
     <div class="right">

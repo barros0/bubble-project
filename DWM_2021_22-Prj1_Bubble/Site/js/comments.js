@@ -6,3 +6,18 @@ $(document).ready(function () {
     });
   });
 });
+
+$(document).ready(function () {
+  $("#comment").click(function () {
+    var a = $(".comment_section").css("display");
+    var b = $(".comment_user").css("display");
+
+    if (a == "none" && b == "none") {
+      $(".comment_section").slideDown();
+      $(".comment_user").slideDown();
+    } else {
+      $(".comment_section").slideUp();
+      $(".comment_user").slideUp();
+    }
+  });
+});
