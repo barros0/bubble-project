@@ -117,7 +117,7 @@ $files_size = folderSize('public/images');
     <div class="storage d-flex flex-column col-12 col-lg-6 text-white">
         <div class="header d-flex flex-column">
             <div class="d-flex justify-content-between align-items-center mb-1">
-                <h4>Usage</h4>
+                <h4>Armazenamento</h4>
                 <span class="text-muted" style="font-size: 1rem;">  <?php echo($freec) ?> livres de <span
                             id="total-value"><?php echo($totalc) ?></span>GB</span>
             </div>
