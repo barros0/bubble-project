@@ -1,6 +1,6 @@
 <?php
 include('./partials/header.php');
-
+/*
 
 $free = disk_free_space(".");
 $total = disk_total_space(".");
@@ -37,7 +37,9 @@ function folderSize($dir){
 $imagens_size = folderSize('public/images');
 $videos_size = folderSize('public/images');
 $files_size = folderSize('public/images');
-
+*/
+$freec = '200GB';
+$totalc = '400GB';
 ?>
 
 
