@@ -471,3 +471,185 @@ textarea:focus {
 .comment_user_name {
   color: #00ff8a;
 }
+
+
+.make_post_responsive {
+  display: none;
+  margin-top: 30px;
+  position: relative;
+  width: 70%;
+  color: #bdbdbd;
+  background-color: #404040;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.header_post_responsive {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.circles_responsive {
+  margin: 6px;
+  padding: 7px;
+  height: 10px;
+  border-radius: 100%;
+  width: 10px;
+}
+
+.textarea_responsive {
+  margin-top: 10px;
+  border-bottom: 2px solid #00ff8a;
+}
+
+.textarea_responsive textarea {
+  color: #bdbdbd;
+  border: 0;
+  width: 100%;
+  resize: none;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  overflow: hidden;
+  border-color: transparent;
+  background-color: #4f4f4f;
+  border-radius: 10px;
+}
+
+textarea::placeholder {
+  color: #bdbdbd;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.post_img_responsive {
+  margin: 30px;
+}
+
+.upload_img_responsive {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload_btn_responsive {
+  display: flex;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #bdbdbd;
+  background-color: #4f4f4f;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload_img_responsive:hover .upload_btn_responsive {
+  background-color: rgb(88, 88, 88);
+}
+
+.upload_img_responsive input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.img_post_responsive {
+  display: none;
+  width: auto;
+  position: relative;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px dashed #00ff8a;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.img_post_responsive i {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 30px;
+  color: #00ff8a;
+}
+
+#img_post_responsive {
+  width: 50%;
+}
+
+.buttons_post_responsive {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#post_btn_responsive {
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-color: #00ff8a;
+  width: 100px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+#post_btn_responsive:hover {
+  background-color: #00d372
+}
+
+@media (max-width:1200px) {
+  .center {
+    width: 90%;
+  }
+
+  .right {
+    width: 40%;
+  }
+
+  .post {
+    width: 90%;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .weather_info h4 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width:900px) {
+  .center {
+    width: 100%;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .make_post_responsive {
+    display: block;
+  }
+
+  .post {
+    width: 70%;
+  }
+}
+  

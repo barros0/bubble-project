@@ -19,7 +19,33 @@
         </div>
     </div>
     <div class="center">
-
+    <div class="make_post_responsive">
+            <div class="header_post_responsive">
+                <div class="circles_responsive one"></div>
+                <div class="circles_responsive two"></div>
+                <div class="circles_responsive three"></div>
+            </div>
+            <form method="POST" id="post">
+                <div class="textarea_responsive">
+                    <textarea maxlength="255" name="textarea" id="textarea_responsive"
+                        placeholder="O que estás a programar?"></textarea>
+                </div>
+                <div class="img_post_responsive">
+                    <img id="img_post_responsive" src="#" alt="photo_post">
+                    <i id="cancel_btn_responsive" class='bx bx-x'></i>
+                </div>
+                <div class="buttons_post_responsive">
+                    <div class="upload_img_responsive" onchange="previewFileResponsive()">
+                        <button class="upload_btn_responsive"><i class='bx bx-plus'></i></button>
+                        <input id="input_file_responsive" type="file" accept="image/png,image/jpeg,image/bmp,image/gif"
+                            name="myfile">
+                    </div>
+                    <div class="post_button_responsive">
+                        <button id="post_btn_responsive" type="submit" name="post">Publicar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
         <div class="post">
             <div class="user_post_info">
                 <div class="post_user_avatar">
@@ -31,7 +57,7 @@
                 </div>
                 <div class="post_text">
                     Boa noite, so queria informar os meus devs que estou a desenvolver um app para todas as igrejas
-                    catolicas que suportem a comunidade nao binaria das baleias do rio liz.
+                    catolicas perto do rio liz.
                 </div>
                 <div class="post_user_img">
                 </div>
@@ -66,9 +92,7 @@
                     <img src="img/header/download.png" alt="foto_perfil_user">
                     <div class="comment_text">
                         <div class="comment_user_name">Rute Baguete</div>
-                        HAHAHHAHAHAH MANO, baril mas curtia mais de uma cena para ver a população mosaica que defeca
-                        mais
-                        que 3 vezes por dia
+                        HAHAHHAHAHAH MANO, baril mas curtia mais de uma cena para ver a população mosaica.
                     </div>
                 </div>
             </div>
