@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+
+
+/*===============================================================================================================================================================*/
+/*HOME*/
+
+.home {
+    display: flex;
+    flex-direction: column;
+    background: url("..//img/login/background-login.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.home2 {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+
+
+.caixa1-home {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.caixa2-home {
+    width: 35%;
+    height: auto;
+    position: relative;
+    margin: 6% auto;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #4F4F4F;
+    border-radius: 25px;
+
+}
+
+
+/*========================================================================================================================================================*/
+/*SECACAO DA ESQUERDA*/
+
+
+.logo-caixa {
+    width: 50%;
+    margin-bottom: 10%;
+}
+
+.caixa1-home span {
+    font-weight: bold;
+    color: #00ff8a;
+
+}
+
+.caixa1-home {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/*=========================================================================================================================================================*/
+/*FORMULARIO*/
+
+.botao-caixa {
+    width: 220px;
+    background-color: #4F4F4F;
+    margin: 35px auto;
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.botoes-form {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    transition: all 150ms ease-in-out;
+    color: white;
+    width: 110px;
+}
+
+
+
+#fundo-botoes {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #00ff8a;
+    border-radius: 15px;
+    transition: .05s;
+}
+
+.formulario-login {
+    width: 70%;
+    transition: .5s;
+
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+    transition: all 150ms ease-in-out;
+    color: white;
+}
+
+.form-input:hover {
+    transform: scale(1.05);
+    transition: all 150ms ease-in-out;
+}
+
+.botao-submeter {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background-color: #00ff8a;
+    border: 0;
+    outline: none;
+    border-radius: 15px;
+    color: white;
+    border: 0;
+    transition: all 150ms ease-in-out;
+    margin-bottom: 30px;
+}
+
+
+.botao-submeter:hover {
+    background-color: #00d372;
+    border: 0;
+    transition: all 300ms ease-in-out;
+    transform: scale(1.01);
+}
+
+
+
+.check-box {
+
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #00ff8a;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 13px;
+    margin-bottom: 15px;
+}
+
+.check-box:checked {
+    background-color: #00ff8a;
+}
+
+#checkbox {
+    user-select: none;
+}
+
+#checkbox span {
+    font-weight: bold;
+    color: #00ff8a;
+}
+
+
+#checkbox span:hover {
+    text-decoration: underline;
+}
+
+
+
+.formulario-login span {
+    color: white;
+    font-size: 12px;
+}
+
+
+#register {
+    display: none;
+}
+
+input {
+    color: white;
+    font-size: 12px;
+    bottom: 68px;
+
+}
+
+label {
+    color: white;
+    font-size: 12px;
+    bottom: 68px;
+}
+
+option {
+    color: black;
+
+}
+
+select {
+    color: white;
+    font-size: 12px;
+    bottom: 68px;
+}
+
+
+.label-nomes {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#label-nome {
+    margin-right: 5px;
+}
+
+.label-passwords {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#label-password {
+    margin-right: 5px;
+}
+
+
+input::placeholder {
+    color: white;
+}
+
+
+/*=====================================================================================================================================================*/
+/*FOOTER*/
+
+.footer {
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3;
+
+}
+
+#footer-informacoes {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    width: 65px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+#footer-copyright {
+    color: white;
+    font-size: 12px;
+    margin-bottom: 15px;
+}

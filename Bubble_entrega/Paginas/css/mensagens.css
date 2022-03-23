@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  background-color: #1c1c1c;
+  height: 100%;
+}
+
+/*wrapper da pagina*/
+.conteudo {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #1c1c1c;
+}
+
+/*barra lateral das mensagens*/
+.barra-listagem-mensagens {
+  width: 30%;
+  min-width: 300px;
+  max-width: 25%;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  background-color: #404040;
+  color: #bdbdbd;
+  overflow: auto;
+
+}
+
+.novo-chat {
+  width: 35px;
+  height: 35px;
+  background-color: #00ff8a;
+  color: #1c1c1c;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.novo-chat:hover {
+  cursor: pointer;
+  background-color: #00d372;
+}
+
+/*pesquisa de conversas*/
+
+.pesquisa-fixed {
+  padding: 20px 10px 20px;
+  position: sticky;
+  background: #404040;
+  top: 0;
+  border-bottom: solid #00ff8a;
+
+}
+
+.form-pesquisa {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pesquisa-mensagens {
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.pesquisa {
+  height: 35px;
+  font-size: 15px;
+  border-radius: 10px;
+  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  padding: 9px 4px 9px 40px;
+}
+
+.fundo-pesquisa {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.botao-pesquisa {
+  float: right;
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-pesquisa:hover {
+  background: #ccc;
+}
+
+/*mensagens*/
+
+.wrap-conteudo-mensagens {
+  max-width: 75%;
+  width: 75%;
+  position: relative;
+
+}
+
+.conteudo-mensagens {
+  height: 95%;
+  background: #404040;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 5%;
+  bottom: 0;
+  position: absolute;
+  padding: 30px;
+
+}
+
+/*mensagem*/
+.escrever-mensagem {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+
+}
+
+.conteudo-chat {
+  width: 100%;
+  height: 80%;
+}
+
+.row-mensagem {
+  width: 100%;
+  display: flex;
+  padding-bottom: 20px;
+
+}
+
+.icone-perfil-row-mensagem {
+  width: 20%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+}
+
+.conteudo-row-mensagem {
+  width: 80%;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  
+}
+
+.enviada{
+  background: #e1e1e1;
+}
+
+.texto-mensagem {
+  width: 80%;
+}
+
+.conteudo-multimedia {
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mensagem {
+  padding: 10px;
+  width: 100%;
+  height: 100px;
+
+}
+/*listagem chats*/
+.listagem-chats {
+  padding: 10px;
+}
+
+/*icones adicionar conteudo chat*/
+.icones-chat {
+  width: 50px;
+  height: 50px;
+  background-color: #00ff8a;
+  color: #1c1c1c;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.icones-chat:hover {
+  cursor: pointer;
+  background-color: #00d372;
+}
+
+form.form-mensagem {
+  height: 100%;
+}
+
+/*mensagens na barra*/
+.foto-perfil-container {
+  height: 70px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.foto-perfil {
+  height: 55px;
+  width: 55px;
+}
+
+.foto-perfil img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+}
+
+.wrap-pessoa {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-sizing: border-box;
+  border-bottom: solid;
+
+}
+
+.detalhes-conversa {
+  width: 70%;
+}
+
+.nome-pessoa {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+span.mensagem {
+  font-size: 15px;
+}
+
+.detalhes-horas {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+}

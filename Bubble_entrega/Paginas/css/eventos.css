@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #1C1C1C;
+}
+
+
+/*==========================================================================================================================0*/
+/*LATERAL*/
+.left {
+    background-color: #404040;
+    width: 25%;
+    
+  }
+  
+  .left ul {
+    margin-top: 20px;
+    position: fixed;
+    width: 25%;
+  }
+  
+  .left ul a {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    color: #bdbdbd;
+    text-decoration: none;
+    align-items: center;
+  }
+  
+  .left ul a.verperfil {
+    color: white;
+  }
+  
+  .left ul a i {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+  
+  .left li {
+    cursor: pointer;
+    display: flex;
+    height: 80px;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .left li:hover a {
+    border-radius: 10px;
+    background-color: rgb(88, 88, 88);
+  }
+  
+  .left .avatar {
+    background-color: #00ff8a;
+    padding: 2px;
+    border-radius: 100%;
+    width: 17%;
+    margin-right: 10px;
+  }
+
+/*===============================================================================================================================================================*/
+/*HOME*/
+
+.home{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.center {
+  display: flex;
+  width: 75%;
+  height: 100%;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #404040 ;
+  margin: 30px;
+}
+
+
+
+
+
+/*====================================================================================================================================================================================================*/  
+/*CAIXAS*/
+
+.caixa-adicionar{
+  display: flex;
+  width: 75%;
+  height: 100px;
+  border-radius: 15px;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+#botao-adicionar{
+  width: 210px;
+  font-size: 15px;
+  margin-top: 0;
+}
+
+.caixas-eventos1{
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  margin: auto;
+}
+
+
+.caixa {
+  background-color: transparent;
+  width: 280px;
+  height: 280px;
+  border: 0;
+  perspective: 1000px; 
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.caixa-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  
+}
+
+
+.caixa:hover .caixa-inner {
+  transform: rotateY(180deg);
+}
+
+
+.caixa-frente, .caixa-costas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+
+.caixa-frente {
+  background-color: #bbb;
+  color: black;
+  
+}
+
+.caixa-costas {
+  background-color:  #1C1C1C;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.imagens{
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.botao-caixacostas {
+  width: 70%;
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: #00ff8a;
+  border: 0;
+  outline: none;
+  border-radius: 15px;
+  color: black;
+  border: 0;
+  transition: all 150ms ease-in-out;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+h1{
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #1C1C1C;
+  text-shadow: -1px 0 #00ff8a, 0 1px #00ff8a, 1px 0 #00ff8a, 0 -1px #00ff8a;
+}
+
+.caixa-costas p{
+  margin-bottom: 3px;
+}
+
+.botao-caixacostas:hover {
+  background-color: #00d372;
+  border: 0;
+  transition: all 300ms ease-in-out;
+  transform: scale(1.01);
+}
+
+
+#adicionar{
+  width: 50%;
+  height: 50%;
+}
+
+#caixa-adicionar{
+  border: 2px dashed #1C1C1C;
+  border-radius: 15px;
+}
