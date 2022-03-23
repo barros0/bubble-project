@@ -1,51 +1,7 @@
-<?php include 'header.php'; ?>
+<?php include 'page_parts/header.php'; ?>
 <div class="parts">
-    <div class="left">
-        <ul>
-            <li><a class="verperfil" href="perfil.php"><img class="avatar" src="img/header/download.png"
-                        alt="fotoperfil">Joãozinho Mineiro</a>
-            </li>
-            <li><a href=""><i class='bx bx-group'></i>Amigos</a></li>
-            <li><a href=""><i class='bx bx-hash'></i>Tópicos</a></li>
-            <li><a href=""><i class='bx bx-buildings'></i>Empresas</a></li>
-            <li><a href=""><i class='bx bxs-megaphone'></i>Oferta de Emprego</a></li>
-            <li><a href=""><i class='bx bx-calendar-event'></i>Eventos</a></li>
-            <li><a href=""><i class='bx bx-question-mark'></i>FAQS</a></li>
-        </ul>
-        <div class="footer_left">
-            <a href="">Privacidade</a> | <a href="">Termos</a> | <a href="">Publicidade</a> | <a href="">Cookies</a>
-            <br>
-            Bubble © 2022
-        </div>
-    </div>
+    <?php include 'page_parts/left.php'; ?>
     <div class="center">
-    <div class="make_post_responsive">
-            <div class="header_post_responsive">
-                <div class="circles_responsive one"></div>
-                <div class="circles_responsive two"></div>
-                <div class="circles_responsive three"></div>
-            </div>
-            <form method="POST" id="post">
-                <div class="textarea_responsive">
-                    <textarea maxlength="255" name="textarea" id="textarea_responsive"
-                        placeholder="O que estás a programar?"></textarea>
-                </div>
-                <div class="img_post_responsive">
-                    <img id="img_post_responsive" src="#" alt="photo_post">
-                    <i id="cancel_btn_responsive" class='bx bx-x'></i>
-                </div>
-                <div class="buttons_post_responsive">
-                    <div class="upload_img_responsive" onchange="previewFileResponsive()">
-                        <button class="upload_btn_responsive"><i class='bx bx-plus'></i></button>
-                        <input id="input_file_responsive" type="file" accept="image/png,image/jpeg,image/bmp,image/gif"
-                            name="myfile">
-                    </div>
-                    <div class="post_button_responsive">
-                        <button id="post_btn_responsive" type="submit" name="post">Publicar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
         <div class="post">
             <div class="user_post_info">
                 <div class="post_user_avatar">
@@ -99,7 +55,7 @@
         </div>
     </div>
     <div class="right">
-        <div class="weather">
+        <!-- <div class="weather">
             <div class="weather_loca">
                 <h2><span id="location"></span>, <span id="tempo"></span></h2>
                 <div class="weather_info">
@@ -107,8 +63,8 @@
                     <h4><span id="graus"></span><span>º</span>C</h4>
                 </div>
             </div>
-        </div>
-        <div class="make_post">
+        </div>-->
+        <!--<div class="make_post">
             <div class="header_post">
                 <div class="circles one"></div>
                 <div class="circles two"></div>
@@ -134,17 +90,8 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div>-->
     </div>
-
-
-
-    <?php include 'footer.php'; ?>
-    <script src="js/like.js"></script>
-    <script src="js/comments.js"></script>
-    <script src="js/img_post.js"></script>
-    <script src="js/weather.js"></script>
-
-    </body>
-
-    </html>
+</div>
+<?php include 'page_parts/footer.php'; ?>
+<!--<script src="js/weather.js"></script>-->

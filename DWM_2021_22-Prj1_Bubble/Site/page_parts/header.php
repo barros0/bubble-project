@@ -30,6 +30,7 @@ $admin = ""; //verificar se o utilizador é admin
     <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/left.css">
     <!--<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">-->
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -51,8 +52,11 @@ $admin = ""; //verificar se o utilizador é admin
 
     <?php
 
-    }
-
+    }else if($pagina == 'eventos.php'){ 
+    
+    ?>
+    <link rel="stylesheet" href="css/eventos.css">
+    <?php } 
     ?>
 
     <!--Mudar o título da página-->
@@ -67,10 +71,10 @@ $admin = ""; //verificar se o utilizador é admin
                 <a href="feed.php"><img class="logo" src="img/header/logo_bubble.svg" alt="logo"></a>
                 <ul class="barranav">
                     <li><i class='bx bx-home-alt'></i></li>
-                    <li><i class='bx bx-store-alt'></i></li>
                     <li><i class='bx bx-chat'></i></li>
                     <li><i class='bx bx-bell'></i></li>
                     <li id="searchbar"><i class='bx bx-search'></i></li>
+                    <li id="button_post"><i class='bx bx-plus-circle'></i></li>
                 </ul>
                 <div id="space"></div>
                 <div class="icon_perfil">
