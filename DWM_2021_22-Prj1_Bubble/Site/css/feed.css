@@ -421,7 +421,6 @@ textarea:focus {
 
 .comment_section form {
   padding: 15px;
-  border-top: 2px solid white;
   border-bottom: 2px solid white;
 }
 
@@ -650,6 +649,26 @@ textarea:focus {
 
   .post {
     width: 70%;
+  }
+}
+  
+@media (max-width:700px) {
+  .make_post_responsive {
+    width: 85%;
+  }
+
+  .post {
+    width: 85%;
+  }
+}
+  
+@media (max-width:700px) {
+  .make_post_responsive {
+    width: 90%;
+  }
+
+  .post {
+    width: 90%;
   }
 }
   

@@ -82,9 +82,14 @@ $admin = ""; //verificar se o utilizador é admin
             </div>
             <div class="popup_searchbar">
                 <div class="wrapper_searchbar">
-                    <form class="searchbar_form" action="#" method="POST">
-                        <div class="searchbar_fundo"><input class="pop_search" type="search" placeholder="Pesquisar..."
-                                name="search"></div>
+                    <form class="form_searchbar" method="POST" action="index.php">
+                        <div class="div_input_searchbar">
+                            <input type="text" class="input_searchbar" placeholder="Search here..." name="keyword"
+                                required="required" value="" />
+                            <span class="input_search_group_btn">
+                                <button class="button_searchbar" name="search"><i class='bx bx-search'></i></button>
+                            </span>
+                        </div>
                     </form>
                 </div>
             </div>
