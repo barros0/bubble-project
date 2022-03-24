@@ -1,6 +1,6 @@
 <?php
 
-include 'header.php';
+include 'page_parts/header.php';
 
 //buscar detalhes na base de dados
 
@@ -25,7 +25,8 @@ $fotos = ""; //src de fotos enviadas
 
             <div class="pesquisa-mensagens">
                 <form class="form-pesquisa" action="#" method="POST">
-                    <div class="fundo-pesquisa"><input class="pesquisa" type="search" placeholder="Pesquisar Conversas..." name="search"></div>
+                    <div class="fundo-pesquisa"><input class="pesquisa" type="search"
+                            placeholder="Pesquisar Conversas..." name="search"></div>
                     <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
                 </form>
             </div>
@@ -43,7 +44,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -58,7 +60,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -73,7 +76,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -88,7 +92,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -103,7 +108,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -118,7 +124,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -133,7 +140,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -148,7 +156,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -163,7 +172,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -178,7 +188,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -193,7 +204,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="detalhes-conversa">
                     <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
                     <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span class="hora-envio">11:23</span></div>
+                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
+                                class="hora-envio">11:23</span></div>
                     </div>
                 </div>
 
@@ -247,7 +259,8 @@ $fotos = ""; //src de fotos enviadas
             <div class="escrever-mensagem">
                 <div class="texto-mensagem">
                     <form class="form-mensagem" action="#" method="POST">
-                        <textarea class="mensagem" type="text" placeholder="Escreva uma Mensagem..." name="mensagem"></textarea>
+                        <textarea class="mensagem" type="text" placeholder="Escreva uma Mensagem..."
+                            name="mensagem"></textarea>
 
                     </form>
 
@@ -267,4 +280,4 @@ $fotos = ""; //src de fotos enviadas
 
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'page_parts/footer.php'; ?>
