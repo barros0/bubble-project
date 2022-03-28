@@ -116,7 +116,7 @@ $totalc = '400GB';
 
 
 
-    <div class="storage d-flex flex-column col-12 col-lg-6 text-white">
+    <div class="armazenamento d-flex flex-column col-12 col-lg-6 text-white">
         <div class="header d-flex flex-column">
             <div class="d-flex justify-content-between align-items-center mb-1">
                 <h4>Armazenamento</h4>
@@ -124,73 +124,78 @@ $totalc = '400GB';
                             id="total-value"><?php echo($totalc) ?></span>GB</span>
             </div>
             <div class="progress bg-transparent" style="height: 20px;">
-                <!-- system -->
                 <div class="progress-bar bg-transparent" style="width: 20%;" data-bs-toggle="tooltip" title="System">
                     <div class="progress-bar bg-primary bg-gradient bar h-100"></div>
                 </div>
-                <!-- files -->
                 <div class="progress-bar bg-transparent" style="width: 20%;" data-bs-toggle="tooltip" title="Files">
                     <div class="progress-bar bg-warning bg-gradient bar h-100"></div>
                 </div>
-                <!-- images -->
                 <div class="progress-bar bg-transparent" style="width: 11%;" data-bs-toggle="tooltip" title="Images">
                     <div class="progress-bar bg-success bg-gradient bar h-100"></div>
                 </div>
-                <!-- videos -->
                 <div class="progress-bar bg-transparent" style="width: 32%;" data-bs-toggle="tooltip" title="Videos">
                     <div class="progress-bar bg-info bg-gradient bar h-100"></div>
                 </div>
-                <!-- audios -->
                 <div class="progress-bar bg-transparent" style="width: 17%;" data-bs-toggle="tooltip" title="Audios">
                     <div class="progress-bar bg-light bg-gradient bar h-100"></div>
                 </div>
             </div>
         </div>
         <div class="body d-flex flex-column ">
-            <div class="usage-item d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
+            <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
                 <div class="d-flex align-items-center">
-                    <div class="usage-icon bg-primary rounded" style="width: 25px;height: 25px;"></div>
-                    <span class="usage-title fs-5 ms-2">System</span>
+                    <div class="bg-primary rounded" style="width: 25px;height: 25px;"></div>
+                    <span class="item-titulo fs-5 ms-2">System</span>
                 </div>
                 <span class="text-muted">
                     <span id="system-value">5</span>GB
                 </span>
             </div>
 
-            <div class="usage-item d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
+            <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
                 <div class="d-flex align-items-center">
-                    <div class="usage-icon bg-warning rounded" style="width: 25px;height: 25px;"></div>
-                    <span class="usage-title fs-5 ms-2">Files</span>
+                    <div class="bg-warning rounded" style="width: 25px;height: 25px;"></div>
+                    <span class="item-titulo fs-5 ms-2">Ficheiros</span>
                 </div>
                 <span class="text-muted">
                     <span id="files-value">5</span>GB
                 </span>
             </div>
 
-            <div class="usage-item d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
+            <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
                 <div class="d-flex align-items-center">
-                    <div class="usage-icon bg-success rounded" style="width: 25px;height: 25px;"></div>
-                    <span class="usage-title fs-5 ms-2">Images</span>
+                    <div class="bg-success rounded" style="width: 25px;height: 25px;"></div>
+                    <span class="item-titulo fs-5 ms-2">Imagens</span>
                 </div>
                 <span class="text-muted">
                     <span id="images-value">2</span>GB
                 </span>
             </div>
 
-            <div class="usage-item d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
+            <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
                 <div class="d-flex align-items-center">
-                    <div class="usage-icon bg-info rounded" style="width: 25px;height: 25px;"></div>
-                    <span class="usage-title fs-5 ms-2">Videos</span>
+                    <div class="bg-info rounded" style="width: 25px;height: 25px;"></div>
+                    <span class="item-titulo fs-5 ms-2">Videos</span>
                 </div>
                 <span class="text-muted">
                     <span id="videos-value">16</span>GB
                 </span>
             </div>
 
-            <div class="usage-item d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
+            <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
                 <div class="d-flex align-items-center">
-                    <div class="usage-icon bg-light rounded" style="width: 25px;height: 25px;"></div>
-                    <span class="usage-title fs-5 ms-2">Audios</span>
+                    <div class="bg-light rounded" style="width: 25px;height: 25px;"></div>
+                    <span class="item-titulo fs-5 ms-2">Audios</span>
+                </div>
+                <span class="text-muted">
+                    <span id="audios-value">4</span>GB
+                </span>
+            </div>
+
+            <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
+                <div class="d-flex align-items-center">
+                    <div class="bg-dark rounded" style="width: 25px;height: 25px;"></div>
+                    <span class="item-titulo fs-5 ms-2">Outros</span>
                 </div>
                 <span class="text-muted">
                     <span id="audios-value">4</span>GB

@@ -467,8 +467,6 @@ img {
 }
 
 
-
-
 /* stat card */
 
 .stat-card {
@@ -478,7 +476,7 @@ img {
 }
 
 
-.stat-card .text .number{
+.stat-card .text .number {
     font-weight: bold;
     font-family: inherit;
     font-size: 32px;
@@ -498,7 +496,7 @@ img {
     background-color: white;
 }
 
-.stat-card .icon i{
+.stat-card .icon i {
     font-size: 25px;
 }
 
@@ -513,12 +511,12 @@ img {
     border-radius: 0px 0px 10px 10px;
 }
 
-.stat-card .text .desc{
+.stat-card .text .desc {
     color: white;
     width: 100%;
 }
 
-.stat-card .text .line{
+.stat-card .text .line {
     margin: 0px auto 6px;
     width: 55px;
     height: 2px;
@@ -570,11 +568,6 @@ img {
     font-size: 25px;
 }
 
-.storage{
-    background-color: var(--white);
-    border-radius: 10px;
-    padding:20px;
-}
 
 
 .alerts {
@@ -637,7 +630,7 @@ img {
 
 .table-header {
     border: none !important;
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 12px 12px 0px 0px;
     background-color: var(--white);
     padding: 10px;
     margin: 0;
@@ -651,7 +644,7 @@ img {
 .table {
     background-color: var(--white);
     padding: 20px;
-    border-radius: 25px;
+    border-radius: 12px;
     border: none !important;
 }
 
@@ -781,18 +774,24 @@ img {
     transform: scale(0.5);
     opacity: 0;
     position: absolute;
-
-    padding: 10px;
     background-color: var(--white);
     border-radius: 10px;
     border: 1px solid var(--verdeh);
     margin-right: 20px;
     right: 40px;
     min-width: 250px;
+    padding: 20px 12px 20px 12px;
+}
+
+.filter-w .icon {
+    position: absolute;
+    padding: 15px;
 }
 
 .filter-w .filter-line input {
-
+    margin: 10px 6px 10px 6px;
+    border: 1px solid var(--sgrey);
+    padding-left: 25px;
 }
 
 .filter-w .filter-line input::placeholder {
@@ -813,5 +812,17 @@ img {
     opacity: 1;
 }
 
+
+
+
+.armazenamento {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.armazenamento .item-titulo{
+    color: var(--dark);
+}
 
 

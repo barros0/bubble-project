@@ -1,5 +1,28 @@
 <?php
+
+$query = 'select * from users';
+
+if (!empty($_GET['email'])) {
+
+}
+if (!empty($_GET['ordem'])) {
+
+}
+if (!empty($_GET['max_data'])) {
+
+}
+if (!empty($_GET['min_data'])) {
+
+}
+if (!empty($_GET['email'])) {
+
+}
+if (!empty($_GET['email'])) {
+
+}
+
 require_once('./partials/header.php');
+
 ?>
 
     <div class="table-responsive">
