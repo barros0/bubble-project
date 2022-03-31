@@ -254,6 +254,70 @@ $fotos = ""; //src de fotos enviadas
 
                 </div>
 
+                <div class="row-mensagem">
+
+<div class="icone-perfil-row-mensagem">
+
+    <div class="foto-perfil">
+        <img src="img/header/download.png" alt="Foto de Perfil">
+    </div>
+
+</div>
+
+<div class="conteudo-row-mensagem">
+    <span><?php echo $testeMensagem ?></span>
+</div>
+
+</div>
+
+<div class="row-mensagem">
+
+<div class="conteudo-row-mensagem enviada">
+    <span><?php echo $testeMensagem ?></span>
+</div>
+
+<div class="icone-perfil-row-mensagem">
+
+    <div class="foto-perfil">
+        <img src="img/header/download.png" alt="Foto de Perfil">
+    </div>
+
+</div>
+
+</div>
+
+<div class="row-mensagem">
+
+<div class="icone-perfil-row-mensagem">
+
+    <div class="foto-perfil">
+        <img src="img/header/download.png" alt="Foto de Perfil">
+    </div>
+
+</div>
+
+<div class="conteudo-row-mensagem">
+    <span><?php echo $testeMensagem ?></span>
+</div>
+
+</div>
+
+<div class="row-mensagem">
+
+<div class="conteudo-row-mensagem enviada">
+    <span><?php echo $testeMensagem ?></span>
+</div>
+
+<div class="icone-perfil-row-mensagem">
+
+    <div class="foto-perfil">
+        <img src="img/header/download.png" alt="Foto de Perfil">
+    </div>
+
+</div>
+
+</div>  
+
             </div>
 
             <div class="escrever-mensagem">
