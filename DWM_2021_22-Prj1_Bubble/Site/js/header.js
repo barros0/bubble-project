@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     if (a == "none") {
       $(".popup_perfil").slideDown();
+      $(".popup_searchbar").slideUp();
       $(".perfil").css("color", "#00ff8a");
     } else {
       $(".popup_perfil").slideUp();
@@ -22,7 +23,9 @@ $(document).ready(function () {
           });
         },
       });
+
       $(".popup_searchbar").slideDown();
+      $(".popup_perfil").slideUp();
     } else {
       $(".popup_searchbar").slideUp();
     }
