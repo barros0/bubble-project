@@ -5,7 +5,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    user-select: none;
 }
+
 
 body {
     min-height: 100vh;
@@ -15,9 +18,6 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-
-
-
 
 /*===============================================================================================================================================================*/
 /*HOME*/
@@ -307,7 +307,7 @@ input::placeholder {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
-    
+
 }
 
 .footer a {
