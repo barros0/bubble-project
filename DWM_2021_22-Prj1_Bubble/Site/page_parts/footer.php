@@ -10,6 +10,10 @@
 <script src="js/comments.js"></script>
 <script src="js/img_post.js"></script>
 
+<!--faqs-->
+<script src="js/faqs.js"></script>
+
+
 </body>
 
 </html>

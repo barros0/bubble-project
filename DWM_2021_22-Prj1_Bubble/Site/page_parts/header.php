@@ -40,23 +40,30 @@ $admin = ""; //verificar se o utilizador é admin
 
     if ($pagina == 'mensagens.php') {   ?>
 
-    <link rel="stylesheet" href="css/mensagens.css">
+        <link rel="stylesheet" href="css/mensagens.css">
 
     <?php
-    
-    } else if ($pagina == 'feed.php') { 
+
+    } else if ($pagina == 'feed.php') {
         $nomePagina = "Pagina Principal"
-        ?>
+    ?>
 
-    <link rel="stylesheet" href="css/feed.css">
+        <link rel="stylesheet" href="css/feed.css">
 
     <?php
 
-    }else if($pagina == 'eventos.php'){ 
-    
+    } else if ($pagina == 'eventos.php') {
+
     ?>
-    <link rel="stylesheet" href="css/eventos.css">
-    <?php } 
+        <link rel="stylesheet" href="css/eventos.css">
+
+    <?php
+
+    } else if ($pagina == 'faqs.php') {
+
+    ?>
+        <link rel="stylesheet" href="css/faqs.css">
+    <?php }
     ?>
 
     <!--Mudar o título da página-->
@@ -88,8 +95,7 @@ $admin = ""; //verificar se o utilizador é admin
                 <div class="wrapper_searchbar">
                     <form class="form_searchbar" method="POST" action="index.php">
                         <div class="div_input_searchbar">
-                            <input type="text" class="input_searchbar" placeholder="Search here..." name="keyword"
-                                required="required" value="" />
+                            <input type="text" class="input_searchbar" placeholder="Search here..." name="keyword" required="required" value="" />
                             <span class="input_search_group_btn">
                                 <button class="button_searchbar" name="search"><i class='bx bx-search'></i></button>
                             </span>
@@ -99,32 +105,30 @@ $admin = ""; //verificar se o utilizador é admin
             </div>
             <div class="modal_make_post">
                 <div class="make_post">
-            <div class="header_post">
-                <div class="circles one"></div>
-                <div class="circles two"></div>
-                <div class="circles three"></div>
-            </div>
-            <form method="POST" id="post">
-                <div class="textarea">
-                    <textarea maxlength="255" name="textarea" id="textarea"
-                        placeholder="O que estás a programar?"></textarea>
-                </div>
-                <div class="img_post">
-                    <img id="img_post" src="#" alt="photo_post">
-                    <i id="cancel_btn" class='bx bx-x'></i>
-                </div>
-                <div class="buttons_post">
-                    <div class="upload_img" onchange="previewFile()">
-                        <button class="upload_btn"><i class='bx bx-plus'></i></button>
-                        <input id="input_file" type="file" accept="image/png,image/jpeg,image/bmp,image/gif"
-                            name="myfile">
+                    <div class="header_post">
+                        <div class="circles one"></div>
+                        <div class="circles two"></div>
+                        <div class="circles three"></div>
                     </div>
-                    <div class="post_button">
-                        <button id="post_btn" type="submit" name="post">Publicar</button>
-                    </div>
+                    <form method="POST" id="post">
+                        <div class="textarea">
+                            <textarea maxlength="255" name="textarea" id="textarea" placeholder="O que estás a programar?"></textarea>
+                        </div>
+                        <div class="img_post">
+                            <img id="img_post" src="#" alt="photo_post">
+                            <i id="cancel_btn" class='bx bx-x'></i>
+                        </div>
+                        <div class="buttons_post">
+                            <div class="upload_img" onchange="previewFile()">
+                                <button class="upload_btn"><i class='bx bx-plus'></i></button>
+                                <input id="input_file" type="file" accept="image/png,image/jpeg,image/bmp,image/gif" name="myfile">
+                            </div>
+                            <div class="post_button">
+                                <button id="post_btn" type="submit" name="post">Publicar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
             </div>
             <div class="popup_perfil">
                 <ul>
@@ -148,6 +152,4 @@ $admin = ""; //verificar se o utilizador é admin
 
 
     <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar
-        como o fazer clicando <a
-            href="https://support.microsoft.com/pt-pt/office/ativar-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361"
-            target="_blank">aqui</a> </noscript>
+        como o fazer clicando <a href="https://support.microsoft.com/pt-pt/office/ativar-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361" target="_blank">aqui</a> </noscript>

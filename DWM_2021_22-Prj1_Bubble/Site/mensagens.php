@@ -4,6 +4,8 @@ include 'page_parts/header.php';
 
 //buscar detalhes na base de dados
 
+//provavelmente esta parte vai ser em arrays
+
 $idMensagem = ""; //id da mensagem
 $nomePessoa = "Joãozinho Mineiro"; //nome do destinatario
 $mensagem = "Olá, estou agora a chegar à Guilt..."; //mensagens enviadas
