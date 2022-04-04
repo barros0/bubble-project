@@ -63,6 +63,7 @@ $admin = ""; //verificar se o utilizador é admin
 
     ?>
         <link rel="stylesheet" href="css/faqs.css">
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
     <?php }
     ?>
 

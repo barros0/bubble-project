@@ -11,7 +11,7 @@
 <script src="js/img_post.js"></script>
 
 <!--faqs-->
-<script src="js/faqs.js"></script>
+<script src="css/bootstrap/js/bootstrap.js"></script>
 
 
 </body>
