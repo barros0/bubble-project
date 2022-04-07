@@ -55,6 +55,16 @@
         </div>
     </div>
     <div class="right">
+        <div class="evento">
+            <div class="evento_img">
+                <img src="img/eventos/lisboa.jpg" alt="evento">
+                <div class="evento_info">
+                    <h2>Nome do Evento</h2>
+                    <p>lorem aweefijawf awfawje awefoanwefoawefoawef awefkjawnef wjjfj jfjj</p>
+                    <a href="">Saber Mais</a>
+                </div>
+            </div>
+        </div>
         <!-- <div class="weather">
             <div class="weather_loca">
                 <h2><span id="location"></span>, <span id="tempo"></span></h2>

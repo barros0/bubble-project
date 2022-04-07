@@ -63,7 +63,7 @@ body {
 .post {
   margin-top: 30px;
   color: white;
-  width: 80%;
+  width: 85%;
   background-color: #404040;
   border-radius: 15px;
 }
@@ -382,6 +382,30 @@ textarea:focus {
 
 #post_btn_responsive:hover {
   background-color: #00d372
+}
+
+.evento {
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.evento_img img {
+  border-radius: 10px;
+  width: 40%;
+}
+
+.evento_img {
+  display: flex;
+  flex-direction: row;
+}
+
+.evento_info {
+  color: white;
+  padding: 0 10px 10px;
+}
+
+.evento_info h2 {
+  padding-bottom: 10px;
 }
 
 @media (max-width:1200px) {
