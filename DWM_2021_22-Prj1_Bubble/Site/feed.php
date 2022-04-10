@@ -59,11 +59,13 @@
             <div class="evento_img">
                 <img src="img/eventos/lisboa.jpg" alt="evento">
                 <div class="evento_info">
-                    <h2>Nome do Evento</h2>
-                    <p>lorem aweefijawf awfawje awefoanwefoawefoawef awefkjawnef wjjfj jfjj</p>
+                    <h2>Lisboa Games Week</h2>
                     <a href="">Saber Mais</a>
                 </div>
             </div>
+        </div>
+        <div class="create_post_button">
+
         </div>
         <!-- <div class="weather">
             <div class="weather_loca">

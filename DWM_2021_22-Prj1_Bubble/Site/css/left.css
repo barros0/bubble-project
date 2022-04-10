@@ -4,6 +4,7 @@
 }
 
 .left ul {
+    height: 100%;
     margin-top: 20px;
     position: fixed;
     width: 20%;
