@@ -391,12 +391,14 @@ textarea:focus {
 
 .evento_img img {
   border-radius: 10px;
-  width: 40%;
+  width: 30%;
 }
 
 .evento_img {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .evento_info {
