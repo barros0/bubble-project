@@ -1,0 +1,42 @@
+Relatório de pacote
+
+-----------------------------------------------------------------------------
+Documento:
+Nome: logo.ai
+Modo de cor: Cor RGB
+Perfil de cor: Adobe RGB (1998)
+Unidades da régua: pixels
+Dimensões da prancheta: 2000 px x 2000 px
+Mostrar imagens no modo de contorno: DESATIVADO
+Realçar fontes substituídas: DESATIVADO
+Realçar glifos substituídos: DESATIVADO
+Preservar capacidade de edição do texto
+Simular papel colorido: DESATIVADO
+
+-----------------------------------------------------------------------------
+Objetos de cor especial:
+
+-----------------------------------------------------------------------------
+Fontes ausentes:NENHUM
+
+-----------------------------------------------------------------------------
+Fontes protegidas que não foram empacotadas:
+Bungee Regular (Fontes da Adobe)
+
+-----------------------------------------------------------------------------
+Fontes:
+Bubbles Regular (OTF)
+Montserrat Bold (TrueType)
+Montserrat Medium (TrueType)
+
+-----------------------------------------------------------------------------
+Fontes incorporadas:
+NENHUM
+
+-----------------------------------------------------------------------------
+Vínculos ausentes:
+NENHUM
+
+-----------------------------------------------------------------------------
+Imagens vinculadas:
+NENHUM
