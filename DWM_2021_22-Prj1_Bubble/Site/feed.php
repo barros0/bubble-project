@@ -55,6 +55,7 @@
         </div>
     </div>
     <div class="right">
+        <div class="right_fixed">
         <div class="evento">
             <div class="evento_img">
                 <img src="img/eventos/lisboa.jpg" alt="evento">
@@ -64,15 +65,16 @@
                 </div>
             </div>
             <div class="evento_img">
-                <img src="img/eventos/lisboa.jpg" alt="evento">
+                <img src="img/eventos/google.png" alt="evento">
                 <div class="evento_info">
-                    <h2>Lisboa Games Week</h2>
+                    <h2>Google Gaz</h2>
                     <a href="">Saber Mais</a>
                 </div>
             </div>
         </div>
         <div class="create_post_button">
-
+            <h3>Cria O Teu Post</h3>
+        </div>
         </div>
         <!-- <div class="weather">
             <div class="weather_loca">
