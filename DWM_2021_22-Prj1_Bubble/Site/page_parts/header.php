@@ -38,12 +38,12 @@ $admin = ""; //verificar se o utilizador é admin
 
     <?php
 
-    if ($pagina == 'mensagens.php') {   ?>
+    if ($pagina == 'mensagens.php') {  
+    ?>
 
         <link rel="stylesheet" href="css/mensagens.css">
 
     <?php
-
     } else if ($pagina == 'feed.php') {
         $nomePagina = "Pagina Principal"
     ?>
@@ -51,19 +51,24 @@ $admin = ""; //verificar se o utilizador é admin
         <link rel="stylesheet" href="css/feed.css">
 
     <?php
-
     } else if ($pagina == 'eventos.php') {
-
     ?>
         <link rel="stylesheet" href="css/eventos.css">
 
     <?php
-
     } else if ($pagina == 'faqs.php') {
-
     ?>
         <link rel="stylesheet" href="css/faqs.css">
         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+
+
+    <?php
+
+    } else if ($pagina == 'marketplace.php') {
+
+    ?>
+        <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/anaStyles.css">
     <?php }
     ?>
 
