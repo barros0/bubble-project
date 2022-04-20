@@ -56,25 +56,41 @@
     </div>
     <div class="right">
         <div class="right_fixed">
-        <div class="evento">
-            <div class="evento_img">
-                <img src="img/eventos/lisboa.jpg" alt="evento">
-                <div class="evento_info">
-                    <h2>Lisboa Games Week</h2>
-                    <a href="">Saber Mais</a>
+            <div class="evento">
+                <div class="evento_img">
+                    <img src="img/eventos/lisboa.jpg" alt="evento">
+                    <div class="evento_info">
+                        <h2>Lisboa Games Week</h2>
+                        <a href="">Saber Mais</a>
+                    </div>
+                </div>
+                <div class="evento_img">
+                    <img src="img/eventos/google.png" alt="evento">
+                    <div class="evento_info">
+                        <h2>Google Gaz</h2>
+                        <a href="">Saber Mais</a>
+                    </div>
                 </div>
             </div>
-            <div class="evento_img">
-                <img src="img/eventos/google.png" alt="evento">
-                <div class="evento_info">
-                    <h2>Google Gaz</h2>
-                    <a href="">Saber Mais</a>
-                </div>
+            <div class="create_post_button">
+                <h3>Cria O Teu Post</h3>
             </div>
-        </div>
-        <div class="create_post_button">
-            <h3>Cria O Teu Post</h3>
-        </div>
+            <div class="amigos">
+                <ul>
+                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png"
+                                alt="fotoperfil">Joãozinho Mineiro</a>
+                    </li>
+                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png"
+                                alt="fotoperfil">Joãozinho Mineiro</a>
+                    </li>
+                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png"
+                                alt="fotoperfil">Joãozinho Mineiro</a>
+                    </li>
+                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png"
+                                alt="fotoperfil">Joãozinho Mineiro</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- <div class="weather">
             <div class="weather_loca">
