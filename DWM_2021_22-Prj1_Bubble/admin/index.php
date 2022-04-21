@@ -1,127 +1,56 @@
 <?php
 include('./partials/header.php');
-/*
 
-$free = disk_free_space(".");
-$total = disk_total_space(".");
-
-$si_prefix = array('B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB');
-$base = 1024;
-
-$class_free = min((int)log($free, $base), count($si_prefix) - 1);
-$class_total = min((int)log($total, $base), count($si_prefix) - 1);
-
-$freec = sprintf('%1.2f', $free / pow($base, $class_free)) . ' ' . $si_prefix[$class_free];
-$totalc = sprintf('%1.2f', $total / pow($base, $class_total)) . ' ' . $si_prefix[$class_total];
-
-
-$sp = '<br>' . ($total - $free) / $total * 100;
-
-function folderSize($dir){
-    $count_size = 0;
-    $count = 0;
-    $dir_array = scandir($dir);
-    foreach($dir_array as $key=>$filename){
-        if($filename!=".." && $filename!="."){
-            if(is_dir($dir."/".$filename)){
-                $new_foldersize = foldersize($dir."/".$filename);
-                $count_size = $count_size+ $new_foldersize;
-            }else if(is_file($dir."/".$filename)){
-                $count_size = $count_size + filesize($dir."/".$filename);
-                $count++;
-            }
-        }
-    }
-    return $count_size;
-}
-$imagens_size = folderSize('public/images');
-$videos_size = folderSize('public/images');
-$files_size = folderSize('public/images');
-*/
-$freec = '200GB';
-$totalc = '400GB';
 ?>
 
-
-    <div class="welcome">
-
-        <div class="flex align-items-center">
-            <img class="user-pic" src="https://thispersondoesnotexist.com/image" alt="">
-            <p class="text-welcome">Bom dia Joana Castanheira!</p>
-
+    <div class="title-page s-container">
+        <h1>Dashboard</h1>
+    </div>
+    <main class="container">
+        <div class="row">
+            <h2>Bem vindo, User Name</h2>
         </div>
 
+    <div class="row">
+<div class="flex flex-wrap col-6">
+    <div class="mini-card">
+        <div>
+            <i class="fa fa-user icon"></i>
+            <span class="dots"></span>
+        </div>
+
+        <h2 class="titulo">Users</h2>
+        <span class="valor">3.225</span>
     </div>
 
+    <div class="mini-card">
+        <div>
+            <i class="fa fa-user icon"></i>
+            <span class="dots"></span>
+        </div>
 
+        <h2 class="titulo">Users</h2>
+        <span class="valor">3.225</span>
     </div>
 
-<div class="row ">
-
-
-    <dix class="d-flex flex-wrap col-12 col-lg-6 ">
-        <div class="stat-card">
-            <div class="icon">
-                <i class="fa fa-user"></i>
-            </div>
-
-            <div class="text">
-                <div>
-                    <h2 class="number">100</h2>
-                    <div class="line"></div>
-                    <p class="desc">Users</p>
-                </div>
-            </div>
+    <div class="mini-card">
+        <div>
+            <i class="fa fa-user icon"></i>
+            <span class="dots"></span>
         </div>
 
-        <div class="stat-card">
-            <div class="icon">
-                <i class="fa fa-user"></i>
-            </div>
-
-            <div class="text">
-                <div>
-                    <h2 class="number">100</h2>
-                    <p class="desc">Users</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="stat-card">
-            <div class="icon">
-                <i class="fa fa-user"></i>
-            </div>
-
-            <div class="text">
-                <div>
-                    <h2 class="number">100</h2>
-                    <p class="desc">Users</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="stat-card">
-            <div class="icon">
-                <i class="fa fa-user"></i>
-            </div>
-
-            <div class="text">
-                <div>
-                    <h2 class="number">100</h2>
-                    <p class="desc">Users</p>
-                </div>
-            </div>
-        </div>
-    </dix>
-
+        <h2 class="titulo">Users</h2>
+        <span class="valor">3.225</span>
+    </div>
+</div>
 
 
     <div class="armazenamento d-flex flex-column col-12 col-lg-6 text-white">
         <div class="header d-flex flex-column">
             <div class="d-flex justify-content-between align-items-center mb-1">
                 <h4>Armazenamento</h4>
-                <span class="text-muted" style="font-size: 1rem;">  <?php echo($freec) ?> livres de <span
-                            id="total-value"><?php echo($totalc) ?></span>GB</span>
+                <span class="text-swhite" style="font-size: 1rem;"> 4 livres de <span
+                            id="total-value">3</span>GB</span>
             </div>
             <div class="progress bg-transparent" style="height: 20px;">
                 <div class="progress-bar bg-transparent" style="width: 20%;" data-bs-toggle="tooltip" title="System">
@@ -147,7 +76,7 @@ $totalc = '400GB';
                     <div class="bg-primary rounded" style="width: 25px;height: 25px;"></div>
                     <span class="item-titulo fs-5 ms-2">System</span>
                 </div>
-                <span class="text-muted">
+                <span class="text-swhite">
                     <span id="system-value">5</span>GB
                 </span>
             </div>
@@ -157,7 +86,7 @@ $totalc = '400GB';
                     <div class="bg-warning rounded" style="width: 25px;height: 25px;"></div>
                     <span class="item-titulo fs-5 ms-2">Ficheiros</span>
                 </div>
-                <span class="text-muted">
+                <span class="text-swhite">
                     <span id="files-value">5</span>GB
                 </span>
             </div>
@@ -167,7 +96,7 @@ $totalc = '400GB';
                     <div class="bg-success rounded" style="width: 25px;height: 25px;"></div>
                     <span class="item-titulo fs-5 ms-2">Imagens</span>
                 </div>
-                <span class="text-muted">
+                <span class="text-swhite">
                     <span id="images-value">2</span>GB
                 </span>
             </div>
@@ -177,7 +106,7 @@ $totalc = '400GB';
                     <div class="bg-info rounded" style="width: 25px;height: 25px;"></div>
                     <span class="item-titulo fs-5 ms-2">Videos</span>
                 </div>
-                <span class="text-muted">
+                <span class="text-swhite">
                     <span id="videos-value">16</span>GB
                 </span>
             </div>
@@ -187,7 +116,7 @@ $totalc = '400GB';
                     <div class="bg-light rounded" style="width: 25px;height: 25px;"></div>
                     <span class="item-titulo fs-5 ms-2">Audios</span>
                 </div>
-                <span class="text-muted">
+                <span class="text-swhite">
                     <span id="audios-value">4</span>GB
                 </span>
             </div>
@@ -197,157 +126,60 @@ $totalc = '400GB';
                     <div class="bg-dark rounded" style="width: 25px;height: 25px;"></div>
                     <span class="item-titulo fs-5 ms-2">Outros</span>
                 </div>
-                <span class="text-muted">
+                <span class="text-swhite">
                     <span id="audios-value">4</span>GB
                 </span>
             </div>
         </div>
     </div>
-
-
-
-</div>
-    <div class="small-card">
-        <i class="fa fa-pen"></i>
-    </div>
-
-    <div class="mini-card">
-
-
-        <label  class="switch">
-            <input type="checkbox" checked>
-            <span class="slider round"></span>
-        </label>
     </div>
 
 
 
-    <div class="row">
+        <div class="row ">
 
 
-
-
-        <div class="stats-br">
-            <div class="counter">
-                <i class="fa fa-coffee fa-2x icon"></i>
-                <h2 class="number">999</h2>
-                <div class="line"></div>
-                <p class="stats-text">Utilizadores</p>
+            <div class="card">
+                <p>sdsd</p>
+                <a href="#">
+                <span class="dots"></span>
+                </a>
             </div>
-        </div>
 
-        <div class="stats-bar col-8">
-            <a href="#" class="info text-decoration-none">
-            <span class="icon">
-                <i class="fa fa-user"></i>
-            </span>
 
-                <span class="numero">
-                    30
-                </span>
 
-                <div class="legenda">
-                    <h3>Utilizadores</h3>
-                </div>
-            </a>
-
-            <a href="#" class="info text-decoration-none">
-            <span class="icon">
-                <i class="fa fa-user"></i>
-            </span>
-
-                <span class="numero">
-                    30
-                </span>
-
-                <div class="legenda">
-                    <h3>Utilizadores</h3>
-                </div>
-            </a>
-
-            <a href="#" class="info text-decoration-none">
-            <span class="icon">
-                <i class="fa fa-user"></i>
-            </span>
-
-                <span class="numero">
-                    30
-                </span>
-
-                <div class="legenda">
-                    <h3>Utilizadores</h3>
-                </div>
-            </a>
-
-            <a href="#" class="info text-decoration-none">
-            <span class="icon">
-                <i class="fa fa-user"></i>
-            </span>
-
-                <span class="numero">
-                    30
-                </span>
-
-                <div class="legenda">
-                    <h3>Utilizadores</h3>
-                </div>
-            </a>
-
-            <a href="#" class="info text-decoration-none">
-            <span class="icon">
-                <i class="fa fa-user"></i>
-            </span>
-
-                <span class="numero">
-                    30
-                </span>
-
-                <div class="legenda">
-                    <h3>Utilizadores</h3>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-4">
-            <h3>Alertas</h3>
-
-            <div class="alerts">
-
-                <div class="alert error">
-                    <div class="icon">
-                        <i class="fa fa-warning"></i>
-                    </div>
-
-                    <span class="info">
-                   Denuncia feita por <a href="#">@jjoao23</a>
-                </span>
-                </div>
-
-                <div class="alert warning">
-                    <div class="icon">
-                        <i class="fa-solid fa-circle-exclamation"></i>
-                    </div>
-
-                    <span class="info">
-                   Conta bloqueada de <a href="#">@jjoao23</a>
-                </span>
-                </div>
-
-                <div class="alert sucess">
-                    <div class="icon">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-
-                    <span class="info">
-                   Conta verificada por <a href="#">@jjoao23</a>
-                </span>
-                </div>
-
+            <div class="title-table">
+                <h2>Reports</h2>
             </div>
+            <table>
+                <thead>
+                <tr>
+                    <th>header1</th>
+                    <th>header2</th>
+                    <th>header3</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>text1.1</td>
+                    <td>text1.2</td>
+                    <td>text1.3</td>
+                </tr>
+                <tr>
+                    <td>text2.1</td>
+                    <td>text2.2</td>
+                    <td>text2.3</td>
+                </tr>
+                <tr>
+                    <td>text3.1</td>
+                    <td>text3.2</td>
+                    <td>text3.3</td>
+                </tr>
+                <tr>
+                </tr>
+                </tbody>
+            </table>
         </div>
-
-
-    </div>
 
 
 <?php
