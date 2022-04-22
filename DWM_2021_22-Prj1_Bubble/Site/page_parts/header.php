@@ -29,8 +29,10 @@ $admin = ""; //verificar se o utilizador é admin
     <!--FavIcon-->
     <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
     <!--CSS Geral-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/left.css">
+
     <!--<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">-->
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>

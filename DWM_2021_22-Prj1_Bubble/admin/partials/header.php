@@ -46,19 +46,22 @@
                 <a href="#"><i class="fa fa-box icon"></i> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-box icon"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-users icon"></i> Utilizadores</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-box icon"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-pen icon"></i> Publicações</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-box icon"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-warning icon"></i> Reports</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-box icon"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-message icon"></i> Mensagens</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-box icon"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-industry icon"></i> Empregos</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-water icon"></i> Eventos</a>
             </li>
         </ul>
     </div>
