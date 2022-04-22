@@ -8,7 +8,7 @@ include 'page_parts/header.php';
 
 $idMensagem = ""; //id da mensagem
 $nomePessoa = "Joãozinho Mineiro"; //nome do destinatario
-$mensagem = "Olá, estou agora a chegar à Guilt..."; //mensagens enviadas
+$mensagem = "Olá, estou agora a chegar à Guilt..."; //mensagens enviadas, sob forma de excerto
 $dataMensagem = ""; //data do envio da mensagem
 
 $testeMensagem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
