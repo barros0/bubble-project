@@ -29,7 +29,7 @@ $admin = ""; //verificar se o utilizador é admin
     <!--FavIcon-->
     <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
     <!--CSS Geral-->
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/left.css">
 
