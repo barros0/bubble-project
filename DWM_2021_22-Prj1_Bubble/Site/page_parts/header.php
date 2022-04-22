@@ -30,6 +30,7 @@ $admin = ""; //verificar se o utilizador é admin
     <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
     <!--CSS Geral-->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/left.css">
 

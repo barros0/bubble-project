@@ -1,15 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    scroll-behavior: smooth;
-    user-select: none;
-}
-  
-body {
-    background-color: #1c1c1c;
-}
 
 .light-gray {
     background-color: #333333;
