@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="create_post_button">
-                <h3>Cria O Teu Post</h3>
+                <h5>Cria O Teu Post</h5>
             </div>
             <div class="amigos">
                 <ul>
