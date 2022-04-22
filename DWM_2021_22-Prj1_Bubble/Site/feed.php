@@ -92,15 +92,6 @@
                 </ul>
             </div>
         </div>
-        <!-- <div class="weather">
-            <div class="weather_loca">
-                <h2><span id="location"></span>, <span id="tempo"></span></h2>
-                <div class="weather_info">
-                    <img id="icon" src="#" alt="icon">
-                    <h4><span id="graus"></span><span>º</span>C</h4>
-                </div>
-            </div>
-        </div>-->
         <!--<div class="make_post">
             <div class="header_post">
                 <div class="circles one"></div>
