@@ -127,12 +127,6 @@ body {
     width: 0px;
 }
 
-@media (max-width:1200px) {
-    .left {
-        display: none;
-    }
-}
-
 header i {
     font-size: 22px;
     width: 70px;
@@ -195,4 +189,10 @@ li.navbar_li:hover:after {
     padding: 2px;
     background-color: #00ff8a;
     border-radius: 100%;
+}
+
+@media (max-width:900px) {
+    .left {
+        display: none;
+    }
 }

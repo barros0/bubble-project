@@ -438,11 +438,11 @@ textarea:focus {
 
 @media (max-width:1200px) {
   .center {
-    width: 90%;
+    width: 75%;
   }
 
   .right {
-    width: 40%;
+    display: none;
   }
 
   .post {
@@ -455,35 +455,10 @@ textarea:focus {
     width: 100%;
   }
 
-  .right {
-    display: none;
-  }
-
   .make_post_responsive {
     display: block;
   }
-
-  .post {
-    width: 70%;
-  }
-}
-
-@media (max-width:700px) {
-  .make_post_responsive {
-    width: 85%;
-  }
-
-  .post {
-    width: 85%;
-  }
-}
-
-@media (max-width:700px) {
-  .make_post_responsive {
-    width: 90%;
-  }
-
-  .post {
-    width: 90%;
+  .left{
+    display: none;
   }
 }
