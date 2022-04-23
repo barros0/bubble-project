@@ -74,9 +74,11 @@ nav, header {
   height: 70px;
 
 }
-
+.logo_header{
+  width: 25%;
+}
 .icon_perfil {
-  width: auto;
+  width: 25%;
   margin-right: 15px;
 }
 
@@ -116,11 +118,10 @@ nav, header {
   border-radius: 15px;
   margin: 10px;
   display: none;
-  float: right;
   right: 0;
+  top: 68px;
+  z-index: 100;
   position: absolute;
-  text-decoration: none;
-  width: auto;
 }
 
 .popup_perfil a {
@@ -222,7 +223,7 @@ nav, header {
   height: 300px;
   display: none;
   flex-direction: column;
-  top: 70px;
+  top: 68px;
   align-items: center;
 }
 
@@ -284,7 +285,8 @@ input.input_searchbar {
   justify-content: space-between;
   align-items: center;
 }
-.recent_pesquisa i,.recent_pesquisa p{
+
+.recent_pesquisa i, .recent_pesquisa p {
   cursor: pointer;
 }
 
@@ -294,7 +296,7 @@ input.input_searchbar {
   display: none;
   height: 300px;
   flex-direction: column;
-  top: 70px;
+  top: 68px;
   align-items: center;
 
 }
