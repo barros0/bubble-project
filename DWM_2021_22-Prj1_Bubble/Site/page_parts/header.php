@@ -109,6 +109,15 @@ $admin = ""; //verificar se o utilizador é admin
                             </span>
                         </div>
                     </form>
+                    <div class="barra"></div>
+                    <div class="recent_pesquisa">
+                        <p>JavaScript</p>
+                        <i class='bx bx-x'></i>
+                    </div>
+                    <div class="recent_pesquisa">
+                        <p>HTML forms</p>
+                        <i class='bx bx-x'></i>
+                    </div>
                 </div>
             </div>
             <div class="modal_make_post">

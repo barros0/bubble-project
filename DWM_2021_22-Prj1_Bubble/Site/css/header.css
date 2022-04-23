@@ -229,30 +229,19 @@ nav, header {
 .wrapper_searchbar {
   box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
   display: flex;
-  height: 80px;
   width: 50%;
-  padding: 15px;
   background-color: #333333;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
-.pop_search {
-  padding: 10px;
-  height: 50px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  border: none;
-  outline: none;
-  height: 50px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
+.wrapper_searchbar form {
+  width: 100%;
 }
 
-.wrapper_searchbar i {
+.wrapper_searchbar i.bx-search {
   padding: 8px;
   color: #bdbdbd;
   font-size: 30px;
@@ -272,10 +261,31 @@ nav, header {
 
 input.input_searchbar {
   outline: none;
+  background-color: #404040;
+  color: white;
   border: 0;
   padding: 10px;
+  width: 100%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+
+.barra {
+  width: 100%;
+  background-color: #404040;
+  height: 2px;
+  margin-top: 15px;
+}
+
+.recent_pesquisa {
+  display: flex;
+  margin: 15px 0 0;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+.recent_pesquisa i,.recent_pesquisa p{
+  cursor: pointer;
 }
 
 .modal_make_post {
