@@ -1,0 +1,103 @@
+CREATE TABLE users (
+id_user int NOT NULL PRIMARY KEY AUTO_INCREMENT, nome varchar(255), username varchar(30) UNIQUE, email varchar(255) UNIQUE, password varchar(255), banner_image varchar(255), profile_image varchar(255),
+nacionalidade varchar(255), tipo int, estado int, género varchar(10), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+CREATE TABLE seguir (
+id_seguir int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_seguidor int, id_utilizador int UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+CREATE TABLE publicacoes (
+publicação_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_id int, conteudo int, estado int,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+CREATE TABLE publicacoes_fotos (
+publicação__foto_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    publicação_id int, caminho varchar(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+CREATE TABLE publicacoes_fav (
+id_pub_fav int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_pub int, id_user int,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+CREATE TABLE comentarios (
+comentário_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_id int, comentário text, resposta_id  int, estado int,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+
+CREATE TABLE gostos (
+gosto_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_id int, publicação_id int, gosto boolean, estado int,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+CREATE TABLE empresas (
+id_empresa int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_id int, id_user int, categoria varchar(255), nome varchar(255),
+    site varchar(255), descricao text, imagem_perfil varchar(255), imagem_fundo varchar(255), estado int,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+CREATE TABLE oferta_emprego (
+id_oferta int NOT NULL PRIMARY KEY AUTO_INCREMENT, titulo varchar(255),
+    requisitos text, vagas int, categoria varchar(255), descrição text,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+
+CREATE TABLE notificacoes (
+id_notificacao int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    id_utilizador int, vagas int, tipo int,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+
+CREATE TABLE marketplace (
+id_produto int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    titulo varchar(255), categoria varchar(255), preco decimal, imagem varchar(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+
+CREATE TABLE historico_pesquisa (
+id_historico int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    id_utilizador int, pesquisa varchar(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+CREATE TABLE faqs (
+id_faq int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    resposta varchar(255), pergunta varchar(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+CREATE TABLE eventos (
+id_evento int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    link varchar(255), imagem varchar(255), descrição varchar(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+CREATE TABLE mensagens (
+id_mensagem int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    from_id_user int, to_id_user int, mensagem text, estado int,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
