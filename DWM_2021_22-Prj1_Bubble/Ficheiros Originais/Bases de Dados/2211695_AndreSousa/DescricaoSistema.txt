@@ -1,0 +1,1 @@
+o projeto Bubble consiste numa rede social que pretende conectar utilizadores da área da programação, permitindo diversas interações entre os mesmos através de mensagens, comentários e publicações, como a maioria das redes sociais.
