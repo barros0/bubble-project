@@ -15,7 +15,6 @@
 .center {
   display: flex;
   width: 50%;
-  margin-top: 68px;
   flex-direction: column;
   align-items: center;
 }
@@ -458,7 +457,8 @@ textarea:focus {
   .make_post_responsive {
     display: block;
   }
-  .left{
+
+  .left {
     display: none;
   }
 }

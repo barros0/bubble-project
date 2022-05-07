@@ -67,7 +67,7 @@ $admin = ""; //verificar se o utilizador é admin
     ?>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/anaStyles.css">
-    
+
     <?php }
     ?>
 
@@ -77,9 +77,9 @@ $admin = ""; //verificar se o utilizador é admin
 </head>
 
 <body>
-    <div class="container-fluid fixed-top">
+    <div id="nav_bar_computer" class="container-fluid fixed-top">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
-            <a href=""
+            <a href="feed.php"
                 class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none logo_header">
                 <img class="logo" src="img/header/logo_bubble.svg" alt="logo">
             </a>
@@ -164,11 +164,21 @@ $admin = ""; //verificar se o utilizador é admin
         </ul>
     </div>
 
-    </nav>
-
-    </header>
-
-
+    <div id="nav_bar_responsive">
+        <header class="">
+            <div class="logo_responsive">
+            <a href="">
+                <img class="logo" src="img/header/logo_bubble.svg" alt="logo">
+            </a>
+            </div>
+            <div class="user_responsive">
+            <div class="wrap_user">
+                <img id="user_img_responsive" src="img/header/download.png" width="50" alt="logo">
+                <span id="user_name_responsive">Joazinho Mineiro</span>
+            </div>
+            </div>
+        </header>
+    </div>
 
     <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar
         como o fazer clicando <a
