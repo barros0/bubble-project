@@ -462,3 +462,9 @@ textarea:focus {
     display: none;
   }
 }
+
+@media (max-width:880px) {
+  .center {
+    margin-top: 80px;
+  }
+}

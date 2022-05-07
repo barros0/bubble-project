@@ -465,6 +465,7 @@ textarea:focus {
 }
 
 #nav_bar_responsive header {
+  position: fixed;
   background-color: #333333;
   width: 100%;
   display: flex;
@@ -481,6 +482,7 @@ textarea:focus {
 
 .logo_responsive a {
   padding-left: 10px;
+  width: 10%;
 }
 
 .user_responsive {
