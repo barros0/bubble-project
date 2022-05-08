@@ -462,7 +462,7 @@ textarea:focus {
   width: 100%;
 }
 
-#nav_bar_responsive header {
+#nav_bar_responsive header, #nav_bar_bottom_responsive header{
   background-color: #333333;
   display: flex;
   flex-direction: row;
@@ -505,6 +505,13 @@ textarea:focus {
   margin-right: 10px;
 }
 
+#nav_bar_bottom_responsive {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 @media (max-width:880px) {
   #nav_bar_computer {
     display: none;
@@ -514,7 +521,7 @@ textarea:focus {
     margin-top: 0;
   }
 
-  #nav_bar_responsive {
+  #nav_bar_responsive, #nav_bar_bottom_responsive {
     display: block;
   }
 }

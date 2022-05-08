@@ -167,15 +167,24 @@ $admin = ""; //verificar se o utilizador é admin
     <div id="nav_bar_responsive">
         <header class="">
             <div class="logo_responsive">
-            <a href="">
-                <img class="logo" src="img/header/logo_bubble.svg" alt="logo">
-            </a>
+                <a href="">
+                    <img class="logo" src="img/header/logo_bubble.svg" alt="logo">
+                </a>
             </div>
             <div class="user_responsive">
-            <div class="wrap_user">
-                <img id="user_img_responsive" src="img/header/download.png" width="50" alt="logo">
-                <span id="user_name_responsive">Joazinho Mineiro</span>
+                <div class="wrap_user">
+                    <img id="user_img_responsive" src="img/header/download.png" width="50" alt="logo">
+                    <span id="user_name_responsive">Joazinho Mineiro</span>
+                </div>
             </div>
+        </header>
+    </div>
+    <div id="nav_bar_bottom_responsive">
+        <header class="">
+            <div class="list">
+                <ul>
+                    <li><a href="">dwawdadwawadwda</a></li>
+                </ul>
             </div>
         </header>
     </div>
@@ -183,4 +192,5 @@ $admin = ""; //verificar se o utilizador é admin
     <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar
         como o fazer clicando <a
             href="https://support.microsoft.com/pt-pt/office/ativar-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361"
-            target="_blank">aqui</a> </noscript>
+            target="_blank">aqui</a>
+    </noscript>
