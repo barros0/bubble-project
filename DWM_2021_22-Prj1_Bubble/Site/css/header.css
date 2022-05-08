@@ -454,20 +454,16 @@ textarea:focus {
   background-color: #00d372
 }
 
-@media (max-width:880px) {
-  #nav_bar_computer {
-    display: none;
-  }
+/*NAV BAR RESPONSIVE*/
 
-  .center {
-    margin-top: 0;
-  }
+#nav_bar_responsive {
+  display: none;
+  position: fixed;
+  width: 100%;
 }
 
 #nav_bar_responsive header {
-  position: fixed;
   background-color: #333333;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -507,4 +503,18 @@ textarea:focus {
   color: #bdbdbd;
   font-size: 17px;
   margin-right: 10px;
+}
+
+@media (max-width:880px) {
+  #nav_bar_computer {
+    display: none;
+  }
+
+  .center {
+    margin-top: 0;
+  }
+
+  #nav_bar_responsive {
+    display: block;
+  }
 }
