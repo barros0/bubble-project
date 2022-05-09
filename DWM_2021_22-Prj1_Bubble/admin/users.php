@@ -24,7 +24,7 @@ if (!empty($_GET['email'])) {
 require_once('./partials/header.php');
 
 ?>
-
+<div class="container">
     <div class="table-responsive">
         <div class="table-header row">
             <div class="titulo col-10">
@@ -116,7 +116,7 @@ require_once('./partials/header.php');
             </tbody>
         </table>
     </div>
-
+</div>
 
 <?php
 include('./partials/footer.php');
