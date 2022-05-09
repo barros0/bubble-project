@@ -167,7 +167,7 @@ $admin = ""; //verificar se o utilizador é admin
     <div id="nav_bar_responsive">
         <header class="">
             <div class="logo_responsive">
-                <a href="">
+                <a href="feed.php">
                     <img class="logo" src="img/header/logo_bubble.svg" alt="logo">
                 </a>
             </div>
@@ -183,7 +183,11 @@ $admin = ""; //verificar se o utilizador é admin
         <header class="">
             <div class="list">
                 <ul>
-                    <li><a href="">dwawdadwawadwda</a></li>
+                    <li class=""><a href=""><i class='bx bx-menu'></i></a></li>
+                    <li class=""><a href="mensagens.php"><i class='bx bx-chat'></i></a></li>
+                    <li class=""><a href=""><i class='bx bx-bell'></i></a></li>
+                    <li class=""><i class='bx bx-search searchbar_icon'></i></li>
+                    <li class=""><i class='bx bx-plus-circle plus_icon'></i></li>
                 </ul>
             </div>
         </header>
