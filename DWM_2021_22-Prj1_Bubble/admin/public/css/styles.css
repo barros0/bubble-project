@@ -84,6 +84,11 @@ img {
     max-width: 100%;
 }
 
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
 .dots:after {
     content: '\2807';
     font-size: 30px;
@@ -199,6 +204,8 @@ img {
     margin-top: 20px;
     border-radius: 10px 10px 0px 0px;
     background-color: var(--parcelas);
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .title-table h2 {
@@ -208,6 +215,8 @@ img {
 table {
     border-radius: 0px 0px 10px 10px;
     background-color: var(--parcelas);
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 table td, table th {
@@ -215,6 +224,7 @@ table td, table th {
 }
 
 table th, table td {
+    border-bottom: 1px solid var(--items);
     color: var(--white);
 }
 
