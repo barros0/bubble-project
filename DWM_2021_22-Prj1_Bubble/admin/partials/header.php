@@ -68,7 +68,7 @@
 
     <div class="dropdown m-auto">
         <a id="open_admin_menu_down" href="#"
-           class="d-flex flex-center link-light text-decoration-none dropdown-toggle">
+           class="d-flex align-items-center link-light text-decoration-none dropdown-toggle">
             <div class="user-img">
                 <img src="https://thispersondoesnotexist.com/image" alt="">
             </div>
