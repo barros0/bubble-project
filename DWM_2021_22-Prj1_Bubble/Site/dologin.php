@@ -30,6 +30,9 @@ if(isset($_POST['email']) && isset($_POST['password']))
     $_SESSION['user'] = $user;
     echo('<h2>logged!</h2>');
 
+    header('location:feed.php');
+    exit();
+
 }
 ?>
 
