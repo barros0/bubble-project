@@ -3,7 +3,7 @@
 
 if(isset($_POST['entrarconta'])) 
 { 
-$user=$_POST["Email"];  
+$user=$_POST["email"];  
 $password=$_POST["password"]; 
 include('bd.php');  
 $existe="Select * from users where email='".$user."'";  
