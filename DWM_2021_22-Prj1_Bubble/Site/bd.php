@@ -1,6 +1,6 @@
 <?php
 $host="localhost";
-$database="pws";
+$database="bubble_database";
 $user="root";
 $pass=""; 
 ?>
