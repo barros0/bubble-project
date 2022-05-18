@@ -9,7 +9,7 @@ $query = "select * from users";
 $users = $conn->query($query);
 
 while ($row = $users->fetch_row()){
-    print_r($row[1]);
+    echo($row['username']);
 }
 exit;
 
