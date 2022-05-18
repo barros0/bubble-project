@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if(isset($_SESSION['user'])){
+
+    header('location:feed.php');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +47,7 @@
                 <form method="POST" id="login" action="dologin.php" class="formulario-login">
 
                     <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
-                    <input type="text" class="form-input" name="nome" placeholder="Password" required>
+                    <input type="password" class="form-input" name="password" placeholder="Password" required>
                     <label id="checkbox">
 
                         <input type="checkbox" class="check-box">

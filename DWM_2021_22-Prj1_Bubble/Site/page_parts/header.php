@@ -5,13 +5,15 @@
 require('./bd.php');
 
 $query = "select * from users";
+session_start();
+$_SESSION['errors'] = array();
 
-$users = $conn->query($query);
+if(!isset($_SESSION['user'])){
 
-while ($row = $users->fetch_row()){
-    echo($row['username']);
+    header('location:login.php');
+    exit();
 }
-exit;
+ $user = $_SESSION['user'];
 
 //Buscar estes valores a base de dados para colocar nas tags
 $palavrasChave = ""; //palavras chaves
@@ -22,9 +24,7 @@ $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 //buscar os dados do utilizador na base de dados
 
 $fotoPerfil = ""; //url da foto de perfil
-$nome = "Joãozinho"; //nome do user
-$sobreNome = "Mineiro"; //sobrenome do user
-$admin = ""; //verificar se o utilizador é admin
+
 
 ?>
 
@@ -48,7 +48,7 @@ $admin = ""; //verificar se o utilizador é admin
 
     <?php
 
-    if ($pagina == 'mensagens.php') {  
+    if ($pagina == 'mensagens.php') {
     ?>
     <link rel="stylesheet" href="css/mensagens.css">
 
@@ -103,7 +103,7 @@ $admin = ""; //verificar se o utilizador é admin
 
             <div class="d-flex col-md-3 justify-content-end align-items-center icon_perfil">
                 <img id="user_img" src="img/header/download.png" width="50" alt="logo">
-                <span id="user_name">Joazinho Mineiro</span>
+                <span id="user_name"><?php echo($user['nome']) ?></span>
             </div>
         </header>
     </div>
@@ -183,7 +183,7 @@ $admin = ""; //verificar se o utilizador é admin
             <div class="user_responsive">
                 <div class="wrap_user">
                     <img id="user_img_responsive" src="img/header/download.png" width="50" alt="logo">
-                    <span id="user_name_responsive">Joazinho Mineiro</span>
+                    <span id="user_name_responsive"><?php echo($user['nome']) ?></span>
                 </div>
             </div>
         </header>
