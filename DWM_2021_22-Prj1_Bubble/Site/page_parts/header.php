@@ -2,9 +2,18 @@
 <html lang="pt-PT">
 
 <?php
+require('./bd.php');
+
+$query = "select * from users";
+
+$users = $conn->query($query);
+
+while ($row = $users->fetch_row()){
+    print_r($row[1]);
+}
+exit;
 
 //Buscar estes valores a base de dados para colocar nas tags
-
 $palavrasChave = ""; //palavras chaves
 $descricaoSite = ""; //descrição do site
 $nomePagina = "Mensagens"; //nome da Página
