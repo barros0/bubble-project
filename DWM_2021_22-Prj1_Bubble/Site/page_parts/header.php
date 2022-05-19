@@ -177,11 +177,11 @@ $fotoPerfil = ""; //url da foto de perfil
     <div class="popup_perfil">
         <ul>
             <li><a href="perfil.php"><img src="img/header/download.png" alt="fotoperfil">
-<<<<<<< Updated upstream
+
                     <div id="ver_perfil"><span class="nome-popup"> <?php echo($user['nome']) ?>
-=======
+
                     <div id="ver_perfil"><span class="nome-popup"> <?php echo $_SESSION['user']['nome'] ?>
->>>>>>> Stashed changes
+
                         </span><span id="ver_perfil_span">Ver Perfil</span>
                     </div>
                 </a>
