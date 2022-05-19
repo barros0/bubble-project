@@ -2,7 +2,7 @@
     <div class="left_fixed">
         <ul>
             <li><a class="verperfil" href="perfil.php"><img class="avatar" src="img/header/download.png"
-                        alt="fotoperfil">Joãozinho Mineiro</a>
+                        alt="fotoperfil"><?php echo($_SESSION['user']['nome'])?></a>
             </li>
             <li><a href=""><i class='bx bx-group'></i>Amigos</a></li>
             <li><a href=""><i class='bx bx-hash'></i>Tópicos</a></li>
