@@ -2,9 +2,13 @@
 require('./bd.php');
 session_start();
 $texto = $_REQUEST['text'];
-$imagem = $_REQUEST['file'];
+$imagem = $_POST['file'];
 
-$sql = "INSERT INTO publicacoes (user_id,conteudo,estado) VALUES (1,'".$texto."',1)";
+$publicacao = $conn->query("INSERT INTO publicacoes (user_id,conteudo,estado) VALUES ('".$_SESSION['user']['id_user']."','".$texto."',1)");
 
-$conn->query($sql);
+
+$publicacao_foto = "INSERT INTO publicacoes_fotos (publicacao_id,caminho) VALUES('".$publicacao['publicacao_id']."','".$file."')";
+
+$conn->query($publicacao);
+
 ?>
