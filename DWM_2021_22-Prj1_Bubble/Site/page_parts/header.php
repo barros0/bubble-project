@@ -25,6 +25,7 @@ $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 
 $fotoPerfil = ""; //url da foto de perfil
 
+
 ?>
 
 <head>
@@ -85,9 +86,6 @@ $fotoPerfil = ""; //url da foto de perfil
 </head>
 
 <body>
-
-    <!--NAV BAR COMPUTADOR -->
-
     <div id="nav_bar_computer" class="container-fluid fixed-top">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
             <a href="feed.php"
@@ -109,10 +107,6 @@ $fotoPerfil = ""; //url da foto de perfil
             </div>
         </header>
     </div>
-
-
-    <!--SEARCH BAR DA NAV BAR-->
-
     <div class="popup_searchbar">
         <div class="wrapper_searchbar">
             <form class="form_searchbar" method="POST" action="index.php">
@@ -135,11 +129,6 @@ $fotoPerfil = ""; //url da foto de perfil
             </div>
         </div>
     </div>
-
-
-    <!--FAZER UM POST DA NAV BAR-->
-
-
     <div class="modal_make_post">
         <div class="make_post">
             <div class="header_post">
@@ -147,9 +136,9 @@ $fotoPerfil = ""; //url da foto de perfil
                 <div class="circles two"></div>
                 <div class="circles three"></div>
             </div>
-            <form action="insert_post.php" method="POST" id="post">
+            <form method="POST" id="post">
                 <div class="textarea">
-                    <textarea maxlength="255" name="text" id="textarea"
+                    <textarea maxlength="255" name="textarea" id="textarea"
                         placeholder="O que estás a programar?"></textarea>
                 </div>
                 <div class="img_post">
@@ -160,7 +149,7 @@ $fotoPerfil = ""; //url da foto de perfil
                     <div class="upload_img" onchange="previewFile()">
                         <button class="upload_btn"><i class='bx bx-plus'></i></button>
                         <input id="input_file" type="file" accept="image/png,image/jpeg,image/bmp,image/gif"
-                            name="file">
+                            name="myfile">
                     </div>
                     <div class="post_button">
                         <button id="post_btn" type="submit" name="post">Publicar</button>
@@ -169,19 +158,10 @@ $fotoPerfil = ""; //url da foto de perfil
             </form>
         </div>
     </div>
-
-
-
-    <!--POPUP PERFIL DA NAV BAR-->
-
     <div class="popup_perfil">
         <ul>
             <li><a href="perfil.php"><img src="img/header/download.png" alt="fotoperfil">
-
-                    <div id="ver_perfil"><span class="nome-popup"> <?php echo($user['nome']) ?>
-
                     <div id="ver_perfil"><span class="nome-popup"> <?php echo $_SESSION['user']['nome'] ?>
-
                         </span><span id="ver_perfil_span">Ver Perfil</span>
                     </div>
                 </a>
@@ -189,13 +169,9 @@ $fotoPerfil = ""; //url da foto de perfil
             <li><a href="#"><i class='bx bx-group'></i>Amigos</a></li>
             <li><a href="#"><i class='bx bx-star'></i>Favoritos</a></li>
             <li><a href="#"><i class='bx bx-cog'></i>Definições</a></li>
-            <li><a href="logout.php"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
+            <li><a href="#"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
         </ul>
     </div>
-
-
-
-    <!--PARTE DE CIMA DA NAV BAR RESPONSIVA -->
 
     <div id="nav_bar_responsive">
         <header class="">
@@ -212,10 +188,6 @@ $fotoPerfil = ""; //url da foto de perfil
             </div>
         </header>
     </div>
-
-
-    <!--PARTE DE BAIXO DA NAV BAR RESPONSIVA -->
-
     <div id="nav_bar_bottom_responsive">
         <header class="">
             <div class="list">
