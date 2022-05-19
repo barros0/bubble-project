@@ -23,7 +23,61 @@ $fotos = ""; //src de fotos enviadas
 
 <div class="conteudo">
     <div class="barra-listagem-mensagens">
-        <div class="pesquisa-fixed">
+
+    <div class="listagem-chats">
+
+
+<div class="wrap-pessoa">
+    <div class="foto-perfil-container">
+        <div class="foto-perfil">
+            <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
+        </div>
+    </div>
+</div>
+
+<div class="wrap-pessoa">
+    <div class="foto-perfil-container">
+        <div class="foto-perfil">
+            <img src="img/header/download.png" alt="Foto de Perfil">
+        </div>
+    </div>
+</div>
+
+<div class="wrap-pessoa">
+    <div class="foto-perfil-container">
+        <div class="foto-perfil">
+            <img src="img/header/download.png" alt="Foto de Perfil">
+        </div>
+    </div>
+</div>
+
+<div class="wrap-pessoa">
+    <div class="foto-perfil-container">
+        <div class="foto-perfil">
+            <img src="img/header/download.png" alt="Foto de Perfil">
+        </div>
+    </div>
+</div>
+
+<div class="wrap-pessoa">
+    <div class="foto-perfil-container">
+        <div class="foto-perfil">
+            <img src="img/header/download.png" alt="Foto de Perfil">
+        </div>
+    </div>
+</div>
+
+<div class="wrap-pessoa">
+    <div class="foto-perfil-container">
+        <div class="foto-perfil">
+            <img src="img/header/download.png" alt="Foto de Perfil">
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="pesquisa-fixed">
 
             <div class="pesquisa-mensagens">
                 <form class="form-pesquisa" action="#" method="POST">
@@ -35,188 +89,12 @@ $fotos = ""; //src de fotos enviadas
 
         </div>
 
-        <div class="listagem-chats">
+</div>
 
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
-                    </div>
-                </div>
-                <div class="detalhes-conversa">
-                    <div class="nome-pessoa"><?php echo $nomePessoa ?></div>
-                    <div class="detalhes-mensagem"><span class="mensagem"><?php echo $mensagem ?></span>
-                        <div class="detalhes-horas"><span class="data-envio">13/03/2021 </span>&nbsp;<span
-                                class="hora-envio">11:23</span></div>
-                    </div>
-                </div>
-
-            </div>
+        
 
 
-        </div>
 
-    </div>
 
     <div class="wrap-conteudo-mensagens">
 
@@ -343,6 +221,8 @@ $fotos = ""; //src de fotos enviadas
         </div>
 
     </div>
+
+</div>
 
 </div>
 
