@@ -4,11 +4,14 @@ session_start();
 $texto = $_REQUEST['text'];
 $imagem = $_POST['file'];
 
-$publicacao = $conn->query("INSERT INTO publicacoes (user_id,conteudo,estado) VALUES ('".$_SESSION['user']['id_user']."','".$texto."',1)");
+$qpublicacao ="INSERT INTO publicacoes (user_id,conteudo,estado) VALUES ('".$_SESSION['user']['id_user']."','".$texto."',1)";
 
+$publicacao = $conn->query($qpublicacao);
 
-$publicacao_foto = "INSERT INTO publicacoes_fotos (publicacao_id,caminho) VALUES('".$publicacao['publicacao_id']."','".$file."')";
+$idpub = (mysqli_insert_id($conn));
 
-$conn->query($publicacao);
+$publicacao_foto = "INSERT INTO publicacoes_fotos (publicacao_id,caminho) VALUES('".$idpub."','".$file."')";
+
+$conn->query($publicacao_foto);
 
 ?>
