@@ -1,7 +1,14 @@
+
 <?php include 'page_parts/header.php'; ?>
 <div class="parts">
     <?php include 'page_parts/left.php'; ?>
     <div class="center">
+
+        <?php
+        $query = 'select * from notificacoes where id_utilizador ="'.$_SESSION['user']['id_user'].'"';
+        $notificoes = $conn->query($query);
+
+        ?>
 
         <div class="col-12 ">
             <div class="col-12">
@@ -10,6 +17,10 @@
 
             <div class="notificacoes">
 
+                <?php
+
+                if($notificoes->num_rows > 0){
+                while ($notificacao = $notificoes->fetch_assoc()){ ?>
                 <div class="notificacao">
                     <div class="d-flex">
                     <div class="img-radius">
@@ -17,15 +28,15 @@
                     </div>
                     <div class="info">
                         <div class="titulo">
-                            <h2>João deu like na tua publicação</h2>
+                            <h2><?php echo($notificacao['titulo']) ?></h2>
                         </div>
                         <div class="desc">
-                            <p>qsq</p>
+                            <p><?php echo($notificacao['descricao']) ?></p>
                         </div>
                     </div>
                     </div>
-
                 </div>
+                <?php }} ?>
             </div>
         </div>
 
