@@ -22,15 +22,26 @@ $fotos = ""; //src de fotos enviadas
 ?>
 
 <div class="conteudo">
+    
     <div class="barra-listagem-mensagens">
 
     <div class="listagem-chats">
 
-
+<!--Novo Chat--->
 <div class="wrap-pessoa">
     <div class="foto-perfil-container">
         <div class="foto-perfil">
             <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
+        </div>
+    </div>
+</div>
+
+<!--Pesquisa--->
+
+<div class="wrap-pessoa">
+    <div class="foto-perfil-container">
+        <div class="foto-perfil">
+            <div class="novo-chat"><i class="fas fa-search"></i></div>
         </div>
     </div>
 </div>
@@ -83,7 +94,6 @@ $fotos = ""; //src de fotos enviadas
                 <form class="form-pesquisa" action="#" method="POST">
                     <div class="fundo-pesquisa"><input class="pesquisa" type="search"
                             placeholder="Pesquisar Conversas..." name="search"></div>
-                    <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
                 </form>
             </div>
 

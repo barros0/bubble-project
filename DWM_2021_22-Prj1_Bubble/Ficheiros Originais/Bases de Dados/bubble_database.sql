@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Maio-2022 às 12:29
+-- Tempo de geração: 20-Maio-2022 às 11:09
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 7.2.28
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `bubble_micael`
+-- Banco de dados: `bubble_database`
 --
 
 -- --------------------------------------------------------
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comentarios` (
-  `comentário_id` int(11) NOT NULL,
+  `comentario_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `comentário` text DEFAULT NULL,
+  `comentario` text DEFAULT NULL,
   `resposta_id` int(11) DEFAULT NULL,
   `estado` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -90,7 +90,7 @@ CREATE TABLE `eventos` (
   `id_evento` int(11) NOT NULL,
   `link` varchar(255) DEFAULT NULL,
   `imagem` varchar(255) DEFAULT NULL,
-  `descrição` varchar(255) DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -139,12 +139,19 @@ INSERT INTO `generos` (`genero_id`, `sigla_genero`, `nome_genero`) VALUES
 CREATE TABLE `gostos` (
   `gosto_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `publicação_id` int(11) DEFAULT NULL,
+  `publicacao_id` int(11) DEFAULT NULL,
   `gosto` tinyint(1) DEFAULT NULL,
   `estado` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `gostos`
+--
+
+INSERT INTO `gostos` (`gosto_id`, `user_id`, `publicacao_id`, `gosto`, `estado`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, 1, '2022-05-20 08:44:10', '2022-05-20 09:44:10');
 
 -- --------------------------------------------------------
 
@@ -421,20 +428,28 @@ INSERT INTO `nacionalidades` (`nacionalidade_id`, `pais`, `gentilico`, `sigla`) 
 CREATE TABLE `notificacoes` (
   `id_notificacao` int(11) NOT NULL,
   `id_utilizador` int(11) DEFAULT NULL,
-  `vagas` int(11) DEFAULT NULL,
   `tipo` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `notificacoes`
+--
+
+INSERT INTO `notificacoes` (`id_notificacao`, `id_utilizador`, `tipo`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2022-05-19 10:20:17', '2022-05-19 11:27:58'),
+(2, 1, 1, '2022-05-19 10:39:35', '2022-05-19 11:39:35'),
+(3, 1, 1, '2022-05-20 08:28:26', '2022-05-20 09:28:26');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificação_comentario`
+-- Estrutura da tabela `notificacoes_comentario`
 --
 
-CREATE TABLE `notificação_comentario` (
-  `notificação_comentario_id` int(11) NOT NULL,
+CREATE TABLE `notificacoes_comentario` (
+  `notificacao_comentario_id` int(11) NOT NULL,
   `id_notificao` int(11) DEFAULT NULL,
   `id_comentario` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -444,25 +459,32 @@ CREATE TABLE `notificação_comentario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificação_gosto`
+-- Estrutura da tabela `notificacoes_gosto`
 --
 
-CREATE TABLE `notificação_gosto` (
-  `notificação_gosto_id` int(11) NOT NULL,
-  `id_notificao` int(11) DEFAULT NULL,
+CREATE TABLE `notificacoes_gosto` (
+  `notificacao_gosto_id` int(11) NOT NULL,
+  `id_notificacao` int(11) DEFAULT NULL,
   `id_gosto` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `notificacoes_gosto`
+--
+
+INSERT INTO `notificacoes_gosto` (`notificacao_gosto_id`, `id_notificacao`, `id_gosto`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2022-05-20 08:28:13', '2022-05-20 09:28:13');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificação_mensagem`
+-- Estrutura da tabela `notificacoes_mensagem`
 --
 
-CREATE TABLE `notificação_mensagem` (
-  `notificação_mensagem_id` int(11) NOT NULL,
+CREATE TABLE `notificacoes_mensagem` (
+  `notificacao_mensagem_id` int(11) NOT NULL,
   `id_notificao` int(11) DEFAULT NULL,
   `id_mensagem` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -472,11 +494,11 @@ CREATE TABLE `notificação_mensagem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificação_seguir`
+-- Estrutura da tabela `notificacoes_seguir`
 --
 
-CREATE TABLE `notificação_seguir` (
-  `notificação_seguir_id` int(11) NOT NULL,
+CREATE TABLE `notificacoes_seguir` (
+  `notificacao_seguir_id` int(11) NOT NULL,
   `id_notificao` int(11) DEFAULT NULL,
   `id_seguir` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -507,13 +529,20 @@ CREATE TABLE `oferta_emprego` (
 --
 
 CREATE TABLE `publicacoes` (
-  `publicação_id` int(11) NOT NULL,
+  `publicacao_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `conteudo` int(11) DEFAULT NULL,
+  `conteudo` text DEFAULT NULL,
   `estado` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `publicacoes`
+--
+
+INSERT INTO `publicacoes` (`publicacao_id`, `user_id`, `conteudo`, `estado`, `created_at`, `updated_at`) VALUES
+(1, 1, '1dwrwqe', 1, '2022-05-20 08:27:59', '2022-05-20 09:27:59');
 
 -- --------------------------------------------------------
 
@@ -536,8 +565,8 @@ CREATE TABLE `publicacoes_fav` (
 --
 
 CREATE TABLE `publicacoes_fotos` (
-  `publicação__foto_id` int(11) NOT NULL,
-  `publicação_id` int(11) DEFAULT NULL,
+  `publicacao__foto_id` int(11) NOT NULL,
+  `publicacao_id` int(11) DEFAULT NULL,
   `caminho` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -613,7 +642,7 @@ INSERT INTO `users` (`id_user`, `nome`, `username`, `email`, `password`, `banner
 -- Índices para tabela `comentarios`
 --
 ALTER TABLE `comentarios`
-  ADD PRIMARY KEY (`comentário_id`);
+  ADD PRIMARY KEY (`comentario_id`);
 
 --
 -- Índices para tabela `empresas`
@@ -682,28 +711,28 @@ ALTER TABLE `notificacoes`
   ADD PRIMARY KEY (`id_notificacao`);
 
 --
--- Índices para tabela `notificação_comentario`
+-- Índices para tabela `notificacoes_comentario`
 --
-ALTER TABLE `notificação_comentario`
-  ADD PRIMARY KEY (`notificação_comentario_id`);
+ALTER TABLE `notificacoes_comentario`
+  ADD PRIMARY KEY (`notificacao_comentario_id`);
 
 --
--- Índices para tabela `notificação_gosto`
+-- Índices para tabela `notificacoes_gosto`
 --
-ALTER TABLE `notificação_gosto`
-  ADD PRIMARY KEY (`notificação_gosto_id`);
+ALTER TABLE `notificacoes_gosto`
+  ADD PRIMARY KEY (`notificacao_gosto_id`);
 
 --
--- Índices para tabela `notificação_mensagem`
+-- Índices para tabela `notificacoes_mensagem`
 --
-ALTER TABLE `notificação_mensagem`
-  ADD PRIMARY KEY (`notificação_mensagem_id`);
+ALTER TABLE `notificacoes_mensagem`
+  ADD PRIMARY KEY (`notificacao_mensagem_id`);
 
 --
--- Índices para tabela `notificação_seguir`
+-- Índices para tabela `notificacoes_seguir`
 --
-ALTER TABLE `notificação_seguir`
-  ADD PRIMARY KEY (`notificação_seguir_id`);
+ALTER TABLE `notificacoes_seguir`
+  ADD PRIMARY KEY (`notificacao_seguir_id`);
 
 --
 -- Índices para tabela `oferta_emprego`
@@ -715,7 +744,7 @@ ALTER TABLE `oferta_emprego`
 -- Índices para tabela `publicacoes`
 --
 ALTER TABLE `publicacoes`
-  ADD PRIMARY KEY (`publicação_id`);
+  ADD PRIMARY KEY (`publicacao_id`);
 
 --
 -- Índices para tabela `publicacoes_fav`
@@ -727,7 +756,7 @@ ALTER TABLE `publicacoes_fav`
 -- Índices para tabela `publicacoes_fotos`
 --
 ALTER TABLE `publicacoes_fotos`
-  ADD PRIMARY KEY (`publicação__foto_id`);
+  ADD PRIMARY KEY (`publicacao__foto_id`);
 
 --
 -- Índices para tabela `seguir`
@@ -758,7 +787,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `comentário_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `comentario_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `empresas`
@@ -794,7 +823,7 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT de tabela `gostos`
 --
 ALTER TABLE `gostos`
-  MODIFY `gosto_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `gosto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `historico_pesquisa`
@@ -824,31 +853,31 @@ ALTER TABLE `nacionalidades`
 -- AUTO_INCREMENT de tabela `notificacoes`
 --
 ALTER TABLE `notificacoes`
-  MODIFY `id_notificacao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_notificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de tabela `notificação_comentario`
+-- AUTO_INCREMENT de tabela `notificacoes_comentario`
 --
-ALTER TABLE `notificação_comentario`
-  MODIFY `notificação_comentario_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `notificacoes_comentario`
+  MODIFY `notificacao_comentario_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `notificação_gosto`
+-- AUTO_INCREMENT de tabela `notificacoes_gosto`
 --
-ALTER TABLE `notificação_gosto`
-  MODIFY `notificação_gosto_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `notificacoes_gosto`
+  MODIFY `notificacao_gosto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `notificação_mensagem`
+-- AUTO_INCREMENT de tabela `notificacoes_mensagem`
 --
-ALTER TABLE `notificação_mensagem`
-  MODIFY `notificação_mensagem_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `notificacoes_mensagem`
+  MODIFY `notificacao_mensagem_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `notificação_seguir`
+-- AUTO_INCREMENT de tabela `notificacoes_seguir`
 --
-ALTER TABLE `notificação_seguir`
-  MODIFY `notificação_seguir_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `notificacoes_seguir`
+  MODIFY `notificacao_seguir_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `oferta_emprego`
@@ -860,7 +889,7 @@ ALTER TABLE `oferta_emprego`
 -- AUTO_INCREMENT de tabela `publicacoes`
 --
 ALTER TABLE `publicacoes`
-  MODIFY `publicação_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `publicacao_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `publicacoes_fav`
@@ -872,7 +901,7 @@ ALTER TABLE `publicacoes_fav`
 -- AUTO_INCREMENT de tabela `publicacoes_fotos`
 --
 ALTER TABLE `publicacoes_fotos`
-  MODIFY `publicação__foto_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `publicacao__foto_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `seguir`

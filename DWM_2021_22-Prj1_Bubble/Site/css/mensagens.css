@@ -42,7 +42,6 @@
 /*pesquisa de conversas*/
 
 .pesquisa-fixed {
-  display: none;
   padding: 20px 10px 20px;
   position: sticky;
   background: #404040;
@@ -185,6 +184,8 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  border-bottom: solid #00ff8a;
+
 }
 
 /*icones adicionar conteudo chat*/

@@ -12,29 +12,30 @@ function notificacao_create($notificacao, $conn)
 
     switch ($type) {
         case 1:
-           /* $query = "Select * from notificacoes_gosto where id_notificacao ='" . $id . "' INNER  join
-             gostos ON notificacoes_gosto.id_gosto = gostos.gosto_id INNER join 
-             publicacoes ON gostos.publicacao_id = publicacoes.publicacao_id;
-             ";
-                       $result = $conn->query($query);
-           */
-            $gosto = $conn->query("Select * from notificacoes_gosto where id_notificacao = '".$idnotificacao."'")->fetch_assoc();
+            $gosto = $conn->query("Select * from notificacoes_gosto where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
 
-            $pub_gosto = $conn->query("Select * from gostos where gosto_id = '".$gosto['id_gosto']."'")->fetch_assoc();
+            $pub_gosto = $conn->query("Select * from gostos where gosto_id = '" . $gosto['id_gosto'] . "'")->fetch_assoc();
 
-            $publicacao = $conn->query("Select * from publicacoes where publicacao_id = '".$pub_gosto['publicacao_id']."'")->fetch_assoc();
+            $publicacao = $conn->query("Select * from publicacoes where publicacao_id = '" . $pub_gosto['publicacao_id'] . "'")->fetch_assoc();
 
-
-            $user = $conn->query("Select * from users where id_user = '".$pub_gosto['user_id']."'")->fetch_assoc();
-
+            $user = $conn->query("Select * from users where id_user = '" . $pub_gosto['user_id'] . "'")->fetch_assoc();
 
             $titulo = "<a href='/user?id=" . $user['id_user'] . "'>" . $user['nome'] . "</a> deu gosto na tua <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'>" . $user['nome'] . "</a>";
-            print ($titulo);
-            break;
+
+            return $titulo;
 
         case 2:
+            $gosto = $conn->query("Select * from notificacoes_gosto where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
 
-            break;
+            $pub_gosto = $conn->query("Select * from gostos where gosto_id = '" . $gosto['id_gosto'] . "'")->fetch_assoc();
+
+            $publicacao = $conn->query("Select * from publicacoes where publicacao_id = '" . $pub_gosto['publicacao_id'] . "'")->fetch_assoc();
+
+            $user = $conn->query("Select * from users where id_user = '" . $pub_gosto['user_id'] . "'")->fetch_assoc();
+
+            $titulo = "<a href='/user?id=" . $user['id_user'] . "'>" . $user['nome'] . "</a> deu gosto na tua <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'>" . $user['nome'] . "</a>";
+
+            return $titulo;
 
         case 3:
 
@@ -52,3 +53,11 @@ $nt = $conn->query($q);
 
 notificacao_create($nt->fetch_assoc(), $conn);
 exit;
+
+
+/* $query = "Select * from notificacoes_gosto where id_notificacao ='" . $id . "' INNER  join
+            gostos ON notificacoes_gosto.id_gosto = gostos.gosto_id INNER join
+            publicacoes ON gostos.publicacao_id = publicacoes.publicacao_id;
+            ";
+                      $result = $conn->query($query);
+          */
