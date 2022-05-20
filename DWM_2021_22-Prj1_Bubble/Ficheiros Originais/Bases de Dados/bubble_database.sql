@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Maio-2022 às 11:08
+-- Tempo de geração: 20-Maio-2022 às 11:09
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 7.2.28
 
@@ -480,13 +480,13 @@ INSERT INTO `notificacoes_gosto` (`notificacao_gosto_id`, `id_notificacao`, `id_
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificacoes_seguir`
+-- Estrutura da tabela `notificacoes_mensagem`
 --
 
-CREATE TABLE `notificacoes_seguir` (
-  `notificacao_seguir_id` int(11) NOT NULL,
+CREATE TABLE `notificacoes_mensagem` (
+  `notificacao_mensagem_id` int(11) NOT NULL,
   `id_notificao` int(11) DEFAULT NULL,
-  `id_seguir` int(11) DEFAULT NULL,
+  `id_mensagem` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -494,13 +494,13 @@ CREATE TABLE `notificacoes_seguir` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificação_mensagem`
+-- Estrutura da tabela `notificacoes_seguir`
 --
 
-CREATE TABLE `notificação_mensagem` (
-  `notificacao_mensagem_id` int(11) NOT NULL,
+CREATE TABLE `notificacoes_seguir` (
+  `notificacao_seguir_id` int(11) NOT NULL,
   `id_notificao` int(11) DEFAULT NULL,
-  `id_mensagem` int(11) DEFAULT NULL,
+  `id_seguir` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -723,16 +723,16 @@ ALTER TABLE `notificacoes_gosto`
   ADD PRIMARY KEY (`notificacao_gosto_id`);
 
 --
+-- Índices para tabela `notificacoes_mensagem`
+--
+ALTER TABLE `notificacoes_mensagem`
+  ADD PRIMARY KEY (`notificacao_mensagem_id`);
+
+--
 -- Índices para tabela `notificacoes_seguir`
 --
 ALTER TABLE `notificacoes_seguir`
   ADD PRIMARY KEY (`notificacao_seguir_id`);
-
---
--- Índices para tabela `notificação_mensagem`
---
-ALTER TABLE `notificação_mensagem`
-  ADD PRIMARY KEY (`notificacao_mensagem_id`);
 
 --
 -- Índices para tabela `oferta_emprego`
@@ -868,16 +868,16 @@ ALTER TABLE `notificacoes_gosto`
   MODIFY `notificacao_gosto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de tabela `notificacoes_mensagem`
+--
+ALTER TABLE `notificacoes_mensagem`
+  MODIFY `notificacao_mensagem_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `notificacoes_seguir`
 --
 ALTER TABLE `notificacoes_seguir`
   MODIFY `notificacao_seguir_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `notificação_mensagem`
---
-ALTER TABLE `notificação_mensagem`
-  MODIFY `notificacao_mensagem_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `oferta_emprego`
