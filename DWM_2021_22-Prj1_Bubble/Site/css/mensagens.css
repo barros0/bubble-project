@@ -4,11 +4,22 @@
   max-width: 100%;
   width: 100%;
   height: 100%;
-  display: flex;
   margin-right: auto;
   margin-left: auto;
   background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
+
+/*barra de chats e pesquisa*/
+.barratopo{
+  width: 100%;
+  position: fixed;
+
+
+}
+
 
 /*barra lateral das mensagens*/
 .barra-listagem-mensagens {
@@ -97,21 +108,15 @@
 /*mensagens*/
 
 .wrap-conteudo-mensagens {
-  
+  flex-grow: 1;
+  overflow: auto;
 
 }
 
 .conteudo-mensagens {
-  height: 95%;
   background: #404040;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  left: 5%;
-  bottom: 0;
-  position: absolute;
+
+
   padding: 30px;
 
 }
@@ -123,8 +128,9 @@
   display: flex;
   align-items: center;
   border-top: solid #00ff8a;
-  margin-top: 10px;
-
+  background: #404040;
+  position: relative;
+  bottom: 0;
 }
 
 .conteudo-chat {
