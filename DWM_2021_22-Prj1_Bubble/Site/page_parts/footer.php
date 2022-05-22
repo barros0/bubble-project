@@ -9,6 +9,9 @@
 <script src="js/like.js"></script>
 <script src="js/comments.js"></script>
 <script src="js/img_post.js"></script>
+<!--mensagens-->
+<script src="js/mensagens.js"></script>
+
 
 <!--faqs-->
 <script src="bootstrap/js/bootstrap.js"></script>

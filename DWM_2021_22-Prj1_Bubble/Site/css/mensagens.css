@@ -14,8 +14,7 @@
 
 /*barra de chats e pesquisa*/
 .barratopo{
-  width: 75%;
-  position: fixed;
+  width: 100%;
 
 
 }
@@ -58,6 +57,7 @@
   background: #404040;
   top: 0;
   border-bottom: solid #00ff8a;
+  display: none;
 
 }
 
@@ -115,9 +115,7 @@
 
 .conteudo-mensagens {
   background: #404040;
-
-
-  padding: 30px;
+  padding: 15px;
 
 }
 
@@ -269,7 +267,10 @@ span.mensagem {
 }
 
 .conteudo{
+  max-width: 100%;
   width: 100%;
+  margin-right: auto;
+
 }
 
 }
