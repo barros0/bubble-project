@@ -2,6 +2,7 @@
 
 include 'page_parts/header.php';
 
+include 'page_parts/left.php';
 //buscar detalhes na base de dados
 
 //provavelmente esta parte vai ser em arrays
@@ -38,7 +39,7 @@ $fotos = ""; //src de fotos enviadas
 
                 <!--Pesquisa--->
 
-                <div class="wrap-pessoa">
+                <div class="wrap-pessoa" id="btn-pesq">
                     <div class="foto-perfil-container">
                         <div class="foto-perfil">
                             <div class="novo-chat"><i class="fas fa-search"></i></div>
@@ -88,7 +89,7 @@ $fotos = ""; //src de fotos enviadas
 
             </div>
 
-            <div class="pesquisa-fixed">
+            <div class="pesquisa-fixed" id="pesquisa-fixed">
 
                 <div class="pesquisa-mensagens">
                     <form class="form-pesquisa" action="#" method="POST">

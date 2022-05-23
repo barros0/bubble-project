@@ -227,6 +227,8 @@ nav, header {
   flex-direction: column;
   top: 68px;
   align-items: center;
+  z-index: 99;
+
 }
 
 .wrapper_searchbar {
@@ -300,6 +302,7 @@ input.input_searchbar {
   flex-direction: column;
   top: 68px;
   align-items: center;
+  z-index: 99;
 
 }
 
@@ -311,6 +314,7 @@ input.input_searchbar {
   padding: 20px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+
 }
 
 .header_post {
@@ -519,6 +523,7 @@ textarea:focus {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 9;
 }
 
 #nav_bar_bottom_responsive li {

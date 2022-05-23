@@ -1,10 +1,10 @@
 
 /*wrapper da pagina*/
 .conteudo {
-  max-width: 100%;
-  width: 100%;
+  max-width: 75%;
+  width: 75%;
   height: 100%;
-  margin-right: auto;
+  /*margin-right: auto;*/
   margin-left: auto;
   background-color: #1c1c1c;
   display: flex;
@@ -15,7 +15,6 @@
 /*barra de chats e pesquisa*/
 .barratopo{
   width: 100%;
-  position: fixed;
 
 
 }
@@ -58,6 +57,7 @@
   background: #404040;
   top: 0;
   border-bottom: solid #00ff8a;
+  display: none;
 
 }
 
@@ -115,9 +115,7 @@
 
 .conteudo-mensagens {
   background: #404040;
-
-
-  padding: 30px;
+  padding: 15px;
 
 }
 
@@ -131,6 +129,7 @@
   background: #404040;
   position: relative;
   bottom: 0;
+  padding: 15px;
 }
 
 .conteudo-chat {
@@ -180,7 +179,7 @@
 .mensagem {
   padding: 10px;
   width: 100%;
-  height: 100px;
+  height: 100%;
 
 }
 /*listagem chats*/
@@ -214,7 +213,7 @@
 }
 
 form.form-mensagem {
-  height: 100%;
+  height: 100px;
 }
 
 /*mensagens na barra*/
@@ -259,4 +258,19 @@ span.mensagem {
   display: flex;
   justify-content: flex-end;
   font-size: 12px;
+}
+
+/*responsivo*/
+@media (max-width: 880px){
+  .barratopo {
+    width: 100%;
+}
+
+.conteudo{
+  max-width: 100%;
+  width: 100%;
+  margin-right: auto;
+
+}
+
 }
