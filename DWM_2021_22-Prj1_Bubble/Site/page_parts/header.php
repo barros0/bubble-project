@@ -146,7 +146,7 @@ $fotoPerfil = ""; //url da foto de perfil
                 <div class="circles two"></div>
                 <div class="circles three"></div>
             </div>
-            <form action="insert_post.php" method="POST" id="post">
+            <form action="insert_post.php" method="POST" id="post" enctype="multipart/form-data">
                 <div class="textarea">
                     <textarea maxlength="255" name="text" id="textarea"
                         placeholder="O que estás a programar?"></textarea>
@@ -158,8 +158,7 @@ $fotoPerfil = ""; //url da foto de perfil
                 <div class="buttons_post">
                     <div class="upload_img" onchange="previewFile()">
                         <button class="upload_btn"><i class='bx bx-plus'></i></button>
-                        <input id="input_file" type="file" accept="image/png,image/jpeg,image/bmp,image/gif"
-                            name="file">
+                        <input id="input_file" type="file" name="foto_public">
                     </div>
                     <div class="post_button">
                         <button id="post_btn" type="submit" name="post">Publicar</button>
