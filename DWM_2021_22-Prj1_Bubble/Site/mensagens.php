@@ -5,15 +5,19 @@ include 'page_parts/header.php';
 include 'page_parts/left.php';
 
 //buscar detalhes na base de dados
+$query = 'SELECT * FROM mensagens';
+$lista_mensagens = $conn->query($query);
+
+
 
 //buscar as mensagens enviadas
-$queryEnviadas = 'select * from mensagens where from_id_user ="' . $_SESSION['user']['id_user'] . '"';
+$queryEnviadas = 'select * from mensagens where from_id_user ="' . $_SESSION['user']['id_user'] . '" union select * from mensagens where to_id_user ="' . $_SESSION['user']['id_user'] . '"';
 $mensagensEnviadas = $conn->query($queryEnviadas);
-
+/*
 //buscar as mensagens recebidas
 $queryRecebidas = 'select * from mensagens where to_id_user ="' . $_SESSION['user']['id_user'] . '"';
 $mensagensRecebidas = $conn->query($queryRecebidas);
-
+*/
 
 //$numMensagens = $mensagensEnviadas -> num_rows; //num de mensagens com users
 
@@ -60,74 +64,61 @@ $fotos = ""; //src de fotos enviadas
 
                 <?php
 
-                //buscar fotos de pessoas com quem tem mensagens
 
+                while ($row = $lista_mensagens->fetch_assoc()) {
+
+                    $user_to = $row['to_id_user'];
+                    $user_from = $row['from_id_user'];
+
+                }
+
+                    $queryUsers = 'SELECT * FROM users WHERE id_user = "' . $user_to . '" OR id_user = "' .$user_from. '"';
+                    $users = $conn->query($queryUsers);
+
+                    while ($uti = $users->fetch_assoc()) {
+
+                        echo '<div class="wrap-pessoa">
+                        <div class="foto-perfil-container">
+                            <div class="foto-perfil">
+                                <img src='. $uti["profile_image"] .' alt='. $uti["nome"] .'>
+                            </div>
+                        </div>
+                    </div>' ;
+                    }
+      
+                    
+                
+
+                //buscar fotos de pessoas com quem tem mensagens
+                /*
                 while ($row = $mensagensRecebidas->fetch_assoc()) {
 
                     $imagem = 'select profile_image from users where id_user ="' . $row["to_id_user"] . '"';
 
-                    while ($row = $imagem->fetch_assoc()) {
+                    $teste = $conn->query($imagem);
 
-                        $mensagensRecebidas = $conn->query($queryRecebidas);
+                    while ($rows = $teste->fetch_assoc()) {
 
 
 
-                echo '<div class="wrap-pessoa">
-                <div class="foto-perfil-container">
-                    <div class="foto-perfil">
-                        <img src='. $imagem . 'alt="Foto de Perfil">
+
+                echo "<div class='wrap-pessoa'>
+                <div class='foto-perfil-container'>
+                    <div class='foto-perfil'>
+                        <img src=" . $rows['profile_image'] . " alt='Foto de Perfil'>
                     </div>
                 </div>
-            </div>' ;
+            </div>" ;
 
                      }
 
                     }
-
+*/
                 ?>
 
-                <div class="wrap-pessoa">
-                    <div class="foto-perfil-container">
-                        <div class="foto-perfil">
-                            <img src="img/header/download.png" alt="Foto de Perfil">
-                        </div>
-                    </div>
-                </div>
 
-                <div class="wrap-pessoa">
-                    <div class="foto-perfil-container">
-                        <div class="foto-perfil">
-                            <img src="img/header/download.png" alt="Foto de Perfil">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wrap-pessoa">
-                    <div class="foto-perfil-container">
-                        <div class="foto-perfil">
-                            <img src="img/header/download.png" alt="Foto de Perfil">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wrap-pessoa">
-                    <div class="foto-perfil-container">
-                        <div class="foto-perfil">
-                            <img src="img/header/download.png" alt="Foto de Perfil">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wrap-pessoa">
-                    <div class="foto-perfil-container">
-                        <div class="foto-perfil">
-                            <img src="img/header/download.png" alt="Foto de Perfil">
-                        </div>
-                    </div>
-                </div>
 
             </div>
-
             <div class="pesquisa-fixed" id="pesquisa-fixed">
 
                 <div class="pesquisa-mensagens">
@@ -155,39 +146,43 @@ $fotos = ""; //src de fotos enviadas
 
                 <?php
 
+                $user = $_SESSION['user']['id_user'];
+
                 //listar mensagens enviadas
                 while ($row = $mensagensEnviadas->fetch_assoc()) {
 
-                    echo '<div class="row-mensagem">
-            <div class="icone-perfil-row-mensagem">
-                <div class="foto-perfil">
-                    <img src="img/header/download.png" alt="Foto de Perfil">
-                </div>
-            </div>
-            <div class="conteudo-row-mensagem enviada">
-                <span>' . $row["mensagem"] . '</span>
-            </div>
-         </div>';
-                }
 
-                //listar mensagens recebidas
-                while ($row = $mensagensRecebidas->fetch_assoc()) {
+                    if ($row['to_id_user'] == $user) {
 
-                    echo '<div class="row-mensagem">
+                        //listar mensagens recebidas/*
+
+                        echo '<div class="row-mensagem">
             
-            <div class="conteudo-row-mensagem">
-                <span>' . $row["mensagem"] . '</span>
-            </div>
+                    <div class="conteudo-row-mensagem">
+                        <span>' . $row["mensagem"] . '</span>
+                    </div>
+        
+                    <div class="icone-perfil-row-mensagem">
+                        <div class="foto-perfil">
+                            <img src="img/header/download.png" alt="Foto de Perfil">
+                        </div>
+                    </div>
+                    
+                 </div>';
+                    } else {
 
-            <div class="icone-perfil-row-mensagem">
-                <div class="foto-perfil">
-                    <img src="img/header/download.png" alt="Foto de Perfil">
+                        echo '<div class="row-mensagem">
+                <div class="icone-perfil-row-mensagem">
+                    <div class="foto-perfil">
+                        <img src="img/header/download.png" alt="Foto de Perfil">
+                    </div>
                 </div>
-            </div>
-            
-         </div>';
+                <div class="conteudo-row-mensagem enviada">
+                    <span>' . $row["mensagem"] . '</span>
+                </div>
+             </div>';
+                    }
                 }
-
 
                 ?>
 
