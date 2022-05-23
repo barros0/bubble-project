@@ -183,7 +183,7 @@ $fotoPerfil = ""; //url da foto de perfil
             <li><a href="#"><i class='bx bx-group'></i>Amigos</a></li>
             <li><a href="#"><i class='bx bx-star'></i>Favoritos</a></li>
             <li><a href="#"><i class='bx bx-cog'></i>Definições</a></li>
-            <li><a href="#"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
+            <li><a href="logout.php"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
         </ul>
     </div>
 
