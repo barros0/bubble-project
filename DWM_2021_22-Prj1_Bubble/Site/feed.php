@@ -1,6 +1,9 @@
 <?php include 'page_parts/header.php'; ?>
+
 <div class="parts">
+
     <?php include 'page_parts/left.php'; ?>
+
     <div class="center">
         <div class="post">
             <div class="user_post_info">
