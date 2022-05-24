@@ -78,7 +78,7 @@ if(isset($_SESSION['user'])){
                         <option value="Outro">Outro</option>
                     </select>
                     <label id="checkbox">
-                        <input type="checkbox" class="check-box">
+                        <input type="checkbox" class="check-box" required>
                         Concorda com os nossos <span> Termos & Condições</span>?
                     </label>
 
