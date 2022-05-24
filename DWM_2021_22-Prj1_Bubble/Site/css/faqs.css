@@ -81,3 +81,14 @@
     transition: max-height 0.2s ease-out;
   }
 
+  .conteudo{
+    max-width: 75%;
+    width: 75%;
+    height: 100%;
+    /* margin-right: auto; */
+    margin-left: auto;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

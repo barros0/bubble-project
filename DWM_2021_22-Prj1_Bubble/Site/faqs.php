@@ -2,6 +2,9 @@
 
 include 'page_parts/header.php';
 
+include 'page_parts/left.php';
+
+
 //buscar detalhes na base de dados
 
 //provavelmente esta parte vai ser em arrays

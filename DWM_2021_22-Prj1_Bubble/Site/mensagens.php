@@ -8,11 +8,6 @@ include 'page_parts/left.php';
 $query = 'SELECT * FROM mensagens';
 $lista_mensagens = $conn->query($query);
 
-
-
-//buscar as mensagens enviadas
-$queryEnviadas = 'select * from mensagens where from_id_user ="' . $_SESSION['user']['id_user'] . '" union select * from mensagens where to_id_user ="' . $_SESSION['user']['id_user'] . '"';
-$mensagensEnviadas = $conn->query($queryEnviadas);
 /*
 //buscar as mensagens recebidas
 $queryRecebidas = 'select * from mensagens where to_id_user ="' . $_SESSION['user']['id_user'] . '"';
@@ -38,7 +33,6 @@ $fotos = ""; //src de fotos enviadas
 <div class="conteudo">
     <div class="barratopo">
         <div class="barra-listagem-mensagens">
-
             <div class="listagem-chats">
 
                 <!--Novo Chat--->
@@ -51,7 +45,6 @@ $fotos = ""; //src de fotos enviadas
                 </div>
 
                 <!--Pesquisa--->
-
                 <div class="wrap-pessoa" id="btn-pesq">
                     <div class="foto-perfil-container">
                         <div class="foto-perfil">
@@ -61,80 +54,45 @@ $fotos = ""; //src de fotos enviadas
                 </div>
 
                 <!--Pessoas-->
-
                 <?php
-
 
                 while ($row = $lista_mensagens->fetch_assoc()) {
 
+                    //buscar os utilizadores que user enviou e recebeu mensagem
                     $user_to = $row['to_id_user'];
                     $user_from = $row['from_id_user'];
-
                 }
 
-                    $queryUsers = 'SELECT * FROM users WHERE id_user = "' . $user_to . '" OR id_user = "' .$user_from. '"';
-                    $users = $conn->query($queryUsers);
+                $queryUsers = 'SELECT * FROM users WHERE id_user = "' . $user_to . '" OR id_user = "' . $user_from . '"';
+                $users = $conn->query($queryUsers);
 
-                    while ($uti = $users->fetch_assoc()) {
+                while ($uti = $users->fetch_assoc()) {
 
-                        echo '<div class="wrap-pessoa">
+                    //mostrar a foto deles na listagem de mensagens
+
+                    echo '<div class="wrap-pessoa">
                         <div class="foto-perfil-container">
                             <div class="foto-perfil">
-                                <img src='. $uti["profile_image"] .' alt='. $uti["nome"] .'>
+                                <img src=' . $uti["profile_image"] . ' alt=' . $uti["nome"] . '>
                             </div>
                         </div>
-                    </div>' ;
-                    }
-      
-                    
-                
+                    </div>';
+                }
 
-                //buscar fotos de pessoas com quem tem mensagens
-                /*
-                while ($row = $mensagensRecebidas->fetch_assoc()) {
-
-                    $imagem = 'select profile_image from users where id_user ="' . $row["to_id_user"] . '"';
-
-                    $teste = $conn->query($imagem);
-
-                    while ($rows = $teste->fetch_assoc()) {
-
-
-
-
-                echo "<div class='wrap-pessoa'>
-                <div class='foto-perfil-container'>
-                    <div class='foto-perfil'>
-                        <img src=" . $rows['profile_image'] . " alt='Foto de Perfil'>
-                    </div>
-                </div>
-            </div>" ;
-
-                     }
-
-                    }
-*/
                 ?>
 
-
-
             </div>
-            <div class="pesquisa-fixed" id="pesquisa-fixed">
 
+            <div class="pesquisa-fixed" id="pesquisa-fixed">
                 <div class="pesquisa-mensagens">
                     <form class="form-pesquisa" action="#" method="POST">
                         <div class="fundo-pesquisa"><input class="pesquisa" type="search" placeholder="Pesquisar Conversas..." name="search"></div>
                     </form>
                 </div>
-
             </div>
 
         </div>
     </div>
-
-
-
-
 
     <div class="wrap-conteudo-mensagens">
 
@@ -142,21 +100,31 @@ $fotos = ""; //src de fotos enviadas
 
             <div class="conteudo-chat">
 
-                <!--do while mensagens existir-->
-
                 <?php
 
                 $user = $_SESSION['user']['id_user'];
 
+                //buscar as mensagens enviadas
+                $queryMensagens = 'SELECT * FROM mensagens WHERE from_id_user = "' . $_SESSION['user']['id_user'] . '" OR to_id_user = "' . $_SESSION['user']['id_user'] . '"';
+                $mensagensEnviadas = $conn->query($queryMensagens);
+
+                //listar as mensagens
+
+                while ($row = $lista_mensagens->fetch_assoc()) {
+
+                    //buscar os utilizadores que user enviou e recebeu mensagem
+                    $user_to = $row['to_id_user'];
+                    $user_from = $row['from_id_user'];
+                }
+
                 //listar mensagens enviadas
                 while ($row = $mensagensEnviadas->fetch_assoc()) {
 
+                    $row["id_mensagem"];
 
-                    if ($row['to_id_user'] == $user) {
+                    //listar mensagens recebidas/*
 
-                        //listar mensagens recebidas/*
-
-                        echo '<div class="row-mensagem">
+                    echo '<div class="row-mensagem">
             
                     <div class="conteudo-row-mensagem">
                         <span>' . $row["mensagem"] . '</span>
@@ -169,9 +137,10 @@ $fotos = ""; //src de fotos enviadas
                     </div>
                     
                  </div>';
-                    } else {
 
-                        echo '<div class="row-mensagem">
+                if ($user_to != $user) {
+
+                    echo '<div class="row-mensagem">
                 <div class="icone-perfil-row-mensagem">
                     <div class="foto-perfil">
                         <img src="img/header/download.png" alt="Foto de Perfil">
@@ -180,7 +149,8 @@ $fotos = ""; //src de fotos enviadas
                 <div class="conteudo-row-mensagem enviada">
                     <span>' . $row["mensagem"] . '</span>
                 </div>
-             </div>';
+                </div>';
+                
                     }
                 }
 
@@ -188,11 +158,9 @@ $fotos = ""; //src de fotos enviadas
 
             </div>
 
-
         </div>
 
     </div>
-
 
     <div class="escrever-mensagem">
         <div class="texto-mensagem">
