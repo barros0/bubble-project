@@ -55,11 +55,8 @@
                 </div>
             </div>
 
-        </div>
 
-        <div class="caixas-eventos1">
-
-
+            
             <div class="caixa">
                 <div class="caixa-inner">
                     <div class="caixa-frente">
@@ -88,6 +85,8 @@
                 </div>
             </div>
         </div>
+
+        
     </div>
 </div>
 <?php include 'page_parts/footer.php'; ?>
