@@ -36,12 +36,15 @@
   }
 
 .wrap-acordiao{
-    max-width: 80%;
-    width: 80%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 5%;
+    padding: 20px;
+}
 
+.accordion-item {
+  margin-bottom: 5%;
 }
 
 .accordion {
@@ -91,4 +94,24 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+}
+
+/*responsivo*/
+@media (max-width: 880px){
+  .barratopo {
+    width: 100%;
+}
+
+.conteudo{
+  max-width: 100%;
+  width: 100%;
+  margin-right: auto;
+
+}
+
+.wrap-acordiao{
+  width: 100%;
+  margin-bottom: 0;
+}
+
 }
