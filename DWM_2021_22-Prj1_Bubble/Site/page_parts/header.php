@@ -68,8 +68,6 @@ $fotoPerfil = ""; //url da foto de perfil
     } else if ($pagina == 'faqs.php') {
     ?>
     <link rel="stylesheet" href="css/faqs.css">
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-
 
     <?php
     } else if ($pagina == 'marketplace.php') {
