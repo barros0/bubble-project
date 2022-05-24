@@ -4,7 +4,7 @@
 
     <?php
 
-    if(isset($_POST['register']))
+    if(isset($_POST))
     {
         $nome=$_POST["nome"];
         $username=$_POST["username"];
@@ -15,10 +15,20 @@
         $sexo=$_POST["sexo"];
 
 
+        if (empty($_POST['password'])){
+            ?>
+            <div>
+                <h1>Coloque uma Password</h1>
+            </div>
+            <?php
+            exit;
+
+        }
+
         if ($_POST["password"]<>$_POST["password1"])
         {
             ?>
-            <div style="width:400px">
+            <div>
                 <h1>A password não coincide</h1>
             </div>
             <?php
@@ -33,7 +43,8 @@
 
         if ($jaexiste==0)
         {
-            $sql="INSERT INTO users (nome, username, email, password, data, sexo) VALUES('$nome','$username','$email','$password','$data', '$sexo')";
+            $password=hash('sha512', $password);
+            $sql="INSERT INTO users (nome, username, email, password, data_nascimento, genero) VALUES('$nome','$username','$email','$password','$data', '$sexo')";
             if (!mysqli_query($conn,$sql))
             {
                 die('Erro: '. mysqli_error($conn));

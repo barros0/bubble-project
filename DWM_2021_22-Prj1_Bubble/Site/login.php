@@ -57,17 +57,17 @@ if(isset($_SESSION['user'])){
 
                 </form>
 
-                <form method="POST" id="register" action="doregister.php" class="formulario-login">
+                <form method="POST" id="register"  action="doregister.php" class="formulario-login">
 
                     <div class="label-nomes">
                         <input type="text" id="label-nome" class="form-input" name="nome" placeholder="Nome" required>
-                        <input type="text" class="form-input" name="username" placeholder="username" required>
+                        <input type="text" class="form-input" name="username" placeholder="Nome de Utilizador" required>
                     </div>
                     <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
                     <div class="label-passwords">
-                        <input type="text" id="label-password" class="form-input" name="password" placeholder="Password"
+                        <input type="password" id="label-password" class="form-input" name="password" placeholder="Password"
                             required>
-                        <input type="text" id="label-password" class="form-input" name="password1"
+                        <input type="password" id="label-password" class="form-input" name="password1"
                             placeholder="Confirmar Password" required>
                     </div>
                     <input type="date" class="form-input" name="data" placeholder="Data de Nascimento" required>
