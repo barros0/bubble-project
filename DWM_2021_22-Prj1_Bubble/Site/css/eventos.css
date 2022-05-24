@@ -51,18 +51,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60%;
+  flex-wrap: wrap;
   margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .caixa {
   background-color: transparent;
-  width: 280px;
-  height: 280px;
+  width: 250px;
+  height: 250px;
   border: 0;
   perspective: 1000px;
-  margin: 30px;
+  margin: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
