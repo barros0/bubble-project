@@ -57,7 +57,7 @@ if(isset($_SESSION['user'])){
 
                 </form>
 
-                <form method="POST" id="register" action="formulario" class="formulario-login">
+                <form method="POST" id="register" action="doregister.php" class="formulario-login">
 
                     <div class="label-nomes">
                         <input type="text" id="label-nome" class="form-input" name="nome" placeholder="Nome" required>
