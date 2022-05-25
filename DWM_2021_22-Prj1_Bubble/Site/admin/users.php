@@ -20,6 +20,24 @@ foreach ($nacionalidadesq as $key => $nacionalidade) {
 foreach ($nacionalidadesq as $key => $nacionalidade) {
     $nacionalidades[$key] = $nacionalidade['gentilico'];
 }
+$idades = array();
+function getidade($data)
+{
+    $data = new DateTime($data);
+    $atual = new DateTime();
+    $dif = $atual->diff($data);
+    return $dif->y;
+}
+
+foreach ($users as $key => $user) {
+    $idade = getidade($user['data_nascimento']);
+    if (empty($idades[$idade])) {
+        $idades[$idade] = 1;
+    } else {
+        $idades[$idade] = $idades[$idade]++;
+    }
+}
+
 
 
 if (!empty($_GET['email'])) {
@@ -52,6 +70,10 @@ if (!empty($_GET['email'])) {
 
         <div style="max-width: 400px">
             <canvas id="users_nacionalidades"></canvas>
+        </div>
+
+        <div style="max-width: 400px">
+            <canvas id="users_idade"></canvas>
         </div>
 
         <script>
@@ -113,25 +135,62 @@ if (!empty($_GET['email'])) {
                 type: 'pie',
                 data: datanacionalidades,
                 options: {
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Nacionalidades',
-                                padding: {
-                                    top: 10,
-                                    bottom: 10
-                                }
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Nacionalidades',
+                            padding: {
+                                top: 10,
+                                bottom: 10
                             }
                         }
                     }
-                };
-                const nacionalidadesChart = new Chart(
-                    document.getElementById('users_nacionalidades'),
-                    confignacionalidades
-                );
+                }
+            };
+            const nacionalidadesChart = new Chart(
+                document.getElementById('users_nacionalidades'),
+                confignacionalidades
+            );
 
-            /* fim genero */
+            /* fim nacionalidade */
 
+
+            /* idade */
+
+            const labelsidades = <?php echo json_encode(array_keys($idades)); ?>;
+
+            const dataidades = {
+                labels: labelsidades,
+                datasets: [{
+                    label: 'Gêneros',
+                    backgroundColor: ['blue', 'pink', 'yellow'],
+                    borderColor: ['blue', 'pink', 'yellow'],
+                    data: <?php echo json_encode(array_values($idades)); ?>
+                }]
+
+            };
+
+            const configidades = {
+                type: 'bar',
+                data: dataidades,
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Idades',
+                            padding: {
+                                top: 10,
+                                bottom: 10
+                            }
+                        }
+                    }
+                }
+            };
+            const idadesChart = new Chart(
+                document.getElementById('users_idade'),
+                configidades
+            );
+            /*fim idade*/
         </script>
 
 
