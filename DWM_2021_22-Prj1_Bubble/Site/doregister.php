@@ -50,8 +50,8 @@
             }
             ?>
             <br>
-            <div style="width:400px">
-                <div class='text1'>Utilizador criado</div>
+            <div>
+                <h1>Utilizador criado</h1>
                 <br>
             </div>
             <?php
@@ -61,7 +61,7 @@
         {
             ?>
             <br>
-            <div>Utilizador já existe</div>
+            <h1>Esse e-mail ja esta a ser usado.</h1>
             </div>
             <?php
         }
