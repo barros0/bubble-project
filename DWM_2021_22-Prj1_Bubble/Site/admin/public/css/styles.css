@@ -229,7 +229,11 @@ tbody tr:nth-child(odd){
 }
 
 .title-page h1 {
+    padding-left: 20px;
+    padding-bottom: 10px;
     color: var(--white);
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .mini-card {

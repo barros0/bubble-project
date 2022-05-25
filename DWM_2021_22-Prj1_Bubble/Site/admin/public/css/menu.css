@@ -16,6 +16,11 @@
     margin: 0;
 }
 
+
+p,h1,h2,h3,h4,h5,h6,small{
+    color: var(--items);
+}
+
 .white{
     color: var(--white);
 }
@@ -61,3 +66,6 @@
      font-size: 18px;
 }
 
+#open_admin_menu_down{
+    justify-content: center;
+}
