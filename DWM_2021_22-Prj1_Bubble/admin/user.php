@@ -1,6 +1,7 @@
 <?php
 include('../partials/header.php');
 
+$users = $conn->query('select * from users');
 
 ?>
 

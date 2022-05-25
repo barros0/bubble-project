@@ -5,7 +5,10 @@
     <div class="center">
 
         <?php
+
+        include ('./functions_handler.php');
         $query = 'select * from notificacoes where id_utilizador ="'.$_SESSION['user']['id_user'].'"';
+
         $notificoes = $conn->query($query);
 
         ?>
@@ -20,7 +23,7 @@
                 <?php
 
                 if($notificoes->num_rows > 0){
-                while ($notificacao = $notificoes->fetch_assoc()){ ?>
+                while ($notificacao = notificacao_handler($notificoes->fetch_assoc(), $conn)){ ?>
                 <div class="notificacao">
                     <div class="d-flex">
                     <div class="img-radius">
@@ -63,15 +66,21 @@
         }
 
         .notificacao .info{
+            padding-top: 6px;
             padding-left: 16px;
         }
 
-        .notificacao .titulo h2{
+        .notificacao .titulo /*h2*/ a{
             font-size: 18px;
             font-weight: bold;
+            text-decoration: none;
             color: var(--palavras);
             margin-top: 10px;
         }
+        .notificacao .titulo a:hover{
+            color: var(--verde-hover);
+        }
+
         .notificacao .titulo *{
             font-size: 14px;
             color: var(--palavras);

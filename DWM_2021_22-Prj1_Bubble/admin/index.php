@@ -8,7 +8,7 @@ include('./partials/header.php');
     </div>
     <main class="container">
         <div class="row">
-            <h2>Bem vindo, User Name</h2>
+            <h2>Bem vindo, <?php echo($_SESSION['user']['nome']) ?></h2>
         </div>
 
     <div class="row">

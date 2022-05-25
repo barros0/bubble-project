@@ -198,10 +198,11 @@ img {
 .title-table {
     margin-top: 20px;
     border-radius: 10px 10px 0px 0px;
-    background-color: var(--parcelas);
+    background-color: var(--items);
 }
 
 .title-table h2 {
+    margin-top: 10px;
     color: var(--white);
 }
 
@@ -216,6 +217,11 @@ table td, table th {
 
 table th, table td {
     color: var(--white);
+}
+
+tbody tr:nth-child(odd){
+    background-color: var(--items);
+    color: #fff;
 }
 
 .title-page {
