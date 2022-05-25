@@ -27,6 +27,7 @@ session_start();
     <script src="./public/js/jquery.min.js"></script>
     <!--- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>--->
     <script src="./public/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <body>
