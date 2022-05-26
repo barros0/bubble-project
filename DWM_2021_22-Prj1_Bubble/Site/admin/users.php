@@ -9,7 +9,7 @@ foreach ($generosq as $key => $genero) {
     $valoresgeneros[$key] = $conn->query('select count(*) as total from users where genero =' . $genero['genero_id'])->fetch_assoc()['total'];
 }
 foreach ($generosq as $key => $genero) {
-    $generos[$key] = $genero['nome_genero'];
+    $generos[$genero['genero_id']] = $genero['nome_genero'];
 }
 
 $nacionalidadesq = $conn->query('select * from nacionalidades');
@@ -29,43 +29,31 @@ function getidade($data)
     return $dif->y;
 }
 
-print_r($generossq = $conn->query('select * from generos'));
-return;
+$generossq = $conn->query('select * from generos');
+
+;
+
+
+
 foreach ($users as $key => $user) {
 
     $idade = getidade($user['data_nascimento']);
 
-    echo array_search($user['genero'], array_column($generossq, 'genero_id'));
+    $genero = $generos[$user['genero']];
 
     if (empty($idades[$idade])) {
         $idades[$genero][$idade] = 1;
-        echo $genero;
     } else {
         $idades[$genero][$idade] = $idades[$idade]++;
     }
-
-
 }
 
+foreach ($generos as $key => $genero){
+    if(empty($idades[$genero])){
+        $idades[$genero] = [0];
+    }
+};
 
-if (!empty($_GET['email'])) {
-
-}
-if (!empty($_GET['ordem'])) {
-
-}
-if (!empty($_GET['max_data'])) {
-
-}
-if (!empty($_GET['min_data'])) {
-
-}
-if (!empty($_GET['email'])) {
-
-}
-if (!empty($_GET['email'])) {
-
-}
 
 
 ?>
@@ -86,8 +74,7 @@ if (!empty($_GET['email'])) {
 
         <script>
             /* genero*/
-            const labelsgenero = <?php echo json_encode($generos); ?>;
-
+            const labelsgenero = <?php echo json_encode(array_values($generos)); ?>;
             const datagenero = {
                 labels: labelsgenero,
 
@@ -125,16 +112,16 @@ if (!empty($_GET['email'])) {
 
 
             /* genero*/
-            const labelsnacionalidades = <?php echo json_encode($nacionalidades); ?>;
+            //const labelsnacionalidades = <?php echo json_encode($nacionalidades); ?>;
 
             const datanacionalidades = {
-                labels: labelsnacionalidades,
+                //labels: labelsnacionalidades,
 
                 datasets: [{
-                    label: 'Gêneros',
+                    label: <?php echo json_encode(array_keys($valoresnacionalidades)); ?>,
                     backgroundColor: ['blue', 'pink', 'yellow'],
                     borderColor: ['blue', 'pink', 'yellow'],
-                    data: <?php echo json_encode($valoresnacionalidades); ?>
+                    data: <?php echo json_encode(array_values($valoresnacionalidades)); ?>
                 }]
 
             };
@@ -164,29 +151,24 @@ if (!empty($_GET['email'])) {
 
 
             /* idade */
-
-            const labelsidades = <?php echo json_encode(array_keys($idades)); ?>;
-
             const dataidades = {
-                labels: labelsidades,
-                /*datasets: [{
-                    label: 'Gêneros',
-                    backgroundColor: ['blue', 'pink', 'yellow'],
-                    borderColor: ['blue', 'pink', 'yellow'],
-                    data: <?php echo json_encode(array_values($idades)); ?>
-                }]*/
-
                 datasets: [{
                     type: 'bar',
-                    label: 'Bar Dataset',
-                    backgroundColor: 'pink',
-                    data: [10, 20, 30, 40]
+                    label: 'Masculino',
+                    backgroundColor: 'red',
+                    data: <?php echo json_encode($idades['Masculino']); ?>
                 }, {
                     type: 'bar',
-                    label: 'Line Dataset',
-                    backgroundColor: 'red',
-                    data: [50, 50, 50, 50],
-                }],
+                    label: 'Feminino',
+                    backgroundColor: 'pink',
+                    data:  <?php echo json_encode($idades['Feminino']); ?>,
+                }
+                    , {
+                        type: 'bar',
+                        label: 'Outro',
+                        backgroundColor: 'yellow',
+                        data:  <?php echo json_encode($idades['Outro']); ?>,
+                    }],
 
             };
 
@@ -204,6 +186,7 @@ if (!empty($_GET['email'])) {
                             }
                         }
                     }
+
                 }
             };
             const idadesChart = new Chart(
@@ -315,4 +298,26 @@ if (!empty($_GET['email'])) {
 
 <?php
 include('./partials/footer.php');
+
+/*
+ *
+ * if (!empty($_GET['email'])) {
+
+}
+if (!empty($_GET['ordem'])) {
+
+}
+if (!empty($_GET['max_data'])) {
+
+}
+if (!empty($_GET['min_data'])) {
+
+}
+if (!empty($_GET['email'])) {
+
+}
+if (!empty($_GET['email'])) {
+
+}
+*/
 ?>
