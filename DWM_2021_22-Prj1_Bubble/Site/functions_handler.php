@@ -1,5 +1,5 @@
 <?php
-/*
+
 include './bd.php';
 
 
@@ -67,10 +67,10 @@ function notificacao_handler($notificacao, $conn)
 
 }
 
-/*function publicacao_gostos($publicacao, $conn)
+function publicacao_gostos($publicacao, $conn)
 {
     return $ngostos = $conn->query('select count(DISTINCT(user_id)) from gostos where publicacao_id =' . $publicacao['publicacao_id'] . ' and estado = 1 and gosto = 1');
-}*/
+}
 
 
 
