@@ -35,6 +35,7 @@ session_start();
 <div class="preloader" id="preloader">
     <div class="center">
         <img class="logo" src="./public/images/logo_bubble.svg" alt="">
+        <div class="overlay"></div>
         <span class="bar"></span>
     </div>
 </div>

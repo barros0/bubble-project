@@ -142,6 +142,7 @@ img {
 
 
 .preloader .bar {
+
     text-align: center;
     margin: 40px;
     width: 350px;
@@ -150,6 +151,7 @@ img {
     background-size: 200% 100%;
     background-image: linear-gradient(to left, var(--verde) 50%, transparent 50%);
     animation: progressbar 1.2s ease infinite;
+
 }
 
 @-webkit-keyframes progressbar {
@@ -315,4 +317,33 @@ max-width: 100% !important;
     color: white;
     font-size: 24px;
 }
+
+
+/*
+/*Overlay*/
+.preloader .overlay{
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+    background-color: var(--background);
+    overflow: hidden;
+    /*transition:1s;*/
+    animation-duration: 1.3s;
+    animation-name: over-preloader;
+
+}
+
+@keyframes over-preloader {
+    from {
+        width: 100%;
+    }
+
+   to {
+       width: 0%;
+    }
+}
+
+
 
