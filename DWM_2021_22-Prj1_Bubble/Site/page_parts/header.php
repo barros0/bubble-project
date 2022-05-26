@@ -35,6 +35,7 @@ $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 $fotoPerfil = ""; //url da foto de perfil
 
 
+
 ?>
 
 <head>
