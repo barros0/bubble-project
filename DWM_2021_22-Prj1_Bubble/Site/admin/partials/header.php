@@ -79,7 +79,7 @@ session_start();
         <a id="open_admin_menu_down" href="#"
            class="d-flex align-items-center link-light text-decoration-none dropdown-toggle">
             <div class="user-img">
-                <img src="../Site/img/users/<?php echo($_SESSION['user']['profile_image']) ?>" alt="">
+                <img src=".././img/users/lopess.png" alt="">
             </div>
             <strong><?php echo($_SESSION['user']['nome']) ?></strong>
         </a>

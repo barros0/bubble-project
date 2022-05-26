@@ -8,6 +8,15 @@ $query = "select * from users";
 session_start();
 $_SESSION['errors'] = array();
 
+
+$minutosExpira=30;
+if (isset($_SESSION['ULTIMA_ATIVIDADE']) && (time() - $_SESSION['ULTIMA_ATIVIDADE'] > ($minutosExpira*60))) {
+    session_unset();     // unset $_SESSION
+    session_destroy();   // destroy session data
+}
+$_SESSION['ULTIMA_ATIVIDADE'] = time(); // ATULIZA A ULTIMA_ATIVIDADE
+
+
 if(!isset($_SESSION['user'])){
 
     header('location:login.php');

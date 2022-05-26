@@ -3,10 +3,9 @@
 include './bd.php';
 
 
-
+// query completa $notificacao
 function notificacao_handler($notificacao, $conn)
 {
-
     $type = $notificacao['tipo'];
     $idnotificacao = $notificacao['id_notificacao'];
 
@@ -67,6 +66,13 @@ function notificacao_handler($notificacao, $conn)
 
 
 }
+
+function publicacao_gostos($publicacao, $conn)
+{
+    return $ngostos = $conn->query('select count(DISTINCT(user_id)) from gostos where publicacao_id =' . $publicacao['publicacao_id'] . ' and estado = 1 and gosto = 1');
+}
+
+
 
 
 

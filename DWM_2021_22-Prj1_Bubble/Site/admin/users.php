@@ -29,15 +29,23 @@ function getidade($data)
     return $dif->y;
 }
 
+print_r($generossq = $conn->query('select * from generos'));
+return;
 foreach ($users as $key => $user) {
-    $idade = getidade($user['data_nascimento']);
-    if (empty($idades[$idade])) {
-        $idades[$idade] = 1;
-    } else {
-        $idades[$idade] = $idades[$idade]++;
-    }
-}
 
+    $idade = getidade($user['data_nascimento']);
+
+    echo array_search($user['genero'], array_column($generossq, 'genero_id'));
+
+    if (empty($idades[$idade])) {
+        $idades[$genero][$idade] = 1;
+        echo $genero;
+    } else {
+        $idades[$genero][$idade] = $idades[$idade]++;
+    }
+
+
+}
 
 
 if (!empty($_GET['email'])) {
@@ -161,12 +169,24 @@ if (!empty($_GET['email'])) {
 
             const dataidades = {
                 labels: labelsidades,
-                datasets: [{
+                /*datasets: [{
                     label: 'Gêneros',
                     backgroundColor: ['blue', 'pink', 'yellow'],
                     borderColor: ['blue', 'pink', 'yellow'],
                     data: <?php echo json_encode(array_values($idades)); ?>
-                }]
+                }]*/
+
+                datasets: [{
+                    type: 'bar',
+                    label: 'Bar Dataset',
+                    backgroundColor: 'pink',
+                    data: [10, 20, 30, 40]
+                }, {
+                    type: 'bar',
+                    label: 'Line Dataset',
+                    backgroundColor: 'red',
+                    data: [50, 50, 50, 50],
+                }],
 
             };
 
@@ -191,6 +211,8 @@ if (!empty($_GET['email'])) {
                 configidades
             );
             /*fim idade*/
+
+
         </script>
 
 
