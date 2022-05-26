@@ -4,8 +4,8 @@
 $query = "select * from publicacoes INNER JOIN users
 ON publicacoes.user_id = users.id_user
 INNER JOIN publicacoes_fotos
-ON publicacoes.publicacao_id = publicacoes_fotos.publicacao_id
- ";
+ON publicacoes.publicacao_id = publicacoes_fotos.publicacao_id";
+
 $query_fotos = "select * from publicacoes_fotos";
 $result_set = $conn->query($query);
 $result_set2 = $conn->query($query_fotos);
