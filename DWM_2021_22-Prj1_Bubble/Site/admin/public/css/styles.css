@@ -219,7 +219,7 @@ table th, table td {
     color: var(--white);
 }
 
-tbody tr:nth-child(odd){
+tbody tr:nth-child(odd) {
     background-color: var(--items);
     color: #fff;
 }
@@ -285,7 +285,7 @@ tbody tr:nth-child(odd){
     color: var(--white);
 }
 
-.armazenamento .stext-white{
+.armazenamento .stext-white {
     color: var(--palavras);
 }
 
@@ -298,45 +298,21 @@ tbody tr:nth-child(odd){
     width: 40px;
     margin-right: 10px;
 }
+.widget.full {
+max-width: 100% !important;
 
-
-/*custom css*/
-.container-faqs {
-    display: none;
-    width: 100%;
-    height: 100%;
-    padding-left: 340px;
-    padding-top: 10px;
 }
 
-
-/*inserir faqs*/
-form {
-    margin-left: auto;
-    width: 100%;
-    margin-right: auto;
+.widget {
+    padding: 20px;
+    background-color: var(--items);
+    margin: 20px;
+    max-width: 450px;
+    border-radius: 10px;
 }
 
-input {
-    height: 5%;
-    width: 80%;
-}
-
-label {
-    display: inline-block;
+.widget .titulo {
     color: white;
+    font-size: 24px;
 }
 
-input#Submit {
-    width: 20%;
-
-}
-
-p.btn-wrp {
-    width: 100%;
-    /* height: 6%; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-}
