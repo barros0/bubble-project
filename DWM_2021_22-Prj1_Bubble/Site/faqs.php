@@ -29,14 +29,20 @@ $lista_faqs = $conn->query($query);
         $row['pergunta'];
         $row['resposta'];
 
+        /*
         $ids = explode(" ", $valorID); //separar os ids para poder comparar 
 
         //gerar acordiao
 
+        echo $valorID;
+        echo $ids;
+*/
         //primeira pergunta vir por defeito aberta
 
         //colocar sempre a que tem o id menor como a primeira pergunta
-        if (array_keys($ids, min($ids)) < $row['id_faq']) {
+   /*     if (array_keys($ids, min($ids)) < $row['id_faq']) {*/
+
+    if ($row['id_faq'] == 1) {
 
           echo '<div class="accordion-item">
           <h2 class="accordion-header" id="panelsStayOpen-heading' . $row['id_faq'] . '">
@@ -50,6 +56,7 @@ $lista_faqs = $conn->query($query);
             </div>
           </div>
         </div>';
+
         } else {
 
           echo '<div class="accordion-item">
