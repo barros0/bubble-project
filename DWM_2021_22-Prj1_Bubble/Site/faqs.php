@@ -25,43 +25,66 @@ $lista_faqs = $conn->query($query);
       while ($row = $lista_faqs->fetch_assoc()) {
 
         //buscar dados
-        $row['id_faq'];
+        $valorID = $row['id_faq'];
         $row['pergunta'];
         $row['resposta'];
 
-        echo '<div class="accordion-item">
-        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-            ' .$row['pergunta']. '
-          </button>
-        </h2>
-        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-          <div class="accordion-body">
-          ' .$row['resposta']. '
+        $ids = explode(" ", $valorID); //separar os ids para poder comparar 
+
+        //gerar acordiao
+
+        //primeira pergunta vir por defeito aberta
+
+        //colocar sempre a que tem o id menor como a primeira pergunta
+        if (array_keys($ids, min($ids)) < $row['id_faq']) {
+
+          echo '<div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-heading' . $row['id_faq'] . '">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse' . $row['id_faq'] . '" aria-expanded="true" aria-controls="panelsStayOpen-collapse' . $row['id_faq'] . '">
+              ' . $row['pergunta'] . '
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapse' . $row['id_faq'] . '" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading' . $row['id_faq'] . '">
+            <div class="accordion-body">
+            ' . $row['resposta'] . '
+            </div>
           </div>
-        </div>
-      </div>';
+        </div>';
+        } else {
 
-
+          echo '<div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-heading' . $row['id_faq'] . '">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse' . $row['id_faq'] . '" aria-expanded="false" aria-controls="panelsStayOpen-collapse' . $row['id_faq'] . '">
+              ' . $row['pergunta'] . '
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapse' . $row['id_faq'] . '" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading' . $row['id_faq'] . '">
+            <div class="accordion-body">
+            ' . $row['resposta'] . '
+            </div>
+          </div>
+        </div>';
+        }
       }
 
       ?>
 
-<div class="accordion-item">
-        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-            Accordion Item #1
-          </button>
-        </h2>
-        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-          <div class="accordion-body">
-            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
-
-
     </div>
+
+
+    <form name="inserirFAQ" method="post" action="inserefaq.php">
+      <p>
+        <label for="Pergunta">Pergunta </label>
+        <input type="text" name="Pergunta" id="Pergunta">
+      </p>
+      <p>
+        <label for="Resposta">Resposta </label>
+        <input type="text" name="Resposta" id="Resposta">
+      </p>
+      <input type="submit" name="Submit" id="Submit" value="Submit">
+      </p>
+    </form>
+
 
   </div>
 </div>

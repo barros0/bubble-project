@@ -1,9 +1,5 @@
-
-
-    <!--REGISTO !-->
-
-    <?php
-
+<?php
+/*ligacao ao formulario*/
     if(isset($_POST))
     {
         $nome=$_POST["nome"];
@@ -14,6 +10,7 @@
         $data=$_POST["data"];
         $sexo=$_POST["sexo"];
 
+/*nao permitir que se introduza campos vazios de password na base de dados*/
 
         if (empty($_POST['password'])){
             ?>
@@ -24,7 +21,7 @@
             exit;
 
         }
-
+/*verficar que a password e igual*/
         if ($_POST["password"]<>$_POST["password1"])
         {
             ?>
@@ -35,12 +32,14 @@
             exit;
         }
 
-
+/*ligacao a base de dados*/
         include('./bd.php');
         $existe="select * from users where email='".$email."'";
         $faz_existe=mysqli_query($conn, $existe);
         $jaexiste=mysqli_num_rows($faz_existe);
 
+
+/*introducao dos valores na base de dados e ver se existem ou nao*/
         if ($jaexiste==0)
         {
             $password=hash('sha512', $password);
@@ -51,8 +50,8 @@
             }
             ?>
             <br>
-            <div style="width:400px">
-                <div class='text1'>Utilizador criado</div>
+            <div>
+                <h1>Utilizador criado</h1>
                 <br>
             </div>
             <?php
@@ -62,7 +61,7 @@
         {
             ?>
             <br>
-            <div>Utilizador já existe</div>
+            <h1>Esse e-mail ja esta a ser usado.</h1>
             </div>
             <?php
         }

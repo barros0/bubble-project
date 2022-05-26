@@ -1,9 +1,17 @@
 <?php
 
 // conection check
-//include('./db_con.php')
+require('db_con.php');
 
 // middleware redirect
+
+session_start();
+
+    if (empty($_SESSION['user']) || $_SESSION['user']['tipo'] <> 1) {
+        header('location:login.php');
+        exit;
+    }
+
 
 ?>
 
@@ -19,6 +27,7 @@
     <script src="./public/js/jquery.min.js"></script>
     <!--- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>--->
     <script src="./public/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <body>
@@ -70,9 +79,9 @@
         <a id="open_admin_menu_down" href="#"
            class="d-flex align-items-center link-light text-decoration-none dropdown-toggle">
             <div class="user-img">
-                <img src="https://thispersondoesnotexist.com/image" alt="">
+                <img src=".././img/users/lopess.png" alt="">
             </div>
-            <strong>Joana Castanha</strong>
+            <strong><?php echo($_SESSION['user']['nome']) ?></strong>
         </a>
         <ul class="dropdown-menu text-small shadow admin-menu-down" id="admin_menu_down">
 
