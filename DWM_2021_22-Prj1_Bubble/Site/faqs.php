@@ -25,15 +25,18 @@ $lista_faqs = $conn->query($query);
       while ($row = $lista_faqs->fetch_assoc()) {
 
         //buscar dados
-        $row['id_faq'];
+        $valorID = $row['id_faq'];
         $row['pergunta'];
         $row['resposta'];
+
+        $ids = explode(" ", $valorID); //separar os ids para poder comparar 
 
         //gerar acordiao
 
         //primeira pergunta vir por defeito aberta
 
-        if ($row['id_faq'] == 1) {
+        //colocar sempre a que tem o id menor como a primeira pergunta
+        if (array_keys($ids, min($ids)) < $row['id_faq']) {
 
           echo '<div class="accordion-item">
           <h2 class="accordion-header" id="panelsStayOpen-heading' . $row['id_faq'] . '">
@@ -67,6 +70,21 @@ $lista_faqs = $conn->query($query);
       ?>
 
     </div>
+
+
+    <form name="inserirFAQ" method="post" action="inserefaq.php">
+      <p>
+        <label for="Pergunta">Pergunta </label>
+        <input type="text" name="Pergunta" id="Pergunta">
+      </p>
+      <p>
+        <label for="Resposta">Resposta </label>
+        <input type="text" name="Resposta" id="Resposta">
+      </p>
+      <input type="submit" name="Submit" id="Submit" value="Submit">
+      </p>
+    </form>
+
 
   </div>
 </div>
