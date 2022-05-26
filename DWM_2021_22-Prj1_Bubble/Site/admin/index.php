@@ -6,7 +6,7 @@ include('./partials/header.php');
     <div class="title-page s-container">
         <h1>Dashboard</h1>
     </div>
-    <main class="container">
+    <main class="container" id="main">
         <div class="row">
             <h2>Bem vindo, <?php echo($_SESSION['user']['nome']) ?></h2>
         </div>
@@ -180,7 +180,23 @@ include('./partials/header.php');
                 </tbody>
             </table>
         </div>
+        </main>
 
+        <div id="container-faqs" class="container-faqs">
+        <form name="inserirFAQ" method="post" action="../inserefaq.php">
+      <p>
+        <label for="Pergunta">Pergunta </label>
+        <input type="text" name="Pergunta" id="Pergunta">
+      </p>
+      <p>
+        <label for="Resposta">Resposta </label>
+        <input type="text" name="Resposta" id="Resposta">
+      </p>
+      <p class="btn-wrp"><input type="submit" name="Submit" id="Submit" value="Submeter"></p>
+      </p>
+    </form>
+
+</div>
 
 <?php
 include('./partials/footer.php');

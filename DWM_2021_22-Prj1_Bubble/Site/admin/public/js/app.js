@@ -20,4 +20,13 @@ $(document).ready(function () {
         $(this).siblings('.filter-w').toggleClass('open');
     })
 
+    //mudar tabs
+        $("#btn-faqs").click(function () {
+    
+         $("#main").toggle();
+
+         $("#container-faqs").toggle();
+    
+        });
+
 });

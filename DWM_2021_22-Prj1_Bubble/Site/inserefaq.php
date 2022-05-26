@@ -14,6 +14,6 @@ if (isset($_POST['Pergunta']) && isset($_POST['Resposta'])) {
     }
   }
 
-header('location:faqs.php');
+header('location:admin/index.php');
 
 ?>

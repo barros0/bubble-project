@@ -71,21 +71,6 @@ $lista_faqs = $conn->query($query);
 
     </div>
 
-
-    <form name="inserirFAQ" method="post" action="inserefaq.php">
-      <p>
-        <label for="Pergunta">Pergunta </label>
-        <input type="text" name="Pergunta" id="Pergunta">
-      </p>
-      <p>
-        <label for="Resposta">Resposta </label>
-        <input type="text" name="Resposta" id="Resposta">
-      </p>
-      <input type="submit" name="Submit" id="Submit" value="Submit">
-      </p>
-    </form>
-
-
   </div>
 </div>
 

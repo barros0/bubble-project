@@ -72,6 +72,9 @@ session_start();
             <li>
                 <a href="#"><i class="fa fa-water icon"></i> Eventos</a>
             </li>
+            <li>
+                <a id="btn-faqs" href="#"><i class="fas fa-question"></i> FAQS</a>
+            </li>
         </ul>
     </div>
 
