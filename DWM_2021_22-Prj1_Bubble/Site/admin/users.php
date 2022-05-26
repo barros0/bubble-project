@@ -59,184 +59,179 @@ foreach ($generos as $key => $genero){
 ?>
 
 
-    <div class="s-container">
-        <div style="max-width: 400px" class="card">
-            <canvas id="users_generos"></canvas>
-        </div>
-
-        <div style="max-width: 400px">
-            <canvas id="users_nacionalidades"></canvas>
-        </div>
-
-        <div style="max-width: 400px">
-            <canvas id="users_idade"></canvas>
-        </div>
-
-        <script>
-            /* genero*/
-            const labelsgenero = <?php echo json_encode(array_values($generos)); ?>;
-            const datagenero = {
-                labels: labelsgenero,
-
-                datasets: [{
-                    label: 'Gêneros',
-                    backgroundColor: ['blue', 'pink', 'yellow'],
-                    borderColor: ['blue', 'pink', 'yellow'],
-                    data: <?php echo json_encode($valoresgeneros); ?>
-                }]
-            };
-
-            const configgenero = {
-                type: 'pie',
-                data: datagenero,
-                options: {
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Gêneros',
-                            padding: {
-                                top: 10,
-                                bottom: 10
-                            }
-                        }
-                    }
-                }
-            };
-            const generoChart = new Chart(
-                document.getElementById('users_generos'),
-                configgenero
-            );
-
-            /* fim genero */
-
-
-
-            /* genero*/
-            //const labelsnacionalidades = <?php echo json_encode($nacionalidades); ?>;
-
-            const datanacionalidades = {
-                //labels: labelsnacionalidades,
-
-                datasets: [{
-                    label: <?php echo json_encode(array_keys($valoresnacionalidades)); ?>,
-                    backgroundColor: ['blue', 'pink', 'yellow'],
-                    borderColor: ['blue', 'pink', 'yellow'],
-                    data: <?php echo json_encode(array_values($valoresnacionalidades)); ?>
-                }]
-
-            };
-
-            const confignacionalidades = {
-                type: 'pie',
-                data: datanacionalidades,
-                options: {
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Nacionalidades',
-                            padding: {
-                                top: 10,
-                                bottom: 10
-                            }
-                        }
-                    }
-                }
-            };
-            const nacionalidadesChart = new Chart(
-                document.getElementById('users_nacionalidades'),
-                confignacionalidades
-            );
-
-            /* fim nacionalidade */
-
-
-            /* idade */
-            const dataidades = {
-                datasets: [{
-                    type: 'bar',
-                    label: 'Masculino',
-                    backgroundColor: 'red',
-                    data: <?php echo json_encode($idades['Masculino']); ?>
-                }, {
-                    type: 'bar',
-                    label: 'Feminino',
-                    backgroundColor: 'pink',
-                    data:  <?php echo json_encode($idades['Feminino']); ?>,
-                }
-                    , {
-                        type: 'bar',
-                        label: 'Outro',
-                        backgroundColor: 'yellow',
-                        data:  <?php echo json_encode($idades['Outro']); ?>,
-                    }],
-
-            };
-
-            const configidades = {
-                type: 'bar',
-                data: dataidades,
-                options: {
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Idades',
-                            padding: {
-                                top: 10,
-                                bottom: 10
-                            }
-                        }
-                    }
-
-                }
-            };
-            const idadesChart = new Chart(
-                document.getElementById('users_idade'),
-                configidades
-            );
-            /*fim idade*/
-
-
-        </script>
-
-
+<div class="s-container">
+    <div style="max-width: 400px" class="card">
+        <canvas id="users_generos"></canvas>
     </div>
 
-    <div class="table-responsive">
-        <div class="table-header row">
-            <div class="titulo col-10">
-                <h2>fdfd</h2>
-            </div>
+    <div style="max-width: 400px">
+        <canvas id="users_nacionalidades"></canvas>
+    </div>
 
-            <div class="filtro col-2">
-                <a href="#" class="filter filter-close">
-                    <i class="fa fa-filter"></i>
-                    Filtros
-                </a>
+    <div style="max-width: 400px">
+        <canvas id="users_idade"></canvas>
+    </div>
 
-                <div class="filter-w">
+    <script>
+    /* genero*/
+    const labelsgenero = <?php echo json_encode(array_values($generos)); ?>;
+    const datagenero = {
+        labels: labelsgenero,
 
-                    <div class="filtros">
-                        <div class="filter-line">
-                            <div class="icon">
-                                <i class="fa fa-envelope"></i>
-                            </div>
-                            <input type="text" placeholder="Email">
+        datasets: [{
+            label: 'Gêneros',
+            backgroundColor: ['blue', 'pink', 'yellow'],
+            borderColor: ['blue', 'pink', 'yellow'],
+            data: <?php echo json_encode($valoresgeneros); ?>
+        }]
+    };
+
+    const configgenero = {
+        type: 'pie',
+        data: datagenero,
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Gêneros',
+                    padding: {
+                        top: 10,
+                        bottom: 10
+                    }
+                }
+            }
+        }
+    };
+    const generoChart = new Chart(
+        document.getElementById('users_generos'),
+        configgenero
+    );
+
+    /* fim genero */
+
+
+
+    /* genero*/
+    //const labelsnacionalidades = <?php echo json_encode($nacionalidades); ?>;
+
+    const datanacionalidades = {
+        //labels: labelsnacionalidades,
+
+        datasets: [{
+            label: <?php echo json_encode(array_keys($valoresnacionalidades)); ?>,
+            backgroundColor: ['blue', 'pink', 'yellow'],
+            borderColor: ['blue', 'pink', 'yellow'],
+            data: <?php echo json_encode(array_values($valoresnacionalidades)); ?>
+        }]
+
+    };
+
+    const confignacionalidades = {
+        type: 'pie',
+        data: datanacionalidades,
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Nacionalidades',
+                    padding: {
+                        top: 10,
+                        bottom: 10
+                    }
+                }
+            }
+        }
+    };
+    const nacionalidadesChart = new Chart(
+        document.getElementById('users_nacionalidades'),
+        confignacionalidades
+    );
+
+    /* fim nacionalidade */
+
+
+    /* idade */
+    const dataidades = {
+        datasets: [{
+            type: 'bar',
+            label: 'Masculino',
+            backgroundColor: 'red',
+            data: <?php echo json_encode($idades['Masculino']); ?>
+        }, {
+            type: 'bar',
+            label: 'Feminino',
+            backgroundColor: 'pink',
+            data: <?php echo json_encode($idades['Feminino']); ?>,
+        }, {
+            type: 'bar',
+            label: 'Outro',
+            backgroundColor: 'yellow',
+            data: <?php echo json_encode($idades['Outro']); ?>,
+        }],
+
+    };
+
+    const configidades = {
+        type: 'bar',
+        data: dataidades,
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Idades',
+                    padding: {
+                        top: 10,
+                        bottom: 10
+                    }
+                }
+            }
+
+        }
+    };
+    const idadesChart = new Chart(
+        document.getElementById('users_idade'),
+        configidades
+    );
+    /*fim idade*/
+    </script>
+
+
+</div>
+
+<div class="table-responsive">
+    <div class="table-header row">
+        <div class="titulo col-10">
+            <h2>fdfd</h2>
+        </div>
+
+        <div class="filtro col-2">
+            <a href="#" class="filter filter-close">
+                <i class="fa fa-filter"></i>
+                Filtros
+            </a>
+
+            <div class="filter-w">
+
+                <div class="filtros">
+                    <div class="filter-line">
+                        <div class="icon">
+                            <i class="fa fa-envelope"></i>
                         </div>
+                        <input type="text" placeholder="Email">
                     </div>
+                </div>
 
 
-                    <div class="opt">
-                        <input type="button" value="Fechar"
-                               class="btn disable">
-                        <input type="button" value="Filtrar"
-                               class="btn">
-                    </div>
+                <div class="opt">
+                    <input type="button" value="Fechar" class="btn disable">
+                    <input type="button" value="Filtrar" class="btn">
                 </div>
             </div>
         </div>
-        <table class="table">
-            <caption>Lista de utilizadores</caption>
-            <thead>
+    </div>
+    <table class="table">
+        <caption>Lista de utilizadores</caption>
+        <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
@@ -244,8 +239,8 @@ foreach ($generos as $key => $genero){
                 <th scope="col">Estado</th>
                 <th scope="col">Editar</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             <tr>
                 <th scope="row">1</th>
                 <td>
@@ -254,9 +249,9 @@ foreach ($generos as $key => $genero){
                 </td>
                 <td>aaaaa</td>
                 <td>
-                <span class="mini-card bg-warning">
-                    Bloqueado
-                </span>
+                    <span class="mini-card bg-warning">
+                        Bloqueado
+                    </span>
                 </td>
                 <td><i class="fa fa-pen"></i></td>
             </tr>
@@ -268,9 +263,9 @@ foreach ($generos as $key => $genero){
                 </td>
                 <td>aaaaa</td>
                 <td>
-                <span class="mini-card bg-warning">
-                    Bloqueado
-                </span>
+                    <span class="mini-card bg-warning">
+                        Bloqueado
+                    </span>
                 </td>
                 <td><i class="fa fa-pen"></i></td>
             </tr>
@@ -282,18 +277,18 @@ foreach ($generos as $key => $genero){
                 </td>
                 <td>aaaaa</td>
                 <td>
-                <span class="mini-card bg-warning">
-                    Bloqueado
-                </span>
+                    <span class="mini-card bg-warning">
+                        Bloqueado
+                    </span>
                 </td>
                 <td><i class="fa fa-pen"></i>
 
                 </td>
             </tr>
 
-            </tbody>
-        </table>
-    </div>
+        </tbody>
+    </table>
+</div>
 
 
 <?php

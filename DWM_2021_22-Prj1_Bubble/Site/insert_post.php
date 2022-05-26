@@ -17,9 +17,9 @@ $imagem = $_FILES['foto_public']['name'];
 $extensao = pathinfo($imagem, PATHINFO_EXTENSION);
 $folder = "img/publicacoes/";
 //MUDAR DE NOME DA FOTO
-$novo_ficheiro = $folder . sha1(microtime()) . "." . $extensao;
+$novo_ficheiro = sha1(microtime()) . "." . $extensao;
 
-if (move_uploaded_file($_FILES['foto_public']['tmp_name'], $novo_ficheiro)) {
+if (move_uploaded_file($_FILES['foto_public']['tmp_name'], $folder.$novo_ficheiro)) {
     $publicacao_foto = "INSERT INTO publicacoes_fotos (publicacao_id,caminho) VALUES('".$idpub."','".$novo_ficheiro."')";
     $conn->query($publicacao_foto);
 }

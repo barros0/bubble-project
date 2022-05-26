@@ -220,7 +220,7 @@ nav, header {
 }
 
 .popup_searchbar {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 300px;
   display: none;
@@ -295,7 +295,7 @@ input.input_searchbar {
 }
 
 .modal_make_post {
-  position: absolute;
+  position: fixed;
   width: 100%;
   display: none;
   height: 300px;
@@ -533,7 +533,7 @@ textarea:focus {
   height: 70px;
 }
 
-#nav_bar_bottom_responsive li:hover i{
+#nav_bar_bottom_responsive li:hover i {
   color: #00ff8a;
 }
 
