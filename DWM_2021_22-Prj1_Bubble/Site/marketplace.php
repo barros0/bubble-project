@@ -14,7 +14,7 @@
 
                 <nav class="list-none mb-10 z-0">
                     <?php for($categoria = 0; $categoria <=14; $categoria ++): ?>
-                    <li class="pb-2>
+                    <li class="pb-2">
                         <a class="text-gray-400 hover:text-white">Aplicações <span class="font-bold">12</span></a>
                     </li>
                     <?php endfor; ?>
