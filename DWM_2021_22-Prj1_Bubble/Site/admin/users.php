@@ -34,7 +34,13 @@ function getidade($data)
     return $dif->y;
 }
 
+<<<<<<< Updated upstream
 // para cada user
+=======
+$generossq = $conn->query('select * from generos');
+
+
+>>>>>>> Stashed changes
 foreach ($users as $key => $user) {
 
     // conta a idade para o user
@@ -51,7 +57,10 @@ foreach ($users as $key => $user) {
     }
 }
 
+<<<<<<< Updated upstream
 // para os generos que nao tem users coloca 0 para evitar erros
+=======
+>>>>>>> Stashed changes
 foreach ($generos as $key => $genero) {
     if (empty($idades[$genero])) {
         $idades[$genero] = [0];

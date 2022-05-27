@@ -20,6 +20,7 @@ $(document).ready(function () {
         $(this).siblings('.filter-w').toggleClass('open');
     })
 
+<<<<<<< Updated upstream
     //mudar tabs
         $("#btn-faqs").click(function () {
     
@@ -30,3 +31,8 @@ $(document).ready(function () {
         });
 
 });
+=======
+});
+
+
+>>>>>>> Stashed changes

@@ -56,10 +56,10 @@ session_start();
                 <a href="#"><i class="fa fa-box icon"></i> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-users icon"></i> Utilizadores</a>
+                <a href="./users.php"><i class="fa fa-users icon"></i> Utilizadores</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-pen icon"></i> Publicações</a>
+                <a href="./publicacoes.php"><i class="fa fa-pen icon"></i> Publicações</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-warning icon"></i> Reports</a>
