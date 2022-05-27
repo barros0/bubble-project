@@ -17,10 +17,28 @@
 
                 <nav class="list-none mb-10 z-0">
 
+                <?php
+
+            include('bd.php');
+
+            $categorias = mysqli_query($conn, "SELECT distinct categoria FROM marketplace");
+
+            $cat = mysqli_fetch_array($categorias);
+
+            foreach($categorias as $cat => $categoria):
+
+                $c = $categoria['categoria'];
+
+                $somar = mysqli_query($conn, "SELECT count(categoria) as total FROM `marketplace` WHERE categoria = '$c'");
+
+                $r = mysqli_fetch_array($somar);
+       
+            ?>
+
                     <li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Aplicações<span class="font-bold"> 2</span></a>
+                        <a class="text-gray-400 hover:text-white"><?php echo($categoria['categoria']) ?><span class="font-bold"> <?php echo($r['total']) ?></span></a>
                     </li>
-                    <li class="pb-2">
+                    <!--li class="pb-2">
                         <a class="text-gray-400 hover:text-white">Gestão de API<span class="font-bold"> 1</span></a>
                     </li>
                     <li class="pb-2">
@@ -31,7 +49,9 @@
                     </li>
                     <li class="pb-2">
                         <a class="text-gray-400 hover:text-white">Revisão de Código<span class="font-bold"> 0</span></a>
-                    </li>
+                    </li-->
+
+                    <?php endforeach; ?>
 
                 </nav>
         </div>
