@@ -22,11 +22,11 @@ $(document).ready(function () {
 
     //mudar tabs
         $("#btn-faqs").click(function () {
-    
+
          $("#main").toggle();
 
          $("#container-faqs").toggle();
-    
+
         });
 
 });

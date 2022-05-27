@@ -1,4 +1,19 @@
-
 .light-gray {
     background-color: #333333;
+}
+
+.text-verde {
+    color: #00ff8a;
+}
+
+.text-verde:hover {
+    color: #00d372;
+}
+
+.bg-verde {
+    background-color: #00ff8a !important;
+}
+
+.bg-verde:hover {
+    background-color: #00d372;
 }
