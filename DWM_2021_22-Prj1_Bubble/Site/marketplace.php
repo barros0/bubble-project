@@ -32,7 +32,7 @@
                 $somar = mysqli_query($conn, "SELECT count(categoria) as total FROM `marketplace` WHERE categoria = '$c'");
 
                 $r = mysqli_fetch_array($somar);
-       
+
             ?>
 
                     <li class="pb-2">

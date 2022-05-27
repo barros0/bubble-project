@@ -12,7 +12,8 @@ $descricao = $_POST['descricao'];
 $sql = "INSERT INTO marketplace (titulo,categoria,preco,descricao) VALUES ('$titulo','$categoria','$preco','$descricao')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    header('location:../marketplace.php');
+
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
