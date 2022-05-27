@@ -302,7 +302,6 @@ tbody tr:nth-child(odd) {
 }
 .widget.full {
 max-width: 100% !important;
-<<<<<<< Updated upstream
 
 }
 
@@ -346,21 +345,5 @@ max-width: 100% !important;
     }
 }
 
-=======
->>>>>>> Stashed changes
 
-}
-
-.widget {
-    padding: 20px;
-    background-color: var(--items);
-    margin: 20px;
-    max-width: 450px;
-    border-radius: 10px;
-}
-
-.widget .titulo {
-    color: white;
-    font-size: 24px;
-}
 

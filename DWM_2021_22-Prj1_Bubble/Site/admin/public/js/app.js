@@ -20,19 +20,13 @@ $(document).ready(function () {
         $(this).siblings('.filter-w').toggleClass('open');
     })
 
-<<<<<<< Updated upstream
     //mudar tabs
         $("#btn-faqs").click(function () {
-    
+
          $("#main").toggle();
 
          $("#container-faqs").toggle();
-    
+
         });
 
 });
-=======
-});
-
-
->>>>>>> Stashed changes
