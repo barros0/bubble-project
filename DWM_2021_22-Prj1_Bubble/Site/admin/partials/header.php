@@ -8,7 +8,7 @@ require('db_con.php');
 session_start();
 
     if (empty($_SESSION['user']) || $_SESSION['user']['tipo'] <> 1) {
-        header('location:login.php');
+        header('location:../login.php');
         exit;
     }
 
@@ -79,7 +79,7 @@ session_start();
         </ul>
     </div>
 
-    <div class="dropdown m-auto">
+    <div class="dropdown m-auto menu-admin">
         <a id="open_admin_menu_down" href="#"
            class="d-flex align-items-center link-light text-decoration-none dropdown-toggle">
             <div class="user-img">
@@ -100,6 +100,16 @@ session_start();
 
 </nav>
 
+
+<div class="notificacoes">
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Oloco, meu!</strong> Olha esse alerta animado, como é chique!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
 
 
 
