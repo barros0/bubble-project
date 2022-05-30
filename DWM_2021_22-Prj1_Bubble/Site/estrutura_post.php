@@ -1,6 +1,4 @@
 <?php
-
-
 $query = "select * from publicacoes INNER JOIN users
 ON publicacoes.user_id = users.id_user order by publicacoes.created_at DESC";
 

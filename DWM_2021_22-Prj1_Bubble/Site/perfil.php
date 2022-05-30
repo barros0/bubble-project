@@ -26,7 +26,7 @@
             <div class="pagina_buttons">
                 <div class="pagina_button_adicionar">
                     <form action="">
-                        <input type="button" name="adicionar">
+                        <input type="button" value="Adicionar +" name="adicionar">
                     </form>
                 </div>
                 <div class="pagina_button_mensagem">

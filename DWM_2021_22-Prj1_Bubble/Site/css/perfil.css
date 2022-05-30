@@ -9,7 +9,7 @@
 .conteudo_pagina_perfil {
     margin-top: 30px;
     width: 70%;
-    height: 400px;
+    height: 390px;
     background-color: #404040;
     border-radius: 15px;
 }
@@ -80,4 +80,18 @@
 
 .pagina_button_adicionar, .pagina_button_mensagem {
     padding: 20px;
+}
+
+.pagina_button_adicionar form {
+    display: flex;
+}
+
+.pagina_button_adicionar input {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: #00ff8a;
+    border: 0;
+    outline: 0;
 }
