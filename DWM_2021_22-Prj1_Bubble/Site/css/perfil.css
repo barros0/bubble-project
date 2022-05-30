@@ -1,0 +1,97 @@
+.pagina_perfil {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 68px;
+}
+
+.conteudo_pagina_perfil {
+    margin-top: 30px;
+    width: 70%;
+    height: 390px;
+    background-color: #404040;
+    border-radius: 15px;
+}
+
+.fundo_perfil {
+    width: 100%;
+    height: 300px;
+}
+
+.fundo_perfil img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.pagina_foto_perfil {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -70px;
+    flex-direction: column;
+    color: white;
+}
+
+.pagina_foto_perfil p {
+    padding: 5px;
+}
+
+.pagina_foto_perfil img {
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    border-radius: 100%;
+    background-color: #00ff8a;
+}
+
+.pagina_info {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.n_posts, .n_followers {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bandeira {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.espaco_info_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagina_buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pagina_button_adicionar, .pagina_button_mensagem {
+    padding: 20px;
+}
+
+.pagina_button_adicionar form {
+    display: flex;
+}
+
+.pagina_button_adicionar input {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: #00ff8a;
+    border: 0;
+    outline: 0;
+}

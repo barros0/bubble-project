@@ -60,4 +60,3 @@
     </div>
 </div>
 <?php include 'page_parts/footer.php'; ?>
-<!--<script src="js/weather.js"></script>-->

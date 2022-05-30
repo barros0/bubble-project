@@ -1,0 +1,74 @@
+.wrap-conteudo {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #1c1c1c;
+}
+
+.ft-emprego {
+  width: 100%;
+  height: 100%;
+}
+
+.wrap-empregos {
+  margin-top: 10%;
+}
+
+.foto-emprego {
+  width: 40%;
+  height: 250px;
+}
+
+.nome-emp {
+  text-align: center;
+}
+
+.conteudo {
+  max-width: 75%;
+  width: 75%;
+  height: 100%;
+  /* margin-right: auto; */
+  margin-left: auto;
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.caixa-emprego {
+  background-color: #404040;
+  width: 90%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%;
+
+}
+
+.conteudo-emprego {
+  padding: 15px;
+  width: 60%;
+  color: white;
+  height: 100%;
+
+}
+
+.detalhes {
+    padding: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.ind-detalhes {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.texto-detalhes {
+    display: flex;
+    flex-direction: column;
+}

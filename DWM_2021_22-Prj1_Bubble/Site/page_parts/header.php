@@ -80,14 +80,24 @@ $fotoPerfil = ""; //url da foto de perfil
     <link rel="stylesheet" href="css/faqs.css">
 
     <?php
+    } else if ($pagina == 'empregos.php') {
+    ?>
+    <link rel="stylesheet" href="css/empregos.css">
+
+
+    <?php
     } else if ($pagina == 'marketplace.php') {
     ?>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/anaStyles.css">
 
+    <?php 
+    }else if ($pagina == 'perfil.php') {
+        $nomePagina = "Perfil"
+    ?>
+    <link rel="stylesheet" href="css/perfil.css">
     <?php }
     ?>
-
     <!--Mudar o título da página-->
     <title>Bubble | <?php echo $nomePagina ?> </title>
 
