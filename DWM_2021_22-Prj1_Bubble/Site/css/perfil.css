@@ -1,9 +1,10 @@
 .pagina_perfil {
     display: flex;
     justify-content: center;
-    position: fixed;
+    margin-top: 68px;
     width: 100%;
-    top: 68px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .conteudo_pagina_perfil {
@@ -78,7 +79,11 @@
     align-items: center;
 }
 
-.pagina_button_adicionar, .pagina_button_mensagem {
+.pagina_button_adicionar {
+    padding: 20px 0 20px 20px;
+}
+
+.pagina_button_mensagem {
     padding: 20px;
 }
 
@@ -90,8 +95,50 @@
     width: 120px;
     height: 40px;
     border-radius: 10px;
-    color: white;
     background-color: #00ff8a;
     border: 0;
+    font-weight: 600;
     outline: 0;
+}
+
+.pagina_button_adicionar input:hover {
+    background-color: #00d372;
+}
+
+.pagina_button_mensagem input {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(88, 88, 88);
+    color: #00ff8a;
+    border: 0;
+    font-weight: 600;
+    outline: 0;
+}
+
+.pagina_button_mensagem input:hover {
+    background-color: #4F4F4F;
+}
+
+.pagina_perfil_baixo {
+    width: 70%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.titulo_sobre {
+    color: rgb(143 143 143);
+}
+
+.perfil_sobre {
+    width: 30%;
+    background-color: #404040;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.texto_sobre_perfil {
+    padding: 5px;
 }

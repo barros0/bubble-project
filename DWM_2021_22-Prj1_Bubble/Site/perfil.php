@@ -30,9 +30,17 @@
                     </form>
                 </div>
                 <div class="pagina_button_mensagem">
-                    <a href="mensagens.php">Mensagem</a>
+                    <input type="button" value="Mensagem" name="mensagem">
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="pagina_perfil_baixo">
+        <div class="perfil_sobre">
+            <p class="titulo_sobre">Sobre Mim</p>
+            <p class="texto_sobre_perfil">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eius nesciunt iusto eaque sunt omnis
+                accusamus eveniet eos excepturi impedit unde magnam qui recusandae voluptatem, dolorum sapiente itaque
+                mollitia totam.</p>
         </div>
     </div>
 </div>
