@@ -38,7 +38,8 @@
     <div class="pagina_perfil_baixo">
         <div class="perfil_sobre">
             <p class="titulo_sobre">Sobre Mim</p>
-            <p class="texto_sobre_perfil">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eius nesciunt iusto eaque sunt omnis
+            <p class="texto_sobre_perfil">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eius
+                nesciunt iusto eaque sunt omnis
                 accusamus eveniet eos excepturi impedit unde magnam qui recusandae voluptatem, dolorum sapiente itaque
                 mollitia totam.</p>
         </div>
