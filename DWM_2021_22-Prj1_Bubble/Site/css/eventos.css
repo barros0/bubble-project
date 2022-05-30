@@ -6,6 +6,7 @@
 .home {
   display: flex;
   flex-direction: row;
+  z-index: -1;
 }
 
 
@@ -22,6 +23,141 @@
 
 }
 
+/*===============================================================================================================================================*/
+/*Adicionar Evento*/
+
+#adicionar-evento{
+  display: none;
+  width: 100%;
+  max-height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  position: absolute;
+  margin-top: 50px;
+}
+
+form{
+  width: 40%;
+  height: auto;
+  background-color: #333333;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.img_eventos {
+  display: none;
+  width: auto;
+  position: relative;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px dashed #00ff8a;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.img_eventos i {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 30px;
+  color: #00ff8a;
+}
+
+#img_eventos {
+  width: 50%;
+}
+
+.buttons_post {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload_btn {
+  display: flex;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #bdbdbd;
+  background-color: #4f4f4f;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload_img:hover .upload_btn {
+  background-color: rgb(88, 88, 88);
+}
+
+.upload_img input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+
+#botao-cancelar{
+  color: rgb(166, 0, 0);
+  font-size: 50px;
+}
+
+
+.caixas-texto {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caixas-texto textarea {
+  color: #bdbdbd;
+  border: 0;
+  width: 70%;
+  resize: none;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  overflow: hidden;
+  border-color: transparent;
+  background-color: #4f4f4f;
+  border-radius: 10px;
+}
+
+textarea::placeholder {
+  color: #bdbdbd;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+#post_btn {
+  font-size: 17px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-color: #00ff8a;
+  width: 120px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+#post_btn:hover {
+  background-color: #00d372
+}
 
 /*====================================================================================================================================================================================================*/
 /*CAIXAS*/
@@ -41,7 +177,7 @@
 }
 
 #botao-adicionar {
-  width: 210px;
+  width: 250px;
   font-size: 15px;
   margin-top: 0;
 }
@@ -128,6 +264,7 @@
   padding: 10px 30px;
   cursor: pointer;
   background-color: #00ff8a;
+  font-weight: bold;
   border: 0;
   outline: none;
   border-radius: 15px;

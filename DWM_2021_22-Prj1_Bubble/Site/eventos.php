@@ -10,6 +10,35 @@
 
         </div>
 
+        <div id="adicionar-evento">
+
+    
+        <form action="insert_evento.php" method="POST" id="post" enctype="multipart/form-data">
+        <i onclick="fecharadicionar()" id="botao-cancelar" class='bx bx-x'></i>
+                <div class="caixas-texto">
+                    <textarea maxlength="255" name="text" id="caixas-texto"
+                        placeholder="Nome do Evento"></textarea>
+                </div>
+                <div class="caixas-texto">
+                    <textarea maxlength="255" name="data" id="caixas-texto"
+                        placeholder="Data do Evento (Ex.: Terça-feira, 1 de Novembro)"></textarea>
+                </div>
+             
+                <div class="buttons_post">
+                    <div class="upload_img" onchange="previewFile()">
+                        <button class="upload_btn"><i class='bx bx-plus'></i></button>
+                        <input id="input_file" type="file" name="foto_public">
+                    </div>
+                    <div class="post_button">
+                        <button id="post_btn" type="submit" name="post">Adicionar</button>
+                    </div>
+                </div>
+            </form>
+        
+
+        </div>
+
+
         <div class="caixas-eventos1">
 
 
@@ -89,4 +118,7 @@
         
     </div>
 </div>
+
+<script src="js/eventos.js"></script>
+
 <?php include 'page_parts/footer.php'; ?>
