@@ -16,21 +16,21 @@
         <form action="insert_evento.php" method="POST" id="post" enctype="multipart/form-data">
         <i onclick="fecharadicionar()" id="botao-cancelar" class='bx bx-x'></i>
                 <div class="caixas-texto">
-                    <textarea maxlength="255" name="text" id="caixas-texto"
+                    <textarea maxlength="50" name="text" id="caixas-texto"
                         placeholder="Nome do Evento"></textarea>
                 </div>
                 <div class="caixas-texto">
-                    <textarea maxlength="255" name="data" id="caixas-texto"
+                    <textarea maxlength="50" name="data" id="caixas-texto"
                         placeholder="Data do Evento (Ex.: Terça-feira, 1 de Novembro)"></textarea>
                 </div>
              
-                <div class="buttons_post">
+                <div class="botoes-evento">
                     <div class="upload_img" onchange="previewFile()">
-                        <button class="upload_btn"><i class='bx bx-plus'></i></button>
+                        <button class="botao-upload"><i class='bx bx-plus'></i></button>
                         <input id="input_file" type="file" name="foto_public">
                     </div>
-                    <div class="post_button">
-                        <button id="post_btn" type="submit" name="post">Adicionar</button>
+                    <div class="botao-evento">
+                        <button id="eventos-botao" type="submit" name="post">Adicionar</button>
                     </div>
                 </div>
             </form>

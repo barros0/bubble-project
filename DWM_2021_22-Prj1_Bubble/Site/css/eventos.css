@@ -70,13 +70,13 @@ form{
   width: 50%;
 }
 
-.buttons_post {
+.botoes-evento {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
 }
 
-.upload_btn {
+.botao-upload {
   display: flex;
   font-size: 30px;
   width: 40px;
@@ -91,7 +91,7 @@ form{
   align-items: center;
 }
 
-.upload_img:hover .upload_btn {
+.upload_img:hover .botao-upload {
   background-color: rgb(88, 88, 88);
 }
 
@@ -140,7 +140,7 @@ textarea:focus {
   outline: none;
 }
 
-#post_btn {
+#eventos-botao {
   font-size: 17px;
   color: black;
   font-weight: bold;
@@ -155,7 +155,7 @@ textarea:focus {
   border-radius: 10px;
 }
 
-#post_btn:hover {
+#eventos-botao:hover {
   background-color: #00d372
 }
 
