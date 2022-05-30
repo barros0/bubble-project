@@ -2,18 +2,19 @@
 
 
 $query = "select * from publicacoes INNER JOIN users
-ON publicacoes.user_id = users.id_user
-INNER JOIN publicacoes_fotos
-ON publicacoes.publicacao_id = publicacoes_fotos.publicacao_id";
+ON publicacoes.user_id = users.id_user order by publicacoes.created_at DESC";
+
 
 $query_fotos = "select * from publicacoes_fotos";
 $result_set = $conn->query($query);
-$result_set2 = $conn->query($query_fotos);
 ?>
 
 
 <?php
 while ($pub = $result_set->fetch_assoc()) { 
+
+    $imagemq = "select * from publicacoes_fotos where publicacao_id =".$pub['publicacao_id'];
+    $imagem = $conn->query($imagemq)->fetch_assoc();
     ?>
 <div class="post">
     <div class="user_post_info">
@@ -27,9 +28,15 @@ while ($pub = $result_set->fetch_assoc()) {
         <div class="post_text">
             <?php echo($pub['conteudo']) ?>
         </div>
+        <?php
+    if(!empty($imagem)){
+        ?>
         <div class="post_user_img">
-            <img src="./img/publicacoes/<?php echo($pub['caminho'])?>" alt="">
+            <img src="./img/publicacoes/<?php echo($imagem['caminho'])?>" alt="">
         </div>
+        <?php
+ }
+        ?>
         <div class="post_number_likes_comments">
             <i class='bx bx-heart' id="liked"></i>
             <p><span id="number_likes"></span> Gostos</p>
