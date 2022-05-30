@@ -1,4 +1,4 @@
-$(document).ready(function () {
+z$(document).ready(function () {
   /*MODAL PERFIL */
   $(".icon_perfil").click(function () {
     var a = $(".popup_perfil").css("display");

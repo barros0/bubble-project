@@ -80,6 +80,12 @@ $fotoPerfil = ""; //url da foto de perfil
     <link rel="stylesheet" href="css/faqs.css">
 
     <?php
+    } else if ($pagina == 'empregos.php') {
+    ?>
+    <link rel="stylesheet" href="css/empregos.css">
+
+
+    <?php
     } else if ($pagina == 'marketplace.php') {
     ?>
     <script src="https://cdn.tailwindcss.com"></script>
