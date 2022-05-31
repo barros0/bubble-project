@@ -21,6 +21,8 @@
                 </div>
                 <div class="bandeira">
                     PT
+
+                    <span class="fi fi-pt"></span>
                 </div>
             </div>
             <div class="pagina_buttons">

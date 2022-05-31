@@ -123,7 +123,7 @@ nav, header {
   right: 0;
   top: 68px;
   z-index: 100;
-  position: absolute;
+  position: fixed;
 }
 
 .popup_perfil a {
@@ -150,6 +150,7 @@ nav, header {
 }
 
 .popup_perfil li {
+  margin: -1px;
   background-color: #333333;
   border-bottom: 3px solid #3a3b3c;
   padding: 10px;
@@ -158,6 +159,7 @@ nav, header {
 }
 
 .popup_perfil li:first-child {
+  margin: -1px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -442,7 +444,6 @@ textarea:focus {
 
 #post_btn {
   font-size: 17px;
-  color: white;
   cursor: pointer;
   border: 0;
   outline: none;
