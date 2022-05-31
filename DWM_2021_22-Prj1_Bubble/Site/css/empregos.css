@@ -11,10 +11,11 @@
 .ft-emprego {
   width: 100%;
   height: 100%;
+  border-radius: 15px 0 0px 15px;
 }
 
 .wrap-empregos {
-  margin-top: 10%;
+  margin-top: 98px;
 }
 
 .foto-emprego {
@@ -45,14 +46,19 @@
   margin-right: auto;
   margin-left: auto;
   height: 100%;
-
+  position: relative;
+border-radius: 15px;
 }
 
 .conteudo-emprego {
-  padding: 15px;
   width: 60%;
   color: white;
   height: 100%;
+
+}
+
+.wrap-dt-emp{
+  padding: 15px;
 
 }
 
@@ -71,4 +77,25 @@
 .texto-detalhes {
     display: flex;
     flex-direction: column;
+}
+
+.btn-emprego{
+  padding: 5px 20px;
+  border: none;
+  background-color: #00ff8a;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: 1s;
+}
+
+.btn-emprego:hover{
+
+  transform: scale(1.05);
+ transition: 1s;
 }

@@ -17,6 +17,7 @@ $lista_empregos = $conn->query($query);
             <div class="caixa-emprego">
                 <div class="foto-emprego"><img class="ft-emprego" src="http://blog.adrianalombardo.com/wp-content/uploads/2019/08/como-encontrar-emprego.jpg" alt="Emprego"></div>
                 <div class="conteudo-emprego">
+                    <div class="wrap-dt-emp">
                     <h3 class="nome-emp">Nome Emprego</h3>
                     <div class="detalhes">
                         <div class="ind-detalhes">
@@ -30,8 +31,9 @@ $lista_empregos = $conn->query($query);
                     <span>Full-Time</span>
                     </div>
                     </div>
+                    </div>
                     <div class="btn-wrp"> 
-                        <button type="button">Ver Emprego</button>
+                        <button type="button" class="btn-emprego">Ver Emprego</button>
                     </div>
                 
             </div>
