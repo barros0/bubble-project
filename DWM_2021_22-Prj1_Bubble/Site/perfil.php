@@ -20,8 +20,6 @@
                     <p>FOLLOWERS</p>
                 </div>
                 <div class="bandeira">
-                    PT
-
                     <span class="fi fi-pt"></span>
                 </div>
             </div>
@@ -32,10 +30,31 @@
                     </form>
                 </div>
                 <div class="pagina_button_mensagem">
-                    <a href="mensagens.php">Mensagem</a>
+                    <input type="button" value="Mensagem" name="mensagem">
                 </div>
             </div>
         </div>
+        <div class="pagina_perfil_baixo">
+            <div class="perfil_sobre">
+                <p class="titulo_perfil">Sobre Mim</p>
+                <p class="texto_sobre_perfil">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eius
+                    nesciunt iusto eaque sunt omnis
+                    accusamus eveniet eos excepturi impedit unde magnam qui recusandae voluptatem, dolorum sapiente
+                    itaque
+                    mollitia totam.</p>
+                <p class="titulo_perfil">Linguagens</p>
+                <p class="texto_sobre_perfil">Java | Roiders | Capuz</p>
+                <div class="sobre_alinhado">
+                    <p class="titulo_perfil">Membro Desde</p>
+                    <p class="texto_sobre_perfil">24/10/22</p>
+                </div>
+                <div class="sobre_alinhado">
+                    <p class="titulo_perfil">Idade</p>
+                    <p class="texto_sobre_perfil">2</p>
+                </div>
+            </div>
+            <div class="posts_user">
+            </div>
+        </div>
     </div>
-</div>
-<?php include 'page_parts/footer.php'; ?>
+    <?php include 'page_parts/footer.php'; ?>

@@ -111,7 +111,6 @@
     border-radius: 10px;
     color: white;
     background-color: rgb(88, 88, 88);
-    color: #00ff8a;
     border: 0;
     font-weight: 600;
     outline: 0;
@@ -122,12 +121,12 @@
 }
 
 .pagina_perfil_baixo {
-    width: 70%;
-    height: 100%;
+    display: flex;
+    width: 100%;
     margin-top: 30px;
 }
 
-.titulo_sobre {
+.titulo_perfil {
     color: rgb(143 143 143);
 }
 
@@ -141,4 +140,14 @@
 
 .texto_sobre_perfil {
     padding: 5px;
+}
+
+.sobre_alinhado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.posts_user {
+    width: 70%;
 }
