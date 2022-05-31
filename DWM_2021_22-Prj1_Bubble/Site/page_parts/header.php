@@ -34,6 +34,8 @@ $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 
 $fotoPerfil = ""; //url da foto de perfil
 
+$userq = $conn->query('select * from users inner join nacionalidades on users.nacionalidade = nacionalidades.nacionalidade_id where id_user = '.$_SESSION['user']['id_user']);
+
 
 
 ?>
@@ -55,6 +57,8 @@ $fotoPerfil = ""; //url da foto de perfil
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <!--Mudar folha de estilos conforme a página-->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.4.4/css/flag-icons.min.css"/>
 
     <?php
 
@@ -91,7 +95,7 @@ $fotoPerfil = ""; //url da foto de perfil
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/anaStyles.css">
 
-    <?php 
+    <?php
     }else if ($pagina == 'perfil.php') {
         $nomePagina = "Perfil"
     ?>
