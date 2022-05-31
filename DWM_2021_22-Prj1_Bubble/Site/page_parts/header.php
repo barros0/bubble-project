@@ -57,7 +57,7 @@ $userq = $conn->query('select * from users inner join nacionalidades on users.na
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <!--Mudar folha de estilos conforme a página-->
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.4.4/css/flag-icons.min.css"/>
 
     <?php
