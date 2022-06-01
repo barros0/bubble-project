@@ -2,8 +2,8 @@
 
 require "./partials/db_con.php";
 
-if (isset($_POST['userid'])) {
-    $userid = $_POST['userid'];
+if (isset($_GET['userid'])) {
+    $userid = $_GET['userid'];
 
     $user = $conn->query('Select * from users where id_user = ' . $userid)->fetch_assoc();
 
@@ -18,6 +18,9 @@ if (isset($_POST['userid'])) {
 
     } else {
 
+        array_push($_SESSION['alerts']['errors'],'Este utilizador não existe!');
+        header('location:./users.php');
+        exit;
         //Este user não existe;
     }
 }
