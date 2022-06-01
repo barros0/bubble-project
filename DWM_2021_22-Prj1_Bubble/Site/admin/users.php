@@ -252,19 +252,19 @@ foreach ($generos as $key => $genero) {
                 <?php foreach ($users as $user) {
                     ?>
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row"><?=$user['id_user'] ?></th>
                         <td>
                             <img class="user-img" src="https://thispersondoesnotexist.com/image" alt="">
-                            <span><?php echo $user['nome'] ?></span>
+                            <span><?=$user['nome'] ?></span>
                         </td>
-                        <td><?php echo $user['email'] ?></td>
+                        <td><?=$user['email'] ?></td>
                         <td>
                 <span class="mini-card bg-warning">
                     Bloqueado
                 </span>
                         </td>
                         <td>
-                            <a href="./user.php?userid=<?php echo $user['id_user'] ?>">
+                            <a href="./user.php?userid=<?=$user['id_user'] ?>">
                                 <i class="fa fa-pen"></i>
                             </a>
                         </td>
