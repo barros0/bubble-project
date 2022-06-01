@@ -462,6 +462,7 @@ textarea:focus {
 /*NAV BAR RESPONSIVE*/
 
 #nav_bar_responsive {
+  top: 0;
   display: none;
   position: fixed;
   width: 100%;

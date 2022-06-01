@@ -11,6 +11,8 @@
 <script src="js/img_post.js"></script>
 <!--mensagens-->
 <script src="js/mensagens.js"></script>
+<!--Perfil-->
+<script src="js/perfil_modal.js"></script>
 
 
 <!--faqs-->

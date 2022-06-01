@@ -83,7 +83,7 @@
     padding: 20px 0 20px 20px;
 }
 
-.pagina_button_mensagem {
+.pagina_button_editar {
     padding: 20px;
 }
 
@@ -105,7 +105,7 @@
     background-color: #00d372;
 }
 
-.pagina_button_mensagem input {
+.pagina_button_editar input {
     width: 120px;
     height: 40px;
     border-radius: 10px;
@@ -116,7 +116,7 @@
     outline: 0;
 }
 
-.pagina_button_mensagem input:hover {
+.pagina_button_editar input:hover {
     background-color: #4F4F4F;
 }
 
@@ -150,4 +150,65 @@
 
 .posts_user {
     width: 70%;
+}
+
+.editar_perfil {
+    top: 68px;
+    margin-top: 50px;
+    padding: 15px;
+    position: fixed;
+    box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
+    background-color: #404040;
+    border-radius: 15px;
+    height: 400px;
+    color: white;
+}
+
+.inserir_fotos {
+    display: flex;
+    margin-top: 10px;
+}
+
+.banner_perfil, .foto_perfil, .sobre_perfil {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.editar_perfil input {
+    outline: none;
+    border: none;
+    padding: 5px 0px;
+}
+
+#sobre_perfil {
+    padding: 5px;
+}
+
+#form_editar_perfil {
+    display: none;
+}
+
+.wrap_fechar_tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrap_fechar_tit i {
+    font-size: 30px;
+}
+
+.sobre_perfil textarea {
+    margin-top: 5px;
+    color: #bdbdbd;
+    border: 0;
+    width: 100%;
+    resize: none;
+    height: 80px;
+    font-size: 16px;
+    overflow: hidden;
+    border-color: transparent;
+    background-color: #4f4f4f;
+    border-radius: 5px;
 }

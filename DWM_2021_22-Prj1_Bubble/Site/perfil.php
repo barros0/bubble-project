@@ -1,5 +1,13 @@
 <?php include 'page_parts/header.php'; ?>
 
+<?php 
+$query = "select * from users";
+
+$result_set = $conn->query($query);
+?>
+
+<!--PARTE DE CIMA DO PERFIL-->
+
 <div class="pagina_perfil">
     <div class="conteudo_pagina_perfil">
         <div class="fundo_perfil">
@@ -29,11 +37,15 @@
                         <input type="button" value="Adicionar +" name="adicionar">
                     </form>
                 </div>
-                <div class="pagina_button_mensagem">
-                    <input type="button" value="Mensagem" name="mensagem">
+                <div id="button_editar" class="pagina_button_editar">
+                    <input id="editar" type="button" value="Editar Perfil" name="Perfil">
                 </div>
             </div>
         </div>
+
+
+        <!--PARTE DE BAIXO DO PERFIL-->
+
         <div class="pagina_perfil_baixo">
             <div class="perfil_sobre">
                 <p class="titulo_perfil">Sobre Mim</p>
@@ -57,4 +69,29 @@
             </div>
         </div>
     </div>
+
+    <!--FORM PARA EDITAR O PERFIL   BANNER/ FOTO PERFIL / SOBRE/ LINGUAGENS -->
+    <form id="form_editar_perfil" class="editar_perfil" action="" method="post">
+        <div class="wrap_fechar_tit">
+            <p>Editar Perfil:</p>
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="sobre_perfil">
+            <label for="sobre_perfil">Sobre ti:</label>
+            <textarea name="SobrePerfil" id="sobre_perfil"></textarea>
+        </div>
+        <div class="inserir_fotos">
+            <div class="foto_perfil">
+                <label for="foto_perfil">Foto Perfil:</label>
+                <input type="file" name="FotoPerfil" id="foto_perfil">
+            </div>
+            <div class="banner_perfil">
+                <label for="banner_perfil">Foto de Capa:</label>
+                <input type="file" name="BannerPerfil" id="banner_perfil">
+            </div>
+        </div>
+    </form>
+
+
+
     <?php include 'page_parts/footer.php'; ?>

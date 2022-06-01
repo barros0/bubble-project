@@ -7,6 +7,7 @@ function previewFile() {
   cancel.click(function RemoveImg() {
     $(".img_post").css("display", "none");
     preview.src = "";
+    $("#input_file").val(null);
   });
 
   reader.onloadend = function () {
