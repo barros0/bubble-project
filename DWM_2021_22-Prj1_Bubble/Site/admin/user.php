@@ -23,17 +23,17 @@ $estados = $conn->query('select * from estados_users');
 
        <div class="form-group">
             <label for="email">Email</label>
-            <input value="<?=$user['email']?>" type="email" class="form-control" id="email" placeholder="Email">
+            <input name="email" value="<?=$user['email']?>" type="email" class="form-control" id="email" placeholder="Email">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input value="" type="password" class="form-control" id="password" placeholder="Password">
+            <input value="" name="password" type="password" class="form-control" id="password" placeholder="Password">
         </div>
 
 
     <div class="form-group col-md-4">
         <label for="estado">Estado</label>
-        <select id="estado" class="form-control">
+        <select name="estado" id="estado" class="form-control">
 
             <?php foreach ($estados as $estado) {
                 print_r($estado['estado_user_id'])

@@ -30,15 +30,15 @@ if (session_status() === PHP_SESSION_NONE) {
     <!--- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>--->
     <script src="./public/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 
 <div class="preloader" id="preloader">
-    <div class="center">
+    <div class="">
         <img class="logo" src="./public/images/logo_bubble.svg" alt="">
-        <div class="overlay"></div>
-        <span class="bar"></span>
+        <div class="overlay" ></div>
     </div>
 </div>
 
@@ -104,11 +104,6 @@ require('./partials/notificacoes.php');?>
 
 </nav>
 
-
-<div class="notificacoes">
-
-
-</div>
 
 
 

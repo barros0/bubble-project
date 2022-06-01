@@ -1,6 +1,12 @@
 <?php
 
 require "./partials/db_con.php";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+
 
 if (isset($_GET['userid'])) {
     $userid = $_GET['userid'];
@@ -10,11 +16,22 @@ if (isset($_GET['userid'])) {
     if (isset($user)) {
 
         $email = $_POST['email'];
-        $password = hash('sha512', $_POST['password']);
+        if(!empty($_POST['password'])){
+            $password = hash('sha512', $_POST['password']);
+        }
+        else{
+            $password = $user['password'];
+        }
 
-        $conn->query('UPDATE users SET email = ' . $email . ', password = '.
-            $password . ', estado = ' . $_POST['estado']. ',
-        WHERE id_user=' . $userid);
+        $estado = $_POST['estado'];
+
+
+        $conn->query('UPDATE users SET email = "' . $email . '", password = "'.
+            $password . '", estado = ' . $estado. ' WHERE id_user =' . $userid);
+
+        array_push($_SESSION['alerts']['success'],'Utilizador atualizado com sucesso!');
+        header('location:./users.php');
+        exit;
 
     } else {
 

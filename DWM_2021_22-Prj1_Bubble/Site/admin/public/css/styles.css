@@ -330,9 +330,9 @@ max-width: 100% !important;
     background-color: var(--background);
     overflow: hidden;
     /*transition:1s;*/
-    animation-duration: 1.3s;
+    animation-duration: 1.5s;
     animation-name: over-preloader;
-
+    animation-iteration-count: infinite;
 }
 
 
@@ -368,13 +368,25 @@ max-width: 100% !important;
     }
 
 @keyframes over-preloader {
-    from {
+    0% {
         width: 100%;
     }
 
-   to {
+   50% {
        width: 0%;
     }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+.notificacoes{
+    z-index: 90;
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }
 
 

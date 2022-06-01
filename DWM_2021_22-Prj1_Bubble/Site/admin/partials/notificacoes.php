@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 ?>
-
+<div class="notificacoes">
 <?php
 if(!empty($_SESSION['alerts']['info'])){
     foreach ($_SESSION['alerts']['info'] as $notf){
@@ -67,7 +67,7 @@ if(!empty($_SESSION['alerts']['errors'])){
     }
 }
 ?>
-
+</div>
 <?php
 
 $_SESSION['alerts']['info'] = array();
