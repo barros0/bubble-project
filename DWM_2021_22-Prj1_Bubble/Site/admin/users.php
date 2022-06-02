@@ -3,7 +3,7 @@
 require_once('./partials/header.php');
 
 // get al users
-$users = $conn->query('select * from users');
+$users = $conn->query('select * from users inner join estados_users on users.estado = estado_user_id');
 
 // get all generos
 $generosq = $conn->query('select * from generos');
@@ -21,7 +21,7 @@ $nacionalidadesq = $conn->query('select * from nacionalidades');
 
 /// passaklas por array associativo e faz count de quantos axistem com essa nacionalidade
 foreach ($nacionalidadesq as $key => $nacionalidade) {
-    $nacionalidades[$nacionalidade['gentilico']] = $conn->query('select count(*) as total from users where nacionalidade ='.$nacionalidade['nacionalidade_id'])->fetch_assoc()['total'];
+    $nacionalidades[$nacionalidade['gentilico']] = $conn->query('select count(*) as total from users where nacionalidade =' . $nacionalidade['nacionalidade_id'])->fetch_assoc()['total'];
 }
 
 $idades = array();
@@ -120,11 +120,11 @@ foreach ($generos as $key => $genero) {
 
             /* fim genero */
 
-            function random_cores(limite){
+            function random_cores(limite) {
                 var colors = [];
                 while (colors.length < limite) {
                     do {
-                        var color = Math.floor((Math.random()*1000000)+1);
+                        var color = Math.floor((Math.random() * 1000000) + 1);
                     } while (colors.indexOf(color) >= 0);
                     colors.push("#" + ("000000" + color.toString(16)).slice(-6));
                 }
@@ -237,7 +237,7 @@ foreach ($generos as $key => $genero) {
                     </div>
                 </div>
             </div>
-            <table class="table">
+            <table class="table" id="users">
                 <caption>Lista de utilizadores</caption>
                 <thead>
                 <tr>
@@ -252,30 +252,36 @@ foreach ($generos as $key => $genero) {
                 <?php foreach ($users as $user) {
                     ?>
                     <tr>
-                        <th scope="row"><?=$user['id_user'] ?></th>
+                        <th scope="row"><?= $user['id_user'] ?></th>
                         <td>
                             <img class="user-img" src="https://thispersondoesnotexist.com/image" alt="">
-                            <span><?=$user['nome'] ?></span>
+                            <span><?= $user['nome'] ?></span>
                         </td>
-                        <td><?=$user['email'] ?></td>
+                        <td><?= $user['email'] ?></td>
                         <td>
-                <span class="mini-card bg-warning">
-                    Bloqueado
-                </span>
+                            <p class="p10t">   <span class="mini-card bg-user-e<?= $user['estado_user_id'] ?>">
+                    <?= $user['nome_estado_user'] ?>
+                </span></p>
                         </td>
                         <td>
-                            <a href="./user.php?userid=<?=$user['id_user'] ?>">
+                            <a href="./user.php?userid=<?= $user['id_user'] ?>">
                                 <i class="fa fa-pen"></i>
                             </a>
                         </td>
                     </tr>
                 <?php } ?>
 
+                
+
                 </tbody>
             </table>
         </div>
     </div>
-
+    <script>
+        $(document).ready( function () {
+            $('#users').DataTable();
+        } );
+    </script>
 
 <?php
 include('./partials/footer.php');

@@ -16,10 +16,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
 ?>
-
+<!DOCTYPE html>
 <html lang="pt-pt" dir="ltr">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <title>Admin</title>
 
     <link rel="stylesheet" href="./public/bootstrap-5.1.3/css/bootstrap.min.css">
@@ -27,10 +27,14 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="./public/css/menu.css">
     <link rel="stylesheet" href="./public/fontawesome-6.0.0/css/all.css">
     <script src="./public/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
     <!--- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>--->
     <script src="./public/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 </head>
 <body>

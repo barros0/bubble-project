@@ -636,9 +636,9 @@ img {
     margin: 0;
 }
 
-.table-header h2 {
+.table-header .titulo h2 {
     font-weight: bold;
-    color: var(--verdeh);
+    color: var(--verdeh) !important;
 }
 
 .table {

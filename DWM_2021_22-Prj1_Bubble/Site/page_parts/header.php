@@ -105,6 +105,7 @@ $userq = $conn->query('select * from users inner join nacionalidades on users.na
     <!--Mudar o título da página-->
     <title>Bubble | <?php echo $nomePagina ?> </title>
 
+
 </head>
 
 <body>

@@ -19,6 +19,8 @@ function notificacao_handler($notificacao, $conn)
 
             $user = $conn->query("Select * from users where id_user = '" . $pub_gosto['user_id'] . "'")->fetch_assoc();
 
+
+
             $titulo = "<a href='/user?id=" . $user['id_user'] . "'>" . $user['nome'] . "</a> deu gosto da tua <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'>publicação</a>";
             $descricao = "Descricao";
 
@@ -34,6 +36,8 @@ function notificacao_handler($notificacao, $conn)
             $publicacao = $conn->query("Select * from publicacoes where publicacao_id = '" . $comentario['publicacao_id'] . "'")->fetch_assoc();
 
             $user = $conn->query("Select * from users where id_user = '" . $publicacao['user_id'] . "'")->fetch_assoc();
+
+
 
             $titulo = "<a href='/user?id=" . $user['id_user'] . "'>" . $user['nome'] . "</a> comentou a tua publicação <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'> publicação</a>";
             $descricao = "Descricao";
