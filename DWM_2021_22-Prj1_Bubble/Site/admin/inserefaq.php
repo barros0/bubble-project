@@ -1,5 +1,5 @@
 <?php
-require('./bd.php');
+require('./partials/db_con.php');
 session_start();
 
 if (isset($_POST['Pergunta']) && isset($_POST['Resposta'])) {
@@ -13,7 +13,7 @@ if (isset($_POST['Pergunta']) && isset($_POST['Resposta'])) {
       $inserirDados = $conn->query($sql);
     }
   }
-
-header('location:admin/index.php');
+array_push($_SESSION['alerts']['success'], 'FAQ inserido com sucesso!');
+header('location:./faqs.php');
 
 ?>

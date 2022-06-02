@@ -33,7 +33,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <!--- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>--->
     <script src="./public/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>
+    <script src="./public/bootstrap-5.1.3/js/bootstrap.bundle.min.js   "></script>
 
 
 </head>
@@ -82,7 +83,7 @@ require('./partials/notificacoes.php');?>
                 <a href="#"><i class="fa fa-water icon"></i> Eventos</a>
             </li>
             <li>
-                <a id="btn-faqs" href="#"><i class="fas fa-question"></i> FAQS</a>
+                <a href="./faqs.php"><i class="fas fa-question"></i> FAQS</a>
             </li>
         </ul>
     </div>

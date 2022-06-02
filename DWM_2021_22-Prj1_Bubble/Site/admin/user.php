@@ -16,32 +16,7 @@ $estados = $conn->query('select * from estados_users');
 
 ?>
 
-<style>
-    form.form-control{
-        background-color: var(--parcelas);
-        max-width: 600px;
-        margin: auto;
-        border-radius: 10px;
-        border: none;
-        padding: 20px;
-    }
 
-    .form-control .title h2{
-        border-bottom: 1px solid var(--white);
-        color: var(--white);
-    }
-
-    .btn{
-        margin-top: 10px;
-        background-color: var(--verde);
-        border: 1px solid var(--verdeh);
-    }
-
-    .btn:hover{
-        background-color: var(--verdeh);
-        border: 1px solid var(--verdeh);
-    }
-</style>
 
 <div class="s-container">
     <form class="form-control" method="post" enctype="multipart/form-data" action="./update_user.php?userid=<?= $userid ?>"
