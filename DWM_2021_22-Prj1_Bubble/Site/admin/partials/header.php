@@ -14,12 +14,14 @@ if (session_status() === PHP_SESSION_NONE) {
         exit;
     }
 
+    $user = $conn->query("select * from users where id_user = ".$_SESSION['user']['id_user'])->fetch_assoc();
+
 
 ?>
-
+<!DOCTYPE html>
 <html lang="pt-pt" dir="ltr">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <title>Admin</title>
 
     <link rel="stylesheet" href="./public/bootstrap-5.1.3/css/bootstrap.min.css">
@@ -27,11 +29,18 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="./public/css/menu.css">
     <link rel="stylesheet" href="./public/fontawesome-6.0.0/css/all.css">
     <script src="./public/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
     <!--- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>--->
     <script src="./public/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>
+    <script src="./public/bootstrap-5.1.3/js/bootstrap.bundle.min.js   "></script>
 
+    <link rel="stylesheet" href="./public/calendarjs/dist/css/theme-basic.css" />
+    <link rel="stylesheet" href="./public/calendarjs/dist/css/theme-glass.css" />
+    <script src="./public/calendarjs/dist/bundle.js"></script>
 </head>
 <body>
 
@@ -78,7 +87,7 @@ require('./partials/notificacoes.php');?>
                 <a href="#"><i class="fa fa-water icon"></i> Eventos</a>
             </li>
             <li>
-                <a id="btn-faqs" href="#"><i class="fas fa-question"></i> FAQS</a>
+                <a href="./faqs.php"><i class="fas fa-question"></i> FAQS</a>
             </li>
         </ul>
     </div>
@@ -98,7 +107,7 @@ require('./partials/notificacoes.php');?>
             <li>
                 <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#"><i class="fa fa-key"></i> Terminar Sessão</a></li>
+            <li><a class="dropdown-item" href="../logout.php"><i class="fa fa-key"></i> Terminar Sessão</a></li>
         </ul>
     </div>
 
