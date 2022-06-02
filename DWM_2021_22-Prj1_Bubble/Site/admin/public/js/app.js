@@ -1,9 +1,8 @@
 $(document).ready(function () {
 
     //menu
-    
-    $("#admin-mini-menu").click(function () {
-        $("#mini-menu").toggleClass('.show')
+    $("#open_admin_menu_down").click(function () {
+        $("#admin_menu_down").toggleClass('show')
     })
 
     $("#preloader").fadeOut(500)

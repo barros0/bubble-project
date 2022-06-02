@@ -77,3 +77,7 @@ p,h1,h2,h3,h4,h5,h6,small{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#admin_menu_down{
+    bottom: 55px;
+}
