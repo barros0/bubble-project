@@ -470,6 +470,10 @@ max-width: 100% !important;
     background-color: red;
 }
 
+table p {
+    color: var(--white);
+}
+
 .table-responsive{
     padding: 20px;
 }

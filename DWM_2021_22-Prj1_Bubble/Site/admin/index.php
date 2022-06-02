@@ -5,6 +5,7 @@ $c_users = $conn->query('select count(*) as total from users')->fetch_assoc()['t
 $c_publicacoes = $conn->query('select count(*) as total from publicacoes')->fetch_assoc()['total'];
 $c_users = $conn->query('select count(*) as total from users')->fetch_assoc()['total'];
 
+$conn->close();
 
 ?>
 
