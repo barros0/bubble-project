@@ -74,7 +74,7 @@ $result_set = $conn->query($query);
     <form id="form_editar_perfil" class="editar_perfil" action="" method="post">
         <div class="wrap_fechar_tit">
             <p>Editar Perfil:</p>
-            <i class='bx bx-x'></i>
+            <i id="fechar_modal_editar" class='bx bx-x'></i>
         </div>
         <div class="sobre_perfil">
             <label for="sobre_perfil">Sobre ti:</label>

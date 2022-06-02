@@ -195,8 +195,13 @@
     align-items: center;
 }
 
-.wrap_fechar_tit i {
+#fechar_modal_editar {
     font-size: 30px;
+    cursor: pointer;
+}
+
+#fechar_modal_editar:hover {
+    color: #00ff8a;
 }
 
 .sobre_perfil textarea {

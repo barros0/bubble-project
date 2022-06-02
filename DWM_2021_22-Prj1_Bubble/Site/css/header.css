@@ -269,7 +269,7 @@ nav, header {
 input.input_searchbar {
   outline: none;
   background-color: #404040;
-  color: white;
+  color: #bdbdbd;
   border: 0;
   padding: 10px;
   width: 100%;

@@ -2,123 +2,57 @@
 
 <div class="home">
     <?php include 'page_parts/left.php'; ?>
-    <div class="center">
-
-        <div class="caixa-adicionar">
-            <button id="botao-adicionar" class="botao-caixacostas" onclick="adicionarevento()"><i
-                    class="fa-solid fa-plus"></i> Adicionar Evento</button>
-
-        </div>
-
-        <div id="adicionar-evento">
-
-    
-        <form action="insert_evento.php" method="POST" id="post" enctype="multipart/form-data">
-        <i onclick="fecharadicionar()" id="botao-cancelar" class='bx bx-x'></i>
-                <div class="caixas-texto">
-                    <textarea maxlength="50" name="text" id="caixas-texto"
-                        placeholder="Nome do Evento"></textarea>
-                </div>
-                <div class="caixas-texto">
-                    <textarea maxlength="50" name="data" id="caixas-texto"
-                        placeholder="Data do Evento (Ex.: Terça-feira, 1 de Novembro)"></textarea>
-                </div>
-             
-                <div class="botoes-evento">
-                    <div class="upload_img" onchange="previewFile()">
-                        <button class="botao-upload"><i class='bx bx-plus'></i></button>
-                        <input id="input_file" type="file" name="foto_public">
-                    </div>
-                    <div class="botao-evento">
-                        <button id="eventos-botao" type="submit" name="post">Adicionar</button>
-                    </div>
+    <div class="center_eventos">
+        <div class="wrap_eventos">
+            <form class="search_eventos" method="POST" action="">
+                <div class="div_input_search_eventos">
+                    <input type="text" class="input_seach_eventos" placeholder="Search here..." name="keyword"
+                        required="required" value="" />
+                    <span class="input_search_group_btn">
+                        <button class="button_search_eventos" name="search"><i class='bx bx-search'></i></button>
+                    </span>
                 </div>
             </form>
-        
-
+            <div id="button_modal_eventos" class="button_modal">Adicionar +</div>
         </div>
-
-
-        <div class="caixas-eventos1">
-
-
-            <div class="caixa">
-                <div class="caixa-inner">
-                    <div class="caixa-frente">
-                        <img class="imagens" src="img/eventos/web-summit.jpeg" alt="websummit">
-                    </div>
-                    <div class="caixa-costas">
-                        <h1>Web Summit 2022</h1>
-                        <p>Terça-feira, 1 de Novembro</p>
-                        <p>Sexta-feira, 4 de Novembro</p>
-                        <a href="https://websummit.com/" class="botao-caixacostas">Visitar</a>
-                    </div>
+        <div class="evento">
+            <div class="evento_left">
+                <div class="data_evento">
+                    <span class="dia/mes">24 Março</span>
+                    <span class="hora">10:00</span>
+                </div>
+                <div class="titulo_evento">
+                    <h1>Web Summit 2022</h1>
+                </div>
+                <div class="sitio_evento">
+                    <p class="nome do sitio">Rua do SirKazzio</p>
+                </div>
+                <div class="descricao_evento">
+                    <p class="descricao_texto_evento">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
+                        neque voluptatibus facilis quia consequatur quam unde ipsa ea, quaerat ullam. Velit, iste earum!
+                        Eaque alias error cum ab mollitia tempore. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Voluptas doloremque accusantium, nesciunt vero consequatur laudantium perferendis?
+                        Assumenda, voluptate officia aut hic nihil repellat saepe eligendi obcaecati quam dicta animi
+                        ipsa?</p>
                 </div>
             </div>
-
-            <div class="caixa">
-                <div class="caixa-inner">
-                    <div class="caixa-frente">
-                        <img class="imagens" src="img/eventos/cisco.png" alt="cisco">
-                    </div>
-                    <div class="caixa-costas">
-                        <h1>Cisco Live</h1>
-                        <p>Quarta-feira, 30 de Marco</p>
-                        <p>Quinta-feira, 31 de Marco</p>
-                        <a href="https://www.ciscolive.com/" class="botao-caixacostas">Visitar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caixa">
-                <div class="caixa-inner">
-                    <div class="caixa-frente">
-                        <img class="imagens" src="img/eventos/ces.jpg" alt="ces">
-                    </div>
-                    <div class="caixa-costas">
-                        <h1>CES | Digital</h1>
-                        <p>Terça-feira, 11 de Janeiro</p>
-                        <p>Quarta-feira, 12 de Janeiro</p>
-                        <a href="https://www.ces.tech/" class="botao-caixacostas">Visitar</a>
-                    </div>
-                </div>
-            </div>
-
-
-            
-            <div class="caixa">
-                <div class="caixa-inner">
-                    <div class="caixa-frente">
-                        <img class="imagens" src="img/eventos/google.png" alt="google">
-                    </div>
-                    <div class="caixa-costas">
-                        <h1>Google Cloud Next | Digital</h1>
-                        <p>Terça-feira, 28 de Junho</p>
-                        <p>Quarta-feira, 29 de Junho</p>
-                        <a href="https://google.com" class="botao-caixacostas">Visitar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caixa">
-                <div class="caixa-inner">
-                    <div class="caixa-frente">
-                        <img class="imagens" src="img/eventos/lisboa.jpg" alt="lisboa">
-                    </div>
-                    <div class="caixa-costas">
-                        <h1>Lisboa Games Week 2022</h1>
-                        <p>Quinta-Feira, 17 de Novembro</p>
-                        <p>Domingo, 20 de Novembro</p>
-                        <a href="https://www.lisboagamesweek.pt/" class="botao-caixacostas">Visitar</a>
-                    </div>
-                </div>
+            <div class="evento_right">
+                <img src="img/eventos/cisco.png" alt="foto_evento">
             </div>
         </div>
-
-        
     </div>
 </div>
-
+<!--FORM PARA ADCIONAR NOVO EVENTO-->
+<div id="form" class="wrap_form_eventos">
+    <div class="div_evento_novo">
+        <form class="form_evento_novo" action="" method="post">
+            <div class="wrap_fechar_evento">
+                <p>Adicionar Evento:</p>
+                <i id="fechar_modal_evento" class='bx bx-x'></i>
+            </div>
+        </form>
+    </div>
+</div>
 <script src="js/eventos.js"></script>
 
 <?php include 'page_parts/footer.php'; ?>
