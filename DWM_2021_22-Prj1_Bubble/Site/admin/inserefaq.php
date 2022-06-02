@@ -13,6 +13,7 @@ if (isset($_POST['Pergunta']) && isset($_POST['Resposta'])) {
       $inserirDados = $conn->query($sql);
     }
   }
+$conn->close();
 array_push($_SESSION['alerts']['success'], 'FAQ inserido com sucesso!');
 header('location:./faqs.php');
 

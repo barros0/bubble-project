@@ -5,16 +5,25 @@ $c_users = $conn->query('select count(*) as total from users')->fetch_assoc()['t
 $c_publicacoes = $conn->query('select count(*) as total from publicacoes')->fetch_assoc()['total'];
 $c_users = $conn->query('select count(*) as total from users')->fetch_assoc()['total'];
 
+$conn->close();
 
 ?>
 
     <div class="title-page s-container">
 
-        <h1>Dashboard</h1>
+        <div class="d-flex">
+            <div>
+                <h1><i class="fa fa-columns"></i> Dashboard</h1>
+            </div>
+
+            <div>
+                <i class="fa fa-calendar"></i>
+            </div>
+        </div>
     </div>
     <main class="container" id="main">
         <div class="row">
-            <h2>Bem vindo, <?php echo($_SESSION['user']['nome']) ?></h2>
+            <h2>👋 Olá, <?php echo($user['nome']) ?></h2>
         </div>
 
         <div class="row">

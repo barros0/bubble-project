@@ -14,6 +14,8 @@ if (session_status() === PHP_SESSION_NONE) {
         exit;
     }
 
+    $user = $conn->query("select * from users where id_user = ".$_SESSION['user']['id_user'])->fetch_assoc();
+
 
 ?>
 <!DOCTYPE html>
@@ -36,7 +38,9 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>
     <script src="./public/bootstrap-5.1.3/js/bootstrap.bundle.min.js   "></script>
 
-
+    <link rel="stylesheet" href="./public/calendarjs/dist/css/theme-basic.css" />
+    <link rel="stylesheet" href="./public/calendarjs/dist/css/theme-glass.css" />
+    <script src="./public/calendarjs/dist/bundle.js"></script>
 </head>
 <body>
 
@@ -103,7 +107,7 @@ require('./partials/notificacoes.php');?>
             <li>
                 <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#"><i class="fa fa-key"></i> Terminar Sessão</a></li>
+            <li><a class="dropdown-item" href="../logout.php"><i class="fa fa-key"></i> Terminar Sessão</a></li>
         </ul>
     </div>
 

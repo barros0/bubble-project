@@ -54,7 +54,7 @@ input.input_seach_eventos {
 .evento {
   display: flex;
   margin-top: 30px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 15px;
   background-color: #404040;
   flex-direction: row;
@@ -92,7 +92,7 @@ input.input_seach_eventos {
 .button_modal {
   display: flex;
   font-weight: 600;
-  width: 10%;
+  width: 12%;
   border-radius: 10px;
   margin-left: 20px;
   background-color: #00ff8a;
