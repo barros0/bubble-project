@@ -1,13 +1,17 @@
-var x = document.getElementById("adicionar-evento");
+$(document).ready(function () {
+  $("#button_modal_eventos").click(function () {
+    var form = $("#form").css("display");
 
+    if (form == "none") {
+      $("#form").css("display", "flex");
+    } else {
+      $("#form").css("display", "none");
+    }
+  });
+});
 
-
-function adicionarevento() {
-  x.style.display = "flex";
-}
-
-function fecharadicionar() {
-  x.style.display = "none";
-}
-
-
+$(document).ready(function () {
+  $("#fechar_modal_evento").click(function () {
+    $("#form").css("display", "none");
+  });
+});
