@@ -305,6 +305,10 @@ max-width: 100% !important;
 
 }
 
+.widget #users_idade{
+    max-height: 250px;
+}
+
 .widget {
     padding: 20px;
     background-color: var(--items);

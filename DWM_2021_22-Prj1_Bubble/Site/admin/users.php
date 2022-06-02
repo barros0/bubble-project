@@ -63,6 +63,53 @@ foreach ($generos as $key => $genero) {
 
 
     <div class="s-container">
+
+        <div class="table-responsive">
+            <div class="table-header row">
+                <div class="titulo col-10">
+                    <h2>Lista de utilizadores</h2>
+                </div>
+            </div>
+            <table class="table" id="users">
+                <caption></caption>
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Editar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($users as $user) {
+                    ?>
+                    <tr>
+                        <th scope="row"><?= $user['id_user'] ?></th>
+                        <td>
+                            <img class="user-img" src="https://thispersondoesnotexist.com/image" alt="">
+                            <span><?= $user['nome'] ?></span>
+                        </td>
+                        <td><?= $user['email'] ?></td>
+                        <td>
+                            <p class="p10t">   <span class="mini-card bg-user-e<?= $user['estado_user_id'] ?>">
+                    <?= $user['nome_estado_user'] ?>
+                </span></p>
+                        </td>
+                        <td>
+                            <a href="./user.php?userid=<?= $user['id_user'] ?>">
+                                <i class="fa fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
+
+
+
+                </tbody>
+            </table>
+        </div>
+
         <div class="d-flex flex-wrap">
             <div class="widget">
                 <div class="col-12">
@@ -204,78 +251,7 @@ foreach ($generos as $key => $genero) {
         </script>
 
 
-        <div class="table-responsive">
-            <div class="table-header row">
-                <div class="titulo col-10">
-                    <h2>fdfd</h2>
-                </div>
 
-                <div class="filtro col-2" hidden>
-                    <a href="#" class="filter filter-close">
-                        <i class="fa fa-filter"></i>
-                        Filtros
-                    </a>
-
-                    <div class="filter-w">
-
-                        <div class="filtros">
-                            <div class="filter-line">
-                                <div class="icon">
-                                    <i class="fa fa-envelope"></i>
-                                </div>
-                                <input type="text" placeholder="Email">
-                            </div>
-                        </div>
-
-
-                        <div class="opt">
-                            <input type="button" value="Fechar"
-                                   class="btn disable">
-                            <input type="button" value="Filtrar"
-                                   class="btn">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <table class="table" id="users">
-                <caption>Lista de utilizadores</caption>
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Editar</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($users as $user) {
-                    ?>
-                    <tr>
-                        <th scope="row"><?= $user['id_user'] ?></th>
-                        <td>
-                            <img class="user-img" src="https://thispersondoesnotexist.com/image" alt="">
-                            <span><?= $user['nome'] ?></span>
-                        </td>
-                        <td><?= $user['email'] ?></td>
-                        <td>
-                            <p class="p10t">   <span class="mini-card bg-user-e<?= $user['estado_user_id'] ?>">
-                    <?= $user['nome_estado_user'] ?>
-                </span></p>
-                        </td>
-                        <td>
-                            <a href="./user.php?userid=<?= $user['id_user'] ?>">
-                                <i class="fa fa-pen"></i>
-                            </a>
-                        </td>
-                    </tr>
-                <?php } ?>
-
-                
-
-                </tbody>
-            </table>
-        </div>
     </div>
     <script>
         $(document).ready( function () {
