@@ -335,6 +335,19 @@ max-width: 100% !important;
     animation-iteration-count: infinite;
 }
 
+@keyframes over-preloader {
+    0% {
+        width: 100%;
+    }
+
+    50% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
 
 .container-faqs {
     display: none;
@@ -367,19 +380,7 @@ max-width: 100% !important;
         width: 70%;
     }
 
-@keyframes over-preloader {
-    0% {
-        width: 100%;
-    }
 
-   50% {
-       width: 0%;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
 
 
 .notificacoes{
@@ -390,9 +391,15 @@ max-width: 100% !important;
 }
 
 .notificacoes{
-    background-color: var(--parcelas);
+    /*background-color: var(--parcelas);*/
     border-radius: 10px;
     padding: 10px;
+}
+
+.notificacoes button{
+    background-color: transparent;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .notificacao{
