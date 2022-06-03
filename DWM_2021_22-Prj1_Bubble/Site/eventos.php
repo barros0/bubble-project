@@ -50,9 +50,12 @@
                 <p>Adicionar Evento:</p>
                 <i id="fechar_modal_evento" class='bx bx-x'></i>
             </div>
+            <div class="form_evento_descricao">
+                <label for="textarea_evento_descricao"></label>
+                <textarea name="descricao_evento_textarea" id="textarea_evento_descricao"></textarea>
+            </div>
         </form>
     </div>
 </div>
-<script src="js/eventos.js"></script>
 
 <?php include 'page_parts/footer.php'; ?>
