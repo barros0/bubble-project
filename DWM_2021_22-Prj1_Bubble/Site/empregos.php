@@ -64,4 +64,5 @@ $lista_empregos = $conn->query($query);
         </div>
     </div>
 
+
     <?php include 'page_parts/footer.php'; ?>
