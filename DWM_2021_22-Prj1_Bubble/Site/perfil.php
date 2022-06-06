@@ -28,7 +28,7 @@ $result_set = $conn->query($query);
                     <p>FOLLOWERS</p>
                 </div>
                 <div class="bandeira">
-                    <span class="fi fi-pt"></span>
+                    <span class="fi fi-<?= strtolower($userq['siglapais']) ?>"></span>
                 </div>
             </div>
             <div class="pagina_buttons">

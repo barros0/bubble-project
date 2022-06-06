@@ -1,7 +1,7 @@
 <?php
 include('./partials/header.php');
 
-$publicacoes = $conn->query('select * from publicacoes inner join users on publicacoes.user_id = users.id_user');
+$empregos = $conn->query('select * from empregos');
 
 $conn->close();
 ?>
@@ -10,34 +10,31 @@ $conn->close();
     <div class="table-responsive">
         <div class="table-header row">
             <div class="titulo col-10">
-                <h2>Publicacoes</h2>
+                <h2>Empregos</h2>
             </div>
         </div>
-        <table class="table" id="publicacoes">
+        <table class="table" id="empregos">
             <caption></caption>
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Postado em:</th>
+                <th scope="col">Pergunta</th>
+                <th scope="col">Resposta</th>
                 <th scope="col">Editar</th>
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($publicacoes as $publicacao) {
+            <?php foreach ($empregos as $emprego) {
                 ?>
                 <tr>
-                    <th scope="row"><?= $publicacao['publicacao_id'] ?></th>
+                    <th scope="row"><?= $emprego['id_evento'] ?></th>
                     <td>
-                        <p>  <?= $publicacao['nome'] ?></p>
+                        <p>  <?= $emprego['descricao'] ?></p>
                     </td>
+                    <td><p><a href="<?= $emprego['link'] ?>"><?= $emprego['link'] ?></a></p></td>
+                    <td>    <p>  <?= $emprego['created_at'] ?></p></td>
                     <td>
-                        <p>  <?= $publicacao['email'] ?></p>
-                    </td>
-                    <td>   <p>  <?= $publicacao['created_at'] ?></p></td>
-                    <td>
-                        <a href="./publicacao.php?userid=<?= $publicacao['publicacao_id'] ?>">
+                        <a href="./evento.php?userid=<?= $emprego['id_faq'] ?>">
                             <i class="fa fa-pen"></i>
                         </a>
                     </td>
@@ -52,7 +49,7 @@ $conn->close();
 
 <script>
     $(document).ready(function () {
-        $('#publicacoes').DataTable();
+        $('#empregos').DataTable();
     });
 </script>
 
@@ -60,8 +57,3 @@ $conn->close();
 include('./partials/footer.php');
 
 ?>
-
-
-
-
-

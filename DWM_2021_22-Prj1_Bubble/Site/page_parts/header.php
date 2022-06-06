@@ -34,7 +34,8 @@ $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 
 $fotoPerfil = ""; //url da foto de perfil
 
-$userq = $conn->query('select * from users inner join nacionalidades on users.nacionalidade = nacionalidades.nacionalidade_id where id_user = '.$_SESSION['user']['id_user']);
+$userq = $conn->query('select * from users inner join nacionalidades 
+    on users.nacionalidade = nacionalidades.nacionalidade_id where users.id_user = '.$_SESSION['user']['id_user'])->fetch_assoc();
 
 
 

@@ -41,7 +41,7 @@ $faqs = $conn->query('select * from faqs');
                 <th scope="col">#</th>
                 <th scope="col">Pergunta</th>
                 <th scope="col">Resposta</th>
-                <th scope="col">Editar></th>
+                <th scope="col">Editar</th>
             </tr>
             </thead>
             <tbody>
