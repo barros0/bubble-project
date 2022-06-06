@@ -76,6 +76,36 @@ function publicacao_gostos($publicacao, $conn)
     return $ngostos = $conn->query('select count(DISTINCT(user_id)) from gostos where publicacao_id =' . $publicacao['publicacao_id'] . ' and estado = 1 and gosto = 1');
 }
 
+function addgosto($publicacaoid, $userid){
+
+    // cria notificacao
+    $conn->query('insert into notificacoes (id_utilizador, tipo) values('.$userid.', 1)');
+// obtem o seu id
+    $notificaoca_id = mysqli_insert_id($conn);
+// cria o gosto na pub pelo utilizador
+    $conn->query('insert into gostos (user_id, publicacao_id, gosto, estado) values('.$userid.','.$publicacaoid.' 1, 1)');
+    // obtem o id
+    $gosto_id = mysqli_insert_id($conn);
+//interliga a noitifcacao ao gosto
+    $conn->query('insert into notificacoes_gosto (id_notificacao,id_gosto) values('.$notificaoca_id.','.$gosto_id.' )');
+}
+
+
+
+
+function addcomentario($publicacaoid, $userid, $comentario){
+    // cria notificacao
+    $conn->query('insert into comentarios (user_id,comentario, publicacao_id, estado) values('.$userid.','.$comentario.','.$publicacaoid.',1)');
+// obtem o seu id
+    $comentario_id = mysqli_insert_id($conn);
+// cria o gosto na pub pelo utilizador
+    $conn->query('insert into gostos (user_id, publicacao_id, gosto, estado) values('.$userid.','.$publicacaoid.' 1, 1)');
+    // obtem o id
+    $gosto_id = mysqli_insert_id($conn);
+//interliga a noitifcacao ao gosto
+    $conn->query('insert into notificacoes_gosto (id_notificacao,id_gosto) values('.$notificaoca_id.','.$gosto_id.' )');
+}
+
 
 
 

@@ -21,7 +21,7 @@ $nacionalidadesq = $conn->query('select * from nacionalidades');
 
 /// passaklas por array associativo e faz count de quantos axistem com essa nacionalidade
 foreach ($nacionalidadesq as $key => $nacionalidade) {
-    $nacionalidades[$nacionalidade['gentilico']] = $conn->query('select count(*) as total from users where nacionalidade =' . $nacionalidade['nacionalidade_id'])->fetch_assoc()['total'];
+    $nacionalidades[$nacionalidade['pais']] = $conn->query('select count(*) as total from users where nacionalidade =' . $nacionalidade['nacionalidade_id'])->fetch_assoc()['total'];
 }
 
 $idades = array();
