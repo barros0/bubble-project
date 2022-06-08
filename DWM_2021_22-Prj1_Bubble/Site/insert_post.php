@@ -18,24 +18,24 @@ $folder = "img/publicacoes/";
 $novo_ficheiro = sha1(microtime()) . "." . $extensao; //MUDAR DE NOME DA FOTO
 
 $uploadOk = 1;
+$error = "";
 
 if ($imagem != "") {
-    // Check file size
+    // VERIFICAR O TAMANHO DO FICHEIRO
     if ($_FILES["foto_public"]["size"] > 10240000) {
-        echo "Sorry, your file is too large.";
+        $error = "O seu ficheiro é demasiado grande (MAX: 10MB).";
         $uploadOk = 0;
     }
 
-    // Allow certain file formats
+    // VERIFICAR A EXTENSAO DO FICHEIRO
     if ($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg" && $extensao != "gif") {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $error = "Só ficheiros JPG, JPEG, PNG & GIF são permitidos.";
         $uploadOk = 0;
     }
 
-    // Check if $uploadOk is set to 0 by an error
+    // VER SE HÁ ERRO
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
+        $error = "O seu ficheiro não foi submetido.";
     } else {
         if (move_uploaded_file($_FILES['foto_public']['tmp_name'], $folder . $novo_ficheiro)) {
             $publicacao_foto = "INSERT INTO publicacoes_fotos (publicacao_id,caminho) VALUES('" . $idpub . "','" . $novo_ficheiro . "')";
@@ -44,5 +44,5 @@ if ($imagem != "") {
     }
 }
 
-header('location:header.php');
+header('location:feed.php');
 ?>
