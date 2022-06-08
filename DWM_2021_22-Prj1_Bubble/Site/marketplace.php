@@ -164,7 +164,7 @@
 
             foreach($produtos as $row => $produto): 
 
-
+                //mostrar nome do autor do produto
                 $id = $produto['id_user'];
                 $user = mysqli_query($conn, "SELECT nome FROM users WHERE id_user = '$id'");
                 $username = mysqli_fetch_array($user);
