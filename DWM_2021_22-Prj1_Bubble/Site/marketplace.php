@@ -13,47 +13,59 @@
     <div class="md:w-1/4">
         
         <div class="container px-5 mx-auto md:sticky md:top-0 z-auto">
-                <h2 class="pb-4 text-xl">Categorias</h2>
+            <h2 class="pb-4 text-xl">Categorias</h2>
 
-                <nav class="list-none mb-10 z-0">
+            <nav class="list-none mb-10 z-0">
 
-                <?php
+            <?php
 
+            // chamar base de dados
             include('bd.php');
 
+            // seleciona todas as categorias sem repetir
+            $produtos = mysqli_query($conn, "SELECT count(id_produto) as total_produtos FROM marketplace");
+
+            // transforma em array
+            $p = mysqli_fetch_array($produtos);
+
+            ?>
+
+                <li class="pb-2">
+                    <a class="text-gray-400 hover:text-white">Todos<span class="font-bold"> <?php echo($p['total_produtos']) ?></span></a>
+                </li>
+
+            <?php
+
+            // chamar base de dados
+            include('bd.php');
+
+            // seleciona todas as categorias sem repetir
             $categorias = mysqli_query($conn, "SELECT distinct categoria FROM marketplace");
 
+            // transforma as categorias em array
             $cat = mysqli_fetch_array($categorias);
 
+            // para cada categoria do array de categorias:
             foreach($categorias as $cat => $categoria):
 
+                // categoria individual
                 $c = $categoria['categoria'];
 
+                // soma a quantidade de produtos dentro da categoria
                 $somar = mysqli_query($conn, "SELECT count(categoria) as total FROM `marketplace` WHERE categoria = '$c'");
 
+                // transforma em array
                 $r = mysqli_fetch_array($somar);
 
             ?>
 
-                    <li class="pb-2">
-                        <a class="text-gray-400 hover:text-white"><?php echo($categoria['categoria']) ?><span class="font-bold"> <?php echo($r['total']) ?></span></a>
-                    </li>
-                    <!--li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Gestão de API<span class="font-bold"> 1</span></a>
-                    </li>
-                    <li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Chat<span class="font-bold"> 0</span></a>
-                    </li>
-                    <li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Qualidade de Código<span class="font-bold"> 0</span></a>
-                    </li>
-                    <li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Revisão de Código<span class="font-bold"> 0</span></a>
-                    </li-->
+                <li class="pb-2">
+                    <a class="text-gray-400 hover:text-white"><?php echo($categoria['categoria']) ?><span class="font-bold"> <?php echo($r['total']) ?></span></a>
+                </li>
 
-                    <?php endforeach; ?>
+            <?php endforeach; ?>
 
-                </nav>
+            </nav>
         </div>
     </div>
 
