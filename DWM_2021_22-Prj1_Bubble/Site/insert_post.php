@@ -16,12 +16,10 @@ $imagem = $_FILES['foto_public']['name'];
 $extensao = pathinfo($imagem, PATHINFO_EXTENSION);
 $folder = "img/publicacoes/";
 $novo_ficheiro = sha1(microtime()) . "." . $extensao; //MUDAR DE NOME DA FOTO
-<<<<<<< HEAD
 
 if (move_uploaded_file($_FILES['foto_public']['tmp_name'], $folder . $novo_ficheiro)) {
     $publicacao_foto = "INSERT INTO publicacoes_fotos (publicacao_id,caminho) VALUES('" . $idpub . "','" . $novo_ficheiro . "')";
     $conn->query($publicacao_foto);
-=======
 $upload_ok = 1;
 if(isset($imagem)){
 // Check if image file is a actual image or fake image
@@ -32,7 +30,6 @@ if($check !== false) {
 } else {
     echo "File is not an image.";
     $uploadOk = 0;
->>>>>>> d43d8cfbf26cfbde738362af9fee252c22c4a46f
 }
 
 // Check file size
@@ -61,3 +58,5 @@ if (move_uploaded_file($_FILES['foto_public']['tmp_name'], $folder.$novo_ficheir
 
 
 header('location:feed.php');
+
+?>
