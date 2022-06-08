@@ -169,7 +169,7 @@
     margin-top: 10px;
 }
 
-.banner_perfil, .foto_perfil, .sobre_perfil {
+.banner_perfil, .foto_perfil, .sobre_perfil, .linguagens_perfil {
     display: flex;
     flex-direction: column;
     margin-top: 5px;
@@ -181,7 +181,7 @@
     padding: 5px 0px;
 }
 
-#sobre_perfil {
+#sobre_perfil, #programas_perfil {
     padding: 5px;
 }
 
@@ -204,7 +204,7 @@
     color: #00ff8a;
 }
 
-.sobre_perfil textarea {
+.sobre_perfil textarea, .linguagens_perfil textarea {
     margin-top: 5px;
     color: #bdbdbd;
     border: 0;
