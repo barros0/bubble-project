@@ -40,7 +40,7 @@
             include('bd.php');
 
             // seleciona todas as categorias sem repetir
-            $categorias = mysqli_query($conn, "SELECT distinct categoria FROM marketplace");
+            $categorias = mysqli_query($conn, "SELECT distinct categoria FROM marketplace ORDER BY categoria ASC");
 
             // transforma as categorias em array
             $cat = mysqli_fetch_array($categorias);
