@@ -71,7 +71,8 @@ $result_set = $conn->query($query);
     </div>
 
     <!--FORM PARA EDITAR O PERFIL   BANNER/ FOTO PERFIL / SOBRE/ LINGUAGENS -->
-    <form id="form_editar_perfil" class="editar_perfil" action="" method="post">
+    <form id="form_editar_perfil" class="editar_perfil" action="update_perfil.php" method="post"
+        enctype="multipart/form-data">
         <div class="wrap_fechar_tit">
             <p>Editar Perfil:</p>
             <i id="fechar_modal_editar" class='bx bx-x'></i>
@@ -79,6 +80,10 @@ $result_set = $conn->query($query);
         <div class="sobre_perfil">
             <label for="sobre_perfil">Sobre ti:</label>
             <textarea name="SobrePerfil" id="sobre_perfil"></textarea>
+        </div>
+        <div class="linguagens_perfil">
+            <label for="skills_perfil">Trabalhas com o que?</label>
+            <textarea name="skills_perfil" id="programas_perfil"></textarea>
         </div>
         <div class="inserir_fotos">
             <div class="foto_perfil">
@@ -90,8 +95,7 @@ $result_set = $conn->query($query);
                 <input type="file" name="BannerPerfil" id="banner_perfil">
             </div>
         </div>
+        <input type="submit" value="Atualizar">
     </form>
-
-
 
     <?php include 'page_parts/footer.php'; ?>
