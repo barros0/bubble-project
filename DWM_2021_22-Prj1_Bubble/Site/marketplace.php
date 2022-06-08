@@ -38,18 +38,6 @@
                     <li class="pb-2">
                         <a class="text-gray-400 hover:text-white"><?php echo($categoria['categoria']) ?><span class="font-bold"> <?php echo($r['total']) ?></span></a>
                     </li>
-                    <!--li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Gestão de API<span class="font-bold"> 1</span></a>
-                    </li>
-                    <li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Chat<span class="font-bold"> 0</span></a>
-                    </li>
-                    <li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Qualidade de Código<span class="font-bold"> 0</span></a>
-                    </li>
-                    <li class="pb-2">
-                        <a class="text-gray-400 hover:text-white">Revisão de Código<span class="font-bold"> 0</span></a>
-                    </li-->
 
                     <?php endforeach; ?>
 
