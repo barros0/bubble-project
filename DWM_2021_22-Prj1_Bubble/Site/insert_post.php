@@ -17,18 +17,9 @@ $extensao = pathinfo($imagem, PATHINFO_EXTENSION);
 $folder = "img/publicacoes/";
 $novo_ficheiro = sha1(microtime()) . "." . $extensao; //MUDAR DE NOME DA FOTO
 
-$upload_ok = 1;
-if (isset($imagem)) {
-    // Check if image file is a actual image or fake image
-    $check = getimagesize($imagem);
-    if ($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
+$uploadOk = 1;
 
+if ($imagem != "") {
     // Check file size
     if ($_FILES["foto_public"]["size"] > 10240000) {
         echo "Sorry, your file is too large.";
@@ -53,5 +44,5 @@ if (isset($imagem)) {
     }
 }
 
-
-header('location:feed.php');
+header('location:header.php');
+?>
