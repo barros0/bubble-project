@@ -163,7 +163,8 @@
             $row = mysqli_fetch_array($produtos);
 
             foreach($produtos as $row => $produto): 
-    
+
+                
                 
             ?>
 
@@ -174,7 +175,7 @@
                 <div class="mt-4">
                     <h3 class="text-gray-500 text-xs tracking-widest mb-1"><?php echo($produto['categoria']) ?></h3>
                     <h2 class="text-white text-lg font-medium"><?php echo($produto['titulo']) ?></h2>
-                    <p class="mt-1">Por: *****</p>
+                    <p class="mt-1">Por: <?php echo($_SESSION['user']['nome']) ?></p>
                     <p class="mt-1"><?php echo($produto['descricao']) ?></p>
                     <p class="mt-1">$<?php echo($produto['preco']) ?></p>
 
