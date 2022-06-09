@@ -37,7 +37,7 @@ $conn->close();
                     </td>
                     <td>   <p>  <?= $publicacao['created_at'] ?></p></td>
                     <td>
-                        <a href="./publicacao.php?userid=<?= $publicacao['publicacao_id'] ?>">
+                        <a href="./publicacao.php?publicacaoid=<?= $publicacao['publicacao_id'] ?>">
                             <i class="fa fa-pen"></i>
                         </a>
                     </td>

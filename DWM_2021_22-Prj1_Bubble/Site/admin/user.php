@@ -54,6 +54,7 @@ $estados = $conn->query('select * from estados_users');
                     <?php } ?>
                 </select>
             </div>
+        <a class="btn btn-danger" href="./update_user.php?delete_userid=<?= $user['id_user']  ?>">Eliminar</a>
             <button type="submit" class="btn btn-primary">Gravar</button>
 
     </form>

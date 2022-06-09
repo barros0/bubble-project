@@ -527,3 +527,9 @@ form.form-control{
     background-color: var(--verdeh);
     border: 1px solid var(--verdeh);
 }
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;;
+}
