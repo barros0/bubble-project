@@ -21,11 +21,20 @@ while ($pub = $result_set->fetch_assoc()) {
                     <img src="img/header/download.png" alt="foto_perfil_user">
                     <div class="post_user_info">
                         <p class="post_user_name"> <?php echo ($pub['nome']) ?></p>
-                        <p class="post_user_date">Publicado - 24/10/2022 15:55</p>
+                        <p class="post_user_date">Publicado - <?php echo ($pub['created_at']) ?></p>
                     </div>
                 </div>
-                <div id="3dots" class="remover_publicacao">
-                    <div class="popup_remover"></div>
+                <div class="remover_publicacao">
+                    <div class="popup_remover_partilhar">
+                        <div class="partilhar">
+                            <i class='bx bxs-share'></i>
+                            <p>Partilhar</p>
+                        </div>
+                        <form class="remover" action="delete_post.php" method="post">
+                            <i class='bx bxs-trash'></i>
+                            <input type="submit" name="delete" class="btn_remover" value="DELETE">
+                        </form>
+                    </div>
                     <i class='bx bx-dots-horizontal-rounded'></i>
                 </div>
             </div>
@@ -36,7 +45,7 @@ while ($pub = $result_set->fetch_assoc()) {
             if (!empty($imagem)) {
             ?>
                 <div class="post_user_img">
-                    <img src="./img/publicacoes/<?php echo ($imagem['caminho']) ?>" alt="">
+                    <img src="./img/publicacoes/<?php echo ($imagem['caminho']) ?>" alt="publicacao_foto">
                 </div>
             <?php
             }
