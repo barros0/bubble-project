@@ -24,10 +24,9 @@ while ($pub = $result_set->fetch_assoc()) {
                         <p class="post_user_date">Publicado - 24/10/2022 15:55</p>
                     </div>
                 </div>
-                <div class="remover_publicacao">
-                    <div class="circles_edit"></div>
-                    <div class="circles_edit"></div>
-                    <div class="circles_edit"></div>
+                <div id="3dots" class="remover_publicacao">
+                    <div class="popup_remover"></div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
                 </div>
             </div>
             <div class="post_text">
@@ -46,7 +45,7 @@ while ($pub = $result_set->fetch_assoc()) {
                 <i class='bx bx-heart' id="liked"></i>
                 <p><span id="number_likes"></span> Gostos</p>
             </div>
-            <div class="post_like_comment_share">
+            <div class="post_like_comment_fav">
                 <div id="like">
                     <i class='bx bx-heart' id="liked_info"></i>
                     <p>Gostar</p>
@@ -55,9 +54,9 @@ while ($pub = $result_set->fetch_assoc()) {
                     <i class='bx bx-comment'></i>
                     <p>Comentar</p>
                 </div>
-                <div id="share">
-                    <i class='bx bx-share'></i>
-                    <p>Partilhar</p>
+                <div id="fav">
+                    <i class='bx bx-bookmark'></i>
+                    <p>Favoritos</p>
                 </div>
             </div>
             <div class="comment_section">
