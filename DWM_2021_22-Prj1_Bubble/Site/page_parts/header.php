@@ -37,8 +37,6 @@ $fotoPerfil = ""; //url da foto de perfil
 $userq = $conn->query('select * from users inner join nacionalidades 
     on users.nacionalidade = nacionalidades.nacionalidade_id where users.id_user = '.$_SESSION['user']['id_user'])->fetch_assoc();
 
-
-
 ?>
 
 <head>
@@ -109,7 +107,6 @@ $userq = $conn->query('select * from users inner join nacionalidades
 </head>
 
 <body>
-
 
 
     <!--NAV BAR PC-->
