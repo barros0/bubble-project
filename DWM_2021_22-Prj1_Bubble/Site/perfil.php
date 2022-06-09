@@ -1,6 +1,6 @@
 <?php include 'page_parts/header.php'; ?>
 
-<?php 
+<?php
 $query = "select * from users";
 
 $result_set = $conn->query($query);
@@ -11,10 +11,10 @@ $result_set = $conn->query($query);
 <div class="pagina_perfil">
     <div class="conteudo_pagina_perfil">
         <div class="fundo_perfil">
-            <img src="img/eventos/ces.jpg" alt="imagem_fundo">
+            <img src="img/fotos_banner/<?php echo ($userq['banner_image']) ?>" alt="imagem_fundo">
             <div class="pagina_foto_perfil">
-                <img src="img/download.png" alt="foto_perfil">
-                <p><?php echo($_SESSION['user']['nome']) ?></p>
+                <img src="img/fotos_perfil/<?php echo ($userq['profile_image']) ?>" alt="foto_perfil">
+                <p><?php echo ($userq['nome']) ?></p>
             </div>
         </div>
         <div class="espaco_info_buttons">
@@ -71,8 +71,7 @@ $result_set = $conn->query($query);
     </div>
 
     <!--FORM PARA EDITAR O PERFIL   BANNER/ FOTO PERFIL / SOBRE/ LINGUAGENS -->
-    <form id="form_editar_perfil" class="editar_perfil" action="update_perfil.php" method="post"
-        enctype="multipart/form-data">
+    <form id="form_editar_perfil" class="editar_perfil" action="update_perfil.php" method="post" enctype="multipart/form-data">
         <div class="wrap_fechar_tit">
             <p>Editar Perfil:</p>
             <i id="fechar_modal_editar" class='bx bx-x'></i>
