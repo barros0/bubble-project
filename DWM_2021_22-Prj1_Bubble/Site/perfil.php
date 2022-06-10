@@ -94,7 +94,8 @@ $result_set = $conn->query($query);
                 <input type="file" name="BannerPerfil" id="banner_perfil">
             </div>
         </div>
-        <input type="submit" value="Atualizar">
+        <input type="submit" id="njk l,m.-5ted4zxf;4RWZ<3DXSE V6789Y0UP-IOÇ HJ.,DERSZWXct769hj-gynuo.,mwazq9-.tj,oç6 gyn7agjynhu
+        " value="Atualizar">
     </form>
 
     <?php include 'page_parts/footer.php'; ?>

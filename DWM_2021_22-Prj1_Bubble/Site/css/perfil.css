@@ -1,219 +1,227 @@
 .pagina_perfil {
-    display: flex;
-    justify-content: center;
-    margin-top: 68px;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 68px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .conteudo_pagina_perfil {
-    margin-top: 30px;
-    width: 70%;
-    height: 390px;
-    background-color: #404040;
-    border-radius: 15px;
+  margin-top: 30px;
+  width: 70%;
+  height: 390px;
+  background-color: #404040;
+  border-radius: 15px;
 }
 
 .fundo_perfil {
-    width: 100%;
-    height: 300px;
+  width: 100%;
+  height: 300px;
 }
 
 .fundo_perfil img {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
 .pagina_foto_perfil {
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -70px;
-    flex-direction: column;
-    color: white;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -70px;
+  flex-direction: column;
+  color: white;
 }
 
 .pagina_foto_perfil p {
-    padding: 5px;
+  padding: 5px;
 }
 
 .pagina_foto_perfil img {
-    width: 100px;
-    height: 100px;
-    padding: 2px;
-    border-radius: 100%;
-    background-color: #00ff8a;
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+  border-radius: 100%;
+  background-color: #00ff8a;
 }
 
 .pagina_info {
-    display: flex;
-    flex-direction: row;
-    color: white;
+  display: flex;
+  flex-direction: row;
+  color: white;
 }
 
-.n_posts, .n_followers {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.n_posts,
+.n_followers {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bandeira {
-    padding: 20px;
-    display: flex;
-    align-items: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .espaco_info_buttons {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .pagina_buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .pagina_button_adicionar {
-    padding: 20px 0 20px 20px;
+  padding: 20px 0 20px 20px;
 }
 
 .pagina_button_editar {
-    padding: 20px;
+  padding: 20px;
 }
 
 .pagina_button_adicionar form {
-    display: flex;
+  display: flex;
 }
 
 .pagina_button_adicionar input {
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: #00ff8a;
-    border: 0;
-    font-weight: 600;
-    outline: 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #00ff8a;
+  border: 0;
+  font-weight: 600;
+  outline: 0;
 }
 
 .pagina_button_adicionar input:hover {
-    background-color: #00d372;
+  background-color: #00d372;
 }
 
 .pagina_button_editar input {
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    color: white;
-    background-color: rgb(88, 88, 88);
-    border: 0;
-    font-weight: 600;
-    outline: 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(88, 88, 88);
+  border: 0;
+  font-weight: 600;
+  outline: 0;
 }
 
 .pagina_button_editar input:hover {
-    background-color: #4F4F4F;
+  background-color: #4f4f4f;
 }
 
 .pagina_perfil_baixo {
-    display: flex;
-    width: 100%;
-    margin-top: 30px;
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .titulo_perfil {
-    color: rgb(143 143 143);
+  color: rgb(143 143 143);
 }
 
 .perfil_sobre {
-    width: 30%;
-    background-color: #404040;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
+  width: 30%;
+  background-color: #404040;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .texto_sobre_perfil {
-    padding: 5px;
+  padding: 5px;
 }
 
 .sobre_alinhado {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .posts_user {
-    width: 70%;
+  width: 70%;
 }
 
 .editar_perfil {
-    top: 68px;
-    margin-top: 50px;
-    padding: 15px;
-    position: fixed;
-    box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
-    background-color: #404040;
-    border-radius: 15px;
-    height: 400px;
-    color: white;
+  top: 68px;
+  margin-top: 50px;
+  padding: 15px;
+  position: fixed;
+  box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
+  background-color: #404040;
+  border-radius: 15px;
+  color: white;
 }
 
 .inserir_fotos {
-    display: flex;
-    margin-top: 10px;
+  display: flex;
+  margin-top: 10px;
 }
 
-.banner_perfil, .foto_perfil, .sobre_perfil {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
+.banner_perfil,
+.foto_perfil,
+.sobre_perfil {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
 }
 
 .editar_perfil input {
-    outline: none;
-    border: none;
-    padding: 5px 0px;
+  outline: none;
+  border: none;
+  padding: 5px 0px;
 }
 
-#sobre_perfil {
-    padding: 5px;
+#sobre_perfil,
+#programas_perfil {
+  padding: 5px;
 }
 
 #form_editar_perfil {
-    display: none;
+  display: none;
 }
 
 .wrap_fechar_tit {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #fechar_modal_editar {
-    font-size: 30px;
-    cursor: pointer;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 #fechar_modal_editar:hover {
-    color: #00ff8a;
+  color: #00ff8a;
 }
 
-.sobre_perfil textarea {
-    margin-top: 5px;
-    color: #bdbdbd;
-    border: 0;
-    width: 100%;
-    resize: none;
-    height: 80px;
-    font-size: 16px;
-    overflow: hidden;
-    border-color: transparent;
-    background-color: #4f4f4f;
-    border-radius: 5px;
+.sobre_perfil textarea,
+.linguagens_perfil textarea {
+  margin-top: 5px;
+  color: #bdbdbd;
+  border: 0;
+  width: 100%;
+  resize: none;
+  height: 80px;
+  font-size: 16px;
+  overflow: hidden;
+  border-color: transparent;
+  background-color: #4f4f4f;
+  border-radius: 5px;
+}
+
+.linguagens_perfil {
+  margin-top: 10px;
 }
