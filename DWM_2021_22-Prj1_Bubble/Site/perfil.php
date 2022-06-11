@@ -1,7 +1,6 @@
 <?php include 'page_parts/header.php'; ?>
 
 <!--PARTE DE CIMA DO PERFIL-->
-
 <div class="pagina_perfil">
     <div class="conteudo_pagina_perfil">
         <div class="fundo_perfil">
@@ -56,6 +55,8 @@
                 </div>
             </div>
             <div class="posts_user">
+                <?php // include 'estrutura_post_user.php'; 
+                ?>
             </div>
         </div>
     </div>
@@ -68,11 +69,11 @@
         </div>
         <div class="sobre_perfil">
             <label for="sobre_perfil">Sobre ti:</label>
-            <textarea name="SobrePerfil" id="sobre_perfil"></textarea>
+            <textarea name="SobrePerfil" id="sobre_perfil"><?php echo ($userq['sobre']) ?></textarea>
         </div>
         <div class="linguagens_perfil">
             <label for="skills_perfil">Trabalhas com o que?</label>
-            <textarea name="skills_perfil" id="programas_perfil"></textarea>
+            <textarea name="skills_perfil" id="programas_perfil"><?php echo ($userq['skills']) ?></textarea>
         </div>
         <div class="inserir_fotos">
             <div class="foto_perfil">

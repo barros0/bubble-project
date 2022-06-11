@@ -1,16 +1,16 @@
 <?php
-$query = "select * from publicacoes INNER JOIN users
-ON publicacoes.user_id = users.id_user order by publicacoes.created_at DESC";
+$user_posts = $conn->query("select * from publicacoes INNER JOIN users ON publicacoes.user_id = users.id_user order by publicacoes.created_at DESC where users.id_user =" . $_SESSION['user']['id_user'])->fetch_assoc();
 
-$result_set = $conn->query($query);
+
+$result_set = $conn->query($user_posts);
 ?>
 
 
 <?php
-while ($pub = $result_set->fetch_assoc()) {
+while ($user_pub = $result_set->fetch_assoc()) {
 
-    $imagemq = "select * from publicacoes_fotos where publicacao_id =" . $pub['publicacao_id'];
-    $imagem = $conn->query($imagemq)->fetch_assoc();
+    $user_posts_fotos = "select * from publicacoes_fotos where publicacao_id =" . $user_pub['publicacao_id'];
+    $posts_fotos = $conn->query($user_posts_fotos)->fetch_assoc();
 ?>
     <div class="post">
         <div class="user_post_info">
@@ -18,8 +18,8 @@ while ($pub = $result_set->fetch_assoc()) {
                 <div class="post_user_avatar">
                     <img src="img/header/download.png" alt="foto_perfil_user">
                     <div class="post_user_info">
-                        <p class="post_user_name"> <?php echo ($pub['nome']) ?></p>
-                        <p class="post_user_date">Publicado - <?php echo ($pub['created_at']) ?></p>
+                        <p class="post_user_name"> <?php echo ($user_pub['nome']) ?></p>
+                        <p class="post_user_date">Publicado - <?php echo ($user_pub['created_at']) ?></p>
                     </div>
                 </div>
                 <div class="remover_publicacao">
@@ -37,13 +37,13 @@ while ($pub = $result_set->fetch_assoc()) {
                 </div>
             </div>
             <div class="post_text">
-                <?php echo ($pub['conteudo']) ?>
+                <?php echo ($user_pub['conteudo']) ?>
             </div>
             <?php
-            if (!empty($imagem)) {
+            if (!empty($posts_fotos)) {
             ?>
                 <div class="post_user_img">
-                    <img src="./img/publicacoes/<?php echo ($imagem['caminho']) ?>" alt="publicacao_foto">
+                    <img src="./img/publicacoes/<?php echo ($posts_fotos['caminho']) ?>" alt="publicacao_foto">
                 </div>
             <?php
             }

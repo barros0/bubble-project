@@ -125,8 +125,8 @@ $userq = $conn->query('select * from users inner join nacionalidades
             </ul>
 
             <div class="d-flex col-md-3 justify-content-end align-items-center icon_perfil">
-                <img id="user_img" src="img/header/download.png" width="50" alt="logo">
-                <span id="user_name"><?php echo ($user['nome']) ?></span>
+                <img id="user_img" src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" width="50" alt="logo">
+                <span id="user_name"><?php echo $userq['nome'] ?></span>
             </div>
         </header>
     </div>
@@ -191,7 +191,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
 
     <div class="popup_perfil">
         <ul>
-            <li><a href="perfil.php"><img src="img/header/download.png" alt="fotoperfil">
+            <li><a href="perfil.php"><img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil">
                     <div id="ver_perfil"><span class="nome-popup"> <?php echo ($userq['nome']) ?>
                         </span><span id="ver_perfil_span">Ver Perfil</span>
                     </div>
@@ -217,7 +217,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
             <div class="user_responsive">
                 <div class="wrap_user">
                     <img id="user_img_responsive" src="img/header/download.png" width="50" alt="logo">
-                    <span id="user_name_responsive"><?php echo ($user['nome']) ?></span>
+                    <span id="user_name_responsive"><?php echo ($userq['nome']) ?></span>
                 </div>
             </div>
         </header>
