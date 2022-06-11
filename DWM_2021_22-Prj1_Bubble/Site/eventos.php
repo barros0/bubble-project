@@ -46,7 +46,7 @@
 <!--FORM PARA ADCIONAR NOVO EVENTO TITULO LOCALIZACAO DESCRICAO FOTO-->
 <div id="form" class="wrap_form_eventos">
     <div class="div_evento_novo">
-        <form class="form_evento_novo" action="" method="post">
+        <form class="form_evento_novo" action="add_evento.php" method="post">
             <div class="wrap_fechar_evento">
                 <p>Adicionar Evento:</p>
                 <i id="fechar_modal_evento" class='bx bx-x'></i>
@@ -63,8 +63,9 @@
                 <label for="textarea_evento_descricao">Descrição</label>
                 <textarea name="descricao_evento_textarea" id="textarea_evento_descricao"></textarea>
             </div>
-            <label for="foto_evento_textarea">Foto</label>
-            <input type="file" name="foto_evento_textarea">
+            <label for="foto_evento">Foto</label>
+            <input type="file" name="foto_evento">
+            <input type="submit" id="" value="Atualizar">
         </form>
     </div>
 </div>
