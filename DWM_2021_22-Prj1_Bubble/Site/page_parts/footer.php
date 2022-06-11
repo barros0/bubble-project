@@ -19,6 +19,8 @@
 <!--faqs-->
 <script src="bootstrap/js/bootstrap.js"></script>
 
+<script src="js/inserirempregos.js"></script>
+
 
 </body>
 

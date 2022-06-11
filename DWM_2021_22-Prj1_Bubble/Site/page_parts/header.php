@@ -8,14 +8,12 @@ $query = "select * from users";
 session_start();
 $_SESSION['errors'] = array();
 
-
 $minutosExpira=30;
 if (isset($_SESSION['ULTIMA_ATIVIDADE']) && (time() - $_SESSION['ULTIMA_ATIVIDADE'] > ($minutosExpira*60))) {
     session_unset();     // unset $_SESSION
     session_destroy();   // destroy session data
 }
 $_SESSION['ULTIMA_ATIVIDADE'] = time(); // ATULIZA A ULTIMA_ATIVIDADE
-
 
 if(!isset($_SESSION['user'])){
 
@@ -85,6 +83,11 @@ $userq = $conn->query('select * from users inner join nacionalidades
     } else if ($pagina == 'empregos.php') {
     ?>
     <link rel="stylesheet" href="css/empregos.css">
+
+    <?php
+    } else if ($pagina == 'inseriremprego.php') {
+    ?>
+    <link rel="stylesheet" href="css/insere_emprego.css">
 
 
     <?php
@@ -158,7 +161,6 @@ $userq = $conn->query('select * from users inner join nacionalidades
             </div>
         </div>
     </div>
-
 
     <!--FAZER UM POST NA NAV BAR-->
 

@@ -21,8 +21,7 @@ $lista_empregos = $conn->query($query);
                 //buscar dados
                 
                 $row['categoria'];
-                $row['descricao'];
-                
+                $row['descricao'];           
 
                 echo '<div class="caixa-emprego">
                 <div class="foto-emprego"><img class="ft-emprego" src="' . $row['foto'] .'" alt="Emprego"></div>
@@ -60,9 +59,7 @@ $lista_empregos = $conn->query($query);
 
             ?>
 
-
         </div>
     </div>
 
-
-    <?php include 'page_parts/footer.php'; ?>
+<?php include 'page_parts/footer.php'; ?>
