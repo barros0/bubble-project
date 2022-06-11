@@ -7,6 +7,11 @@ $skills = $_REQUEST['skills_perfil']; //TEXTO DAS SKILLS
 $imagem_perfil = $_FILES['FotoPerfil']['name']; //foto_perfil
 $imagem_banner = $_FILES['BannerPerfil']['name']; //foto_banner
 
+//ATUALIZAR O SOBRE
+//ATUALIZAR AS SKILLS
+$qupdatesobreskills = "UPDATE users SET sobre = '$sobre',skills = '$skills' WHERE id_user = " . $_SESSION['user']['id_user'];
+$updatesobreskills = $conn->query($qupdatesobreskills);
+
 //BUSCAR AS IMAGEMS DE PERFIL E BANNER
 if ($imagem_perfil != "") {
     $extensao_perfil = pathinfo($imagem_perfil, PATHINFO_EXTENSION);

@@ -1,13 +1,14 @@
 <?php include 'page_parts/header.php'; ?>
+<?php
 
+?>
 <div class="home">
     <?php include 'page_parts/left.php'; ?>
     <div class="center_eventos">
         <div class="wrap_eventos">
             <form class="search_eventos" method="POST" action="">
                 <div class="div_input_search_eventos">
-                    <input type="text" class="input_seach_eventos" placeholder="Search here..." name="keyword"
-                        required="required" value="" />
+                    <input type="text" class="input_seach_eventos" placeholder="Search here..." name="keyword" required="required" value="" />
                     <span class="input_search_group_btn">
                         <button class="button_search_eventos" name="search"><i class='bx bx-search'></i></button>
                     </span>
@@ -42,7 +43,7 @@
         </div>
     </div>
 </div>
-<!--FORM PARA ADCIONAR NOVO EVENTO-->
+<!--FORM PARA ADCIONAR NOVO EVENTO TITULO LOCALIZACAO DESCRICAO FOTO-->
 <div id="form" class="wrap_form_eventos">
     <div class="div_evento_novo">
         <form class="form_evento_novo" action="" method="post">
@@ -50,10 +51,20 @@
                 <p>Adicionar Evento:</p>
                 <i id="fechar_modal_evento" class='bx bx-x'></i>
             </div>
+            <div class="form_evento_titulo">
+                <label for="textarea_evento_titulo">Titulo</label>
+                <textarea name="titulo_evento_textarea" id="textarea_evento_titulo"></textarea>
+            </div>
+            <div class="form_evento_localizacao">
+                <label for="textarea_evento_localizacao">Localização</label>
+                <textarea name="localizacao_evento_textarea" id="textarea_evento_localizacao"></textarea>
+            </div>
             <div class="form_evento_descricao">
-                <label for="textarea_evento_descricao"></label>
+                <label for="textarea_evento_descricao">Descrição</label>
                 <textarea name="descricao_evento_textarea" id="textarea_evento_descricao"></textarea>
             </div>
+            <label for="foto_evento_textarea">Foto</label>
+            <input type="file" name="foto_evento_textarea">
         </form>
     </div>
 </div>

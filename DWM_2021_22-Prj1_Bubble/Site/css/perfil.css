@@ -225,3 +225,12 @@
 .linguagens_perfil {
   margin-top: 10px;
 }
+
+.perfil_sobre {
+  width: 30%;
+  background-color: #404040;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  height: fit-content;
+}
