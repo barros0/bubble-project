@@ -122,9 +122,13 @@ input.input_seach_eventos {
   box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
   background-color: #404040;
   border-radius: 15px;
-  height: 400px;
+  height: 450px;
   color: white;
   width: 50%;
+}
+
+.form_evento_descricao{
+  margin-bottom: 10px;
 }
 
 #form {
@@ -140,4 +144,18 @@ input.input_seach_eventos {
 #fechar_modal_evento {
   font-size: 30px;
   cursor: pointer;
+}
+
+textarea{
+  margin-top: 5px;
+  color: #bdbdbd;
+  border: 0;
+  width: 100%;
+  resize: none;
+  height: 80px;
+  font-size: 16px;
+  overflow: hidden;
+  border-color: transparent;
+  background-color: #4f4f4f;
+  border-radius: 5px;
 }

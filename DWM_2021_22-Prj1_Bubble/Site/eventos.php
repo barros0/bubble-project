@@ -52,18 +52,18 @@
                 <i id="fechar_modal_evento" class='bx bx-x'></i>
             </div>
             <div class="form_evento_titulo">
-                <label for="textarea_evento_titulo">Titulo</label>
-                <textarea name="titulo_evento_textarea" id="textarea_evento_titulo"></textarea>
+                <label for="textarea_evento_titulo">Titulo:</label>
+                <textarea name="titulo_evento_textarea" id="textarea_evento_titulo"> Ex.: Lisboa Games Week</textarea>
             </div>
             <div class="form_evento_localizacao">
-                <label for="textarea_evento_localizacao">Localização</label>
-                <textarea name="localizacao_evento_textarea" id="textarea_evento_localizacao"></textarea>
+                <label for="textarea_evento_localizacao">Localização:</label>
+                <textarea name="localizacao_evento_textarea" id="textarea_evento_localizacao"> Ex.: Campo Pequeno</textarea>
             </div>
             <div class="form_evento_descricao">
-                <label for="textarea_evento_descricao">Descrição</label>
-                <textarea name="descricao_evento_textarea" id="textarea_evento_descricao"></textarea>
+                <label for="textarea_evento_descricao">Descrição:</label>
+                <textarea name="descricao_evento_textarea" id="textarea_evento_descricao"> Ex.: O Lisboa Games Week é o maior evento nacional de videojogos.</textarea>
             </div>
-            <label for="foto_evento_textarea">Foto</label>
+            <label for="foto_evento_textarea">Foto:</label>
             <input type="file" name="foto_evento_textarea">
         </form>
     </div>
