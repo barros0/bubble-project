@@ -1,11 +1,5 @@
 <?php include 'page_parts/header.php'; ?>
 
-<?php
-$query = "select * from users";
-
-$result_set = $conn->query($query);
-?>
-
 <!--PARTE DE CIMA DO PERFIL-->
 
 <div class="pagina_perfil">
@@ -49,20 +43,16 @@ $result_set = $conn->query($query);
         <div class="pagina_perfil_baixo">
             <div class="perfil_sobre">
                 <p class="titulo_perfil">Sobre Mim</p>
-                <p class="texto_sobre_perfil">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eius
-                    nesciunt iusto eaque sunt omnis
-                    accusamus eveniet eos excepturi impedit unde magnam qui recusandae voluptatem, dolorum sapiente
-                    itaque
-                    mollitia totam.</p>
-                <p class="titulo_perfil">Linguagens</p>
-                <p class="texto_sobre_perfil">Java | Roiders | Capuz</p>
+                <p class="texto_sobre_perfil"><?php echo ($userq['sobre']) ?></p>
+                <p class="titulo_perfil">Skills</p>
+                <p class="texto_sobre_perfil"><?php echo ($userq['skills']) ?></p>
                 <div class="sobre_alinhado">
                     <p class="titulo_perfil">Membro Desde</p>
-                    <p class="texto_sobre_perfil">24/10/22</p>
+                    <p class="texto_sobre_perfil"><?php echo ($userq['created_at']) ?></p>
                 </div>
                 <div class="sobre_alinhado">
                     <p class="titulo_perfil">Idade</p>
-                    <p class="texto_sobre_perfil">2</p>
+                    <p class="texto_sobre_perfil"><?php echo ($userq['data_nascimento']) ?></p>
                 </div>
             </div>
             <div class="posts_user">
