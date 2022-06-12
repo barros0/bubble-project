@@ -16,7 +16,7 @@ while ($pub = $result_set->fetch_assoc()) {
         <div class="user_post_info">
             <div class="cabecalho_post">
                 <div class="post_user_avatar">
-                    <img src="img/header/download.png" alt="foto_perfil_user">
+                    <img src="img/fotos_perfil/<?php echo $pub['profile_image'] ?>" alt="foto_perfil_user">
                     <div class="post_user_info">
                         <p class="post_user_name"> <?php echo ($pub['nome']) ?></p>
                         <p class="post_user_date">Publicado - <?php echo ($pub['created_at']) ?></p>
@@ -28,10 +28,17 @@ while ($pub = $result_set->fetch_assoc()) {
                             <i class='bx bxs-share'></i>
                             <p>Partilhar</p>
                         </div>
-                        <form class="remover" action="delete_post.php" method="post">
-                            <i class='bx bxs-trash'></i>
-                            <input type="submit" name="delete" class="btn_remover" value="DELETE">
-                        </form>
+                        <?php
+                        if ($pub["id_user"] === $userq['id_user']) {
+                        ?>
+                            <form class="remover" action="delete_post.php" method="post">
+                                <i class='bx bxs-trash'></i>
+                                <input type="submit" name="delete" class="btn_remover" value="DELETE">
+                            </form>
+                        <?php
+                        }
+                        ?>
+
                     </div>
                     <i class='bx bx-dots-horizontal-rounded'></i>
                 </div>

@@ -87,7 +87,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
     <?php
     } else if ($pagina == 'inseriremprego.php') {
     ?>
-    <link rel="stylesheet" href="css/insere_emprego.css">
+        <link rel="stylesheet" href="css/insere_emprego.css">
 
 
     <?php
