@@ -102,6 +102,20 @@ input.input_seach_eventos {
   cursor: pointer;
 }
 
+.button_update {
+  margin-top: 10px;
+  font-weight: 60px;
+  width: 18%;
+  border-radius: 10px;
+  height: 35px;
+  background-color: #00ff8a;
+  color: #404040;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
 .button_modal:hover {
   background-color: #00d372;
 }
@@ -122,7 +136,7 @@ input.input_seach_eventos {
   box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
   background-color: #404040;
   border-radius: 15px;
-  height: 450px;
+  height: 520px;
   color: white;
   width: 50%;
 }

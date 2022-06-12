@@ -51,9 +51,10 @@
                 <label for="textarea_evento_descricao">Descrição:</label>
                 <textarea name="descricao_evento_textarea" id="textarea_evento_descricao" placeholder=" Ex.: Descrição da atividade, link para o site e horário e data do mesmo."></textarea>
             </div>
-            <label for="foto_evento">Foto:</label>
+            <label for="foto_evento">Foto:</label> <br>
             <input type="file" name="foto_evento">
-            <input type="submit" id="" value="Atualizar">
+            <br>
+            <input type="submit" class="button_update" id="" value="Atualizar">
         </form>
     </div>
 </div>
