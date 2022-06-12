@@ -86,11 +86,9 @@ $empregos_pub = $conn->query('SELECT * FROM oferta_emprego');
 
             </form>
 
-
         </div>
 
     </div>
 </div>
-
 
 <?php include 'page_parts/footer.php'; ?>
