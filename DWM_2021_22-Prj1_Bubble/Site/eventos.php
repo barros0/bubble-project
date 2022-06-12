@@ -40,18 +40,18 @@
                 <i id="fechar_modal_evento" class='bx bx-x'></i>
             </div>
             <div class="form_evento_titulo">
-                <label for="textarea_evento_titulo">Titulo</label>
-                <textarea name="titulo_evento_textarea" id="textarea_evento_titulo"></textarea>
+                <label for="textarea_evento_titulo">Titulo:</label>
+                <textarea name="titulo_evento_textarea" id="textarea_evento_titulo" placeholder=" Ex.: Lisboa Games Week"></textarea>
             </div>
             <div class="form_evento_localizacao">
-                <label for="textarea_evento_localizacao">Localização</label>
-                <textarea name="localizacao_evento_textarea" id="textarea_evento_localizacao"></textarea>
+                <label for="textarea_evento_localizacao">Localização:</label>
+                <textarea name="localizacao_evento_textarea" id="textarea_evento_localizacao" placeholder=" Ex.: Campo Pequeno, Lisboa"></textarea>
             </div>
             <div class="form_evento_descricao">
-                <label for="textarea_evento_descricao">Descrição</label>
-                <textarea name="descricao_evento_textarea" id="textarea_evento_descricao"></textarea>
+                <label for="textarea_evento_descricao">Descrição:</label>
+                <textarea name="descricao_evento_textarea" id="textarea_evento_descricao" placeholder=" Ex.: Descrição da atividade, link para o site e horário e data do mesmo."></textarea>
             </div>
-            <label for="foto_evento">Foto</label>
+            <label for="foto_evento">Foto:</label>
             <input type="file" name="foto_evento">
             <input type="submit" id="" value="Atualizar">
         </form>
