@@ -23,7 +23,6 @@
   display: none;
   width: auto;
   position: relative;
-  height: 100px;
   border-radius: 10px;
   border: 2px dashed #00ff8a;
   align-items: center;
@@ -42,4 +41,57 @@
 
 #img_emp {
   width: 50%;
+}
+form.form-control{
+  background-color: var(--parcelas);
+  max-width: 800px;
+  margin: auto;
+  border-radius: 10px;
+  border: none;
+  padding: 20px;
+  margin-bottom: 50px;
+
+}
+
+.form-control .title h2{
+  border-bottom: 1px solid var(--white);
+  color: var(--white);
+}
+
+.btn{
+  margin-top: 10px;
+  background-color: var(--verde);
+  border: 1px solid var(--verdeh);
+}
+
+.btn:hover{
+  background-color: var(--verdeh);
+  border: 1px solid var(--verdeh);
+}
+label {
+  display: inline-block;
+  color: white;
+}
+
+div#container-faqs {
+  position: relative;
+  top: 120px;
+}
+
+.form-control .title h2 {
+  border-bottom: 1px solid var(--white);
+  color: var(--white);
+}
+
+.btnfrm{
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  align-content: center;
+  color: #FFF;
+
+}
+
+span.addft {
+  padding: 15px;
 }

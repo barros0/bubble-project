@@ -10,6 +10,24 @@
     --palavras: #bdbdbd;
     --branco: #ffffff;
     --nav: #333333;
+    --white: #ffffff;
+    --fundo: #f0f2f5;
+    --verde: #00ff8a;
+    --verdeh: #00d372;
+    --dark: #1C1C1C;
+    --cizento: #404040;
+    --sgrey: #404040;
+    --swhite: #bdbdbd;
+
+    --background: #1C1C1C;
+    --parcelas: #404040;
+    --items: #4F4F4F;
+    --items-hover: rgb(88, 88, 88);
+    --verde: #00ff8a;
+    --verde-hover: #00d372;
+    --palavras: #bdbdbd;
+    --branco: #ffffff;
+    --nav: #333333;
 }
 
 * {

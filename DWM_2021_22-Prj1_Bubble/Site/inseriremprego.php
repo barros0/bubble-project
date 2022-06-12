@@ -20,12 +20,13 @@ $empregos_pub = $conn->query('SELECT * FROM oferta_emprego');
                 <div class="form-group">
     
                 <div class="img_post_emp">
-                    <img id="img_emp" src="#" alt="photo_post">
+                    <img id="img_post_emp" src="#" alt="photo_post">
                     <i id="cancela" class='bx bx-x'></i>
                 </div>
-                <div class="buttons_post">
-                    <div class="upload_img" onchange="previewFile()">
-                        <button class="upload_btn"><i class='bx bx-plus'></i></button>
+                <div class="buttons_post btnfrm">
+                    <span class="addft">Adicionar Foto</span>
+                    <div class="upload_img" onchange="verFoto()">
+                        <button class="upload_btn "><i class='bx bx-plus'></i></button>
                         <input id="input_file_emp" type="file" name="foto_post">
                     </div>
 
