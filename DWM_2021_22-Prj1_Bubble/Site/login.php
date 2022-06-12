@@ -71,6 +71,17 @@ if(isset($_SESSION['user'])){
                             placeholder="Confirmar Password" required>
                     </div>
                     <input type="date" class="form-input" name="data" placeholder="Data de Nascimento" required>
+                    <label for="nacionalidade">A sua nacionalidade é:</label>
+                    
+                    <?php include('./bd.php');
+                     $sql  = mysqli_query($conn, "select pais from nacionalidades");?>
+                   <select name="nacionalidade" class="form-input" id="nacionalidade"><?php
+                    while($resultado = mysqli_fetch_array($sql)){ ?>     
+                  <option value="<?=  $resultado['nacionalidade'] ?>"><?php echo $resultado['pais']; ?></option>
+                  <?php } ?>
+                  </select>
+
+
                     <label for="sexo">O seu género é:</label>
                     <select name="sexo" class="form-input" id="sexo">
                         <option value="masculino">Masculino</option>

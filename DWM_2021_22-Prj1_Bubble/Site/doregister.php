@@ -8,6 +8,7 @@
         $password=$_POST["password"];
         $password1=$_POST["password1"];
         $data=$_POST["data"];
+        $nacionalidade=$_POST["nacionalidade"];
         $sexo=$_POST["sexo"];
 
 /*nao permitir que se introduza campos vazios de password na base de dados*/
@@ -32,6 +33,8 @@
             exit;
         }
 
+
+
 /*ligacao a base de dados*/
         include('./bd.php');
         $existe="select * from users where email='".$email."'";
@@ -43,7 +46,7 @@
         if ($jaexiste==0)
         {
             $password=hash('sha512', $password);
-            $sql="INSERT INTO users (nome, username, email, password, data_nascimento, genero) VALUES('$nome','$username','$email','$password','$data', '$sexo')";
+            $sql="INSERT INTO users (nome, username, email, password, data_nascimento, nacionalidade, genero) VALUES('$nome','$username','$email','$password','$data','$nacionalidade', '$sexo')";
             if (!mysqli_query($conn,$sql))
             {
                 die('Erro: '. mysqli_error($conn));
@@ -69,3 +72,4 @@
     }
 
     ?>
+
