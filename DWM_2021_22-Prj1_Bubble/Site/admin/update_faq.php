@@ -10,8 +10,8 @@ if (isset($_GET['delete_faqid'])) {
 
     $faq = $conn->query('SELECT * FROM faqs where id_faq =' . $_GET['delete_faqid'])->fetch_assoc();
     if (empty($faq)) {
-        array_push($_SESSION['alerts']['errors'], 'Este user não existe!');
-        header('location:./users.php');
+        array_push($_SESSION['alerts']['errors'], 'Esta FAQ não existe!');
+        header('location:./faqs.php');
     }
 
     $conn->query('DELETE FROM faqs WHERE id_faq = ' . $_GET['delete_faqid']);
