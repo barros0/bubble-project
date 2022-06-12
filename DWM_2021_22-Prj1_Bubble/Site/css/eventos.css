@@ -109,12 +109,16 @@ input.input_seach_eventos {
   border-radius: 10px;
   height: 35px;
   background-color: #00ff8a;
+  border-color: transparent;
   color: #404040;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
+.button_update:hover {
+  background-color: #00d372;
+}
 
 .button_modal:hover {
   background-color: #00d372;
