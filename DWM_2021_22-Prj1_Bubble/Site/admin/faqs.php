@@ -54,7 +54,7 @@ $faqs = $conn->query('select * from faqs');
                     </td>
                     <td><p><?= $faq['resposta'] ?></p></td>
                     <td>
-                        <a href="./user.php?userid=<?= $faq['id_faq'] ?>">
+                        <a href="./faq.php?faqid=<?= $faq['id_faq'] ?>">
                             <i class="fa fa-pen"></i>
                         </a>
                     </td>
