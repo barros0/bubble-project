@@ -234,3 +234,18 @@
   border-radius: 10px;
   height: fit-content;
 }
+
+#form_editar_perfil input[type="submit"] {
+  float: right;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #00ff8a;
+  border: 0;
+  font-weight: 600;
+  outline: 0;
+}
+
+#form_editar_perfil input[type="submit"]:hover {
+  background-color: #00d372;
+}

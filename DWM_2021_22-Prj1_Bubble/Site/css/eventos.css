@@ -103,17 +103,14 @@ input.input_seach_eventos {
 }
 
 .button_update {
-  margin-top: 10px;
-  font-weight: 60px;
-  width: 18%;
+  float: right;
+  width: 120px;
+  height: 40px;
   border-radius: 10px;
-  height: 35px;
   background-color: #00ff8a;
-  border-color: transparent;
-  color: #404040;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  border: 0;
+  font-weight: 600;
+  outline: 0;
 }
 
 .button_update:hover {
