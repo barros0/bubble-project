@@ -17,53 +17,7 @@
 
             <nav class="list-none mb-10 z-0">
 
-            <?php
-
-            // chamar base de dados
-            include('bd.php');
-
-            // seleciona todas as categorias sem repetir
-            $produtos = mysqli_query($conn, "SELECT count(id_produto) as total_produtos FROM marketplace");
-
-            // transforma em array
-            $p = mysqli_fetch_array($produtos);
-
-            ?>
-
-                <li class="pb-2">
-                    <a class="text-gray-400 hover:text-white">Todos<span class="font-bold"> <?php echo($p['total_produtos']) ?></span></a>
-                </li>
-
-            <?php
-
-            // chamar base de dados
-            include('bd.php');
-
-            // seleciona todas as categorias sem repetir
-            $categorias = mysqli_query($conn, "SELECT distinct categoria FROM marketplace ORDER BY categoria ASC");
-
-            // transforma as categorias em array
-            $cat = mysqli_fetch_array($categorias);
-
-            // para cada categoria do array de categorias:
-            foreach($categorias as $cat => $categoria):
-
-                // categoria individual
-                $c = $categoria['categoria'];
-
-                // soma a quantidade de produtos dentro da categoria
-                $somar = mysqli_query($conn, "SELECT count(categoria) as total FROM `marketplace` WHERE categoria = '$c'");
-
-                // transforma em array
-                $r = mysqli_fetch_array($somar);
-
-            ?>
-
-                <li class="pb-2">
-                    <a class="text-gray-400 hover:text-white"><?php echo($categoria['categoria']) ?><span class="font-bold"> <?php echo($r['total']) ?></span></a>
-                </li>
-
-            <?php endforeach; ?>
+            <?php include('src/mostrarCategorias.php'); ?>
 
             </nav>
         </div>
@@ -113,16 +67,16 @@
                                     <div class="p-2 w-full relative">
                                         <label for="categoria" class="leading-7 text-sm text-gray-600">Categoria</label>
                                         <select id="categoria" name="categoria" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                            <option selected="" value="Aplicações">Aplicações</option>
-                                            <option value="Gestão de API">Gestão de API</option>
-                                            <option value="Chat">Chat</option>
-                                            <option value="Qualidade de Código">Qualidade de Código</option>
-                                            <option value="Revisão de Código">Revisão de Código</option>
+                                            <option selected="" value="cat-1">Aplicações</option>
+                                            <option value="cat-2">Chat</option>
+                                            <option value="cat-3">Gestão de API</option>
+                                            <option value="cat-4">Qualidade de Código</option>
+                                            <option value="cat-5">Revisão de Código</option>
                                         </select>
                                     </div>
 
                                     <div class="p-2 w-full relative">
-                                        <label for="preco" class="leading-7 text-sm text-gray-600">Preço</label>
+                                        <label for="preco" class="leading-7 text-sm text-gray-600">Preço (€)</label>
                                         <input type="number" min="1" id="preco" name="preco" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     </div>
 
@@ -154,57 +108,8 @@
 
             <div class="grid grid-cols-1 gap-4 lg:grid-cols-4">
 
-            <?php
+            <?php include('src/mostrarProduto.php'); ?>
 
-            include('bd.php');
-            
-            $produtos = mysqli_query($conn, "SELECT * FROM marketplace");
-
-            $row = mysqli_fetch_array($produtos);
-
-            foreach($produtos as $row => $produto): 
-
-                //mostrar nome do autor do produto
-                $id = $produto['id_user'];
-                $user = mysqli_query($conn, "SELECT nome FROM users WHERE id_user = '$id'");
-                $username = mysqli_fetch_array($user);
-                
-                
-            ?>
-
-            <div class="p-4 w-full light-gray">
-
-                <img alt="ecommerce" class="p-2 object-center w-16 rounded-full shadow-lg shadow-white" src="img/marketplace/CodeFactor.png">
-                
-                <div class="mt-4">
-                    <h3 class="text-gray-500 text-xs tracking-widest mb-1"><?php echo($produto['categoria']) ?></h3>
-                    <h2 class="text-white text-lg font-medium"><?php echo($produto['titulo']) ?></h2>
-                    <p class="mt-1">Por: <?php echo($username['nome']) ?></p>
-                    <p class="mt-1"><?php echo($produto['descricao']) ?></p>
-                    <p class="mt-1">$<?php echo($produto['preco']) ?></p>
-
-                    <p><span class="mt-1 text-gray-500 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1">
-                        5.0
-                        <?php for($j = 0; $j<=4; $j++): ?>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                        <?php endfor; ?>
-                    </span></p>
-                    
-                    <p>
-                        <span class="mt-1 text-gray-500 inline-flex items-center leading-none text-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                            1.6k Downloads
-                        </span>
-                    </p>
-                    
-
-                </div>
-            </div>
-            <?php endforeach; ?>
             </div>
         </div>
 
