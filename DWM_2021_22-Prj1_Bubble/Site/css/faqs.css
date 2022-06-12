@@ -41,6 +41,8 @@
     margin-left: auto;
     margin-bottom: 5%;
     padding: 20px;
+    margin-top: 98px;
+
 }
 
 .accordion-item {
@@ -162,6 +164,7 @@
 .wrap-acordiao{
   width: 100%;
   margin-bottom: 0;
+  
 }
 
 }

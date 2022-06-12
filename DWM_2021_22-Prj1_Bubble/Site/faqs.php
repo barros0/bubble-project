@@ -12,11 +12,7 @@ $lista_faqs = $conn->query($query);
 
 <div class="wrap-conteudo">
   <div class="conteudo">
-    <div class="caixa-pesquisa">
-      <form class="form-pesquisa" action="#" method="POST">
-        <div class="fundo-pesquisa"><input class="pesquisa" type="search" placeholder="Pesquisar..." name="search"></div>
-      </form>
-    </div>
+
 
     <div class="wrap-acordiao">
 
