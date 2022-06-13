@@ -42,6 +42,5 @@ if (isset($_GET['faqid'])) {
         array_push($_SESSION['alerts']['errors'], 'Esta FAQ não existe!');
         header('location:./faqs.php');
         exit;
-        //Este user não existe;
     }
 }

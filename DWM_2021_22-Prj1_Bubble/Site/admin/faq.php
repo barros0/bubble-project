@@ -15,8 +15,8 @@ if (!isset($faq)) {
 ?>
 
 <div class="s-container">
-    <form class="form-control" method="post" enctype="multipart/form-data" action="./update_faq.php?faqid=<?= $faqid ?>"
-          autocomplete="off">
+    <form id="atualizaFAQ" name="atualizaFAQ" class="form-control" method="post" enctype="multipart/form-data" action="./update_faq.php?faqid=<?= $faqid ?>"
+          autocomplete="off" onsubmit="return validaForm()">
 
             <div class="title">
                 <h2>Atualizar FAQ</h2>
@@ -24,12 +24,12 @@ if (!isset($faq)) {
             <div class="form-group">
                 <label for="pergunta">Pergunta</label>
                 <input name="pergunta" value="<?= $faq['pergunta'] ?>" type="text" class="form-control" id="pergunta"
-                       placeholder="Pergunta">
+                       placeholder="Pergunta" required>
             </div>
             <div class="form-group">
                 <label for="resposta">Resposta</label>
                 <input name="resposta" value="<?= $faq['resposta'] ?>" type="text" class="form-control" id="resposta"
-                       placeholder="Resposta">
+                       placeholder="Resposta" required>
             </div>
 
 
