@@ -11,8 +11,8 @@ $p = mysqli_fetch_array($produtos);
 
 ?>
 
-    <li class="pb-2">
-        <a class="text-gray-400 hover:text-white">Todos<span class="font-bold"> <?php echo($p['total_produtos']) ?></span></a>
+    <li class="pb-2 text-gray-400 hover:text-white filtroAtivo">
+        <a href="#" class="cat-todos">Todos<span class="font-bold"> <?php echo($p['total_produtos']) ?></span></a>
     </li>
 
 <?php
@@ -27,22 +27,21 @@ $cat = mysqli_fetch_array($categorias);
 foreach($categorias as $cat => $categoria):
 
     // categoria individual
-    $c = $categoria['categoria'];
+    $nrCat = $categoria['categoria'];
 
     // soma a quantidade de produtos dentro da categoria
-    $somar = mysqli_query($conn, "SELECT count(categoria) as total FROM `marketplace` WHERE categoria = '$c'");
+    $somar = mysqli_query($conn, "SELECT count(categoria) as total FROM `marketplace` WHERE categoria = '$nrCat'");
 
     // transforma em array
     $r = mysqli_fetch_array($somar);
 
     // mostra nome da categoria
-    $nrCat = $categoria['categoria'];
     include('src/nomeCategoria.php');
 
 ?>
 
-    <li class="pb-2">
-        <a class="text-gray-400 hover:text-white"><?php echo($nrCat);?><span class="font-bold"> <?php echo($r['total']) ?></span></a>
+    <li class="pb-2 text-gray-400 hover:text-white">
+        <a href="#" class="<?php echo($categoria['categoria']) ?>"><?php echo($nrCat);?><span class="font-bold"> <?php echo($r['total']) ?></span></a>
     </li>
 
 <?php endforeach; ?>

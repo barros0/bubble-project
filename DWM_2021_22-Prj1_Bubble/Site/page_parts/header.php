@@ -92,15 +92,18 @@ $userq = $conn->query('select * from users inner join nacionalidades
 
     <?php
     } else if ($pagina == 'marketplace.php') {
+        $nomePagina = "marketplace";
     ?>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="css/anaStyles.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/marketplace.js"></script>
 
     <?php
     } else if ($pagina == 'perfil.php') {
-        $nomePagina = "Perfil"
+        $nomePagina = "Perfil";
     ?>
-    <link rel="stylesheet" href="css/feed.css">
+        <link rel="stylesheet" href="css/feed.css">
         <link rel="stylesheet" href="css/perfil.css">
     <?php }
     ?>
