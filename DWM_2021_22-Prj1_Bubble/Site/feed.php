@@ -6,15 +6,6 @@
 
     <div class="center">
         <?php include 'estrutura_post.php'; ?>
-        <div class="comment_user">
-            <div class="comment_user_avatar">
-                <img src="img/header/download.png" alt="foto_perfil_user">
-                <div class="comment_text">
-                    <div class="comment_user_name">Rute Baguete</div>
-                    HAHAHHAHAHAH MANO, baril mas curtia mais de uma cena para ver a população mosaica.
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="right">
