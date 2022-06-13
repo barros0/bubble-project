@@ -24,7 +24,7 @@
     </div>
 
     <!-- Lado Direito -->
-    <div class="md:w-3/4">
+    <div class="md:w-3/4 mb-14">
         <div class="container px-5 mx-auto">
             <h2 id="titulo-filtro" class="pb-4 text-xl">Todos os produtos</h2>
 
