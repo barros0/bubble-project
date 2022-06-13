@@ -100,6 +100,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
     } else if ($pagina == 'perfil.php') {
         $nomePagina = "Perfil"
     ?>
+    <link rel="stylesheet" href="css/feed.css">
         <link rel="stylesheet" href="css/perfil.css">
     <?php }
     ?>

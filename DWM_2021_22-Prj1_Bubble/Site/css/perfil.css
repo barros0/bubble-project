@@ -249,3 +249,13 @@
 #form_editar_perfil input[type="submit"]:hover {
   background-color: #00d372;
 }
+
+.posts_user {
+  margin-left: 30px;
+}
+
+.post {
+  margin: 0;
+  margin-bottom: 30px;
+  width: 100%;
+}
