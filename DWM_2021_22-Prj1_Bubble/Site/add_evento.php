@@ -13,15 +13,14 @@ $folder_eventos = "img/eventos/";
 $novo_ficheiro_evento = sha1(microtime()) . "." . $extensao;
 
 if ($titulo != "") {
-if ($localizacao != "") {
-if ($descricao != "") {
-if (move_uploaded_file($_FILES['foto_evento']['tmp_name'], $folder_eventos . $novo_ficheiro_evento)) {
-    $qevento = "INSERT INTO eventos (titulo,localizacao,descricao,imagem) VALUES ('" . $titulo . "','" . $localizacao . "','" . $descricao . "','" . $novo_ficheiro_evento . "')";
-    $evento = $conn->query($qevento);
-}
-}
-}
+    if ($localizacao != "") {
+        if ($descricao != "") {
+            if (move_uploaded_file($_FILES['foto_evento']['tmp_name'], $folder_eventos . $novo_ficheiro_evento)) {
+                $qevento = "INSERT INTO eventos (titulo,localizacao,descricao,imagem) VALUES ('" . $titulo . "','" . $localizacao . "','" . $descricao . "','" . $novo_ficheiro_evento . "')";
+                $evento = $conn->query($qevento);
+         }
+        }
+    }
 }
 
-header('location:eventos.php')
-?>
+header('location:eventos.php');

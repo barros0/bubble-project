@@ -19,7 +19,7 @@
         
 ?>
 
-    <div class="p-4 w-full light-gray <?php echo($categoria['categoria']) ?>">
+    <div class="p-4 w-full light-gray item <?php echo($produto['categoria']); ?>">
 
         <img alt="ecommerce" class="p-2 object-center w-16 rounded-full shadow-lg shadow-white" src="img/marketplace/CodeFactor.png">
         

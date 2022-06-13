@@ -12,7 +12,7 @@
     <!-- Lado Esquerdo -->
     <div class="md:w-1/4">
         
-        <div class="container px-5 mx-auto md:sticky md:top-0 z-auto">
+        <div id="opFiltro" class="container px-5 mx-auto md:sticky md:top-0 z-auto">
             <h2 class="pb-4 text-xl">Categorias</h2>
 
             <nav class="list-none mb-10 z-0">
@@ -24,9 +24,9 @@
     </div>
 
     <!-- Lado Direito -->
-    <div class="md:w-3/4">
+    <div class="md:w-3/4 mb-14">
         <div class="container px-5 mx-auto">
-            <h2 class="pb-4 text-xl">Todos os produtos</h2>
+            <h2 id="titulo-filtro" class="pb-4 text-xl">Todos os produtos</h2>
 
             <!-- Botão Modal -->
             
@@ -106,9 +106,9 @@
                 </div>
             </div> <!-- Fim Conteúdo Modal -->
 
-            <div class="grid grid-cols-1 gap-4 lg:grid-cols-4">
+            <div id="holder" class="grid grid-cols-1 gap-4 lg:grid-cols-4">
 
-            <?php include('src/mostrarProduto.php'); ?>
+                <?php include('src/mostrarProduto.php'); ?>
 
             </div>
         </div>

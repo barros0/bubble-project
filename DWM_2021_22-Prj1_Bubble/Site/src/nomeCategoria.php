@@ -1,6 +1,9 @@
 <?php
 
 switch ($nrCat) {
+    case "cat-todos":
+        $nrCat = "Todos os produtos";
+        break;
     case "cat-1":
         $nrCat = "Aplicações";
         break;

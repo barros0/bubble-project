@@ -55,8 +55,7 @@
                 </div>
             </div>
             <div class="posts_user">
-                <?php // include 'estrutura_post_user.php'; 
-                ?>
+                <?php include 'estrutura_post_user.php'; ?>
             </div>
         </div>
     </div>
