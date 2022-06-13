@@ -1,23 +1,23 @@
 $(document).ready(function() {
 
     $('#opFiltro li a').click(function() {
-      // fetch the class of the clicked item
-      var ourClass = $(this).attr('class');
+      // vai buscar a class do item que foi clicado
+      var classeEscolhida = $(this).attr('class');
   
-      // reset the filtroAtivo class on all the buttons
+      // reseta a classe 'filtroAtivo' em todos os botões
       $('#opFiltro li').removeClass('filtroAtivo');
-      // update the filtroAtivo state on our clicked button
+      // atualiza o estado da classe filtroAtivo no botão clicado
       $(this).parent().addClass('filtroAtivo');
   
-      if(ourClass == 'cat-todos') {
-        // show all our items
+      if(classeEscolhida == 'cat-todos') {
+        // mostra todos os itens
         $('#holder').children('div.item').show();
       }
       else {
-        // hide all elements that don't share ourClass
-        $('#holder').children('div:not(.' + ourClass + ')').hide();
-        // show all elements that do share ourClass
-        $('#holder').children('div.' + ourClass).show();
+        // esconde itens que não cotém a classeEscolhida
+        $('#holder').children('div:not(.' + classeEscolhida + ')').hide();
+        // mostra todos os itens que contém a classeEscolhida
+        $('#holder').children('div.' + classeEscolhida).show();
       }
       return false;
     });
