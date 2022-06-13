@@ -20,7 +20,7 @@ while ($user_pub = $result_set->fetch_assoc()) {
             <div class="user_post_info">
                 <div class="cabecalho_post">
                     <div class="post_user_avatar">
-                        <img src="img/header/download.png" alt="foto_perfil_user">
+                        <img src="img/fotos_perfil/<?php echo $user_pub['profile_image'] ?>" alt="foto_perfil_user">
                         <div class="post_user_info">
                             <p class="post_user_name"> <?php echo ($user_pub['nome']) ?></p>
                             <p class="post_user_date">Publicado - <?php echo ($user_pub['created_at']) ?></p>
