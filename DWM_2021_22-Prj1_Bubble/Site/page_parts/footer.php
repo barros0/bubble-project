@@ -18,9 +18,10 @@
 <script src="js/eventos.js"></script>
 <!--faqs-->
 <script src="bootstrap/js/bootstrap.js"></script>
-
+<!--empregos-->
 <script src="js/inserirempregos.js"></script>
-
+<!--marketplace-->
+<script src="js/marketplace.js"></script>
 
 </body>
 
