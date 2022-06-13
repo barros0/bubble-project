@@ -1,5 +1,6 @@
 <?php
-$user_posts = $conn->query("select * from publicacoes INNER JOIN users ON publicacoes.user_id = users.id_user order by publicacoes.created_at DESC where users.id_user =" . $_SESSION['user']['id_user'])->fetch_assoc();
+$user_posts ="select * from publicacoes INNER JOIN users ON publicacoes.user_id = users.id_user where id_user ="
+    . $userq['id_user'];
 
 
 $result_set = $conn->query($user_posts);
