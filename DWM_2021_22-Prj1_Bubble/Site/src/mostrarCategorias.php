@@ -12,7 +12,7 @@ $p = mysqli_fetch_array($produtos);
 ?>
 
     <li class="pb-2 text-gray-400 hover:text-white filtroAtivo">
-        <a href="#" class="cat-todos">Todos<span class="font-bold"> <?php echo($p['total_produtos']) ?></span></a>
+        <a href="#" class="cat-todos">Todos<span class="font-bold"> <?php echo($p['total_produtos']); ?></span></a>
     </li>
 
 <?php
