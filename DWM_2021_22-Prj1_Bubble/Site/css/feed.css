@@ -153,7 +153,6 @@
 
 .comment_section form {
   padding: 15px;
-  border-bottom: 2px solid white;
 }
 
 .comment_section textarea {
@@ -504,6 +503,25 @@ textarea:focus {
   background-color: rgb(88, 88, 88);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+#comentar input[type="submit"] {
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #00ff8a;
+  border: 0;
+  font-weight: 600;
+  outline: 0;
+}
+
+.comentar_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment_user {
+  border-top: 2px solid white;
 }
 
 @media (max-width:1200px) {

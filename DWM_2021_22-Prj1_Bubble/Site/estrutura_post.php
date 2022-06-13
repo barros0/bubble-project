@@ -15,7 +15,6 @@ while ($pub = $result_set->fetch_assoc()) {
     $id_publicacao = $pub['publicacao_id'];
     $estado = $pub['estado_pub'];
 
-    //$comentarios = "select * from comentarios"
     if ($estado != 2) {
 ?>
         <div class="post">
@@ -80,18 +79,29 @@ while ($pub = $result_set->fetch_assoc()) {
                     </div>
                 </div>
                 <div class="comment_section">
-                    <form action="add_comment.php" method="POST">
+                    <form id="comentar" action="add_comment.php?id_pub=<?= $id_publicacao ?>" method="POST">
                         <textarea data-limit=255 maxlength="255" name="textarea" class="comment_textarea" placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/255</p>
+                        <div class="comentar_btn">
+                            <input type="submit" value="Comentar">
+                        </div>
                     </form>
                     <div class="comment_user">
-                        <div class="comment_user_avatar">
-                            <img src="img/header/download.png" alt="foto_perfil_user">
-                            <div class="comment_text">
-                                <div class="comment_user_name">Rute Baguete</div>
-                                HAHAHHAHAHAH MANO, baril mas curtia mais de uma cena para ver a população mosaica.
+                        <?php
+                        $qcomentarios = "SELECT * FROM comentarios INNER JOIN users ON comentarios.user_id = users.id_user WHERE publicacao_id = $id_publicacao";
+                        $result_comentarios = $conn->query($qcomentarios);
+                        while ($comentario = $result_comentarios->fetch_assoc()) {
+                        ?>
+                            <div class="comment_user_avatar">
+                                <img src="img/header/download.png" alt="foto_perfil_user">
+                                <div class="comment_text">
+                                    <div class="comment_user_name"><?php echo $comentario['nome']; ?> </div>
+                                    <?php echo $comentario['comentario']; ?>
+                                </div>
                             </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
