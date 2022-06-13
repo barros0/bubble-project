@@ -11,6 +11,11 @@ while ($pub = $result_set->fetch_assoc()) {
 
     $imagemq = "select * from publicacoes_fotos where publicacao_id =" . $pub['publicacao_id'];
     $imagem = $conn->query($imagemq)->fetch_assoc();
+
+    $id_publicacao = $pub['publicacao_id'];
+    $estado = $pub['estado_pub'];
+    echo $estado;
+    if($estado != 2){
 ?>
     <div class="post">
         <div class="user_post_info">
@@ -31,7 +36,7 @@ while ($pub = $result_set->fetch_assoc()) {
                         <?php
                         if ($pub["id_user"] === $userq['id_user']) {
                         ?>
-                            <form class="remover" action="delete_post.php" method="post">
+                            <form class="remover" action="delete_post.php?id_pub=<?= $id_publicacao ?>" method="POST">
                                 <i class='bx bxs-trash'></i>
                                 <input type="submit" name="delete" class="btn_remover" value="DELETE">
                             </form>
@@ -83,5 +88,6 @@ while ($pub = $result_set->fetch_assoc()) {
     </div>
 
 <?php
+}
 }
 ?>
