@@ -5,7 +5,7 @@ session_start();
 
 $texto = $_REQUEST['text']; //TEXTO DA PUBLICACAO PARA PUBLICACOES
 
-$qpublicacao = "INSERT INTO publicacoes (user_id,conteudo,estado) VALUES ('" . $_SESSION['user']['id_user'] . "','" . $texto . "',1)";
+$qpublicacao = "INSERT INTO publicacoes (user_id,conteudo,estado_pub) VALUES ('" . $_SESSION['user']['id_user'] . "','" . $texto . "',1)";
 $publicacao = $conn->query($qpublicacao);
 
 //ID DA PUBLICACAO

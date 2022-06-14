@@ -217,10 +217,6 @@ nav, header {
   text-align: left;
 }
 
-.nome-popup {
-  text-align: center;
-}
-
 .popup_searchbar {
   position: fixed;
   width: 100%;
@@ -556,5 +552,3 @@ textarea:focus {
     display: block;
   }
 }
-
-

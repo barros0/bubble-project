@@ -521,6 +521,7 @@ textarea:focus {
 }
 
 .comment_user {
+  padding-bottom: 15px;
   border-top: 2px solid white;
 }
 
