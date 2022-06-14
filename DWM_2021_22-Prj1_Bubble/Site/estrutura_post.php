@@ -93,7 +93,7 @@ while ($pub = $result_set->fetch_assoc()) {
                         while ($comentario = $result_comentarios->fetch_assoc()) {
                         ?>
                             <div class="comment_user_avatar">
-                                <img src="img/header/download.png" alt="foto_perfil_user">
+                                <img src="img/fotos_perfil/<?php echo $comentario['profile_image'] ?>" alt="foto_perfil_user">
                                 <div class="comment_text">
                                     <div class="comment_user_name"><?php echo $comentario['nome']; ?> </div>
                                     <?php echo $comentario['comentario']; ?>
