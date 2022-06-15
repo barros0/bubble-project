@@ -25,7 +25,7 @@ if(!empty($_SESSION['alerts']['info'])){
 if(!empty($_SESSION['alerts']['success'])){
     foreach ($_SESSION['alerts']['success'] as $notf){
         ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div onclick="this.parentElement.style.display='none';"class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Success!</strong>  <?=$notf?>.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

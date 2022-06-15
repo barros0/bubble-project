@@ -12,11 +12,12 @@ if (!isset($faq)) {
 
 ?>
 
-<div class="s-container">
+<div class="atualizar_faq_form">
     <form id="atualizaFAQ" name="atualizaFAQ" class="form-control" method="post" enctype="multipart/form-data" action="./update_faq.php?faqid=<?= $faqid ?>" autocomplete="off" onsubmit="return validaForm()">
 
         <div class="title">
-            <h2>Atualizar FAQ</h2>
+            <h3>Atualizar FAQ</h3>
+            <i id="fechar_modal_faq" class='bx bx-x' onClick="Javascript:window.location.href = './faqs.php';"></i>
         </div>
         <div class="form-group">
             <label for="pergunta">Pergunta</label>
@@ -32,5 +33,4 @@ if (!isset($faq)) {
         <button type="submit" class="btn btn-primary">Gravar</button>
 
     </form>
-
 </div>

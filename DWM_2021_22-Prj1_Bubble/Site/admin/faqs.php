@@ -45,7 +45,6 @@ $faqs = $conn->query('SELECT * FROM faqs');
 </div>
 <div class="form_inserir_faqs">
     <form id="inserirFAQ" class="form-control" name="inserirFAQ" onsubmit="return validateForm()" method="post" action="inserefaq.php">
-
         <div class="title">
             <h3>Inserir novo FAQ</h3>
             <i id="fechar_modal_faq" class='bx bx-x'></i>
@@ -75,7 +74,7 @@ $faqs = $conn->query('SELECT * FROM faqs');
 
 <?php
 $pagina = basename($_SERVER["REQUEST_URI"]);
-if($pagina != "faqs.php"){
+if ($pagina != "faqs.php") {
     include('./faq.php');
 }
 
