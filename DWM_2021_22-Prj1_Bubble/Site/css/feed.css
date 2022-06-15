@@ -147,8 +147,8 @@
   background-color: rgb(88, 88, 88);
 }
 
-.comment_section, .comment_user {
-  /*display: none;*/
+.comment_section{
+  display: none;
 }
 
 .comment_section form {
