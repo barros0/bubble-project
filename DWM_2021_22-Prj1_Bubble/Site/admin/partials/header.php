@@ -9,6 +9,20 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+$minutosExpira=30;
+if (isset($_SESSION['ULTIMA_ATIVIDADE']) && (time() - $_SESSION['ULTIMA_ATIVIDADE'] > ($minutosExpira*60))) {
+    session_unset();     // unset $_SESSION
+    session_destroy();   // destroy session data
+}
+$_SESSION['ULTIMA_ATIVIDADE'] = time(); // ATULIZA A ULTIMA_ATIVIDADE
+
+
+if(!isset($_SESSION['user'])){
+
+    header('location:../login.php');
+    exit();
+}
+
     if (empty($_SESSION['user']) || $_SESSION['user']['tipo'] <> 1) {
         header('location:../login.php');
         exit;
