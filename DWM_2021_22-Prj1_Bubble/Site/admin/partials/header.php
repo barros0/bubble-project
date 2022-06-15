@@ -47,7 +47,7 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
-    <!--- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>--->
+    <!-- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>-->
     <script src="./public/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>
@@ -56,7 +56,7 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
     <link rel="stylesheet" href="./public/calendarjs/dist/css/theme-basic.css" />
     <link rel="stylesheet" href="./public/calendarjs/dist/css/theme-glass.css" />
     <script src="./public/calendarjs/dist/bundle.js"></script>
-    <!--- icones--->
+    <!-- icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
