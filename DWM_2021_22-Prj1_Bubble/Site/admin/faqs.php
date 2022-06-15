@@ -33,7 +33,7 @@ $faqs = $conn->query('SELECT * FROM faqs');
                             <p><?= $faq['resposta'] ?></p>
                         </td>
                         <td>
-                            <a href="./faq.php?faqid=<?= $faq['id_faq'] ?>">
+                            <a href="./faqs.php?faqid=<?= $faq['id_faq'] ?>">
                                 <i class="fa fa-pen"></i>
                             </a>
                         </td>
@@ -66,6 +66,7 @@ $faqs = $conn->query('SELECT * FROM faqs');
     </form>
 </div>
 
+
 <script>
     $(document).ready(function() {
         $('#faqs').DataTable();
@@ -73,6 +74,7 @@ $faqs = $conn->query('SELECT * FROM faqs');
 </script>
 
 <?php
+include('./faq.php');
 include('./partials/footer.php');
 
 ?>
