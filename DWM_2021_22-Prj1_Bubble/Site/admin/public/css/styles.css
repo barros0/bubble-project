@@ -57,12 +57,7 @@ a:hover {
 }
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     color: var(--white);
 }
 
@@ -247,7 +242,7 @@ tbody tr:nth-child(odd) {
     width: 140px;
     height: 140px;
     background-color: var(--parcelas);
-    margin: 10px;
+    margin-right: 30px;
     border-radius: 8px;
 }
 
@@ -275,8 +270,6 @@ tbody tr:nth-child(odd) {
     font-size: 18px;
     font-weight: bold;
 }
-
-.mini-card {}
 
 .armazenamento {
     background-color: var(--parcelas);
