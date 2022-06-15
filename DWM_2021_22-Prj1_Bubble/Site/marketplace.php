@@ -12,7 +12,7 @@
     <!-- Lado Esquerdo -->
     <div class="md:w-1/4">
         
-        <div id="opFiltro" class="container px-5 mx-auto md:sticky md:top-0 z-auto">
+        <div id="opFiltro" class="container px-5 mx-auto md:sticky md:top-40">
             <h2 class="pb-4 text-xl">Categorias</h2>
 
             <nav class="list-none mb-10 z-0">
