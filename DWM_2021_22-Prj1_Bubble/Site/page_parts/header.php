@@ -203,6 +203,9 @@ $userq = $conn->query('select * from users inner join nacionalidades
                     </div>
                 </a>
             </li>
+            <?php if($userq['tipo'] == 1){?>
+                <li><a href="./admin"><i class='bx bx-user'></i>Administração</a></li>
+            <?php } ?>
             <li><a href="#"><i class='bx bx-group'></i>Amigos</a></li>
             <li><a href="#"><i class='bx bx-star'></i>Favoritos</a></li>
             <li><a href="#"><i class='bx bx-cog'></i>Definições</a></li>
