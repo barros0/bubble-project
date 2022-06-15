@@ -89,7 +89,7 @@ require('./partials/notificacoes.php');?>
                 <a href="./reports.php"><i class="fa fa-warning icon"></i> Reports</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-industry icon"></i> Empregos</a>
+                <a href="./empregos.php"><i class="fa fa-industry icon"></i> Empregos</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-water icon"></i> Eventos</a>

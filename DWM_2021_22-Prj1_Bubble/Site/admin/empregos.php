@@ -1,7 +1,7 @@
 <?php
 include('./partials/header.php');
 
-$empregos = $conn->query('select * from empregos');
+$empregos = $conn->query('SELECT * FROM oferta_emprego');
 
 $conn->close();
 ?>
@@ -18,23 +18,22 @@ $conn->close();
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Pergunta</th>
-                <th scope="col">Resposta</th>
+                <th scope="col">Título</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Editar</th>
             </tr>
             </thead>
             <tbody>
             <?php foreach ($empregos as $emprego) {
                 ?>
-                <tr>
-                    <th scope="row"><?= $emprego['id_evento'] ?></th>
+               <tr>
+                    <th scope="row"><?= $emprego['id_oferta'] ?></th>
                     <td>
-                        <p>  <?= $emprego['descricao'] ?></p>
+                      <p>  <?= $emprego['titulo'] ?></p>
                     </td>
-                    <td><p><a href="<?= $emprego['link'] ?>"><?= $emprego['link'] ?></a></p></td>
-                    <td>    <p>  <?= $emprego['created_at'] ?></p></td>
+                    <td><p><?= $emprego['categoria'] ?></p></td>
                     <td>
-                        <a href="./evento.php?userid=<?= $emprego['id_faq'] ?>">
+                        <a href="./emprego.php?idemp=<?= $emprego['id_oferta'] ?>">
                             <i class="fa fa-pen"></i>
                         </a>
                     </td>

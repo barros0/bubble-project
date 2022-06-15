@@ -1,62 +1,95 @@
 <?php
 include('./partials/header.php');
 
-$empregoid = $_GET['empregoid'];
+$empregoid = $_GET['idemp'];
 
-$emprego = $conn->query('Select * from empregos where id_emprego = ' . $empregoid)->fetch_assoc();
+$emprego = $conn->query('SELECT * FROM oferta_emprego WHERE id_oferta = ' . $empregoid)->fetch_assoc();
 
 $conn->close();
 
 if (!isset($emprego)) {
-    array_push($_SESSION['alerts']['errors'], 'Este utilizador não existe!');
-    header('location:./users.php');
+
+    array_push($_SESSION['alerts']['errors'], 'Este emprego não existe!');
+    header('location:./empregos.php');
     exit;
+    
 }
 
 ?>
 
-
-
 <div class="s-container">
-    <form class="form-control" method="post" enctype="multipart/form-data" action="./update_user.php?userid=<?= $userid ?>"
+    <form class="form-control" method="post" enctype="multipart/form-data" action="./update_emprego.php?empregoid=<?= $empregoid ?>"
           autocomplete="off">
 
         <div class="title">
-            <h2>Atualizar emprego</h2>
+            <h2>Atualizar Emprego</h2>
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input name="email" value="<?= $user['email'] ?>" type="email" class="form-control" id="email"
-                   placeholder="Email">
+            <label for="titulo">Título</label>
+            <input name="titulo" value="<?= $emprego['titulo'] ?>" type="text" class="form-control" id="titulo"
+                   placeholder="Título" required>
         </div>
+
         <div class="form-group">
-            <label for="password">Password</label>
-            <input autocomplete="off" value="" name="password" type="password" class="form-control" id="password"
-                   placeholder="Password">
+            <label for="qualificacoes">Qualificações</label>
+            <input name="qualificacoes" value="<?= $emprego['qualificacoes'] ?>" type="text" class="form-control" id="qualificacoes"
+                   placeholder="Qualificações" required>
+        </div>
+
+        <div class="form-group">
+            <label for="experiencia">Experiência</label>
+            <input name="experiencia" value="<?= $emprego['experiencia'] ?>" type="text" class="form-control" id="experiencia"
+                   placeholder="Experiência" required>
+        </div>
+
+        <div class="form-group">
+            <label for="requisitos">Requisitos</label>
+            <input name="requisitos" value="<?= $emprego['requisitos'] ?>" type="text" class="form-control" id="requisitos"
+                   placeholder="Requisitos" required>
+        </div>
+
+        <div class="form-group">
+            <label for="vagas">Número de Vagas</label>
+            <input name="vagas" value="<?= $emprego['vagas'] ?>" type="number" class="form-control" id="vagas"
+                   placeholder="Número de Vagas" required>
+        </div>
+
+        <div class="form-group">
+            <label for="localizacao">Localização</label>
+            <input name="localizacao" value="<?= $emprego['localizacao'] ?>" type="text" class="form-control" id="localizacao"
+                   placeholder="Localização" required>
+        </div>
+
+        <div class="form-group">
+            <label for="horario">Horários</label>
+            <input name="horario" value="<?= $emprego['horario'] ?>" type="text" class="form-control" id="horario"
+                   placeholder="Horários" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <input name="tipo" value="<?= $emprego['tipo'] ?>" type="text" class="form-control" id="tipo"
+                   placeholder="Tipo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input name="categoria" value="<?= $emprego['categoria'] ?>" type="text" class="form-control" id="categoria"
+                   placeholder="Categoria" required>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input name="descricao" value="<?= $emprego['descricao'] ?>" type="text" class="form-control" id="descricao"
+                   placeholder="Descrição" required>
         </div>
 
 
-        <div class="form-group col-md-4">
-            <label for="estado">Estado</label>
-            <select name="estado" id="estado" class="form-control">
-
-                <?php foreach ($estados as $estado) {
-                    print_r($estado['estado_user_id'])
-                    ?>
-                    <option <?php
-                    if ($estado['estado_user_id'] == $user['estado']) {
-                        ?>
-                        selected
-                        <?php
-                    } ?>
-                        value="<?= $estado['estado_user_id'] ?>"><?= $estado['nome_estado_user'] ?></option>
-                <?php } ?>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Gravar</button>
+        <a class="btn btn-danger" href="./update_emprego.php?delete_empregoid=<?= $empregoid  ?>">Eliminar</a>
+            <button type="submit" class="btn btn-primary">Gravar</button>
 
     </form>
-
 
     <?php
     include('./partials/footer.php');
