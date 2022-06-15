@@ -74,7 +74,11 @@ $faqs = $conn->query('SELECT * FROM faqs');
 </script>
 
 <?php
-include('./faq.php');
+$pagina = basename($_SERVER["REQUEST_URI"]);
+if($pagina != "faqs.php"){
+    include('./faq.php');
+}
+
 include('./partials/footer.php');
 
 ?>
