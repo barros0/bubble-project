@@ -7,6 +7,10 @@ if(isset($_SESSION['user'])){
     exit();
 }
 
+include('./bd.php');
+$sql  = mysqli_query($conn, "select * from nacionalidades");
+
+$generos = mysqli_query($conn, "select * from generos");
 ?>
 
 <!DOCTYPE html>
@@ -73,20 +77,19 @@ if(isset($_SESSION['user'])){
                     <input type="date" class="form-input" name="data" placeholder="Data de Nascimento" required>
                     <label for="nacionalidade">A sua nacionalidade é:</label>
                     
-                    <?php include('./bd.php');
-                     $sql  = mysqli_query($conn, "select pais from nacionalidades");?>
-                   <select name="nacionalidade" class="form-input" id="nacionalidade"><?php
-                    while($resultado = mysqli_fetch_array($sql)){ ?>     
-                  <option value="<?=  $resultado['nacionalidade'] ?>"><?php echo $resultado['pais']; ?></option>
+
+                   <select name="nacionalidade" class="form-input" id="nacionalidade">
+                       <?php while($nacionalidade = mysqli_fetch_array($sql)){ ?>
+                  <option value="<?=  $nacionalidade['nacionalidade_id'] ?>"><?php echo $nacionalidade['pais']; ?></option>
                   <?php } ?>
                   </select>
 
 
                     <label for="sexo">O seu género é:</label>
                     <select name="sexo" class="form-input" id="sexo">
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
+                        <?php while($genero = mysqli_fetch_array($generos)){ ?>
+                            <option value="<?= $genero['genero_id'] ?>"><?php echo $genero['nome_genero']; ?></option>
+                        <?php } ?>
                     </select>
                     <label id="checkbox">
                         <input type="checkbox" class="check-box" required>

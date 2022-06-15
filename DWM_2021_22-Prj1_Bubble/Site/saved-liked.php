@@ -4,10 +4,10 @@
     <div class="center">
 
 <?php
-$liked = $conn->query('select * from gostos where user_id = '.$user['id_user'].' inner join publicacoes on gostos.publicacao_id = publicacao.publicacao_id');
+$liked = $conn->query('select * from gostos inner join publicacoes on gostos.publicacao_id = publicacao.publicacao_id where gostos.user_id = '.$userq['id_user'] );
 
-$saved = $conn->query('select * from guardados where user_id = '.$user['id_user'].' inner join publicacoes on guardados.publicacao_id = publicacao.publicacao_id');
-
+$saved = $conn->query('select * from guardados inner join publicacoes on guardados.publicacao_id = publicacao.publicacao_id where guardados.user_id = '.$userq['id_user']);
+print_r($saved)
 ?>
 
 

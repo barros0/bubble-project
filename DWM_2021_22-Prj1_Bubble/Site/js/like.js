@@ -1,30 +1,17 @@
 $(document).ready(function () {
-  $("#like").click(function () {
-    let number = $("#number_likes").text();
-    classCheck = $("#like").is(".active");
+  $(".liked_bt").click(function () {
+    console.log(33)
 
-    if (classCheck) {
-      $("#like").removeClass("active");
-      number--;
-      $("#number_likes").text(number);
-      $("#liked").remove();
-      $("#liked_info").remove();
-      $(".post_number_likes_comments").prepend(
-        "<i class='bx bx-heart' id='liked'></i>"
-      );
-      $("#like").prepend("<i class='bx bx-heart' id='liked_info'></i>");
-    } else {
-      $("#like").addClass("active");
-      number++;
-      $("#number_likes").text(number);
-      $("#liked").remove();
-      $("#liked_info").remove();
-      $(".post_number_likes_comments").prepend(
-        "<i class='bx bxs-heart' id='liked' style='color:#00ff8a' ></i>"
-      );
-      $("#like").prepend(
-        "<i class='bx bxs-heart' id='liked_info' style='color:#00ff8a' ></i>"
-      );
-    }
+    classCheck = $(this).is(".active");
+    $(this).toggleClass('active');
+
+     div_like = $(this).parent().parent().children('.post_number_likes_comments');
+
+     // aletr numb likes
+     div_like.find('#number_likes').text('3');
+
+nlike = div_like.children('#number_likes');
+
+
   });
 });

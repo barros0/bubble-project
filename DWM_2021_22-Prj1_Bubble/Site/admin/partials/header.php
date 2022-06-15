@@ -86,13 +86,7 @@ require('./partials/notificacoes.php');?>
                 <a href="./users.php"><i class="fa fa-users icon"></i> Utilizadores</a>
             </li>
             <li>
-                <a href="./publicacoes.php"><i class="fa fa-pen icon"></i> Publicações</a>
-            </li>
-            <li>
                 <a href="./reports.php"><i class="fa fa-warning icon"></i> Reports</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-message icon"></i> Mensagens</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-industry icon"></i> Empregos</a>
