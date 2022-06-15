@@ -11,7 +11,7 @@ $empregos_pub = $conn->query('SELECT * FROM oferta_emprego');
     <div class="conteudo">
 
         <div id="container-faqs" class="container-faqs s-container">
-            <form class="form-control" name="inserirFAQ" method="post" action="insereemprego.php">
+            <form class="form-control" name="inserirEmprego" method="post" action="insereemprego.php">
 
                 <div class="title">
                     <h2>Inserir Nova Oferta de Emprego</h2>
@@ -34,52 +34,52 @@ $empregos_pub = $conn->query('SELECT * FROM oferta_emprego');
 
                 <div class="form-group">
                     <label for="titulo">Título </label>
-                    <input type="text" name="titulo" id="titulo" class="form-control">
+                    <input type="text" name="titulo" id="titulo" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="qualificacoes">Qualificações </label>
-                    <input type="text" name="qualificacoes" id="qualificacoes" class="form-control">
+                    <input type="text" name="qualificacoes" id="qualificacoes" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="experiencia">Experiência </label>
-                    <input type="text" name="experiencia" id="experiencia" class="form-control">
+                    <input type="text" name="experiencia" id="experiencia" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="requisitos">Requisitos </label>
-                    <input type="text" name="requisitos" id="requisitos" class="form-control">
+                    <input type="text" name="requisitos" id="requisitos" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="vagas">Número de Vagas </label>
-                    <input type="text" name="vagas" id="vagas" class="form-control">
+                    <input type="text" name="vagas" id="vagas" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="localizacao">Localização </label>
-                    <input type="text" name="localizacao" id="localizacao" class="form-control">
+                    <input type="text" name="localizacao" id="localizacao" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="horarios">Horários </label>
-                    <input type="text" name="horarios" id="horarios" class="form-control">
+                    <label for="horario">Horários </label>
+                    <input type="text" name="horario" id="horario" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="tipo">Tipo </label>
-                    <input type="text" name="tipo" id="tipo" class="form-control">
+                    <input type="text" name="tipo" id="tipo" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="categoria">Categoria </label>
-                    <input type="text" name="categoria" id="categoria" class="form-control">
+                    <input type="text" name="categoria" id="categoria" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="descricao">Descrição </label>
-                    <input type="text" name="descricao" id="descricao" class="form-control">
+                    <input type="text" name="descricao" id="descricao" class="form-control" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Gravar</button>
