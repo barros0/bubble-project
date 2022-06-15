@@ -23,10 +23,6 @@ $conn->close();
     </div>
     <main class="container" id="main">
         <div class="row">
-            <h2>👋 Olá, <?php echo($user['nome']) ?></h2>
-        </div>
-
-        <div class="row">
             <div class="col-6">
                 <div class="flex-wrap">
                     <div class="flex flex-wrap">

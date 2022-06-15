@@ -1,4 +1,3 @@
-
 <?php
 include('./partials/header.php');
 
@@ -7,10 +6,50 @@ $faqs = $conn->query('SELECT * FROM faqs');
 ?>
 
 <div id="container-faqs" class="container-faqs s-container">
-    <form id="inserirFAQ" class="form-control" name="inserirFAQ" onsubmit="return validateForm()" method="post" action="inserefaq.php" >
+    <div class="table-responsive">
+        <table class="table" id="faqs">
+            <div class="cabecalho_table">
+                <div class="titulo_table">Lista das FAQS</div>
+                <div class="button_adicionar">Adicionar +</div>
+            </div>
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Pergunta</th>
+                    <th scope="col">Resposta</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($faqs as $faq) {
+                ?>
+                    <tr>
+                        <th scope="row"><?= $faq['id_faq'] ?></th>
+                        <td>
+                            <p> <?= $faq['pergunta'] ?></p>
+                        </td>
+                        <td>
+                            <p><?= $faq['resposta'] ?></p>
+                        </td>
+                        <td>
+                            <a href="./faq.php?faqid=<?= $faq['id_faq'] ?>">
+                                <i class="fa fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="form_inserir_faqs">
+    <form id="inserirFAQ" class="form-control" name="inserirFAQ" onsubmit="return validateForm()" method="post" action="inserefaq.php">
 
         <div class="title">
-            <h2>Inserir novo FAQ</h2>
+            <h3>Inserir novo FAQ</h3>
+            <i id="fechar_modal_faq" class='bx bx-x'></i>
+
         </div>
         <div class="form-group">
             <label for="Pergunta">Pergunta </label>
@@ -25,53 +64,12 @@ $faqs = $conn->query('SELECT * FROM faqs');
         <button type="submit" class="btn btn-primary">Gravar</button>
 
     </form>
-
-
-    <div class="table-responsive">
-        <div class="table-header row">
-            <div class="titulo col-10">
-                <h2>FAQS</h2>
-            </div>
-        </div>
-        <table class="table" id="faqs">
-            <caption></caption>
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Pergunta</th>
-                <th scope="col">Resposta</th>
-                <th scope="col">Editar</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($faqs as $faq) {
-                ?>
-                <tr>
-                    <th scope="row"><?= $faq['id_faq'] ?></th>
-                    <td>
-                      <p>  <?= $faq['pergunta'] ?></p>
-                    </td>
-                    <td><p><?= $faq['resposta'] ?></p></td>
-                    <td>
-                        <a href="./faq.php?faqid=<?= $faq['id_faq'] ?>">
-                            <i class="fa fa-pen"></i>
-                        </a>
-                    </td>
-                </tr>
-            <?php } ?>
-
-
-
-            </tbody>
-        </table>
-    </div>
-
 </div>
 
 <script>
-    $(document).ready( function () {
+    $(document).ready(function() {
         $('#faqs').DataTable();
-    } );
+    });
 </script>
 
 <?php

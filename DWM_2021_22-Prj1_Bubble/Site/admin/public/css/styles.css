@@ -71,6 +71,7 @@ small {
 
 .flex {
     display: flex;
+    justify-content: space-between;
 }
 
 
@@ -187,8 +188,8 @@ img {
 .container {
     width: 100%;
     height: 100%;
-    padding-left: 270px;
-    padding-top: 10px;
+    padding-left: 240px;
+    padding-top: 30px;
 }
 
 .s-container {
@@ -242,7 +243,6 @@ tbody tr:nth-child(odd) {
     width: 140px;
     height: 140px;
     background-color: var(--parcelas);
-    margin-right: 30px;
     border-radius: 8px;
 }
 
@@ -475,7 +475,11 @@ table p {
 }
 
 .table-responsive {
+    margin-top: 30px;
     padding: 20px;
+    margin-right: 30px;
+    border-radius: 10px;
+    background-color: var(--parcelas);
 }
 
 
@@ -505,23 +509,48 @@ table p {
 
 
 form.form-control {
+    margin-top: 100px;
     background-color: var(--parcelas);
     max-width: 800px;
-    margin: auto;
     border-radius: 10px;
     border: none;
     padding: 20px;
+    box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
 }
 
-.form-control .title h2 {
-    border-bottom: 1px solid var(--white);
+#fechar_modal_faq {
+    color: white;
+    font-size: 35px;
+}
+
+#fechar_modal_faq:hover {
+    color: var(--verde);
+}
+
+.form-control .title {
+    border-bottom: 2px solid white;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.form-control .title h3 {
     color: var(--white);
+    margin: 0;
 }
 
 .btn {
     margin-top: 10px;
     background-color: var(--verde);
     border: 1px solid var(--verdeh);
+    color: black;
+    float: right;
+    border-radius: 10px;
+    font-weight: 600;
 }
 
 .btn:hover {
@@ -538,4 +567,39 @@ form.form-control {
 
 #faqs_filter {
     margin-bottom: 10px;
+}
+
+.titulo_table {
+    color: white;
+    font-size: 25px;
+}
+
+.cabecalho_table {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.button_adicionar {
+    display: flex;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #00ff8a;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.form_inserir_faqs {
+    display: none;
+    background: #00000085;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
 }
