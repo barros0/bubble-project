@@ -473,7 +473,6 @@ textarea:focus {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border-bottom: 3px solid #3a3b3c;
 }
 
 .partilhar i, .remover i {
