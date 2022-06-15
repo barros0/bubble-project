@@ -80,7 +80,7 @@ while ($pub = $result_set->fetch_assoc()) {
                 </div>
                 <div class="comment_section">
                     <form id="comentar" action="add_comment.php?id_pub=<?= $id_publicacao ?>" method="POST">
-                        <textarea data-limit=255 maxlength="255" name="textarea" class="comment_textarea" placeholder="Comente Algo"></textarea>
+                        <textarea required data-limit=255 maxlength="255" name="textarea" class="comment_textarea" placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/255</p>
                         <div class="comentar_btn">
                             <input type="submit" value="Comentar">
