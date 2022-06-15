@@ -45,4 +45,5 @@
         </div>
     </div>
 </div>
+
 <?php include 'page_parts/footer.php'; ?>

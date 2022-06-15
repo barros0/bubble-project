@@ -65,8 +65,8 @@ while ($pub = $result_set->fetch_assoc()) {
                     <p><span id="number_likes"></span> Gostos</p>
                 </div>
                 <div class="post_like_comment_fav">
-                    <div id="like">
-                        <i class='bx bx-heart' id="liked_info"></i>
+                    <div id="like" class="liked_bt">
+                        <i class='bx bx-heart'></i>
                         <p>Gostar</p>
                     </div>
                     <div class="comment" id="comment">
