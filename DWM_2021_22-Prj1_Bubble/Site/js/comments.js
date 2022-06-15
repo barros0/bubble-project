@@ -15,11 +15,11 @@ $(document).ready(function () {
     sec = $(this).parent().next('.comment_section');
 
     if (sec.css("display") == 'none') {
-      $(".comment_section").slideDown();
-      $(".comment_user").slideDown();
+      sec.slideDown();
+      //$(".comment_user").slideDown();
     } else {
-      $(".comment_section").slideUp();
-      $(".comment_user").slideUp();
+      sec.slideUp();
+      //$(".comment_user").slideUp();
     }
   });
 });
