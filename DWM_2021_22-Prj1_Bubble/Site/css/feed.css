@@ -148,7 +148,7 @@
 }
 
 .comment_section, .comment_user {
-  display: none;
+  /*display: none;*/
 }
 
 .comment_section form {
