@@ -605,3 +605,58 @@ form.form-control {
     flex-direction: column;
     align-items: center;
 }
+
+.admin-tops{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.admin-tops .nav {
+    border-radius: 10px 10px 0px 0px;
+    border: 2px solid var(--parcelas);
+}
+
+.admin-tops .nav-link{
+    color: var(--white);
+    border: none;
+}
+
+.admin-tops .nav-link:hover{
+    color: var(--dark);
+    background-color: var(--fundo);
+}
+
+.admin-tops .nav-link.active {
+    background-color: var(--verde);
+    color: var(--white);
+}
+
+.admin-tops .nav-link.active:hover {
+    background-color: var(--verdeh);
+}
+
+.admin-tops .tab-content{
+    min-height: 350px;
+    background-color: var(--parcelas);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.admin-tops{
+
+}
+
+.welcome{
+    margin: 20px;
+}
+
+.welcome .foto{
+border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.welcome .welcome-frase{
+    color: var(--white);
+    font-weight: bold;
+}

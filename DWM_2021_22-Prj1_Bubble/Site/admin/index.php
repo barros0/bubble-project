@@ -22,6 +22,17 @@ $conn->close();
         </div>
     </div>
     <main class="container" id="main">
+
+        <div class="welcome">
+            <div class="d-flex">
+                <img class="foto" src="../img/fotos_perfil/<?=$user['profile_image']?>" alt="">
+                <div class="info">
+                    <h2 class="welcome-frase">Bem-vindo de volta, <?=$user['nome']?></h2>
+                    <p class="secundary">Estás a navegar na página de administração, utiliza o menu lateral para navegares!</p>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-6">
                 <div class="flex-wrap">
@@ -56,7 +67,7 @@ $conn->close();
                             <span class="valor"><?= $c_users ?></span>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 admin-tops">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
@@ -82,10 +93,10 @@ $conn->close();
             </div>
 
 
-            <div class="armazenamento d-flex flex-column col-12 col-lg-6 text-white">
+            <div class="armazenamento d-flex flex-column col-12 col-lg-5 text-white">
                 <div class="header d-flex flex-column">
                     <div class="d-flex justify-content-between align-items-center mb-1">
-                        <h4>Armazenamento</h4>
+                        <h4 class="text-white">Armazenamento</h4>
                         <span class="text-swhite" style="font-size: 1rem;"> 4 livres de <span
                                     id="total-value">3</span>GB</span>
                     </div>
