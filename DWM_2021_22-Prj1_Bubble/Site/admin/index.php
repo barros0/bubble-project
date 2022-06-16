@@ -11,16 +11,22 @@ $conn->close();
 
     <div class="title-page s-container">
 
-        <div class="d-flex">
-            <div>
+            <div class="bigtitle">
                 <h1><i class="fa fa-columns"></i> Dashboard</h1>
             </div>
 
             <div>
                 <i class="fa fa-calendar"></i>
             </div>
-        </div>
+
+            <div class="horas">
+                <div id="horas">
+
+                </div>
+            </div>
+
     </div>
+
     <main class="container" id="main">
 
         <div class="welcome">
@@ -97,8 +103,8 @@ $conn->close();
                 <div class="header d-flex flex-column">
                     <div class="d-flex justify-content-between align-items-center mb-1">
                         <h4 class="text-white">Armazenamento</h4>
-                        <span class="text-swhite" style="font-size: 1rem;"> 4 livres de <span
-                                    id="total-value">3</span>GB</span>
+                        <span class="text-swhite" style="font-size: 1rem;"> <?= $total_livre?> livres de <span
+                                    id="total-value">3</span></span>
                     </div>
                     <div class="progress bg-transparent" style="height: 20px;">
                         <div class="progress-bar bg-transparent" style="width: 20%;" data-bs-toggle="tooltip"
@@ -130,7 +136,7 @@ $conn->close();
                             <span class="item-titulo fs-5 ms-2">System</span>
                         </div>
                         <span class="text-swhite">
-                    <span id="system-value">5</span>GB
+                    <span id="system-value"><?=$total_espaco?></span>
                 </span>
                     </div>
 
@@ -140,7 +146,7 @@ $conn->close();
                             <span class="item-titulo fs-5 ms-2">Ficheiros</span>
                         </div>
                         <span class="text-swhite">
-                    <span id="files-value">5</span>GB
+                    <span id="files-value">5</span>
                 </span>
                     </div>
 
@@ -150,7 +156,7 @@ $conn->close();
                             <span class="item-titulo fs-5 ms-2">Imagens</span>
                         </div>
                         <span class="text-swhite">
-                    <span id="images-value">2</span>GB
+                    <span id="images-value"><?=$imagens_espaco?></span>
                 </span>
                     </div>
 
@@ -160,7 +166,7 @@ $conn->close();
                             <span class="item-titulo fs-5 ms-2">Videos</span>
                         </div>
                         <span class="text-swhite">
-                    <span id="videos-value">16</span>GB
+                    <span id="videos-value">16</span>
                 </span>
                     </div>
 
@@ -170,7 +176,7 @@ $conn->close();
                             <span class="item-titulo fs-5 ms-2">Audios</span>
                         </div>
                         <span class="text-swhite">
-                    <span id="audios-value">4</span>GB
+                    <span id="audios-value">4</span>
                 </span>
                     </div>
 
@@ -180,7 +186,7 @@ $conn->close();
                             <span class="item-titulo fs-5 ms-2">Outros</span>
                         </div>
                         <span class="text-swhite">
-                    <span id="audios-value">4</span>GB
+                    <span id="audios-value">4</span>
                 </span>
                     </div>
                 </div>

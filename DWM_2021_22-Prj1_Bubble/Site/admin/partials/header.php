@@ -31,6 +31,44 @@ if (empty($_SESSION['user']) || $_SESSION['user']['tipo'] <> 1) {
 $user = $conn->query("select * from users where id_user = " . $_SESSION['user']['id_user'])->fetch_assoc();
 
 
+// files
+
+// converte de bytes para MB ou GB
+function converteTamanho($size)
+{
+    // GB
+    $unidade='GB';
+   $tamanho =  round($size / pow(1024, 3), 2);
+
+   // se der 0 para gb faz para mb
+
+    if($tamanho<=1){
+        $unidade='MB';
+        $tamanho =  round($size / pow(1024, 2), 2);
+    }
+
+    return $tamanho.' '.$unidade;
+
+}
+
+function tamanhoPasta($path)
+{
+    $bytestotal = 0;
+    $path = realpath($path);
+    if ($path !== false && $path != '' && file_exists($path)) {
+        foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path, FilesystemIterator::SKIP_DOTS)) as $object) {
+            $bytestotal += $object->getSize();
+        }
+    }
+    return converteTamanho($bytestotal);
+
+}
+
+$total_livre =  converteTamanho(disk_free_space ( '../' ));
+$imagens_espaco =  tamanhoPasta('../img');
+$total_espaco =  tamanhoPasta('../');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-pt" dir="ltr">
@@ -70,7 +108,8 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
     </div>
 
     <?php
-    require('./partials/notificacoes.php'); ?>
+    require('./partials/notificacoes.php');
+    ?>
 
     <nav class="menu">
         <div class="logo">
@@ -99,7 +138,7 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
                     <a href="#"><i class="fa fa-water icon"></i> Eventos</a>
                 </li>
                 <li>
-                    <a href="./faqs.php"><i class="fas fa-question"></i> FAQS</a>
+                    <a href="./faqs.php"><i class="fas fa-question icon"></i> FAQS</a>
                 </li>
             </ul>
         </div>
@@ -107,9 +146,9 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
         <div class="dropdown m-auto menu-admin">
             <a id="open_admin_menu_down" href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle">
                 <div class="user-img">
-                    <img src=".././img/users/lopess.png" alt="">
+                    <img src=".././img/fotos_perfil/<?=$user['profile_image']?>" alt="">
                 </div>
-                <strong><?php echo ($_SESSION['user']['nome']) ?></strong>
+                <strong><?php echo ($user['nome']) ?></strong>
             </a>
             <ul class="dropdown-menu text-small shadow admin-menu-down" id="admin_menu_down">
 

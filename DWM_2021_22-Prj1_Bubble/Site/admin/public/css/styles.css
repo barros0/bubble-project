@@ -233,14 +233,29 @@ tbody tr:nth-child(odd) {
 
 .title-page {
     background-color: var(--nav);
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
 }
 
-.title-page h1 {
+.bigtitle{
+
+}
+
+.bigtitle h1{
     padding-left: 20px;
     padding-bottom: 10px;
     color: var(--white);
-    font-size: 18px;
+    font-size: 22px;
 }
+
+.bigtitle h1 .fa{
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+
+
 
 .mini-card {
     padding: 10px;
@@ -658,5 +673,11 @@ border-radius: 50%;
 
 .welcome .welcome-frase{
     color: var(--white);
+    font-weight: bold;
+}
+
+.horas{
+    color:var(--white);
+    font-size: 16px;
     font-weight: bold;
 }
