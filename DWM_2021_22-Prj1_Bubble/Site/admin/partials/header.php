@@ -67,6 +67,7 @@ function tamanhoPasta($path)
 $total_livre =  converteTamanho(disk_free_space ( '../' ));
 $imagens_espaco =  tamanhoPasta('../img');
 $total_espaco =  tamanhoPasta('../');
+$videos_espaco =  tamanhoPasta('../videos');
 
 
 ?>
