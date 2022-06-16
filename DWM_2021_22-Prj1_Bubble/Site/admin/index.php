@@ -7,6 +7,47 @@ $c_users = $conn->query('select count(*) as total from users')->fetch_assoc()['t
 
 $conn->close();
 
+
+// files
+
+// converte de bytes para MB ou GB
+function converteTamanho($size)
+{
+    // GB
+    $unidade='GB';
+    $tamanho =  round($size / pow(1024, 3), 2);
+
+    // se der 0 para gb faz para mb
+
+    if($tamanho<=1){
+        $unidade='MB';
+        $tamanho =  round($size / pow(1024, 2), 2);
+    }
+
+    return $tamanho.' '.$unidade;
+
+}
+
+function tamanhoPasta($path)
+{
+    $bytestotal = 0;
+    $path = realpath($path);
+    if ($path !== false && $path != '' && file_exists($path)) {
+        foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path, FilesystemIterator::SKIP_DOTS)) as $object) {
+            $bytestotal += $object->getSize();
+        }
+    }
+    return $bytestotal;
+
+}
+
+$total_livre =  converteTamanho(disk_free_space ( '../' ));
+$site_total_espaco =  converteTamanho(tamanhoPasta ('../'));
+$imagens_espaco =  converteTamanho(tamanhoPasta('../img'));
+$total_espaco =  converteTamanho(disk_total_space ('../'));
+$videos_espaco =  converteTamanho(tamanhoPasta('../videos'));
+
+
 ?>
 
     <div class="title-page s-container">
@@ -104,7 +145,7 @@ $conn->close();
                     <div class="d-flex justify-content-between align-items-center mb-1">
                         <h4 class="text-white">Armazenamento</h4>
                         <span class="text-swhite" style="font-size: 1rem;"> <?= $total_livre?> livres de <span
-                                    id="total-value">3</span></span>
+                                    id="total-value"><?= $total_espaco?></span></span>
                     </div>
                     <div class="progress bg-transparent" style="height: 20px;">
                         <div class="progress-bar bg-transparent" style="width: 20%;" data-bs-toggle="tooltip"
@@ -136,7 +177,7 @@ $conn->close();
                             <span class="item-titulo fs-5 ms-2">System</span>
                         </div>
                         <span class="text-swhite">
-                    <span id="system-value"><?=$total_espaco?></span>
+                    <span id="system-value"><?=$site_total_espaco?></span>
                 </span>
                     </div>
 
@@ -166,7 +207,7 @@ $conn->close();
                             <span class="item-titulo fs-5 ms-2">Videos</span>
                         </div>
                         <span class="text-swhite">
-                    <span id="videos-value">16</span>
+                    <span id="videos-value"><?=$videos_espaco?></span>
                 </span>
                     </div>
 

@@ -31,45 +31,6 @@ if (empty($_SESSION['user']) || $_SESSION['user']['tipo'] <> 1) {
 $user = $conn->query("select * from users where id_user = " . $_SESSION['user']['id_user'])->fetch_assoc();
 
 
-// files
-
-// converte de bytes para MB ou GB
-function converteTamanho($size)
-{
-    // GB
-    $unidade='GB';
-   $tamanho =  round($size / pow(1024, 3), 2);
-
-   // se der 0 para gb faz para mb
-
-    if($tamanho<=1){
-        $unidade='MB';
-        $tamanho =  round($size / pow(1024, 2), 2);
-    }
-
-    return $tamanho.' '.$unidade;
-
-}
-
-function tamanhoPasta($path)
-{
-    $bytestotal = 0;
-    $path = realpath($path);
-    if ($path !== false && $path != '' && file_exists($path)) {
-        foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path, FilesystemIterator::SKIP_DOTS)) as $object) {
-            $bytestotal += $object->getSize();
-        }
-    }
-    return converteTamanho($bytestotal);
-
-}
-
-$total_livre =  converteTamanho(disk_free_space ( '../' ));
-$imagens_espaco =  tamanhoPasta('../img');
-$total_espaco =  tamanhoPasta('../');
-$videos_espaco =  tamanhoPasta('../videos');
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-pt" dir="ltr">
