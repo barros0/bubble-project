@@ -1,6 +1,6 @@
 <!-- Header -->
 <?php include 'page_parts/header.php'; ?>
-
+<?php include 'page_parts/left.php'; ?>
 <!-- Main -->
 <div class="container px-5 pt-24 pb-4 mx-auto text-center">
     <!-- Título -->
