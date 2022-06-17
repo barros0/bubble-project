@@ -13,6 +13,7 @@
 }
 
 .opcoes_definicoes ul li {
+    margin-left: 10px;
     font-size: 17px;
     padding: 10px;
     display: flex;
@@ -22,7 +23,7 @@
 }
 
 .opcoes_definicoes ul li a {
-    color: white;
+    color: #bdbdbd;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -31,4 +32,9 @@
 .opcoes_definicoes ul li a i {
     padding: 5px;
     font-size: 30px;
+}
+
+.opcoes_definicoes ul li:hover {
+    background-color: rgb(88, 88, 88);
+    border-radius: 10px;
 }
