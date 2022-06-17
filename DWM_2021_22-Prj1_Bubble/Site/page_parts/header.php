@@ -103,8 +103,11 @@ $userq = $conn->query('select * from users inner join nacionalidades
     ?>
         <link rel="stylesheet" href="css/feed.css">
         <link rel="stylesheet" href="css/perfil.css">
-    <?php }
+    <?php } else if ($pagina == "definicoes.php") {
+        $nomePagina = "definições"
     ?>
+        <link rel="stylesheet" href="css/definicoes.css">
+    <?php }  ?>
     <!--Mudar o título da página-->
     <title>Bubble | <?php echo $nomePagina ?> </title>
 
@@ -203,12 +206,12 @@ $userq = $conn->query('select * from users inner join nacionalidades
                     </div>
                 </a>
             </li>
-            <?php if($userq['tipo'] == 1){?>
+            <?php if ($userq['tipo'] == 1) { ?>
                 <li><a href="./admin"><i class='bx bx-user'></i>Administração</a></li>
             <?php } ?>
             <li><a href="#"><i class='bx bx-group'></i>Amigos</a></li>
             <li><a href="#"><i class='bx bx-star'></i>Favoritos</a></li>
-            <li><a href="#"><i class='bx bx-cog'></i>Definições</a></li>
+            <li><a href="definicoes.php"><i class='bx bx-cog'></i>Definições</a></li>
             <li><a href="logout.php"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
         </ul>
     </div>
