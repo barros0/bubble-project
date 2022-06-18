@@ -40,18 +40,23 @@
         <!--PARTE DE BAIXO DO PERFIL-->
 
         <div class="pagina_perfil_baixo">
-            <div class="perfil_sobre">
-                <p class="titulo_perfil">Sobre Mim</p>
-                <p class="texto_sobre_perfil"><?php echo ($userq['sobre']) ?></p>
-                <p class="titulo_perfil">Skills</p>
-                <p class="texto_sobre_perfil"><?php echo ($userq['skills']) ?></p>
-                <div class="sobre_alinhado">
-                    <p class="titulo_perfil">Membro Desde</p>
-                    <p class="texto_sobre_perfil"><?php echo ($userq['created_at']) ?></p>
+            <div class="perfil_esquerda_baixo">
+                <div class="perfil_sobre">
+                    <p class="titulo_perfil">Sobre Mim</p>
+                    <p class="texto_sobre_perfil"><?php echo ($userq['sobre']) ?></p>
+                    <p class="titulo_perfil">Skills</p>
+                    <p class="texto_sobre_perfil"><?php echo ($userq['skills']) ?></p>
+                    <div class="sobre_alinhado">
+                        <p class="titulo_perfil">Membro Desde</p>
+                        <p class="texto_sobre_perfil"><?php echo ($userq['created_at']) ?></p>
+                    </div>
+                    <div class="sobre_alinhado">
+                        <p class="titulo_perfil">Idade</p>
+                        <p class="texto_sobre_perfil"><?php echo ($userq['data_nascimento']) ?></p>
+                    </div>
                 </div>
-                <div class="sobre_alinhado">
-                    <p class="titulo_perfil">Idade</p>
-                    <p class="texto_sobre_perfil"><?php echo ($userq['data_nascimento']) ?></p>
+                <div class="perfil_sobre">
+
                 </div>
             </div>
             <div class="posts_user">

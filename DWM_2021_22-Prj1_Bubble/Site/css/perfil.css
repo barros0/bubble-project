@@ -132,11 +132,13 @@
 }
 
 .perfil_sobre {
-  width: 30%;
+  width: 100%;
   background-color: #404040;
   color: white;
   padding: 10px;
+  margin-bottom: 30px;
   border-radius: 10px;
+  height: fit-content;
 }
 
 .texto_sobre_perfil {
@@ -224,15 +226,6 @@
 
 .linguagens_perfil {
   margin-top: 10px;
-}
-
-.perfil_sobre {
-  width: 30%;
-  background-color: #404040;
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
-  height: fit-content;
 }
 
 #form_editar_perfil input[type="submit"] {
