@@ -103,7 +103,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
     ?>
         <link rel="stylesheet" href="css/feed.css">
         <link rel="stylesheet" href="css/perfil.css">
-    <?php } else if ($pagina == "definicoes.php") {
+    <?php } else if ($pagina == "definicoes_geral.php") {
         $nomePagina = "definições"
     ?>
         <link rel="stylesheet" href="css/definicoes.css">
@@ -211,7 +211,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
             <?php } ?>
             <li><a href="#"><i class='bx bx-group'></i>Amigos</a></li>
             <li><a href="#"><i class='bx bx-star'></i>Favoritos</a></li>
-            <li><a href="definicoes.php"><i class='bx bx-cog'></i>Definições</a></li>
+            <li><a href="definicoes_geral.php"><i class='bx bx-cog'></i>Definições</a></li>
             <li><a href="logout.php"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
         </ul>
     </div>
