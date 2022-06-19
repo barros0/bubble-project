@@ -45,7 +45,7 @@
                 <input type="text" name="email" value="<?php echo $userq['email']; ?>">
                 <div class="buttons_atualizar_cancelar">
                     <input type="submit" value="Atualizar">
-                    <input type="button" class="btn-danger" value="Cancelar">
+                    <input onclick="" type="button" class="btn-danger" value="Cancelar">
                 </div>
             </form>
         </div>
