@@ -76,6 +76,7 @@ nav, header {
 }
 
 .logo_header {
+  height: 50px;
   width: 25%;
 }
 
@@ -223,7 +224,7 @@ nav, header {
   height: 300px;
   display: none;
   flex-direction: column;
-  top: 68px;
+  top: 48px;
   align-items: center;
   z-index: 99;
 
@@ -298,7 +299,7 @@ input.input_searchbar {
   display: none;
   height: 300px;
   flex-direction: column;
-  top: 68px;
+  top: 48px;
   align-items: center;
   z-index: 99;
 

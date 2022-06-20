@@ -14,7 +14,7 @@ $stmt = $conn->prepare("INSERT INTO publicacoes (user_id, conteudo, estado_pub) 
 $stmt->bind_param("isi", $userq, $conteudo, $estado_pub);
 
 //definir as variaveis e executar
-$userq = ['id_user'];
+$userq = $_SESSION['user']['id_user'];
 $conteudo = $_REQUEST['text']; //conteudo da publicação 
 $estado_pub = 1;
 $stmt->execute();

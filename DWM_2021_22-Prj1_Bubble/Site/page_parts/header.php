@@ -125,7 +125,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
                 <img class="logo" src="img/header/logo_bubble.svg" alt="logo">
             </a>
 
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav_bar_ul">
                 <li class="navbar_li"><a href="feed.php" class="nav-link px-2"><i class='bx bx-home-alt'></i></a></li>
                 <li class="navbar_li"><a href="mensagens.php" class="nav-link px-2"><i class='bx bx-chat'></i></a></li>
                 <li class="navbar_li"><a href="./notificacoes.php" class="nav-link px-2"><i class='bx bx-bell'></i></a>
