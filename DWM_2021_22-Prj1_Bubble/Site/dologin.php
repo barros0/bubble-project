@@ -28,8 +28,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
     }
 
     $_SESSION['user'] = $user;
-    echo('<h2>logged!</h2>');
-
+    require_once 'page_parts/ip_sessions.php';
     header('location:feed.php');
     exit();
 
@@ -61,5 +60,3 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
 
     }
 }
-    ?>
-

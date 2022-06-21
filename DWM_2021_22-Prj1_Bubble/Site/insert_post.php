@@ -2,13 +2,6 @@
 require('./bd.php');
 session_start();
 
-/*
-$texto =  //TEXTO DA PUBLICACAO PARA PUBLICACOES
-
-$qpublicacao = "INSERT INTO publicacoes (user_id,conteudo,estado_pub) VALUES ('" . $_SESSION['user']['id_user'] . "','" . $texto . "',1)";
-$publicacao = $conn->query($qpublicacao);
-*/
-
 //preparar o statement
 $stmt = $conn->prepare("INSERT INTO publicacoes (user_id, conteudo, estado_pub) VALUES (?, ?, ?)");
 $stmt->bind_param("isi", $userq, $conteudo, $estado_pub);
@@ -73,9 +66,6 @@ if ($imagem != "") {
             //fechar as conexoes
             $foto->close();
             $conn->close();
-
-            /*$publicacao_foto = "INSERT INTO publicacoes_fotos (publicacao_id,caminho) VALUES('" . $idpub . "','" . $novo_ficheiro . "')";
-            $conn->query($publicacao_foto);*/
         }
     }
 }

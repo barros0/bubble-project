@@ -22,8 +22,8 @@ while ($user_pub = $result_set->fetch_assoc()) {
                     <div class="post_user_avatar">
                         <img src="img/fotos_perfil/<?php echo $user_pub['profile_image'] ?>" alt="foto_perfil_user">
                         <div class="post_user_info">
-                            <p class="post_user_name"> <?php echo ($user_pub['nome']) ?></p>
-                            <p class="post_user_date">Publicado - <?php echo ($user_pub['created_at']) ?></p>
+                            <p class="post_user_name"> <?php echo $user_pub['nome'] ?></p>
+                            <p class="post_user_date">Publicado - <?php echo $user_pub['created_at'] ?></p>
                         </div>
                     </div>
                     <div class="remover_publicacao">
@@ -41,13 +41,13 @@ while ($user_pub = $result_set->fetch_assoc()) {
                     </div>
                 </div>
                 <div class="post_text">
-                    <?php echo ($user_pub['conteudo']) ?>
+                    <?php echo $user_pub['conteudo'] ?>
                 </div>
                 <?php
                 if (!empty($posts_fotos)) {
                 ?>
                     <div class="post_user_img">
-                        <img src="./img/publicacoes/<?php echo ($posts_fotos['caminho']) ?>" alt="publicacao_foto">
+                        <img src="./img/publicacoes/<?php echo $posts_fotos['caminho'] ?>" alt="publicacao_foto">
                     </div>
                 <?php
                 }

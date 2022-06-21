@@ -50,7 +50,6 @@ $userq = $conn->query('select * from users inner join nacionalidades
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
-    <!--<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">-->
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <!--Mudar folha de estilos conforme a página-->
@@ -103,19 +102,16 @@ $userq = $conn->query('select * from users inner join nacionalidades
     ?>
         <link rel="stylesheet" href="css/feed.css">
         <link rel="stylesheet" href="css/perfil.css">
-    <?php } else if ($pagina == "definicoes_geral.php") {
-        $nomePagina = "definições"
+    <?php } else if ($pagina == "definicoes_geral.php" || $pagina == "definicoes_seguranca.php") {
+        $nomePagina = "Definições"
     ?>
         <link rel="stylesheet" href="css/definicoes.css">
     <?php }  ?>
     <!--Mudar o título da página-->
     <title>Bubble | <?php echo $nomePagina ?> </title>
-
-
 </head>
 
 <body>
-
 
     <!--NAV BAR PC-->
 
@@ -201,7 +197,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
     <div class="popup_perfil">
         <ul>
             <li><a href="perfil.php"><img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil">
-                    <div id="ver_perfil"><span class="nome-popup"> <?php echo ($userq['nome']) ?>
+                    <div id="ver_perfil"><span class="nome-popup"> <?php echo $userq['nome'] ?>
                         </span><span id="ver_perfil_span">Ver Perfil</span>
                     </div>
                 </a>
@@ -229,7 +225,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
             <div class="user_responsive">
                 <div class="wrap_user">
                     <img id="user_img_responsive" src="img/header/download.png" width="50" alt="logo">
-                    <span id="user_name_responsive"><?php echo ($userq['nome']) ?></span>
+                    <span id="user_name_responsive"><?php echo $userq['nome'] ?></span>
                 </div>
             </div>
         </header>
