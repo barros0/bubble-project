@@ -32,13 +32,13 @@
             </div>
             <div class="amigos">
                 <ul>
-                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png" alt="fotoperfil"><?php echo ($_SESSION['user']['nome']) ?></a>
+                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png" alt="fotoperfil"><?php ?></a>
                     </li>
-                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png" alt="fotoperfil"><?php echo ($_SESSION['user']['nome']) ?> </a>
+                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png" alt="fotoperfil"><?php ?> </a>
                     </li>
-                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png" alt="fotoperfil"><?php echo ($_SESSION['user']['nome']) ?> </a>
+                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png" alt="fotoperfil"><?php ?> </a>
                     </li>
-                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png" alt="fotoperfil"><?php echo ($_SESSION['user']['nome']) ?> </a>
+                    <li><a class="amigo" href=""><img class="amigo_avatar" src="img/header/download.png" alt="fotoperfil"><?php ?> </a>
                     </li>
                 </ul>
             </div>
