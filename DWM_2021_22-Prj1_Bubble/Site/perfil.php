@@ -37,18 +37,10 @@ if($other_profile){
     <div class="pagina_perfil">
     <div class="conteudo_pagina_perfil">
         <div class="fundo_perfil">
-<<<<<<< HEAD
             <img src="img/fotos_banner/<?php echo($user_perfil['banner_image']) ?>" alt="imagem_fundo">
             <div class="pagina_foto_perfil">
                 <img src="img/fotos_perfil/<?php echo($user_perfil['profile_image']) ?>" alt="foto_perfil">
                 <p><?php echo($user_perfil['nome']) ?></p>
-=======
-            <img src="img/fotos_banner/<?php echo $user_perfil['banner_image'] ?>" alt="imagem_fundo">
-            <div class="pagina_foto_perfil">
-                <img src="img/fotos_perfil/<?php echo $user_perfil['profile_image'] ?>" alt="foto_perfil">
-                <p><?php echo $user_perfil['nome'] ?></p>
-
->>>>>>> 97104324dfc90adb01fba88a55f310aa8f042d33
             </div>
         </div>
         <div class="espaco_info_buttons">
@@ -105,7 +97,6 @@ if($other_profile){
             <div class="perfil_esquerda_baixo">
                 <div class="perfil_sobre">
                     <p class="titulo_perfil">Sobre Mim</p>
-<<<<<<< HEAD
                     <p class="texto_sobre_perfil"><?php echo($user_perfil['sobre']) ?></p>
                     <p class="titulo_perfil">Skills</p>
                     <p class="texto_sobre_perfil"><?php echo($user_perfil['skills']) ?></p>
@@ -116,18 +107,6 @@ if($other_profile){
                     <div class="sobre_alinhado">
                         <p class="titulo_perfil">Idade</p>
                         <p class="texto_sobre_perfil"><?php echo($user_perfil['data_nascimento']) ?></p>
-=======
-                    <p class="texto_sobre_perfil"><?php echo $user_perfil['sobre'] ?></p>
-                    <p class="titulo_perfil">Skills</p>
-                    <p class="texto_sobre_perfil"><?php echo $user_perfil['skills'] ?></p>
-                    <div class="sobre_alinhado">
-                        <p class="titulo_perfil">Membro Desde</p>
-                        <p class="texto_sobre_perfil"><?php echo $user_perfil['created_at'] ?></p>
-                    </div>
-                    <div class="sobre_alinhado">
-                        <p class="titulo_perfil">Idade</p>
-                        <p class="texto_sobre_perfil"><?php echo $user_perfil['data_nascimento'] ?></p>
->>>>>>> 97104324dfc90adb01fba88a55f310aa8f042d33
                     </div>
                 </div>
                 <div class="perfil_sobre">
@@ -149,19 +128,11 @@ if($other_profile){
         </div>
         <div class="sobre_perfil">
             <label for="sobre_perfil">Sobre ti:</label>
-<<<<<<< HEAD
             <textarea name="SobrePerfil" id="sobre_perfil"><?php echo($user_perfil['sobre']) ?></textarea>
         </div>
         <div class="linguagens_perfil">
             <label for="skills_perfil">Trabalhas com o que?</label>
             <textarea name="skills_perfil" id="programas_perfil"><?php echo($user_perfil['skills']) ?></textarea>
-=======
-            <textarea name="SobrePerfil" id="sobre_perfil"><?php echo $user_perfil['sobre'] ?></textarea>
-        </div>
-        <div class="linguagens_perfil">
-            <label for="skills_perfil">Trabalhas com o que?</label>
-            <textarea name="skills_perfil" id="programas_perfil"><?php echo $user_perfil['skills'] ?></textarea>
->>>>>>> 97104324dfc90adb01fba88a55f310aa8f042d33
         </div>
         <div class="inserir_fotos">
             <div class="foto_perfil">
