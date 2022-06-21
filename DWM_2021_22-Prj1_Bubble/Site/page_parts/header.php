@@ -141,11 +141,11 @@ $userq = $conn->query('select * from users inner join nacionalidades
 
     <div class="popup_searchbar">
         <div class="wrapper_searchbar">
-            <form class="form_searchbar" method="POST" action="index.php">
+            <form class="form_searchbar" method="get" action="pesquisa.php">
                 <div class="div_input_searchbar">
-                    <input type="text" class="input_searchbar" placeholder="Search here..." name="keyword" required="required" value="" />
+                    <input type="text" class="input_searchbar" placeholder="Search here..." name="search" required="required" value="" />
                     <span class="input_search_group_btn">
-                        <button class="button_searchbar" name="search"><i class='bx bx-search'></i></button>
+                        <button class="button_searchbar"><i class='bx bx-search'></i></button>
                     </span>
                 </div>
             </form>
