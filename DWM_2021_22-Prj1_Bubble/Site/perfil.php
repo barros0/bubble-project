@@ -23,10 +23,10 @@ $count_aseguir = $conn->query('select count(*) from seguir where id_seguidor = '
 <div class="pagina_perfil">
     <div class="conteudo_pagina_perfil">
         <div class="fundo_perfil">
-            <img src="img/fotos_banner/<?php echo $userq['banner_image'] ?>" alt="imagem_fundo">
+            <img src="img/fotos_banner/<?php echo $user_perfil['banner_image'] ?>" alt="imagem_fundo">
             <div class="pagina_foto_perfil">
-                <img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="foto_perfil">
-                <p><?php echo $userq['nome'] ?></p>
+                <img src="img/fotos_perfil/<?php echo $user_perfil['profile_image'] ?>" alt="foto_perfil">
+                <p><?php echo $user_perfil['nome'] ?></p>
 
             </div>
         </div>
@@ -63,16 +63,16 @@ $count_aseguir = $conn->query('select count(*) from seguir where id_seguidor = '
             <div class="perfil_esquerda_baixo">
                 <div class="perfil_sobre">
                     <p class="titulo_perfil">Sobre Mim</p>
-                    <p class="texto_sobre_perfil"><?php echo $userq['sobre'] ?></p>
+                    <p class="texto_sobre_perfil"><?php echo $user_perfil['sobre'] ?></p>
                     <p class="titulo_perfil">Skills</p>
-                    <p class="texto_sobre_perfil"><?php echo $userq['skills'] ?></p>
+                    <p class="texto_sobre_perfil"><?php echo $user_perfil['skills'] ?></p>
                     <div class="sobre_alinhado">
                         <p class="titulo_perfil">Membro Desde</p>
-                        <p class="texto_sobre_perfil"><?php echo $userq['created_at'] ?></p>
+                        <p class="texto_sobre_perfil"><?php echo $user_perfil['created_at'] ?></p>
                     </div>
                     <div class="sobre_alinhado">
                         <p class="titulo_perfil">Idade</p>
-                        <p class="texto_sobre_perfil"><?php echo $userq['data_nascimento'] ?></p>
+                        <p class="texto_sobre_perfil"><?php echo $user_perfil['data_nascimento'] ?></p>
                     </div>
                 </div>
                 <div class="perfil_sobre">
@@ -93,11 +93,11 @@ $count_aseguir = $conn->query('select count(*) from seguir where id_seguidor = '
         </div>
         <div class="sobre_perfil">
             <label for="sobre_perfil">Sobre ti:</label>
-            <textarea name="SobrePerfil" id="sobre_perfil"><?php echo $userq['sobre'] ?></textarea>
+            <textarea name="SobrePerfil" id="sobre_perfil"><?php echo $user_perfil['sobre'] ?></textarea>
         </div>
         <div class="linguagens_perfil">
             <label for="skills_perfil">Trabalhas com o que?</label>
-            <textarea name="skills_perfil" id="programas_perfil"><?php echo $userq['skills'] ?></textarea>
+            <textarea name="skills_perfil" id="programas_perfil"><?php echo $user_perfil['skills'] ?></textarea>
         </div>
         <div class="inserir_fotos">
             <div class="foto_perfil">
