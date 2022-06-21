@@ -91,6 +91,9 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
                     <a href="./users.php"><i class="fa fa-users icon"></i> Utilizadores</a>
                 </li>
                 <li>
+                    <a href="./paginas.php"><i class="fa fa-warning icon"></i> Definições Site</a>
+                </li>
+                <li>
                     <a href="./reports.php"><i class="fa fa-warning icon"></i> Reports</a>
                 </li>
                 <li>

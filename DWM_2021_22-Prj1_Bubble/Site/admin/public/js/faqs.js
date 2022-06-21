@@ -27,7 +27,6 @@ function validateForm() {
 
 $("#AtualizaFAQ").submit(function () {
   if (invalid) {
-    alert("ESGI<RJUFHXBNYZ8I0H");
     return false;
   } else {
     return true;
