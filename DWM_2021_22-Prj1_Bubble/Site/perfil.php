@@ -1,5 +1,24 @@
 <?php include 'page_parts/header.php'; ?>
 
+<?php
+
+if($_GET['userid']){
+    $user_perfil_id = $_GET['userid'];
+}
+else{
+    $user_perfil_id =  $_SESSION['user']['id_user'];
+}
+
+ $user_perfil = $conn->query('select * from users inner join nacionalidades 
+    on users.nacionalidade = nacionalidades.nacionalidade_id where users.id_user = ' . $user_perfil_id)->fetch_assoc();
+
+$count_seguidores = $conn->query('select count(*) from seguir where id_utilizador = ' . $user_perfil_id)->fetch_assoc();
+
+$count_aseguir = $conn->query('select count(*) from seguir where id_seguidor = ' . $user_perfil_id)->fetch_assoc();
+
+?>
+
+
 <!--PARTE DE CIMA DO PERFIL-->
 <div class="pagina_perfil">
     <div class="conteudo_pagina_perfil">
@@ -8,6 +27,7 @@
             <div class="pagina_foto_perfil">
                 <img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="foto_perfil">
                 <p><?php echo $userq['nome'] ?></p>
+
             </div>
         </div>
         <div class="espaco_info_buttons">
@@ -21,7 +41,7 @@
                     <p>FOLLOWERS</p>
                 </div>
                 <div class="bandeira">
-                    <span class="fi fi-<?= strtolower($userq['siglapais']) ?>"></span>
+                    <span class="fi fi-<?= strtolower($user_perfil['siglapais']) ?>"></span>
                 </div>
             </div>
             <div class="pagina_buttons">
