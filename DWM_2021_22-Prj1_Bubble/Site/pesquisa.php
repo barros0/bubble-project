@@ -7,7 +7,7 @@ $resultados = array();
 
 $search = $_GET['search'];
 
-$searchTermosBits = [];
+$searchTermBits = [];
 
 $addpesquisa = $conn->prepare("insert into historico_pesquisa (id_utilizador, pesquisa) VALUES (?, ?)");
 $addpesquisa->bind_param("is", $userq['id_user'], $search);
@@ -16,17 +16,18 @@ $addpesquisa->execute();
 
 
 $pesquisaTerms = explode(' ', $search);
-$searchTermosBits = array();
+$searchTermBits = array();
 foreach ($pesquisaTerms as $termo) {
     $termo = trim($termo);
     if (!empty($termo)) {
-        array_push($searchTermosBits, "conteudo LIKE '%$termo%'");
+        array_push($searchTermBits, "conteudo LIKE '%$termo%'");
     }
 }
+print_r($searchTermBits);
 
-$publicacoes = $conn->query("SELECT * FROM publicacoes WHERE " . implode(' AND ', $searchTermosBits) . " ");
+$publicacoes = $conn->query("SELECT * FROM publicacoes WHERE " . implode(' AND ', $searchTermBits) . " ");
 
-$users = $conn->query("SELECT * FROM users WHERE " . implode(' AND ', $searchTermosBits) . " ");
+$users = $conn->query("SELECT * FROM users WHERE " . implode(' AND ', $searchTermBits) . " ");
 
 foreach ($publicacoes as $pub) {
     $pub_ar = [

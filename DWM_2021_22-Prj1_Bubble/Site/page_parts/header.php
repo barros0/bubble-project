@@ -35,6 +35,9 @@ $pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 $userq = $conn->query('select * from users inner join nacionalidades 
     on users.nacionalidade = nacionalidades.nacionalidade_id where users.id_user = ' . $_SESSION['user']['id_user'])->fetch_assoc();
 
+// vai buscar as 6 pesquisas mais recentes
+$historico = $conn->query('select * from historico_pesquisa where id_utilizador = ' . $userq['id_user'].' order by created_at desc LIMIT 6');
+
 ?>
 
 <head>
@@ -150,14 +153,18 @@ $userq = $conn->query('select * from users inner join nacionalidades
                 </div>
             </form>
             <div class="barra"></div>
-            <div class="recent_pesquisa">
-                <p>JavaScript</p>
-                <i class='bx bx-x'></i>
-            </div>
-            <div class="recent_pesquisa">
-                <p>HTML forms</p>
-                <i class='bx bx-x'></i>
-            </div>
+
+            <?php
+            foreach ($historico as $pesquisa){
+
+            ?>
+                <div class="recent_pesquisa">
+                    <p><?=$pesquisa['pesquisa']?></p>
+                    <i class='bx bx-x'></i>
+                </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 
