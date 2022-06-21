@@ -85,7 +85,9 @@ body {
     width: 100%;
     min-width: 250px;
 }
-
+.perfil_esquerda_baixo{
+    width: 30%;
+}
 .left ul a {
     padding: 15px;
     width: 100%;
