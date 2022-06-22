@@ -77,11 +77,6 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
         <div class="logo">
             <img src="./public/images/logo_bubble.svg" alt="">
         </div>
-        <div class="stitle">
-            <p>
-                Gerenciar
-            </p>
-        </div>
         <div class="itens">
             <ul>
                 <li>
@@ -107,13 +102,13 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
                 </li>
             </ul>
         </div>
-
+        <!--
         <div class="dropdown m-auto menu-admin">
             <a id="open_admin_menu_down" href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle">
                 <div class="user-img">
-                    <img src=".././img/fotos_perfil/<?=$user['profile_image']?>" alt="">
+                    <img src=".././img/fotos_perfil/<?php //echo $user['profile_image'] ?>" alt="">
                 </div>
-                <strong><?php echo ($user['nome']) ?></strong>
+                <strong><?php // echo ($user['nome']) ?></strong>
             </a>
             <ul class="dropdown-menu text-small shadow admin-menu-down" id="admin_menu_down">
 
@@ -125,5 +120,6 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
                 <li><a class="dropdown-item" href="../logout.php"><i class="fa fa-key"></i> Terminar Sessão</a></li>
             </ul>
         </div>
+        -->
 
     </nav>
