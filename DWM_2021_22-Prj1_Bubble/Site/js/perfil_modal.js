@@ -1,7 +1,6 @@
 $(document).ready(function () {
   $("#button_editar").click(function () {
     var form = $("#form_editar_perfil").css("display");
-    var fechar = $("#fechar_modal_editar").css("display");
 
     if (form == "none") {
       $("#form_editar_perfil").css("display", "block");

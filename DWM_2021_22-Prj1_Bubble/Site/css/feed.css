@@ -43,6 +43,7 @@
 }
 
 .post_user_avatar img {
+  object-fit: cover;
   width: 40px;
   height: 40px;
   padding: 2px;
@@ -59,7 +60,9 @@
 }
 
 .post_user_name {
+  color: white !important;
   font-size: 20px;
+  text-decoration: none;
 }
 
 .post_user_date {

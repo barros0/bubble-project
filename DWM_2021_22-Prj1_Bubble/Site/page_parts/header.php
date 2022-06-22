@@ -34,6 +34,9 @@ $descricaoSite = ""; //descrição do site
 $userq = $conn->query('select * from users inner join nacionalidades 
     on users.nacionalidade = nacionalidades.nacionalidade_id where users.id_user = ' . $_SESSION['user']['id_user'])->fetch_assoc();
 
+// vai buscar as 6 pesquisas mais recentes
+$historico = $conn->query('select * from historico_pesquisa where id_utilizador = ' . $userq['id_user'] . ' order by created_at desc LIMIT 6');
+
 ?>
 
 <head>
@@ -138,23 +141,27 @@ $userq = $conn->query('select * from users inner join nacionalidades
 
     <div class="popup_searchbar">
         <div class="wrapper_searchbar">
-            <form class="form_searchbar" method="POST" action="index.php">
+            <form class="form_searchbar" method="get" action="pesquisa.php">
                 <div class="div_input_searchbar">
-                    <input type="text" class="input_searchbar" placeholder="Search here..." name="keyword" required="required" value="" />
+                    <input type="text" class="input_searchbar" placeholder="Search here..." name="search" required="required" value="" />
                     <span class="input_search_group_btn">
-                        <button class="button_searchbar" name="search"><i class='bx bx-search'></i></button>
+                        <button class="button_searchbar"><i class='bx bx-search'></i></button>
                     </span>
                 </div>
             </form>
             <div class="barra"></div>
-            <div class="recent_pesquisa">
-                <p>JavaScript</p>
-                <i class='bx bx-x'></i>
-            </div>
-            <div class="recent_pesquisa">
-                <p>HTML forms</p>
-                <i class='bx bx-x'></i>
-            </div>
+
+            <?php
+            foreach ($historico as $pesquisa) {
+
+            ?>
+                <div class="recent_pesquisa">
+                    <p><?= $pesquisa['pesquisa'] ?></p>
+                    <i class='bx bx-x'></i>
+                </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 
@@ -192,7 +199,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
 
     <div class="popup_perfil">
         <ul>
-            <li><a href="perfil.php"><img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil">
+            <li><a href="perfil.php?username=<?= $userq['username'] ?>"><img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil">
                     <div id="ver_perfil"><span class="nome-popup"> <?php echo $userq['nome'] ?>
                         </span><span id="ver_perfil_span">Ver Perfil</span>
                     </div>

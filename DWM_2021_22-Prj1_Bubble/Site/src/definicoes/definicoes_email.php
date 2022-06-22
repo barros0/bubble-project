@@ -13,13 +13,23 @@ function test_input($email)
     return $email;
 }
 
+$existe = "select * from users where email='" . $email . "'";
+$faz_existe = mysqli_query($conn, $existe);
+$jaexiste = mysqli_num_rows($faz_existe);
+
+
 if ($email != "") {
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "Invalid email format";
+    if ($jaexiste == 0) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        } else {
+            $qupdate_email = "UPDATE users SET email = '$email' WHERE id_user = " . $userid;
+            $updateemail = $conn->query($qupdate_email);
+        }
     } else {
-        $qupdate_email = "UPDATE users SET email = '$email' WHERE id_user = " . $userid;
-        $updateemail = $conn->query($qupdate_email);
+?>
+        <!--ERRO AQUI-->
+<?php
     }
 }
-
-header('location:../../definicoes_geral.php');
+?>
