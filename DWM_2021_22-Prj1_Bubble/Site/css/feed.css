@@ -60,7 +60,9 @@
 }
 
 .post_user_name {
+  color: white !important;
   font-size: 20px;
+  text-decoration: none;
 }
 
 .post_user_date {
