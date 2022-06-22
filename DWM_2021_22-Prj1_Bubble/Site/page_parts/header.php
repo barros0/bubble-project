@@ -36,7 +36,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
     on users.nacionalidade = nacionalidades.nacionalidade_id where users.id_user = ' . $_SESSION['user']['id_user'])->fetch_assoc();
 
 // vai buscar as 6 pesquisas mais recentes
-$historico = $conn->query('select * from historico_pesquisa where id_utilizador = ' . $userq['id_user'].' order by created_at desc LIMIT 6');
+$historico = $conn->query('select * from historico_pesquisa where id_utilizador = ' . $userq['id_user'] . ' order by created_at desc LIMIT 6');
 
 ?>
 
@@ -155,11 +155,11 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
             <div class="barra"></div>
 
             <?php
-            foreach ($historico as $pesquisa){
+            foreach ($historico as $pesquisa) {
 
             ?>
                 <div class="recent_pesquisa">
-                    <p><?=$pesquisa['pesquisa']?></p>
+                    <p><?= $pesquisa['pesquisa'] ?></p>
                     <i class='bx bx-x'></i>
                 </div>
             <?php
