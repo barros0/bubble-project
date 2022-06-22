@@ -1,9 +1,7 @@
-<?php include 'page_parts/header.php'; ?>
-
 <?php
+include 'page_parts/header.php';
+
 //USERNAME DO UTILIZADOR
-
-
 if (!empty($_GET['username'])) {
     $other_profile = true;
 
@@ -24,9 +22,7 @@ $count_seguidores = $conn->query('select count(*) from seguir where id_utilizado
 
 $count_aseguir = $conn->query('select count(*) from seguir where id_seguidor = ' . $user_perfil_id)->fetch_assoc();
 
-
 if ($other_profile) {
-
     $check_se_segue = $conn->query('select * from seguir where id_seguidor = '.$userq['id_user'].' and id_utilizador = ' . $user_perfil_id);
     if ($check_se_segue->num_rows > 0) {
         $check_se_segue = true;
@@ -34,9 +30,7 @@ if ($other_profile) {
         $check_se_segue = false;
     }
 }
-
 ?>
-
 
 <!--PARTE DE CIMA DO PERFIL-->
 <div class="pagina_perfil">
