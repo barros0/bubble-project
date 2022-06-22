@@ -2,12 +2,16 @@
 
 <?php
 //USERNAME DO UTILIZADOR
-$id = $_GET['id'];
 
-if (!empty($_GET['userid'])) {
+
+if (!empty($_GET['username'])) {
     $other_profile = true;
 
-    $user_perfil_id = $_GET['userid'];
+    $search_username = $conn->prepare("select * from users where username = ?");
+    $search_username->bind_param("s", $_GET['username']);
+    $search_username->execute();
+    $user_found = ($search_username->get_result())->fetch_assoc();
+    $user_perfil_id = $user_found['id_user'];
 } else {
     $other_profile = false;
     $user_perfil_id = $_SESSION['user']['id_user'];
@@ -23,7 +27,7 @@ $count_aseguir = $conn->query('select count(*) from seguir where id_seguidor = '
 
 if ($other_profile) {
 
-    $check_se_segue = $conn->query('select * from seguir where id_seguidor = ' . $userq['id_user'] . ' and id_utilizador = ' . $user_perfil_id);
+    $check_se_segue = $conn->query('select * from seguir where id_seguidor = '.$userq['id_user'].' and id_utilizador = ' . $user_perfil_id);
     if ($check_se_segue->num_rows > 0) {
         $check_se_segue = true;
     } else {
