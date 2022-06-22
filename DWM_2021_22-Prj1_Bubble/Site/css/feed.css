@@ -43,6 +43,7 @@
 }
 
 .post_user_avatar img {
+  object-fit: cover;
   width: 40px;
   height: 40px;
   padding: 2px;
