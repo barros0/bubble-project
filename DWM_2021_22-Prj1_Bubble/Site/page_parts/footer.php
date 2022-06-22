@@ -21,7 +21,7 @@ while ($row = $pags->fetch_assoc()) {
     $nomepag = $row['nomepagina'];
 
     //buscar ficheiros js associados
-    $js = $conn->query('SELECT * FROM files_js_paginas_site WHERE id_pagina = ' . $row['id_pag'] );
+    $js = $conn->query('SELECT * FROM files_js_paginas_site WHERE id_pagina = ' . $row['id_pag']);
 
     if (strpos($url, $urlpag) !== false) {
 
@@ -29,22 +29,18 @@ while ($row = $pags->fetch_assoc()) {
 
             $jspag = $rowjs['ficheirojs'];
 
-            ?>  
+?>
             <!--Ficheiros JS específicos da páginas-->
-             <script src="<?php echo $jspag ?>"></script>
+            <script src="<?php echo $jspag ?>"></script>
 
 
-            <?php
+        <?php
 
         }
 
-?>
+        ?>
 
 <?php
-
-    } else {
-        
-      
     }
 }
 

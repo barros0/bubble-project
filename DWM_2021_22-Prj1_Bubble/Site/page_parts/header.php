@@ -96,17 +96,10 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
 
             <!--Mudar o título da página-->
             <title>Bubble | <?php echo $nomepag ?> </title>
-
     <?php
-
-        } else {
-
-           
         }
     }
-
     ?>
-
 </head>
 
 <!--Inicio da Navbar-->
