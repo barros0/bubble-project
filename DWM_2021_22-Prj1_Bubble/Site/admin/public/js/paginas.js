@@ -32,7 +32,7 @@ $(document).ready(function () {
 
       cont++;
 
-      let novoCSS = ' <label for="caminhoCSS">URL CSS Nº ' + cont + ' (ex: css/feed.css) </label> <input type="text" name="caminhoCSS[]" id="caminhoCSS" class="form-control" required>';
+      let novoCSS = '<div class="form-group"> <label for="caminhoCSS">URL CSS Nº ' + cont + ' (ex: css/feed.css) </label> <input type="text" name="caminhoCSS[]" id="caminhoCSS" class="form-control" required> <a class="btn btn-danger remove_item_btn" href="#">X</a> </div>';
 
       $("#novoCSS").append(novoCSS);
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
 
       contJS++;
 
-      let novoJS = ' <label for="caminhoJS">URL JavaScript Nº ' +contJS+ ' (ex: js/feed.js) </label> <input type="text" name="caminhoJS[]" id="caminhoJS" class="form-control">';
+      let novoJS = '<div class="form-group"> <label for="caminhoJS">URL JavaScript Nº ' +contJS+ ' (ex: js/feed.js) </label> <input type="text" name="caminhoJS[]" id="caminhoJS" class="form-control" required> <a class="btn btn-danger remove_item_btn" href="#">X</a> </div>';
 
       $("#novoJS").append(novoJS);
 
@@ -68,7 +68,7 @@ $(document).ready(function () {
 
       cont++;
 
-      let novoCSSEdit = ' <label for="caminhoCSS">URL CSS Nº ' + cont + ' (ex: css/feed.css) </label> <input type="text" name="caminhoCSS[]" id="ficheirocss" class="form-control" required>';
+      let novoCSSEdit = '<div class="form-group"> <label for="caminhoCSS">URL CSS Nº ' + cont + ' (ex: css/feed.css) </label> <input type="text" name="caminhoCSSEdit[]" id="ficheirocssEdit" class="form-control" required> <a class="btn btn-danger remove_item_btn" href="#">X</a> </div>';
 
       $("#novoCSSEdit").append(novoCSSEdit);
 
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
       contJS++;
 
-      let novoJSEdit = ' <label for="caminhoJS">URL JavaScript Nº ' +contJS+ ' (ex: js/feed.js) </label> <input type="text" name="caminhoJS[]" id="ficheirojs" class="form-control">';
+      let novoJSEdit = '<div class="form-group"> <label for="caminhoJS">URL JavaScript Nº ' +contJS+ ' (ex: js/feed.js) </label> <input type="text" name="caminhoJSEdit[]" id="ficheirojsEdit" class="form-control" required> <a class="btn btn-danger remove_item_btn" href="#">X</a> </div>';
 
       $("#novoJSEdit").append(novoJSEdit);
 
@@ -94,6 +94,16 @@ $(document).ready(function () {
 
   });
 
+  //opcao de poder apagar campo para novo ficheiro css/js ao introduzir novos
+
+  $(document).on('click', '.remove_item_btn', function(e){
+
+    e.preventDefault();
+    let row_item = $(this).parent();
+    $(row_item).remove();
+
+
+  });
 
 
   /*falta validacao formulario */

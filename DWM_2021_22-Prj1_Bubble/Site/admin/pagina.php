@@ -50,6 +50,7 @@ if (!isset($pagina)) {
             echo ' <div class="form-group">
             <label for="ficheirocss">URL CSS Nº ' . $count . ' (ex: css/feed.css)</label>
             <input name="ficheirocss[]" value="' . $row['ficheirocss'] . '" type="text" class="form-control" id="ficheirocss' . $count . '" placeholder="URL CSS">
+            <a class="btn btn-danger" href="./update_pagina.php?delete_idfilecss=' . $row['id_file'] . '">X</a>
             <input type="text" name="idcss[]" value="' . $row['id_file'] . '" placeholder="ID" style="display:none;"/>
 
         </div>';
@@ -75,6 +76,7 @@ if (!isset($pagina)) {
             echo ' <div class="form-group">
              <label for="ficheirojs">URL JavaScript Nº ' . $countJS . ' (ex: js/feed.js)</label>
             <input name="ficheirojs[]" value="' . $js['ficheirojs'] . '" type="text" class="form-control" id="ficheirojs' . $countJS . '" placeholder="URL JS">
+            <a class="btn btn-danger" href="./update_pagina.php?delete_idfilejs=' . $js['id_file'] . '">X</a>
             <input type="text" name="idjs[]" value="' . $js['id_file'] . '" placeholder="ID" style="display:none;"/>
             </div>';
         }

@@ -2,28 +2,54 @@
 
 </footer>
 
+<!--Scripts Gerais-->
 <script src="https://kit.fontawesome.com/27dd9727ef.js" crossorigin="anonymous"></script>
-<script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/header.js"></script>
-<!--feed-->
-<script src="js/feed.js"></script>
-<script src="js/like.js"></script>
-<script src="js/comments.js"></script>
-<script src="js/img_post.js"></script>
-<!--Mensagens-->
-<script src="js/mensagens.js"></script>
-<!--Perfil-->
-<script src="js/perfil_modal.js"></script>
-<!--Eventos-->
-<script src="js/eventos.js"></script>
-<!--FAQS-->
-<script src="bootstrap/js/bootstrap.js"></script>
-<!--Empregos-->
-<script src="js/inserirempregos.js"></script>
-<!--Marketplace-->
-<script src="js/marketplace.js"></script>
-<!--Definicoes-->
-<script src="js/definicoes.js"></script>
+
+<?php
+
+$pags = $conn->query('SELECT * FROM paginas_site');
+
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+//mudar o javascript da pagina dinamicamente
+
+while ($row = $pags->fetch_assoc()) {
+
+    $row['id_pag'];
+    $urlpag = $row['urlpagina'];
+    $nomepag = $row['nomepagina'];
+
+    //buscar ficheiros js associados
+    $js = $conn->query('SELECT * FROM files_js_paginas_site WHERE id_pagina = ' . $row['id_pag'] );
+
+    if (strpos($url, $urlpag) !== false) {
+
+        while ($rowjs = $js->fetch_assoc()) {
+
+            $jspag = $rowjs['ficheirojs'];
+
+            ?>  
+            <!--Ficheiros JS específicos da páginas-->
+             <script src="<?php echo $jspag ?>"></script>
+
+
+            <?php
+
+        }
+
+?>
+
+<?php
+
+    } else {
+        
+      
+    }
+}
+
+?>
+
 </body>
 
 </html>

@@ -22,13 +22,12 @@ if (!isset($_SESSION['user'])) {
     header('location:login.php');
     exit();
 }
+
 $user = $_SESSION['user'];
 
 //Buscar estes valores a base de dados para colocar nas tags
 $palavrasChave = ""; //palavras chaves
 $descricaoSite = ""; //descrição do site
-$nomePagina = "Mensagens"; //nome da Página
-$pagina = basename($_SERVER["REQUEST_URI"]); //vai buscar o url da página
 
 //buscar os dados do utilizador na base de dados
 
@@ -38,6 +37,7 @@ $userq = $conn->query('select * from users inner join nacionalidades
 ?>
 
 <head>
+
     <!--Meta Tags-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,70 +46,67 @@ $userq = $conn->query('select * from users inner join nacionalidades
     <meta name="keywords" content=" <?php echo $palavrasChave ?> ">
     <!--FavIcon-->
     <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
-    <!--CSS Geral-->
+    <!--Bootstrap-->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--CSS Geral-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <!--Mudar folha de estilos conforme a página-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.4.4/css/flag-icons.min.css" />
+    <!--JQuery-->
+    <script src="js/jquery-3.6.0.min.js"></script>
 
     <?php
 
-    if ($pagina == 'mensagens.php') {
+    //buscar nome e url da pagina
+    $pags = $conn->query('SELECT * FROM paginas_site');
+
+    $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+    //mudar o css e o nome da pagina dinamicamente
+
+    while ($row = $pags->fetch_assoc()) {
+
+        $row['id_pag'];
+        $urlpag = $row['urlpagina'];
+        $nomepag = $row['nomepagina'];
+
+        //buscar ficheiros css associados
+        $css = $conn->query('SELECT * FROM files_css_paginas_site WHERE id_pagina = ' . $row['id_pag']);
+
+        if (strpos($url, $urlpag) !== false) {
+
+            while ($rowcss = $css->fetch_assoc()) {
+
+                $csspag = $rowcss['ficheirocss'];
+
     ?>
-        <link rel="stylesheet" href="css/mensagens.css">
+                <!--Ficheiros CSS específicos das páginas-->
+                <link rel="stylesheet" href="<?php echo $csspag ?>">
+
+            <?php
+
+            }
+
+            ?>
+
+            <!--Mudar o título da página-->
+            <title>Bubble | <?php echo $nomepag ?> </title>
 
     <?php
-    } else if ($pagina == 'feed.php') {
-        $nomePagina = "Pagina Principal"
-    ?>
-        <link rel="stylesheet" href="css/feed.css">
 
-    <?php
-    } else if ($pagina == 'eventos.php') {
-        $nomePagina = "Eventos"
-    ?>
-        <link rel="stylesheet" href="css/eventos.css">
+        } else {
 
-    <?php
-    } else if ($pagina == 'faqs.php') {
-    ?>
-        <link rel="stylesheet" href="css/faqs.css">
+           
+        }
+    }
 
-    <?php
-    } else if ($pagina == 'empregos.php') {
     ?>
-        <link rel="stylesheet" href="css/empregos.css">
 
-    <?php
-    } else if ($pagina == 'inseriremprego.php') {
-    ?>
-        <link rel="stylesheet" href="css/insere_emprego.css">
-
-
-    <?php
-    } else if ($pagina == 'marketplace.php') {
-        $nomePagina = "marketplace";
-    ?>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="css/anaStyles.css">
-
-    <?php
-    } else if ($pagina == 'perfil.php') {
-        $nomePagina = "Perfil";
-    ?>
-        <link rel="stylesheet" href="css/feed.css">
-        <link rel="stylesheet" href="css/perfil.css">
-    <?php } else if ($pagina == "definicoes_geral.php" || $pagina == "definicoes_seguranca.php") {
-        $nomePagina = "Definições"
-    ?>
-        <link rel="stylesheet" href="css/definicoes.css">
-    <?php }  ?>
-    <!--Mudar o título da página-->
-    <title>Bubble | <?php echo $nomePagina ?> </title>
 </head>
+
+<!--Inicio da Navbar-->
 
 <body>
 
@@ -193,7 +190,6 @@ $userq = $conn->query('select * from users inner join nacionalidades
 
     <!--POP UP PERFIL PC-->
 
-
     <div class="popup_perfil">
         <ul>
             <li><a href="perfil.php"><img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil">
@@ -211,7 +207,6 @@ $userq = $conn->query('select * from users inner join nacionalidades
             <li><a href="logout.php"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>
         </ul>
     </div>
-
 
     <!--NAV BAR PARTE DE CIMA MOBILE RESPONSIVE-->
 
@@ -232,7 +227,6 @@ $userq = $conn->query('select * from users inner join nacionalidades
     </div>
 
     <!--NAV BAR PARTE DE BAIXO MOBILE RESPONSIVE-->
-
 
     <div id="nav_bar_bottom_responsive">
         <header class="">
