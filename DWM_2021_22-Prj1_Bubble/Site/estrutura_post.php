@@ -23,7 +23,7 @@ while ($pub = $result_set->fetch_assoc()) {
                     <div class="post_user_avatar">
                         <img src="img/fotos_perfil/<?php echo $pub['profile_image'] ?>" alt="foto_perfil_user">
                         <div class="post_user_info">
-                            <a class="post_user_name" href="perfil.php?id=<?= $pub['username'] ?>"><?php echo $pub['nome'] ?></a>
+                            <a class="post_user_name" href="perfil.php?username=<?= $pub['username'] ?>"><?php echo $pub['nome'] ?></a>
                             <p class="post_user_date">Publicado - <?php echo $pub['created_at'] ?></p>
                         </div>
                     </div>

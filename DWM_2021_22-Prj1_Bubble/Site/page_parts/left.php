@@ -1,7 +1,7 @@
 <div class="left">
     <div class="left_fixed">
         <ul>
-            <li><a class="verperfil" href="perfil.php?id=<?= $userq['username'] ?>"><img class="avatar" src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil"><?php echo $userq['nome'] ?></a>
+            <li><a class="verperfil" href="perfil.php?username=<?= $userq['username'] ?>"><img class="avatar" src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil"><?php echo $userq['nome'] ?></a>
             </li>
             <li><a href=""><i class='bx bx-group'></i>Amigos</a></li>
             <li><a href=""><i class='bx bx-hash'></i>Tópicos</a></li>

@@ -203,7 +203,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
 
     <div class="popup_perfil">
         <ul>
-            <li><a href="perfil.php?id=<?= $userq['username'] ?>"><img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil">
+            <li><a href="perfil.php?username=<?= $userq['username'] ?>"><img src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil">
                     <div id="ver_perfil"><span class="nome-popup"> <?php echo $userq['nome'] ?>
                         </span><span id="ver_perfil_span">Ver Perfil</span>
                     </div>
