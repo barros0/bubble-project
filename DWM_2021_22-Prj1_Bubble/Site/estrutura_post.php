@@ -61,25 +61,25 @@ while ($pub = $result_set->fetch_assoc()) {
                 }
                 ?>
                 <div class="post_number_likes_comments">
-                    <i class='bx bx-heart' id="liked"></i>
-                    <p><span id="number_likes"></span> Gostos</p>
+                    <i class='bx bx-heart liked'></i>
+                    <p><span class="number_likes"></span> Gostos</p>
                 </div>
                 <div class="post_like_comment_fav">
-                    <div id="like" class="liked_bt">
+                    <div class="liked_bt like">
                         <i class='bx bx-heart'></i>
                         <p>Gostar</p>
                     </div>
-                    <div class="comment" id="comment">
+                    <div class="comment">
                         <i class='bx bx-comment'></i>
                         <p>Comentar</p>
                     </div>
-                    <div id="fav">
+                    <div class="fav">
                         <i class='bx bx-bookmark'></i>
                         <p>Favoritos</p>
                     </div>
                 </div>
                 <div class="comment_section">
-                    <form id="comentar" action="add_comment.php?id_pub=<?= $id_publicacao ?>" method="POST">
+                    <form class="comentar" action="add_comment.php?id_pub=<?= $id_publicacao ?>" method="POST">
                         <textarea required data-limit=255 maxlength="255" name="textarea" class="comment_textarea" placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/255</p>
                         <div class="comentar_btn">

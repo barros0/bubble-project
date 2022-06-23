@@ -81,7 +81,7 @@
 }
 
 .pagina_button_adicionar {
-  padding: 20px 0 20px 20px;
+  padding: 20px;
 }
 
 .pagina_button_editar {
@@ -93,7 +93,8 @@
 }
 
 .pagina_button_adicionar input {
-  width: 120px;
+  width: 100%;
+  min-width: 120px;
   height: 40px;
   border-radius: 10px;
   background-color: #00ff8a;

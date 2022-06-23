@@ -64,28 +64,48 @@ while ($user_pub = $result_set->fetch_assoc()) {
                 }
                 ?>
                 <div class="post_number_likes_comments">
-                    <i class='bx bx-heart' id="liked"></i>
-                    <p><span id="number_likes"></span> Gostos</p>
+                    <i class='bx bx-heart liked'></i>
+                    <p><span class="number_likes"></span> Gostos</p>
                 </div>
                 <div class="post_like_comment_fav">
-                    <div id="like">
-                        <i class='bx bx-heart' id="liked_info"></i>
+                    <div class="liked_bt like">
+                        <i class='bx bx-heart'></i>
                         <p>Gostar</p>
                     </div>
-                    <div class="comment" id="comment">
+                    <div class="comment">
                         <i class='bx bx-comment'></i>
                         <p>Comentar</p>
                     </div>
-                    <div id="fav">
+                    <div class="fav">
                         <i class='bx bx-bookmark'></i>
                         <p>Favoritos</p>
                     </div>
                 </div>
                 <div class="comment_section">
-                    <form action="">
-                        <textarea data-limit=255 maxlength="255" name="textarea" class="comment_textarea" placeholder="Comente Algo"></textarea>
+                    <form class="comentar" action="add_comment.php?id_pub=<?= $id_publicacao ?>" method="POST">
+                        <textarea required data-limit=255 maxlength="255" name="textarea" class="comment_textarea" placeholder="Comente Algo"></textarea>
                         <p class="comment_limit"> <span class="current_chars">0</span>/255</p>
+                        <div class="comentar_btn">
+                            <input type="submit" value="Comentar">
+                        </div>
                     </form>
+                    <div class="comment_user">
+                        <?php
+                        $qcomentarios = "SELECT * FROM comentarios INNER JOIN users ON comentarios.user_id = users.id_user WHERE publicacao_id = $id_publicacao";
+                        $result_comentarios = $conn->query($qcomentarios);
+                        while ($comentario = $result_comentarios->fetch_assoc()) {
+                        ?>
+                            <div class="comment_user_avatar">
+                                <img src="img/fotos_perfil/<?php echo $comentario['profile_image'] ?>" alt="foto_perfil_user">
+                                <div class="comment_text">
+                                    <div class="comment_user_name"><?php echo $comentario['nome']; ?> </div>
+                                    <?php echo $comentario['comentario']; ?>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

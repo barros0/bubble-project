@@ -22,6 +22,9 @@ $count_seguidores = $conn->query('select count(*) from seguir where id_utilizado
 
 $count_aseguir = $conn->query('select count(*) from seguir where id_seguidor = ' . $user_perfil_id)->fetch_assoc();
 
+$nacionalidades  = mysqli_query($conn, "select * from nacionalidades");
+
+
 if ($other_profile) {
     $check_se_segue = $conn->query('select * from seguir where id_seguidor = ' . $userq['id_user'] . ' and id_utilizador = ' . $user_perfil_id);
     if ($check_se_segue->num_rows > 0) {
@@ -72,17 +75,22 @@ if ($other_profile) {
                         } else {
                             ?>
                             <a href="./follow_handler.php?remove-follow=<?= $user_perfil['id_user'] ?>">
-                                <input type="button" value="Deixar de seguir -" name="adicionar">
+                                <input type="button" value="Deixar de seguir" name="adicionar">
                             </a>
                     <?php
                         }
                     }
                     ?>
-
                 </div>
-                <div id="button_editar" class="pagina_button_editar">
-                    <input id="editar" type="button" value="Editar Perfil" name="Perfil">
-                </div>
+                <?php
+                if ($user_perfil_id == $_SESSION['user']['id_user']) {
+                ?>
+                    <div id="button_editar" class="pagina_button_editar">
+                        <input id="editar" type="button" value="Editar Perfil" name="Perfil">
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
 
@@ -126,9 +134,14 @@ if ($other_profile) {
             <textarea name="SobrePerfil" id="sobre_perfil"><?php echo $user_perfil['sobre'] ?></textarea>
         </div>
         <div class="linguagens_perfil">
-            <label for="skills_perfil">Trabalhas com o que?</label>
+            <label for="programas_perfil">Trabalhas com o que?</label>
             <textarea name="skills_perfil" id="programas_perfil"><?php echo $user_perfil['skills'] ?></textarea>
         </div>
+        <select name="nacionalidade" class="form-input" id="nacionalidade">
+            <?php while ($nacionalidade = mysqli_fetch_array($nacionalidades)) { ?>
+                <option value="<?= $nacionalidade['nacionalidade_id'] ?>"><?php echo $nacionalidade['pais']; ?></option>
+            <?php } ?>
+        </select>
         <div class="inserir_fotos">
             <div class="foto_perfil">
                 <label for="foto_perfil">Foto Perfil:</label>
@@ -139,7 +152,7 @@ if ($other_profile) {
                 <input type="file" name="BannerPerfil" id="banner_perfil">
             </div>
         </div>
-        <input type="submit" id="" value="Atualizar">
+        <input type="submit" value="Atualizar">
     </form>
-
-    <?php include 'page_parts/footer.php'; ?>
+</div>
+<?php include 'page_parts/footer.php'; ?>

@@ -100,7 +100,7 @@
   padding: 10px;
 }
 
-#like, #comment, #fav {
+.like, .comment, .fav {
   display: flex;
   justify-content: center;
   padding: 5px;
@@ -142,11 +142,11 @@
   }
 }
 
-#like i, #comment i, #fav i {
+.like i, .comment i, .fav i {
   padding: 5px;
 }
 
-#like:hover, #comment:hover, #fav:hover {
+.like:hover, .comment:hover, .fav:hover {
   background-color: rgb(88, 88, 88);
 }
 
@@ -508,7 +508,7 @@ textarea:focus {
   border-bottom-right-radius: 15px;
 }
 
-#comentar input[type="submit"] {
+.comentar input[type="submit"] {
   width: 120px;
   height: 40px;
   border-radius: 10px;

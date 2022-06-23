@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
 
     header('location:feed.php');
     exit();
@@ -61,7 +61,7 @@ $generos = mysqli_query($conn, "select * from generos");
 
                 </form>
 
-                <form method="POST" id="register"  action="doregister.php" class="formulario-login">
+                <form method="POST" id="register" action="doregister.php" class="formulario-login">
 
                     <div class="label-nomes">
                         <input type="text" id="label-nome" class="form-input" name="nome" placeholder="Nome" required>
@@ -69,25 +69,15 @@ $generos = mysqli_query($conn, "select * from generos");
                     </div>
                     <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
                     <div class="label-passwords">
-                        <input type="password" id="label-password" class="form-input" name="password" placeholder="Password"
-                            required>
-                        <input type="password" id="label-password" class="form-input" name="password1"
-                            placeholder="Confirmar Password" required>
+                        <input type="password" id="label-password" class="form-input" name="password" placeholder="Password" required>
+                        <input type="password" id="label-password" class="form-input" name="password1" placeholder="Confirmar Password" required>
                     </div>
                     <input type="date" class="form-input" name="data" placeholder="Data de Nascimento" required>
                     <label for="nacionalidade">A sua nacionalidade é:</label>
-                    
-
-                   <select name="nacionalidade" class="form-input" id="nacionalidade">
-                       <?php while($nacionalidade = mysqli_fetch_array($sql)){ ?>
-                  <option value="<?=  $nacionalidade['nacionalidade_id'] ?>"><?php echo $nacionalidade['pais']; ?></option>
-                  <?php } ?>
-                  </select>
-
 
                     <label for="sexo">O seu género é:</label>
                     <select name="sexo" class="form-input" id="sexo">
-                        <?php while($genero = mysqli_fetch_array($generos)){ ?>
+                        <?php while ($genero = mysqli_fetch_array($generos)) { ?>
                             <option value="<?= $genero['genero_id'] ?>"><?php echo $genero['nome_genero']; ?></option>
                         <?php } ?>
                     </select>
@@ -106,8 +96,7 @@ $generos = mysqli_query($conn, "select * from generos");
 
         <div class="footer">
 
-            <div id="footer-informacoes"><a href="feed.php">Feed</a><a href="faqs.html"> FAQs</a><a
-                    href="ajuda.html">Ajuda</a><a href="termos.html">Termos</a><a href="definicoes.html">Definições</a>
+            <div id="footer-informacoes"><a href="feed.php">Feed</a><a href="faqs.html"> FAQs</a><a href="ajuda.html">Ajuda</a><a href="termos.html">Termos</a><a href="definicoes.html">Definições</a>
             </div>
             <div id="footer-copyright">© 2022 Bubble. All rights reserved</div>
 
