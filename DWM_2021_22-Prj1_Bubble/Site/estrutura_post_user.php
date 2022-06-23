@@ -1,6 +1,17 @@
 <?php
+if (!empty($_GET['username'])) {
+    $search_username = $conn->prepare("select * from users where username = ?");
+    $search_username->bind_param("s", $_GET['username']);
+    $search_username->execute();
+    $user_found = ($search_username->get_result())->fetch_assoc();
+    $user_perfil_id = $user_found['id_user'];
+} else {
+    $other_profile = false;
+    $user_perfil_id = $_SESSION['user']['id_user'];
+}
+
 $user_posts = "select * from publicacoes INNER JOIN users ON publicacoes.user_id = users.id_user where id_user ="
-    . $userq['id_user'];
+    . $user_perfil_id;
 
 
 $result_set = $conn->query($user_posts);

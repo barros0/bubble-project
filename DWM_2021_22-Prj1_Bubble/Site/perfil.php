@@ -62,13 +62,15 @@ if ($other_profile) {
                     <?php
                     if ($other_profile) {
                         if (empty($check_se_segue)) {
+                            if ($user_perfil_id != $_SESSION['user']['id_user']) {
                     ?>
-                            <a href="./follow_handler.php?follow=<?= $user_perfil['id_user'] ?>">
-                                <input type="button" value="Seguir +" name="adicionar">
-                            </a>
-                        <?php
+                                <a href="./follow_handler.php?follow=<?= $user_perfil['id_user'] ?>">
+                                    <input type="button" value="Seguir +" name="adicionar">
+                                </a>
+                            <?php
+                            }
                         } else {
-                        ?>
+                            ?>
                             <a href="./follow_handler.php?remove-follow=<?= $user_perfil['id_user'] ?>">
                                 <input type="button" value="Deixar de seguir -" name="adicionar">
                             </a>
