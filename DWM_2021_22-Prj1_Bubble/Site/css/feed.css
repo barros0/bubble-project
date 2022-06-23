@@ -425,7 +425,7 @@ textarea:focus {
   background-color: #00ff8a;
   width: 100%;
   height: 55px;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
