@@ -105,12 +105,52 @@ if ($other_profile) {
                     <p class="titulo_perfil">Skills</p>
                     <p class="texto_sobre_perfil"><?php echo $user_perfil['skills'] ?></p>
                     <div class="sobre_alinhado">
-                        <p class="titulo_perfil">Membro Desde</p>
-                        <p class="texto_sobre_perfil"><?php echo $user_perfil['created_at'] ?></p>
+                        <p class="titulo_perfil">Membro há</p>
+                        <?php
+                        $time = strtotime($user_perfil['created_at']);
+
+                        function humanTiming($time)
+                        {
+
+                            $time = time() - $time; // to get the time since that moment
+                            $time = ($time < 1) ? 1 : $time;
+                            $tokens = array(
+                                31536000 => 'ano',
+                                2592000 => 'mês',
+                                604800 => 'semana',
+                                86400 => 'dia',
+                                3600 => 'hora',
+                                60 => 'minuto',
+                                1 => 'segundo'
+                            );
+
+                            foreach ($tokens as $unit => $text) {
+                                if ($time < $unit) continue;
+                                $numberOfUnits = floor($time / $unit);
+                                return $numberOfUnits . ' ' . $text . (($numberOfUnits > 1) ? 's' : '');
+                            }
+                        }
+                        ?>
+                        <p class="texto_sobre_perfil"><?php echo humanTiming($time); ?></p>
                     </div>
                     <div class="sobre_alinhado">
                         <p class="titulo_perfil">Idade</p>
-                        <p class="texto_sobre_perfil"><?php echo $user_perfil['data_nascimento'] ?></p>
+                        <?php
+                        $birthdayDate = $user_perfil['data_nascimento'];
+
+                        function age($birthdayDate)
+                        {
+                            $dob = strtotime(str_replace("/", "-", $birthdayDate));
+                            $tdate = time();
+
+                            $age = 0;
+                            while ($tdate > $dob = strtotime('+1 year', $dob)) {
+                                ++$age;
+                            }
+                            return $age;
+                        }
+                        ?>
+                        <p class="texto_sobre_perfil"><?php echo age($birthdayDate) ?></p>
                     </div>
                 </div>
                 <div class="perfil_sobre">
