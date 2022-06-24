@@ -11,7 +11,7 @@ if (!empty($_GET['username'])) {
 }
 
 $user_posts = "select * from publicacoes INNER JOIN users ON publicacoes.user_id = users.id_user where id_user ="
-    . $user_perfil_id;
+    . $user_perfil_id . " order by publicacoes.created_at DESC";
 
 
 $result_set = $conn->query($user_posts);

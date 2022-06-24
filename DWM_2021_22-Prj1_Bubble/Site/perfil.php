@@ -177,11 +177,14 @@ if ($other_profile) {
             <label for="programas_perfil">Trabalhas com o que?</label>
             <textarea name="skills_perfil" id="programas_perfil"><?php echo $user_perfil['skills'] ?></textarea>
         </div>
-        <select name="nacionalidade" class="form-input" id="nacionalidade">
-            <?php while ($nacionalidade = mysqli_fetch_array($nacionalidades)) { ?>
-                <option value="<?= $nacionalidade['nacionalidade_id'] ?>"><?php echo $nacionalidade['pais']; ?></option>
-            <?php } ?>
-        </select>
+        <div class="nacionalidade_perfil">
+            <label for="nacionalidade">Nacionalidade</label>
+            <select name="nacionalidade" class="form_input_nacionalidade" id="nacionalidade">
+                <?php while ($nacionalidade = mysqli_fetch_array($nacionalidades)) { ?>
+                    <option value="<?= $nacionalidade['nacionalidade_id'] ?>"><?php echo $nacionalidade['pais']; ?></option>
+                <?php } ?>
+            </select>
+        </div>
         <div class="inserir_fotos">
             <div class="foto_perfil">
                 <label for="foto_perfil">Foto Perfil:</label>
