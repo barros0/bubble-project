@@ -25,10 +25,6 @@ if (!isset($_SESSION['user'])) {
 
 $user = $_SESSION['user'];
 
-//Buscar estes valores a base de dados para colocar nas tags
-$palavrasChave = ""; //palavras chaves
-$descricaoSite = ""; //descrição do site
-
 //buscar os dados do utilizador na base de dados
 
 $userq = $conn->query('select * from users inner join nacionalidades 
@@ -45,8 +41,8 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" <?php echo $descricaoSite ?> ">
-    <meta name="keywords" content=" <?php echo $palavrasChave ?> ">
+    <meta name="description" content="Bubble - A tua Rede Social">
+    <meta name="keywords" content="Rede Social Bubble">
     <!--FavIcon-->
     <link rel="shortcut icon" type="image/jpg" href="img/header/logo_small_bubble.ico" />
     <!--Bootstrap-->
@@ -83,18 +79,18 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
             while ($rowcss = $css->fetch_assoc()) {
 
                 $csspag = $rowcss['ficheirocss'];
-
+                
+                //Ficheiros CSS específicos das páginas
     ?>
-                <!--Ficheiros CSS específicos das páginas-->
+             
                 <link rel="stylesheet" href="<?php echo $csspag ?>">
 
             <?php
 
             }
 
+            //mudar o título da página
             ?>
-
-            <!--Mudar o título da página-->
             <title>Bubble | <?php echo $nomepag ?> </title>
     <?php
         }

@@ -29,8 +29,10 @@ while ($row = $pags->fetch_assoc()) {
 
             $jspag = $rowjs['ficheirojs'];
 
+            //Ficheiros JS específicos da páginas
+
+
 ?>
-            <!--Ficheiros JS específicos da páginas-->
             <script src="<?php echo $jspag ?>"></script>
 
 
