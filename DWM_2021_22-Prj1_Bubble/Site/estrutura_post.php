@@ -74,8 +74,10 @@ while ($pub = $result_set->fetch_assoc()) {
                         <p>Comentar</p>
                     </div>
                     <div class="fav">
+                        <a href="./add_fav.php?pubid=<?= $pub['publicacao_id']?>">
                         <i class='bx bx-bookmark'></i>
                         <p>Favoritos</p>
+                        </a>
                     </div>
                 </div>
                 <div class="comment_section">

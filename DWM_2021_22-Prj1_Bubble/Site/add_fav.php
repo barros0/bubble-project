@@ -1,12 +1,14 @@
 <?php
 require './bd.php';
+session_start();
 
-if($_GET['add_fav']){
-    $pubid = $_GET['add_fav'];
+if(isset($_GET['pubid'])){
+    $pubid = $_GET['pubid'];
 
-    $publicacao = $conn->prepare("select * from publicacoes where id_publicacao = ?");
-    $publicacao->bind_param("i", $pubid);
-    $publicacao->execute();
+    $publicacao_check = $conn->prepare("select * from publicacoes where publicacao_id = ?");
+    $publicacao_check->bind_param("i", $_GET['pubid']);
+    $publicacao_check->execute();
+    $publicacao = $publicacao_check->get_result();
 
     if($publicacao->num_rows > 0){
         $publicacao = $conn->prepare("insert into publicacoes_fav (id_pub,id_user) values (?,?)");
@@ -20,3 +22,5 @@ if($_GET['add_fav']){
     array_push($_SESSION['alerts']['erros'], 'Publicação inválida!');
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
+
+header('Location: ' . $_SERVER['HTTP_REFERER']);
