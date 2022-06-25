@@ -98,6 +98,7 @@
   justify-content: space-around;
   border-top: 2px solid white;
   padding: 10px;
+  height: 60px;
 }
 
 .like, .comment, .fav {
@@ -107,6 +108,13 @@
   align-items: center;
   flex-direction: row;
   border-radius: 5px;
+}
+
+.fav a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  flex-direction: row;
 }
 
 .active {
