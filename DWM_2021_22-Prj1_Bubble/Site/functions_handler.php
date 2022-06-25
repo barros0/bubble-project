@@ -106,21 +106,18 @@ function addcomentario($publicacaoid, $userid, $comentario){
     $conn->query('insert into notificacoes_gosto (id_notificacao,id_gosto) values('.$notificaoca_id.','.$gosto_id.' )');
 }
 
-
-
 function check_guardado($idpub){
     $publicacao_fav_check = $conn->prepare("select * from publicacoes_fav where pub_id = ? and id_user = ?");
     $publicacao_fav_check->bind_param("ii", $idpub, $_SESSION['id_user']);
     $publicacao_fav_check->execute();
     $fav_check = $publicacao_fav_check->get_result();
 
-        if($fav_check->num_rows > 0){
+    if($fav_check->num_rows > 0){
         return true;
-        }
-        else{
-            return false;
-        }
-
+    }
+    else{
+        return false;
+    }
 }
 
 
