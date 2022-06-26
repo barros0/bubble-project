@@ -23,8 +23,10 @@ if ($email != "") {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Invalid email format";
         } else {
-            $qupdate_email = "UPDATE users SET email = '$email' WHERE id_user = " . $userid;
-            $updateemail = $conn->query($qupdate_email);
+            $stmt_update_email = $conn->prepare("UPDATE users SET email = ? WHERE id_user = " . $userid);
+            $stmt_update_email->bind_param('s', $email);
+            $stmt_update_email->execute();
+            $stmt_update_email->close();
         }
     } else {
 ?>
@@ -32,4 +34,6 @@ if ($email != "") {
 <?php
     }
 }
+
+header('location:../../definicoes_geral.php');
 ?>

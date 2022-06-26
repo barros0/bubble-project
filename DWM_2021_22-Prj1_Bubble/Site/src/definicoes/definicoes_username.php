@@ -12,8 +12,10 @@ $jaexiste_username = mysqli_num_rows($faz_existe_username);
 
 if ($username != "") {
     if ($jaexiste_username == 0) {
-        $qupdate_username = "UPDATE users SET username = '$username' WHERE id_user = " . $userid;
-        $updateusername = $conn->query($qupdate_username);
+        $stmt_update_username = $conn->prepare("UPDATE users SET username = ? WHERE id_user = " . $userid);
+        $stmt_update_username->bind_param('s', $username);
+        $stmt_update_username->execute();
+        $stmt_update_username->close();
     } else {
 ?>
         <!--ERRO AQUI-->

@@ -7,8 +7,10 @@ $userid = $_GET['userid'];
 $nome = $_REQUEST['nome'];
 
 if ($nome != "") {
-    $qupdate_nome = "UPDATE users SET nome = '$nome' WHERE id_user = " . $userid;
-    $updatenome = $conn->query($qupdate_nome);
+    $stmt_update_nome = $conn->prepare("UPDATE users SET nome = ? WHERE id_user = " . $userid);
+    $stmt_update_nome->bind_param('s', $nome);
+    $stmt_update_nome->execute();
+    $stmt_update_nome->close();
 }
 
 
