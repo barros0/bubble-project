@@ -18,12 +18,11 @@ if (!empty($_GET['username'])) {
 $user_perfil = $conn->query('select * from users inner join nacionalidades 
     on users.nacionalidade = nacionalidades.nacionalidade_id where users.id_user = ' . $user_perfil_id)->fetch_assoc();
 
-$count_seguidores = $conn->query('select count(*) from seguir where id_utilizador = ' . $user_perfil_id)->fetch_assoc();
-
-$count_aseguir = $conn->query('select count(*) from seguir where id_seguidor = ' . $user_perfil_id)->fetch_assoc();
-
 $nacionalidades  = mysqli_query($conn, "select * from nacionalidades");
 
+$count_seguidores = $conn->query('select count(*) from seguir where id_utilizador = ' . $user_perfil_id)->fetch_assoc();
+
+$count_publicacoes = $conn->query('select count(*) from publicacoes where user_id =' . $user_perfil_id)->fetch_assoc();
 
 if ($other_profile) {
     $check_se_segue = $conn->query('select * from seguir where id_seguidor = ' . $userq['id_user'] . ' and id_utilizador = ' . $user_perfil_id);
@@ -48,11 +47,11 @@ if ($other_profile) {
         <div class="espaco_info_buttons">
             <div class="pagina_info">
                 <div class="n_posts">
-                    <p>930</p>
+                    <p><?php echo implode($count_publicacoes) ?></p>
                     <p>POSTS</p>
                 </div>
                 <div class="n_followers">
-                    <p>300</p>
+                    <p><?php echo implode($count_seguidores) ?></p>
                     <p>FOLLOWERS</p>
                 </div>
                 <div class="bandeira">
