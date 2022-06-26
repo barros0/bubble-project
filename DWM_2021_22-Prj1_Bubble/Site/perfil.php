@@ -22,7 +22,7 @@ $nacionalidades  = mysqli_query($conn, "select * from nacionalidades");
 
 $count_seguidores = $conn->query('select count(*) from seguir where id_utilizador = ' . $user_perfil_id)->fetch_assoc();
 
-$count_publicacoes = $conn->query('select count(*) from publicacoes where user_id =' . $user_perfil_id)->fetch_assoc();
+$count_publicacoes = $conn->query('select count(*) from publicacoes where user_id =' . $user_perfil_id . ' and estado_pub != 2')->fetch_assoc();
 
 if ($other_profile) {
     $check_se_segue = $conn->query('select * from seguir where id_seguidor = ' . $userq['id_user'] . ' and id_utilizador = ' . $user_perfil_id);
@@ -111,7 +111,7 @@ if ($other_profile) {
                         function humanTiming($time)
                         {
 
-                            $time = time() - $time; // to get the time since that moment
+                            $time = time() - $time;
                             $time = ($time < 1) ? 1 : $time;
                             $tokens = array(
                                 31536000 => 'ano',
@@ -164,7 +164,7 @@ if ($other_profile) {
         </div>
     </div>
 
-    <!--FORM PARA EDITAR O PERFIL   BANNER/ FOTO PERFIL / SOBRE/ LINGUAGENS -->
+    <!--FORM PARA EDITAR O PERFIL   BANNER/ FOTO PERFIL / SOBRE/ LINGUAGENS / nacionalidade -->
     <form id="form_editar_perfil" class="editar_perfil" action="update_perfil.php" method="post" enctype="multipart/form-data">
         <div class="wrap_fechar_tit">
             <p>Editar Perfil:</p>
