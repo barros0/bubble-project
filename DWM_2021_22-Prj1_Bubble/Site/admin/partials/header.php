@@ -46,8 +46,6 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
     <script src="./public/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-
-    <!-- <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>-->
     <script src="./public/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>

@@ -302,3 +302,12 @@ a {
 .notificacoes-wrapper {
     padding: 30px 20px 20px 30px;
 }
+
+.custom_active_left {
+    border-left: 2px solid #00ff8a;
+    color: #00ff8a !important;
+}
+
+.custom_active_header a i {
+    color: #00ff8a !important;
+}
