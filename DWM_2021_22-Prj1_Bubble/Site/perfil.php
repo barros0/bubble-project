@@ -124,7 +124,9 @@ if ($other_profile) {
                             );
 
                             foreach ($tokens as $unit => $text) {
-                                if ($time < $unit) continue;
+                                if ($time < $unit) {
+                                    continue;
+                                }
                                 $numberOfUnits = floor($time / $unit);
                                 return $numberOfUnits . ' ' . $text . (($numberOfUnits > 1) ? 's' : '');
                             }
