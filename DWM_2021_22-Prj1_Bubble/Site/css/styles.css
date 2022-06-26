@@ -85,9 +85,11 @@ body {
     width: 100%;
     min-width: 250px;
 }
-.perfil_esquerda_baixo{
+
+.perfil_esquerda_baixo {
     width: 30%;
 }
+
 .left ul a {
     padding: 15px;
     width: 100%;
@@ -133,10 +135,12 @@ body {
     display: flex;
 }
 
-.left .footer_left {
+.footer_left {
     font-size: 13px;
+    position: fixed;
+    bottom: 0;
+    width: 25%;
     color: #bdbdbd;
-    padding: 10px;
 }
 
 .footer_left a {
