@@ -2,20 +2,18 @@
 require('./bd.php');
 session_start();
 
-//preparar o statement
-$stmt = $conn->prepare("INSERT INTO publicacoes (user_id, conteudo, estado_pub) VALUES (?, ?, ?)");
-$stmt->bind_param("isi", $userq, $conteudo, $estado_pub);
-
 //definir as variaveis e executar
 $userq = $_SESSION['user']['id_user'];
 $conteudo = $_REQUEST['text']; //conteudo da publicação 
 $estado_pub = 1;
-$stmt->execute();
 
-echo "Introduzido com sucesso!";
-
-//fechar as conexoes
-$stmt->close();
+//preparar o statement
+if ($conteudo != "") {
+    $stmt = $conn->prepare("INSERT INTO publicacoes (user_id, conteudo, estado_pub) VALUES (?, ?, ?)");
+    $stmt->bind_param("isi", $userq, $conteudo, $estado_pub);
+    $stmt->execute();
+    $stmt->close();
+}
 
 //ID DA PUBLICACAO
 $idpub = (mysqli_insert_id($conn));
@@ -57,13 +55,10 @@ if ($imagem != "") {
             //preparar o statement
             $foto = $conn->prepare("INSERT INTO publicacoes_fotos (publicacao_id, caminho) VALUES (?, ?)");
             $foto->bind_param("is", $idpub, $novo_ficheiro);
-
-
             $foto->execute();
 
             echo "Introduzido com sucesso!";
 
-            //fechar as conexoes
             $foto->close();
             $conn->close();
         }
