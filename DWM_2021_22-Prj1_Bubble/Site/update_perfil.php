@@ -4,13 +4,18 @@ session_start();
 
 $sobre = $_REQUEST['SobrePerfil']; //TEXTO DO SOBRE TI
 $skills = $_REQUEST['skills_perfil']; //TEXTO DAS SKILLS
+$nacionalidade = $_REQUEST['nacionalidade']; //Nacionalidade
 $imagem_perfil = $_FILES['FotoPerfil']['name']; //foto_perfil
 $imagem_banner = $_FILES['BannerPerfil']['name']; //foto_banner
 
-//ATUALIZAR O SOBRE
-//ATUALIZAR AS SKILLS
+//ATUALIZAR AS SKILLS E SOBRE
 $qupdatesobreskills = "UPDATE users SET sobre = '$sobre',skills = '$skills' WHERE id_user = " . $_SESSION['user']['id_user'];
 $updatesobreskills = $conn->query($qupdatesobreskills);
+
+if ($nacionalidade != 'None') {
+    $qupdatenacionalidade = "UPDATE users set nacionalidade = '$nacionalidade' WHERE id_user = " . $_SESSION['user']['id_user'];
+    $updatenacionalidade = $conn->query($qupdatenacionalidade);
+}
 
 //BUSCAR AS IMAGEMS DE PERFIL E BANNER
 if ($imagem_perfil != "") {

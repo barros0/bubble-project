@@ -179,6 +179,7 @@ if ($other_profile) {
         <div class="nacionalidade_perfil">
             <label for="nacionalidade">Nacionalidade</label>
             <select name="nacionalidade" class="form_input_nacionalidade" id="nacionalidade">
+                <option value="None">Não Mudar</option>
                 <?php while ($nacionalidade = mysqli_fetch_array($nacionalidades)) { ?>
                     <option value="<?= $nacionalidade['nacionalidade_id'] ?>"><?php echo $nacionalidade['pais']; ?></option>
                 <?php } ?>
