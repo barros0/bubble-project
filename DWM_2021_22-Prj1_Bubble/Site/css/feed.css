@@ -213,7 +213,6 @@
   color: #00ff8a;
 }
 
-
 .make_post_responsive {
   display: none;
   margin-top: 30px;
@@ -493,8 +492,8 @@ textarea:focus {
 
 .partilhar:hover {
   background-color: rgb(88, 88, 88);
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
+
 }
 
 .remover {
@@ -512,8 +511,8 @@ textarea:focus {
 
 .remover:hover {
   background-color: rgb(88, 88, 88);
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-radius: 15px;
+
 }
 
 .comentar input[type="submit"] {

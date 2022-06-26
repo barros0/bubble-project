@@ -3,9 +3,9 @@ $(document).ready(function () {
     var form = $("#form_editar_perfil").css("display");
 
     if (form == "none") {
-      $("#form_editar_perfil").css("display", "block");
+      $("#form_editar_perfil").slideDown();
     } else {
-      $("#form_editar_perfil").css("display", "none");
+      $("#form_editar_perfil").fadeOut();
     }
   });
 });

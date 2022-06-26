@@ -4,7 +4,6 @@
             <li><a class="verperfil" href="perfil.php?username=<?= $userq['username'] ?>"><img class="avatar" src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" alt="fotoperfil"><?php echo $userq['nome'] ?></a>
             </li>
             <li><a href=""><i class='bx bx-group'></i>Amigos</a></li>
-            <li><a href=""><i class='bx bx-hash'></i>Tópicos</a></li>
             <li><a href="marketplace.php"><i class='bx bx-store-alt'></i>Marketplace</a></li>
             <li><a href=""><i class='bx bx-buildings'></i>Empresas</a></li>
             <li><a href="empregos.php"><i class='bx bxs-megaphone'></i>Oferta de Emprego</a></li>
