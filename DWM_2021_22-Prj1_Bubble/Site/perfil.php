@@ -154,11 +154,16 @@ if ($other_profile) {
                         <p class="texto_sobre_perfil"><?php echo age($birthdayDate) ?></p>
                     </div>
                 </div>
-                <div class="perfil_sobre">
+                <div class="amigos perfil_sobre">
                     <ul>
-                        <li>
-                            <a href=""></a>
-                        </li>
+                        <?php $outros_users = 'SELECT * from users where id_user != ' . $user_perfil['id_user'] . ' ORDER BY RAND() LIMIT 5';
+                        $result_outros_users = $conn->query($outros_users);
+                        while ($outros_user = $result_outros_users->fetch_assoc()) {
+                        ?>
+                            <li><a class="amigo" href="perfil.php?username=<?= $outros_user['username'] ?>"><img class="amigo_avatar" src="img/fotos_perfil/<?php echo $outros_user['profile_image'] ?>" alt="fotoperfil"><?php echo $outros_user['nome'] ?></a></li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
