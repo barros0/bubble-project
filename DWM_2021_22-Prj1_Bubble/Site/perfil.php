@@ -155,7 +155,11 @@ if ($other_profile) {
                     </div>
                 </div>
                 <div class="perfil_sobre">
-                    
+                    <ul>
+                        <li>
+                            <a href=""></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="posts_user">
