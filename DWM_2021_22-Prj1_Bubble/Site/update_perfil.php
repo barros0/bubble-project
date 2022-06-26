@@ -26,7 +26,7 @@ $error_perfil = "";
 
 //BUSCAR AS IMAGEMS DE PERFIL E BANNER
 if ($imagem_perfil != "") {
-    $extensao_perfil = pathinfo($imagem_perfil, PATHINFO_EXTENSION);
+    $extensao_perfil = strtolower(pathinfo($imagem_perfil, PATHINFO_EXTENSION));
     $folder_perfil = "img/fotos_perfil/";
     $novo_ficheiro_perfil = sha1(microtime()) . "." . $extensao_perfil;
 
@@ -61,11 +61,11 @@ $uploadOk_banner = 1;
 $error_banner = '';
 
 if ($imagem_banner != "") {
-    $extensao_banner = pathinfo($imagem_banner, PATHINFO_EXTENSION);
+    $extensao_banner = strtolower(pathinfo($imagem_banner, PATHINFO_EXTENSION));
     $folder_banner = "img/fotos_banner/";
     $novo_ficheiro_banner = sha1(microtime()) . "." . $extensao_banner;
 
-    if ($_FILES["BannerPerfil"]["size"] > 10240000) {
+    if ($_FILES["BannerPerfil"]["size"] > 102400000) {
         $error_banner = "O seu ficheiro é demasiado grande (MAX: 10MB).";
         $uploadOk_banner = 0;
     }

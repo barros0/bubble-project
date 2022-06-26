@@ -20,7 +20,7 @@ $idpub = (mysqli_insert_id($conn));
 
 //IMAGEM DA PUBLICACAO PARA PUBLICACOES_FOTOS
 $imagem = $_FILES['foto_public']['name'];
-$extensao = pathinfo($imagem, PATHINFO_EXTENSION);
+$extensao = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));
 $folder = "img/publicacoes/";
 $novo_ficheiro = sha1(microtime()) . "." . $extensao; //MUDAR DE NOME DA FOTO
 
@@ -34,6 +34,7 @@ if ($imagem != "") {
     if ($_FILES["foto_public"]["size"] > 10240000) {
 
         $error = "O seu ficheiro é demasiado grande (MAX: 10MB).";
+        echo "Introduzid!";
         $uploadOk = 0;
     }
 
@@ -41,12 +42,12 @@ if ($imagem != "") {
     if ($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg" && $extensao != "gif") {
 
         $error = "Só ficheiros JPG, JPEG, PNG & GIF são permitidos.";
+        echo "Introduzido com nao!";
         $uploadOk = 0;
     }
 
     // VER SE HÁ ERRO
     if ($uploadOk == 0) {
-
         $error = "O seu ficheiro não foi submetido.";
     } else {
 
@@ -64,5 +65,3 @@ if ($imagem != "") {
         }
     }
 }
-
-header('location:feed.php');
