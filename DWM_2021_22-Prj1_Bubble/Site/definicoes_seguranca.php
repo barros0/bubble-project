@@ -10,14 +10,14 @@
         </div>
         <div class="atualizar_nome">
             <h5>Atualizar Password</h5>
-            <form action="./src/definicoes/definicoes_nome.php?userid=<?= $userq['id_user'] ?>" method="post">
+            <form action="./src/definicoes/definicoes_password.php?userid=<?= $userq['id_user'] ?>" method="post">
                 <div class="campo_password">
                     <label for="old_password">Password Atual</label>
-                    <input type="password" name="old_password">
+                    <input type="password" name="old_password" required>
                     <label for="new_password">Password Nova</label>
-                    <input type="password" name="new_password">
+                    <input type="password" name="new_password" required>
                     <label for="confirm_password">Confirmar Password</label>
-                    <input type="password" name="confirm_password">
+                    <input type="password" name="confirm_password" required>
                 </div>
                 <div class="buttons_atualizar_cancelar">
                     <input type="submit" value="Atualizar">
