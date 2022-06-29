@@ -21,7 +21,7 @@
                 </div>
                 <div class="buttons_atualizar_cancelar">
                     <input type="submit" value="Atualizar">
-                    <input type="button" class="btn-danger" value="Cancelar">
+                    <input type="button" class="btn-danger" value="Cancelar" onclick="location.href='definicoes_seguranca.php';">
                 </div>
             </form>
         </div>

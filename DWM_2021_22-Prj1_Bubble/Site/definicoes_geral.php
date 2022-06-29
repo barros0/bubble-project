@@ -15,7 +15,7 @@
                 <input type="text" name="nome" value="<?php echo $userq['nome']; ?>" required>
                 <div class="buttons_atualizar_cancelar">
                     <input type="submit" value="Atualizar">
-                    <input type="button" class="btn-danger" value="Cancelar">
+                    <input type="button" class="btn-danger" value="Cancelar" onclick="location.href='definicoes_geral.php';">
                 </div>
             </form>
         </div>
@@ -30,7 +30,7 @@
                 <input type="text" name="username" value="<?php echo $userq['username']; ?>" required>
                 <div class="buttons_atualizar_cancelar">
                     <input type="submit" value="Atualizar">
-                    <input type="button" class="btn-danger" value="Cancelar">
+                    <input type="button" class="btn-danger" value="Cancelar" onclick="location.href='definicoes_geral.php';">
                 </div>
             </form>
         </div>
@@ -45,7 +45,7 @@
                 <input type="text" name="email" value="<?php echo $userq['email']; ?>" required>
                 <div class="buttons_atualizar_cancelar">
                     <input type="submit" value="Atualizar">
-                    <input onclick="" type="button" class="btn-danger" value="Cancelar">
+                    <input type="button" class="btn-danger" value="Cancelar" onclick="location.href='definicoes_geral.php';">
                 </div>
             </form>
         </div>
