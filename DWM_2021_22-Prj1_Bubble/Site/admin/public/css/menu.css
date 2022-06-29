@@ -1,32 +1,32 @@
-:root{
-    --background : #1C1C1C;
-    --parcelas : #404040;
-    --items : #4F4F4F;
-    --items-hover : rgb(88, 88, 88);
-    --verde : #00ff8a;
-    --verde-hover : #00d372;
-    --palavras : #bdbdbd;
-    --branco : #ffffff;
-    --nav : #333333;
+:root {
+    --background: #1C1C1C;
+    --parcelas: #404040;
+    --items: #4F4F4F;
+    --items-hover: rgb(88, 88, 88);
+    --verde: #00ff8a;
+    --verde-hover: #00d372;
+    --palavras: #bdbdbd;
+    --branco: #ffffff;
+    --nav: #333333;
 }
 
-*{
+* {
     border: none;
     padding: 0;
     margin: 0;
 }
 
 
-p,h1,h2,h3,h4,h5,h6,small{
+p, h1, h2, h3, h4, h5, h6, small {
     color: var(--items);
 }
 
-.white{
+.white {
     color: var(--white);
 }
 
 
-.menu{
+.menu {
     width: 300px;
     background-color: var(--nav);
     height: 100%;
@@ -34,45 +34,50 @@ p,h1,h2,h3,h4,h5,h6,small{
     position: fixed;
 }
 
-.menu .logo{
+.menu .logo {
     width: 200px;
     margin: auto;
     margin-bottom: 30px;
 }
 
-.menu .stitle{
+.menu .stitle {
     text-align: left;
     padding-left: 30px;
     font-size: 12px;
     text-transform: uppercase;
 }
 
-.menu .itens ul li{
+.menu .itens ul li {
+    display: flex;
     padding: 10px;
     border-radius: 10px;
     max-width: 230px;
+    height: 50px;
+    align-items: center;
 }
 
-.menu .itens ul li:hover{
+.menu .itens ul li:hover {
     background-color: var(--items-hover);
 }
-.menu .itens ul li a{
+
+.menu .itens ul li a {
     text-align: center;
     color: var(--branco);
     font-size: 15px;
     text-decoration: none;
+    display: flex;
 }
 
 .menu .itens ul li .icon {
     margin-right: 10px;
-     font-size: 18px;
+    font-size: 22px;
 }
 
-#open_admin_menu_down{
+#open_admin_menu_down {
     justify-content: center;
 }
 
-.menu-admin{
+.menu-admin {
     position: absolute;
     bottom: 0px;
     margin: auto;
@@ -80,6 +85,39 @@ p,h1,h2,h3,h4,h5,h6,small{
     transform: translate(-50%, -50%);
 }
 
-#admin_menu_down{
-    bottom: 55px;
+#admin_menu_down {
+    display: flex;
+    color: white;
+    width: 300px;
+    bottom: 0;
+    position: fixed;
+    padding: 20px;
+    margin: 0;
+    flex-direction: column;
+}
+
+#admin_menu_down li {
+    display: flex;
+    height: 50px;
+    padding: 5px;
+}
+
+#admin_menu_down a {
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+    align-items: center;
+}
+
+#admin_menu_down .icon {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+#admin_menu_down .voltar {
+    color: var(--verde);
+}
+
+#admin_menu_down .terminar {
+    color: #bb2d3b;
 }

@@ -59,7 +59,6 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
 </head>
 
 <body>
-
     <div class="preloader" id="preloader">
         <div class="">
             <img class="logo" src="./public/images/logo_bubble.svg" alt="">
@@ -77,47 +76,18 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
         </div>
         <div class="itens">
             <ul>
-                <li>
-                    <a href="./index.php"><i class="fa fa-box icon"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="./users.php"><i class="fa fa-users icon"></i> Utilizadores</a>
-                </li>
-                <li>
-                    <a href="./paginas.php"><i class="fa fa-warning icon"></i> Definições Site</a>
-                </li>
-                <li>
-                    <a href="./reports.php"><i class="fa fa-warning icon"></i> Reports</a>
-                </li>
-                <li>
-                    <a href="./empregos.php"><i class="fa fa-industry icon"></i> Empregos</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-water icon"></i> Eventos</a>
-                </li>
-                <li>
-                    <a href="./faqs.php"><i class="fas fa-question icon"></i> FAQS</a>
-                </li>
+                <li><a href="./index.php"><i class='bx bx-bar-chart-alt-2 icon'></i> Dashboard</a></li>
+                <li><a href="./users.php"><i class='bx bxs-group icon'></i> Utilizadores</a></li>
+                <li><a href="./empregos.php"><i class='bx bxs-briefcase icon'></i> Empregos</a></li>
+                <li><a href="#"><i class='bx bxs-news icon'></i> Eventos</a></li>
+                <li><a href="./faqs.php"><i class='bx bx-question-mark icon'></i> FAQS</a></li>
+                <li><a href="./reports.php"><i class='bx bx-error icon'></i> Reports</a></li>
+                <li><a href="./paginas.php"><i class='bx bxs-cog icon'></i> Definições Site</a></li>
             </ul>
         </div>
-        <!--
-        <div class="dropdown m-auto menu-admin">
-            <a id="open_admin_menu_down" href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle">
-                <div class="user-img">
-                    <img src=".././img/fotos_perfil/<?php //echo $user['profile_image'] ?>" alt="">
-                </div>
-                <strong><?php // echo ($user['nome']) ?></strong>
-            </a>
-            <ul class="dropdown-menu text-small shadow admin-menu-down" id="admin_menu_down">
 
-                <li><a class="dropdown-item" href="#"><i class="fa fa-settings"></i> Definições</a></li>
-
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="../logout.php"><i class="fa fa-key"></i> Terminar Sessão</a></li>
-            </ul>
-        </div>
-        -->
-
+        <ul id="admin_menu_down">
+            <li><a href="../feed.php"><i class='bx bx-left-arrow-alt icon voltar'></i> Voltar Para o Bubble</a></li>
+            <li><a href="../logout.php"><i class='bx bx-log-out icon terminar'></i> Terminar Sessão</a></li>
+        </ul>
     </nav>
