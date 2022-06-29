@@ -27,4 +27,5 @@ if ($nova === $confirmar) {
 } else {
     $erro = "Password não coincide";
 }
+
 header('location:../../definicoes_seguranca.php');

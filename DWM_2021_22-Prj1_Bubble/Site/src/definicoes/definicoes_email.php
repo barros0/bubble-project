@@ -36,4 +36,3 @@ if ($email != "") {
 }
 
 header('location:../../definicoes_geral.php');
-?>
