@@ -38,6 +38,8 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  margin-top: 100px;
+
 }
 
 .caixa-emprego {
@@ -97,4 +99,63 @@
 .btn-emprego:hover {
   transform: scale(1.05);
   transition: 1s;
+}
+
+/*pesquisa e adicionar*/
+
+.wrap_pesquisa {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.wrap_pesquisa form {
+  width: 75%;
+}
+
+.div_input_search_pesquisa {
+  display: flex;
+}
+
+.button_search_pesquisa i.bx-search {
+  padding: 8px;
+  color: #bdbdbd;
+  font-size: 30px;
+  background-color: #4e4f50;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.search_pesquisa button {
+  background-color: transparent;
+  border: 0;
+}
+
+input.input_seach_pesquisa {
+  outline: none;
+  background-color: #404040;
+  color: #bdbdbd;
+  border: 0;
+  padding: 10px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.button_modal {
+  display: flex;
+  font-weight: 600;
+  width: 12%;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color: #00ff8a;
+  color: #404040;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#form {
+  display: none;
 }

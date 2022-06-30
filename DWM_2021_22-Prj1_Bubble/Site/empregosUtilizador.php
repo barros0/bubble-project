@@ -15,7 +15,17 @@ $lista_empregos = $conn->query($query);
 <div class="wrap-conteudo">
     <div class="conteudo">
 
-        <div class="wrap-empregos">
+        <div class="wrap_pesquisa">
+            <form class="search_pesquisa" method="POST" action="">
+                <div class="div_input_search_pesquisa">
+                    <input type="text" class="input_seach_pesquisa" placeholder="Search here..." name="keyword" required="required" value="" />
+                    <span class="input_search_group_btn">
+                        <button class="button_search_pesquisa" name="search"><i class='bx bx-search'></i></button>
+                    </span>
+                </div>
+            </form>
+            <div id="button_modal_emprego" class="button_modal" onClick="Javascript:window.location.href = './inseriremprego.php';">Adicionar +</div>
+        </div>
 
             <?php
 

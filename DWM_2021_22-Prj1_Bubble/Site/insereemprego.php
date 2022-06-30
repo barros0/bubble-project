@@ -48,6 +48,7 @@ $novo_ficheiro = sha1(microtime()) . "." . $extensao; //MUDAR DE NOME DA FOTO
 $uploadOk = 1;
 $error = "";
 
+
 if ($imagem != "") {
 
     // VERIFICAR O TAMANHO DO FICHEIRO
@@ -81,6 +82,7 @@ if ($imagem != "") {
 
             echo "Introduzido com sucesso!";
 
+
             $foto->close();
             $conn->close();
         }
@@ -92,7 +94,7 @@ if ($imagem != "") {
 
 }
 
-//array_push($_SESSION['alerts']['success'], 'Emprego inserido com sucesso!');
-header('location:./empregos.php');
+array_push($_SESSION['alerts']['success'], 'Emprego inserido com sucesso!');
+header('location:./empregosUtilizador.php');
 
 ?>

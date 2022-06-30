@@ -25,6 +25,10 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
 
         while ($row = $lista_empregos->fetch_assoc()) {
 
+            //buscar pessoa que publicou o emprego
+            $queryUser =  'SELECT * FROM users WHERE id_user = ' . $row['id_user'];
+            $utilizador = $conn->query($queryUser)->fetch_assoc();
+
         ?>
 
             <div class="caixa-emprego">
@@ -54,6 +58,7 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
                                 <span>Categoria:</span>
                                 <span>Tipo:</span>
                                 <span>Horários:</span>
+                                <span>Publicado por:</span>
                             </div>
                             <div class="texto-detalhes">
                                 <span><?= $row['qualificacoes'] ?></span>
@@ -63,6 +68,7 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
                                 <span><?= $row['categoria'] ?></span>
                                 <span><?= $row['tipo'] ?></span>
                                 <span><?= $row['horario'] ?></span>
+                                <span><a href="./perfil.php?username=<?= $utilizador['username'] ?>"><?= $utilizador['nome'] ?></a></span>
                             </div>
                         </div>
                     </div>

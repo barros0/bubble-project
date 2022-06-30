@@ -3,9 +3,13 @@
 
 <?php
 require('./bd.php');
+require('./page_parts/notificacoes.php');
+
 
 $query = "select * from users";
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $_SESSION['errors'] = array();
 
 
