@@ -3,7 +3,7 @@
 
 <?php
 require('./bd.php');
-require('./page_parts/notificacoes.php');
+//require('./page_parts/notificacoes.php');
 
 
 $query = "select * from users";
@@ -116,9 +116,9 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
 <!--Inicio da Navbar-->
 
 <body>
-<?php
-require ('./page_parts/notificacoes.php')
-?>
+    <?php
+    require('./page_parts/notificacoes.php')
+    ?>
     <!--NAV BAR PC-->
 
     <div id="nav_bar_computer" class="container-fluid fixed-top">
