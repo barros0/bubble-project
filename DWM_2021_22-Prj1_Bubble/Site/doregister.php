@@ -12,37 +12,24 @@ if (isset($_POST)) {
     /*nao permitir que se introduza campos vazios de password na base de dados*/
 
     if (empty($_POST['password'])) {
-        echo('<h2>Tem de escolher uma password!</h2>');
-        array_push($_SESSION['errors'], 'Tem de escolher uma password!');
-        header('location:./login.php');
+?>
+        <div>
+            <h1>Coloque uma Password</h1>
+        </div>
+    <?php
         exit;
     }
     /*verficar que a password e igual*/
     if ($_POST["password"] <> $_POST["password1"]) {
-        echo('<h2>Password nao coincide!</h2>');
-        array_push($_SESSION['errors'], 'Password nao coincide!');
-        header('location:./login.php');
+    ?>
+        <div>
+            <h1>A password não coincide</h1>
+        </div>
+    <?php
         exit;
     }
 
-    ?><script>
-    /*verificar se e maior de 18 anos*/
-    function validaridade($data, $idade = 18)
-    {
 
-        if(is_string($data)) {
-            $data = strtotime($data);
-        }
-    
-
-        if(time() - $data < $idade * 31536000)  {
-            echo('<h2>Tens de ser maior de idade para criar uma conta!</h2>');
-            return false;
-        }
-    
-        return true;
-    }
-    </script> <?php
 
     /*ligacao a base de dados*/
     include('./bd.php');
@@ -61,14 +48,20 @@ if (isset($_POST)) {
         if (!mysqli_query($conn, $sql)) {
             die('Erro: ' . mysqli_error($conn));
         }
-        echo('<h2>Utilizador Criado!</h2>');
-        array_push($_SESSION['errors'], 'Utilizador Criado!');
-        header('location:./login.php');
+    ?>
+        <br>
+        <div>
+            <h1>Utilizador criado</h1>
+            <br>
+        </div>
+    <?php
         mysqli_close($conn);
     } else {
-        echo('<h2>Este e-mail ja tem uma conta associada!</h2>');
-        array_push($_SESSION['errors'], 'Este e-mail ja tem uma conta associada!');
-        header('location:./login.php');
+    ?>
+        <br>
+        <h1>Esse e-mail ja esta a ser usado.</h1>
+        </div>
+<?php
     }
 }
 
