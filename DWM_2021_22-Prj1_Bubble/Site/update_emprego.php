@@ -1,10 +1,6 @@
 <?php
-
-require "./partials/db_con.php";
-
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+require('./bd.php');
+session_start();
 
 // para apagar um emprego, url leva ?delete_empregoid
 if (isset($_GET['delete_empregoid'])) {
@@ -21,7 +17,7 @@ if (isset($_GET['delete_empregoid'])) {
     $conn->close();
 
     array_push($_SESSION['alerts']['alert'], 'Emprego eliminado com sucesso!');
-    header('location:./empregos.php');
+    header('location:./empregosUtilizador.php');
     exit;
 }
 
@@ -58,7 +54,7 @@ if (isset($_GET['empregoid'])) {
 
         $imagem = $_FILES['foto_emprego']['name'];
         $extensao = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));
-        $folder = "../img/empregos/";
+        $folder = "img/empregos/";
         $novo_ficheiro = sha1(microtime()) . "." . $extensao; //MUDAR DE NOME DA FOTO
 
         $uploadOk = 1;
@@ -153,14 +149,14 @@ if (isset($_GET['empregoid'])) {
         $conn->close();
 
         array_push($_SESSION['alerts']['success'], 'Emprego atualizado com sucesso!');
-        header('location:./empregos.php');
+        header('location:./empregosUtilizador.php');
 
         exit;
 
     } else {
 
         array_push($_SESSION['alerts']['errors'], 'Este Emprego não existe!');
-        header('location:./empregos.php');
+        header('location:./empregosUtilizador.php');
         exit;
     }
 }

@@ -4,11 +4,14 @@ include 'page_parts/header.php';
 
 include 'page_parts/left.php';
 
+$id_user = $_SESSION['user']['id_user'];
+
 //buscar detalhes na base de dados
-$query = 'SELECT * FROM oferta_emprego';
+$query = 'SELECT * FROM oferta_emprego WHERE id_user = ' . $id_user;
 $lista_empregos = $conn->query($query);
 
 ?>
+
 <div class="wrap-conteudo">
     <div class="conteudo">
 
@@ -66,7 +69,7 @@ $lista_empregos = $conn->query($query);
                         </div>
                     </div>
                     <div class="btn-wrp">
-                        <button onClick="window.location.href='./emprego.php?id_emp=<?=$row['id_oferta']?>'" type="button" class="btn-emprego">Ver Emprego</button>
+                        <button onClick="window.location.href='./editarEmprego.php?id_emp=<?=$row['id_oferta']?>'" type="button" class="btn-emprego">Editar Emprego</button>
                     </div>
 
                 </div>

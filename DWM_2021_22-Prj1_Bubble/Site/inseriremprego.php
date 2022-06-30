@@ -11,7 +11,7 @@ $empregos_pub = $conn->query('SELECT * FROM oferta_emprego');
     <div class="conteudo">
 
         <div id="container-faqs" class="container-faqs s-container">
-            <form class="form-control" name="inserirEmprego" method="post" action="insereemprego.php">
+            <form class="form-control" name="inserirEmprego" method="post" action="insereemprego.php" enctype="multipart/form-data">
 
                 <div class="title">
                     <h2>Inserir Nova Oferta de Emprego</h2>
@@ -27,7 +27,7 @@ $empregos_pub = $conn->query('SELECT * FROM oferta_emprego');
                     <span class="addft">Adicionar Foto</span>
                     <div class="upload_img" onchange="verFoto()">
                         <button class="upload_btn "><i class='bx bx-plus'></i></button>
-                        <input id="input_file_emp" type="file" name="foto_post">
+                        <input id="input_file_emp" type="file" name="foto_emprego">
                     </div>
 
                 </div>
