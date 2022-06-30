@@ -327,3 +327,106 @@ input::placeholder {
     font-size: 12px;
     margin-bottom: 15px;
 }
+
+
+
+
+.notificacoes {
+    z-index: 90;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.notificacoes {
+    /*background-color: var(--parcelas);*/
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.notificacoes button {
+    background-color: transparent;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.notificacao {
+    background-color: var(--background);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 4px;
+}
+
+.notificacao .info {
+    padding-top: 6px;
+    padding-left: 16px;
+}
+
+.notificacao .titulo
+
+/*h2*/
+a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--palavras);
+    margin-top: 10px;
+}
+
+.notificacao .titulo a:hover {
+    color: var(--verde-hover);
+}
+
+.notificacao .titulo * {
+    font-size: 14px;
+    color: var(--palavras);
+}
+
+.notificacao .img-radius img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    background-color: var(--background);
+}
+
+.notificacoes p, h1 {
+    color: var(--palavras);
+}
+
+.p10t {
+    padding-top: 10px;
+}
+
+.bg-user-e1 {
+    background-color: orange;
+}
+
+.bg-user-e2 {
+    background-color: var(--verde);
+}
+
+.bg-user-e3 {
+    background-color: darkgrey;
+}
+
+.bg-user-e4 {
+    background-color: yellow;
+}
+
+.bg-user-e5 {
+    background-color: red;
+}
+
+
+table p {
+    color: var(--white);
+}
+
+.table-responsive {
+    margin-top: 30px;
+    padding: 20px;
+    margin-right: 30px;
+    border-radius: 10px;
+    background-color: var(--parcelas);
+}
