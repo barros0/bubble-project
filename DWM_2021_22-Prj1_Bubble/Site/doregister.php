@@ -12,14 +12,14 @@ if (isset($_POST)) {
     /*nao permitir que se introduza campos vazios de password na base de dados*/
 
     if (empty($_POST['password'])) {
-        echo('<h2>Tem de escolher uma Password</h2>');
+        echo '<h2>Tem de escolher uma Password</h2>';
         array_push($_SESSION['alerts']['info'], 'Tem de escolher uma Password');
         header('location:./login.php');
         exit;
     }
     /*verficar que a password e igual*/
     if ($_POST["password"] <> $_POST["password1"]) {
-        echo('<h2>As Passwords nao coincidem</h2>');
+        echo '<h2>As Passwords nao coincidem</h2>';
         array_push($_SESSION['alerts']['alert'], 'As Passwords nao coincidem');
         header('location:./login.php');
         exit;
@@ -43,15 +43,13 @@ if (isset($_POST)) {
         if (!mysqli_query($conn, $sql)) {
             die('Erro: ' . mysqli_error($conn));
         }
-        echo('<h2>O seu utilizador foi criado!</h2>');
-            array_push($_SESSION['alerts']['success'], 'O seu utilizador foi criado!');
-            header('location:./login.php');
+        echo '<h2>O seu utilizador foi criado!</h2>';
+        array_push($_SESSION['alerts']['success'], 'O seu utilizador foi criado!');
+        header('location:./login.php');
         mysqli_close($conn);
     } else {
-        echo('<h2>Este e-mail ja tem uma conta associada.</h2>');
+        echo '<h2>Este e-mail ja tem uma conta associada.</h2>';
         array_push($_SESSION['alerts']['errors'], 'Este e-mail ja tem uma conta associada.');
         header('location:./login.php');
     }
 }
-
-?>
