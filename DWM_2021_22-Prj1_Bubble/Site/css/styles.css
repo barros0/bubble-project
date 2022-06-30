@@ -248,15 +248,13 @@ li.navbar_li:hover:after {
     }
 }
 
-
 .notificacoes {
-    background-color: var(--parcelas);
     border-radius: 10px;
     padding: 10px;
+    position: fixed;
 }
 
 .notificacao {
-    background-color: var(--background);
     border-radius: 6px;
     padding: 10px;
     margin-bottom: 4px;
@@ -267,10 +265,7 @@ li.navbar_li:hover:after {
     padding-left: 16px;
 }
 
-.notificacao .titulo
-
-/*h2*/
-a {
+.notificacao .titulo a {
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -292,7 +287,7 @@ a {
     width: 80px;
     height: 80px;
     object-fit: cover;
-    background-color: var(--background);
+
 }
 
 .notificacoes p, h1 {
@@ -311,4 +306,3 @@ a {
 .custom_active_header a i {
     color: #00ff8a !important;
 }
-

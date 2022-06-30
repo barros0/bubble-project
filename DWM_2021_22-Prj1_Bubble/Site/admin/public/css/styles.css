@@ -536,6 +536,7 @@ table p {
 }
 
 form.form-control {
+    z-index: 2;
     position: fixed;
     top: 100px;
     background-color: var(--parcelas);
@@ -583,6 +584,10 @@ form.form-control::-webkit-scrollbar {
 }
 
 .form-control .title h3 {
+    color: var(--white);
+    margin: 0;
+}
+.form-control .title h2{
     color: var(--white);
     margin: 0;
 }

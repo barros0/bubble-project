@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 if(!empty($_SESSION['alerts']['info'])){
     foreach ($_SESSION['alerts']['info'] as $notf){
         ?>
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <div onclick="this.parentElement.style.display='none';"class="alert alert-info alert-dismissible fade show" role="alert">
             <strong>Info!</strong>  <?=$notf?>.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -41,7 +41,7 @@ if(!empty($_SESSION['alerts']['success'])){
 if(!empty($_SESSION['alerts']['alert'])){
     foreach ($_SESSION['alerts']['alert'] as $notf){
         ?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div onclick="this.parentElement.style.display='none';"class="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Alerta!</strong>  <?=$notf?>.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -57,7 +57,7 @@ if(!empty($_SESSION['alerts']['alert'])){
 if(!empty($_SESSION['alerts']['errors'])){
     foreach ($_SESSION['alerts']['errors'] as $notf){
         ?>
-        <div class="alert alert-info alert-danger fade show" role="alert">
+        <div onclick="this.parentElement.style.display='none';"class="alert alert-info alert-danger fade show" role="alert">
             <strong>Erro!</strong>  <?=$notf?>.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -72,13 +72,11 @@ if(!empty($_SESSION['alerts']['errors'])){
 <style>
 
     .notificacoes {
-        background-color: var(--parcelas);
         border-radius: 10px;
         padding: 10px;
     }
 
     .notificacao {
-        background-color: var(--background);
         border-radius: 6px;
         padding: 10px;
         margin-bottom: 4px;
