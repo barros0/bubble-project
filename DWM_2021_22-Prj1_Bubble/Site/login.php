@@ -10,6 +10,8 @@ if (isset($_SESSION['user'])) {
 }
 
 include('./bd.php');
+require('./page_parts/notificacoes.php');
+
 $sql  = mysqli_query($conn, "select * from nacionalidades");
 
 $generos = mysqli_query($conn, "select * from generos");
@@ -24,14 +26,20 @@ $generos = mysqli_query($conn, "select * from generos");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="img/header/logo_small_bubble.ico" type="image/x-icon">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--CSS Geral-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+
     <title>Bubble | Login</title>
 
 </head>
 
 <body>
-<?php
-require ('./page_parts/notificacoes.php')
-?>
+
     <div class="home">
 
         <div class="home2">
@@ -110,8 +118,8 @@ require ('./page_parts/notificacoes.php')
     </div>
 
 
-
-
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="js/header.js"></script>
     <script src="js/login.js"></script>
 
 </body>
