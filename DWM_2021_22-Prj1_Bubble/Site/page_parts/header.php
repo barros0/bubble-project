@@ -116,7 +116,9 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
 <!--Inicio da Navbar-->
 
 <body>
-
+<?php
+require ('./page_parts/notificacoes.php')
+?>
     <!--NAV BAR PC-->
 
     <div id="nav_bar_computer" class="container-fluid fixed-top">
