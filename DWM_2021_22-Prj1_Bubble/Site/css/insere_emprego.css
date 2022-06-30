@@ -95,3 +95,12 @@ div#container-faqs {
 span.addft {
   padding: 15px;
 }
+
+.upload_img input[type="file"] {
+  font-size: 20px;
+  position: unset;
+    left: auto;
+    top: auto;
+    opacity: 1;
+
+}

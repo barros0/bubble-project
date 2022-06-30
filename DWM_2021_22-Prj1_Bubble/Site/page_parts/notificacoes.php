@@ -68,6 +68,27 @@ if(!empty($_SESSION['alerts']['errors'])){
 }
 ?>
 </div>
+
+<style>
+
+    .notificacoes {
+        background-color: var(--parcelas);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .notificacao {
+        background-color: var(--background);
+        border-radius: 6px;
+        padding: 10px;
+        margin-bottom: 4px;
+    }
+
+    .notificacao .info {
+        padding-top: 6px;
+        padding-left: 16px;
+    }
+</style>
 <?php
 
 $_SESSION['alerts']['info'] = array();

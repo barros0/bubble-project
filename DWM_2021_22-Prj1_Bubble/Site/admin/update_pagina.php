@@ -54,7 +54,7 @@ if (isset($_GET['delete_idfilejs'])) {
         header('location:./paginas.php');
     }
 
-    $conn->query('DELETE FROM files_js_paginas_site WHERE id_pagina = ' . $_GET['delete_idfilecss']);
+    $conn->query('DELETE FROM files_js_paginas_site WHERE id_pagina = ' . $_GET['delete_idfilejs']);
 
     $conn->close();
     array_push($_SESSION['alerts']['alert'], 'Ficheiro associado eliminado com sucesso!');

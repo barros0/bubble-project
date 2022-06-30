@@ -1,7 +1,10 @@
 <?php
-include('./partials/header.php');
 
-$empregoid = $_GET['idemp'];
+include 'page_parts/header.php';
+
+include 'page_parts/left.php';
+
+$empregoid = $_GET['id_emp'];
 
 $emprego = $conn->query('SELECT * FROM oferta_emprego WHERE id_oferta = ' . $empregoid)->fetch_assoc();
 //buscar detalhes emprego
@@ -31,7 +34,7 @@ if (!isset($emprego)) {
         <div class="buttons_post btnfrm">
                     <span class="addft">Adicionar Foto</span>
                     <div class="upload_img" onchange="verFoto()">
-                        <button class="upload_btn "><i class='bx bx-plus'></i></button>
+                       <!-- <button class="upload_btn "><i class='bx bx-plus'></i></button>-->
                         <input id="input_file_emp" value="<?= $imagem['foto'] ?>" type="file" name="foto_emprego">
                     </div>
 
@@ -104,6 +107,4 @@ if (!isset($emprego)) {
 
     </form>
 
-    <?php
-    include('./partials/footer.php');
-    ?>
+ <?php include 'page_parts/footer.php'; ?>
