@@ -250,13 +250,11 @@ li.navbar_li:hover:after {
 
 
 .notificacoes {
-    background-color: var(--parcelas);
     border-radius: 10px;
     padding: 10px;
 }
 
 .notificacao {
-    background-color: var(--background);
     border-radius: 6px;
     padding: 10px;
     margin-bottom: 4px;
@@ -292,7 +290,7 @@ a {
     width: 80px;
     height: 80px;
     object-fit: cover;
-    background-color: var(--background);
+
 }
 
 .notificacoes p, h1 {
