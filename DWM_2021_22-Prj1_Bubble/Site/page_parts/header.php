@@ -3,8 +3,6 @@
 
 <?php
 require('./bd.php');
-//require('./page_parts/notificacoes.php');
-
 
 $query = "select * from users";
 if (session_status() === PHP_SESSION_NONE) {
