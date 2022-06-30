@@ -34,7 +34,7 @@ if (isset($_GET['delete_idfilecss'])) {
     if (empty($fileCSS)) {
         array_push($_SESSION['alerts']['errors'], 'Este Ficheiro não existe!');
         header('location:./paginas.php');
-    }
+    }else{
 
     $conn->query('DELETE FROM files_css_paginas_site WHERE id_file = ' . $_GET['delete_idfilecss']);
 
@@ -42,6 +42,7 @@ if (isset($_GET['delete_idfilecss'])) {
     array_push($_SESSION['alerts']['alert'], 'Ficheiro associado eliminado com sucesso!');
     header('location:./paginas.php');
     exit;
+}
 }
 
 // para apagar um ficheiro css unico, url leva ?delete_idfilejs
@@ -52,14 +53,15 @@ if (isset($_GET['delete_idfilejs'])) {
     if (empty($fileJS)) {
         array_push($_SESSION['alerts']['errors'], 'Este Ficheiro não existe!');
         header('location:./paginas.php');
-    }
+    }else{
 
-    $conn->query('DELETE FROM files_js_paginas_site WHERE id_pagina = ' . $_GET['delete_idfilejs']);
+    $conn->query('DELETE FROM files_js_paginas_site WHERE id_file= ' . $_GET['delete_idfilejs']);
 
     $conn->close();
     array_push($_SESSION['alerts']['alert'], 'Ficheiro associado eliminado com sucesso!');
     header('location:./paginas.php');
     exit;
+    }
 }
 
 //atualizar dados de uma página
