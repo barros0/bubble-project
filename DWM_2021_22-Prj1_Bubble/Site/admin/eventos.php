@@ -1,58 +1,94 @@
 <?php
 include('./partials/header.php');
 
-$eventos = $conn->query('select * from eventos');
+$eventos = $conn->query('SELECT * FROM eventos');
 
 ?>
 
-<div class="s-container">
+<div id="container-eventos" class="container-eventos s-container">
     <div class="table-responsive">
-        <div class="table-header row">
-            <div class="titulo col-10">
-                <h2>Eventos</h2>
-            </div>
-        </div>
         <table class="table" id="eventos">
+            <div class="cabecalho_table">
+                <div class="titulo_table">Eventos do Bubble</div>
+                <div class="button_adicionar">Adicionar +</div>
+            </div>
             <caption></caption>
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Pergunta</th>
-                <th scope="col">Resposta</th>
-                <th scope="col">Editar></th>
-            </tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Localização</th>
+                    <th scope="col">Descricao</th>
+                </tr>
             </thead>
             <tbody>
-            <?php foreach ($eventos as $evento) {
+                <?php foreach ($eventos as $evento) {
                 ?>
-                <tr>
-                    <th scope="row"><?= $evento['id_evento'] ?></th>
-                    <td>
-                        <p>  <?= $evento['descricao'] ?></p>
-                    </td>
-                    <td><p><a href="<?= $evento['link'] ?>"><?= $evento['link'] ?></a></p></td>
-                    <td>    <p>  <?= $evento['created_at'] ?></p></td>
-                    <td>
-                        <a href="./user.php?userid=<?= $evento['id_faq'] ?>">
-                            <i class="fa fa-pen"></i>
-                        </a>
-                    </td>
-                </tr>
-            <?php } ?>
-
-
+                    <tr>
+                        <th scope="row"><?= $evento['id_evento'] ?></th>
+                        <td>
+                            <p> <?= $evento['titulo'] ?></p>
+                        </td>
+                        <td>
+                            <p> <?= $evento['localizacao'] ?></p>
+                        </td>
+                        <td>
+                            <p><?= $evento['descricao'] ?></p>
+                        </td>
+                        <td>
+                            <a href="./eventos.php?eventoid=<?= $evento['id_evento'] ?>">
+                                <i class="fa fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
 </div>
+<div class="form_inserir_eventos">
+    <form id="inserirevento" class="form-control" name="inserirevento" onsubmit="return validateForm()" method="post" action="insereevento.php">
+        <div class="title">
+            <h3>Adicionar Evento</h3>
+            <i id="fechar_modal_evento" class='bx bx-x'></i>
+
+        </div>
+        <div class="form-group">
+            <label for="titulo">Titulo: </label>
+            <input type="text" name="titulo" id="titulo" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="localizacao">Localização: </label>
+            <input type="text" name="localizacao" id="localizacao" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descricao: </label>
+            <input type="text" name="descricao" id="descricao" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="imagem">Url-Imagem: </label>
+            <input type="text" name="imagem" id="imagem" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Gravar</button>
+
+    </form>
+</div>
+
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#eventos').DataTable();
     });
 </script>
 
 <?php
+$pagina = basename($_SERVER["REQUEST_URI"]);
+if ($pagina != "eventos.php") {
+    include('./evento.php');
+}
+
 include('./partials/footer.php');
 
 ?>

@@ -9,36 +9,38 @@ $conn->close();
 <div class="s-container">
     <div class="table-responsive">
         <div class="table-header row">
-            <div class="titulo col-10">
-                <h2>Empregos</h2>
+            <div class="cabecalho_table">
+                <div class="titulo_table">Lista dos Empregos</div>
             </div>
         </div>
         <table class="table" id="empregos">
             <caption></caption>
             <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Título</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Editar</th>
-            </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Editar</th>
+                </tr>
             </thead>
             <tbody>
-            <?php foreach ($empregos as $emprego) {
+                <?php foreach ($empregos as $emprego) {
                 ?>
-               <tr>
-                    <th scope="row"><?= $emprego['id_oferta'] ?></th>
-                    <td>
-                      <p>  <?= $emprego['titulo'] ?></p>
-                    </td>
-                    <td><p><?= $emprego['categoria'] ?></p></td>
-                    <td>
-                        <a href="./emprego.php?idemp=<?= $emprego['id_oferta'] ?>">
-                            <i class="fa fa-pen"></i>
-                        </a>
-                    </td>
-                </tr>
-            <?php } ?>
+                    <tr>
+                        <th scope="row"><?= $emprego['id_oferta'] ?></th>
+                        <td>
+                            <p> <?= $emprego['titulo'] ?></p>
+                        </td>
+                        <td>
+                            <p><?= $emprego['categoria'] ?></p>
+                        </td>
+                        <td>
+                            <a href="./emprego.php?idemp=<?= $emprego['id_oferta'] ?>">
+                                <i class="fa fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
 
 
             </tbody>
@@ -47,7 +49,7 @@ $conn->close();
 </div>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#empregos').DataTable();
     });
 </script>

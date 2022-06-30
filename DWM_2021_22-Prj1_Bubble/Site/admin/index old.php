@@ -120,8 +120,8 @@ $totalc = '400GB';
         <div class="header d-flex flex-column">
             <div class="d-flex justify-content-between align-items-center mb-1">
                 <h4>Armazenamento</h4>
-                <span class="text-muted" style="font-size: 1rem;">  <?php echo($freec) ?> livres de <span
-                            id="total-value"><?php echo($totalc) ?></span>GB</span>
+                <span class="text-muted" style="font-size: 1rem;">  <?php echo $freec ?> livres de <span
+                            id="total-value"><?php echo $totalc ?></span>GB</span>
             </div>
             <div class="progress bg-transparent" style="height: 20px;">
                 <div class="progress-bar bg-transparent" style="width: 20%;" data-bs-toggle="tooltip" title="System">

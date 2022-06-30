@@ -1,9 +1,5 @@
 $("#inserirFAQ").submit(function () {
-  if (invalid) {
-    return false;
-  } else {
-    return true;
-  }
+  return !invalid;
 });
 
 function validateForm() {
@@ -26,11 +22,7 @@ function validateForm() {
 }
 
 $("#AtualizaFAQ").submit(function () {
-  if (invalid) {
-    return false;
-  } else {
-    return true;
-  }
+  return !invalid;
 });
 
 function validaForm() {

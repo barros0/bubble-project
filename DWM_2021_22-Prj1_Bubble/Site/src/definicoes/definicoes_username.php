@@ -24,4 +24,3 @@ if ($username != "") {
 }
 
 header('location:../../definicoes_geral.php');
-?>

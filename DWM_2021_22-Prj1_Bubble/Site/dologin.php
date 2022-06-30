@@ -2,9 +2,6 @@
 include('./bd.php');
 
 session_start();
-$_SESSION['errors'] = array();
-
-
 
 if(isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST["email"];
@@ -16,14 +13,16 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
 //se o user nao existir
     if (!isset($user)) {
         echo('<h2>Não foi encontrado nenhum utilizador registado com este email</h2>');
-        array_push($_SESSION['errors'], 'Não foi encontrado nenhum utilizador registado com este email');
+        array_push($_SESSION['alerts']['errors'], 'Não foi encontrado nenhum utilizador registado com este email');
+        header('location:./login.php');
         exit;
     }
 
 // se a password for errada
     if (hash('sha512', $password) <> $user['password']) {
         echo('<h2>Password errada!</h2>');
-        array_push($_SESSION['errors'], 'Password errada!');
+        array_push($_SESSION['alerts']['errors'], 'Password errada!');
+        header('location:./login.php');
         exit;
     }
 
@@ -44,6 +43,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
         if (!isset($user)) {
             echo('<h2>Não foi encontrado nenhum utilizador registado com este email</h2>');
             array_push($_SESSION['errors'], 'Não foi encontrado nenhum utilizador registado com este email');
+            header('location:./login.php');
             exit;
         }
 
@@ -51,6 +51,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
         if (hash('sha512', $password) <> $user['password']) {
             echo('<h2>Password errada!</h2>');
             array_push($_SESSION['errors'], 'Password errada!');
+            header('location:./login.php');
             exit;
         }
 

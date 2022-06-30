@@ -16,19 +16,7 @@
             </form>
             <div id="button_modal_eventos" class="button_modal">Adicionar +</div>
         </div>
-        
-
-
         <?php include 'estrutura_evento.php'; ?>
-
-
-
-
-
-
-
-
-
     </div>
 </div>
 <!--FORM PARA ADCIONAR NOVO EVENTO TITULO LOCALIZACAO DESCRICAO FOTO-->
