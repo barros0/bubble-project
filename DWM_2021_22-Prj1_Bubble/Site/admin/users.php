@@ -56,7 +56,7 @@ foreach ($generos as $key => $genero) {
     if (empty($idades[$genero])) {
         $idades[$genero] = [0];
     }
-};
+}
 
 
 ?>

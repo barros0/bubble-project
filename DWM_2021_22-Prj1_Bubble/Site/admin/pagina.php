@@ -49,11 +49,11 @@ if (!isset($pagina)) {
 
             echo ' <div class="form-group">
             <label for="ficheirocss">URL CSS Nº ' . $count . ' (ex: css/feed.css)</label>
+            <div class="form-group-novo">
             <input name="ficheirocss[]" value="' . $row['ficheirocss'] . '" type="text" class="form-control" id="ficheirocss' . $count . '" placeholder="URL CSS">
             <a class="btn btn-danger" href="./update_pagina.php?delete_idfilecss=' . $row['id_file'] . '">X</a>
             <input type="text" name="idcss[]" value="' . $row['id_file'] . '" placeholder="ID" style="display:none;"/>
-
-        </div>';
+            </div></div>';
         }
 
         ?>
@@ -74,11 +74,12 @@ if (!isset($pagina)) {
             $js['ficheirojs'];
 
             echo ' <div class="form-group">
-             <label for="ficheirojs">URL JavaScript Nº ' . $countJS . ' (ex: js/feed.js)</label>
+            <label for="ficheirojs">URL JavaScript Nº ' . $countJS . ' (ex: js/feed.js)</label>
+            <div class="form-group-novo">
             <input name="ficheirojs[]" value="' . $js['ficheirojs'] . '" type="text" class="form-control" id="ficheirojs' . $countJS . '" placeholder="URL JS">
             <a class="btn btn-danger" href="./update_pagina.php?delete_idfilejs=' . $js['id_file'] . '">X</a>
             <input type="text" name="idjs[]" value="' . $js['id_file'] . '" placeholder="ID" style="display:none;"/>
-            </div>';
+            </div></div>';
         }
 
         ?>
@@ -91,14 +92,14 @@ if (!isset($pagina)) {
 
         </div>
 
-        
+
         <div class="form-group" id="novoCSSEdit">
-            
+
         </div>
 
         <div class="form-group" id="novoJSEdit">
-            
-            </div>
+
+        </div>
 
         <a class="btn btn-danger" href="./update_pagina.php?delete_idpag=<?= $pagina['id_pag']  ?>">Eliminar</a>
         <button type="submit" class="btn btn-primary">Gravar</button>

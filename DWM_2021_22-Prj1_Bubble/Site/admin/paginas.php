@@ -49,7 +49,7 @@ $paginasjs = $conn->query('SELECT * FROM files_js_paginas_site');
     <form id="inserirPag" class="form-control" name="inserirPag" onsubmit="return validateForm()" method="post" action="inserirpag.php">
         <div class="title">
             <h3>Inserir nova Página<h3>
-            <i id="fechar_modal_pag" class='bx bx-x'></i>
+                    <i id="fechar_modal_pag" class='bx bx-x'></i>
 
         </div>
         <div class="form-group">
@@ -72,24 +72,18 @@ $paginasjs = $conn->query('SELECT * FROM files_js_paginas_site');
             <input type="text" name="caminhoJS[]" id="caminhoJS" class="form-control">
         </div>
 
-        <div class="form-group">
-
-        <input type="button" value="Novo CSS" id="inserirCSS">
-
-        <input type="button" value="Novo JS" id="inserirJS">
-
-        </div>         
-
         <div class="form-group" id="novoCSS">
-            
+
         </div>
 
         <div class="form-group" id="novoJS">
-            
-            </div>
 
-        <button type="submit" class="btn btn-primary">Gravar</button>
-
+        </div>
+        <div class="button-form">
+            <button type="submit" class="btn btn-primary">Gravar</button>
+            <input type="button" class="btn" value="Novo CSS" id="inserirCSS">
+            <input type="button" class="btn" value="Novo JS" id="inserirJS">
+        </div>
     </form>
 </div>
 

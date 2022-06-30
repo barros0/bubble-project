@@ -390,6 +390,7 @@ tbody tr:nth-child(odd) {
 label {
     display: inline-block;
     color: white;
+    margin-top: 10px;
 }
 
 p.btn-wrp {
@@ -403,15 +404,12 @@ input#Submit {
 }
 
 input#pergunta {
-    width: 70%;
+    width: 100%;
 }
 
 input#resposta {
-    width: 70%;
+    width: 100%;
 }
-
-
-
 
 .notificacoes {
     z-index: 90;
@@ -542,9 +540,15 @@ form.form-control {
     background-color: var(--parcelas);
     border-radius: 10px;
     border: none;
+    height: 700px;
     padding: 20px;
+    overflow-y: scroll;
     box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
     width: 50%;
+}
+
+form.form-control::-webkit-scrollbar {
+    width: 0;
 }
 
 #fechar_modal_faq {
@@ -585,7 +589,7 @@ form.form-control {
 .btn {
     margin-top: 10px;
     background-color: var(--verde);
-    border: 1px solid var(--verdeh);
+    border: 0;
     color: black;
     float: right;
     border-radius: 10px;
@@ -594,7 +598,7 @@ form.form-control {
 
 .btn:hover {
     background-color: var(--verdeh);
-    border: 1px solid var(--verdeh);
+    border: 0;
 }
 
 .btn-danger {
@@ -710,7 +714,7 @@ form.form-control {
     margin-bottom: 0;
 }
 
-#horas i{
+#horas i {
     margin-right: 10px;
 }
 
@@ -741,4 +745,36 @@ form.form-control {
 #fechar_modal_pag {
     color: white;
     font-size: 35px;
+}
+
+.atualizar_faq_form button[type="submit"] {
+    margin-right: 10px;
+}
+
+.form-group-novo {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group-novo .btn {
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+.button-form input {
+    margin-right: 10px;
+    background-color: 0;
+    background-color: white;
+    outline: 0;
+    border: 0;
+}
+
+.button-form input:hover {
+    margin-right: 10px;
+    background-color: 0;
+    background-color: white;
+    outline: 0;
+    border: 0;
 }
