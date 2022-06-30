@@ -29,7 +29,9 @@ $generos = mysqli_query($conn, "select * from generos");
 </head>
 
 <body>
-
+<?php
+require ('./page_parts/notificacoes.php')
+?>
     <div class="home">
 
         <div class="home2">
