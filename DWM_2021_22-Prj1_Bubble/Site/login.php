@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 
 if (isset($_SESSION['user'])) {
@@ -72,8 +74,8 @@ $generos = mysqli_query($conn, "select * from generos");
                         <input type="password" id="label-password" class="form-input" name="password" placeholder="Password" required>
                         <input type="password" id="label-password" class="form-input" name="password1" placeholder="Confirmar Password" required>
                     </div>
-                    <input type="date" class="form-input" name="data" placeholder="Data de Nascimento" required>
-                    <label for="nacionalidade">A sua nacionalidade é:</label>
+                    <input type="date" class="form-input" id="data" name="data" placeholder="Data de Nascimento" required>
+    
 
                     <label for="sexo">O seu género é:</label>
                     <select name="sexo" class="form-input" id="sexo">
