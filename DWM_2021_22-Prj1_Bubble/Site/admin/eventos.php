@@ -10,12 +10,13 @@ $eventos = $conn->query('SELECT * FROM eventos');
         <table class="table" id="eventos">
             <div class="cabecalho_table">
                 <div class="titulo_table">Eventos do Bubble</div>
+                <div class="button_adicionar">Adicionar +</div>
             </div>
             <caption></caption>
             <thead>
             <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">TTitulo</th>
+                    <th scope="col">Titulo</th>
                     <th scope="col">Localização</th>
                     <th scope="col">Descricao</th>
                 </tr>
@@ -45,7 +46,35 @@ $eventos = $conn->query('SELECT * FROM eventos');
         </table>
     </div>
 </div>
+<div class="form_inserir_eventos">
+    <form id="inserirevento" class="form-control" name="inserirevento" onsubmit="return validateForm()" method="post" action="insereevento.php">
+        <div class="title">
+            <h3>Adicionar Evento</h3>
+            <i id="fechar_modal_evento" class='bx bx-x'></i>
 
+        </div>
+        <div class="form-group">
+            <label for="titulo">Titulo: </label>
+            <input type="text" name="titulo" id="titulo" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="localizacao">Localização: </label>
+            <input type="text" name="localizacao" id="localizacao" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descricao: </label>
+            <input type="text" name="descricao" id="descricao" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="imagem">Url-Imagem: </label>
+            <input type="text" name="imagem" id="imagem" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Gravar</button>
+
+    </form>
+</div>
 
 
 <script>

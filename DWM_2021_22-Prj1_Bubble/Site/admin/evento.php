@@ -20,15 +20,15 @@ if (!isset($evento)) {
             <i id="fechar_modal_evento" class='bx bx-x' onClick="Javascript:window.location.href = './eventos.php';"></i>
         </div>
         <div class="form-group">
-            <label for="titulo">Titulo</label>
+            <label for="titulo">Titulo:</label>
             <input name="titulo" value="<?= $evento['titulo'] ?>" type="text" class="form-control" id="titulo" placeholder="Titulo" required>
         </div>
         <div class="form-group">
-            <label for="localizacao">Localizacao</label>
+            <label for="localizacao">Localizacao:</label>
             <input name="localizacao" value="<?= $evento['localizacao'] ?>" type="text" class="form-control" id="localizacao" placeholder="Localizacao" required>
         </div>
         <div class="form-group">
-            <label for="descricao">Descricao</label>
+            <label for="descricao">Descricao:</label>
             <input name="descricao" value="<?= $evento['descricao'] ?>" type="text" class="form-control" id="descricao" placeholder="Descricao" required>
         </div>
 

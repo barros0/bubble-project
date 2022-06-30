@@ -751,6 +751,10 @@ form.form-control::-webkit-scrollbar {
     margin-right: 10px;
 }
 
+.atualizar_evento_form button[type="submit"] {
+    margin-right: 10px;
+}
+
 .form-group-novo {
     display: flex;
     margin: 0;
