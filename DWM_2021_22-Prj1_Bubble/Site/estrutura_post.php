@@ -33,6 +33,10 @@ while ($pub = $result_set->fetch_assoc()) {
                                 <i class='bx bxs-share'></i>
                                 <p>Partilhar</p>
                             </div>
+                            <div class="reportar">
+                                <i class='bx bx-error-alt'></i>
+                                <p>Reportar</p>
+                            </div>
                             <?php
                             if ($pub["id_user"] === $userq['id_user']) {
                             ?>
@@ -43,7 +47,6 @@ while ($pub = $result_set->fetch_assoc()) {
                             <?php
                             }
                             ?>
-
                         </div>
                         <i class='bx bx-dots-horizontal-rounded'></i>
                     </div>
@@ -74,9 +77,9 @@ while ($pub = $result_set->fetch_assoc()) {
                         <p>Comentar</p>
                     </div>
                     <div class="fav">
-                        <a href="./add_fav.php?pubid=<?= $pub['publicacao_id']?>">
-                        <i class='bx bx-bookmark'></i>
-                        <p>Favoritos</p>
+                        <a href="./add_fav.php?pubid=<?= $pub['publicacao_id'] ?>">
+                            <i class='bx bx-bookmark'></i>
+                            <p>Favoritos</p>
                         </a>
                     </div>
                 </div>

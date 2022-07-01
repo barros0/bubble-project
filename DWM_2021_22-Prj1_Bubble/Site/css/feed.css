@@ -482,18 +482,18 @@ textarea:focus {
   box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
 }
 
-.partilhar {
+.partilhar, .reportar {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
 }
 
-.partilhar i, .remover i {
+.partilhar i, .remover i, .reportar i {
   padding: 5px;
 }
 
-.partilhar:hover {
+.partilhar:hover, .reportar:hover {
   background-color: rgb(88, 88, 88);
   border-radius: 15px;
 

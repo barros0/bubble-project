@@ -270,3 +270,7 @@
 .amigos ul {
   margin-top: 10px;
 }
+
+.amigos ul li {
+  margin-bottom: 15px;
+}
