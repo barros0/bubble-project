@@ -61,27 +61,6 @@ if (session_status() === PHP_SESSION_NONE) {
     ?>
 </div>
 
-<style>
-    .notificacoes {
-        top: 68px;
-        left: 20px;
-        position: fixed;
-        z-index: 999;
-        border-radius: 10px;
-        padding: 10px;
-    }
-
-    .notificacao {
-        border-radius: 6px;
-        padding: 10px;
-        margin-bottom: 4px;
-    }
-
-    .notificacao .info {
-        padding-top: 6px;
-        padding-left: 16px;
-    }
-</style>
 <?php
 
 $_SESSION['alerts']['info'] = array();

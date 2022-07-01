@@ -1,15 +1,21 @@
-var x = document.getElementById("login");
-var y = document.getElementById("register");
-var z = document.getElementById("fundo-botoes");
+var login_div = $("#login");
+var register_div = $("#register");
+var btn_fundo = $("#fundo-botoes");
+var btn_login = $(".login_btn");
+var btn_register = $(".register_btn");
 
 function register() {
-  x.style.display = "none";
-  y.style.display = "block";
-  z.style.left = "50%";
+  login_div.css("display", "none");
+  register_div.css("display", "block");
+  btn_fundo.css("left", "50%");
+  btn_register.css("color", "#404040");
+  btn_login.css("color", "white");
 }
 
 function login() {
-  x.style.display = "block";
-  y.style.display = "none";
-  z.style.left = "0%";
+  login_div.css("display", "block");
+  register_div.css("display", "none");
+  btn_fundo.css("left", "0%");
+  btn_login.css("color", "#404040");
+  btn_register.css("color", "white");
 }

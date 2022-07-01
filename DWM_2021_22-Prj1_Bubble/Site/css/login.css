@@ -39,8 +39,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-
-
 }
 
 .caixa2-home {
@@ -56,10 +54,8 @@
     justify-content: center;
     align-items: center;
     background-color: #4F4F4F;
-    border-radius: 25px;
-
+    border-radius: 10px;
 }
-
 
 /*========================================================================================================================================================*/
 /*SECACAO DA ESQUERDA*/
@@ -73,7 +69,6 @@
 .caixa1-home span {
     font-weight: bold;
     color: #00ff8a;
-
 }
 
 .caixa1-home {
@@ -81,7 +76,6 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-
 }
 
 
@@ -112,8 +106,6 @@
     font-weight: bold;
 }
 
-
-
 #fundo-botoes {
     top: 0;
     left: 0;
@@ -121,7 +113,7 @@
     width: 50%;
     height: 100%;
     background-color: #00ff8a;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: .05s;
 }
 
@@ -135,8 +127,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 
 }
-
-
 
 .form-input {
     width: 100%;
@@ -167,13 +157,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: 0;
     outline: none;
     border-radius: 15px;
-    color: white;
+    color: #404040;
     border: 0;
     transition: all 150ms ease-in-out;
     margin-bottom: 30px;
     font-weight: bold;
 }
-
 
 .botao-submeter:hover {
     background-color: #00d372;
@@ -182,10 +171,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transform: scale(1.01);
 }
 
-
+.login_btn {
+    color: #404040;
+}
 
 .check-box {
-
     width: 1.3em;
     height: 1.3em;
     background-color: white;
@@ -204,27 +194,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: #00ff8a;
 }
 
-#checkbox {
+#checkbox, #checkbox2 {
     user-select: none;
 }
 
-#checkbox span {
+#checkbox span, #checkbox2 span {
     font-weight: bold;
     color: #00ff8a;
 }
 
-
-#checkbox span:hover {
+#checkbox span:hover, #checkbox2 span:hover {
     text-decoration: underline;
 }
-
-
 
 .formulario-login span {
     color: white;
     font-size: 12px;
 }
-
 
 #register {
     display: none;
@@ -246,8 +232,6 @@ label {
 option {
     color: white;
     background-color: #1C1C1C;
-
-
 }
 
 select {
@@ -256,11 +240,9 @@ select {
     bottom: 68px;
 }
 
-
 .label-nomes {
     display: flex;
     flex-direction: row;
-
 }
 
 #label-nome {
@@ -270,24 +252,19 @@ select {
 .label-passwords {
     display: flex;
     flex-direction: row;
-
 }
 
 #label-password {
     margin-right: 5px;
 }
 
+#label-password2 {
+    margin-right: 5px;
+}
 
 input::placeholder {
     color: white;
 }
-
-
-
-
-
-
-
 
 /*=====================================================================================================================================================*/
 /*FOOTER*/
@@ -327,9 +304,6 @@ input::placeholder {
     font-size: 12px;
     margin-bottom: 15px;
 }
-
-
-
 
 .notificacoes {
     z-index: 90;
@@ -386,7 +360,7 @@ a {
     width: 80px;
     height: 80px;
     object-fit: cover;
- 
+
 }
 
 .notificacoes p, h1 {
