@@ -27,11 +27,10 @@ if ($email != "") {
             $stmt_update_email->bind_param('s', $email);
             $stmt_update_email->execute();
             $stmt_update_email->close();
+            array_push($_SESSION['alerts']['success'], "Email Atualizado Com Sucesso!");
         }
     } else {
-?>
-        <!--ERRO AQUI-->
-<?php
+        array_push($_SESSION['alerts']['errors'], "Atualização Falhou!");
     }
 }
 

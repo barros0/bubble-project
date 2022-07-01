@@ -21,11 +21,12 @@ if ($nova === $confirmar) {
         $stmt_update_password->bind_param('s', $nova_hash);
         $stmt_update_password->execute();
         $stmt_update_password->close();
+        array_push($_SESSION['alerts']['success'], 'Password Atualizada com Sucesso');
     } else {
-        $erro = "Password Atual Incorreta";
+        array_push($_SESSION['alerts']['errors'], 'Password Atual Incorreta');
     }
 } else {
-    $erro = "Password não coincide";
+    array_push($_SESSION['alerts']['errors'], 'Password não coincide');
 }
 
 header('location:../../definicoes_seguranca.php');

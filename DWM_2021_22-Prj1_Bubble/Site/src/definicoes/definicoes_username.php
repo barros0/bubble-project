@@ -16,10 +16,10 @@ if ($username != "") {
         $stmt_update_username->bind_param('s', $username);
         $stmt_update_username->execute();
         $stmt_update_username->close();
+        array_push($_SESSION['alerts']['success'], 'Username Atualizado com Sucesso');
     } else {
-?>
-        <!--ERRO AQUI-->
-<?php
+        array_push($_SESSION['alerts']['errors'], 'Atualização Falhou');
+
     }
 }
 
