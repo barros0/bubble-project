@@ -12,9 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
     ?>
             <div onclick="this.parentElement.style.display='none';" class="alert alert-info alert-dismissible fade show" role="alert">
                 <strong>Info!</strong> <?= $notf ?>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <span aria-hidden="true">&times;</span>
             </div>
     <?php
         }
@@ -41,9 +39,7 @@ if (session_status() === PHP_SESSION_NONE) {
     ?>
             <div onclick="this.parentElement.style.display='none';" class="alert alert-warning alert-dismissible fade show" role="alert">
                 <strong>Alerta!</strong> <?= $notf ?>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <span aria-hidden="true">&times;</span>
             </div>
     <?php
         }
@@ -57,9 +53,7 @@ if (session_status() === PHP_SESSION_NONE) {
     ?>
             <div onclick="this.parentElement.style.display='none';" class="alert alert-info alert-danger fade show" role="alert">
                 <strong>Erro!</strong> <?= $notf ?>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <span aria-hidden="true">&times;</span>
             </div>
     <?php
         }
