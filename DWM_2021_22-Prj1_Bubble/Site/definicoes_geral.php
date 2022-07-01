@@ -40,7 +40,7 @@
             <div class="editar">Editar</div>
         </div>
         <div class="atualizar_email">
-            <h5>Atualizar Username</h5>
+            <h5>Atualizar Email</h5>
             <form action="./src/definicoes/definicoes_email.php?userid=<?= $userq['id_user'] ?>" method="post">
                 <input type="text" name="email" value="<?php echo $userq['email']; ?>" required>
                 <div class="buttons_atualizar_cancelar">

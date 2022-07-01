@@ -101,6 +101,8 @@ form input[type="text"] {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
 }
 
 .buttons_atualizar_cancelar input {
@@ -140,4 +142,12 @@ form input[type="password"] {
 
 .campo_password label {
     margin-top: 10px;
+}
+
+#sessoes {
+    color: white;
+}
+
+#sessoes th {
+    font-weight: 400;
 }

@@ -1,4 +1,7 @@
 <?php include './src/definicoes/definicoes.php'; ?>
+<?php
+$ip_sessions = $conn->query('SELECT * FROM ip_sessions where id_user=' . $_SESSION['user']['id_user']);
+?>
 
 </div>
 <div class="direita_opcoes">
@@ -25,7 +28,41 @@
                 </div>
             </form>
         </div>
-        <div class="campo_atividade">
+        <div class="campotwo">
+            <div class="titulo_campo">Atividade de Login</div>
+            <div class="editar">Ver</div>
+        </div>
+        <div id="container-ip" class="atualizar_username campo_atividade s-container container-ip">
+            <div class="table-responsive">
+                <table class="table" id="sessoes">
+                    <div class="cabecalho_table">
+                    </div>
+                    <caption></caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">localização</th>
+                            <th scope="col">IP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($ip_sessions as $ip_session) {
+                        ?>
+                            <tr>
+                                <th scope="row"><?= $ip_session['data'] ?></th>
+                                <td>
+                                    <p>Localizacao
+                                        <?php //echo $ip_session['localizacao']
+                                        ?></p>
+                                </td>
+                                <td>
+                                    <p><?= $ip_session['ip_sessions'] ?></p>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
