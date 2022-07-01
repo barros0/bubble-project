@@ -33,10 +33,16 @@ while ($pub = $result_set->fetch_assoc()) {
                                 <i class='bx bxs-share'></i>
                                 <p>Partilhar</p>
                             </div>
-                            <div class="reportar">
-                                <i class='bx bx-error-alt'></i>
-                                <p>Reportar</p>
-                            </div>
+                            <?php
+                            if ($pub["id_user"] != $userq['id_user']) {
+                            ?>
+                                <div class="reportar">
+                                    <i class='bx bx-error-alt'></i>
+                                    <p>Reportar</p>
+                                </div>
+                            <?php
+                            }
+                            ?>
                             <?php
                             if ($pub["id_user"] === $userq['id_user']) {
                             ?>
@@ -85,8 +91,9 @@ while ($pub = $result_set->fetch_assoc()) {
                 </div>
                 <div class="comment_section">
                     <form class="comentar" action="add_comment.php?id_pub=<?= $id_publicacao ?>" method="POST">
-                        <textarea required data-limit=255 maxlength="255" name="textarea" class="comment_textarea" placeholder="Comente Algo"></textarea>
-                        <p class="comment_limit"> <span class="current_chars">0</span>/255</p>
+                        <div class="comentar_wrap">
+                            <textarea required data-limit=255 maxlength="255" name="textarea" class="comment_textarea" placeholder="Comente Algo"></textarea>
+                        </div>
                         <div class="comentar_btn">
                             <input type="submit" value="Comentar">
                         </div>

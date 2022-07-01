@@ -43,10 +43,26 @@ while ($user_pub = $result_set->fetch_assoc()) {
                                 <i class='bx bxs-share'></i>
                                 <p>Partilhar</p>
                             </div>
-                            <form class="remover" action="delete_post_perfil.php?id_pub=<?= $id_publicacao ?>" method="POST">
-                                <i class='bx bxs-trash'></i>
-                                <input type="submit" name="delete" class="btn_remover" value="DELETE">
-                            </form>
+                            <?php
+                            if ($user_pub["id_user"] != $userq['id_user']) {
+                            ?>
+                                <div class="reportar">
+                                    <i class='bx bx-error-alt'></i>
+                                    <p>Reportar</p>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            if ($user_pub["id_user"] === $userq['id_user']) {
+                            ?>
+                                <form class="remover" action="delete_post.php?id_pub=<?= $id_publicacao ?>" method="POST">
+                                    <i class='bx bxs-trash'></i>
+                                    <input type="submit" name="delete" class="btn_remover" value="DELETE">
+                                </form>
+                            <?php
+                            }
+                            ?>
                         </div>
                         <i class='bx bx-dots-horizontal-rounded'></i>
                     </div>
