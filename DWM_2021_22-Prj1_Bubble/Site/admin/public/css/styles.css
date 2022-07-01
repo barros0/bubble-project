@@ -535,6 +535,11 @@ table p {
     background-color: white !important;
 }
 
+.empregos-form {
+    position: inherit !important;
+    width: 90% !important;
+}
+
 form.form-control {
     z-index: 2;
     position: fixed;
@@ -542,7 +547,7 @@ form.form-control {
     background-color: var(--parcelas);
     border-radius: 10px;
     border: none;
-    height: 700px;
+    height: 500px;
     padding: 20px;
     overflow-y: scroll;
     box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
@@ -587,7 +592,8 @@ form.form-control::-webkit-scrollbar {
     color: var(--white);
     margin: 0;
 }
-.form-control .title h2{
+
+.form-control .title h2 {
     color: var(--white);
     margin: 0;
 }
@@ -766,6 +772,10 @@ form.form-control::-webkit-scrollbar {
     margin: 0;
     align-items: center;
     width: 100%;
+}
+
+.empregos-form button.btn {
+    margin-right: 10px;
 }
 
 .form-group-novo .btn {

@@ -21,7 +21,7 @@
   
   .foto-emprego {
     width: 40%;
-    height: 250px;
+    height: 100%;
   }
   
   .nome-emp {
@@ -114,4 +114,5 @@
 
   .descricao{
     color:white;
+    padding: 10px;
   }
