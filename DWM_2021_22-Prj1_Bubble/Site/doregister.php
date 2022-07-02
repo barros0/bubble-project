@@ -3,6 +3,7 @@
 if (isset($_POST)) {
     $nome = $_POST["nome"];
     $username = $_POST["username"];
+    $username = str_replace(' ', '', $username);
     $email = $_POST["email"];
     $password = $_POST["password"];
     $password1 = $_POST["password1"];

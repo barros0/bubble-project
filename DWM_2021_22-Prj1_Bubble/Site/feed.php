@@ -6,6 +6,7 @@
 
     <div class="center">
         <?php include 'estrutura_post.php'; ?>
+
     </div>
 
     <div class="right">
