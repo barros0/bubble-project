@@ -37,8 +37,7 @@ while ($pub = $result_set->fetch_assoc()) {
                             if ($pub["id_user"] != $userq['id_user']) {
                             ?>
                                 <div class="reportar">
-                                    <i class='bx bx-error-alt'></i>
-                                    <p>Reportar</p>
+                                    <a href="./feed.php?id_pub=<?= $id_publicacao ?>"><i class='bx bx-error-alt'></i>Reportar</a>
                                 </div>
                             <?php
                             }
@@ -118,8 +117,13 @@ while ($pub = $result_set->fetch_assoc()) {
                 </div>
             </div>
         </div>
-
 <?php
     }
 }
+
+$pagina = basename($_SERVER["REQUEST_URI"]);
+if ($pagina != "feed.php") {
+    include('./estrutura_report.php');
+}
+
 ?>

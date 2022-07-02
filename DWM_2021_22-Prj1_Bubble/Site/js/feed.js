@@ -1,11 +1,11 @@
 $(document).ready(function () {
   $(".remover_publicacao").click(function () {
-    var a = $(".popup_remover_partilhar").css("display");
+    var a = $(this).children(".popup_remover_partilhar");
 
-    if (a == "none") {
-      $(".popup_remover_partilhar").slideDown();
+    if (a.css("display") == "none") {
+      a.slideDown();
     } else {
-      $(".popup_remover_partilhar").slideUp();
+      a.slideUp();
     }
   });
 });
