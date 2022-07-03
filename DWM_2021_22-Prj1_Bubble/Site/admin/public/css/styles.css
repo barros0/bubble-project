@@ -278,15 +278,17 @@ tbody tr:nth-child(odd) {
 }
 
 .mini-card {
+    display: flex;
     padding: 10px;
     width: 140px;
     height: 140px;
     background-color: var(--parcelas);
     border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .mini-card .icon {
-    margin-left: 8px;
     border-radius: 50%;
     padding: 10px;
     background-color: var(--items);
@@ -296,14 +298,12 @@ tbody tr:nth-child(odd) {
 }
 
 .mini-card .titulo {
-    padding-left: 10px;
     color: var(--palavras);
     text-align: left;
     font-size: 16px;
 }
 
 .mini-card .valor {
-    padding-left: 10px;
     color: var(--white);
     text-align: left;
     font-size: 18px;
@@ -314,6 +314,7 @@ tbody tr:nth-child(odd) {
     background-color: var(--parcelas);
     border-radius: 10px;
     padding: 20px;
+    padding-bottom: 37px;
     margin-bottom: 20px;
     height: 100%;
 }
@@ -338,6 +339,7 @@ tbody tr:nth-child(odd) {
 
 .widget.full {
     max-width: 100% !important;
+    margin-bottom: 30px;
 }
 
 .widget #users_idade {

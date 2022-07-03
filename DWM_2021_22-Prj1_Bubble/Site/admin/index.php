@@ -133,29 +133,21 @@ foreach ($generos as $key => $genero) {
                     <div class="mini-card">
                         <div>
                             <i class="fa fa-user icon"></i>
-                            <span class="dots"></span>
                         </div>
-
                         <h2 class="titulo">Users</h2>
                         <span class="valor"><?= $c_users ?></span>
                     </div>
-
                     <div class="mini-card">
                         <div>
                             <i class="fa fa-pen-clip icon"></i>
-                            <span class="dots"></span>
                         </div>
-
                         <h2 class="titulo">Publicações</h2>
                         <span class="valor"><?= $c_publicacoes ?></span>
                     </div>
-
                     <div class="mini-card">
                         <div>
-                            <i class="fa fa-user icon"></i>
-                            <span class="dots"></span>
+                        <i class="fa-solid fa-heart icon"></i>
                         </div>
-
                         <h2 class="titulo">Likes</h2>
                         <span class="valor"><?= $c_users ?></span>
                     </div>
