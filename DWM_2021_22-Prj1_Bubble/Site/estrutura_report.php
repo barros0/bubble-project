@@ -1,7 +1,7 @@
 <form class="form_reportar" action="reportar_post.php?id_pub=<?= $id_publicacao ?>" method="post">
     <div class="wrap_fechar_tit_reportar">
         <p>Reportar:</p>
-        <i onclick="location.href='feed.php';" id="fechar_modal_reportar" class='bx bx-x'></i>
+        <i onclick="location.href='javascript:history.back()';" id="fechar_modal_reportar" class='bx bx-x'></i>
     </div>
     <div class="div_select_form_reportar">
         <label for="select_form_reportar">Selecione o problema:</label>
