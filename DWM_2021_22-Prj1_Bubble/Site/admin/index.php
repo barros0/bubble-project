@@ -48,7 +48,7 @@ $videos_espaco =  converteTamanho(tamanhoPasta('../videos'));
 
 ?>
 
-<div class="title-page s-container align-items-center">
+<div class="title-page align-items-center nav_bar_index">
     <div class="space">
     </div>
     <div class="bigtitle">
@@ -63,8 +63,6 @@ $videos_espaco =  converteTamanho(tamanhoPasta('../videos'));
             </div>
         </div>
     </div>
-
-
 </div>
 
 <main class="container" id="main">
@@ -101,39 +99,26 @@ $videos_espaco =  converteTamanho(tamanhoPasta('../videos'));
                         <h2 class="titulo">Likes</h2>
                         <span class="valor"><?= $c_users ?></span>
                     </div>
-                    <div class="mini-card">
-                        <div>
-                            <i class="fa fa-pen-clip icon"></i>
-                            <span class="dots"></span>
-                        </div>
-
-                        <h2 class="titulo">Reports</h2>
-                        <span class="valor"><?= $c_users ?></span>
-                    </div>
-                </div>
-                <div class="col-12 admin-tops">
-                    <nav>
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
-                                Mais pesquisado</button>
-                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                                Topicos populares</button>
-                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
-                                Contact</button>
-                        </div>
-                    </nav>
-                    <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                            ...
-                        </div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-                    </div>
-
-
                 </div>
             </div>
-
+            <div class="d-flex flex-row justify-content-between">
+                <div class="widget">
+                    <div class="col-12">
+                        <h2 class="titulo">
+                            Géneros
+                        </h2>
+                        <canvas id="users_generos"></canvas>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="col-12">
+                        <h2 class="titulo">
+                            Nacionalidades
+                        </h2>
+                    </div>
+                    <canvas id="users_nacionalidades"></canvas>
+                </div>
+            </div>
         </div>
 
 
@@ -223,54 +208,123 @@ $videos_espaco =  converteTamanho(tamanhoPasta('../videos'));
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="row ">
-
-
-        <div class="card">
-            <p>sdsd</p>
-            <a href="#">
-                <span class="dots"></span>
-            </a>
+        <div class="widget full ">
+            <div class="col-12">
+                <h2 class="titulo">
+                    Idades por género
+                </h2>
+            </div>
+            <canvas id="users_idade"></canvas>
         </div>
-
-
-        <div class="title-table">
-            <h2>Reports</h2>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>header1</th>
-                    <th>header2</th>
-                    <th>header3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>text1.1</td>
-                    <td>text1.2</td>
-                    <td>text1.3</td>
-                </tr>
-                <tr>
-                    <td>text2.1</td>
-                    <td>text2.2</td>
-                    <td>text2.3</td>
-                </tr>
-                <tr>
-                    <td>text3.1</td>
-                    <td>text3.2</td>
-                    <td>text3.3</td>
-                </tr>
-                <tr>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </main>
 
+<script>
+    /// crias charts com js e frame com valores recolhidos em php
+
+    /* genero*/
+    const labelsgenero = <?php echo json_encode(array_values($generos)); ?>;
+    const datagenero = {
+        labels: labelsgenero,
+
+        datasets: [{
+
+            backgroundColor: ['blue', 'pink', 'yellow'],
+            borderColor: ['blue', 'pink', 'yellow'],
+            data: <?php echo json_encode($valoresgeneros); ?>
+        }]
+    };
+
+    const configgenero = {
+        type: 'pie',
+        data: datagenero,
+    };
+    const generoChart = new Chart(
+        document.getElementById('users_generos'),
+        configgenero
+    );
+
+    /* fim genero */
+
+    function random_cores(limite) {
+        var colors = [];
+        while (colors.length < limite) {
+            do {
+                var color = Math.floor((Math.random() * 1000000) + 1);
+            } while (colors.indexOf(color) >= 0);
+            colors.push("#" + ("000000" + color.toString(16)).slice(-6));
+        }
+        return colors;
+    }
+
+
+    var nacionalidades_labels_keys = <?php echo json_encode(array_keys($nacionalidades)); ?>;
+    var cores = random_cores(<?php echo count($nacionalidades); ?>);
+    const datanacionalidades = {
+        labels: nacionalidades_labels_keys,
+        datasets: [{
+            label: nacionalidades_labels_keys,
+            backgroundColor: cores,
+            data: <?php echo json_encode(array_values($nacionalidades)); ?>
+        }]
+
+    };
+
+    const confignacionalidades = {
+        type: 'pie',
+        data: datanacionalidades,
+        options: {
+            legend: {
+                display: false,
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                }
+            },
+        }
+
+
+    };
+    const nacionalidadesChart = new Chart(
+        document.getElementById('users_nacionalidades'),
+        confignacionalidades
+    );
+
+    /* fim nacionalidade */
+
+
+    /* idade */
+    const dataidades = {
+        datasets: [{
+            type: 'bar',
+            label: 'Masculino',
+            backgroundColor: 'red',
+            data: <?php echo json_encode($idades['Masculino']); ?>
+        }, {
+            type: 'bar',
+            label: 'Feminino',
+            backgroundColor: 'pink',
+            data: <?php echo json_encode($idades['Feminino']); ?>,
+        }, {
+            type: 'bar',
+            label: 'Outro',
+            backgroundColor: 'yellow',
+            data: <?php echo json_encode($idades['Outro']); ?>,
+        }],
+
+    };
+
+    const configidades = {
+        type: 'bar',
+        data: dataidades,
+    };
+    const idadesChart = new Chart(
+        document.getElementById('users_idade'),
+        configidades
+    );
+    /*fim idade*/
+</script>
 
 
 <?php

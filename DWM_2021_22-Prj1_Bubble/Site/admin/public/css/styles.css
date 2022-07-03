@@ -189,14 +189,22 @@ img {
 }
 
 .row {
+    margin: 0;
     justify-content: space-between;
 }
 
-.container {
+.nav_bar_index {
+    position: fixed;
     width: 100%;
+    padding: 10px;
+}
+
+.container {
+    width: 75%;
     height: 100%;
+    padding-top: 100px;
     padding-left: 60px;
-    padding-top: 30px;
+    margin-right: 68px;
 }
 
 .atualizar_faq_form {
@@ -307,6 +315,7 @@ tbody tr:nth-child(odd) {
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
+    height: 100%;
 }
 
 .armazenamento .item-titulo {
@@ -329,7 +338,6 @@ tbody tr:nth-child(odd) {
 
 .widget.full {
     max-width: 100% !important;
-
 }
 
 .widget #users_idade {
@@ -338,8 +346,8 @@ tbody tr:nth-child(odd) {
 
 .widget {
     padding: 20px;
-    background-color: var(--items);
-    margin: 20px;
+    background-color: var(--parcelas);
+    margin-top: 20px;
     max-width: 250px;
     border-radius: 10px;
 }
@@ -349,9 +357,6 @@ tbody tr:nth-child(odd) {
     font-size: 24px;
 }
 
-
-/*
-/*Overlay*/
 .preloader .overlay {
     position: absolute;
     bottom: 0;
@@ -360,7 +365,6 @@ tbody tr:nth-child(odd) {
     width: 100%;
     background-color: var(--background);
     overflow: hidden;
-    /*transition:1s;*/
     animation-duration: 1.5s;
     animation-name: over-preloader;
     animation-iteration-count: infinite;
@@ -382,9 +386,8 @@ tbody tr:nth-child(odd) {
 
 .s-container {
     width: 100%;
-    height: 100%;
-    padding: 10px;
     padding-left: 370px;
+    height: 100%;
 }
 
 label {
@@ -420,7 +423,6 @@ input#resposta {
 }
 
 .notificacoes {
-    /*background-color: var(--parcelas);*/
     border-radius: 10px;
     padding: 10px;
 }
@@ -443,10 +445,7 @@ input#resposta {
     padding-left: 16px;
 }
 
-.notificacao .titulo
-
-/*h2*/
-a {
+.notificacao .titulo a {
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;

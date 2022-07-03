@@ -62,17 +62,17 @@ foreach ($generos as $key => $genero) {
 ?>
 
 
-    <div class="s-container">
+<div class="s-container">
 
-        <div class="table-responsive">
-            <div class="table-header row">
-                <div class="titulo col-10">
-                    <h2>Lista de utilizadores</h2>
-                </div>
+    <div class="table-responsive">
+        <div class="table-header row">
+            <div class="titulo col-10">
+                <h2>Lista de utilizadores</h2>
             </div>
-            <table class="table" id="users">
-                <caption></caption>
-                <thead>
+        </div>
+        <table class="table" id="users">
+            <caption></caption>
+            <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
@@ -80,10 +80,10 @@ foreach ($generos as $key => $genero) {
                     <th scope="col">Estado</th>
                     <th scope="col">Editar</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 <?php foreach ($users as $user) {
-                    ?>
+                ?>
                     <tr>
                         <th scope="row"><?= $user['id_user'] ?></th>
                         <td>
@@ -92,9 +92,9 @@ foreach ($generos as $key => $genero) {
                         </td>
                         <td><?= $user['email'] ?></td>
                         <td>
-                            <p class="p10t">   <span class="mini-card bg-user-e<?= $user['estado_user_id'] ?>">
-                    <?= $user['nome_estado_user'] ?>
-                </span></p>
+                            <p class="p10t"> <span class="mini-card bg-user-e<?= $user['estado_user_id'] ?>">
+                                    <?= $user['nome_estado_user'] ?>
+                                </span></p>
                         </td>
                         <td>
                             <a href="./user.php?userid=<?= $user['id_user'] ?>">
@@ -106,158 +106,18 @@ foreach ($generos as $key => $genero) {
 
 
 
-                </tbody>
-            </table>
-        </div>
-
-        <div class="d-flex flex-wrap">
-            <div class="widget">
-                <div class="col-12">
-                    <h2 class="titulo">
-                        Géneros
-                    </h2>
-                    <canvas id="users_generos"></canvas>
-                </div>
-
-            </div>
-            <div class="widget">
-                <div class="col-12">
-                    <h2 class="titulo">
-                        Nacionalidades
-                    </h2>
-                </div>
-                <canvas id="users_nacionalidades"></canvas>
-            </div>
-        </div>
-
-        <div class="widget full ">
-            <div class="col-12">
-                <h2 class="titulo">
-                    Idades por género
-                </h2>
-            </div>
-            <canvas id="users_idade"></canvas>
-        </div>
-
-
-        <script>
-            /// crias charts com js e frame com valores recolhidos em php
-
-            /* genero*/
-            const labelsgenero = <?php echo json_encode(array_values($generos)); ?>;
-            const datagenero = {
-                labels: labelsgenero,
-
-                datasets: [{
-
-                    backgroundColor: ['blue', 'pink', 'yellow'],
-                    borderColor: ['blue', 'pink', 'yellow'],
-                    data: <?php echo json_encode($valoresgeneros); ?>
-                }]
-            };
-
-            const configgenero = {
-                type: 'pie',
-                data: datagenero,
-            };
-            const generoChart = new Chart(
-                document.getElementById('users_generos'),
-                configgenero
-            );
-
-            /* fim genero */
-
-            function random_cores(limite) {
-                var colors = [];
-                while (colors.length < limite) {
-                    do {
-                        var color = Math.floor((Math.random() * 1000000) + 1);
-                    } while (colors.indexOf(color) >= 0);
-                    colors.push("#" + ("000000" + color.toString(16)).slice(-6));
-                }
-                return colors;
-            }
-
-
-            var nacionalidades_labels_keys = <?php echo json_encode(array_keys($nacionalidades)); ?>;
-            var cores = random_cores( <?php echo count($nacionalidades); ?>);
-            const datanacionalidades = {
-                labels: nacionalidades_labels_keys,
-                datasets: [{
-                    label: nacionalidades_labels_keys,
-                    backgroundColor: cores,
-                    data: <?php echo json_encode(array_values($nacionalidades)); ?>
-                }]
-
-            };
-
-            const confignacionalidades = {
-                type: 'pie',
-                data: datanacionalidades,
-                options: {
-                    legend: {
-                        display: false,
-                    },
-                    plugins: {
-                        legend: {
-                            display: false,
-                        }
-                    },
-                }
-
-
-            };
-            const nacionalidadesChart = new Chart(
-                document.getElementById('users_nacionalidades'),
-                confignacionalidades
-            );
-
-            /* fim nacionalidade */
-
-
-            /* idade */
-            const dataidades = {
-                datasets: [{
-                    type: 'bar',
-                    label: 'Masculino',
-                    backgroundColor: 'red',
-                    data: <?php echo json_encode($idades['Masculino']); ?>
-                }, {
-                    type: 'bar',
-                    label: 'Feminino',
-                    backgroundColor: 'pink',
-                    data:  <?php echo json_encode($idades['Feminino']); ?>,
-                }
-                    , {
-                        type: 'bar',
-                        label: 'Outro',
-                        backgroundColor: 'yellow',
-                        data:  <?php echo json_encode($idades['Outro']); ?>,
-                    }],
-
-            };
-
-            const configidades = {
-                type: 'bar',
-                data: dataidades,
-            };
-            const idadesChart = new Chart(
-                document.getElementById('users_idade'),
-                configidades
-            );
-            /*fim idade*/
-
-
-        </script>
-
-
-
+            </tbody>
+        </table>
     </div>
-    <script>
-        $(document).ready( function () {
-            $('#users').DataTable();
-        } );
-    </script>
+</div>
+
+
+</div>
+<script>
+    $(document).ready(function() {
+        $('#users').DataTable();
+    });
+</script>
 
 <?php
 include('./partials/footer.php');
