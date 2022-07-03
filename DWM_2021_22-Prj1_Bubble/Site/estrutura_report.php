@@ -16,7 +16,7 @@
     </div>
     <div class="div_reportar_coment">
         <label for="reportar_coment">Diga nos o motivo:</label>
-        <textarea name="reportar_coment"></textarea>
+        <textarea name="reportar_coment" required></textarea>
     </div>
     <input type="submit" value="Reportar">
 </form>

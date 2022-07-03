@@ -568,5 +568,6 @@ textarea:focus {
 
   #nav_bar_responsive, #nav_bar_bottom_responsive {
     display: block;
+    z-index: 100;
   }
 }
