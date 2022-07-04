@@ -11,8 +11,12 @@ if ($texto != "") {
     $stmt_report = $conn->prepare("INSERT INTO reports (user_id,categoria,report_comment,publicacao_id) VALUES(?,?,?,?)");
     $stmt_report->bind_param('issi', $userq, $categoria, $texto, $id_pub);
 
+    array_push($_SESSION['alerts']['success'], "Reportado Com Sucesso");
+
     $stmt_report->execute();
     $stmt_report->close();
+} else {
+    array_push($_SESSION['alerts']['errors'], "Não foi possível reportar");
 }
 
 header('location:feed.php');

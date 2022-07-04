@@ -14,6 +14,7 @@ $stmt_sobres_skills->bind_param('ss', $sobre, $skills);
 $stmt_sobres_skills->execute();
 $stmt_sobres_skills->close();
 
+
 if ($nacionalidade != 'None') {
     $stmt_nacionalidades = $conn->prepare("UPDATE users set nacionalidade = ? WHERE id_user = " . $_SESSION['user']['id_user']);
     $stmt_nacionalidades->bind_param('i', $nacionalidade);
@@ -91,5 +92,7 @@ if ($imagem_banner != "") {
         }
     }
 }
+
+array_push($_SESSION['alerts']['success'], "Atualizado Com Sucesso");
 
 header('location:perfil.php');
