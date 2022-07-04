@@ -81,8 +81,9 @@ if (isset($_GET['id_user_msg'])) {
         <div class="wrap-conteudo-mensagens">
 
             <div class="conteudo-mensagens">
-                <div class="conteudo_user">
-                <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                <div class="conteudo_user d-flex flex-row">
+                    <div><img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil"></div>
+                    <div>username</div>
                 </div>
                 <div class="conteudo-chat">
                     <?php

@@ -16,15 +16,16 @@
   position: fixed;
   height: 100%;
   width: 25%;
+  z-index: 1000;
+  background: #1c1c1c;
   padding-top: 5px;
-  border-right: 3px solid #404040;
+  border-right: 4px solid #404040;
 }
 
 .wrap_btn {
   height: 100%;
   display: flex;
   flex-direction: row;
-  margin-right: 35px;
   align-items: center;
 }
 
@@ -67,6 +68,7 @@
   box-sizing: border-box;
   align-items: center;
   display: flex;
+  height: 100%;
   justify-content: center;
 }
 
@@ -103,11 +105,20 @@
   background: #ccc;
 }
 
+.conteudo_user {
+  color: white;
+  align-items: center;
+  padding: 10px;
+  padding-left: 40px;
+  border-bottom: 4px solid #404040;
+}
+
 .conteudo_user img {
   width: 50px;
   object-fit: cover;
   border-radius: 100%;
   height: 50px;
+  margin-right: 10px;
 }
 
 /*mensagens*/
@@ -121,9 +132,9 @@
 
 .conteudo-mensagens {
   padding: 10px;
+  padding-top: 0;
   height: 100%;
-  width: 95%;
-  margin-left: auto;
+  width: 100%;
 }
 
 /*mensagem*/
@@ -140,13 +151,9 @@
 }
 
 .conteudo-chat {
-  width: 85%;
+  width: 90%;
   height: 100%;
   overflow: auto;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 15px;
-  padding-top: 30px;
   border-radius: 10px;
   margin-top: 30px;
 }
@@ -197,7 +204,6 @@
 
 /*listagem chats*/
 .pesquisa-fixed {
-  display: flex;
   height: 70px;
   padding: 10px;
   padding-left: 20px;
@@ -272,6 +278,7 @@ form.form-mensagem {
 .foto-perfil img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
   border-radius: 100%;
 }
 
