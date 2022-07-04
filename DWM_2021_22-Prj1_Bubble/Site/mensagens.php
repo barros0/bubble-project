@@ -58,23 +58,26 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
 
                     //ADICIONAR PROTECAO PARA O PROPRIO USER
 
-                    //EVITAR DUPLICADOS
+                    if ($id_user == $row['id_user']) {
+
+
+                    } else {
 
                 ?>
 
-                    <div class="wrap-pessoa">
-                        <div class="foto-perfil-container">
-                            <div class="foto-perfil">
-                                <a href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>">
-                                    <img src='./img/fotos_perfil/<?= $row['profile_image'] ?>' alt='<?= $row['username'] ?>'>
-                                </a>
+                        <div class="wrap-pessoa">
+                            <div class="foto-perfil-container">
+                                <div class="foto-perfil">
+                                    <a href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>">
+                                        <img src='./img/fotos_perfil/<?= $row['profile_image'] ?>' alt='<?= $row['username'] ?>'>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                 <?php
+                    }
                 }
-
                 ?>
 
             </div>
@@ -106,42 +109,30 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
                     $user_to = $rowMsg['to_id_user'];
                     $user_from = $rowMsg['from_id_user'];
 
-                    
-                
-/*
-                //listar mensagens enviadas
-                while ($row = $mensagensEnviadas->fetch_assoc()) {
-
-                    $row["id_mensagem"];
-*/
-                    //listar mensagens recebidas/*
-
                     if ($user_to == $id_user) {
 
                 ?>
 
-                    <div class="row-mensagem">
-                    <div class="icone-perfil-row-mensagem">
-                            <div class="foto-perfil">
-                                <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                        <div class="row-mensagem">
+                            <div class="icone-perfil-row-mensagem">
+                                <div class="foto-perfil">
+                                    <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                                </div>
                             </div>
-                        </div>
-                        <div class="conteudo-row-mensagem enviada">
-                            <span><?= $rowMsg['mensagem'] ?></span>
-                        </div>
+                            <div class="conteudo-row-mensagem enviada">
+                                <span><?= $rowMsg['mensagem'] ?></span>
+                            </div>
 
-                        
-
-                    </div>
+                        </div>
 
                     <?php
 
-                    }else{
+                    } else {
 
                     ?>
 
                         <div class="row-mensagem">
-                        
+
                             <div class="conteudo-row-mensagem">
                                 <span><?= $rowMsg['mensagem'] ?> </span>
                             </div>
@@ -156,7 +147,7 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
                 <?php
 
                     }
-               }
+                }
 
                 ?>
 
@@ -167,24 +158,21 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
     </div>
     <form class="form-mensagem" action="./enviar_mensagem.php?to_user=<?= $imagem['id_user'] ?>" method="POST">
 
-    <div class="escrever-mensagem">
-        <div class="texto-mensagem">
+        <div class="escrever-mensagem">
+            <div class="texto-mensagem">
 
-           
                 <textarea class="mensagem" type="text" placeholder="Escreva uma Mensagem..." name="mensagem" id="mensagem"></textarea>
 
-           
-
-        </div>
-        <div class="conteudo-multimedia">
+            </div>
+            <div class="conteudo-multimedia">
 
                 <button type="submit" class="btn btn-primary icones-chat"><i class='bx bxs-send'></i></button>
 
-            <div class="icones-chat"><i class="fa-solid fa-plus"></i></div>
+                <div class="icones-chat"><i class="fa-solid fa-plus"></i></div>
+
+            </div>
 
         </div>
-      
-    </div>
     </form>
 </div>
 
