@@ -10,6 +10,8 @@ $dono_pub_perfil = $conn->query("select * from publicacoes where publicacao_id="
 //proteção
 if ($dono_pub_perfil['user_id'] === $id_user_session) {
     $delete_post_perfil = $conn->query("UPDATE publicacoes SET estado_pub = '$estado_eliminada' WHERE publicacao_id = " . $_GET['id_pub']);
+    $delete_post_perfil = $conn->close();
+
     array_push($_SESSION['alerts']['success'], "Eliminado com sucesso!");
 } else {
     array_push($_SESSION['alerts']['errors'], "Não podes eliminar uma publicação que não seja tua!");

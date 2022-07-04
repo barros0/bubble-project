@@ -155,6 +155,7 @@ nav, header {
 
 .popup_perfil a img {
   width: 55px;
+  object-fit: cover;
   height: 55px;
   border-radius: 100%;
   margin: 10px;

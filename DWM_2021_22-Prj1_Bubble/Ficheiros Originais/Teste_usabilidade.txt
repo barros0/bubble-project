@@ -1,0 +1,54 @@
+Objetivos:
+-Criação de Perfil
+-Criação de Post
+-Publicação Emprego
+-Gestão de Conta
+
+UTILIZADOR NUMERO 1:
+O Objetivo deste teste de usabilidade será criar uma conta, para isso vou ter de passar pelo sistema de registo, login e edição de perfil.
+
+Como participante, vai estar um aluno de 12º de programação.
+
+O Utilizador do 12º Ano falhou a palavra-passe e foi dado um aviso que a palavra passe estava incorreta, ou seja foi possível um registo e 
+login sem complicações, dado que era apresentado um aviso em cada campo que contivesse erros.
+Para a criação do perfil foi bastante simples o formulário de inserção não apresentava qualquer tipo de complexidade, no entanto o utilizador 
+tentou colocar uma imagem com extensão .webp, e foi apresentado um alerta informativo que o utilizador não podia dar upload desse tipo de ficheiros, 
+e apenas seriam aceites .jpg .gif .jpeg e .png.
+
+Tempo esperado: 5 minutos
+Duração: 3 minutos
+Dificuldade: Facil
+O Utilizador de 12º ano relatou que a interface cumpria com o seu objetivo, sendo consistente e eficaz.
+
+UTILIZADOR NUMERO 2:
+O Objetivo deste teste de usabilidade será criar uma publicação e uma oferta de emprego, para fazer uma publicação é bastante simples, 
+tendo em conta que no header está um ícone de adicionar que nos leva à criação do post, está ainda na página principal um botão bastante 
+bem destacado relativo à criação da publicação.Ainda no formulário de inserção de um post é possível apenas adicionar uma imagem, texto, 
+ou ambos, dando várias opções ao utilizador.
+
+Como participante, vai estar presente um programador senior do GitHub
+
+Na página oferta de emprego, aparecem várias ofertas disponíveis e ainda um botão bem destacado, este botão abre uma página de gestão dos 
+próprios anúncios onde podemos adicionar, editar e eliminar.
+
+Tempo esperado: 2 minutos
+Duração: 1 minutos
+Dificuldade: Facil
+
+O programador senior da empresa GitHub, relatou que a interface está 100% funcional e cumpre com o seu objetivo, faltando apenas um 
+temporizador que faça desaparecer as notificações de erro/alerta.
+
+UTILIZADOR NUMERO 3:
+Como participante, vai estar presente um desenvolvedor do StackOverflow
+
+O Objetivo deste teste de usabilidade será fazer uma gestão dos dados pessoais associados à conta, o utilizador decidiu mudar o seu username, 
+mas este apresentou um alerta que dizia que este já existia. Na página que regista a atividade de login o mesmo deparou-se que estavam a fazer 
+login a partir de outro computador que não lhe pertencia e apareceu-lhe uma recomendação que alterasse a sua palavra-passe.
+
+Tempo esperado: 1 minuto
+Duração: 30 segundos
+Dificuldade: Facil
+
+O desenvolvedor do StackOverflow, relatou que o sistema de alteração de dados é bastante consistente e agradável, mas que devia ser 
+
+aprofundado uma dica para alteração de username, que ainda não tenha sido utilizado
