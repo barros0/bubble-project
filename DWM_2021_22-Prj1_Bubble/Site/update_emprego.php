@@ -160,3 +160,5 @@ if (isset($_GET['empregoid'])) {
         exit;
     }
 }
+
+?>

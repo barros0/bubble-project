@@ -4,30 +4,28 @@ include 'page_parts/header.php';
 
 include 'page_parts/left.php';
 
-//buscar detalhes na base de dados
-$query = 'SELECT * FROM mensagens';
-$lista_mensagens = $conn->query($query);
+//buscar id do utilizador logado
+$id_user = $_SESSION['user']['id_user'];
 
-/*
-//buscar as mensagens recebidas
-$queryRecebidas = 'select * from mensagens where to_id_user ="' . $_SESSION['user']['id_user'] . '"';
-$mensagensRecebidas = $conn->query($queryRecebidas);
-*/
+//buscar id da conversa selecionada
+$idmsg = $_GET['id_user_msg'];
 
-//$numMensagens = $mensagensEnviadas -> num_rows; //num de mensagens com users
+///Buscar utilizadores cujo user trocou mensagens
+$query = "SELECT DISTINCT id_user, profile_image, username FROM users INNER JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
+$lista_users_mensagens = $conn->query($query);
 
+//buscar mensagens do utilizador selecionado..
+$query_msg = "SELECT * FROM mensagens WHERE to_id_user = '$idmsg' AND from_id_user = '$id_user' OR to_id_user = '$id_user' AND from_id_user = '$idmsg'";
+$mensagens = $conn->query($query_msg);
 
-//provavelmente esta parte vai ser em arrays
-/*
-$nomePessoa = "Joãozinho Mineiro"; //nome do destinatario
-$dataMensagem = ""; //data do envio da mensagem
+//buscar foto do utilizador selecionado
+$imagemq = "SELECT * FROM users WHERE id_user = '$idmsg'";
+$imagem = $conn->query($imagemq)->fetch_assoc();
 
+//buscar foto do utilizador logado
+$imagemUser = "SELECT * FROM users WHERE id_user = '$id_user'";
+$imagemUti = $conn->query($imagemUser)->fetch_assoc();
 
-$vista = ""; //verifica se a mensagem foi enviada
-$dataVista = ""; //data da visualizacao da mensagem
-$dataEnvio = ""; //data do envio da mensagem
-$fotos = ""; //src de fotos enviadas
-*/
 ?>
 
 <div class="conteudo">
@@ -53,30 +51,28 @@ $fotos = ""; //src de fotos enviadas
                     </div>
                 </div>
 
-                <!--Pessoas-->
                 <?php
+                //mostrar as pessoas cujo utilizador trocou mensagens
 
-                while ($row = $lista_mensagens->fetch_assoc()) {
+                while ($row = $lista_users_mensagens->fetch_assoc()) {
 
-                    //buscar os utilizadores que user enviou e recebeu mensagem
-                    $user_to = $row['to_id_user'];
-                    $user_from = $row['from_id_user'];
-                }
+                    //ADICIONAR PROTECAO PARA O PROPRIO USER
 
-                $queryUsers = 'SELECT * FROM users WHERE id_user = "' . $user_to . '" OR id_user = "' . $user_from . '"';
-                $users = $conn->query($queryUsers);
+                    //EVITAR DUPLICADOS
 
-                while ($uti = $users->fetch_assoc()) {
+                ?>
 
-                    //mostrar a foto deles na listagem de mensagens
-
-                    echo '<div class="wrap-pessoa">
+                    <div class="wrap-pessoa">
                         <div class="foto-perfil-container">
                             <div class="foto-perfil">
-                                <img src=' . $uti["profile_image"] . ' alt=' . $uti["nome"] . '>
+                                <a href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>">
+                                    <img src='./img/fotos_perfil/<?= $row['profile_image'] ?>' alt='<?= $row['username'] ?>'>
+                                </a>
                             </div>
                         </div>
-                    </div>';
+                    </div>
+
+                <?php
                 }
 
                 ?>
@@ -102,57 +98,65 @@ $fotos = ""; //src de fotos enviadas
 
                 <?php
 
-                $user = $_SESSION['user']['id_user'];
-
-                //buscar as mensagens enviadas
-                $queryMensagens = 'SELECT * FROM mensagens WHERE from_id_user = "' . $_SESSION['user']['id_user'] . '" OR to_id_user = "' . $_SESSION['user']['id_user'] . '"';
-                $mensagensEnviadas = $conn->query($queryMensagens);
-
                 //listar as mensagens
 
-                while ($row = $lista_mensagens->fetch_assoc()) {
+                while ($rowMsg = $mensagens->fetch_assoc()) {
 
                     //buscar os utilizadores que user enviou e recebeu mensagem
-                    $user_to = $row['to_id_user'];
-                    $user_from = $row['from_id_user'];
-                }
+                    $user_to = $rowMsg['to_id_user'];
+                    $user_from = $rowMsg['from_id_user'];
 
+                    
+                
+/*
                 //listar mensagens enviadas
                 while ($row = $mensagensEnviadas->fetch_assoc()) {
 
                     $row["id_mensagem"];
-
+*/
                     //listar mensagens recebidas/*
 
-                    echo '<div class="row-mensagem">
-            
-                    <div class="conteudo-row-mensagem">
-                        <span>' . $row["mensagem"] . '</span>
-                    </div>
-        
+                    if ($user_to == $id_user) {
+
+                ?>
+
+                    <div class="row-mensagem">
                     <div class="icone-perfil-row-mensagem">
-                        <div class="foto-perfil">
-                            <img src="img/header/download.png" alt="Foto de Perfil">
+                            <div class="foto-perfil">
+                                <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                            </div>
                         </div>
-                    </div>
-                    
-                 </div>';
+                        <div class="conteudo-row-mensagem enviada">
+                            <span><?= $rowMsg['mensagem'] ?></span>
+                        </div>
 
-                if ($user_to != $user) {
+                        
 
-                    echo '<div class="row-mensagem">
-                <div class="icone-perfil-row-mensagem">
-                    <div class="foto-perfil">
-                        <img src="img/header/download.png" alt="Foto de Perfil">
                     </div>
-                </div>
-                <div class="conteudo-row-mensagem enviada">
-                    <span>' . $row["mensagem"] . '</span>
-                </div>
-                </div>';
-                
+
+                    <?php
+
+                    }else{
+
+                    ?>
+
+                        <div class="row-mensagem">
+                        
+                            <div class="conteudo-row-mensagem">
+                                <span><?= $rowMsg['mensagem'] ?> </span>
+                            </div>
+
+                            <div class="icone-perfil-row-mensagem">
+                                <div class="foto-perfil">
+                                    <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
+                                </div>
+                            </div>
+                        </div>
+
+                <?php
+
                     }
-                }
+               }
 
                 ?>
 
@@ -161,24 +165,27 @@ $fotos = ""; //src de fotos enviadas
         </div>
 
     </div>
+    <form class="form-mensagem" action="./enviar_mensagem.php?to_user=<?= $imagem['id_user'] ?>" method="POST">
 
     <div class="escrever-mensagem">
         <div class="texto-mensagem">
-            <form class="form-mensagem" action="#" method="POST">
-                <textarea class="mensagem" type="text" placeholder="Escreva uma Mensagem..." name="mensagem"></textarea>
 
-            </form>
+           
+                <textarea class="mensagem" type="text" placeholder="Escreva uma Mensagem..." name="mensagem" id="mensagem"></textarea>
+
+           
 
         </div>
         <div class="conteudo-multimedia">
 
-            <div class="icones-chat"><i class='bx bxs-send'></i></div>
+                <button type="submit" class="btn btn-primary icones-chat"><i class='bx bxs-send'></i></button>
 
             <div class="icones-chat"><i class="fa-solid fa-plus"></i></div>
 
         </div>
+      
     </div>
-
+    </form>
 </div>
 
 </div>
