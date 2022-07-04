@@ -7,24 +7,29 @@ include 'page_parts/left.php';
 //buscar id do utilizador logado
 $id_user = $_SESSION['user']['id_user'];
 
-//buscar id da conversa selecionada
-$idmsg = $_GET['id_user_msg'];
-
 ///Buscar utilizadores cujo user trocou mensagens
 $query = "SELECT DISTINCT id_user, profile_image, username FROM users INNER JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
 $lista_users_mensagens = $conn->query($query);
 
-//buscar mensagens do utilizador selecionado..
-$query_msg = "SELECT * FROM mensagens WHERE to_id_user = '$idmsg' AND from_id_user = '$id_user' OR to_id_user = '$id_user' AND from_id_user = '$idmsg'";
-$mensagens = $conn->query($query_msg);
+//verificar se o url conteem id_user_msg para entao carregar as respetivas mensagens
+if (isset($_GET['id_user_msg'])) {
 
-//buscar foto do utilizador selecionado
-$imagemq = "SELECT * FROM users WHERE id_user = '$idmsg'";
-$imagem = $conn->query($imagemq)->fetch_assoc();
+    //buscar id da conversa selecionada
+    $idmsg = $_GET['id_user_msg'];
 
-//buscar foto do utilizador logado
-$imagemUser = "SELECT * FROM users WHERE id_user = '$id_user'";
-$imagemUti = $conn->query($imagemUser)->fetch_assoc();
+    //buscar mensagens do utilizador selecionado
+    $query_msg = "SELECT * FROM mensagens WHERE to_id_user = '$idmsg' AND from_id_user = '$id_user' OR to_id_user = '$id_user' AND from_id_user = '$idmsg'";
+    $mensagens = $conn->query($query_msg);
+
+    //buscar foto do utilizador selecionado
+    $imagemq = "SELECT * FROM users WHERE id_user = '$idmsg'";
+    $imagem = $conn->query($imagemq)->fetch_assoc();
+
+    //buscar foto do utilizador logado
+    $imagemUser = "SELECT * FROM users WHERE id_user = '$id_user'";
+    $imagemUti = $conn->query($imagemUser)->fetch_assoc();
+}
+
 
 ?>
 
@@ -56,13 +61,6 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
 
                 while ($row = $lista_users_mensagens->fetch_assoc()) {
 
-                    //ADICIONAR PROTECAO PARA O PROPRIO USER
-
-                    if ($id_user == $row['id_user']) {
-
-
-                    } else {
-
                 ?>
 
                         <div class="wrap-pessoa">
@@ -76,7 +74,7 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
                         </div>
 
                 <?php
-                    }
+                    
                 }
                 ?>
 
@@ -102,6 +100,9 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
                 <?php
 
                 //listar as mensagens
+
+                if (isset($_GET['id_user_msg'])) {
+
 
                 while ($rowMsg = $mensagens->fetch_assoc()) {
 
@@ -148,6 +149,7 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
 
                     }
                 }
+            }
 
                 ?>
 
@@ -156,6 +158,12 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
         </div>
 
     </div>
+
+    <?php
+
+    if (isset($_GET['id_user_msg'])) {
+
+     ?>
     <form class="form-mensagem" action="./enviar_mensagem.php?to_user=<?= $imagem['id_user'] ?>" method="POST">
 
         <div class="escrever-mensagem">
@@ -174,6 +182,10 @@ $imagemUti = $conn->query($imagemUser)->fetch_assoc();
 
         </div>
     </form>
+    <?php
+
+    }
+ ?>
 </div>
 
 </div>
