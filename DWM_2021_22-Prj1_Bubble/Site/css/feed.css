@@ -66,6 +66,10 @@
   text-decoration: none;
 }
 
+.post_user_name:hover {
+  text-decoration: underline;
+}
+
 .post_user_date {
   color: #bdbdbd;
   font-size: 13px;
@@ -427,8 +431,13 @@ textarea:focus {
 }
 
 .evento_info a {
+  text-decoration: none;
   font-size: 13px;
   color: #bdbdbd;
+}
+
+.evento_info a:hover {
+  text-decoration: underline;
 }
 
 .create_post_button {
