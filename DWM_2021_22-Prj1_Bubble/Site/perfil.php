@@ -168,6 +168,15 @@ if ($other_profile) {
                 </div>
             </div>
             <div class="posts_user">
+                <?php
+                if (implode($count_publicacoes) == 0) {
+                ?>
+                    <div class="sem_publicacoes">
+                        <p style="color: white; text-align:center;">Este utilizador não tem publicações</p>
+                    </div>
+                <?php
+                }
+                ?>
                 <?php include 'estrutura_post_user.php'; ?>
             </div>
         </div>
