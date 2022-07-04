@@ -81,26 +81,19 @@ if (isset($_GET['id_user_msg'])) {
         <div class="wrap-conteudo-mensagens">
 
             <div class="conteudo-mensagens">
-
+                <div class="conteudo_user">
+                <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                </div>
                 <div class="conteudo-chat">
-
                     <?php
-
                     //listar as mensagens
-
                     if (isset($_GET['id_user_msg'])) {
-
-
                         while ($rowMsg = $mensagens->fetch_assoc()) {
-
                             //buscar os utilizadores que user enviou e recebeu mensagem
                             $user_to = $rowMsg['to_id_user'];
                             $user_from = $rowMsg['from_id_user'];
-
                             if ($user_to == $id_user) {
-
                     ?>
-
                                 <div class="row-mensagem">
                                     <div class="icone-perfil-row-mensagem">
                                         <div class="foto-perfil">
@@ -110,42 +103,28 @@ if (isset($_GET['id_user_msg'])) {
                                     <div class="conteudo-row-mensagem enviada">
                                         <span><?= $rowMsg['mensagem'] ?></span>
                                     </div>
-
                                 </div>
-
                             <?php
-
                             } else {
-
                             ?>
-
                                 <div class="row-mensagem">
-
                                     <div class="conteudo-row-mensagem">
                                         <span><?= $rowMsg['mensagem'] ?> </span>
                                     </div>
-
                                     <div class="icone-perfil-row-mensagem">
                                         <div class="foto-perfil">
                                             <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
                                         </div>
                                     </div>
                                 </div>
-
                     <?php
-
                             }
                         }
                     }
-
                     ?>
-
                 </div>
-
             </div>
-
         </div>
-
         <?php
 
         if (isset($_GET['id_user_msg'])) {
