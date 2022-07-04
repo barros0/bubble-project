@@ -55,7 +55,7 @@ while ($user_pub = $result_set->fetch_assoc()) {
                             <?php
                             if ($user_pub["id_user"] === $userq['id_user']) {
                             ?>
-                                <form class="remover" action="delete_post.php?id_pub=<?= $id_publicacao ?>" method="POST">
+                                <form class="remover" action="delete_post_perfil.php?id_pub=<?= $id_publicacao ?>" method="POST">
                                     <i class='bx bxs-trash'></i>
                                     <input type="submit" name="delete" class="btn_remover" value="DELETE">
                                 </form>
