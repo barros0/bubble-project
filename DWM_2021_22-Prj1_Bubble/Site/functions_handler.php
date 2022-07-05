@@ -1,6 +1,6 @@
 <?php
 
-include './bd.php';
+
 
 
 // query completa $notificacao
@@ -17,15 +17,15 @@ function notificacao_handler($notificacao, $conn)
 
             $publicacao = $conn->query("Select * from publicacoes where publicacao_id = '" . $pub_gosto['publicacao_id'] . "'")->fetch_assoc();
 
-            $user = $conn->query("Select * from users where id_user = '" . $pub_gosto['user_id'] . "'")->fetch_assoc();
+            $user = $conn->query("Select * from users where id_user = '" . $notificacao['user_id'] . "'")->fetch_assoc();
 
 
-
-            $titulo = "<a href='/user?id=" . $user['id_user'] . "'>" . $user['nome'] . "</a> deu gosto da tua <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'>publicação</a>";
+            $titulo = "<a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> deu gosto da tua <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'>publicação</a>";
             $descricao = "Descricao";
 
             return [
                 'titulo' => $titulo,
+                'img' => 'img/fotos_perfil/'.$user['profile_image'],
                 'descricao' => $descricao,
             ];
         case 2:
@@ -35,15 +35,16 @@ function notificacao_handler($notificacao, $conn)
 
             $publicacao = $conn->query("Select * from publicacoes where publicacao_id = '" . $comentario['publicacao_id'] . "'")->fetch_assoc();
 
-            $user = $conn->query("Select * from users where id_user = '" . $publicacao['user_id'] . "'")->fetch_assoc();
+            $user = $conn->query("select * from users where id_user = '" . $notificacao['id_utilizador'] . "'")->fetch_assoc();
 
 
 
-            $titulo = "<a href='/user?id=" . $user['id_user'] . "'>" . $user['nome'] . "</a> comentou a tua publicação <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'> publicação</a>";
+            $titulo = "<a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> comentou a tua publicação <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'> publicação</a>";
             $descricao = "Descricao";
 
             return [
                 'titulo' => $titulo,
+                'img' => 'img/fotos_perfil/'.$user['profile_image'],
                 'descricao' => $descricao,
             ];
 
@@ -54,11 +55,12 @@ function notificacao_handler($notificacao, $conn)
 
             $user = $conn->query("Select * from users where id_user = '" . $mensagem['from_id_user'] . "'")->fetch_assoc();
 
-            $titulo = "<a href='/user?id=" . $user['id_user'] . "'>" . $user['nome'] . "</a> enviou-te uma <a href='/mensagens?id=" . $mensagem['id_mensagem'] . "'>mensagem</a>";
+            $titulo = "<a href='./perfil.php?username=" . $user['username']  . "'>" . $user['nome'] . "</a> enviou-te uma <a href='/mensagens?id=" . $mensagem['id_mensagem'] . "'>mensagem</a>";
             $descricao = "Descricao";
 
             return [
                 'titulo' => $titulo,
+                'img' => 'img/fotos_perfil/'.$user['profile_image'],
                 'descricao' => $descricao,
             ];
 
@@ -66,6 +68,8 @@ function notificacao_handler($notificacao, $conn)
 
         default:
             break;
+
+
     }
 
 
@@ -90,21 +94,23 @@ function addgosto($publicacaoid, $userid){
     $conn->query('insert into notificacoes_gosto (id_notificacao,id_gosto) values('.$notificaoca_id.','.$gosto_id.' )');
 }
 
+function notf_comentario($tipo,$userid, $comentarioid, $conn){
+
+    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) VALUES(?,?)");
+    $notf->bind_param('ii', $userid, $tipo);
+    $notf->execute();
+    $notf->close();
+
+    $id_notificacao = mysqli_insert_id($conn);
 
 
-
-function addcomentario($publicacaoid, $userid, $comentario){
-    // cria notificacao
-    $conn->query('insert into comentarios (user_id,comentario, publicacao_id, estado) values('.$userid.','.$comentario.','.$publicacaoid.',1)');
-// obtem o seu id
-    $comentario_id = mysqli_insert_id($conn);
-// cria o gosto na pub pelo utilizador
-    $conn->query('insert into gostos (user_id, publicacao_id, gosto, estado) values('.$userid.','.$publicacaoid.' 1, 1)');
-    // obtem o id
-    $gosto_id = mysqli_insert_id($conn);
-//interliga a noitifcacao ao gosto
-    $conn->query('insert into notificacoes_gosto (id_notificacao,id_gosto) values('.$notificaoca_id.','.$gosto_id.' )');
+    $notf = $conn->prepare("INSERT INTO notificacoes_comentario (id_notificacao,id_comentario) VALUES(?,?)");
+    $notf->bind_param('ii', $id_notificacao, $comentarioid);
+    $notf->execute();
+    $notf->close();
 }
+
+
 
 function check_guardado($idpub){
     $publicacao_fav_check = $conn->prepare("select * from publicacoes_fav where pub_id = ? and id_user = ?");

@@ -249,58 +249,6 @@ li.navbar_li:hover:after {
     }
 }
 
-.notificacoes {
-    top: 68px;
-    left: 20px;
-    position: fixed;
-    z-index: 999;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.notificacao {
-    border-radius: 6px;
-    padding: 10px;
-    margin-bottom: 4px;
-}
-
-.notificacao .info {
-    padding-top: 6px;
-    padding-left: 16px;
-}
-
-.notificacao .titulo a {
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--palavras);
-    margin-top: 10px;
-}
-
-.notificacao .titulo a:hover {
-    color: var(--verde-hover);
-}
-
-.notificacao .titulo * {
-    font-size: 14px;
-    color: var(--palavras);
-}
-
-.notificacao .img-radius img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-
-}
-
-.notificacoes p, h1 {
-    color: var(--palavras);
-}
-
-.notificacoes-wrapper {
-    padding: 30px 20px 20px 30px;
-}
 
 .custom_active_left {
     border-left: 2px solid #00ff8a;
