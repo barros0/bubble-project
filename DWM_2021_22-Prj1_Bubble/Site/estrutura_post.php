@@ -32,6 +32,7 @@ while ($pub = $result_set->fetch_assoc()) {
                             <div class="partilhar">
                                 <i class='bx bxs-share'></i>
                                 <p>Partilhar</p>
+                                <input id="myInput" class="publicacao_copiar" style="display:none;" type="text" name="publicacao_partilhada" value="http://localhost/bubble-project/DWM_2021_22-Prj1_Bubble/Site/partilha.php?id_pub=<?= $id_publicacao ?>">
                             </div>
                             <?php
                             if ($pub["id_user"] != $userq['id_user']) {
@@ -120,6 +121,8 @@ while ($pub = $result_set->fetch_assoc()) {
 <?php
     }
 }
+
+
 
 $pagina = basename($_SERVER["REQUEST_URI"]);
 if ($pagina != "feed.php") {

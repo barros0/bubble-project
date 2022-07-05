@@ -9,3 +9,10 @@ $(document).ready(function () {
     }
   });
 });
+
+$(document).ready(function () {
+  $(".partilhar").click(function () {
+    var copyText = $(this).children(".publicacao_copiar").val();
+    navigator.clipboard.writeText(copyText);
+  });
+});
