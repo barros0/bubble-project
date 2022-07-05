@@ -136,8 +136,7 @@ if (isset($_GET['id_user_msg'])) {
                 <div class="escrever-mensagem">
                     <div class="texto-mensagem">
 
-                        <textarea class="mensagem" type="text" placeholder="Escreva uma Mensagem..." name="mensagem" id="mensagem"></textarea>
-
+                        <input type="text" placeholder="Escreva uma Mensagem..." class="mensagem" name="mensagem" id="mensagem">
                     </div>
                     <div class="conteudo-multimedia">
 
