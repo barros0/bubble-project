@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2022 at 03:01 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Jul 05, 2022 at 11:31 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,11 @@ INSERT INTO `comentarios` (`comentario_id`, `user_id`, `comentario`, `estado`, `
 (2, 1, 'Muito lindo', NULL, '2022-06-13 17:12:58', '2022-06-13 18:51:41', 1091),
 (5, 6, 'ola', NULL, '2022-06-14 13:25:47', '2022-06-14 14:25:47', 1094),
 (6, 6, 'teste', NULL, '2022-06-15 09:14:34', '2022-06-15 10:18:21', 1094),
-(7, 6, 'dwadwa', NULL, '2022-06-15 09:20:47', '2022-06-15 10:20:47', 1094);
+(7, 6, 'dwadwa', NULL, '2022-06-15 09:20:47', '2022-06-15 10:20:47', 1094),
+(8, 1, 'teste1', NULL, '2022-06-19 04:36:36', '2022-06-23 09:24:41', 1095),
+(10, 1, 'teste', NULL, '2022-06-23 08:24:30', '2022-06-23 09:24:30', 1100),
+(11, 1, 'dwadwa', NULL, '2022-07-01 09:49:48', '2022-07-01 10:49:48', 1105),
+(12, 1, 'ola', NULL, '2022-07-05 04:35:19', '2022-07-05 05:35:19', 1099);
 
 -- --------------------------------------------------------
 
@@ -112,8 +116,7 @@ CREATE TABLE `eventos` (
 
 INSERT INTO `eventos` (`id_evento`, `titulo`, `localizacao`, `descricao`, `imagem`, `created_at`, `updated_at`) VALUES
 (9, 'Lisboa Games Week', 'Campo Grande ', 'Lisboa Games Week, or simply LGW, is a trade fair for video games held annually at the FIL Exhibition Centre in Lisbon, Portugal. It is organised by FIL - International Fair of Lisbon with the approval of Portuguese Ministry of Education. 21 a 24 de Março', '3a00a59421c0881b760aa3a9632e52ae75c65fbf.jpg', '2022-06-13 01:02:38', '2022-06-13 02:02:38'),
-(10, 'CES', 'Rua da Beleza', 'We save our participants significant amounts of time and money by soliciting bids and proposals on a state and national level and award contracts on their behalf.', '9954090ee0cd81548423a3d52c545dbc1ab82463.jpg', '2022-06-13 01:11:03', '2022-06-13 02:13:04'),
-(11, 'Web Summit', 'Campo pequeno', 'ffbnvhydcvhjjfdrcgh', '7a2c4b66b9950dad4166de78ec7e80af2436777c.jpeg', '2022-06-13 10:02:37', '2022-06-13 11:02:37');
+(10, 'CES', 'Rua da Beleza', 'We save our participants significant amounts of time and money by soliciting bids and proposals on a state and national level and award contracts on their behalf.', '9954090ee0cd81548423a3d52c545dbc1ab82463.jpg', '2022-06-13 01:11:03', '2022-06-13 02:13:04');
 
 -- --------------------------------------------------------
 
@@ -137,6 +140,97 @@ INSERT INTO `faqs` (`id_faq`, `resposta`, `pergunta`, `created_at`, `updated_at`
 (1, 'Não! O Bubble é uma rede social gratuita e sempre o será!', 'Tenho de pagar alguma coisa para Utilizar o Bubble?', '2022-05-26 22:10:00', '2022-06-15 23:15:16'),
 (2, 'Sim, desde que a publicação esteja dentro dos padrões da comunidade e do Bubble.\r\n', 'Posso publicar qualquer coisa no Bubble?\r\n', '2022-05-26 22:10:08', '2022-05-26 23:10:08'),
 (3, 'Deves falar com um administrador e mostrar algo que comprove que de facto o utilizador está a quebrar as regras da comunidade.', 'Um utilizador está a ter comportamentos inadequados, o que devo fazer?\r\n', '2022-05-26 22:38:25', '2022-05-26 23:38:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `files_css_paginas_site`
+--
+
+CREATE TABLE `files_css_paginas_site` (
+  `id_file` int(11) NOT NULL,
+  `id_pagina` int(11) NOT NULL,
+  `ficheirocss` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `files_css_paginas_site`
+--
+
+INSERT INTO `files_css_paginas_site` (`id_file`, `id_pagina`, `ficheirocss`) VALUES
+(1, 1, 'css/feed.css'),
+(37, 2, 'css/faqs.css'),
+(38, 13, 'css/feed.css'),
+(39, 13, 'css/perfil.css'),
+(40, 14, 'css/eventos.css'),
+(41, 12, 'css/mensagens.css'),
+(42, 15, 'css/empregos.css'),
+(43, 16, 'css/anaStyles.css'),
+(44, 19, 'css/insere_emprego.css'),
+(45, 17, 'css/definicoes.css'),
+(46, 18, 'css/definicoes.css'),
+(47, 20, 'css/singleEmprego.css'),
+(48, 21, 'css/empregos.css'),
+(49, 22, 'css/insere_emprego.css'),
+(50, 23, 'css/definicoes.css'),
+(53, 26, 'css/feed.css');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `files_js_paginas_site`
+--
+
+CREATE TABLE `files_js_paginas_site` (
+  `id_file` int(11) NOT NULL,
+  `id_pagina` int(11) NOT NULL,
+  `ficheirojs` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `files_js_paginas_site`
+--
+
+INSERT INTO `files_js_paginas_site` (`id_file`, `id_pagina`, `ficheirojs`) VALUES
+(1, 1, 'js/feed.js'),
+(2, 1, 'js/like.js'),
+(18, 1, 'js/comments.js'),
+(20, 2, 'bootstrap/js/bootstrap.js'),
+(21, 14, 'js/eventos.js'),
+(22, 12, 'js/mensagens.js'),
+(23, 13, 'js/perfil_modal.js'),
+(24, 15, 'js/inserirempregos.js'),
+(25, 16, 'js/marketplace.js'),
+(26, 16, 'https://cdn.tailwindcss.com'),
+(27, 17, 'js/definicoes.js'),
+(28, 18, 'js/definicoes.js'),
+(29, 13, 'js/feed.js'),
+(30, 13, 'js/like.js'),
+(31, 13, 'js/comments.js'),
+(34, 26, 'js/like.js'),
+(35, 26, 'js/comments.js'),
+(36, 26, 'js/feed.js');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foto_emprego`
+--
+
+CREATE TABLE `foto_emprego` (
+  `idfoto` int(11) NOT NULL,
+  `id_emprego` int(11) NOT NULL,
+  `foto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `foto_emprego`
+--
+
+INSERT INTO `foto_emprego` (`idfoto`, `id_emprego`, `foto`) VALUES
+(1, 8, '0dcc0a9f254c5ae3209f9905dc40925076f7ca09.jpg'),
+(2, 9, '5c94d3fe63508b620c3e6cc525f3facd9cfb467f.jpg'),
+(7, 6, '8ec2d6e00ee3a9c54cb9e158460e0ea6c1e53e28.jpg');
 
 -- --------------------------------------------------------
 
@@ -210,6 +304,73 @@ CREATE TABLE `historico_pesquisa` (
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `historico_pesquisa`
+--
+
+INSERT INTO `historico_pesquisa` (`id_historico`, `id_utilizador`, `pesquisa`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Ola', '2022-06-21 19:07:59', '2022-06-21 20:07:59'),
+(2, 1, 'Ola', '2022-06-21 19:07:59', '2022-06-21 20:07:59'),
+(3, 1, 'da', '2022-06-21 19:08:08', '2022-06-21 20:08:08'),
+(4, 1, 'da', '2022-06-21 19:08:08', '2022-06-21 20:08:08'),
+(5, 1, 'ola', '2022-07-01 08:21:43', '2022-07-01 09:21:43'),
+(6, 1, 'ola', '2022-07-01 08:21:43', '2022-07-01 09:21:43'),
+(7, 1, 'xo', '2022-07-01 08:22:01', '2022-07-01 09:22:01'),
+(8, 1, 'xo', '2022-07-01 08:22:01', '2022-07-01 09:22:01'),
+(9, 1, 'xo', '2022-07-01 09:52:52', '2022-07-01 10:52:52'),
+(10, 1, 'xo', '2022-07-01 09:52:52', '2022-07-01 10:52:52'),
+(11, 12, 'Ola', '2022-07-05 00:48:11', '2022-07-05 01:48:11'),
+(12, 12, 'Ola', '2022-07-05 00:48:11', '2022-07-05 01:48:11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ip_sessions`
+--
+
+CREATE TABLE `ip_sessions` (
+  `id_ip_sessions` int(11) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `ip_sessions` varchar(32) DEFAULT NULL,
+  `localizacao` varchar(255) NOT NULL,
+  `data` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ip_sessions`
+--
+
+INSERT INTO `ip_sessions` (`id_ip_sessions`, `id_user`, `ip_sessions`, `localizacao`, `data`) VALUES
+(114, 1, '::1', '', '2022-07-01 01:04:34'),
+(115, 1, '::1', '', '2022-07-01 01:15:04'),
+(116, 1, '::1', '', '2022-07-01 08:14:13'),
+(117, 1, '::1', '', '2022-07-01 09:48:50'),
+(118, 1, '::1', '', '2022-07-01 09:49:02'),
+(119, 1, '::1', '', '2022-07-01 10:00:11'),
+(120, 1, '::1', '', '2022-07-01 12:30:01'),
+(121, 1, '::1', '', '2022-07-01 13:45:13'),
+(122, 1, '::1', '', '2022-07-01 13:45:24'),
+(123, 1, '::1', '', '2022-07-02 19:45:28'),
+(124, 1, '::1', '', '2022-07-03 00:23:51'),
+(125, 1, '::1', '', '2022-07-03 05:23:04'),
+(126, 1, '::1', '', '2022-07-03 09:05:44'),
+(127, 1, '::1', '', '2022-07-03 18:32:54'),
+(128, 1, '::1', '', '2022-07-03 19:25:14'),
+(129, 1, '::1', '', '2022-07-04 02:17:25'),
+(130, 1, '::1', '', '2022-07-04 04:43:06'),
+(131, 1, '::1', '', '2022-07-04 05:26:56'),
+(132, 1, '::1', '', '2022-07-04 18:01:18'),
+(133, 1, '::1', '', '2022-07-04 20:07:08'),
+(134, 6, '::1', '', '2022-07-04 20:24:42'),
+(135, 6, '::1', '', '2022-07-04 21:05:01'),
+(136, 6, '::1', '', '2022-07-04 23:46:32'),
+(137, 12, '::1', '', '2022-07-05 00:44:52'),
+(138, 12, '::1', '', '2022-07-05 01:04:52'),
+(139, 1, '::1', '', '2022-07-05 01:05:08'),
+(140, 1, '::1', '', '2022-07-05 02:24:19'),
+(141, 1, '::1', '', '2022-07-05 03:16:40'),
+(142, 1, '::1', '', '2022-07-05 07:13:20');
+
 -- --------------------------------------------------------
 
 --
@@ -263,7 +424,19 @@ CREATE TABLE `mensagens` (
 --
 
 INSERT INTO `mensagens` (`id_mensagem`, `from_id_user`, `to_id_user`, `mensagem`, `estado`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'gvghgf', 1, '2022-05-27 08:38:32', '2022-05-27 09:38:32');
+(1, 1, 1, 'gvghgf', 1, '2022-05-27 08:38:32', '2022-05-27 09:38:32'),
+(2, 1, 6, '1234213', 1, '2022-07-04 20:12:15', '2022-07-04 21:25:10'),
+(3, 1, 6, 'dwa', 1, '2022-07-04 20:24:16', '2022-07-04 21:25:12'),
+(4, 6, 1, 'dwadwa', 1, '2022-07-04 20:25:17', '2022-07-04 21:25:17'),
+(5, 1, 1, 'dwadwa', 1, '2022-07-04 20:26:13', '2022-07-04 21:26:13'),
+(6, 1, 6, 'dwa', 1, '2022-07-04 20:51:22', '2022-07-04 21:51:22'),
+(7, 1, 1, 'dwadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwawadwadwa', 1, '2022-07-04 23:45:17', '2022-07-05 00:45:17'),
+(8, 6, 1, 'dwadwa', 1, '2022-07-04 23:48:25', '2022-07-05 00:48:25'),
+(9, 6, 1, 'dwadwa', 1, '2022-07-04 23:55:14', '2022-07-05 00:55:14'),
+(10, 6, 1, 'dwadwadwa', 1, '2022-07-04 23:55:16', '2022-07-05 00:55:16'),
+(12, 1, 7, 'dwa', 1, '2022-07-05 00:12:14', '2022-07-05 01:12:14'),
+(13, 12, 1, 'boas', 1, '2022-07-05 00:47:00', '2022-07-05 01:47:00'),
+(14, 1, 6, 'dwa', 1, '2022-07-05 03:07:29', '2022-07-05 04:07:29');
 
 -- --------------------------------------------------------
 
@@ -534,7 +707,8 @@ INSERT INTO `nacionalidades` (`nacionalidade_id`, `pais`, `paisEN`, `paisES`, `N
 (246, 'Iémen', 'Yemen', 'Yemen', 887, 'YEM', 'YE'),
 (247, 'África do Sul', 'South Africa', 'Sudáfrica', 710, 'ZAF', 'ZA'),
 (248, 'Zâmbia', 'Zambia', 'Zambia', 894, 'ZMB', 'ZM'),
-(249, 'Zimbabwe', 'Zimbabwe', 'Zimbabue', 716, 'ZWE', 'ZW');
+(249, 'Zimbabwe', 'Zimbabwe', 'Zimbabue', 716, 'ZWE', 'ZW'),
+(250, 'none', 'none', 'none', 10000, 'none', 'none');
 
 -- --------------------------------------------------------
 
@@ -637,6 +811,7 @@ INSERT INTO `notificacoes_seguir` (`notificacao_seguir_id`, `id_notificao`, `id_
 
 CREATE TABLE `oferta_emprego` (
   `id_oferta` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `foto` varchar(255) NOT NULL,
   `titulo` varchar(255) DEFAULT NULL,
   `requisitos` text DEFAULT NULL,
@@ -656,8 +831,43 @@ CREATE TABLE `oferta_emprego` (
 -- Dumping data for table `oferta_emprego`
 --
 
-INSERT INTO `oferta_emprego` (`id_oferta`, `foto`, `titulo`, `requisitos`, `vagas`, `qualificacoes`, `experiencia`, `localizacao`, `tipo`, `horario`, `categoria`, `descricao`, `created_at`, `updated_at`) VALUES
-(1, 'http://blog.adrianalombardo.com/wp-content/uploads/2019/08/como-encontrar-emprego.jpg', 'Full Stack Developer', 'Conhecimentos PHP / MySQL / HTML / JS', 2, 'Curso TeSP ou Superior', '2 anos experiência', 'Leiria', 'Remoto / Presencial', 'Full Time', 'Desenvolvimento Web', 'Teste descrição', '2022-06-11 15:53:58', '2022-06-11 16:53:58');
+INSERT INTO `oferta_emprego` (`id_oferta`, `id_user`, `foto`, `titulo`, `requisitos`, `vagas`, `qualificacoes`, `experiencia`, `localizacao`, `tipo`, `horario`, `categoria`, `descricao`, `created_at`, `updated_at`) VALUES
+(6, 1, '', 'Full Stack Developer', 'Conhecimentos de PHP,JS, CSS', 2, 'Curso TeSP ou Equivalência', 'Mínimo 2 Anos', 'Leiria', 'Remoto / Presencial', 'Full-Time', 'Web Development teste', 'Emprego flexível, horários rotativos.', '2022-06-27 16:09:35', '2022-07-01 10:51:56'),
+(7, 1, '', 'Web Designer', 'Conhecimentos de Adobe Illustrator', 1, 'Curso Superior', 'Sem Experiência Mínima', 'Lisboa', 'Remoto', 'Part-Time', 'Design', 'Procuro Web Designer com ou sem experiência para desenvolvimento de website em part-time.', '2022-06-27 16:10:05', '2022-07-01 10:22:52'),
+(8, 7, '', 'Técnico de Cibersegurança', 'Conhecimentos de Linux', 2, 'Licenciatura ou Superior', '4 anos', 'Porto', 'Presencial', 'Full Time', 'Cibersegurança', 'Procuramos técnicos especializados em cibersegurança, com experiência', '2022-06-27 17:07:26', '2022-07-01 10:28:07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `paginas_site`
+--
+
+CREATE TABLE `paginas_site` (
+  `id_pag` int(11) NOT NULL,
+  `urlpagina` varchar(30) NOT NULL,
+  `nomepagina` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `paginas_site`
+--
+
+INSERT INTO `paginas_site` (`id_pag`, `urlpagina`, `nomepagina`) VALUES
+(1, 'feed.php', 'Página Inicial'),
+(2, 'faqs.php', 'FAQs'),
+(12, 'mensagens.php', 'Mensagens'),
+(13, 'perfil.php', 'Perfil'),
+(14, 'eventos.php', 'Eventos'),
+(15, 'empregos.php', 'Empregos'),
+(16, 'marketplace.php', 'Marketplace'),
+(17, 'definicoes_geral.php', 'Definições Gerais'),
+(18, 'definicoes_seguranca.php', 'Definições Segurança'),
+(19, 'inseriremprego.php', 'Inserir Emprego'),
+(20, 'emprego.php', 'Emprego'),
+(21, 'empregosUtilizador.php', 'Os seus Empregos'),
+(22, 'editarEmprego.php', 'Editar Emprego'),
+(23, 'definicoes_suporte.php', 'Denúncias'),
+(26, 'partilha.php', 'Partilha');
 
 -- --------------------------------------------------------
 
@@ -680,9 +890,16 @@ CREATE TABLE `publicacoes` (
 --
 
 INSERT INTO `publicacoes` (`publicacao_id`, `user_id`, `conteudo`, `estado_pub`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1091, 1, 'aaaa', 1, '2022-06-08 18:21:09', '2022-06-13 12:08:39', NULL),
-(1094, 1, 'dwadwa', 1, '2022-06-14 13:17:47', '2022-06-14 14:17:47', NULL),
-(1095, 6, 'teste', 1, '2022-06-15 10:25:00', '2022-06-15 11:25:00', NULL);
+(1091, 1, 'aaaa', 1, '2022-06-08 18:21:09', '2022-07-04 19:29:58', NULL),
+(1094, 1, 'dwadwa', 1, '2022-06-14 13:17:47', '2022-07-04 19:29:55', NULL),
+(1099, 7, 'Boas maltinha, estou a desenvolver uma nova app o que acham da UI/UX', 1, '2022-06-20 13:53:21', '2022-06-20 14:56:34', NULL),
+(1100, 7, 'Procuro emprego', 1, '2022-06-20 13:58:45', '2022-06-20 14:58:45', NULL),
+(1102, 10, 'ddwadawdawad', 1, '2022-06-26 21:37:52', '2022-07-04 06:30:42', NULL),
+(1103, 10, 'dwadwadwa', 1, '2022-06-26 21:38:01', '2022-06-26 22:38:01', NULL),
+(1104, 10, 'dwadwadw', 1, '2022-06-26 21:38:56', '2022-06-26 22:38:56', NULL),
+(1105, 10, 'dwadwa', 1, '2022-06-26 21:39:27', '2022-06-26 22:39:27', NULL),
+(1155, 1, 'texto', 1, '2022-07-01 15:07:50', '2022-07-04 19:33:29', NULL),
+(1163, 12, 'Ola estou numa apresentacao', 1, '2022-07-05 00:45:58', '2022-07-05 01:46:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -697,6 +914,15 @@ CREATE TABLE `publicacoes_fav` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `publicacoes_fav`
+--
+
+INSERT INTO `publicacoes_fav` (`id_pub_fav`, `id_pub`, `id_user`, `created_at`, `updated_at`) VALUES
+(1, 1100, 1, '2022-06-26 02:13:15', '2022-06-26 03:13:15'),
+(2, 1094, 1, '2022-06-26 17:21:06', '2022-06-26 18:21:06'),
+(3, 1099, 1, '2022-07-05 04:21:59', '2022-07-05 05:21:59');
 
 -- --------------------------------------------------------
 
@@ -719,7 +945,42 @@ CREATE TABLE `publicacoes_fotos` (
 INSERT INTO `publicacoes_fotos` (`publicacao__foto_id`, `publicacao_id`, `caminho`, `created_at`, `updated_at`) VALUES
 (120, 1091, 'c87d4bb4b8a18ab8caee393ff0c23698ccd2e026.jpg', '2022-06-08 18:21:09', '2022-06-08 19:21:09'),
 (121, 1095, '6297e25a992f183134077dc5e0f32d03ba7b5ad7.jpg', '2022-06-15 10:25:00', '2022-06-15 11:25:00'),
-(122, 1096, '924e4f712b731a7847426e5a15ed2a511dbe5a9b.jpg', '2022-06-15 17:42:54', '2022-06-15 18:42:54');
+(125, 1099, '73dd04a57c80ed230911e1a14b0d60d230726326.png', '2022-06-20 13:53:21', '2022-06-20 14:53:21'),
+(126, 1103, '5d981a92b35eaf91bc7d7edcf845461a8d3cbbf7.jpg', '2022-06-26 21:38:01', '2022-06-26 22:38:01'),
+(127, 1107, 'c5362365a1773ed890ef0b94310508b3767dc831.JPG', '2022-06-26 21:41:54', '2022-06-26 22:41:54'),
+(128, 1108, 'c04f7439ecaa731f0aa53a9c83dc8244673b1b03.jpg', '2022-06-26 21:45:15', '2022-06-26 22:45:15'),
+(144, 1152, '03348a750a7bf686f8cbd21b63db3de9cb8e4391.jpg', '2022-07-01 14:33:09', '2022-07-01 15:33:09'),
+(152, 1154, '24388c733902e04abce7d5c7315818fcb127e7f5.jpg', '2022-07-01 15:00:15', '2022-07-01 16:00:15'),
+(153, 1157, 'a837e458767522f7ef2df3f548ccc90d49a9fa4e.jpg', '2022-07-01 15:08:22', '2022-07-01 16:08:22'),
+(154, 1158, '612c53857001da90090b16cc5244b9435b2554a9.jpg', '2022-07-01 15:08:43', '2022-07-01 16:08:43'),
+(155, 1159, '5da6510eb3314b74e5a78091324fef50339eb15b.jpg', '2022-07-01 15:09:01', '2022-07-01 16:09:01'),
+(156, 1160, 'f46f5af77bf12e65ca5a4a3dac6ad3bbcd3c7875.jpg', '2022-07-01 15:09:26', '2022-07-01 16:09:26'),
+(157, 1161, 'ef1aa70a6996492bfa7ccd9625aa0dd4b416b4fa.jpg', '2022-07-01 15:09:37', '2022-07-01 16:09:37'),
+(158, 1162, 'cb022f35297913a5882ffb94b2db5340b59f55d4.jpg', '2022-07-01 15:10:23', '2022-07-01 16:10:23'),
+(159, 1163, 'b29a6366b4f0fec2b8e50cd69ec990513ff8dc24.jpg', '2022-07-05 00:45:58', '2022-07-05 01:45:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reports`
+--
+
+CREATE TABLE `reports` (
+  `id_report` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `publicacao_id` int(11) DEFAULT NULL,
+  `categoria` varchar(30) DEFAULT NULL,
+  `report_comment` text DEFAULT NULL,
+  `data` date DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`id_report`, `user_id`, `publicacao_id`, `categoria`, `report_comment`, `data`) VALUES
+(4, 1, 1091, 'Nudez', 'nudez', '2022-07-04'),
+(5, 12, 1091, 'Spam', 'spam', '2022-07-05');
 
 -- --------------------------------------------------------
 
@@ -740,7 +1001,14 @@ CREATE TABLE `seguir` (
 --
 
 INSERT INTO `seguir` (`id_seguir`, `id_seguidor`, `id_utilizador`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2022-05-27 08:38:45', '2022-05-27 09:38:45');
+(8, 1, 6, '2022-06-26 02:23:12', '2022-06-26 03:23:12'),
+(24, 12, 1, '2022-07-05 00:49:29', '2022-07-05 01:49:29'),
+(27, 1, 10, '2022-07-05 00:54:33', '2022-07-05 01:54:33'),
+(33, 10, 12, '2022-07-05 01:01:13', '2022-07-05 02:01:13'),
+(37, 12, 10, '2022-07-05 01:03:13', '2022-07-05 02:03:13'),
+(38, 12, 6, '2022-07-05 01:03:27', '2022-07-05 02:03:27'),
+(39, 12, 7, '2022-07-05 01:03:33', '2022-07-05 02:03:33'),
+(41, 1, 12, '2022-07-05 01:06:03', '2022-07-05 02:06:03');
 
 -- --------------------------------------------------------
 
@@ -773,11 +1041,12 @@ CREATE TABLE `users` (
   `username` varchar(30) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `vkey` varchar(255) NOT NULL,
   `sobre` varchar(255) DEFAULT NULL,
   `skills` varchar(255) DEFAULT NULL,
   `banner_image` varchar(255) DEFAULT 'foto_banner_default.jpg',
   `profile_image` varchar(255) DEFAULT 'foto_perfil_default.png',
-  `nacionalidade` int(11) DEFAULT NULL,
+  `nacionalidade` int(11) DEFAULT 250,
   `tipo` int(11) DEFAULT 2,
   `estado` int(11) DEFAULT NULL,
   `genero` int(10) DEFAULT NULL,
@@ -790,9 +1059,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_user`, `nome`, `username`, `email`, `password`, `sobre`, `skills`, `banner_image`, `profile_image`, `nacionalidade`, `tipo`, `estado`, `genero`, `created_at`, `updated_at`, `data_nascimento`) VALUES
-(1, 'Xo Lopes da Silva', 'Xo_Guarda', 'porcoassassino1@gmail.com', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 'ola', 'ola', '30c1713669926d3ff345dcb111e292e13353abab.jpg', '054125beccde42ed19193974844ce77a285a62d6.jpg', 22, 1, 1, 1, '2022-05-18 08:10:23', '2022-06-14 14:17:09', '2011-11-03'),
-(6, 'joao', 'joao', '123@gmail.com', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', NULL, NULL, 'foto_banner_default.jpg', 'foto_perfil_default.png', 22, 2, 1, 1, '2022-06-14 02:10:47', '2022-06-14 14:17:11', '2144-12-31');
+INSERT INTO `users` (`id_user`, `nome`, `username`, `email`, `password`, `vkey`, `sobre`, `skills`, `banner_image`, `profile_image`, `nacionalidade`, `tipo`, `estado`, `genero`, `created_at`, `updated_at`, `data_nascimento`) VALUES
+(1, 'Xo Lopes da Silva', 'Xo_Guarda', 'porcoassassino1@gmail.com', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', '', 'Ola', 'Ola', '7f55890e2eca38e794328338d96ca031e882f85f.jpg', 'c26d30104e7524585eb5c4682c43990e15597bdb.jpg', 183, 1, 1, 1, '2022-05-18 08:10:23', '2022-07-04 19:42:05', '2003-03-18'),
+(6, 'joao', 'joao', '123@gmail.com', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', '', NULL, NULL, 'foto_banner_default.jpg', 'foto_perfil_default.png', 22, 2, 1, 1, '2022-06-14 02:10:47', '2022-06-23 15:16:42', '1986-09-14'),
+(7, 'André Sousa', 'sousaexe', 'lalala@gmail.com', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', '', 'Aluno de desenvolvimento web', 'HTML | CSS | JAVASCRIPT | PHP | SQL | JAVA', 'bda67a1825d4ef6d8bcdaceca7ad6448728e9745.jpeg', 'e2df563aef12fa99cb9d21aee0eae9b0e35d2735.jpeg', 1, 2, 1, 1, '2022-06-20 13:44:32', '2022-06-26 22:32:58', '2003-09-14'),
+(10, 'Diogo Raimundo', 'FlávioNeta', 'antoniobiscainha@gmail.com', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', '', 'LAlal', 'Lalala', '29d38830dd46dc41d0b31f7ae3703842a84c0eea.jpg', '661cede78dfdf093bf37119c0484c48312b9df86.jpg', 18, 2, 1, 1, '2022-06-26 21:29:14', '2022-07-03 06:43:13', '2003-03-20'),
+(12, 'Sr.RicardoDos', 'Rixa123_bubble', '123455555555@gmail.com', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79', '', 'Web dev', 'HTML CSS JS PHP MYSQL\r\n', '3367c73d20d9ed81fb15fb7c5296535f75521a58.jpg', '5c9d1f4955a848614fb972537f71b58f74279f4f.jpg', 183, 2, 1, 1, '2022-07-05 00:44:39', '2022-07-05 01:48:39', '2003-12-12');
 
 --
 -- Indexes for dumped tables
@@ -829,6 +1101,24 @@ ALTER TABLE `faqs`
   ADD PRIMARY KEY (`id_faq`);
 
 --
+-- Indexes for table `files_css_paginas_site`
+--
+ALTER TABLE `files_css_paginas_site`
+  ADD PRIMARY KEY (`id_file`);
+
+--
+-- Indexes for table `files_js_paginas_site`
+--
+ALTER TABLE `files_js_paginas_site`
+  ADD PRIMARY KEY (`id_file`);
+
+--
+-- Indexes for table `foto_emprego`
+--
+ALTER TABLE `foto_emprego`
+  ADD PRIMARY KEY (`idfoto`);
+
+--
 -- Indexes for table `generos`
 --
 ALTER TABLE `generos`
@@ -851,6 +1141,12 @@ ALTER TABLE `guardados`
 --
 ALTER TABLE `historico_pesquisa`
   ADD PRIMARY KEY (`id_historico`);
+
+--
+-- Indexes for table `ip_sessions`
+--
+ALTER TABLE `ip_sessions`
+  ADD PRIMARY KEY (`id_ip_sessions`);
 
 --
 -- Indexes for table `marketplace`
@@ -907,6 +1203,12 @@ ALTER TABLE `oferta_emprego`
   ADD PRIMARY KEY (`id_oferta`);
 
 --
+-- Indexes for table `paginas_site`
+--
+ALTER TABLE `paginas_site`
+  ADD PRIMARY KEY (`id_pag`);
+
+--
 -- Indexes for table `publicacoes`
 --
 ALTER TABLE `publicacoes`
@@ -925,11 +1227,17 @@ ALTER TABLE `publicacoes_fotos`
   ADD PRIMARY KEY (`publicacao__foto_id`);
 
 --
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id_report`);
+
+--
 -- Indexes for table `seguir`
 --
 ALTER TABLE `seguir`
   ADD PRIMARY KEY (`id_seguir`),
-  ADD UNIQUE KEY `id_utilizador` (`id_utilizador`);
+  ADD KEY `id_utilizador_2` (`id_utilizador`);
 
 --
 -- Indexes for table `tipo_user`
@@ -953,7 +1261,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `comentario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `comentario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `empresas`
@@ -971,13 +1279,31 @@ ALTER TABLE `estados_users`
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
   MODIFY `id_faq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `files_css_paginas_site`
+--
+ALTER TABLE `files_css_paginas_site`
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- AUTO_INCREMENT for table `files_js_paginas_site`
+--
+ALTER TABLE `files_js_paginas_site`
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT for table `foto_emprego`
+--
+ALTER TABLE `foto_emprego`
+  MODIFY `idfoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `generos`
@@ -1001,7 +1327,13 @@ ALTER TABLE `guardados`
 -- AUTO_INCREMENT for table `historico_pesquisa`
 --
 ALTER TABLE `historico_pesquisa`
-  MODIFY `id_historico` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_historico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `ip_sessions`
+--
+ALTER TABLE `ip_sessions`
+  MODIFY `id_ip_sessions` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 
 --
 -- AUTO_INCREMENT for table `marketplace`
@@ -1013,13 +1345,13 @@ ALTER TABLE `marketplace`
 -- AUTO_INCREMENT for table `mensagens`
 --
 ALTER TABLE `mensagens`
-  MODIFY `id_mensagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_mensagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `nacionalidades`
 --
 ALTER TABLE `nacionalidades`
-  MODIFY `nacionalidade_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
+  MODIFY `nacionalidade_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=252;
 
 --
 -- AUTO_INCREMENT for table `notificacoes`
@@ -1055,31 +1387,43 @@ ALTER TABLE `notificacoes_seguir`
 -- AUTO_INCREMENT for table `oferta_emprego`
 --
 ALTER TABLE `oferta_emprego`
-  MODIFY `id_oferta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_oferta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `paginas_site`
+--
+ALTER TABLE `paginas_site`
+  MODIFY `id_pag` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `publicacoes`
 --
 ALTER TABLE `publicacoes`
-  MODIFY `publicacao_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1098;
+  MODIFY `publicacao_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1164;
 
 --
 -- AUTO_INCREMENT for table `publicacoes_fav`
 --
 ALTER TABLE `publicacoes_fav`
-  MODIFY `id_pub_fav` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pub_fav` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `publicacoes_fotos`
 --
 ALTER TABLE `publicacoes_fotos`
-  MODIFY `publicacao__foto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `publicacao__foto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+
+--
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `seguir`
 --
 ALTER TABLE `seguir`
-  MODIFY `id_seguir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_seguir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `tipo_user`
@@ -1091,7 +1435,7 @@ ALTER TABLE `tipo_user`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
