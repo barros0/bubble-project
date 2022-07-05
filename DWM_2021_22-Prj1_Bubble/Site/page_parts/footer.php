@@ -5,6 +5,7 @@
 <!--Scripts Gerais-->
 <script src="https://kit.fontawesome.com/27dd9727ef.js" crossorigin="anonymous"></script>
 <script src="js/header.js"></script>
+<script src="js/img_post.js"></script>
 
 <?php
 
