@@ -1,0 +1,184 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.center_marketplace {
+  display: flex;
+  width: 70%;
+  margin-top: 98px;
+  margin-right: 30px;
+  flex-direction: column;
+}
+
+.wrap_marketplace {
+  display: flex;
+  width: 100%;
+}
+
+.wrap_marketplace form {
+  width: 75%;
+}
+
+.div_input_search_marketplace {
+  display: flex;
+}
+
+.button_search_marketplace i.bx-search {
+  padding: 8px;
+  color: #bdbdbd;
+  font-size: 30px;
+  background-color: #4e4f50;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.search_marketplace button {
+  background-color: transparent;
+  border: 0;
+}
+
+input.input_seach_marketplace {
+  outline: none;
+  background-color: #404040;
+  color: #bdbdbd;
+  border: 0;
+  padding: 10px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.market {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data_market, .sitio_market {
+  color: #bdbdbd;
+  margin: 5px;
+}
+
+.titulo_market {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.descricao_market {
+  margin-top: 5px;
+  color: white;
+}
+
+.market_left {
+  background-color: #404040;
+  height: 400px;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.texto-download{
+
+}
+
+.market_right {
+  width: 120px;
+  border-radius: 75px;
+  margin-bottom: 15px;
+}
+
+
+
+.button_modal {
+  display: flex;
+  font-weight: 600;
+  width: 12%;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color: #00ff8a;
+  color: #404040;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button_update {
+  float: right;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #00ff8a;
+  border: 0;
+  font-weight: 600;
+  outline: 0;
+}
+
+.button_update:hover {
+  background-color: #00d372;
+}
+
+.button_modal:hover {
+  background-color: #00d372;
+}
+
+/*DIV DO FORM PARA ADICIONAR*/
+.wrap_form_marketplace {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.div_market_novo {
+  top: 68px;
+  margin-top: 50px;
+  padding: 15px;
+  position: fixed;
+  box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
+  background-color: #404040;
+  border-radius: 15px;
+  height: 520px;
+  color: white;
+  width: 50%;
+}
+
+.form_market_descricao {
+  margin-bottom: 10px;
+}
+
+#form {
+  display: none;
+}
+
+.wrap_fechar_market {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#fechar_modal_market {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.center_marketplace:last-child {
+  margin-bottom: 30px;
+}
+
+textarea {
+  margin-top: 5px;
+  color: #bdbdbd;
+  border: 0;
+  width: 100%;
+  resize: none;
+  height: 80px;
+  font-size: 16px;
+  overflow: hidden;
+  border-color: transparent;
+  background-color: #4f4f4f;
+  border-radius: 5px;
+  padding: 5px;
+}

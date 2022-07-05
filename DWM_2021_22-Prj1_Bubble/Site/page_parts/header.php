@@ -51,12 +51,14 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/marketplace.css">
     <link rel="stylesheet" href="css/header.css">
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.4.4/css/flag-icons.min.css" />
     <!--JQuery-->
     <script src="js/jquery-3.6.0.min.js"></script>
+    
 
     <?php
 
