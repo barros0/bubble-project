@@ -57,7 +57,7 @@ $conn->close();
                     <?php } ?>
                 </select>
             </div>
-        <a class="btn btn-danger" href="./update_user.php?delete_userid=<?= $user['id_user']  ?>">Eliminar</a>
+        <a class="btn btn-danger" href="./update_user.php?delete_userid=<?= $user['id_user']  ?>">Voltar</a>
             <button type="submit" class="btn btn-primary">Gravar</button>
 
     </form>
