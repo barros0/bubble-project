@@ -56,20 +56,21 @@ if (isset($_GET['id_user_msg'])) {
             //mostrar as pessoas cujo utilizador trocou mensagens
 
             while ($row = $lista_users_mensagens->fetch_assoc()) {
+
             ?>
-                            
+
                 <a class="user-lateral" href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>">
-                <div class="wrap-pessoa">
-                    <div class="foto-perfil-container">
-                        <div class="foto-perfil">
+                    <div class="wrap-pessoa">
+                        <div class="foto-perfil-container">
+                            <div class="foto-perfil">
                                 <img src='./img/fotos_perfil/<?= $row['profile_image'] ?>' alt='<?= $row['username'] ?>'>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div><?= $row['username'] ?></div>
+                            <div><?= $row['msg'] ?></div>
                         </div>
                     </div>
-                    <div class="d-flex flex-column">
-                        <div><?= $row['username'] ?></div>
-                        <div><?= $row['msg'] ?></div>
-                    </div>
-                </div>
                 </a>
             <?php
             }
@@ -78,46 +79,54 @@ if (isset($_GET['id_user_msg'])) {
     </div>
     <div class="wrap_conteudo_form">
         <div class="wrap-conteudo-mensagens">
-
+            
             <div class="conteudo-mensagens">
                 <div class="conteudo_user d-flex flex-row">
                     <div><img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil"></div>
                     <div><?= $imagem['username'] ?></div>
                 </div>
                 <div class="conteudo-chat">
+
                     <?php
                     //listar as mensagens
                     if (isset($_GET['id_user_msg'])) {
+
                         while ($rowMsg = $mensagens->fetch_assoc()) {
+
                             //buscar os utilizadores que user enviou e recebeu mensagem
                             $user_to = $rowMsg['to_id_user'];
                             $user_from = $rowMsg['from_id_user'];
+
                             if ($user_to == $id_user) {
                     ?>
                                 <div class="row-mensagem recebida">
                                     <div class="icone-perfil-row-mensagem">
                                         <div class="foto-perfil">
-                                        <a href="./perfil.php?username=<?= $imagem['username'] ?>">
-                                            <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
-                                        </a>
+                                            <a href="./perfil.php?username=<?= $imagem['username'] ?>">
+                                                <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="conteudo-row-mensagem ">
                                         <span><?= $rowMsg['mensagem'] ?></span>
                                     </div>
                                 </div>
+
                             <?php
+
                             } else {
+
                             ?>
+
                                 <div class="row-mensagem enviada">
                                     <div class="conteudo-row-mensagem env">
                                         <span><?= $rowMsg['mensagem'] ?> </span>
                                     </div>
                                     <div class="icone-perfil-row-mensagem">
                                         <div class="foto-perfil">
-                                        <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
-                                            <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
-                                        </a>
+                                            <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
+                                                <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
