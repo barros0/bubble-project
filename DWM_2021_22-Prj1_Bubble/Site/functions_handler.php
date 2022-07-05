@@ -40,12 +40,11 @@ function notificacao_handler($notificacao, $conn)
 
 
             $titulo = "<a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> comentou a tua publicação <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'> publicação</a>";
-            $descricao = "Descricao";
 
             return [
                 'titulo' => $titulo,
                 'img' => 'img/fotos_perfil/'.$user['profile_image'],
-                'descricao' => $descricao,
+                'descricao' => $user['nome'].' comentou: "'.$comentario['comentario'].'"',
             ];
 
         case 3:
@@ -94,10 +93,10 @@ function addgosto($publicacaoid, $userid){
     $conn->query('insert into notificacoes_gosto (id_notificacao,id_gosto) values('.$notificaoca_id.','.$gosto_id.' )');
 }
 
-function notf_comentario($tipo,$userid, $comentarioid, $conn){
+function notf_comentario($tipo,$iduser_para, $comentarioid, $conn){
 
     $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) VALUES(?,?)");
-    $notf->bind_param('ii', $userid, $tipo);
+    $notf->bind_param('ii', $iduser_para, $tipo);
     $notf->execute();
     $notf->close();
 
