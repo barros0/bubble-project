@@ -84,6 +84,22 @@
   padding: 20px;
 }
 
+.mandar_mensagem {
+  text-decoration: none;
+  background: white;
+  border-radius: 10px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mandar_mensagem i {
+  color: #404040;
+  font-size: 22px;
+}
+
 .pagina_button_editar {
   padding: 20px;
 }
@@ -100,6 +116,7 @@
   background-color: #00ff8a;
   border: 0;
   font-weight: 600;
+  padding: 5px;
   outline: 0;
 }
 
