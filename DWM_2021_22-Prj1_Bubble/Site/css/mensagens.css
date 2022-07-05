@@ -1,41 +1,47 @@
+* {
+  overflow: hidden;
+}
 
 /*wrapper da pagina*/
 .conteudo {
-  max-width: 75%;
-  width: 75%;
   height: 100%;
-  /*margin-right: auto;*/
-  margin-left: auto;
+  margin-top: 60px;
   background-color: #1c1c1c;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
+  flex-direction: row;
 }
 
 /*barra de chats e pesquisa*/
-.barratopo{
-  width: 100%;
-
-
+.barratopo {
+  position: fixed;
+  height: 100%;
+  width: 25%;
+  z-index: 1000;
+  background: #1c1c1c;
+  padding-top: 5px;
+  border-right: 4px solid #404040;
 }
 
+.wrap_btn {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 /*barra lateral das mensagens*/
 .barra-listagem-mensagens {
   width: 100%;
   z-index: 1;
   top: 0;
-  background-color: #404040;
   color: #bdbdbd;
   overflow: auto;
-  margin-top: 68px;
-
 }
 
 .novo-chat {
   width: 100%;
   height: 100%;
-  border-radius: 100%;
+  border-radius: 10px;
   background-color: #00ff8a;
   color: #1c1c1c;
   padding: 10px;
@@ -50,18 +56,8 @@
 }
 
 /*pesquisa de conversas*/
-
-.pesquisa-fixed {
-  padding: 20px 10px 20px;
-  position: sticky;
-  background: #404040;
-  top: 0;
-  border-bottom: solid #00ff8a;
-  display: none;
-
-}
-
 .form-pesquisa {
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -72,6 +68,7 @@
   box-sizing: border-box;
   align-items: center;
   display: flex;
+  height: 100%;
   justify-content: center;
 }
 
@@ -87,9 +84,12 @@
 }
 
 .fundo-pesquisa {
-  width: 80%;
+  display: flex;
+  width: 100%;
   background-color: #fff;
   border-radius: 10px;
+  height: 100%;
+  align-items: center;
 }
 
 .botao-pesquisa {
@@ -105,39 +105,60 @@
   background: #ccc;
 }
 
-/*mensagens*/
+.conteudo_user {
+  color: white;
+  align-items: center;
+  padding: 10px;
+  padding-left: 40px;
+  border-bottom: 4px solid #404040;
+}
 
+.conteudo_user img {
+  width: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/*mensagens*/
 .wrap-conteudo-mensagens {
   flex-grow: 1;
-  overflow: auto;
-
+  overflow: hidden;
+  position: fixed;
+  width: 80%;
+  height: 100%;
 }
 
 .conteudo-mensagens {
-  background: #404040;
-  padding: 15px;
+  padding: 10px;
+  padding-top: 0;
   height: 100%;
-
+  width: 100%;
 }
 
 /*mensagem*/
 .escrever-mensagem {
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   align-items: center;
-  border-top: solid #00ff8a;
-  background: #404040;
   position: relative;
   bottom: 0;
   padding: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .conteudo-chat {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 60%;
   overflow: auto;
-  padding: 15px;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 30px;
 }
 
 .row-mensagem {
@@ -148,23 +169,21 @@
 }
 
 .icone-perfil-row-mensagem {
-  width: 20%;
   display: flex;
   align-content: center;
-  justify-content: center;
-
+  margin-right: 15px;
+  justify-content: flex-start;
 }
 
 .conteudo-row-mensagem {
-  width: 80%;
+  width: 60%;
   padding: 20px;
   background: white;
   border-radius: 15px;
-  
 }
 
-.enviada{
-  background: #e1e1e1;
+.enviada {
+  background: #bcbcbc;
 }
 
 .texto-mensagem {
@@ -178,20 +197,36 @@
 }
 
 .mensagem {
-  padding: 10px;
+  margin-top: 5px;
+  color: #bdbdbd;
+  border: 0;
+  outline: 0;
   width: 100%;
-  height: 100%;
-
+  height: 55px;
+  padding: 5px;
+  font-size: 16px;
+  overflow: hidden;
+  border-color: transparent;
+  background-color: #4f4f4f;
+  border-radius: 5px;
 }
+
 /*listagem chats*/
+.pesquisa-fixed {
+  height: 70px;
+  padding: 10px;
+  padding-left: 20px;
+  width: 300px;
+}
+
 .listagem-chats {
   padding: 10px;
+  padding-top: 0;
+  padding-left: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   align-content: center;
-  border-bottom: solid #00ff8a;
-
+  align-items: center;
+  justify-content: space-between;
 }
 
 /*icones adicionar conteudo chat*/
@@ -215,31 +250,51 @@
 }
 
 form.form-mensagem {
+  position: fixed;
   height: 100px;
+  width: 82%;
+  bottom: 0;
+}
+
+.wrap_conteudo_form {
+  display: flex;
+  width: 77%;
+  margin-left: auto;
+  flex-direction: column;
+}
+
+.btn-perfil-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /*mensagens na barra*/
 .foto-perfil-container {
   padding: 10px;
-    width: 100%;
+  padding-left: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .foto-perfil {
-  height: 55px;
-  width: 55px;
+  height: 50px;
+  width: 50px;
 }
 
 .foto-perfil img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
   border-radius: 100%;
 }
 
 .wrap-pessoa {
   height: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -260,19 +315,4 @@ span.mensagem {
   display: flex;
   justify-content: flex-end;
   font-size: 12px;
-}
-
-/*responsivo*/
-@media (max-width: 880px){
-  .barratopo {
-    width: 100%;
-}
-
-.conteudo{
-  max-width: 100%;
-  width: 100%;
-  margin-right: auto;
-
-}
-
 }
