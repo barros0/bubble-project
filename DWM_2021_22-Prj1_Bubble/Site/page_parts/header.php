@@ -51,6 +51,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <!--CSS Geral-->
     <link rel="stylesheet" href="css/styles.css">
+
     <link rel="stylesheet" href="css/header.css">
     <!--Icones-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>

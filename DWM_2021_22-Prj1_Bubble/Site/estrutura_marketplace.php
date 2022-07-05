@@ -14,14 +14,14 @@ while ($market = $result_set->fetch_assoc()) {
                 <span class="dia/mes"></span>
                 <span class="hora"></span>
             </div>
-            <div class="descricao_market">
+            <div class="imagem_market">
             <img class="market_right" src="img/marketplace/<?php  echo $market['imagem'] ?>" alt="foto_market">
             </div>
-            <div class="titulo_market">
-                <h1>Autor: <?php echo $market['id_user'] ?></h1>
+            <div class="autor_market">
+                <p>Autor: <?php echo $market['id_user'] ?></p>
             </div>
             <div class="titulo_market">
-                <h1><?php echo $market['titulo'] ?></h1>
+                <p><?php echo $market['titulo'] ?></p>
             </div>
             <div class="descricao_market">
                 <p class="descricao_texto_market"><?php echo $market['descricao'] ?></p>

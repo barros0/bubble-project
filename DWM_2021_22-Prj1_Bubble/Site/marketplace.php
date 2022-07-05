@@ -17,29 +17,30 @@
             </form>
             <div id="button_modal_marketplace" class="button_modal">Adicionar +</div>
         </div>
+        <div class="wrap-market">
         <?php include 'estrutura_marketplace.php'; ?>
-      
+        </div>
     </div>
 </div>
 <!--FORM PARA ADCIONAR NOVO market TITULO preco DESCRICAO FOTO-->
 <div id="form" class="wrap_form_marketplace">
     <div class="div_market_novo">
-        <form class="form_market_novo" action="add_market.php" method="POST" enctype="multipart/form-data">
+        <form class="form_market_novo" action="add_marketplace.php" method="POST" enctype="multipart/form-data">
             <div class="wrap_fechar_market">
-                <p>Adicionar market:</p>
+                <p>Adicionar Produto:</p>
                 <i id="fechar_modal_market" class='bx bx-x'></i>
             </div>
             <div class="form_market_titulo">
                 <label for="textarea_market_titulo">Titulo:</label>
-                <textarea name="titulo_market_textarea" id="textarea_market_titulo" placeholder=" Ex.: Lisboa Games Week"></textarea>
-            </div>
-            <div class="form_market_preco">
-                <label for="textarea_market_preco">Localização:</label>
-                <textarea name="preco_market_textarea" id="textarea_market_preco" placeholder=" Ex.: Campo Pequeno, Lisboa"></textarea>
+                <textarea name="titulo_market_textarea" id="textarea_market_titulo" placeholder=" Ex.: Gestao de API"></textarea>
             </div>
             <div class="form_market_descricao">
                 <label for="textarea_market_descricao">Descrição:</label>
-                <textarea name="descricao_market_textarea" id="textarea_market_descricao" placeholder=" Ex.: Descrição da atividade, link para o site e horário e data do mesmo."></textarea>
+                <textarea name="descricao_market_textarea" id="textarea_market_descricao" placeholder=" Ex.: Esta aplicacao serve para gerir uma API de Web Dev."></textarea>
+            </div>
+            <div class="form_market_preco">
+                <label for="textarea_market_preco">Preco:</label>
+                <textarea name="preco_market_textarea" id="textarea_market_preco" placeholder=" Ex.: 15€"></textarea>
             </div>
             <label for="foto_market">Foto:</label> <br>
             <input type="file" name="foto_market">
