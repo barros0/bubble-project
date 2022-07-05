@@ -33,7 +33,7 @@ $query->close();
 //para efeitos de teste
 echo 'Enviado com Sucesso';
 //voltar a conversa
-header('location:./mensagens.php?id_user_msg='.$destinatario.'');
+header('location:./mensagens.php?id_user_msg='.$destinatario.'#ultimaMensagem');
 
 }
 
