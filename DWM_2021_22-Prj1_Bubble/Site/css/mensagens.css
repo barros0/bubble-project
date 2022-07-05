@@ -185,6 +185,12 @@
   color: #00ff8a;
 }
 
+.hora-msg {
+  font-size: 12px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
 
 .conteudo-row-mensagem {
   width: 60%;
@@ -296,15 +302,15 @@ form.form-mensagem {
 /*mensagens na barra*/
 .foto-perfil-container {
   padding: 10px;
-  padding-left: 20px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 
 .foto-perfil {
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
 }
 
 .foto-perfil img {
@@ -319,6 +325,12 @@ form.form-mensagem {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 10px;
+width: 100%;
+}
+
+.flex-column {
+  width: 75%;
 }
 
 .detalhes-conversa {
