@@ -6,7 +6,7 @@ include 'page_parts/header.php';
 $id_user = $_SESSION['user']['id_user'];
 
 ///Buscar utilizadores cujo user trocou mensagens
-$query = "SELECT DISTINCT users.id_user, users.profile_image, users.username, (SELECT mensagem FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS msg FROM users JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
+$query = "SELECT DISTINCT users.id_user, users.profile_image, users.username, (SELECT mensagem FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS msg, (SELECT created_at FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS hora FROM users JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
 $lista_users_mensagens = $conn->query($query);
 
 //verificar se o url conteem id_user_msg para entao carregar as respetivas mensagens
@@ -27,7 +27,6 @@ if (isset($_GET['id_user_msg'])) {
     $imagemUser = "SELECT * FROM users WHERE id_user = '$id_user'";
     $imagemUti = $conn->query($imagemUser)->fetch_assoc();
 }
-
 
 ?>
 
@@ -68,7 +67,8 @@ if (isset($_GET['id_user_msg'])) {
                         </div>
                         <div class="d-flex flex-column">
                             <div><?= $row['username'] ?></div>
-                            <div><?= $row['msg'] ?></div>
+                            <div><?= mb_strimwidth($row['msg'], 0, 25, "...");  ?></div>
+                            <div class="detalhes-horas"><?=$row['hora'] ?></div>
                         </div>
                     </div>
                 </a>
@@ -81,6 +81,10 @@ if (isset($_GET['id_user_msg'])) {
         <div class="wrap-conteudo-mensagens">
 
             <div class="conteudo-mensagens">
+                <?php 
+            if (isset($_GET['id_user_msg'])) {
+
+                ?>
                 <div class="conteudo_user d-flex flex-row">
                     <div><img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil"></div>
                     <div><?= $imagem['username'] ?></div>
@@ -88,6 +92,7 @@ if (isset($_GET['id_user_msg'])) {
                 <div class="conteudo-chat">
 
                     <?php
+            }
                     //listar as mensagens
                     if (isset($_GET['id_user_msg'])) {
 
@@ -144,7 +149,7 @@ if (isset($_GET['id_user_msg'])) {
 
                                     if (++$counter == $numResults) {
                                         // se for a ultima mensagem
-                                        
+
                                     ?>
 
                                         <div id="ultimaMensagem" class="row-mensagem enviada">
