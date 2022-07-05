@@ -26,13 +26,6 @@ $lista_faqs = $conn->query($query);
         $row['resposta'];
 
         /*
-        $ids = explode(" ", $valorID); //separar os ids para poder comparar 
-
-        //gerar acordiao
-
-        echo $valorID;
-        echo $ids;
-*/
         //primeira pergunta vir por defeito aberta
 
         //colocar sempre a que tem o id menor como a primeira pergunta
