@@ -172,8 +172,19 @@
   display: flex;
   align-content: center;
   margin-right: 15px;
+  margin-left: 15px;
   justify-content: flex-start;
 }
+
+.user-lateral{
+  text-decoration: none;
+  color: white;
+}
+
+.user-lateral:hover{
+  color: #00ff8a;
+}
+
 
 .conteudo-row-mensagem {
   width: 60%;
@@ -183,7 +194,19 @@
 }
 
 .enviada {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recebida{
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.env{
   background: #bcbcbc;
+
 }
 
 .texto-mensagem {

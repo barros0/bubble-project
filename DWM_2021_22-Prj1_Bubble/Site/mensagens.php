@@ -6,7 +6,7 @@ include 'page_parts/header.php';
 $id_user = $_SESSION['user']['id_user'];
 
 ///Buscar utilizadores cujo user trocou mensagens
-$query = "SELECT DISTINCT id_user, profile_image, username FROM users INNER JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
+$query = "SELECT DISTINCT users.id_user, users.profile_image, users.username, (SELECT mensagem FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS msg FROM users JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
 $lista_users_mensagens = $conn->query($query);
 
 //verificar se o url conteem id_user_msg para entao carregar as respetivas mensagens
@@ -57,21 +57,20 @@ if (isset($_GET['id_user_msg'])) {
 
             while ($row = $lista_users_mensagens->fetch_assoc()) {
             ?>
-
+                            
+                <a class="user-lateral" href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>">
                 <div class="wrap-pessoa">
                     <div class="foto-perfil-container">
                         <div class="foto-perfil">
-                            <a href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>">
                                 <img src='./img/fotos_perfil/<?= $row['profile_image'] ?>' alt='<?= $row['username'] ?>'>
-                            </a>
                         </div>
                     </div>
                     <div class="d-flex flex-column">
                         <div><?= $row['username'] ?></div>
-                        <div>ultima mensagem</div>
+                        <div><?= $row['msg'] ?></div>
                     </div>
                 </div>
-
+                </a>
             <?php
             }
             ?>
@@ -83,7 +82,7 @@ if (isset($_GET['id_user_msg'])) {
             <div class="conteudo-mensagens">
                 <div class="conteudo_user d-flex flex-row">
                     <div><img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil"></div>
-                    <div>username</div>
+                    <div><?= $imagem['username'] ?></div>
                 </div>
                 <div class="conteudo-chat">
                     <?php
@@ -95,26 +94,30 @@ if (isset($_GET['id_user_msg'])) {
                             $user_from = $rowMsg['from_id_user'];
                             if ($user_to == $id_user) {
                     ?>
-                                <div class="row-mensagem">
+                                <div class="row-mensagem recebida">
                                     <div class="icone-perfil-row-mensagem">
                                         <div class="foto-perfil">
+                                        <a href="./perfil.php?username=<?= $imagem['username'] ?>">
                                             <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                                        </a>
                                         </div>
                                     </div>
-                                    <div class="conteudo-row-mensagem enviada">
+                                    <div class="conteudo-row-mensagem ">
                                         <span><?= $rowMsg['mensagem'] ?></span>
                                     </div>
                                 </div>
                             <?php
                             } else {
                             ?>
-                                <div class="row-mensagem">
-                                    <div class="conteudo-row-mensagem">
+                                <div class="row-mensagem enviada">
+                                    <div class="conteudo-row-mensagem env">
                                         <span><?= $rowMsg['mensagem'] ?> </span>
                                     </div>
                                     <div class="icone-perfil-row-mensagem">
                                         <div class="foto-perfil">
+                                        <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
                                             <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
+                                        </a>
                                         </div>
                                     </div>
                                 </div>
@@ -141,8 +144,6 @@ if (isset($_GET['id_user_msg'])) {
                     <div class="conteudo-multimedia">
 
                         <button type="submit" class="btn btn-primary icones-chat"><i class='bx bxs-send'></i></button>
-
-                        <div class="icones-chat"><i class="fa-solid fa-plus"></i></div>
 
                     </div>
 
