@@ -21,7 +21,7 @@ if(isset($_REQUEST["term"])){
                 
                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
-                    echo "<p>  <a class='user-lateral' href='./mensagens.php?id_user_msg=". $row['id_user'] . "' >" . $row["nome"] . "</a></p>";
+                    echo "<div class='resultado'> <div class='foto-perfil-pesquisa'> <img src='./img/fotos_perfil/" . $row['profile_image'] . "' alt=" . $row['username'] ."></div> <p class='usernamepesq'> <a class='user-lateral' href='./mensagens.php?id_user_msg=". $row['id_user'] . "' >" . $row["nome"] . "</p></a></div>";
                 
                 }
             } else{
