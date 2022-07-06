@@ -67,8 +67,8 @@ if (isset($_GET['id_user_msg'])) {
                         </div>
                         <div class="d-flex flex-column">
                             <div><?= $row['username'] ?></div>
-                            <div><?= mb_strimwidth($row['msg'], 0, 25, "...");  ?></div>
-                            <div class="detalhes-horas"><?=$row['hora'] ?></div>
+                            <div style="color: #bdbdbd;"><?= mb_strimwidth($row['msg'], 0, 25, "...");  ?></div>
+                            <div style="color: #bdbdbd;" class="detalhes-horas"><?= $row['hora'] ?></div>
                         </div>
                     </div>
                 </a>
@@ -81,18 +81,18 @@ if (isset($_GET['id_user_msg'])) {
         <div class="wrap-conteudo-mensagens">
 
             <div class="conteudo-mensagens">
-                <?php 
-            if (isset($_GET['id_user_msg'])) {
+                <?php
+                if (isset($_GET['id_user_msg'])) {
 
                 ?>
-                <div class="conteudo_user d-flex flex-row">
-                    <div><img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil"></div>
-                    <div><?= $imagem['username'] ?></div>
-                </div>
-                <div class="conteudo-chat">
+                    <div class="conteudo_user d-flex flex-row">
+                        <div><img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil"></div>
+                        <div><?= $imagem['username'] ?></div>
+                    </div>
+                    <div class="conteudo-chat">
 
-                    <?php
-            }
+                        <?php
+                    }
                     //listar as mensagens
                     if (isset($_GET['id_user_msg'])) {
 
@@ -101,18 +101,18 @@ if (isset($_GET['id_user_msg'])) {
                         $numResults = mysqli_num_rows($mensagens);
                         while ($rowConta = mysqli_fetch_array($mensagens)) {
 
-                        while ($rowMsg = $mensagens->fetch_assoc()) {
+                            while ($rowMsg = $mensagens->fetch_assoc()) {
 
-                            //buscar os utilizadores que user enviou e recebeu mensagem
-                            $user_to = $rowMsg['to_id_user'];
-                            $user_from = $rowMsg['from_id_user'];
+                                //buscar os utilizadores que user enviou e recebeu mensagem
+                                $user_to = $rowMsg['to_id_user'];
+                                $user_from = $rowMsg['from_id_user'];
 
                                 if ($user_to == $id_user) {
 
                                     if (++$counter == $numResults) {
                                         // se for a ultima mensagem
 
-                    ?>
+                        ?>
                                         <div id="ultimaMensagem" class="row-mensagem recebida">
                                             <div class="icone-perfil-row-mensagem">
                                                 <div class="foto-perfil">
@@ -121,7 +121,7 @@ if (isset($_GET['id_user_msg'])) {
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="conteudo-row-mensagem ">
+                                            <div class="conteudo-row-mensagem env">
                                                 <span><?= $rowMsg['mensagem'] ?></span>
                                             </div>
                                         </div>
@@ -138,7 +138,7 @@ if (isset($_GET['id_user_msg'])) {
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="conteudo-row-mensagem ">
+                                            <div class="conteudo-row-mensagem env">
                                                 <span><?= $rowMsg['mensagem'] ?></span>
                                             </div>
                                         </div>
@@ -153,7 +153,7 @@ if (isset($_GET['id_user_msg'])) {
                                     ?>
 
                                         <div id="ultimaMensagem" class="row-mensagem enviada">
-                                            <div class="conteudo-row-mensagem env">
+                                            <div class="conteudo-row-mensagem">
                                                 <span><?= $rowMsg['mensagem'] ?> </span>
                                             </div>
                                             <div class="icone-perfil-row-mensagem">
@@ -170,7 +170,7 @@ if (isset($_GET['id_user_msg'])) {
                                     ?>
 
                                         <div class="row-mensagem enviada">
-                                            <div class="conteudo-row-mensagem env">
+                                            <div class="conteudo-row-mensagem">
                                                 <span><?= $rowMsg['mensagem'] ?> </span>
                                             </div>
                                             <div class="icone-perfil-row-mensagem">
@@ -189,7 +189,7 @@ if (isset($_GET['id_user_msg'])) {
                         }
                     }
                     ?>
-                </div>
+                    </div>
             </div>
         </div>
         <?php

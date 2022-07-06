@@ -176,12 +176,12 @@
   justify-content: flex-start;
 }
 
-.user-lateral{
+.user-lateral {
   text-decoration: none;
   color: white;
 }
 
-.user-lateral:hover{
+.user-lateral:hover {
   color: #00ff8a;
 }
 
@@ -204,13 +204,13 @@
   justify-content: flex-end;
 }
 
-.recebida{
+.recebida {
   display: flex;
   justify-content: flex-start;
 
 }
 
-.env{
+.env {
   background: #bcbcbc;
 
 }
@@ -302,6 +302,7 @@ form.form-mensagem {
 /*mensagens na barra*/
 .foto-perfil-container {
   padding: 10px;
+  padding-top: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -325,8 +326,8 @@ form.form-mensagem {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
-width: 100%;
+  padding: 0 10px 15px;
+  width: 100%;
 }
 
 .flex-column {
