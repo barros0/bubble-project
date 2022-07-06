@@ -23,8 +23,8 @@ if ($email != "") {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Invalid email format";
         } else {
-            $stmt_update_email = $conn->prepare("UPDATE users SET email = ? WHERE id_user = " . $userid);
-            $stmt_update_email->bind_param('s', $email);
+            $stmt_update_email = $conn->prepare("UPDATE users SET email = ? WHERE id_user = ?");
+            $stmt_update_email->bind_param('si', $email, $userid);
             $stmt_update_email->execute();
             $stmt_update_email->close();
             array_push($_SESSION['alerts']['success'], "Email Atualizado Com Sucesso!");

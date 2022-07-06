@@ -1,6 +1,10 @@
 <?php include './src/definicoes/definicoes.php'; ?>
 <?php
-$ip_sessions = $conn->query('SELECT * FROM ip_sessions where id_user=' . $_SESSION['user']['id_user']);
+$ip_sessions = $conn->prepare('SELECT * FROM ip_sessions where id_user= ?');
+$ip_sessions->bind_param("i", $userq['id_user']);
+$ip_sessions->execute();
+
+$result = $ip_sessions->get_result();
 ?>
 
 </div>
@@ -46,17 +50,16 @@ $ip_sessions = $conn->query('SELECT * FROM ip_sessions where id_user=' . $_SESSI
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($ip_sessions as $ip_session) {
+                        <?php while ($row = $result->fetch_assoc()) {
+
                         ?>
                             <tr>
-                                <th scope="row"><?= $ip_session['data'] ?></th>
+                                <th scope="row"><?= $row['data'] ?></th>
                                 <td>
-                                    <p>Localizacao
-                                        <?php //echo $ip_session['localizacao']
-                                        ?></p>
+                                    <p><?= $row['localizacao'] ?></p>
                                 </td>
                                 <td>
-                                    <p><?= $ip_session['ip_sessions'] ?></p>
+                                    <p><?= $row['ip_sessions'] ?></p>
                                 </td>
                             </tr>
                         <?php } ?>

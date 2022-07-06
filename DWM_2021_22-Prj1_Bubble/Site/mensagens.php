@@ -36,18 +36,18 @@ if (isset($_GET['id_user_msg'])) {
 ?>
 <div id="form" class="wrap_form_mensagens">
     <div class="div_mensagem_novo">
-            <div class="wrap_fechar">
-                <h3>Nova Conversa:</h3>
-                <i id="fechar_modal" class='bx bx-x'></i>
-            </div>
-            <div class="form_mensagem_titulo">
+        <div class="wrap_fechar">
+            <h3>Nova Conversa:</h3>
+            <i id="fechar_modal" class='bx bx-x'></i>
+        </div>
+        <div class="form_mensagem_titulo">
             <div class="search-box">
                 <label for="textarea_mensagem_titulo">Pesquisar por nome:</label>
                 <input type="text" class="novouser" placeholder="Pesquisar...."></input>
                 <div class="result"></div>
             </div>
-            </div>
-           <!-- <input type="submit" class="button_update" id="" value="Enviar Mensagem"> -->
+        </div>
+        <!-- <input type="submit" class="button_update" id="" value="Enviar Mensagem"> -->
     </div>
 </div>
 
@@ -62,10 +62,10 @@ if (isset($_GET['id_user_msg'])) {
                         </form>
                     </div>
                 </div>
-        <!--Novo Chat--->
-        <div id="novochat" class="wrap_btn">
+                <!--Novo Chat--->
+                <div id="novochat" class="wrap_btn">
                     <div class="btn-perfil-container">
-                        <div  class="foto-perfil">
+                        <div class="foto-perfil">
                             <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
                         </div>
                     </div>
@@ -177,7 +177,7 @@ if (isset($_GET['id_user_msg'])) {
                                             <div class="conteudo-row-mensagem">
                                                 <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?> </span>
                                             </div>
-                                            <div class="icone-perfil-row-mensagem">
+                                            <div class="icone-perfil-row-mensagem margem">
                                                 <div class="foto-perfil-chat">
                                                     <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
                                                         <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
@@ -194,7 +194,7 @@ if (isset($_GET['id_user_msg'])) {
                                             <div class="conteudo-row-mensagem">
                                                 <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?> </span>
                                             </div>
-                                            <div class="icone-perfil-row-mensagem">
+                                            <div class="icone-perfil-row-mensagem margem">
                                                 <div class="foto-perfil-chat">
                                                     <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
                                                         <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
@@ -210,33 +210,36 @@ if (isset($_GET['id_user_msg'])) {
                         }
                     }
                     ?>
+
+
+
+                    <?php
+
+                    if (isset($_GET['id_user_msg'])) {
+
+                    ?>
+                        <form class="form-mensagem" action="./enviar_mensagem.php?to_user=<?= $imagem['id_user'] ?>" method="POST">
+
+                            <div class="escrever-mensagem">
+                                <div class="texto-mensagem">
+
+                                    <input type="text" placeholder="Escreva uma Mensagem..." class="mensagem" name="mensagem" id="mensagem">
+                                </div>
+                                <div class="conteudo-multimedia">
+
+                                    <button type="submit" class="btn btn-primary icones-chat"><i class='bx bxs-send'></i></button>
+
+                                </div>
+
+                            </div>
+                        </form>
                     </div>
             </div>
         </div>
-        <?php
-
-        if (isset($_GET['id_user_msg'])) {
-
-        ?>
-            <form class="form-mensagem" action="./enviar_mensagem.php?to_user=<?= $imagem['id_user'] ?>" method="POST">
-
-                <div class="escrever-mensagem">
-                    <div class="texto-mensagem">
-
-                        <input type="text" placeholder="Escreva uma Mensagem..." class="mensagem" name="mensagem" id="mensagem">
-                    </div>
-                    <div class="conteudo-multimedia">
-
-                        <button type="submit" class="btn btn-primary icones-chat"><i class='bx bxs-send'></i></button>
-
-                    </div>
-
-                </div>
-            </form>
     </div>
 <?php
 
-        }
+                    }
 ?>
 </div>
 
