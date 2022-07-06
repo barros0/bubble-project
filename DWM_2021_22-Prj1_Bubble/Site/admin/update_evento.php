@@ -19,7 +19,7 @@ if (isset($_GET['delete_eventoid'])) {
 
     $conn->query('DELETE FROM eventos WHERE id_evento = ' . $_GET['delete_eventoid']);
     $conn->close();
-    array_push($_SESSION['alerts']['alert'], 'Evento eliminado com sucesso!');
+    array_push($_SESSION['alerts']['alert'], 'evento eliminado com sucesso!');
     header('location:./eventos.php');
     exit;
 }
