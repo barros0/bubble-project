@@ -27,6 +27,7 @@ $conn->close();
 
             <div class="title">
                 <h2>Atualizar utilizador</h2>
+                <i id="fechar_modal_faq" class='bx bx-x' onClick="Javascript:window.location.href = './users.php';"></i>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -57,7 +58,6 @@ $conn->close();
                     <?php } ?>
                 </select>
             </div>
-        <a class="btn btn-danger" href="./update_user.php?delete_userid=<?= $user['id_user']  ?>">Voltar</a>
             <button type="submit" class="btn btn-primary">Gravar</button>
 
     </form>
