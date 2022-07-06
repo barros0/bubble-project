@@ -80,6 +80,7 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
                 <li><a href="./users.php"><i class='bx bxs-group icon'></i> Utilizadores</a></li>
                 <li><a href="./empregos.php"><i class='bx bxs-briefcase icon'></i> Empregos</a></li>
                 <li><a href="./eventos.php"><i class='bx bxs-news icon'></i> Eventos</a></li>
+                <li><a href="./marketplace.php"><i class='bx bxs-news icon'></i> Marketplace</a></li>
                 <li><a href="./faqs.php"><i class='bx bx-question-mark icon'></i> FAQS</a></li>
                 <li><a href="./reports.php"><i class='bx bx-error icon'></i> Reports</a></li>
                 <li><a href="./paginas.php"><i class='bx bxs-cog icon'></i> Definições Site</a></li>
