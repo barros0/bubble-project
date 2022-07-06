@@ -6,7 +6,11 @@ include 'page_parts/header.php';
 $id_user = $_SESSION['user']['id_user'];
 
 ///Buscar utilizadores cujo user trocou mensagens
-$query = "SELECT DISTINCT users.id_user, users.profile_image, users.username, (SELECT mensagem FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS msg, (SELECT created_at FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS hora FROM users JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
+$query = "SELECT DISTINCT users.id_user, users.profile_image, users.username, users.nome, 
+(SELECT mensagem FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS msg, 
+(SELECT created_at FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS hora 
+FROM users JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
+
 $lista_users_mensagens = $conn->query($query);
 
 //verificar se o url conteem id_user_msg para entao carregar as respetivas mensagens
@@ -29,6 +33,22 @@ if (isset($_GET['id_user_msg'])) {
 }
 
 ?>
+<div id="form" class="wrap_form_mensagens">
+    <div class="div_mensagem_novo">
+            <div class="wrap_fechar">
+                <p>Nova Conversa:</p>
+                <i id="fechar_modal" class='bx bx-x'></i>
+            </div>
+            <div class="form_mensagem_titulo">
+            <div class="search-box">
+                <label for="textarea_mensagem_titulo">Pesquisar por nome ou username:</label>
+                <input type="text" class="novouser" placeholder="Pesquisar...."></input>
+                <div class="result"></div>
+            </div>
+            </div>
+           <!-- <input type="submit" class="button_update" id="" value="Enviar Mensagem"> -->
+    </div>
+</div>
 
 <div class="conteudo">
     <div class="barratopo">
@@ -41,10 +61,10 @@ if (isset($_GET['id_user_msg'])) {
                         </form>
                     </div>
                 </div>
-                <!--Novo Chat--->
-                <div class="wrap_btn">
+        <!--Novo Chat--->
+        <div id="novochat" class="wrap_btn">
                     <div class="btn-perfil-container">
-                        <div class="foto-perfil">
+                        <div  class="foto-perfil">
                             <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
                         </div>
                     </div>
@@ -66,7 +86,7 @@ if (isset($_GET['id_user_msg'])) {
                             </div>
                         </div>
                         <div class="d-flex flex-column">
-                            <div><?= $row['username'] ?></div>
+                            <div><?= $row['nome'] ?></div>
                             <div style="color: #bdbdbd;"><?= mb_strimwidth($row['msg'], 0, 25, "...");  ?></div>
                             <div style="color: #bdbdbd;" class="detalhes-horas"><?= $row['hora'] ?></div>
                         </div>
@@ -87,7 +107,7 @@ if (isset($_GET['id_user_msg'])) {
                 ?>
                     <div class="conteudo_user d-flex flex-row">
                         <div><img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil"></div>
-                        <div><?= $imagem['username'] ?></div>
+                        <div><?= $imagem['nome'] ?></div>
                     </div>
                     <div class="conteudo-chat">
 

@@ -193,7 +193,7 @@
 }
 
 .conteudo-row-mensagem {
-  width: 60%;
+  max-width: 60%;
   padding: 20px;
   background: white;
   border-radius: 15px;
@@ -351,4 +351,134 @@ span.mensagem {
   display: flex;
   justify-content: flex-end;
   font-size: 12px;
+}
+
+/*teste*/
+
+/*DIV DO FORM PARA ADICIONAR*/
+.wrap_form_mensagens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
+}
+
+.novouser{
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.wrap_mensagens {
+  display: flex;
+  width: 100%;
+}
+
+.wrap_mensagens form {
+  width: 75%;
+}
+
+.div_input_search_mensagens {
+  display: flex;
+}
+
+.button_search_mensagens i.bx-search {
+  padding: 8px;
+  color: #bdbdbd;
+  font-size: 30px;
+  background-color: #4e4f50;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.search_mensagens button {
+  background-color: transparent;
+  border: 0;
+}
+
+input.input_seach_mensagens {
+  outline: none;
+  background-color: #404040;
+  color: #bdbdbd;
+  border: 0;
+  padding: 10px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.button_modal {
+  display: flex;
+  font-weight: 600;
+  width: 12%;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color: #00ff8a;
+  color: #404040;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button_update {
+  float: right;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #00ff8a;
+  border: 0;
+  font-weight: 600;
+  outline: 0;
+}
+
+.button_update:hover {
+  background-color: #00d372;
+}
+
+.button_modal:hover {
+  background-color: #00d372;
+}
+
+
+
+.div_mensagem_novo {
+  top: 68px;
+  margin-top: 50px;
+  padding: 15px;
+  position: fixed;
+  box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
+  background-color: #404040;
+  border-radius: 15px;
+  color: white;
+  width: 50%;
+}
+
+#form {
+  display: none;
+}
+
+.wrap_fechar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#fechar_modal {
+  font-size: 30px;
+  cursor: pointer;
 }
