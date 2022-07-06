@@ -67,8 +67,8 @@ if (isset($_GET['id_user_msg'])) {
                         </div>
                         <div class="d-flex flex-column">
                             <div><?= $row['username'] ?></div>
-                            <div><?= mb_strimwidth($row['msg'], 0, 25, "...");  ?></div>
-                            <div class="detalhes-horas"><?= $row['hora'] ?></div>
+                            <div style="color: #bdbdbd;"><?= mb_strimwidth($row['msg'], 0, 25, "...");  ?></div>
+                            <div style="color: #bdbdbd;" class="detalhes-horas"><?= $row['hora'] ?></div>
                         </div>
                     </div>
                 </a>
