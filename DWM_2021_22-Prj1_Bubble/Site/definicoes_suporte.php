@@ -14,16 +14,24 @@ $result = $reports->get_result();
     </div>
     <div class="wrap_denuncias">
         <?php while ($row = $result->fetch_assoc()) {
+
             $publicacao_id = $row['publicacao_id'];
+            $user_publi = $conn->prepare("SELECT user_id FROM publicacoes where publicacao_id =?");
+            $user_publi->bind_param("i", $publicacao_id);
+            $user_publi->execute();
+            $result_user_publi = $user_publi->get_result();
+            $result_user_publi = $result_user_publi->fetch_assoc();
 
-            $user_publi = $conn->query("SELECT user_id FROM publicacoes where publicacao_id =" . $publicacao_id)->fetch_assoc();
+            $user_id = $result_user_publi['user_id'];
+            $user_info = $conn->prepare("SELECT nome FROM users where id_user= ?");
+            $user_info->bind_param("i", $user_id);
+            $user_info->execute();
+            $result_user_info = $user_info->get_result();
+            $result_user_info = $result_user_info->fetch_assoc();
 
-            $user_id = $user_publi['user_id'];
-
-            $user_info = $conn->query("SELECT nome FROM users where id_user=" . $user_id)->fetch_assoc();
         ?>
             <div class="denuncia">
-                <p>Denunciaste a publicação de <?= $user_info['nome'] ?> por <?= $row['categoria'] ?> </p>
+                <p>Denunciaste a publicação de <?= $result_user_info['nome'] ?> por <?= $row['categoria'] ?> </p>
                 <div class="denuncia_ver">
                     <p class="texto_data_denuncia"><?= $row['data'] ?></p>
                     <?php
@@ -39,7 +47,8 @@ $result = $reports->get_result();
                 </div>
             </div>
         <?php }
-        $reports->close(); ?>
+        $reports->close();
+        ?>
     </div>
 </div>
 
