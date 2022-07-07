@@ -21,7 +21,7 @@ $(document).ready(function(){
   $('.search-box input[type="text"]').on("keyup input", function(){
       /* Get input value on change */
       var inputVal = $(this).val();
-      var resultDropdown = $(this).siblings(".result");
+      var resultDropdown = $(".result");
       if(inputVal.length){
           $.get("pesquisa-utilizadores.php", {term: inputVal}).done(function(data){
               // Display the returned data in browser

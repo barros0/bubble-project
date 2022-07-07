@@ -6,13 +6,17 @@ include 'page_parts/header.php';
 $id_user = $_SESSION['user']['id_user'];
 
 ///Buscar utilizadores cujo user trocou mensagens
-$query = "SELECT DISTINCT users.id_user, users.profile_image, users.username, users.nome, 
+/*$query = "SELECT DISTINCT users.id_user, users.profile_image, users.username, users.nome, 
 (SELECT mensagem FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS msg, 
 (SELECT created_at FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS hora 
 FROM users JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
+*/
 
+//$query = "SELECT DISTINCT from_id_user AS chats FROM mensagens WHERE to_id_user = '$id_user' UNION SELECT to_id_user FROM mensagens WHERE from_id_user = '$id_user'";
+//$query ="SELECT DISTINCT from_id_user,created_at FROM mensagens WHERE to_id_user = 'id_user' UNION SELECT to_id_user,created_at FROM mensagens WHERE from_id_user = '1' ORDER by created_at DESC";
+$query = "SELECT DISTINCT to_id_user, created_at FROM mensagens WHERE from_id_user = '$id_user' GROUP BY to_id_user ORDER BY MAX(created_at) DESC, to_id_user";
+//$query = "SELECT DISTINCT from_id_user,max(created_at) FROM mensagens WHERE to_id_user = '1' UNION SELECT DISTINCT to_id_user,max(created_at) FROM mensagens WHERE from_id_user = '1' GROUP BY from_id_user,to_id_user ORDER BY `max(created_at)` DESC";
 $lista_users_mensagens = $conn->query($query);
-
 
 //verificar se o url conteem id_user_msg para entao carregar as respetivas mensagens
 if (isset($_GET['id_user_msg'])) {
@@ -34,6 +38,7 @@ if (isset($_GET['id_user_msg'])) {
 }
 
 ?>
+<!--
 <div id="form" class="wrap_form_mensagens">
     <div class="div_mensagem_novo">
         <div class="wrap_fechar">
@@ -47,9 +52,9 @@ if (isset($_GET['id_user_msg'])) {
                 <div class="result"></div>
             </div>
         </div>
-        <!-- <input type="submit" class="button_update" id="" value="Enviar Mensagem"> -->
+        <input type="submit" class="button_update" id="" value="Enviar Mensagem"> 
     </div>
-</div>
+</div>-->
 
 <div class="conteudo">
     <div class="barratopo">
@@ -57,26 +62,46 @@ if (isset($_GET['id_user_msg'])) {
             <div class="listagem-chats">
                 <div class="pesquisa-fixed" id="pesquisa-fixed">
                     <div class="pesquisa-mensagens">
-                        <form class="form-pesquisa" action="#" method="POST">
-                            <div class="fundo-pesquisa"><input class="pesquisa" type="search" placeholder="Pesquisar Conversas..." name="search"></div>
-                        </form>
+                    <div class="search-box">
+                        <div class="fundo-pesquisa"><input autocomplete="off" class="pesquisa" type="text" placeholder="Pesquisar Conversas..." name="search"></div>
+                </div>
                     </div>
                 </div>
-                <!--Novo Chat--->
+                <!--Novo Chat
                 <div id="novochat" class="wrap_btn">
                     <div class="btn-perfil-container">
                         <div class="foto-perfil">
                             <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
                         </div>
                     </div>
-                </div>
+                </div>--->
             </div>
+            <div class="result">
 
             <?php
             //mostrar as pessoas cujo utilizador trocou mensagens
 
-            while ($row = $lista_users_mensagens->fetch_assoc()) {
+            //se o utilizador nao tiver conversas, nao fazer nada
+           /* if(mysqli_num_rows($lista_users_mensagens) <= 1){
 
+
+            }else{*/
+           
+
+              while ($rows = $lista_users_mensagens->fetch_assoc()) {
+
+                //buscar dados dos users
+
+                $qry = "SELECT * FROM users WHERE id_user = " . $rows["to_id_user"];
+                $lista = $conn->query($qry);
+
+                while ($row = $lista->fetch_assoc()) {
+
+                    //para cada utilizador buscar a ultima mensagem
+                    $qrymsg = "SELECT * FROM mensagens WHERE from_id_user = " . $rows['to_id_user'] . " AND to_id_user = '$id_user' OR from_id_user = '$id_user' AND to_id_user = " . $rows['to_id_user'] . " ORDER BY created_at DESC LIMIT 1";
+                    $msg = $conn->query($qrymsg);
+
+                    while ($roww = $msg->fetch_assoc()) {
             ?>
 
                 <a class="user-lateral" href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>#ultimaMensagem">
@@ -88,14 +113,18 @@ if (isset($_GET['id_user_msg'])) {
                         </div>
                         <div class="d-flex flex-column">
                             <div><?= $row['nome'] ?></div>
-                            <div style="color: #bdbdbd;"><?= mb_strimwidth($row['msg'], 0, 25, "...");  ?></div>
-                            <div style="color: #bdbdbd;" class="detalhes-horas"><?= $row['hora'] ?></div>
+                            <div style="color: #bdbdbd;"><?= mb_strimwidth($roww['mensagem'], 0, 25, "...");  ?></div>
+                            <div style="color: #bdbdbd;" class="detalhes-horas"><?= $roww['created_at'] ?></div>
                         </div>
                     </div>
                 </a>
             <?php
-            }
+           // }
+         }
+        }
+    }
             ?>
+            </div>
         </div>
     </div>
     <div class="wrap_conteudo_form">
@@ -120,7 +149,7 @@ if (isset($_GET['id_user_msg'])) {
                         //verificar qual é a utlima mensagem, adicionar um id a mesma para ser automaticamente redirecionado para ela
                         $counter = 1;
                         $numResults = mysqli_num_rows($mensagens);
-                        while ($rowConta = mysqli_fetch_array($mensagens)) {
+                       // while ($rowConta = mysqli_fetch_array($mensagens)) {
 
                             while ($rowMsg = $mensagens->fetch_assoc()) {
 
@@ -207,7 +236,7 @@ if (isset($_GET['id_user_msg'])) {
                                     }
                                 }
                             }
-                        }
+                       // }
                     }
                     ?>
 
@@ -223,7 +252,7 @@ if (isset($_GET['id_user_msg'])) {
                             <div class="escrever-mensagem">
                                 <div class="texto-mensagem">
 
-                                    <input type="text" placeholder="Escreva uma Mensagem..." class="mensagem" name="mensagem" id="mensagem">
+                                    <input type="text" placeholder="Escreva uma Mensagem..." class="mensagem" name="mensagem" id="mensagem" autocomplete="off">
                                 </div>
                                 <div class="conteudo-multimedia">
 
