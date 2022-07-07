@@ -1,30 +1,32 @@
 <?php include 'page_parts/header.php'; ?>
 <div class="parts">
     <?php include 'page_parts/left.php'; ?>
+
+<?php
+$liked = $conn->query('select * from gostos join publicacoes on gostos.publicacao_id = publicacao.publicacao_id where gostos.user_id = ' . $userq['id_user']);
+
+$saved = $conn->query('select * from publicacoes_fav join publicacoes on publicacoes_fav.id_pub = publicacao.publicacao_id where publicacoes_fav.user_id = ' . $userq['id_user']);
+
+print_r($saved);
+exit;
+
+$conn->close();
+?>
+
+
+<?php
+
+foreach ($liked as $pub) {
+}
+
+
+foreach ($saved as $pub) {
+}
+
+
+?>
+
     <div class="center">
-
-        <?php
-        $liked = $conn->query('select * from gostos inner join publicacoes on gostos.publicacao_id = publicacao.publicacao_id where gostos.user_id = ' . $userq['id_user']);
-
-        $saved = $conn->query('select * from guardados inner join publicacoes on guardados.publicacao_id = publicacao.publicacao_id where guardados.user_id = ' . $userq['id_user']);
-        print_r($saved);
-
-        $conn->close();
-        ?>
-
-
-        <?php
-
-        foreach ($liked as $pub) {
-        }
-
-
-        foreach ($saved as $pub) {
-        }
-
-
-        ?>
-
         <div class="container-sl">
             <div>
                 <div class="bns-change">

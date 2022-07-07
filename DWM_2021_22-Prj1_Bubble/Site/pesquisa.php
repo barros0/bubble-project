@@ -8,6 +8,10 @@ if(strlen($value_search) <= 0){
     exit;
 }
 
+$addpesquisa = $conn->prepare("insert into historico_pesquisa (id_utilizador, pesquisa) VALUES (?, ?)");
+$addpesquisa->bind_param("is", $userq['id_user'], $value_search);
+$addpesquisa->execute();
+
 $search = explode(" ",$value_search);
 $description = "";
 $s_user = "";
@@ -17,9 +21,13 @@ $s_market = "";
 
 foreach($search AS $s)
 {
+    //2
     $s_user .= "`nome` LIKE '%".$s."%' or `username` LIKE '%".$s."%' or ";
+    //1
     $s_pub .= "`conteudo` LIKE '%".$s."%' or ";
+    //3
     $s_eventos .= "`titulo` LIKE '%".$s."%' or `localizacao` LIKE '%".$s."%' or `descricao` LIKE '%".$s."%' or";
+   //1
     $s_market .= "`titulo` LIKE '%".$s."%' or ";
 }
 
