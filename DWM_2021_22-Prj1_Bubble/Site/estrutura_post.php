@@ -38,7 +38,7 @@ while ($pub = $result_set->fetch_assoc()) {
                             if ($pub["id_user"] != $userq['id_user']) {
                             ?>
                                 <div class="reportar">
-                                    <a href="./feed.php?id_pub=<?= $id_publicacao ?>"><i class='bx bx-error-alt'></i>Reportar</a>
+                                    <a href="./feed.php?id_pub_report=<?= $id_publicacao ?>"><i class='bx bx-error-alt'></i>Reportar</a>
                                 </div>
                             <?php
                             }
