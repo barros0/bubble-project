@@ -67,11 +67,11 @@
 }
 
 .pesquisa-mensagens {
-  box-sizing: border-box;
-  align-items: center;
-  display: flex;
   height: 100%;
-  justify-content: center;
+}
+
+.pesquisa-mensagens .search-box {
+  height: 100%;
 }
 
 .pesquisa {
@@ -220,9 +220,11 @@
 .conteudo-multimedia {
   margin-left: 14px;
 }
-.margem{
+
+.margem {
   margin-left: 15px;
 }
+
 .mensagem {
   margin-top: 5px;
   color: #bdbdbd;
@@ -243,17 +245,13 @@
   height: 70px;
   padding: 10px;
   padding-left: 20px;
-  width: 300px;
+  width: 100%;
 }
 
 .listagem-chats {
   padding: 10px;
   padding-top: 0;
   padding-left: 0;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: space-between;
 }
 
 /*icones adicionar conteudo chat*/
