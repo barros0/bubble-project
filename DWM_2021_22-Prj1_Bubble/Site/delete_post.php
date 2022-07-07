@@ -19,6 +19,7 @@ if ($result['user_id'] == $id_user_session) {
     $delete_post->execute();
     array_push($_SESSION['alerts']['success'], "Eliminado com sucesso!");
     $delete_post->close();
+    $result = $conn->close();
 } else {
     array_push($_SESSION['alerts']['errors'], "Não podes eliminar uma publicação que não seja tua!");
 }
