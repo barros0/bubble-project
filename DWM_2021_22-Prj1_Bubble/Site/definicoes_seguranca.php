@@ -45,8 +45,8 @@ $result = $ip_sessions->get_result();
                     <thead>
                         <tr>
                             <th scope="col">Data</th>
-                            <th scope="col">localização</th>
-                            <th scope="col">IP</th>
+                            <th style="text-align:center;" scope="col">IP</th>
+                            <th style="text-align:center;" scope="col">localização</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,11 +55,11 @@ $result = $ip_sessions->get_result();
                         ?>
                             <tr>
                                 <th scope="row"><?= $row['data'] ?></th>
-                                <td>
-                                    <p><?= $row['localizacao'] ?></p>
-                                </td>
-                                <td>
+                                <td style="text-align:center;">
                                     <p><?= $row['ip_sessions'] ?></p>
+                                </td>
+                                <td style="text-align:center;">
+                                    <p><?= $row['localizacao'] ?></p>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -72,3 +72,9 @@ $result = $ip_sessions->get_result();
 </div>
 
 <?php include 'page_parts/footer.php'; ?>
+
+<script>
+    $(document).ready(function() {
+        $('#sessoes').DataTable();
+    });
+</script>

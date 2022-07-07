@@ -1,4 +1,9 @@
-<form class="form_reportar" action="reportar_post.php?id_pub=<?= $id_publicacao ?>" method="post">
+<?php
+$id_pub_report = $_GET['id_pub_report'];
+
+?>
+
+<form class="form_reportar" action="reportar_post.php?id_pub_report=<?= $id_pub_report ?>" method="post">
     <div class="wrap_fechar_tit_reportar">
         <p>Reportar:</p>
         <i onclick="location.href='javascript:history.back()';" id="fechar_modal_reportar" class='bx bx-x'></i>
