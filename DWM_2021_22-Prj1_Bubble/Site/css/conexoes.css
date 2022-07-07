@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.amigos {
+  display: flex;
+  width: 70%;
+  margin-top: 98px;
+  margin-right: 30px;
+  flex-direction: column;
+}

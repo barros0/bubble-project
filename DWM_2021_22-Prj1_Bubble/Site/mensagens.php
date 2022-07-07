@@ -6,16 +6,7 @@ include 'page_parts/header.php';
 $id_user = $_SESSION['user']['id_user'];
 
 ///Buscar utilizadores cujo user trocou mensagens
-/*$query = "SELECT DISTINCT users.id_user, users.profile_image, users.username, users.nome, 
-(SELECT mensagem FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS msg, 
-(SELECT created_at FROM mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user' ORDER BY mensagens.created_at DESC LIMIT 1 ) AS hora 
-FROM users JOIN mensagens WHERE users.id_user = mensagens.to_id_user AND mensagens.from_id_user = '$id_user' OR users.id_user = mensagens.from_id_user AND mensagens.to_id_user = '$id_user'";
-*/
-
-//$query = "SELECT DISTINCT from_id_user AS chats FROM mensagens WHERE to_id_user = '$id_user' UNION SELECT to_id_user FROM mensagens WHERE from_id_user = '$id_user'";
-//$query ="SELECT DISTINCT from_id_user,created_at FROM mensagens WHERE to_id_user = 'id_user' UNION SELECT to_id_user,created_at FROM mensagens WHERE from_id_user = '1' ORDER by created_at DESC";
 $query = "SELECT DISTINCT to_id_user, created_at FROM mensagens WHERE from_id_user = '$id_user' GROUP BY to_id_user ORDER BY MAX(created_at) DESC, to_id_user";
-//$query = "SELECT DISTINCT from_id_user,max(created_at) FROM mensagens WHERE to_id_user = '1' UNION SELECT DISTINCT to_id_user,max(created_at) FROM mensagens WHERE from_id_user = '1' GROUP BY from_id_user,to_id_user ORDER BY `max(created_at)` DESC";
 $lista_users_mensagens = $conn->query($query);
 
 //verificar se o url conteem id_user_msg para entao carregar as respetivas mensagens
@@ -38,92 +29,59 @@ if (isset($_GET['id_user_msg'])) {
 }
 
 ?>
-<!--
-<div id="form" class="wrap_form_mensagens">
-    <div class="div_mensagem_novo">
-        <div class="wrap_fechar">
-            <h3>Nova Conversa:</h3>
-            <i id="fechar_modal" class='bx bx-x'></i>
-        </div>
-        <div class="form_mensagem_titulo">
-            <div class="search-box">
-                <label for="textarea_mensagem_titulo">Pesquisar por nome:</label>
-                <input type="text" class="novouser" placeholder="Pesquisar...."></input>
-                <div class="result"></div>
-            </div>
-        </div>
-        <input type="submit" class="button_update" id="" value="Enviar Mensagem"> 
-    </div>
-</div>-->
-
 <div class="conteudo">
     <div class="barratopo">
         <div class="barra-listagem-mensagens">
             <div class="listagem-chats">
                 <div class="pesquisa-fixed" id="pesquisa-fixed">
                     <div class="pesquisa-mensagens">
-                    <div class="search-box">
-                        <div class="fundo-pesquisa"><input autocomplete="off" class="pesquisa" type="text" placeholder="Pesquisar Conversas..." name="search"></div>
-                </div>
-                    </div>
-                </div>
-                <!--Novo Chat
-                <div id="novochat" class="wrap_btn">
-                    <div class="btn-perfil-container">
-                        <div class="foto-perfil">
-                            <div class="novo-chat"><i class="fa-solid fa-plus"></i></div>
+                        <div class="search-box">
+                            <div class="fundo-pesquisa"><input autocomplete="off" class="pesquisa" type="text" placeholder="Pesquisar Conversas..." name="search"></div>
                         </div>
                     </div>
-                </div>--->
+                </div>
             </div>
             <div class="result">
 
-            <?php
-            //mostrar as pessoas cujo utilizador trocou mensagens
+                <?php
+                //mostrar as pessoas cujo utilizador trocou mensagens
 
-            //se o utilizador nao tiver conversas, nao fazer nada
-           /* if(mysqli_num_rows($lista_users_mensagens) <= 1){
+                //se o utilizador nao tiver conversas, nao fazer nada
+                while ($rows = $lista_users_mensagens->fetch_assoc()) {
 
+                    //buscar dados dos users
 
-            }else{*/
-           
+                    $qry = "SELECT * FROM users WHERE id_user = " . $rows["to_id_user"];
+                    $lista = $conn->query($qry);
 
-              while ($rows = $lista_users_mensagens->fetch_assoc()) {
+                    while ($row = $lista->fetch_assoc()) {
 
-                //buscar dados dos users
+                        //para cada utilizador buscar a ultima mensagem
+                        $qrymsg = "SELECT * FROM mensagens WHERE from_id_user = " . $rows['to_id_user'] . " AND to_id_user = '$id_user' OR from_id_user = '$id_user' AND to_id_user = " . $rows['to_id_user'] . " ORDER BY created_at DESC LIMIT 1";
+                        $msg = $conn->query($qrymsg);
 
-                $qry = "SELECT * FROM users WHERE id_user = " . $rows["to_id_user"];
-                $lista = $conn->query($qry);
+                        while ($roww = $msg->fetch_assoc()) {
+                ?>
 
-                while ($row = $lista->fetch_assoc()) {
-
-                    //para cada utilizador buscar a ultima mensagem
-                    $qrymsg = "SELECT * FROM mensagens WHERE from_id_user = " . $rows['to_id_user'] . " AND to_id_user = '$id_user' OR from_id_user = '$id_user' AND to_id_user = " . $rows['to_id_user'] . " ORDER BY created_at DESC LIMIT 1";
-                    $msg = $conn->query($qrymsg);
-
-                    while ($roww = $msg->fetch_assoc()) {
-            ?>
-
-                <a class="user-lateral" href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>#ultimaMensagem">
-                    <div class="wrap-pessoa">
-                        <div class="foto-perfil-container">
-                            <div class="foto-perfil">
-                                <img src='./img/fotos_perfil/<?= $row['profile_image'] ?>' alt='<?= $row['username'] ?>'>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <div><?= $row['nome'] ?></div>
-                            <div style="color: #bdbdbd;"><?= mb_strimwidth($roww['mensagem'], 0, 25, "...");  ?></div>
-                            <div style="color: #bdbdbd;" class="detalhes-horas"><?= $roww['created_at'] ?></div>
-                        </div>
-                    </div>
-                </a>
-            <?php
-           // }
-         }
-        }
-    }
-            ?>
+                            <a class="user-lateral" href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>#ultimaMensagem">
+                                <div class="wrap-pessoa">
+                                    <div class="foto-perfil-container">
+                                        <div class="foto-perfil">
+                                            <img src='./img/fotos_perfil/<?= $row['profile_image'] ?>' alt='<?= $row['username'] ?>'>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div><?= $row['nome'] ?></div>
+                                        <div style="color: #bdbdbd;"><?= mb_strimwidth($roww['mensagem'], 0, 25, "...");  ?></div>
+                                        <div style="color: #bdbdbd;" class="detalhes-horas"><?= $roww['created_at'] ?></div>
+                                    </div>
+                                </div>
+                            </a>
+                <?php
+                        }
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -149,94 +107,93 @@ if (isset($_GET['id_user_msg'])) {
                         //verificar qual é a utlima mensagem, adicionar um id a mesma para ser automaticamente redirecionado para ela
                         $counter = 1;
                         $numResults = mysqli_num_rows($mensagens);
-                       // while ($rowConta = mysqli_fetch_array($mensagens)) {
+                        // while ($rowConta = mysqli_fetch_array($mensagens)) {
 
-                            while ($rowMsg = $mensagens->fetch_assoc()) {
+                        while ($rowMsg = $mensagens->fetch_assoc()) {
 
-                                //buscar os utilizadores que user enviou e recebeu mensagem
-                                $user_to = $rowMsg['to_id_user'];
-                                $user_from = $rowMsg['from_id_user'];
+                            //buscar os utilizadores que user enviou e recebeu mensagem
+                            $user_to = $rowMsg['to_id_user'];
+                            $user_from = $rowMsg['from_id_user'];
 
-                                if ($user_to == $id_user) {
+                            if ($user_to == $id_user) {
 
-                                    if (++$counter == $numResults) {
-                                        // se for a ultima mensagem
+                                if (++$counter == $numResults) {
+                                    // se for a ultima mensagem
 
                         ?>
-                                        <div id="ultimaMensagem" class="row-mensagem recebida">
-                                            <div class="icone-perfil-row-mensagem">
-                                                <div class="foto-perfil-chat">
-                                                    <a href="./perfil.php?username=<?= $imagem['username'] ?>">
-                                                        <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="conteudo-row-mensagem env">
-                                                <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?></span>
+                                    <div id="ultimaMensagem" class="row-mensagem recebida">
+                                        <div class="icone-perfil-row-mensagem">
+                                            <div class="foto-perfil-chat">
+                                                <a href="./perfil.php?username=<?= $imagem['username'] ?>">
+                                                    <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                                                </a>
                                             </div>
                                         </div>
-
-                                    <?php
-                                    } else {
-                                    ?>
-
-                                        <div class="row-mensagem recebida">
-                                            <div class="icone-perfil-row-mensagem">
-                                                <div class="foto-perfil-chat">
-                                                    <a href="./perfil.php?username=<?= $imagem['username'] ?>">
-                                                        <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="conteudo-row-mensagem env">
-                                                <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?></span>
-                                            </div>
+                                        <div class="conteudo-row-mensagem env">
+                                            <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?></span>
                                         </div>
+                                    </div>
 
-                                    <?php
-                                    }
+                                <?php
                                 } else {
+                                ?>
 
-                                    if (++$counter == $numResults) {
-                                        // se for a ultima mensagem
-
-                                    ?>
-
-                                        <div id="ultimaMensagem" class="row-mensagem enviada">
-                                            <div class="conteudo-row-mensagem">
-                                                <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?> </span>
-                                            </div>
-                                            <div class="icone-perfil-row-mensagem margem">
-                                                <div class="foto-perfil-chat">
-                                                    <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
-                                                        <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
-                                                    </a>
-                                                </div>
+                                    <div class="row-mensagem recebida">
+                                        <div class="icone-perfil-row-mensagem">
+                                            <div class="foto-perfil-chat">
+                                                <a href="./perfil.php?username=<?= $imagem['username'] ?>">
+                                                    <img src="./img/fotos_perfil/<?= $imagem['profile_image'] ?>" alt="Foto de Perfil">
+                                                </a>
                                             </div>
                                         </div>
+                                        <div class="conteudo-row-mensagem env">
+                                            <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?></span>
+                                        </div>
+                                    </div>
 
-                                    <?php
-                                    } else {
-                                    ?>
+                                <?php
+                                }
+                            } else {
 
-                                        <div class="row-mensagem enviada">
-                                            <div class="conteudo-row-mensagem">
-                                                <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?> </span>
-                                            </div>
-                                            <div class="icone-perfil-row-mensagem margem">
-                                                <div class="foto-perfil-chat">
-                                                    <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
-                                                        <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
-                                                    </a>
-                                                </div>
+                                if (++$counter == $numResults) {
+                                    // se for a ultima mensagem
+
+                                ?>
+
+                                    <div id="ultimaMensagem" class="row-mensagem enviada">
+                                        <div class="conteudo-row-mensagem">
+                                            <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?> </span>
+                                        </div>
+                                        <div class="icone-perfil-row-mensagem margem">
+                                            <div class="foto-perfil-chat">
+                                                <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
+                                                    <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
+                                                </a>
                                             </div>
                                         </div>
+                                    </div>
+
+                                <?php
+                                } else {
+                                ?>
+
+                                    <div class="row-mensagem enviada">
+                                        <div class="conteudo-row-mensagem">
+                                            <span class="mensagem-texto"><?= $rowMsg['mensagem'] ?> </span>
+                                        </div>
+                                        <div class="icone-perfil-row-mensagem margem">
+                                            <div class="foto-perfil-chat">
+                                                <a href="./perfil.php?username=<?= $imagemUti['username'] ?>">
+                                                    <img src="./img/fotos_perfil/<?= $imagemUti['profile_image'] ?>" alt="Foto de Perfil">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
 
                     <?php
-                                    }
                                 }
                             }
-                       // }
+                        }
                     }
                     ?>
 
