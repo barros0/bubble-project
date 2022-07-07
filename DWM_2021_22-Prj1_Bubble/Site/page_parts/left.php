@@ -24,7 +24,7 @@ function active_left($currect_page)
     </div>
 </div>
 <div class="footer_left">
-    <a href="">Privacidade</a> | <a href="">Termos</a> | <a href="">Publicidade</a> | <a href="">Cookies</a>
+    <a href="../Site/faqs.php">Privacidade</a> | <a href="../Site/faqs.php">Termos</a> | <a href="../Site/faqs.php">Publicidade</a> | <a href="../Site/faqs.php">Cookies</a>
     <br>
     Bubble © 2022
 </div>
