@@ -786,3 +786,36 @@ form.form-control::-webkit-scrollbar {
     outline: 0;
     border: 0;
 }
+
+p {
+    color: white !important;
+}
+
+.imagem {
+    width: 40%;
+}
+
+.wrap_publicacao_reported {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.categoria {
+    display: flex;
+}
+
+.categoria label, .categoria p {
+    margin: 0;
+}
+
+.categoria p {
+    padding: 10px;
+    padding-top: 0;
+    max-width: 93%;
+    overflow-wrap: break-word;
+}
+
+.wrap_conteudo_report {
+    padding: 10px;
+}
