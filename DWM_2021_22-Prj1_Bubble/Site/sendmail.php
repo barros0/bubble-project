@@ -16,6 +16,12 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= 'From: <enquiry@example.com>' . "\r\n";
 $headers .= 'Cc: myboss@example.com' . "\r\n";
 
-mail($to,$subject,$message,$headers);
+$email = mail($to,$subject,$message,$headers);
+
+    if( $email == true ) {
+       //sucesso
+    }else {
+//fail
+    }
 
 }
