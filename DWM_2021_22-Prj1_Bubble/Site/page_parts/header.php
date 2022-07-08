@@ -213,7 +213,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
             <?php if ($userq['tipo'] == 1) { ?>
                 <li><a href="./admin"><i class='bx bx-user'></i>Administração</a></li>
             <?php } ?>
-            <li><a href="#"><i class='bx bx-group'></i>Amigos</a></li>
+            <li><a href="conexoes_seguidores.php"><i class='bx bx-group'></i>Conexões</a></li>
             <li><a href="./saved-liked.php"><i class='bx bx-star'></i>Favoritos e Gostados</a></li>
             <li><a href="definicoes_geral.php"><i class='bx bx-cog'></i>Definições</a></li>
             <li><a href="logout.php"><i class='bx bx-log-in-circle'></i>Terminar Sessão</a></li>

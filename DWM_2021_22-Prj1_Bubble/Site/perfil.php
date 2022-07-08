@@ -52,7 +52,7 @@ if ($other_profile) {
                 </div>
                 <div class="n_followers">
                     <p><?php echo implode($count_seguidores) ?></p>
-                    <p>FOLLOWERS</p>
+                    <p>SEGUIDORES</p>
                 </div>
                 <div class="bandeira">
                     <span class="fi fi-<?= strtolower($user_perfil['siglapais']) ?>"></span>

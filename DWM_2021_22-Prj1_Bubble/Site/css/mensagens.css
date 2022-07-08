@@ -69,7 +69,10 @@
   box-sizing: border-box;
   align-items: center;
   height: 100%;
-  justify-content: center;
+}
+
+.pesquisa-mensagens .search-box {
+  height: 100%;
 }
 
 .pesquisa {
@@ -220,6 +223,7 @@
 .margem {
   margin-left: 15px;
 }
+
 .mensagem {
   margin-top: 5px;
   color: #bdbdbd;
@@ -247,10 +251,6 @@
   padding: 10px;
   padding-top: 0;
   padding-left: 0;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: space-between;
 }
 
 /*icones adicionar conteudo chat*/

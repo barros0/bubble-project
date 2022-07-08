@@ -1,0 +1,101 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.amigos {
+  display: flex;
+  width: 70%;
+  margin-top: 98px;
+  margin-right: 70px;
+  flex-direction: column;
+}
+
+.followers {
+  display: flex;
+  width: 100%;
+  background-color: #404040;
+  border-radius: 10px;
+  height: 70px;
+  justify-content: space-between;
+}
+
+.left_followers, .right_followers {
+  border-bottom: 2px solid transparent;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.left_followers:hover {
+  border-bottom: 2px solid #00ff8a;
+  border-bottom-left-radius: 10px;
+}
+
+.right_followers:hover {
+  border-bottom: 2px solid #00ff8a;
+  border-bottom-right-radius: 10px;
+}
+
+.left_followers:hover p, .right_followers:hover p {
+  color: #00ff8a;
+}
+
+.color {
+  color: white;
+}
+
+.listagem_users {
+  display: flex;
+  width: 100%;
+  background-color: #404040;
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.amigo {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amigo span:hover {
+  text-decoration: underline white;
+}
+
+.amigo:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.amigos img {
+  object-fit: cover;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.active_right {
+  border-bottom: 2px solid #00ff8a;
+  border-bottom-right-radius: 10px;
+}
+
+.active_left {
+  border-bottom: 2px solid #00ff8a;
+  border-bottom-left-radius: 10px;
+}
