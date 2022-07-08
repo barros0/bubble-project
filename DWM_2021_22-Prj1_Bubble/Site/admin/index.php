@@ -82,13 +82,13 @@ function getidade($data)
 }
 
 // para cada user
-foreach ($users as $key => $user) {
+foreach ($users as $key => $userf) {
 
     // conta a idade para o user
-    $idade = getidade($user['data_nascimento']);
+    $idade = getidade($userf['data_nascimento']);
 
     // ve o seu genero
-    $genero = $generos[$user['genero']];
+    $genero = $generos[$userf['genero']];
 
     // e para cada idade do genero do user adiciona mais um
     if (empty($idades[$idade])) {

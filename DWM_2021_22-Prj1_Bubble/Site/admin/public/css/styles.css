@@ -288,6 +288,17 @@ tbody tr:nth-child(odd) {
     margin-right: 10px;
 }
 
+.smini-card{
+    display: flex;
+    padding: 10px;
+    width: 180px;
+    background-color: var(--parcelas);
+    border-radius: 8px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .mini-card {
     display: flex;
     padding: 10px;

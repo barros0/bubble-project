@@ -40,7 +40,7 @@ $users = $conn->query('select * from users inner join estados_users on users.est
                         </td>
                         <td><?= $user['email'] ?></td>
                         <td>
-                            <p class="p10t"> <span class="mini-card bg-user-e<?= $user['estado_user_id'] ?>">
+                            <p class="p10t"> <span class="smini-card bg-user-e<?= $user['estado_user_id'] ?>">
                                     <?= $user['nome_estado_user'] ?>
                                 </span></p>
                         </td>
