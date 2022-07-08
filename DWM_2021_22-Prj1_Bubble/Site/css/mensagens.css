@@ -21,7 +21,6 @@
   padding-top: 5px;
   border-right: 4px solid #404040;
   overflow: auto;
-
 }
 
 .wrap_btn {
@@ -69,7 +68,6 @@
 .pesquisa-mensagens {
   box-sizing: border-box;
   align-items: center;
-  display: flex;
   height: 100%;
   justify-content: center;
 }
@@ -81,7 +79,9 @@
   width: 100%;
   outline: none;
   border: none;
-  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat 13px center;
   padding: 9px 4px 9px 40px;
 }
 
@@ -162,7 +162,6 @@
   width: 100%;
   display: flex;
   padding-bottom: 20px;
-
 }
 
 .icone-perfil-row-mensagem {
@@ -205,12 +204,10 @@
 .recebida {
   display: flex;
   justify-content: flex-start;
-
 }
 
 .env {
   background: #bcbcbc;
-
 }
 
 .texto-mensagem {
@@ -220,7 +217,7 @@
 .conteudo-multimedia {
   margin-left: 14px;
 }
-.margem{
+.margem {
   margin-left: 15px;
 }
 .mensagem {
@@ -243,7 +240,7 @@
   height: 70px;
   padding: 10px;
   padding-left: 20px;
-  width: 300px;
+  width: 100%;
 }
 
 .listagem-chats {
@@ -314,7 +311,6 @@ form.form-mensagem {
   width: 55px;
 }
 
-
 .foto-perfil-chat {
   height: 40px;
   width: 40px;
@@ -380,7 +376,6 @@ span.mensagem {
 
 .mensagem-texto {
   overflow-wrap: break-word;
-
 }
 
 /*teste*/
@@ -410,9 +405,8 @@ span.mensagem {
   -moz-appearance: none;
   appearance: none;
   border-radius: 0.25rem;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
 
 .wrap_mensagens {
   display: flex;
@@ -484,8 +478,6 @@ input.input_seach_mensagens {
   background-color: #00d372;
 }
 
-
-
 .div_mensagem_novo {
   top: 68px;
   margin-top: 50px;
@@ -507,7 +499,6 @@ input.input_seach_mensagens {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-
 }
 
 #fechar_modal {
@@ -518,7 +509,6 @@ input.input_seach_mensagens {
 .result {
   margin-top: 10px;
   padding: 0.375rem 0.75rem;
-
 }
 
 .resultado {
@@ -530,4 +520,65 @@ input.input_seach_mensagens {
 
 .usernamepesq {
   margin-left: 10px;
+}
+
+/*responsivo*/
+
+@media (max-width: 880px) {
+  .conteudo {
+    margin-top: 70px;
+  }
+
+  .barratopo {
+    /*height: 20%;*/
+    max-height: 170px;
+    padding: 0px;
+    width: 100%;
+    border-bottom: 4px solid #404040;
+  }
+
+  .wrap_conteudo_form {
+    width: 100%;
+    margin-top: 20%;
+  }
+
+  .wrap-conteudo-mensagens {
+    width: 100%;
+  }
+
+  .conteudo-mensagens {
+    padding: 0px;
+  }
+
+  form.form-mensagem {
+    width: 100%;
+    bottom: 75px;
+  }
+
+  .conteudo-multimedia {
+    width: 20%;
+    margin-left: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .listagem-chats {
+    padding: 0px;
+    background: #1c1c1c;
+    position: fixed;
+    width: 100%;
+  }
+
+  .result {
+    margin: 0px;
+    margin-top: 65px;
+  }
+
+  .conteudo-chat {
+    padding-left: 30px;
+    width: 100%;
+    max-height: 30%;
+  }
 }
