@@ -10,6 +10,7 @@ function notificacao_handler($notificacao, $conn)
     $idnotificacao = $notificacao['id_notificacao'];
 
     switch ($type) {
+        //gosto
         case 1:
             $gosto = $conn->query("Select * from notificacoes_gosto where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
 
@@ -28,6 +29,7 @@ function notificacao_handler($notificacao, $conn)
                 'img' => 'img/fotos_perfil/'.$user['profile_image'],
                 'descricao' => $descricao,
             ];
+            // comentario
         case 2:
             $notif_comentario = $conn->query("Select * from notificacoes_comentario where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
 
@@ -46,7 +48,7 @@ function notificacao_handler($notificacao, $conn)
                 'img' => 'img/fotos_perfil/'.$user['profile_image'],
                 'descricao' => $user['nome'].' comentou: "'.$comentario['comentario'].'"',
             ];
-
+// mensagem
         case 3:
             $notif_mensagem = $conn->query("Select * from notificacoes_mensagem where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
 
@@ -93,10 +95,26 @@ function addgosto($publicacaoid, $userid){
     $conn->query('insert into notificacoes_gosto (id_notificacao,id_gosto) values('.$notificaoca_id.','.$gosto_id.' )');
 }
 
-function notf_comentario($tipo,$iduser_para, $comentarioid, $conn){
+function notf_gosto($iduser_para, $gostoid, $conn){
 
     $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) VALUES(?,?)");
-    $notf->bind_param('ii', $iduser_para, $tipo);
+    $notf->bind_param('ii', $iduser_para, 1);
+    $notf->execute();
+    $notf->close();
+
+    $id_notificacao = mysqli_insert_id($conn);
+
+
+    $notf = $conn->prepare("INSERT INTO notificacoes_gosto (id_notificacao,id_seguir) VALUES(?,?)");
+    $notf->bind_param('ii', $id_notificacao, $gostoid);
+    $notf->execute();
+    $notf->close();
+}
+
+function notf_comentario($iduser_para, $comentarioid, $conn){
+
+    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) VALUES(?,?)");
+    $notf->bind_param('ii', $iduser_para, 2);
     $notf->execute();
     $notf->close();
 
@@ -105,6 +123,23 @@ function notf_comentario($tipo,$iduser_para, $comentarioid, $conn){
 
     $notf = $conn->prepare("INSERT INTO notificacoes_comentario (id_notificacao,id_comentario) VALUES(?,?)");
     $notf->bind_param('ii', $id_notificacao, $comentarioid);
+    $notf->execute();
+    $notf->close();
+}
+
+
+function notf_seguir($iduser_para, $seguirid, $conn){
+
+    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) VALUES(?,?)");
+    $notf->bind_param('ii', $iduser_para, 4);
+    $notf->execute();
+    $notf->close();
+
+    $id_notificacao = mysqli_insert_id($conn);
+
+
+    $notf = $conn->prepare("INSERT INTO notificacoes_seguir (id_notificacao,id_seguir) VALUES(?,?)");
+    $notf->bind_param('ii', $id_notificacao, $seguirid);
     $notf->execute();
     $notf->close();
 }

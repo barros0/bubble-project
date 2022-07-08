@@ -17,6 +17,6 @@ $id_comentario = mysqli_insert_id($conn);
 
 $iduser_para = ($conn->query('select * from publicacoes where publicacao_id = '.$id_pub)->fetch_assoc())['user_id'];
 
-notf_comentario(2, $iduser_para, $id_comentario,$conn);
+notf_comentario( $iduser_para, $id_comentario,$conn);
 
 header('location:feed.php');
