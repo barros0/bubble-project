@@ -131,8 +131,8 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
                 <li class="navbar_li <?php active_header('feed.php'); ?>"><a href="feed.php" class="nav-link px-2"><i class='bx bx-home-alt'></i></a></li>
                 <li class="navbar_li <?php active_header('mensagens.php'); ?>"><a href="mensagens.php" class="nav-link px-2"><i class='bx bx-chat'></i></a></li>
                 <li class="navbar_li <?php active_header('notificacoes.php'); ?>"><a href="./notificacoes.php" class="nav-link px-2"><i class='bx bx-bell'></i></a></li>
-                <li class="navbar_li" id="searchbar"><i class='bx bx-search searchbar_icon'></i></li>
-                <li class="navbar_li" id="button_post"><i class='bx bx-plus-circle plus_icon'></i></li>
+                <li class="navbar_li" class="searchbar_toggle"><i class='bx bx-search searchbar_icon'></i></li>
+                <li class="navbar_li" class="button_post"><i class='bx bx-plus-circle plus_icon'></i></li>
             </ul>
 
             <div class="d-flex col-md-3 justify-content-end align-items-center icon_perfil">
@@ -230,8 +230,8 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
                 </a>
             </div>
             <div class="user_responsive">
-                <div class="wrap_user">
-                    <img id="user_img_responsive" src="img/header/download.png" width="50" alt="logo">
+                <div class="wrap_user icon_perfil">
+                    <img id="user_img_responsive" src="img/fotos_perfil/<?php echo $userq['profile_image'] ?>" width="50" alt="logo">
                     <span id="user_name_responsive"><?php echo $userq['nome'] ?></span>
                 </div>
             </div>
@@ -244,14 +244,28 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
         <header class="">
             <div class="list">
                 <ul>
-                    <li class=""><a href=""><i class='bx bx-menu'></i></a></li>
-                    <li class=""><a href="mensagens.php"><i class='bx bx-chat'></i></a></li>
-                    <li class=""><a href=""><i class='bx bx-bell'></i></a></li>
-                    <li class=""><i class='bx bx-search searchbar_icon'></i></li>
-                    <li class=""><i class='bx bx-plus-circle plus_icon'></i></li>
+                    <li class="menu_toggle"><i class='bx bx-menu menu_icon'></i></li>
+                    <li class="mensagens.php"><a href=""><i class='bx bx-chat'></i></a></li>
+                    <li class="notificacoes.php"><a href=""><i class='bx bx-bell'></i></a></li>
+                    <li class="searchbar_toggle"><i class='bx bx-search searchbar_icon'></i></li>
+                    <li class="button_post"><i class='bx bx-plus-circle plus_icon'></i></li>
                 </ul>
             </div>
         </header>
+    </div>
+
+    <div class="menu">
+        <div class="conteudo_menu">
+            <ul>
+                <li><a href="feed.php"><i class='bx bx-home-alt'></i>Feed</a></li>
+                <li><a href="conexoes_seguidores.php"><i class='bx bx-group'></i>Conexões</a></li>
+                <li><a href="marketplace.php"><i class='bx bx-store-alt'></i>Marketplace</a></li>
+                <li><a href="empregos.php"><i class='bx bxs-megaphone'></i>Oferta de Emprego</a></li>
+                <li><a href="eventos.php"><i class='bx bx-calendar-event'></i>Eventos</a></li>
+                <li><a href="faqs.php"><i class='bx bx-question-mark'></i>FAQS</a></li>
+
+            </ul>
+        </div>
     </div>
 
     <noscript>Por Favor ative o JavaScript nas definições do seu Browser para uma melhor experiência. Pode consultar
