@@ -5,6 +5,21 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 ?>
+<style>
+    .notificacoes {
+        top: 68px;
+        left: 20px;
+        position: fixed;
+        z-index: 999;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .notificacao .info {
+        padding-top: 6px;
+        padding-left: 16px;
+    }
+</style>
 <div class="notificacoes">
     <?php
     if (!empty($_SESSION['alerts']['info'])) {
