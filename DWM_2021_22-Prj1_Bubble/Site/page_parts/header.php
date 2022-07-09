@@ -131,8 +131,8 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
                 <li class="navbar_li <?php active_header('feed.php'); ?>"><a href="feed.php" class="nav-link px-2"><i class='bx bx-home-alt'></i></a></li>
                 <li class="navbar_li <?php active_header('mensagens.php'); ?>"><a href="mensagens.php" class="nav-link px-2"><i class='bx bx-chat'></i></a></li>
                 <li class="navbar_li <?php active_header('notificacoes.php'); ?>"><a href="./notificacoes.php" class="nav-link px-2"><i class='bx bx-bell'></i></a></li>
-                <li class="navbar_li" class="searchbar_toggle"><i class='bx bx-search searchbar_icon'></i></li>
-                <li class="navbar_li" class="button_post"><i class='bx bx-plus-circle plus_icon'></i></li>
+                <li class="navbar_li searchbar_toggle"><i class='bx bx-search searchbar_icon'></i></li>
+                <li class="navbar_li button_post_pc"><i class='bx bx-plus-circle plus_icon'></i></li>
             </ul>
 
             <div class="d-flex col-md-3 justify-content-end align-items-center icon_perfil">

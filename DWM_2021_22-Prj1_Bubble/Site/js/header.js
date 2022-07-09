@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  /*MODAL PERFIL */
+  /*MODAL POP UP PERFIL PC/MOBILE*/
   $(".icon_perfil").click(function () {
     var a = $(".popup_perfil").css("display");
     $(".searchbar_icon").css("color", "#bdbdbd");
@@ -44,7 +44,32 @@ $(document).ready(function () {
     }
   });
 
-  /*NAV BAR BUTTON POST */
+  $(".button_post_pc").click(function () {
+    var a = $(".modal_make_post").css("display");
+    $(".searchbar_icon").css("color", "#bdbdbd");
+
+    if (a == "none") {
+      $(".modal_make_post").slideDown({
+        start: function () {
+          $(this).css({
+            display: "flex",
+          });
+        },
+      });
+
+      $(".popup_searchbar").slideUp();
+      $(".modal_make_post").slideDown();
+      $(".menu").slideUp();
+      $(".popup_perfil").slideUp();
+      $("#user_name").css("color", "#bdbdbd");
+      $(".menu_icon").css("color", "#bdbdbd");
+      $(".plus_icon").css("color", "#00ff8a");
+    } else {
+      $(".modal_make_post").slideUp();
+      $(".plus_icon").css("color", "#bdbdbd");
+    }
+  });
+  /*NAV BAR BUTTON POST MOBILE*/
   $(".button_post").click(function () {
     var a = $(".modal_make_post").css("display");
     $(".searchbar_icon").css("color", "#bdbdbd");
@@ -97,7 +122,7 @@ $(document).ready(function () {
     }
   });
 
-  /*NAV BAR BUTTON POST */
+  /*MENU NAV BAR MOBILE */
   $(".menu_toggle").click(function () {
     var a = $(".menu").css("display");
     $(".menu_icon").css("color", "#bdbdbd");

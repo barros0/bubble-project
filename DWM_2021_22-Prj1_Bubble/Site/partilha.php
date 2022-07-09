@@ -4,6 +4,12 @@
         margin-top: 88px !important;
         width: 50% !important;
     }
+
+    @media (max-width:900px) {
+        .post {
+            width: 90% !important;
+        }
+    }
 </style>
 <?php
 include 'page_parts/header.php';

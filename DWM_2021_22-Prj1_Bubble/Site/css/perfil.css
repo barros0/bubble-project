@@ -292,6 +292,10 @@
   margin-bottom: 15px;
 }
 
+.posts_sobre {
+  display: none;
+}
+
 @media (max-width:1200px) {
   .conteudo_pagina_perfil {
     width: 100%;
@@ -326,6 +330,14 @@
     margin-right: 10px;
     color: #00ff8a;
     border-bottom-color: #00ff8a;
+  }
+
+  #posts, #sobre {
+    cursor: pointer;
+  }
+
+  #posts:hover, #sobre:hover {
+    background-color: rgb(88, 88, 88);
   }
 
   .conteudo_pagina_perfil {
