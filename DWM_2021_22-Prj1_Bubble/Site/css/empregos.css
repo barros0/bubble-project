@@ -49,6 +49,11 @@
   border-radius: 10px;
 }
 
+.caixa-emprego:hover {
+  background-color: rgb(88, 88, 88);
+
+}
+
 .conteudo-emprego {
   width: 60%;
   color: white;
@@ -104,6 +109,8 @@
   width: 100%;
   margin-bottom: 20px;
   justify-content: center;
+  align-items: center;
+
 }
 
 .wrap_pesquisa form {
@@ -141,6 +148,7 @@ input.input_seach_pesquisa {
 
 .button_modal {
   display: flex;
+  height: 100%;
   font-weight: 600;
   width: 12%;
   border-radius: 10px;
@@ -154,4 +162,106 @@ input.input_seach_pesquisa {
 
 #form {
   display: none;
+}
+
+/*gerir empregos*/
+.detalhes-gerir {
+  padding-top: 10px;
+  width: 100%;
+
+}
+
+.ind-detalhes-gerir {
+ width: 100%;
+}
+
+.texto-detalhes-gerir {
+  width: 100%;
+
+}
+
+.wrap-empregos-gerir {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.gerir{
+  background-color: transparent;
+  width: 45%;
+  margin: 10px;
+  min-height: 150px;
+  max-height: 200px;
+  border-radius: 20px;
+  padding: 5px;
+
+}
+
+.foto-emprego-gerir {
+  width: 50%;
+  max-height: 250px;
+  padding: 10px;
+
+}
+
+.conteudo-emprego-gerir {
+  width: 60%;
+  color: white;
+  height: 100%;
+  padding: 10px 10px 10px 0px;
+  display: flex;
+
+}
+
+.nome-emp-gerir{
+  text-align: left;
+  font-size:18px
+}
+
+.clicavel:hover{
+  cursor:pointer;
+}
+
+.ft-emprego-gerir {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /*object-fit: fill;*/
+  border-radius: 20px;
+
+}
+
+.wrap-dt-emp-g {
+  padding: 15px 15px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/*gerir empregos mobile*/
+@media (max-width: 900px) {
+
+  .gerir{
+    width: 100%;
+    
+  }
+
+  .conteudo{
+    width: 95%;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wrap-empregos-gerir{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
 }

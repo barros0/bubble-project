@@ -524,7 +524,7 @@ input.input_seach_mensagens {
 
 /*responsivo*/
 
-@media (max-width: 880px) {
+@media (max-width: 900px) {
   .conteudo {
     margin-top: 70px;
   }

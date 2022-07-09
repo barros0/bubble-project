@@ -58,6 +58,7 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
                                 <span>Categoria:</span>
                                 <span>Tipo:</span>
                                 <span>Horários:</span>
+                                <span>Requisitos:</span>
                                 <span>Publicado por:</span>
                             </div>
                             <div class="texto-detalhes">
@@ -68,6 +69,7 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
                                 <span><?= $row['categoria'] ?></span>
                                 <span><?= $row['tipo'] ?></span>
                                 <span><?= $row['horario'] ?></span>
+                                <span><?= $row['requisitos'] ?></span>
                                 <span><a href="./perfil.php?username=<?= $utilizador['username'] ?>"><?= $utilizador['nome'] ?></a></span>
                             </div>
                         </div>

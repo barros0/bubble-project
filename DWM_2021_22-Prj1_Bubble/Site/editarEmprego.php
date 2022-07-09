@@ -11,7 +11,7 @@ $emprego = $conn->query('SELECT * FROM oferta_emprego WHERE id_oferta = ' . $emp
 $imagemq = 'SELECT * FROM foto_emprego WHERE id_emprego = ' . $empregoid;
 $imagem = $conn->query($imagemq)->fetch_assoc();
 
-$conn->close();
+//$conn->close();
 
 if (!isset($emprego)) {
 
