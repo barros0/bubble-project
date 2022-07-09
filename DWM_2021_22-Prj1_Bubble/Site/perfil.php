@@ -103,6 +103,14 @@ if ($other_profile) {
         <!--PARTE DE BAIXO DO PERFIL-->
 
         <div class="pagina_perfil_baixo">
+            <div class="posts_sobre">
+                <div id="posts">
+                    <p>Posts</p>
+                </div>
+                <div id="sobre">
+                    <p>Sobre</p>
+                </div>
+            </div>
             <div class="perfil_esquerda_baixo">
                 <div class="perfil_sobre">
                     <p class="titulo_perfil">Sobre Mim</p>

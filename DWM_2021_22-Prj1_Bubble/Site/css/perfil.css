@@ -291,3 +291,85 @@
 .amigos ul li {
   margin-bottom: 15px;
 }
+
+@media (max-width:1200px) {
+  .conteudo_pagina_perfil {
+    width: 100%;
+  }
+}
+
+@media (max-width:900px) {
+  .posts_sobre {
+    display: flex;
+    color: white;
+    margin: 20px;
+    margin-top: 10px;
+  }
+
+  .posts_sobre div {
+    background-color: #404040;
+    display: flex;
+    width: 50%;
+    height: 50px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    border-bottom: 2px solid transparent;
+  }
+
+  .pagina_perfil {
+    margin-top: 0;
+  }
+
+  #posts {
+    margin-right: 10px;
+    color: #00ff8a;
+    border-bottom-color: #00ff8a;
+  }
+
+  .conteudo_pagina_perfil {
+    height: 450px;
+  }
+
+  .espaco_info_buttons {
+    margin-top: 70px;
+  }
+
+  .perfil_esquerda_baixo {
+    display: none;
+    margin: 20px;
+    width: auto;
+  }
+
+  .pagina_perfil_baixo {
+    display: block;
+    margin-top: 0;
+    padding-bottom: 70px;
+  }
+
+  .posts_user {
+    margin: 20px;
+    width: auto;
+  }
+
+  .editar_perfil {
+    width: 90%;
+  }
+
+  .inserir_fotos {
+    flex-direction: column;
+  }
+
+  .pagina_button_adicionar {
+    padding-left: 10px;
+  }
+
+  .n_posts {
+    padding-right: 10px;
+  }
+
+  .n_followers {
+    padding-left: 10px;
+  }
+}
