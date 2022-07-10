@@ -367,6 +367,8 @@
 
   .editar_perfil {
     width: 90%;
+    height: 400px;
+    overflow-y: auto;
   }
 
   .inserir_fotos {
