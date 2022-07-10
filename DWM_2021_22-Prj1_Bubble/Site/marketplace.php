@@ -32,18 +32,18 @@
             </div>
             <div class="form_market_titulo">
                 <label for="textarea_market_titulo">Titulo:</label>
-                <textarea name="titulo_market_textarea" id="textarea_market_titulo" placeholder=" Ex.: Gestao de API"></textarea>
+                <textarea name="titulo_market_textarea" id="textarea_market_titulo" placeholder=" Ex.: Gestao de API"required="required" ></textarea>
             </div>
             <div class="form_market_descricao">
                 <label for="textarea_market_descricao">Descrição:</label>
-                <textarea name="descricao_market_textarea" id="textarea_market_descricao" placeholder=" Ex.: Esta aplicacao serve para gerir uma API de Web Dev."></textarea>
+                <textarea name="descricao_market_textarea" id="textarea_market_descricao" placeholder=" Ex.: Esta aplicacao serve para gerir uma API de Web Dev."required="required" ></textarea>
             </div>
             <div class="form_market_preco">
                 <label for="textarea_market_preco">Preco:</label>
-                <textarea name="preco_market_textarea" id="textarea_market_preco" placeholder=" Ex.: 15€"></textarea>
+                <textarea name="preco_market_textarea" id="textarea_market_preco" placeholder=" Ex.: 15€"required="required" ></textarea>
             </div>
             <label for="foto_market">Foto:</label> <br>
-            <input type="file" name="foto_market">
+            <input type="file" name="foto_market"required="required" >
             <br>
             <input type="submit" class="button_update" id="" value="Atualizar">
         </form>

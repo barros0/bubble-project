@@ -29,18 +29,18 @@
             </div>
             <div class="form_evento_titulo">
                 <label for="textarea_evento_titulo">Titulo:</label>
-                <textarea name="titulo_evento_textarea" id="textarea_evento_titulo" placeholder=" Ex.: Lisboa Games Week"></textarea>
+                <textarea name="titulo_evento_textarea" id="textarea_evento_titulo" placeholder=" Ex.: Lisboa Games Week" required="required" ></textarea>
             </div>
             <div class="form_evento_localizacao">
                 <label for="textarea_evento_localizacao">Localização:</label>
-                <textarea name="localizacao_evento_textarea" id="textarea_evento_localizacao" placeholder=" Ex.: Campo Pequeno, Lisboa"></textarea>
+                <textarea name="localizacao_evento_textarea" id="textarea_evento_localizacao" placeholder=" Ex.: Campo Pequeno, Lisboa" required="required" ></textarea>
             </div>
             <div class="form_evento_descricao">
                 <label for="textarea_evento_descricao">Descrição:</label>
-                <textarea name="descricao_evento_textarea" id="textarea_evento_descricao" placeholder=" Ex.: Descrição da atividade, link para o site e horário e data do mesmo."></textarea>
+                <textarea name="descricao_evento_textarea" id="textarea_evento_descricao" placeholder=" Ex.: Descrição da atividade, link para o site e horário e data do mesmo."required="required" ></textarea>
             </div>
             <label for="foto_evento">Foto:</label> <br>
-            <input type="file" name="foto_evento">
+            <input type="file" name="foto_evento" required="required" >
             <br>
             <input type="submit" class="button_update" id="" value="Atualizar">
         </form>

@@ -2,34 +2,24 @@
 require('./partials/db_con.php');
 session_start();
 
-//verificar se os campos estao preenchidos
-if (isset($_POST['titulo']) && isset($_POST['localizacao']) && isset($_POST['descricao']) && isset($_POST['imagem'])) {
+$titulo = $_REQUEST['titulo'];
+$localizacao = $_REQUEST['localizacao'];
+$descricao = $_REQUEST['descricao'];
 
-  if (empty($_POST['titulo']) || empty($_POST['localizacao']) || empty($_POST['descricao']) || empty($_POST['imagem'])) {
+$foto_evento = $_FILES['foto_evento']['name'];
+$extensao = pathinfo($foto_evento, PATHINFO_EXTENSION);
+$folder_eventos = "../img/eventos/";
+$novo_ficheiro_evento = sha1(microtime()) . "." . $extensao;
 
-    echo 'Erro, nada preenchido';
-
-  } else {
-
-    //preparar o statement
-    $stmt = $conn->prepare("INSERT INTO eventos (titulo, localizacao, descricao, imagem) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $titulo,  $localizacao, $descricao, $imagem);
-
-    //definir as variaveis e executar
-    $titulo = $_POST['titulo'];
-    $localizacao = $_POST['localizacao'];
-    $descricao = $_POST['descricao'];
-    $imagem = $_POST['imagem'];
+if ($titulo != "" && $localizacao != "" && $descricao != "" && move_uploaded_file($_FILES['foto_evento']['tmp_name'], $folder_eventos . $novo_ficheiro_evento)) {
+    $stmt = $conn->prepare("INSERT INTO eventos (titulo,descricao,localizacao,imagem) VALUES (?,?,?,?)");
+    $stmt->bind_param("ssss",$titulo,$descricao,$localizacao,$novo_ficheiro_evento);
     $stmt->execute();
 
-    echo "Introduzido com sucesso!";
-
-    //fechar as conexoes
+    array_push($_SESSION['alerts']['success'], 'Evento criado com sucesso.');
     $stmt->close();
-    $conn->close();
-  }
+    header('location:eventos.php');
+} 
 
-}
 
-array_push($_SESSION['alerts']['success'], 'evento inserido com sucesso!');
-header('location:./eventos.php');
+

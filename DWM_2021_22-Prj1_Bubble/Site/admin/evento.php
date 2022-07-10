@@ -13,7 +13,7 @@ if (!isset($evento)) {
 ?>
 
 <div class="atualizar_evento_form">
-    <form id="atualizaevento" name="atualizaevento" class="form-control" method="post" enctype="multipart/form-data" action="./update_evento.php?eventoid=<?= $eventoid ?>" autocomplete="off" onsubmit="return validaForm()">
+    <form enctype="multipart/form-data" id="atualizaevento" name="atualizaevento" class="form-control" method="post" enctype="multipart/form-data" action="./update_evento.php?eventoid=<?= $eventoid ?>" autocomplete="off" onsubmit="return validaForm()">
 
         <div class="title">
             <h3>Atualizar Evento</h3>
@@ -31,7 +31,10 @@ if (!isset($evento)) {
             <label for="descricao">Descricao:</label>
             <input name="descricao" value="<?= $evento['descricao'] ?>" type="text" class="form-control" id="descricao" placeholder="Descricao" required>
         </div>
-
+        <div class="form-group">
+        <label for="foto_evento">Foto:</label> <br>
+            <input type="file" name="foto_evento" class="form-control" required="required" >
+        </div>
 
         <a class="btn btn-danger" href="./update_evento.php?delete_eventoid=<?= $evento['id_evento']  ?>">Eliminar</a>
         <button type="submit" class="btn btn-primary">Gravar</button>

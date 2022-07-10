@@ -25,8 +25,12 @@ if (isset($_GET['delete_eventoid'])) {
 }
 
 //parte que atualiza o evento
+$foto_evento = $_FILES['foto_evento']['name'];
+$extensao = pathinfo($foto_evento, PATHINFO_EXTENSION);
+$folder_eventos = "../img/eventos/";
+$novo_ficheiro_evento = sha1(microtime()) . "." . $extensao;
 
-if (isset($_GET['eventoid'])) {
+if (isset($_GET['eventoid'])  && move_uploaded_file($_FILES['foto_evento']['tmp_name'], $folder_eventos . $novo_ficheiro_evento)) {
 
     $eventoid = $_GET['eventoid'];
 
@@ -35,8 +39,8 @@ if (isset($_GET['eventoid'])) {
     if (isset($evento)) {
 
     //parte que prepara o statement
-    $stmt = $conn->prepare("UPDATE eventos SET titulo=?, localizacao=?, descricao=? WHERE id_evento=?");
-    $stmt->bind_param("sssi",$titulo,$localizacao,$descricao,$eventoid);
+    $stmt = $conn->prepare("UPDATE eventos SET titulo=?, localizacao=?, descricao=?, imagem=? WHERE id_evento=?");
+    $stmt->bind_param("ssssi",$titulo,$localizacao,$descricao,$novo_ficheiro_evento,$eventoid);
 
     $titulo = $_POST['titulo'];
     $localizacao = $_POST['localizacao'];

@@ -47,7 +47,7 @@ $marketplace = $conn->query('SELECT * FROM marketplace');
     </div>
 </div>
 <div class="form_inserir_marketplace">
-    <form id="inserirmarket" class="form-control" name="inserirmarket" onsubmit="return validateForm()" method="post" action="inseremarket.php">
+    <form enctype="multipart/form-data" id="inserirmarket" class="form-control" name="inserirmarket" onsubmit="return validateForm()" method="post" action="inseremarket.php">
         <div class="title">
             <h3>Adicionar market</h3>
             <i id="fechar_modal_market" class='bx bx-x'></i>
@@ -59,7 +59,7 @@ $marketplace = $conn->query('SELECT * FROM marketplace');
         </div>
 
         <div class="form-group">
-            <label for="preco">Localização: </label>
+            <label for="preco">Preco: </label>
             <input type="text" name="preco" id="preco" class="form-control" required>
         </div>
         <div class="form-group">
@@ -67,8 +67,8 @@ $marketplace = $conn->query('SELECT * FROM marketplace');
             <input type="text" name="descricao" id="descricao" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="imagem">Url-Imagem: </label>
-            <input type="text" name="imagem" id="imagem" class="form-control" required>
+        <label for="foto_market">Foto:</label> <br>
+            <input type="file" name="foto_market" class="form-control" required="required" >
         </div>
 
         <button type="submit" class="btn btn-primary">Gravar</button>

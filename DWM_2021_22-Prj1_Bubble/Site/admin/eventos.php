@@ -47,7 +47,7 @@ $eventos = $conn->query('SELECT * FROM eventos');
     </div>
 </div>
 <div class="form_inserir_eventos">
-    <form id="inserirevento" class="form-control" name="inserirevento" onsubmit="return validateForm()" method="post" action="insereevento.php">
+    <form enctype="multipart/form-data" id="inserirevento" class="form-control" name="inserirevento" onsubmit="return validateForm()" method="post" action="insereevento.php">
         <div class="title">
             <h3>Adicionar Evento</h3>
             <i id="fechar_modal_evento" class='bx bx-x'></i>
@@ -67,8 +67,8 @@ $eventos = $conn->query('SELECT * FROM eventos');
             <input type="text" name="descricao" id="descricao" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="imagem">Url-Imagem: </label>
-            <input type="text" name="imagem" id="imagem" class="form-control" required>
+        <label for="foto_evento">Foto:</label> <br>
+            <input type="file" name="foto_evento" class="form-control" required="required" >
         </div>
 
         <button type="submit" class="btn btn-primary">Gravar</button>

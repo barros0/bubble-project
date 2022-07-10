@@ -26,7 +26,15 @@ if (isset($_GET['delete_marketid'])) {
 
 //parte que atualiza o market
 
-if (isset($_GET['marketid'])) {
+$foto_market = $_FILES['foto_market']['name'];
+$extensao = pathinfo($foto_market, PATHINFO_EXTENSION);
+$folder_marketplace = "../img/marketplace/";
+$novo_ficheiro_market = sha1(microtime()) . "." . $extensao;
+
+if (isset($_GET['marketid']) && move_uploaded_file($_FILES['foto_market']['tmp_name'], $folder_marketplace . $novo_ficheiro_market)) {
+
+    
+   
 
     $marketid = $_GET['marketid'];
 
@@ -35,12 +43,13 @@ if (isset($_GET['marketid'])) {
     if (isset($market)) {
 
     //parte que prepara o statement
-    $stmt = $conn->prepare("UPDATE marketplace SET titulo=?, preco=?, descricao=? WHERE id_produto=?");
-    $stmt->bind_param("sssi",$titulo,$preco,$descricao,$marketid);
+    $stmt = $conn->prepare("UPDATE marketplace SET titulo=?, preco=?, descricao=?, imagem=? WHERE id_produto=?");
+    $stmt->bind_param("ssssi",$titulo,$preco,$descricao,$novo_ficheiro_market,$marketid);
 
     $titulo = $_POST['titulo'];
     $preco = $_POST['preco'];
     $descricao = $_POST['descricao'];
+   
     $stmt->execute();
 
     echo "Introduzido com sucesso!";

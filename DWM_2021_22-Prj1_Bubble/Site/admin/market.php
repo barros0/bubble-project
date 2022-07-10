@@ -13,7 +13,7 @@ if (!isset($market)) {
 ?>
 
 <div class="atualizar_market_form">
-    <form id="atualizamarket" name="atualizamarket" class="form-control" method="post" enctype="multipart/form-data" action="./update_market.php?marketid=<?= $marketid ?>" autocomplete="off" onsubmit="return validaForm()">
+    <form enctype="multipart/form-data" id="atualizamarket" name="atualizamarket" class="form-control" method="post" enctype="multipart/form-data" action="./update_market.php?marketid=<?= $marketid ?>" autocomplete="off" onsubmit="return validaForm()">
 
         <div class="title">
             <h3>Atualizar Produtos</h3>
@@ -31,7 +31,10 @@ if (!isset($market)) {
             <label for="descricao">Descricao:</label>
             <input name="descricao" value="<?= $market['descricao'] ?>" type="text" class="form-control" id="descricao" placeholder="Descricao" required>
         </div>
-
+        <div class="form-group">
+        <label for="foto_market">Foto:</label> <br>
+            <input type="file" name="foto_market" class="form-control" required="required" >
+        </div>
 
         <a class="btn btn-danger" href="./update_market.php?delete_marketid=<?= $market['id_produto']  ?>">Eliminar</a>
         <button type="submit" class="btn btn-primary">Gravar</button>

@@ -2,34 +2,25 @@
 require('./partials/db_con.php');
 session_start();
 
-//verificar se os campos estao preenchidos
-if (isset($_POST['titulo']) && isset($_POST['preco']) && isset($_POST['descricao']) && isset($_POST['imagem'])) {
+$user_id = $_SESSION['user']['id_user'];
+$titulo = $_REQUEST['titulo'];
+$preco = $_REQUEST['preco'];
+$descricao = $_REQUEST['descricao'];
 
-  if (empty($_POST['titulo']) || empty($_POST['preco']) || empty($_POST['descricao']) || empty($_POST['imagem'])) {
+$foto_market = $_FILES['foto_market']['name'];
+$extensao = pathinfo($foto_market, PATHINFO_EXTENSION);
+$folder_marketplace = "../img/marketplace/";
+$novo_ficheiro_market = sha1(microtime()) . "." . $extensao;
 
-    echo 'Erro, nada preenchido';
-
-  } else {
-
-    //preparar o statement
-    $stmt = $conn->prepare("INSERT INTO marketplace (titulo, preco, descricao, imagem) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $titulo,  $preco, $descricao, $imagem);
-
-    //definir as variaveis e executar
-    $titulo = $_POST['titulo'];
-    $preco = $_POST['preco'];
-    $descricao = $_POST['descricao'];
-    $imagem = $_POST['imagem'];
+if ($titulo != "" && $preco != "" && $descricao != "" && move_uploaded_file($_FILES['foto_market']['tmp_name'], $folder_marketplace . $novo_ficheiro_market)) {
+    $stmt = $conn->prepare("INSERT INTO marketplace (titulo,descricao,preco,imagem,id_user) VALUES (?,?,?,?,?)");
+    $stmt->bind_param("ssssi",$titulo,$descricao,$preco,$novo_ficheiro_market,$user_id);
     $stmt->execute();
 
-    echo "Introduzido com sucesso!";
-
-    //fechar as conexoes
+    array_push($_SESSION['alerts']['success'], 'market criado com sucesso.');
     $stmt->close();
-    $conn->close();
-  }
+    header('location:marketplace.php');
+} 
 
-}
 
-array_push($_SESSION['alerts']['success'], 'Produto inserido com sucesso!');
-header('location:./marketplace.php');
+

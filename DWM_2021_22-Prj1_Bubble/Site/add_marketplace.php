@@ -21,6 +21,8 @@ if ($titulo != "" && $preco != "" && $descricao != "" && move_uploaded_file($_FI
     array_push($_SESSION['alerts']['success'], 'Produto Adicionado Com Sucesso');
     $market->close();
     header('location:marketplace.php');
+} else{
+    array_push($_SESSION['alerts']['erro'], 'Nao foi possivel adicionar um produto.');
 }
 
-header('location:marketplace.php');
+
