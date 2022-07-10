@@ -7,6 +7,7 @@ $count_seguir = $conn->query('select count(*) from seguir where id_seguidor = ' 
 
 $list_seguidores = $conn->query('select * from seguir where id_utilizador = ' . $user_perfil_id);
 
+
 ?>
 
 <div class="home">
@@ -27,6 +28,9 @@ $list_seguidores = $conn->query('select * from seguir where id_utilizador = ' . 
             </a>
         </div>
         <div class="listagem_users">
+            <?php if (implode($count_seguidores) == 0) { ?>
+                <p style="color: white; text-align:center;">Ainda não tens seguidores</p>
+            <?php } ?>
             <?php
             foreach ($list_seguidores as $list_seguidor) {
                 $user_segue = $list_seguidor['id_seguidor'];

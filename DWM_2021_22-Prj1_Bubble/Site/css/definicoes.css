@@ -187,11 +187,47 @@ label, .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_f
     color: #bdbdbd;
 }
 
-.denuncia_ver{
+.denuncia_ver {
     display: flex;
     justify-content: space-between;
 }
 
-.denuncia_ver a{
-    color: white!important;
+.denuncia_ver a {
+    color: white !important;
+}
+
+@media (max-width:900px) {
+    .definicoes {
+        flex-direction: column;
+    }
+
+    .esquerda_opcoes {
+        margin: auto;
+        width: 90%;
+    }
+
+    .opcoes_definicoes ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opcoes_definicoes ul li {
+        margin-left: 0;
+    }
+
+    .opcoes_definicoes ul li a {
+        justify-content: center;
+    }
+
+    .direita_opcoes {
+        width: 90%;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+
+    .direita_opcoes h4 {
+        text-align: center;
+    }
 }

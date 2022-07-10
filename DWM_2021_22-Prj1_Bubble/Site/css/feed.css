@@ -92,6 +92,8 @@
   padding: 10px;
   padding-left: 0;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .post_number_likes_comments i {
@@ -648,6 +650,7 @@ textarea:focus {
 @media (max-width:900px) {
   .center {
     width: 100%;
+    margin: 80px 0px;
   }
 
   .make_post_responsive {
@@ -657,10 +660,8 @@ textarea:focus {
   .left {
     display: none;
   }
-}
 
-@media (max-width:880px) {
-  .center {
-    margin: 80px 0px;
+  .form_reportar {
+    width: 90%;
   }
 }

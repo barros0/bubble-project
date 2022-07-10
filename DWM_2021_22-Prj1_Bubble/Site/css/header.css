@@ -581,6 +581,20 @@ textarea:focus {
   width: 100%;
 }
 
+.notificacoes {
+  top: 68px;
+  left: 20px;
+  position: fixed;
+  z-index: 999;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.notificacao .info {
+  padding-top: 6px;
+  padding-left: 16px;
+}
+
 @media (max-width:900px) {
   .conteudo_menu li {
     padding: 10px;

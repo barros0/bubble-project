@@ -40,6 +40,22 @@ $generos = mysqli_query($conn, "select * from generos");
 
 </head>
 
+<style>
+    .notificacoes {
+        top: 68px;
+        left: 20px;
+        position: fixed;
+        z-index: 999;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .notificacao .info {
+        padding-top: 6px;
+        padding-left: 16px;
+    }
+</style>
+
 <body>
     <?php
     require('./page_parts/notificacoes.php');
