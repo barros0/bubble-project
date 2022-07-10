@@ -23,6 +23,9 @@ while ($user_pub = $result_set->fetch_assoc()) {
 
     $user_posts_fotos = "select * from publicacoes_fotos where publicacao_id =" . $user_pub['publicacao_id'];
     $posts_fotos = $conn->query($user_posts_fotos)->fetch_assoc();
+
+    $num_comentarios = $conn->query("select count(*) from comentarios where publicacao_id =" . $user_pub['publicacao_id'])->fetch_assoc();
+
     $id_publicacao = $user_pub['publicacao_id'];
     $estado = $user_pub['estado_pub'];
     if ($estado != 2) {
@@ -80,8 +83,13 @@ while ($user_pub = $result_set->fetch_assoc()) {
                 }
                 ?>
                 <div class="post_number_likes_comments">
-                    <i class='bx bx-heart liked'></i>
-                    <p><span class="number_likes"></span> Gostos</p>
+                    <div style="display:flex;">
+                        <i class='bx bx-heart liked'></i>
+                        <p><span class="number_likes"></span> Gostos</p>
+                    </div>
+                    <div>
+                        <p class="number_comments"><span><?php echo implode($num_comentarios) ?></span> comentários</p>
+                    </div>
                 </div>
                 <div class="post_like_comment_fav">
                     <div class="liked_bt like">
