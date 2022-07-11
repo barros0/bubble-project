@@ -1,5 +1,6 @@
 <div class="title-page align-items-center nav_bar_index">
     <div class="space">
+        <i class='bx bx-menu'></i>
     </div>
     <div class="bigtitle">
         <div class="welcome">
