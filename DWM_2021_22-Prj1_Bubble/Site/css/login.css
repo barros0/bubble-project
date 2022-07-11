@@ -32,15 +32,6 @@
     flex-direction: row;
 }
 
-
-
-.caixa1-home {
-    width: 35%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
 .caixa2-home {
     width: 35%;
     height: auto;
@@ -60,7 +51,6 @@
 /*========================================================================================================================================================*/
 /*SECACAO DA ESQUERDA*/
 
-
 .logo-caixa {
     width: 50%;
     margin-bottom: 10%;
@@ -76,8 +66,10 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    width: 35%;
+    height: 100%;
+    flex-direction: column;
 }
-
 
 /*=========================================================================================================================================================*/
 /*FORMULARIO*/
@@ -120,12 +112,10 @@
 .formulario-login {
     width: 70%;
     transition: .5s;
-
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
-
 }
 
 .form-input {
@@ -220,7 +210,6 @@ input {
     color: white;
     font-size: 12px;
     bottom: 68px;
-
 }
 
 label {
@@ -278,14 +267,12 @@ input::placeholder {
     align-items: center;
     flex-direction: column;
     z-index: 3;
-
 }
 
 #footer-informacoes {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
-
 }
 
 .footer a {
@@ -335,8 +322,6 @@ input::placeholder {
     padding-left: 16px;
 }
 
-.notificacao .titulo
-
 /*h2*/
 a {
     font-size: 18px;
@@ -360,7 +345,6 @@ a {
     width: 80px;
     height: 80px;
     object-fit: cover;
-
 }
 
 .notificacoes p, h1 {
@@ -391,7 +375,6 @@ a {
     background-color: red;
 }
 
-
 table p {
     color: var(--white);
 }
@@ -401,4 +384,24 @@ table p {
     padding: 20px;
     margin-right: 30px;
     border-radius: 10px;
+}
+
+@media (max-width:1300px) {
+    .caixa1-home {
+        height: 15%;
+        width: auto;
+        display: block;
+    }
+
+    .home2 {
+        flex-direction: column;
+    }
+
+    .logo-caixa {
+        width: 100%;
+    }
+
+    .caixa2-home {
+        width: 90%;
+    }
 }
