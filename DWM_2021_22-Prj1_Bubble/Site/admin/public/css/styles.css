@@ -784,18 +784,28 @@ form.form-control::-webkit-scrollbar {
 
 .button-form input {
     margin-right: 10px;
-    background-color: 0;
     background-color: white;
     outline: 0;
     border: 0;
 }
 
-.button-form input:hover {
+.button-editar {
     margin-right: 10px;
-    background-color: 0;
     background-color: white;
     outline: 0;
     border: 0;
+}
+
+.btn-primary {
+    margin-right: 10px;
+}
+
+.button-editar:hover {
+    background-color: #bdbdbd;
+}
+
+.button-form input:hover {
+    background-color: #bdbdbd;
 }
 
 p {
@@ -832,9 +842,10 @@ p {
 }
 
 @media (max-width:1250px) {
-    .title-page{
+    .title-page {
         z-index: 99;
     }
+
     .space {
         color: white;
         font-size: 40px;
@@ -853,6 +864,7 @@ p {
     .table-responsive {
         margin: 0;
         border-radius: 0;
+        margin-top: 100px;
     }
 
     .container {

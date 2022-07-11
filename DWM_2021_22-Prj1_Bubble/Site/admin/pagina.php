@@ -84,15 +84,6 @@ if (!isset($pagina)) {
 
         ?>
 
-        <div class="form-group">
-
-            <input type="button" value="Novo CSS" id="inserirCSSEdit">
-
-            <input type="button" value="Novo JS" id="inserirJSEdit">
-
-        </div>
-
-
         <div class="form-group" id="novoCSSEdit">
 
         </div>
@@ -103,6 +94,8 @@ if (!isset($pagina)) {
 
         <a class="btn btn-danger" href="./update_pagina.php?delete_idpag=<?= $pagina['id_pag']  ?>">Eliminar</a>
         <button type="submit" class="btn btn-primary">Gravar</button>
+        <input class="btn button-editar" type="button" value="Novo CSS" id="inserirCSSEdit">
+        <input class="btn button-editar" type="button" value="Novo JS" id="inserirJSEdit">
 
     </form>
 </div>
