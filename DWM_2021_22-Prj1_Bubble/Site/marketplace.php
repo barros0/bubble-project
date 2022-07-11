@@ -42,6 +42,19 @@
                 <label for="textarea_market_preco">Preco:</label>
                 <textarea name="preco_market_textarea" id="textarea_market_preco" placeholder=" Ex.: 15€"required="required" ></textarea>
             </div>
+            <div class="form_market_categoria">
+            <label for="textarea_market_preco">Categoria:</label> 
+            <select name="select_categoria">
+            <option value="Gestao de API">Gestao de API</option>
+            <option value="Chat">Chat</option>
+            <option value="Deployment">Deployment</option>
+            <option value="IDEs">IDEs</option>
+            <option value="Aprender">Aprender</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Localizacao">Localizacao</option>
+            <option value="Outro">Outro</option>
+        </select>
+            </div>
             <label for="foto_market">Foto:</label> <br>
             <input type="file" name="foto_market"required="required" >
             <br>

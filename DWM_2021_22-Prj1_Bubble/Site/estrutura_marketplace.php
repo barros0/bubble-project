@@ -19,6 +19,9 @@ while ($market = $result_set->fetch_assoc()) {
             <div class="autor_market">
                 <p>Autor: <?php echo $user['username'] ?></p>
             </div>
+            <div class="categoria_market">
+                <p>Categoria: <?php echo $market['categoria'] ?></p>
+            </div>
             <div class="titulo_market">
                 <p><?php echo $market['titulo'] ?></p>
             </div>
