@@ -3,7 +3,6 @@ include('./partials/header.php');
 
 $empregos = $conn->query('SELECT * FROM oferta_emprego');
 
-$conn->close();
 ?>
 
 <div class="s-container">
@@ -35,7 +34,7 @@ $conn->close();
                             <p><?= $emprego['categoria'] ?></p>
                         </td>
                         <td>
-                            <a href="./emprego.php?idemp=<?= $emprego['id_oferta'] ?>">
+                            <a href="./empregos.php?idemp=<?= $emprego['id_oferta'] ?>">
                                 <i class="fa fa-pen"></i>
                             </a>
                         </td>
@@ -55,6 +54,10 @@ $conn->close();
 </script>
 
 <?php
-include('./partials/footer.php');
+$pagina = basename($_SERVER["REQUEST_URI"]);
+if ($pagina != "empregos.php") {
+    include('./emprego.php');
+}
 
+include('./partials/footer.php');
 ?>

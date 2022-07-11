@@ -35,7 +35,7 @@ $users = $conn->query('select * from users inner join estados_users on users.est
                     <tr>
                         <th scope="row"><?= $user['id_user'] ?></th>
                         <td>
-                            <img class="user-img" src="https://thispersondoesnotexist.com/image" alt="">
+                            <img class="user-img" src="../img/fotos_perfil/<?= $user['profile_image'] ?>" alt="foto_perfil">
                             <span><?= $user['nome'] ?></span>
                         </td>
                         <td><?= $user['email'] ?></td>
@@ -75,26 +75,4 @@ $users = $conn->query('select * from users inner join estados_users on users.est
 
 <?php
 include('./partials/footer.php');
-
-/*
- *
- * if (!empty($_GET['email'])) {
-
-}
-if (!empty($_GET['ordem'])) {
-
-}
-if (!empty($_GET['max_data'])) {
-
-}
-if (!empty($_GET['min_data'])) {
-
-}
-if (!empty($_GET['email'])) {
-
-}
-if (!empty($_GET['email'])) {
-
-}
-*/
 ?>

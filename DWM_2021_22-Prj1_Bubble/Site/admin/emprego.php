@@ -1,6 +1,4 @@
 <?php
-include('./partials/header.php');
-
 $empregoid = $_GET['idemp'];
 
 $emprego = $conn->query('SELECT * FROM oferta_emprego WHERE id_oferta = ' . $empregoid)->fetch_assoc();
@@ -19,11 +17,12 @@ if (!isset($emprego)) {
 
 ?>
 
-<div class="s-container">
-    <form class="form-control empregos-form" method="post" enctype="multipart/form-data" action="./update_emprego.php?empregoid=<?= $empregoid ?>" autocomplete="off">
+<div class="atualizar_faq_form">
+    <form class="form-control" method="post" enctype="multipart/form-data" action="./update_emprego.php?empregoid=<?= $empregoid ?>" autocomplete="off">
 
         <div class="title">
-            <h2>Atualizar Emprego</h2>
+            <h3>Atualizar Emprego</h3>
+            <i id="fechar_modal_faq" class='bx bx-x' onClick="Javascript:window.location.href = './empregos.php';"></i>
         </div>
 
         <div class="buttons_post btnfrm">
