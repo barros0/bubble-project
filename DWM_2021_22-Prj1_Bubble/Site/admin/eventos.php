@@ -2,7 +2,7 @@
 include('./partials/header.php');
 
 $eventos = $conn->query('SELECT * FROM eventos');
-
+include('./partials/nav_bar.php');
 ?>
 
 <div id="container-eventos" class="container-eventos s-container">

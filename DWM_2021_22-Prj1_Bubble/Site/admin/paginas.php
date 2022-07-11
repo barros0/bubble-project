@@ -4,7 +4,7 @@ include('./partials/header.php');
 $paginas = $conn->query('SELECT * FROM paginas_site');
 $paginascss = $conn->query('SELECT * FROM files_css_paginas_site');
 $paginasjs = $conn->query('SELECT * FROM files_js_paginas_site');
-
+include('./partials/nav_bar.php');
 ?>
 
 <div id="container-faqs" class="container-faqs s-container">

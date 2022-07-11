@@ -2,7 +2,7 @@
 include('./partials/header.php');
 
 $empregos = $conn->query('SELECT * FROM oferta_emprego');
-
+include('./partials/nav_bar.php');
 ?>
 
 <div class="s-container">

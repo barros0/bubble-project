@@ -2,7 +2,7 @@
 include('./partials/header.php');
 
 $marketplace = $conn->query('SELECT * FROM marketplace');
-
+include('./partials/nav_bar.php');
 ?>
 
 <div id="container-marketplace" class="container-marketplace s-container">
