@@ -2,7 +2,7 @@
 include('./partials/header.php');
 
 $eventos = $conn->query('SELECT * FROM eventos');
-
+include('./partials/nav_bar.php');
 ?>
 
 <div id="container-eventos" class="container-eventos s-container">
@@ -35,6 +35,7 @@ $eventos = $conn->query('SELECT * FROM eventos');
                         <td>
                             <p><?= $evento['descricao'] ?></p>
                         </td>
+                        
                         <td>
                             <a href="./eventos.php?eventoid=<?= $evento['id_evento'] ?>">
                                 <i class="fa fa-pen"></i>

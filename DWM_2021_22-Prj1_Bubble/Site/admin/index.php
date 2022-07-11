@@ -105,25 +105,8 @@ foreach ($generos as $key => $genero) {
     }
 }
 
-
+include('./partials/nav_bar.php');
 ?>
-
-<div class="title-page align-items-center nav_bar_index">
-    <div class="space">
-    </div>
-    <div class="bigtitle">
-        <div class="welcome">
-            <div class="d-flex align-items-center">
-                <div class="d-flex flex-column align-items-end navbar_dash">
-                    <h5 class="welcome-frase">Bem-vindo <?= $user['nome'] ?></h5>
-                    <div id="horas">
-                    </div>
-                </div>
-                <img class="foto" src="../img/fotos_perfil/<?= $user['profile_image'] ?>" alt="">
-            </div>
-        </div>
-    </div>
-</div>
 
 <main class="container" id="main">
     <div class="row">
@@ -146,7 +129,7 @@ foreach ($generos as $key => $genero) {
                     </div>
                     <div class="mini-card">
                         <div>
-                        <i class="fa-solid fa-heart icon"></i>
+                            <i class="fa-solid fa-heart icon"></i>
                         </div>
                         <h2 class="titulo">Likes</h2>
                         <span class="valor"><?= $c_users ?></span>

@@ -2,7 +2,7 @@
 include('./partials/header.php');
 
 $marketplace = $conn->query('SELECT * FROM marketplace');
-
+include('./partials/nav_bar.php');
 ?>
 
 <div id="container-marketplace" class="container-marketplace s-container">
@@ -35,6 +35,7 @@ $marketplace = $conn->query('SELECT * FROM marketplace');
                         <td>
                             <p><?= $market['descricao'] ?></p>
                         </td>
+                        
                         <td>
                             <a href="./marketplace.php?marketid=<?= $market['id_produto'] ?>">
                                 <i class="fa fa-pen"></i>

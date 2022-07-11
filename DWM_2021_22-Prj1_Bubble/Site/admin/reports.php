@@ -2,7 +2,7 @@
 include('./partials/header.php');
 
 $reports = $conn->query('SELECT * FROM reports');
-
+include('./partials/nav_bar.php');
 ?>
 
 <div class="s-container">

@@ -3,8 +3,9 @@
 $reports = $conn->prepare('SELECT * FROM reports where user_id= ?');
 $reports->bind_param("i", $userq['id_user']);
 $reports->execute();
-
 $result = $reports->get_result();
+
+$reports_count = $conn->query("select count(*) from reports where user_id = " . $userq['id_user'])->fetch_assoc();
 ?>
 
 </div>
@@ -12,6 +13,13 @@ $result = $reports->get_result();
     <div class="titulo">
         <h4>Denúncias sobre outras pessoas</h4>
     </div>
+    <?php
+    if (implode($reports_count) == 0) {
+    ?>
+        <p style="text-align:center;">Não tens nenhuma denuncia</p>
+    <?php
+    }
+    ?>
     <div class="wrap_denuncias">
         <?php while ($row = $result->fetch_assoc()) {
 

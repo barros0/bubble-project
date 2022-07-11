@@ -365,6 +365,10 @@
     width: auto;
   }
 
+  .editar_perfil::-webkit-scrollbar {
+    width: 0px;
+  }
+
   .editar_perfil {
     width: 90%;
     height: 400px;
