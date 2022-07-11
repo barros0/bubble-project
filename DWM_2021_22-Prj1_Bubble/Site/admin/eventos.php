@@ -35,6 +35,7 @@ $eventos = $conn->query('SELECT * FROM eventos');
                         <td>
                             <p><?= $evento['descricao'] ?></p>
                         </td>
+                        
                         <td>
                             <a href="./eventos.php?eventoid=<?= $evento['id_evento'] ?>">
                                 <i class="fa fa-pen"></i>

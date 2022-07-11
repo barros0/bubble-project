@@ -35,6 +35,7 @@ $marketplace = $conn->query('SELECT * FROM marketplace');
                         <td>
                             <p><?= $market['descricao'] ?></p>
                         </td>
+                        
                         <td>
                             <a href="./marketplace.php?marketid=<?= $market['id_produto'] ?>">
                                 <i class="fa fa-pen"></i>

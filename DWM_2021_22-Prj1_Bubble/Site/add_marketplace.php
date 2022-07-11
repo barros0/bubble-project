@@ -13,16 +13,46 @@ $extensao = pathinfo($foto_market, PATHINFO_EXTENSION);
 $folder_marketplace = "img/marketplace/";
 $novo_ficheiro_market = sha1(microtime()) . "." . $extensao;
 
-if ($titulo != "" && $preco != "" && $descricao != "" && move_uploaded_file($_FILES['foto_market']['tmp_name'], $folder_marketplace . $novo_ficheiro_market)) {
-    $market = $conn->prepare("INSERT INTO marketplace (titulo,descricao,preco,imagem,id_user) VALUES (?,?,?,?,?)");
-    $market->bind_param("ssssi",$titulo,$descricao,$preco,$novo_ficheiro_market,$user_id);
-    $market->execute();
 
-    array_push($_SESSION['alerts']['success'], 'Produto Adicionado Com Sucesso');
-    $market->close();
-    header('location:marketplace.php');
-} else{
-    array_push($_SESSION['alerts']['erro'], 'Nao foi possivel adicionar um produto.');
+$uploadOk = 1;
+$error = "";
+
+
+if ($foto_market != "") {
+
+
+    if ($_FILES["foto_market"]["size"] > 10240000) {
+
+        $error = "O seu ficheiro é demasiado grande (MAX: 10MB).";
+        array_push($_SESSION['alerts']['alert'], 'O seu ficheiro é demasiado grande (MAX: 10MB).');
+        echo "Introduzido!";
+        $uploadOk = 0;
+    }
+
+    if ($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg" && $extensao != "gif") {
+
+        $error = "Só ficheiros JPG, JPEG, PNG & GIF são permitidos.";
+        array_push($_SESSION['alerts']['alert'], 'Só ficheiros JPG, JPEG, PNG & GIF são permitidos.');
+        echo "Introduzido com nao!";
+        $uploadOk = 0;
+    }
+
+
+    if ($uploadOk == 0) {
+        $error = "O seu ficheiro não foi submetido.";
+        array_push($_SESSION['alerts']['alert'], 'O seu ficheiro não foi submetido.');
+    } else {
+        if ($titulo != "" && $preco != "" && $descricao != "" && move_uploaded_file($_FILES['foto_market']['tmp_name'], $folder_marketplace . $novo_ficheiro_market)) {
+            $market = $conn->prepare("INSERT INTO marketplace (titulo,descricao,preco,imagem,id_user) VALUES (?,?,?,?,?)");
+            $market->bind_param("ssssi",$titulo,$descricao,$preco,$novo_ficheiro_market,$user_id);
+            $market->execute();
+        
+            array_push($_SESSION['alerts']['success'], 'Produto Adicionado Com Sucesso');
+            $market->close();
+            header('location:marketplace.php');
+        } 
+    }
+
 }
-
+header('location:marketplace.php');
 
