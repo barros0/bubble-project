@@ -70,7 +70,7 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
                                 <span><?= $row['tipo'] ?></span>
                                 <span><?= $row['horario'] ?></span>
                                 <span><?= $row['requisitos'] ?></span>
-                                <span><a href="./perfil.php?username=<?= $utilizador['username'] ?>"><?= $utilizador['nome'] ?></a></span>
+                                <span><a class="link-perfil" href="./perfil.php?username=<?= $utilizador['username'] ?>"><?= $utilizador['nome'] ?></a></span>
                             </div>
                         </div>
                     </div>

@@ -21,8 +21,9 @@ if (!isset($emprego)) {
 }
 
 ?>
+<div class="wrap-conteudo">
+    <div class="conteudo">
 
-<div class="s-container">
     <form class="form-control" method="post" enctype="multipart/form-data" action="./update_emprego.php?empregoid=<?= $empregoid ?>" autocomplete="off">
 
         <div class="title">
@@ -93,5 +94,6 @@ if (!isset($emprego)) {
         <button type="submit" class="btn btn-primary">Gravar</button>
 
     </form>
-
+        </div>
+    </div>
     <?php include 'page_parts/footer.php'; ?>
