@@ -17,6 +17,7 @@
             </form>
             <div id="button_modal_marketplace" class="button_modal">Adicionar +</div>
         </div>
+        
         <div class="wrap-market">
         <?php include 'estrutura_marketplace.php'; ?>
         </div>
