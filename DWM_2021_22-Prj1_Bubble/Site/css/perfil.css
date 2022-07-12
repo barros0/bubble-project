@@ -81,7 +81,13 @@
 }
 
 .pagina_button_adicionar {
-  padding: 20px;
+  margin: 20px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #00ff8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mandar_mensagem {
@@ -108,19 +114,17 @@
   display: flex;
 }
 
-.pagina_button_adicionar input {
-  width: 100%;
-  min-width: 120px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: #00ff8a;
-  border: 0;
+.pagina_button_adicionar a {
   font-weight: 600;
   padding: 5px;
-  outline: 0;
+  color: #404040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
-.pagina_button_adicionar input:hover {
+.pagina_button_adicionar:hover {
   background-color: #00d372;
 }
 

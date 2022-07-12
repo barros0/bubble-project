@@ -67,9 +67,7 @@ if ($other_profile) {
                 ?>
                             <a class="mandar_mensagem" href="mensagens.php?id_user_msg=<?= $user_perfil_id ?>"><i class='bx bx-paper-plane'></i></a>
                             <div class="pagina_button_adicionar">
-                                <a href="./follow_handler.php?follow=<?= $user_perfil['id_user'] ?>">
-                                    <input type="button" value="Seguir +" name="adicionar">
-                                </a>
+                                <a href="./follow_handler.php?follow=<?= $user_perfil['id_user'] ?>">Seguir +</a>
                             </div>
 
                         <?php
@@ -78,9 +76,7 @@ if ($other_profile) {
                         ?>
                         <a class="mandar_mensagem" href="mensagens.php?id_user_msg=<?= $user_perfil_id ?>"><i class='bx bx-paper-plane'></i></a>
                         <div class="pagina_button_adicionar">
-                            <a href="./follow_handler.php?remove-follow=<?= $user_perfil['id_user'] ?>">
-                                <input type="button" value="Deixar de seguir" name="adicionar">
-                            </a>
+                            <a href="./follow_handler.php?remove-follow=<?= $user_perfil['id_user'] ?>">Deixar de Seguir</a>
                         </div>
                 <?php
                     }
