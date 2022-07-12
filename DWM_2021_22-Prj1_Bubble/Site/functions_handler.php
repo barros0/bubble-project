@@ -161,6 +161,13 @@ function check_guardado($idpub){
 }
 
 
+function pub_count_comments($id,$conn){
+    return mysqli_fetch_assoc($comments = $conn->query("select count(*) as total from comentarios where publicacao_id = ". $id))['total'];
+}
+function pub_count_likes($id,$conn){
+    return mysqli_fetch_assoc($comments = $conn->query("select count(*) as total from gostos where publicacao_id = ". $id))['total'];
+}
+
 
 
 /* $query = "Select * from notificacoes_gosto where id_notificacao ='" . $id . "' INNER  join
