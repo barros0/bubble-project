@@ -22,7 +22,7 @@
 }
 
 .div_input_search_marketplace {
-  display: flex;
+  width: 75%;
 }
 
 .button_search_marketplace i.bx-search {
@@ -46,16 +46,11 @@ input.input_seach_marketplace {
   border: 0;
   padding: 10px;
   width: 100%;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 10px;
 }
 
 .market {
-      /* display: flex; */
-      margin-top: 30px;
-      /* justify-content: space-between; */
-      /* align-items: center; */
-      /* flex-wrap: wrap; */
+  margin-top: 30px;
 }
 
 .data_market, .sitio_market {
@@ -66,7 +61,7 @@ input.input_seach_marketplace {
 .titulo_market {
   color: #bdbdbd;
   margin-bottom: 10px;
-  
+
 }
 
 .autor_market {
@@ -84,7 +79,7 @@ input.input_seach_marketplace {
   width: 100%;
 }
 
-.seccao2-caixamarket{
+.seccao2-caixamarket {
   padding: 20px;
 }
 
@@ -98,7 +93,7 @@ input.input_seach_marketplace {
   margin-bottom: 10px;
 }
 
-.wrap-market{
+.wrap-market {
   display: flex;
   flex-direction: row;
   width: 100%;

@@ -15,3 +15,16 @@ $(document).ready(function () {
     $("#form").css("display", "none");
   });
 });
+
+$(document).ready(function () {
+  $(".input_seach_marketplace").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $(".titulo").filter(function () {
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});

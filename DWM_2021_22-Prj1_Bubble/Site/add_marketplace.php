@@ -10,7 +10,7 @@ $categoria = $_REQUEST['select_categoria'];
 
 
 $foto_market = $_FILES['foto_market']['name'];
-$extensao = pathinfo($foto_market, PATHINFO_EXTENSION);
+$extensao = strtolower(pathinfo($foto_market, PATHINFO_EXTENSION));
 $folder_marketplace = "img/marketplace/";
 $novo_ficheiro_market = sha1(microtime()) . "." . $extensao;
 
@@ -45,15 +45,12 @@ if ($foto_market != "") {
     } else {
         if ($titulo != "" && $preco != "" && $descricao != "" && move_uploaded_file($_FILES['foto_market']['tmp_name'], $folder_marketplace . $novo_ficheiro_market)) {
             $market = $conn->prepare("INSERT INTO marketplace (titulo,descricao, categoria,preco,imagem,id_user) VALUES (?,?,?,?,?,?)");
-            $market->bind_param("sssssi",$titulo,$descricao,$categoria, $preco,$novo_ficheiro_market,$user_id);
+            $market->bind_param("sssssi", $titulo, $descricao, $categoria, $preco, $novo_ficheiro_market, $user_id);
             $market->execute();
-        
+
             array_push($_SESSION['alerts']['success'], 'Produto Adicionado Com Sucesso');
             $market->close();
-            
-        } 
+        }
     }
-
 }
-
-
+header("location:marketplace.php");
