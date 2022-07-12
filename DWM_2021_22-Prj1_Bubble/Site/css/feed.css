@@ -131,33 +131,6 @@
   animation: animate .5s steps(28) 1;
 }
 
-@keyframes animate {
-  0% {
-    background-color: transparent;
-    transform: scale(1);
-  }
-
-  25% {
-    background-color: transparent;
-    transform: scale(1);
-  }
-
-  50% {
-    background-color: transparent;
-    transform: scale(1.2);
-  }
-
-  75% {
-    background-color: transparent;
-    transform: scale(1.2);
-  }
-
-  100% {
-    background-color: transparent;
-    transform: scale(1);
-  }
-}
-
 .like i, .comment i, .fav i {
   padding: 5px;
 }

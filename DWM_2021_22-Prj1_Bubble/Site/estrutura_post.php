@@ -81,10 +81,12 @@ while ($pub = $result_set->fetch_assoc()) {
                     </div>
                 </div>
                 <div class="post_like_comment_fav">
-                    <div class="liked_bt like">
-                        <i class='bx bx-heart'></i>
-                        <p>Gostar</p>
-                    </div>
+                    <a style="color: white; text-decoration:none;" href="">
+                        <div class="liked_bt like">
+                            <i class='bx bx-heart'></i>
+                            <p>Gostar</p>
+                        </div>
+                    </a>
                     <div class="comment">
                         <i class='bx bx-comment'></i>
                         <p>Comentar</p>
