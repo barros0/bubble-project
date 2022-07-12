@@ -16,76 +16,17 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
 
 ?>
 
-    <style>
-        .center {
-            display: flex;
-            width: 70%;
-            margin-top: 98px;
-            margin-right: 70px;
-            flex-direction: column;
-        }
-
-        .actions {
-            display: flex;
-            width: 100%;
-            height: 70px;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .left_bt, .right_bt {
-            background-color: #404040;
-            border-bottom: 2px solid transparent;
-            width: 49%;
-            border-radius: 10px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 10px;
-            text-decoration: none;
-        }
-
-        .left_bt:hover, .right_bt:hover {
-            background-color: rgb(88, 88, 88);
-        }
-
-        .color {
-            color: white;
-        }
-
-        .listagem_users {
-            display: flex;
-            width: 100%;
-            background-color: #404040;
-            margin-top: 30px;
-            border-radius: 10px;
-            padding: 10px;
-            flex-direction: column;
-        }
-
-
-        .active_bt {
-            border-bottom: 2px solid #00ff8a;
-            border-bottom-right-radius: 10px;
-        }
-
-
-    </style>
-
 
     <div class="center">
         <div class="actions">
             <a class="left_bt active_bt" href="#" id="bt_saved">
-                <div class="color" style="color:#00ff8a !important;">
+                <div class="white">
                     <p></p>
                     <p>Guardados (<?=$saved->num_rows?>)</p>
                 </div>
             </a>
             <a class="right_bt" href="#" id="bt_liked">
-                <div class="color">
+                <div class="white">
                     <p></p>
                     <p>Gostados (<?=$liked->num_rows?>)</p>
                 </div>
@@ -95,32 +36,14 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
 
         <div class="container-sl">
 
-            <script>
-                $(document).ready(function () {
-
-                    $('#bt_liked').click( function (){
-                        $(this).addClass('active_bt');
-                        $('#bt_saved').removeClass('active_bt');
-
-                        $('#liked').addClass('active-l');
-                        $('#saved').removeClass('active-l');
-                    })
-                    $('#bt_saved').click( function (){
-                        $(this).addClass('active_bt');
-                        $('#bt_liked').removeClass('active_bt');
-
-                        $('#liked').removeClass('active-l');
-                        $('#saved').addClass('active-l');
-                    })
-
-                })
-            </script>
 
 
             <div id="liked" class="active-l">
+
+                <?php if($liked->num_rows > 0){ ?>
                 <div class="list">
                     <?php
-                    foreach ($saved as $pub) {
+                    foreach ($liked as $pub) {
                         ?>
                         <div class="box">
                             <a href="./publicacao.php?publicacaoid=<?=$pub['publicacao_id'] ?>">
@@ -145,11 +68,17 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
                     ?>
 
                 </div>
+
+                <?php }else{ ?>
+
+                <h2>Ainda não guardas-te de nenhuma publicação!</h2>
+                <?php } ?>
 
             </div>
 
             <div id="saved">
 
+                <?php if($saved->num_rows > 0){ ?>
                 <div class="list">
                     <?php
                     foreach ($saved as $pub) {
@@ -175,86 +104,14 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
                         <?php
                     }
                     ?>
-
                 </div>
+                  <?php }else{ ?>
+
+<h2>Ainda não gostas-te de nenhuma publicação!</h2>
+<?php } ?>
             </div>
         </div>
 
-
-        <style>
-            .container-sl {
-                background-color: var(--parcelas);
-                border-radius: 10px;
-                padding: 20px;
-                width: 100%;
-            }
-
-            .container-sl .list {
-                justify-content: center;
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-            .container-sl .list .box {
-                margin: 10px 20px 10px 20px;
-            }
-
-            .container-sl .list .box a {
-                text-decoration: none;
-
-            }
-
-            .container-sl .list .box .img {
-                overflow: hidden;
-                width: 150px;
-                height: 150px;
-                border: 2px solid var(--items);
-                border-radius: 6px;
-                transition-duration: 0.2s;
-            }
-
-            .container-sl .list .box .info {
-                display: flex;
-                justify-content: center;
-            }
-
-            .container-sl .list .box .info .fa {
-                color: var(--verde);
-            }
-
-            .container-sl .list .box .likes,
-            .container-sl .list .box .comments {
-                font-weight: bold;
-                color: var(--branco);
-                padding: 4px 10px 0px 10px;
-            }
-
-
-            .container-sl .list .box .img img {
-                object-fit: cover;
-                object-position: center;
-                width: 100%;
-                height: 100%;
-                transition-duration: 0.2s;
-            }
-
-            .container-sl .list .box:hover {
-                border-color: var(--verde-hover);
-            }
-
-            .container-sl .list .box:hover .img img {
-                transform: scale(1.2);
-            }
-
-
-            .active-l{
-                display: block !important;
-            }
-
-            #saved, #liked{
-                display: none;
-            }
-        </style>
 
 
         <div class="right">
