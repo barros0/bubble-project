@@ -10,7 +10,6 @@ if (isset($_POST)) {
     $email = $_POST["email"];
     $password = $_POST["password"];
     $password1 = $_POST["password1"];
-    $data = $_POST["data"];
     $sexo = $_POST["sexo"];
 
     /*nao permitir que se introduza campos vazios de password na base de dados*/
@@ -29,10 +28,11 @@ if (isset($_POST)) {
     }
 
 
+    $birthdayDate = $_POST["data"];
 
-    function age($data)
+    function age($birthdayDate)
     {
-        $dob = strtotime(str_replace("/", "-", $data));
+        $dob = strtotime(str_replace("/", "-", $birthdayDate));
         $tdate = time();
 
         $age = 0;
@@ -40,16 +40,14 @@ if (isset($_POST)) {
             ++$age;
         }
         return $age;
-
-        if ($_POST["data"] < 18) {
-            echo '<h2>Precisas de ter mais de 18 anos.</h2>';
-            array_push($_SESSION['alerts']['alert'], 'Precisas de ter mais de 18 anos.');
-            header('location:./login.php');
-            exit;
-        }
     }
 
-
+    if ($age < 18) {
+        echo '<h2>Precisas de ter mais de 18 anos.</h2>';
+        array_push($_SESSION['alerts']['alert'], 'Precisas de ter mais de 18 anos.');
+        header('location:./login.php');
+        exit;
+    }
 
 
 
