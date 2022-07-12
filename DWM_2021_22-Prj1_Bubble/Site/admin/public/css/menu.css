@@ -30,7 +30,7 @@ p, h1, h2, h3, h4, h5, h6, small {
     background-color: var(--nav);
     height: 100%;
     position: fixed;
-    z-index: 99;
+    z-index: 90;
     top: 0;
 }
 

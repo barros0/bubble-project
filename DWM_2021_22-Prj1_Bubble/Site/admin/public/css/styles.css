@@ -843,16 +843,31 @@ p {
 
 @media (max-width:1250px) {
     .title-page {
-        z-index: 99;
+        z-index: 80;
     }
 
     .space {
         color: white;
         font-size: 40px;
+        z-index: 95;
+        transition-duration: 0.4s;
+        position: fixed;
+        margin-left: 20px;
+    }
+
+    .space.active {
+        margin-left: 300px;
     }
 
     .menu {
-        display: none;
+position: fixed;
+        z-index: 90;
+        transition-duration: 0.4s;
+        margin-left: -300px;
+    }
+
+    .menu.active{
+        margin-left: 0px;
     }
 
     .s-container {

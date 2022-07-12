@@ -110,7 +110,7 @@ include('./partials/nav_bar.php');
 
 <main class="container" id="main">
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-12 col-xl-6">
             <div class="flex-wrap">
                 <div class="flex flex-wrap">
                     <div class="mini-card">

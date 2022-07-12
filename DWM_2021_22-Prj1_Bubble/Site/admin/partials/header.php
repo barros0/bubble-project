@@ -70,6 +70,9 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
     require('./partials/notificacoes.php');
     ?>
 
+    <div class="space">
+        <i class='bx bx-menu'></i>
+    </div>
     <nav class="menu">
         <div class="logo">
             <img src="./public/images/logo_bubble.svg" alt="">
