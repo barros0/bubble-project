@@ -1,0 +1,120 @@
+.center {
+    display: flex;
+    width: 70%;
+    margin-top: 98px;
+    margin-right: 70px;
+    flex-direction: column;
+}
+
+.actions {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.left_bt, .right_bt {
+    background-color: #404040;
+    border-bottom: 2px solid transparent;
+    width: 49%;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.left_bt:hover, .right_bt:hover {
+    background-color: rgb(88, 88, 88);
+}
+
+.white {
+    color: white;
+}
+
+
+.active_bt {
+    border-bottom: 2px solid #00ff8a;
+    border-bottom-right-radius: 10px;
+}
+.active_bt .white{
+    color: var(--verde) !important;
+}
+
+.container-sl {
+    background-color: var(--parcelas);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+.container-sl .list {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-sl .list .box {
+    margin: 10px 20px 10px 20px;
+}
+
+.container-sl .list .box a {
+    text-decoration: none;
+
+}
+
+.container-sl .list .box .img {
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--items);
+    border-radius: 6px;
+    transition-duration: 0.2s;
+}
+
+.container-sl .list .box .info {
+    display: flex;
+    justify-content: center;
+}
+
+.container-sl .list .box .info .fa {
+    color: var(--verde);
+}
+
+.container-sl .list .box .likes,
+.container-sl .list .box .comments {
+    font-weight: bold;
+    color: var(--branco);
+    padding: 4px 10px 0px 10px;
+}
+
+
+.container-sl .list .box .img img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.2s;
+}
+
+.container-sl .list .box:hover {
+    border-color: var(--verde-hover);
+}
+
+.container-sl .list .box:hover .img img {
+    transform: scale(1.2);
+}
+
+
+.active-l{
+    display: block !important;
+}
+
+#saved, #liked{
+    display: none;
+}

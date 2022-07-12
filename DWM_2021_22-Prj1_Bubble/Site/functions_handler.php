@@ -168,11 +168,17 @@ function pub_count_likes($id,$conn){
     return mysqli_fetch_assoc($comments = $conn->query("select count(*) as total from gostos where publicacao_id = ". $id))['total'];
 }
 
+function pub_thumb($id,$conn){
+$imagemq = $conn->query("SELECT * FROM publicacoes_fotos where publicacao_id=" . $id);
+
+if($imagemq->num_rows > 0){
+    $img = $imagemq['caminho'];
+}
+else{
+    $img = 'noimg.png';
+}
+
+    return  './img/publicacoes/'.$img;
+}
 
 
-/* $query = "Select * from notificacoes_gosto where id_notificacao ='" . $id . "' INNER  join
-            gostos ON notificacoes_gosto.id_gosto = gostos.gosto_id INNER join
-            publicacoes ON gostos.publicacao_id = publicacoes.publicacao_id;
-            ";
-                      $result = $conn->query($query);
-          */
