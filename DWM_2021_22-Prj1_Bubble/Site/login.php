@@ -104,7 +104,7 @@ $generos = mysqli_query($conn, "select * from generos");
                         <input type="checkbox" class="check-box" required>
                         Concorda com os nossos <span> Termos & Condições</span>?
                     </label>
-                    <button type="submit" name="registarconta" class="botao-submeter">Regista-te</button>
+                    <button type="submit" name="registarconta" onclick="age()" class="botao-submeter">Regista-te</button>
                 </form>
             </div>
         </div>

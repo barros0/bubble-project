@@ -8,7 +8,7 @@
         <div class="wrap_eventos">
             <form class="search_eventos" method="POST" action="">
                 <div class="div_input_search_eventos">
-                    <input type="text" class="input_seach_eventos" placeholder="Search here..." name="keyword" required="required" value="" />
+                <input type="text" class="input_seach_eventos" placeholder="Search here..." name="keyword" required="required" value="" />
                     <span class="input_search_group_btn">
                         <button class="button_search_eventos" name="search"><i class='bx bx-search'></i></button>
                     </span>

@@ -8,7 +8,7 @@
 
         <div class="wrap_marketplace">
             <div class="div_input_search_marketplace">
-                <input type="text" class="input_seach_marketplace" placeholder="Search here..." name="keyword" required="required" value="" />
+            <input type="text" class="input_seach_marketplace" placeholder="Search here..." name="keyword" required="required" value="" />
             </div>
             <div id="button_modal_marketplace" class="button_modal">Adicionar +</div>
         </div>

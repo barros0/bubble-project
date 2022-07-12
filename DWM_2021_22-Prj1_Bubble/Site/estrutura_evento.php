@@ -14,7 +14,7 @@ while ($evento = $result_set->fetch_assoc()) {
                 <span class="hora"></span>
             </div>
             <div class="titulo_evento">
-                <h1><?php echo $evento['titulo'] ?></h1>
+                <h1 class="titulo"><?php echo $evento['titulo'] ?></h1>
             </div>
             <div class="sitio_evento">
                 <p class="nome do sitio"><?php echo $evento['localizacao'] ?></p>

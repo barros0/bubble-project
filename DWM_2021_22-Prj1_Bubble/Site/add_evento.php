@@ -8,7 +8,7 @@ $localizacao = $_REQUEST['localizacao_evento_textarea'];
 $descricao = $_REQUEST['descricao_evento_textarea'];
 
 $foto_evento = $_FILES['foto_evento']['name'];
-$extensao = pathinfo($foto_evento, PATHINFO_EXTENSION);
+$extensao = strtolower(pathinfo($foto_evento, PATHINFO_EXTENSION));
 $folder_eventos = "img/eventos/";
 $novo_ficheiro_evento = sha1(microtime()) . "." . $extensao;
 
