@@ -182,10 +182,3 @@ else{
 }
 
 
-
-/* $query = "Select * from notificacoes_gosto where id_notificacao ='" . $id . "' INNER  join
-            gostos ON notificacoes_gosto.id_gosto = gostos.gosto_id INNER join
-            publicacoes ON gostos.publicacao_id = publicacoes.publicacao_id;
-            ";
-                      $result = $conn->query($query);
-          */
