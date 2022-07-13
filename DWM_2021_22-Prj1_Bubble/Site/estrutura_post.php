@@ -77,7 +77,7 @@ while ($pub = $result_set->fetch_assoc()) {
                 ?>
                 <div class="post_number_likes_comments">
                     <div style="display:flex;">
-                    <i class='bx bxs-heart' style='color:#00ff8a'></i>
+                        <i class='bx bxs-heart' style='color:#00ff8a'></i>
                         <p><span class="number_likes"><?php echo implode($num_likes) ?></span> Gostos</p>
                     </div>
                     <div>
