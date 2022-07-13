@@ -31,11 +31,44 @@ foreach ($search as $s) {
     $s_market .= "`titulo` LIKE '%" . $s . "%' or ";
 }
 
+
+/*
+ * foreach ($search as $s) {
+    //2
+    $s_user .= "`nome` LIKE '%?%' or `username` LIKE '%?%' or ";
+    //1
+    $s_pub .= "`conteudo` LIKE '%?%' or ";
+    //3
+    $s_eventos .= "`titulo` LIKE '%?%' or `localizacao` LIKE '%?%' or `descricao` LIKE '%?%' or";
+    //1
+    $s_market .= "`titulo` LIKE '%?%' or ";
+}*/
+
 $s_user = substr($s_user, 0, -3);
 $s_pub = substr($s_pub, 0, -3);
 $s_eventos = substr($s_eventos, 0, -3);
 $s_market = substr($s_market, 0, -3);
 
+$n_search_terms = count($search);
+
+
+/*
+$tfields_1 = str_repeat('s', $n_search_terms);
+$tfields_2 = str_repeat('ss', $n_search_terms);
+$tfields_3 = str_repeat('sss', $n_search_terms);
+print_r($search);
+
+$evento = $conn->prepare("SELECT * FROM `users` WHERE ($s_user)");
+$evento->bind_param($tfields_1, $search);
+$evento->execute();
+
+
+exit;
+
+
+
+print_r($users);
+exit;*/
 
 $users = $conn->query("SELECT * FROM `users` WHERE ($s_user)"); // estado_pub = 1
 $publicacoes = $conn->query("SELECT * FROM `publicacoes` WHERE ($s_pub)");
@@ -62,7 +95,7 @@ foreach ($users as $user) {
         'titulo' => $user['username'],
         'subtitulo' => $user['username'],
         'tipo' => 'pessoa',
-        //'img' => './img/publicacoes/'.$conn->query('select * from publicacoes_fotos where publicacao_id ='.$pub['publicacao_id'])->fetch_assoc()['caminho'],
+        'img' => 'img/fotos_perfil/'.$user['profile_image'],
         'link' => './perfil?username=' . $user['username'],
     ];
     array_push($resultados, $user_arr);
@@ -73,7 +106,7 @@ foreach ($eventos as $evento) {
         'titulo' => $evento['titulo'],
         'subtitulo' => substr($evento['descricao'], 0, 50),
         'tipo' => 'evento',
-        //'img' => './img/publicacoes/'.$conn->query('select * from publicacoes_fotos where publicacao_id ='.$pub['publicacao_id'])->fetch_assoc()['caminho'],
+        'img' => 'img/eventos/'.$evento['imagem'],
         'link' => './evento?id=' . $evento['id_evento'],
     ];
     array_push($resultados, $eventos_arr);
@@ -89,6 +122,10 @@ foreach ($market as $mark) {
     ];
     array_push($resultados, $market_arr);
 }
+shuffle($resultados);
+
+
+
 
 
 ?>
@@ -102,27 +139,27 @@ foreach ($market as $mark) {
                 <h4>Filtros:</h4>
             </div>
             <div class="actions">
-                <a class="bt_op active_bt" href="#" id="bt_saved">
+                <a class="bt_op active_bt" href="#" id="pessoa">
                     <div class="white">
                         <p></p>
                         <p>Pessoas</p>
                     </div>
                 </a>
-                <a class="bt_op" href="#" id="bt_liked">
+                <a class="bt_op" href="#" id="publicacao">
                     <div class="white">
                         <p></p>
                         <p>Publicações </p>
                     </div>
                 </a>
 
-                <a class="bt_op" href="#" id="bt_liked">
+                <a class="bt_op" href="#" id="eventos">
                     <div class="white">
                         <p></p>
                         <p>Eventos </p>
                     </div>
                 </a>
 
-                <a class="bt_op" href="#" id="bt_liked">
+                <a class="bt_op" href="#" id="marketplace">
                     <div class="white">
                         <p></p>
                         <p>Marketplace </p>
@@ -131,15 +168,15 @@ foreach ($market as $mark) {
             </div>
 
             <div class="col-12 resultados-para">
-                <h1>Resultados para: <?= $value_search ?></h1>
+                <h1 id="resultados_frase">Resultados para: <?= $value_search ?></h1>
                 <hr>
             </div>
 
-            <div class="resultados">
+            <div class="resultados" id="resultados">
                 <?php
                 if ($resultados) {
                     foreach ($resultados as $resultado) { ?>
-                        <div class="pesquisa">
+                        <div class="resultado" type="<?= $resultado['tipo'] ?>">
                             <a href="<?= $resultado['link'] ?>">
                                 <div class="d-flex">
                                     <div class="img-radius">
@@ -147,10 +184,10 @@ foreach ($market as $mark) {
                                     </div>
                                     <div class="info">
                                         <div class="titulo">
-                                            <h2><?php echo $resultado['titulo'] ?></h2>
+                                            <h2><?= $resultado['titulo'] ?></h2>
                                         </div>
                                         <div class="desc">
-                                            <p><?php echo $resultado['tipo'] ?></p>
+                                            <p><?= $resultado['tipo'] ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -160,149 +197,8 @@ foreach ($market as $mark) {
                 } ?>
             </div>
         </div>
-        <?php
 
 
-        ?>
-        <style>
-
-
-            .center {
-                display: flex;
-                width: 70%;
-                margin-top: 98px;
-                margin-right: 70px;
-                flex-direction: column;
-            }
-
-            .filtros {
-                color: var(--white);
-                margin-left: 10px;
-            }
-
-            .actions {
-                display: flex;
-                width: 100%;
-                height: 70px;
-                justify-content: space-between;
-                margin-bottom: 20px;
-            }
-
-            .bt_op {
-                background-color: #404040;
-                border-bottom: 2px solid transparent;
-                width: 49%;
-                border-radius: 10px;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                padding: 10px;
-                text-decoration: none;
-                margin: 10px;
-            }
-
-            .bt_op:hover, .bt_op:hover {
-                background-color: rgb(88, 88, 88);
-            }
-
-            .white {
-                color: white;
-            }
-
-            .pesquisa a {
-                text-decoration: none;
-            }
-
-            .pesquisa .desc {
-                color: var(--verde-hover);
-                text-transform: capitalize;
-            }
-
-
-            .active_bt {
-                border-bottom: 2px solid #00ff8a;
-                border-bottom-right-radius: 10px;
-            }
-
-            .active_bt .white {
-                color: var(--verde) !important;
-            }
-
-            .resultados-para{
-                margin-top: 10px;
-                margin-bottom: 10px;
-                padding-bottom: 10px;
-                text-align: center;
-            }
-
-            .resultados-para hr{
-                margin: auto;
-                width: 250px;
-                margin-top: 5px;
-                height: 3px;
-                background-color: var(--verde-hover);
-            }
-
-            .pesquisa {
-                background-color: var(--parcelas);
-                border-radius: 8px;
-                padding: 10px;
-                margin-bottom: 10px;
-            }
-
-            .pesquisa:hover {
-                background-color: var(--items);
-            }
-
-            .resultados {
-                padding: 10px;
-            }
-
-            .pesquisa .info {
-                padding-top: 6px;
-                padding-left: 16px;
-            }
-
-            .pesquisa .titulo h2 {
-                font-size: 20px;
-                font-weight: bold;
-                text-decoration: none;
-                color: var(--palavras);
-                margin-top: 10px;
-            }
-
-            .pesquisa .titulo a:hover {
-                color: var(--verde-hover);
-            }
-
-            .pesquisa .titulo * {
-                font-size: 14px;
-                color: var(--palavras);
-            }
-
-            .pesquisa .img-radius img {
-                border-radius: 50%;
-                width: 80px;
-                height: 80px;
-                object-fit: cover;
-                background-color: var(--background);
-            }
-
-            .notificacoes p, h1 {
-                color: var(--palavras);
-            }
-        </style>
-
-
-    </div>
-    </div>
-
-    <div class="right">
-
-    </div>
     </div>
 
 <?php include 'page_parts/footer.php'; ?>
