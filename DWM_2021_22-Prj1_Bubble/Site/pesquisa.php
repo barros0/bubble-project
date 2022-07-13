@@ -3,7 +3,7 @@
 <?php
 $value_search = $_GET['search'];
 
-if(strlen($value_search) <= 0){
+if (strlen($value_search) <= 0) {
     header('location:feed.php');
     exit;
 }
@@ -11,24 +11,24 @@ if(strlen($value_search) <= 0){
 $addpesquisa = $conn->prepare("insert into historico_pesquisa (id_utilizador, pesquisa) VALUES (?, ?)");
 $addpesquisa->bind_param("is", $userq['id_user'], $value_search);
 $addpesquisa->execute();
+$addpesquisa->close();
 
-$search = explode(" ",$value_search);
+$search = explode(" ", $value_search);
 $description = "";
 $s_user = "";
 $s_pub = "";
 $s_eventos = "";
 $s_market = "";
 
-foreach($search AS $s)
-{
+foreach ($search as $s) {
     //2
-    $s_user .= "`nome` LIKE '%".$s."%' or `username` LIKE '%".$s."%' or ";
+    $s_user .= "`nome` LIKE '%" . $s . "%' or `username` LIKE '%" . $s . "%' or ";
     //1
-    $s_pub .= "`conteudo` LIKE '%".$s."%' or ";
+    $s_pub .= "`conteudo` LIKE '%" . $s . "%' or ";
     //3
-    $s_eventos .= "`titulo` LIKE '%".$s."%' or `localizacao` LIKE '%".$s."%' or `descricao` LIKE '%".$s."%' or";
-   //1
-    $s_market .= "`titulo` LIKE '%".$s."%' or ";
+    $s_eventos .= "`titulo` LIKE '%" . $s . "%' or `localizacao` LIKE '%" . $s . "%' or `descricao` LIKE '%" . $s . "%' or";
+    //1
+    $s_market .= "`titulo` LIKE '%" . $s . "%' or ";
 }
 
 $s_user = substr($s_user, 0, -3);
@@ -48,8 +48,8 @@ $resultados = array();
 
 foreach ($publicacoes as $pub) {
     $pub_ar = [
-        'titulo' => substr($pub['conteudo'],0,50),
-        'subtitulo' => substr($pub['conteudo'],0,80),
+        'titulo' => substr($pub['conteudo'], 0, 50),
+        'subtitulo' => substr($pub['conteudo'], 0, 80),
         'tipo' => 'publicacao',
         //'img' => './img/publicacoes/'.$conn->query('select * from publicacoes_fotos where publicacao_id ='.$pub['publicacao_id'])->fetch_assoc()['caminho'],
         'link' => './publicacao?id=' . $pub['publicacao_id'],
@@ -71,7 +71,7 @@ foreach ($users as $user) {
 foreach ($eventos as $evento) {
     $eventos_arr = [
         'titulo' => $evento['titulo'],
-        'subtitulo' => substr($evento['descricao'],0,50),
+        'subtitulo' => substr($evento['descricao'], 0, 50),
         'tipo' => 'evento',
         //'img' => './img/publicacoes/'.$conn->query('select * from publicacoes_fotos where publicacao_id ='.$pub['publicacao_id'])->fetch_assoc()['caminho'],
         'link' => './evento?id=' . $evento['id_evento'],
@@ -98,13 +98,130 @@ foreach ($market as $mark) {
         <?php include 'page_parts/left.php'; ?>
 
         <div class="center">
+            <div class="filtros">
+                <h4>Filtros:</h4>
+            </div>
+            <div class="actions">
+                <a class="bt_op active_bt" href="#" id="bt_saved">
+                    <div class="white">
+                        <p></p>
+                        <p>Pessoas</p>
+                    </div>
+                </a>
+                <a class="bt_op" href="#" id="bt_liked">
+                    <div class="white">
+                        <p></p>
+                        <p>Publicações </p>
+                    </div>
+                </a>
 
+                <a class="bt_op" href="#" id="bt_liked">
+                    <div class="white">
+                        <p></p>
+                        <p>Eventos </p>
+                    </div>
+                </a>
 
+                <a class="bt_op" href="#" id="bt_liked">
+                    <div class="white">
+                        <p></p>
+                        <p>Marketplace </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 notificacoes-wrapper">
+                <div class="col-12">
+                    <h1>Resultados para: <?= $value_search ?></h1>
+                </div>
+
+                <div class="resultados">
+                    <?php
+                    if ($resultados) {
+                        foreach ($resultados as $resultado) { ?>
+                            <div class="pesquisa">
+                                <a href="<?= $resultado['link'] ?>">
+                                    <div class="d-flex">
+                                        <div class="img-radius">
+                                            <img src="https://picsum.photos/200/300" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <div class="titulo">
+                                                <h2><?php echo $resultado['titulo'] ?></h2>
+                                            </div>
+                                            <div class="desc">
+                                                <p><?php echo $resultado['tipo'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php }
+                    } ?>
+                </div>
+            </div>
             <?php
 
 
             ?>
             <style>
+
+
+                .center {
+                    display: flex;
+                    width: 70%;
+                    margin-top: 98px;
+                    margin-right: 70px;
+                    flex-direction: column;
+                }
+
+                .filtros {
+                    color: var(--white);
+                    margin-left: 10px;
+                }
+
+                .actions {
+                    display: flex;
+                    width: 100%;
+                    height: 70px;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                }
+
+                .bt_op {
+                    background-color: #404040;
+                    border-bottom: 2px solid transparent;
+                    width: 49%;
+                    border-radius: 10px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    padding: 10px;
+                    text-decoration: none;
+                    margin: 10px;
+                }
+
+                .bt_op:hover, .bt_op:hover {
+                    background-color: rgb(88, 88, 88);
+                }
+
+                .white {
+                    color: white;
+                }
+
+
+                .active_bt {
+                    border-bottom: 2px solid #00ff8a;
+                    border-bottom-right-radius: 10px;
+                }
+
+                .active_bt .white {
+                    color: var(--verde) !important;
+                }
+
 
                 .pesquisa {
                     background-color: var(--background);
@@ -149,35 +266,7 @@ foreach ($market as $mark) {
             </style>
 
 
-            <div class="col-12 notificacoes-wrapper">
-                <div class="col-12">
-                    <h1>Resultados para: <?= $value_search ?></h1>
-                </div>
 
-                <div class="notificacoes">
-                    <?php
-                    if ($resultados) {
-                        foreach ($resultados as $resultado) { ?>
-                            <div class="pesquisa">
-                                <a href="<?=$resultado['link']?>">
-                                <div class="d-flex">
-                                    <div class="img-radius">
-                                        <img src="https://picsum.photos/200/300" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <div class="titulo">
-                                            <h2><?php echo $resultado['titulo'] ?></h2>
-                                        </div>
-                                        <div class="desc">
-                                            <p><?php echo $resultado['tipo'] ?></p>
-                                        </div>
-                                    </div>
-                                </div></a>
-                            </div>
-                        <?php }
-                    } ?>
-                </div>
-            </div>
 
         </div>
     </div>

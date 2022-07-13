@@ -1,5 +1,6 @@
 <?php
 require './bd.php';
+require './functions_handler.php';
 session_start();
 
 if (isset($_GET['pubid'])) {
@@ -20,6 +21,8 @@ if (isset($_GET['pubid'])) {
             $gosto = $conn->prepare("insert into gostos (user_id,publicacao_id) values (?,?)");
             $gosto->bind_param("ii", $_SESSION['user']['id_user'], $pubid);
             $gosto->execute();
+            $user_para = $publicacao->fetch_assoc()['user_id'];
+            notf_gosto($user_para, $gosto->insert_id, $conn);
             header('Location: ' . $_SERVER['HTTP_REFERER']);
         } else {
             $remover_gosto = $conn->prepare("delete from gostos where user_id = ? and publicacao_id = ?");
