@@ -160,10 +160,10 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
             foreach ($historico as $pesquisa) {
 
             ?>
-                <div class="recent_pesquisa">
+                <a href="./pesquisa.php?search=<?= $pesquisa['pesquisa'] ?>" class="recent_pesquisa">
                     <p><?= $pesquisa['pesquisa'] ?></p>
                     <i class='bx bx-x'></i>
-                </div>
+                </a>
             <?php
             }
             ?>

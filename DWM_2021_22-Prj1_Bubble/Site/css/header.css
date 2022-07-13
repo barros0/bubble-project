@@ -307,8 +307,13 @@ input.input_searchbar {
   align-items: center;
 }
 
-.recent_pesquisa i, .recent_pesquisa p {
+.recent_pesquisa i, .recent_pesquisa {
+  text-decoration: none;
   cursor: pointer;
+}
+
+.recent_pesquisa:hover, .recent_pesquisa:hover i{
+  color: var(--verde) !important;
 }
 
 .modal_make_post {

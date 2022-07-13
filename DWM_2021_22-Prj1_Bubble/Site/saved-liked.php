@@ -71,12 +71,12 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
 
                 <?php }else{ ?>
 
-                <h2>Ainda não guardas-te de nenhuma publicação!</h2>
+                <h2 class="text-center">Ainda não guardas-te de nenhuma publicação!</h2>
                 <?php } ?>
 
             </div>
 
-            <div id="saved">
+            <div id="saved" class="active-l">
 
                 <?php if($saved->num_rows > 0){ ?>
                 <div class="list">
@@ -84,7 +84,7 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
                     foreach ($saved as $pub) {
                         ?>
                         <div class="box">
-                            <a href="./publicacao.php?publicacaoid=<?=$pub['publicacao_id'] ?>">
+                            <a href="./partilha.php?id_pub=<?=$pub['publicacao_id'] ?>">
                                 <div class="img">
                                     <img src="<?= pub_thumb($pub['publicacao_id'],$conn)?>?>"
                                          alt="tumb pub<?=$pub['publicacao_id'] ?>">

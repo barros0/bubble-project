@@ -78,46 +78,57 @@ $market = $conn->query("SELECT * FROM `marketplace` WHERE ($s_market)");
 
 $resultados = array();
 
-
+//cria sub arrays para resultaods de publicacoes
 foreach ($publicacoes as $pub) {
+
+    // verifica se a publicaoca tem imagem se tiver  coloca no array se nao mete noimg.png
+    $imagem = $conn->query("select * from publicacoes_fotos where publicacao_id =" . $pub['publicacao_id']);
+    if($imagem->num_rows > 0){
+        $img = $imagem->fetch_assoc()['caminho'];
+    }
+    else{
+        $img='noimg.png';
+    }
     $pub_ar = [
         'titulo' => substr($pub['conteudo'], 0, 50),
         'subtitulo' => substr($pub['conteudo'], 0, 80),
         'tipo' => 'publicacao',
-        //'img' => './img/publicacoes/'.$conn->query('select * from publicacoes_fotos where publicacao_id ='.$pub['publicacao_id'])->fetch_assoc()['caminho'],
-        'link' => './publicacao?id=' . $pub['publicacao_id'],
+        'img' => './img/publicacoes/'.$img,
+        'link' => './partilha.php?id_pub=' . $pub['publicacao_id'],
     ];
     array_push($resultados, $pub_ar);
 }
 
+//cria sub arrays para resultaods de utilizadores
 foreach ($users as $user) {
     $user_arr = [
         'titulo' => $user['username'],
         'subtitulo' => $user['username'],
         'tipo' => 'pessoa',
         'img' => 'img/fotos_perfil/'.$user['profile_image'],
-        'link' => './perfil?username=' . $user['username'],
+        'link' => './perfil.php?username=' . $user['username'],
     ];
     array_push($resultados, $user_arr);
 }
 
+//cria sub arrays para resultaods de eventos
 foreach ($eventos as $evento) {
     $eventos_arr = [
         'titulo' => $evento['titulo'],
         'subtitulo' => substr($evento['descricao'], 0, 50),
         'tipo' => 'evento',
         'img' => 'img/eventos/'.$evento['imagem'],
-        'link' => './evento?id=' . $evento['id_evento'],
+        'link' => './evento.php?id=' . $evento['id_evento'],
     ];
     array_push($resultados, $eventos_arr);
 }
-
+//cria sub arrays para resultaods de marketplace
 foreach ($market as $mark) {
     $market_arr = [
         'titulo' => $mark['titulo'],
         'subtitulo' => $mark['categoria'],
         'tipo' => 'marketplace',
-        //'img' => './img/publicacoes/'.$conn->query('select * from publicacoes_fotos where publicacao_id ='.$pub['publicacao_id'])->fetch_assoc()['caminho'],
+        'img' => './img/marketplace/'.$mark['imagem'],
         'link' => './marketplace?id=' . $mark['id_produto'],
     ];
     array_push($resultados, $market_arr);
@@ -139,7 +150,13 @@ shuffle($resultados);
                 <h4>Filtros:</h4>
             </div>
             <div class="actions">
-                <a class="bt_op active_bt" href="#" id="pessoa">
+                <a class="bt_op active_bt" href="#" id="todos">
+                    <div class="white">
+                        <p></p>
+                        <p>Tudo</p>
+                    </div>
+                </a>
+                <a class="bt_op" href="#" id="pessoa">
                     <div class="white">
                         <p></p>
                         <p>Pessoas</p>
@@ -180,7 +197,7 @@ shuffle($resultados);
                             <a href="<?= $resultado['link'] ?>">
                                 <div class="d-flex">
                                     <div class="img-radius">
-                                        <img src="https://picsum.photos/200/300" alt="">
+                                        <img src="<?=$resultado['img']?>" alt="">
                                     </div>
                                     <div class="info">
                                         <div class="titulo">
