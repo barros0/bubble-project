@@ -182,6 +182,7 @@
   margin: 5px;
   border-radius: 100%;
   background-color: #00ff8a;
+  object-fit: cover;
 }
 
 .comment_text {
