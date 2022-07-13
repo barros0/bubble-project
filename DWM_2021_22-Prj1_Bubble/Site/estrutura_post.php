@@ -14,6 +14,10 @@ while ($pub = $result_set->fetch_assoc()) {
 
     $num_comentarios = $conn->query("select count(*) from comentarios where publicacao_id =" . $pub['publicacao_id'])->fetch_assoc();
 
+    $num_likes = $conn->query("select count(*) from gostos where publicacao_id=" . $pub['publicacao_id'])->fetch_assoc();
+
+    $like_check_post = $conn->query("select * from gostos where publicacao_id =" . $pub['publicacao_id'] . " and user_id = " . $_SESSION['user']['id_user'] . "")->fetch_row();
+
     $id_publicacao = $pub['publicacao_id'];
     $estado = $pub['estado_pub'];
 
@@ -73,18 +77,23 @@ while ($pub = $result_set->fetch_assoc()) {
                 ?>
                 <div class="post_number_likes_comments">
                     <div style="display:flex;">
-                        <i class='bx bx-heart liked'></i>
-                        <p><span class="number_likes"></span> Gostos</p>
+                        <i class='bx bxs-heart' style='color:#00ff8a'></i>
+                        <p><span class="number_likes"><?php echo implode($num_likes) ?></span> Gostos</p>
                     </div>
                     <div>
                         <p class="number_comments"><span><?php echo implode($num_comentarios) ?></span> comentários</p>
                     </div>
                 </div>
                 <div class="post_like_comment_fav">
-                    <a style="color: white; text-decoration:none;" href="">
+                    <a style="color: white; text-decoration:none;" href="./add_like.php?pubid=<?= $pub['publicacao_id'] ?>">
                         <div class="liked_bt like">
-                            <i class='bx bx-heart'></i>
-                            <p>Gostar</p>
+                            <?php if ($like_check_post == 0) { ?>
+                                <i class='bx bx-heart'></i>
+                                <p>Gostar</p>
+                            <?php } else { ?>
+                                <i class='bx bxs-heart' style='color:#00ff8a'></i>
+                                <p style="color:#00ff8a;">Gostar</p>
+                            <?php } ?>
                         </div>
                     </a>
                     <div class="comment">

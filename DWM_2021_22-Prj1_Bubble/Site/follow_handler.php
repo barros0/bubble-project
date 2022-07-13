@@ -12,8 +12,6 @@ if (isset($_GET['follow'])) {
     $follow->bind_param("ii", $userid, $followid);
     $follow->execute();
 
-
-    array_push($_SESSION['alerts']['success'], 'Começaste a seguir xxxx');
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
@@ -25,10 +23,5 @@ if (isset($_GET['remove-follow'])) {
     $delete_follow->bind_param("ii", $userid, $followid);
     $delete_follow->execute();
 
-    array_push($_SESSION['alerts']['erros'], 'Deixas-te de seguir xxx!');
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
-
-
-?>
-

@@ -1,0 +1,128 @@
+
+.center {
+    display: flex;
+    width: 70%;
+    margin-top: 98px;
+    margin-right: 70px;
+    flex-direction: column;
+}
+
+.filtros {
+    color: var(--white);
+    margin-left: 10px;
+}
+
+.actions {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.bt_op {
+    background-color: #404040;
+    border-bottom: 2px solid transparent;
+    width: 49%;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.bt_op:hover, .bt_op:hover {
+    background-color: rgb(88, 88, 88);
+}
+
+.white {
+    color: white;
+}
+
+.resultado a {
+    text-decoration: none;
+}
+
+.resultado .desc {
+    color: var(--verde-hover);
+    text-transform: capitalize;
+}
+
+
+.active_bt {
+    border-bottom: 2px solid #00ff8a;
+    border-bottom-right-radius: 10px;
+}
+
+.active_bt .white {
+    color: var(--verde) !important;
+}
+
+.resultados-para{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.resultados-para hr{
+    margin: auto;
+    width: 250px;
+    margin-top: 5px;
+    height: 3px;
+    background-color: var(--verde-hover);
+}
+
+.resultado {
+    background-color: var(--parcelas);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.resultado:hover {
+    background-color: var(--items);
+}
+
+.resultados {
+    padding: 10px;
+}
+
+.resultado .info {
+    padding-top: 6px;
+    padding-left: 16px;
+}
+
+.resultado .titulo h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--palavras);
+    margin-top: 10px;
+}
+
+.resultado .titulo a:hover {
+    color: var(--verde-hover);
+}
+
+.resultado .titulo * {
+    font-size: 14px;
+    color: var(--palavras);
+}
+
+.resultado .img-radius img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    background-color: var(--background);
+}
+
+.notificacoes p, h1 {
+    color: var(--palavras);
+}

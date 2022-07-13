@@ -97,15 +97,13 @@ function addgosto($publicacaoid, $userid){
 
 function notf_gosto($iduser_para, $gostoid, $conn){
 
-    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) VALUES(?,?)");
+    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
     $notf->bind_param('ii', $iduser_para, 1);
     $notf->execute();
-    $notf->close();
 
-    $id_notificacao = mysqli_insert_id($conn);
+    $id_notificacao = $notf->insert_id;
 
-
-    $notf = $conn->prepare("INSERT INTO notificacoes_gosto (id_notificacao,id_seguir) VALUES(?,?)");
+    $notf = $conn->prepare("INSERT INTO notificacoes_gosto (id_notificacao,id_seguir) values(?,?)");
     $notf->bind_param('ii', $id_notificacao, $gostoid);
     $notf->execute();
     $notf->close();
@@ -113,15 +111,15 @@ function notf_gosto($iduser_para, $gostoid, $conn){
 
 function notf_comentario($iduser_para, $comentarioid, $conn){
 
-    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) VALUES(?,?)");
+    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
     $notf->bind_param('ii', $iduser_para, 2);
     $notf->execute();
     $notf->close();
 
-    $id_notificacao = mysqli_insert_id($conn);
+    $id_notificacao = $notf->insert_id;
 
 
-    $notf = $conn->prepare("INSERT INTO notificacoes_comentario (id_notificacao,id_comentario) VALUES(?,?)");
+    $notf = $conn->prepare("INSERT INTO notificacoes_comentario (id_notificacao,id_comentario) values(?,?)");
     $notf->bind_param('ii', $id_notificacao, $comentarioid);
     $notf->execute();
     $notf->close();
@@ -130,15 +128,15 @@ function notf_comentario($iduser_para, $comentarioid, $conn){
 
 function notf_seguir($iduser_para, $seguirid, $conn){
 
-    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) VALUES(?,?)");
+    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
     $notf->bind_param('ii', $iduser_para, 4);
     $notf->execute();
     $notf->close();
 
-    $id_notificacao = mysqli_insert_id($conn);
+    $id_notificacao = $notf->insert_id;
 
 
-    $notf = $conn->prepare("INSERT INTO notificacoes_seguir (id_notificacao,id_seguir) VALUES(?,?)");
+    $notf = $conn->prepare("INSERT INTO notificacoes_seguir (id_notificacao,id_seguir) values(?,?)");
     $notf->bind_param('ii', $id_notificacao, $seguirid);
     $notf->execute();
     $notf->close();
