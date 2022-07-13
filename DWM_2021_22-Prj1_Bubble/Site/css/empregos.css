@@ -181,6 +181,10 @@ input.input_seach_pesquisa {
 /* empregos mobile*/
 @media (max-width: 900px) {
 
+  .wrap-empregos {
+    padding-bottom: 80px;
+}
+
   .conteudo{
     width: 95%;
     max-width: 95%;

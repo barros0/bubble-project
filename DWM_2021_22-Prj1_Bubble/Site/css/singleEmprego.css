@@ -126,4 +126,43 @@
       margin-right: auto;
     }
     
+    .caixa-emprego {
+
+    flex-direction: column;
+    align-items: center;
   }
+
+  .conteudo-emprego {
+    width: 100%;
+}
+
+.detalhes{
+  width: 100%;
+  justify-content: center;
+}
+
+.ind-detalhes{
+  width: auto;
+  margin-right: 20px;
+
+}
+
+.texto-detalhes{
+  width: auto;
+}
+
+.foto-emprego {
+  width: auto;
+  height: auto;
+}
+
+.ft-emprego{
+  border-radius: 0px;
+}
+
+.wrap-conteudo-emprego{
+  padding-bottom: 80px;
+
+}
+
+}

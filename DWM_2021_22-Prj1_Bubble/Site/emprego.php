@@ -20,6 +20,7 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
 
 <div class="wrap-conteudo">
     <div class="conteudo">
+        <div class="wrap-conteudo-emprego">
 
         <?php
 
@@ -85,7 +86,7 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
             <h3 class="nome-emp">Descrição</h3>
             <p class="descricao"><?= $row['descricao'] ?></p>
             </div>
-
+            </div>
         <?php
 
         }

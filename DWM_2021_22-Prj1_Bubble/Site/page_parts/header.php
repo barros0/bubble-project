@@ -65,7 +65,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
     //buscar nome e url da pagina
     $pags = $conn->query('SELECT * FROM paginas_site');
 
-    $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    $url = basename($_SERVER['PHP_SELF']);
 
     //mudar o css e o nome da pagina dinamicamente
 
@@ -78,7 +78,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
         //buscar ficheiros css associados
         $css = $conn->query('SELECT * FROM files_css_paginas_site WHERE id_pagina = ' . $row['id_pag']);
 
-        if (strpos($url, $urlpag) !== false) {
+        if ($url == $urlpag) {
 
             while ($rowcss = $css->fetch_assoc()) {
 
