@@ -18,7 +18,7 @@ if(isset($_GET['pubid'])){
         $fav_checkq->execute();
         $fav_check = $fav_checkq->get_result();
         $fav_checkq->close();
-        
+
         if($fav_check->num_rows < 1){
             $addfav = $conn->prepare("insert into publicacoes_fav (id_pub,id_user) values (?,?)");
             $addfav->bind_param("ii", $pubid,$_SESSION['user']['id_user']);

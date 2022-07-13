@@ -118,3 +118,31 @@
 #saved, #liked{
     display: none;
 }
+
+.nada-s{
+    margin: 10px;
+    width: 100%;
+
+}
+.nada-s h2{
+    color: var(--white);
+    text-align: center;
+}
+
+
+
+.nada-s a.bt{
+    border-radius: 10px;
+    background-color: var(--verde-hover);
+    font-weight: 600;
+    padding: 5px;
+    margin: auto;
+    margin-top: 20px;
+    height: 40px;
+    width: 250px;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}

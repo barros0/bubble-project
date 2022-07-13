@@ -38,7 +38,7 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
 
 
 
-            <div id="liked" class="active-l">
+            <div id="liked">
 
                 <?php if($liked->num_rows > 0){ ?>
                 <div class="list">
@@ -70,8 +70,13 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
                 </div>
 
                 <?php }else{ ?>
+                <div class="nada-s">
+                <h2 class="text-center">Ainda não gostas-te de nenhuma publicação!  <i class="fa fa-sad-tear"></i></h2>
 
-                <h2 class="text-center">Ainda não guardas-te de nenhuma publicação!</h2>
+                    <a class="bt" href="feed.php">
+                        Ir para o feed!
+                    </a>
+                </div>
                 <?php } ?>
 
             </div>
@@ -106,8 +111,13 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
                     ?>
                 </div>
                   <?php }else{ ?>
+<div class="nada-s">
+<h2>Ainda não guardas-te de nenhuma publicação!  <i class="fa fa-sad-tear"></i></h2>
 
-<h2>Ainda não gostas-te de nenhuma publicação!</h2>
+    <a class="bt" href="feed.php">
+        Ir para o feed!
+    </a>
+</div>
 <?php } ?>
             </div>
         </div>
