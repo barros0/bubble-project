@@ -133,6 +133,7 @@ body {
     margin-right: 10px;
     height: 30px;
     display: flex;
+    object-fit: cover;
 }
 
 .footer_left {
