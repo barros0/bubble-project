@@ -6,12 +6,12 @@ include 'functions_handler.php';
 <?php include 'page_parts/left.php'; ?>
 
 <?php
+// obtem todos os gostos que o user deu
 $liked = $conn->query('select * from gostos join publicacoes on gostos.publicacao_id = publicacoes.publicacao_id 
-/*join publicacoes_fotos on publicacoes.publicacao_id = publicacoes_fotos.publicacao_id*/
 where gostos.user_id = ' . $userq['id_user']);
 
+// obtem todos as publicacoe que o user guardou / favorito
 $saved = $conn->query('select * from publicacoes_fav join publicacoes on publicacoes_fav.id_pub = publicacoes.publicacao_id 
-/*join publicacoes_fotos on publicacoes.publicacao_id = publicacoes_fotos.publicacao_id*/
 where publicacoes_fav.id_user = ' . $userq['id_user']);
 
 ?>

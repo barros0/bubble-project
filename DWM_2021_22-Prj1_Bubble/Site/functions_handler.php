@@ -10,7 +10,7 @@ function notificacao_handler($notificacao, $conn)
     $idnotificacao = $notificacao['id_notificacao'];
 
     switch ($type) {
-        //gosto
+        //caso gosto
         case 1:
             $gosto = $conn->query("Select * from notificacoes_gosto where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
 
@@ -29,7 +29,7 @@ function notificacao_handler($notificacao, $conn)
                 'img' => 'img/fotos_perfil/'.$user['profile_image'],
                 'descricao' => $descricao,
             ];
-            // comentario
+            // caso comentario
         case 2:
             $notif_comentario = $conn->query("Select * from notificacoes_comentario where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
 
@@ -48,7 +48,7 @@ function notificacao_handler($notificacao, $conn)
                 'img' => 'img/fotos_perfil/'.$user['profile_image'],
                 'descricao' => $user['nome'].' comentou: "'.$comentario['comentario'].'"',
             ];
-// mensagem
+// caso mensagem
         case 3:
             $notif_mensagem = $conn->query("Select * from notificacoes_mensagem where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
 
@@ -76,11 +76,13 @@ function notificacao_handler($notificacao, $conn)
 
 }
 
+// funcao que recebe id da publicacao e retorna a quantidade de gostos
 function publicacao_gostos($publicacao, $conn)
 {
     return $ngostos = $conn->query('select count(DISTINCT(user_id)) from gostos where publicacao_id =' . $publicacao['publicacao_id'] . ' and estado = 1 and gosto = 1');
 }
 
+// funcao que recebe id da publicacao e do user e adiciona a bd o gosto
 function addgosto($publicacaoid, $userid){
 
     // cria notificacao
@@ -95,6 +97,7 @@ function addgosto($publicacaoid, $userid){
     $conn->query('insert into notificacoes_gosto (id_notificacao,id_gosto) values('.$notificaoca_id.','.$gosto_id.' )');
 }
 
+// funcao que recebe id do user a que a notificacao se destina e o id da acao (id do gosto) e cria a nova notificacao ligada a essse gosto
 function notf_gosto($iduser_para, $gostoid, $conn){
 
     $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
@@ -109,6 +112,7 @@ function notf_gosto($iduser_para, $gostoid, $conn){
     $notf->close();
 }
 
+// funcao que recebe id do user a que a notificacao se destina e o id da acao (id do comentario) e cria a nova notificacao ligada a essse comentario
 function notf_comentario($iduser_para, $comentarioid, $conn){
 
     $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
@@ -125,7 +129,7 @@ function notf_comentario($iduser_para, $comentarioid, $conn){
     $notf->close();
 }
 
-
+// funcao que recebe id do user a que a notificacao se destina e o id da acao (id do seguir) e cria a nova notificacao ligada a essse seguir
 function notf_seguir($iduser_para, $seguirid, $conn){
 
     $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
@@ -143,7 +147,7 @@ function notf_seguir($iduser_para, $seguirid, $conn){
 }
 
 
-
+// funcao verifica que a publicacao ja foi ou nao guardada pelo o user se estiver retorna true senao estiver retorna false
 function check_guardado($idpub){
     $publicacao_fav_check = $conn->prepare("select * from publicacoes_fav where pub_id = ? and id_user = ?");
     $publicacao_fav_check->bind_param("ii", $idpub, $_SESSION['id_user']);
@@ -158,14 +162,18 @@ function check_guardado($idpub){
     }
 }
 
-
+// recebe o id da publicacao e retorna a quantidade de comentarios
 function pub_count_comments($id,$conn){
     return mysqli_fetch_assoc($comments = $conn->query("select count(*) as total from comentarios where publicacao_id = ". $id))['total'];
 }
+
+// recebe o id da publicacao e retorna a quantidade de gostos
 function pub_count_likes($id,$conn){
     return mysqli_fetch_assoc($comments = $conn->query("select count(*) as total from gostos where publicacao_id = ". $id))['total'];
 }
 
+// recebe o id da publicacao e e verifica se a publicacao tem imagem se tiver retorna a imagem dela
+// senao retorna a imagem predefinida (noimg.png) quando se encontra sem publicacao
 function pub_thumb($id,$conn){
 $imagemq = $conn->query("SELECT * FROM publicacoes_fotos where publicacao_id=" . $id);
 
