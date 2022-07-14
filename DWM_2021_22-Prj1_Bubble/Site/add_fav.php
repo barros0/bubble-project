@@ -34,7 +34,7 @@ if (isset($_GET['pubid'])) {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
-    array_push($_SESSION['alerts']['erros'], 'Publicação inválida!');
+    array_push($_SESSION['alerts']['errors'], 'Publicação inválida!');
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
