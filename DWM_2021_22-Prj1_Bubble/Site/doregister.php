@@ -1,6 +1,8 @@
 <?php
-include('./bd.php');
 session_start();
+include('./bd.php');
+require 'sendmail.php';
+
 
 /*ligacao ao formulario*/
 $nome = $_POST["nome"];
@@ -55,10 +57,14 @@ $jaexiste_username = mysqli_num_rows($faz_existe_username);
 if ($jaexiste == 0) {
     if ($jaexiste_username == 0) {
         $password = hash('sha512', $password);
-        $sql = $conn->query("INSERT INTO users (nome, username, email, password, data_nascimento, genero) VALUES('$nome','$username','$email','$password','$birthdayDate','$sexo')");
-        array_push($_SESSION['alerts']['success'], 'O seu utilizador foi criado!');
-        header('location:./login.php');
+        $user_insert = $conn->query("INSERT INTO users (nome, username, email, password, data_nascimento, genero) VALUES('$nome','$username','$email','$password','$birthdayDate','$sexo')");
+$user = $conn->query('select * from users where id_user = '. mysqli_insert_id($conn))->fetch_assoc();
+        confirmaremail($user);
+        array_push($_SESSION['alerts']['success'], 'A sua conta foi criada, verifique a caixa de entrada do seu e-amil e confirme a sua conta!');
+        //header('location:./login.php');
+        echo "<script>window.location.assign('login.php')</script>";
         mysqli_close($conn);
+        exit;
     } else {
         array_push($_SESSION['alerts']['errors'], 'Este username ja existe.');
         header('location:./login.php');

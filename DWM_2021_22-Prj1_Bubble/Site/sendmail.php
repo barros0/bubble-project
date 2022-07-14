@@ -38,10 +38,11 @@ function confirmaremail($user)
 {
     $token = gerar_token_user($user['id_user']);
     $link = gerar_link_confirm_email($token);
-    $email_conteudo = corpo_email($link);
+    $email_conteudo = corpo_email($link, $user);
 
     $mail = new PHPMailer(true);
 
+    // tenta enviar o email
     try {
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
@@ -55,16 +56,8 @@ function confirmaremail($user)
 
         //Recipients
         $mail->setFrom('noreply@social-bubble.pt', 'Bubble');
-        $mail->addAddress('submica99@gmail.com', 'Bubble user');     //Add a recipient
-        /* $mail->addAddress('ellen@example.com');               //Name is optional
-         $mail->addReplyTo('info@example.com', 'Information');
-         $mail->addCC('cc@example.com');
-         $mail->addBCC('bcc@example.com');*/
+        $mail->addAddress('submica99@gmail.com', 'Bubble user');
 
-        //Attachments
-        /*$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-        $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-*/
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Bubble | Confirma o teu endereço e-mail';
@@ -72,9 +65,12 @@ function confirmaremail($user)
         $mail->AltBody = 'É necessário confirmares o teu e-mail antes de fazeres login :)';
 
         $mail->send();
-        echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo 'Email enviado com sucesso';
+    }
+    // se der erro ou falhar
+    catch (Exception $e) {
+        echo "Não foi possivel enviar email de confirmação de email, algo inesperado aconteceu, contact a administração
+        . Erro: {$mail->ErrorInfo}";
     }
 }
 
@@ -135,7 +131,7 @@ function corpo_email($link, $user)
                     <td align="center">
                         <a
                                 style="margin-top: 20px; text-decoration: none; font-size: 20px; padding: 10px; color: white; background-color: #00d372; border-radius: 8px"
-                                href="'{$link}'">Clica aqui para confirmares a tua conta</a>
+                                target="_blank" href="{$link}">Clica aqui para confirmares a tua conta</a>
                     </td>
                 </tr>
             </table>
@@ -149,10 +145,5 @@ HTML
 }
 
 ?>
-
-
-<style>
-
-</style>
 
 
