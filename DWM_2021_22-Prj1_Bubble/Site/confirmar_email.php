@@ -22,6 +22,11 @@ if (isset($_GET['token'])) {
         $user_update->bind_param("ii", $estado, $user['id_user']);
         $user_update->execute();
 
+        // apaga a key de verificacao por seguranca uma vez que a conta ja foi verifica e o utilizador nao ative novamente mais tarde sem permicao
+        $delete_user_token = $conn->prepare("UPDATE users SET vkey = null WHERE id_user = ?");
+        $delete_user_token->bind_param("i", $user['id_user']);
+        $delete_user_token->execute();
+
         // da o alerta que foi ativa a conta
         array_push($_SESSION['alerts']['success'], 'O seu e-mail foi confirmado, faça login e seja bem-vindo!');
         // manda po login
