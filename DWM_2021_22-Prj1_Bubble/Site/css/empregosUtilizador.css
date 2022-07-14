@@ -163,6 +163,10 @@
   #form {
     display: none;
   }
+
+  .pesq{
+    color: white;
+  }
   
   /*gerir empregos*/
   .detalhes-gerir {

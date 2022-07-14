@@ -178,6 +178,10 @@ input.input_seach_pesquisa {
   color: #00ff8a;
 }
 
+.pesq{
+  color: white;
+}
+
 /* empregos mobile*/
 @media (max-width: 900px) {
 
