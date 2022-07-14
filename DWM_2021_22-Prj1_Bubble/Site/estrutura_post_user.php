@@ -28,7 +28,7 @@ while ($user_pub = $result_set->fetch_assoc()) {
 
     $num_likes = $conn->query("select count(*) from gostos where publicacao_id=" . $user_pub['publicacao_id'])->fetch_assoc();
     $like_check_post = $conn->query("select * from gostos where publicacao_id =" . $user_pub['publicacao_id'] . " and user_id = " . $_SESSION['user']['id_user'] . "")->fetch_row();
-
+    $fav_check_post = $conn->query("select * from publicacoes_fav where id_pub =" . $user_pub['publicacao_id'] . " and id_user = " . $_SESSION['user']['id_user'] . "")->fetch_row();
 
     $id_publicacao = $user_pub['publicacao_id'];
     $estado = $user_pub['estado_pub'];
@@ -112,8 +112,15 @@ while ($user_pub = $result_set->fetch_assoc()) {
                         <p>Comentar</p>
                     </div>
                     <div class="fav">
-                        <i class='bx bx-bookmark'></i>
-                        <p>Favoritos</p>
+                        <a href="./add_fav.php?pubid=<?= $user_pub['publicacao_id'] ?>">
+                            <?php if ($fav_check_post == 0) { ?>
+                                <i class='bx bx-bookmark'></i>
+                                <p>Favoritos</p>
+                            <?php } else { ?>
+                                <i class='bx bxs-bookmark' style='color:#00ff8a'></i>
+                                <p style="color:#00ff8a;">Favoritos</p>
+                            <?php } ?>
+                        </a>
                     </div>
                 </div>
                 <div class="comment_section">

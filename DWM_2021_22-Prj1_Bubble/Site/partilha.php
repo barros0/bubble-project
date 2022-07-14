@@ -26,6 +26,7 @@ $num_likes = $conn->query("select count(*) from gostos where publicacao_id=" . $
 
 $like_check_post = $conn->query("select * from gostos where publicacao_id =" . $id_publicacao . " and user_id = " . $_SESSION['user']['id_user'] . "")->fetch_row();
 
+$fav_check_post = $conn->query("select * from publicacoes_fav where id_pub =" . $id_publicacao . " and id_user = " . $_SESSION['user']['id_user'] . "")->fetch_row();
 
 $estado = $publicacao["estado_pub"];
 
@@ -110,8 +111,13 @@ if ($estado != 2) {
                 </div>
                 <div class="fav">
                     <a href="./add_fav.php?pubid=<?= $publicacao['publicacao_id'] ?>">
-                        <i class='bx bx-bookmark'></i>
-                        <p>Favoritos</p>
+                        <?php if ($fav_check_post == 0) { ?>
+                            <i class='bx bx-bookmark'></i>
+                            <p>Favoritos</p>
+                        <?php } else { ?>
+                            <i class='bx bxs-bookmark' style='color:#00ff8a'></i>
+                            <p style="color:#00ff8a;">Favoritos</p>
+                        <?php } ?>
                     </a>
                 </div>
             </div>
