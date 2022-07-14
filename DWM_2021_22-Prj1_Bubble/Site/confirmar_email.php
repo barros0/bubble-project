@@ -22,7 +22,7 @@ if (isset($_GET['token'])) {
         $user_update->bind_param("ii", $estado, $user['id_user']);
         $user_update->execute();
 
-        // da o alera que foi ativa a conta
+        // da o alerta que foi ativa a conta
         array_push($_SESSION['alerts']['success'], 'O seu e-mail foi confirmado, faça login e seja bem-vindo!');
         // manda po login
         header('Location: ./login.php');
