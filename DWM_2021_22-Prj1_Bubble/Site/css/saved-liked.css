@@ -1,9 +1,9 @@
 .center {
     display: flex;
-    width: 70%;
-    margin-top: 98px;
-    margin-right: 70px;
+    width: 100%;
     flex-direction: column;
+    align-items: center;
+    margin: 98px 20px;
 }
 
 .actions {
@@ -12,6 +12,7 @@
     height: 70px;
     justify-content: space-between;
     margin-bottom: 20px;
+
 }
 
 .left_bt, .right_bt {

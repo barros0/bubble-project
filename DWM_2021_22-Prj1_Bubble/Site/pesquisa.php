@@ -8,10 +8,18 @@ if (strlen($value_search) <= 0) {
     exit;
 }
 
-$addpesquisa = $conn->prepare("insert into historico_pesquisa (id_utilizador, pesquisa) VALUES (?, ?)");
-$addpesquisa->bind_param("is", $userq['id_user'], $value_search);
-$addpesquisa->execute();
-$addpesquisa->close();
+$last_pesquisa = $conn->prepare("select * from historico_pesquisa where id_utilizador = ? order by id_historico desc LIMIT 1");
+$last_pesquisa->bind_param("i", $userq['id_user']);
+$last_pesquisa->execute();
+$val_last_pesquisa = $last_pesquisa->get_result()->fetch_assoc()['pesquisa'];
+$last_pesquisa->close();
+
+if ($val_last_pesquisa <> $value_search) {
+    $addpesquisa = $conn->prepare("insert into historico_pesquisa (id_utilizador, pesquisa) VALUES (?, ?)");
+    $addpesquisa->bind_param("is", $userq['id_user'], $value_search);
+    $addpesquisa->execute();
+    $addpesquisa->close();
+}
 
 $search = explode(" ", $value_search);
 $description = "";
@@ -83,17 +91,16 @@ foreach ($publicacoes as $pub) {
 
     // verifica se a publicaoca tem imagem se tiver  coloca no array se nao mete noimg.png
     $imagem = $conn->query("select * from publicacoes_fotos where publicacao_id =" . $pub['publicacao_id']);
-    if($imagem->num_rows > 0){
+    if ($imagem->num_rows > 0) {
         $img = $imagem->fetch_assoc()['caminho'];
-    }
-    else{
-        $img='noimg.png';
+    } else {
+        $img = 'noimg.png';
     }
     $pub_ar = [
         'titulo' => substr($pub['conteudo'], 0, 50),
         'subtitulo' => substr($pub['conteudo'], 0, 80),
         'tipo' => 'publicacao',
-        'img' => './img/publicacoes/'.$img,
+        'img' => './img/publicacoes/' . $img,
         'link' => './partilha.php?id_pub=' . $pub['publicacao_id'],
     ];
     array_push($resultados, $pub_ar);
@@ -105,7 +112,7 @@ foreach ($users as $user) {
         'titulo' => $user['username'],
         'subtitulo' => $user['username'],
         'tipo' => 'pessoa',
-        'img' => 'img/fotos_perfil/'.$user['profile_image'],
+        'img' => 'img/fotos_perfil/' . $user['profile_image'],
         'link' => './perfil.php?username=' . $user['username'],
     ];
     array_push($resultados, $user_arr);
@@ -117,7 +124,7 @@ foreach ($eventos as $evento) {
         'titulo' => $evento['titulo'],
         'subtitulo' => substr($evento['descricao'], 0, 50),
         'tipo' => 'evento',
-        'img' => 'img/eventos/'.$evento['imagem'],
+        'img' => 'img/eventos/' . $evento['imagem'],
         'link' => './evento.php?id=' . $evento['id_evento'],
     ];
     array_push($resultados, $eventos_arr);
@@ -128,7 +135,7 @@ foreach ($market as $mark) {
         'titulo' => $mark['titulo'],
         'subtitulo' => $mark['categoria'],
         'tipo' => 'marketplace',
-        'img' => './img/marketplace/'.$mark['imagem'],
+        'img' => './img/marketplace/' . $mark['imagem'],
         'link' => './marketplace?id=' . $mark['id_produto'],
     ];
     array_push($resultados, $market_arr);
@@ -136,86 +143,81 @@ foreach ($market as $mark) {
 shuffle($resultados);
 
 
-
-
-
 ?>
 
     <div class="parts">
 
-        <?php include 'page_parts/left.php'; ?>
+<?php include 'page_parts/left.php'; ?>
 
-        <div class="center">
-            <div class="filtros">
-                <h4>Filtros:</h4>
-            </div>
-            <div class="actions">
-                <a class="bt_op active_bt" href="#" id="todos">
-                    <div class="white">
-                        <p></p>
-                        <p>Tudo</p>
-                    </div>
-                </a>
-                <a class="bt_op" href="#" id="pessoa">
-                    <div class="white">
-                        <p></p>
-                        <p>Pessoas</p>
-                    </div>
-                </a>
-                <a class="bt_op" href="#" id="publicacao">
-                    <div class="white">
-                        <p></p>
-                        <p>Publicações </p>
-                    </div>
-                </a>
+    <div class="center">
+        <div class="filtros">
+            <h4>Filtros:</h4>
+        </div>
+        <div class="actions">
+            <a class="bt_op active_bt" href="#" id="todos">
+                <div class="white">
+                    <p></p>
+                    <p>Tudo</p>
+                </div>
+            </a>
+            <a class="bt_op" href="#" id="pessoa">
+                <div class="white">
+                    <p></p>
+                    <p>Pessoas</p>
+                </div>
+            </a>
+            <a class="bt_op" href="#" id="publicacao">
+                <div class="white">
+                    <p></p>
+                    <p>Publicações </p>
+                </div>
+            </a>
 
-                <a class="bt_op" href="#" id="eventos">
-                    <div class="white">
-                        <p></p>
-                        <p>Eventos </p>
-                    </div>
-                </a>
+            <a class="bt_op" href="#" id="eventos">
+                <div class="white">
+                    <p></p>
+                    <p>Eventos </p>
+                </div>
+            </a>
 
-                <a class="bt_op" href="#" id="marketplace">
-                    <div class="white">
-                        <p></p>
-                        <p>Marketplace </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-12 resultados-para">
-                <h1 id="resultados_frase">Resultados para: <?= $value_search ?></h1>
-                <hr>
-            </div>
-
-            <div class="resultados" id="resultados">
-                <?php
-                if ($resultados) {
-                    foreach ($resultados as $resultado) { ?>
-                        <div class="resultado" type="<?= $resultado['tipo'] ?>">
-                            <a href="<?= $resultado['link'] ?>">
-                                <div class="d-flex">
-                                    <div class="img-radius">
-                                        <img src="<?=$resultado['img']?>" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <div class="titulo">
-                                            <h2><?= $resultado['titulo'] ?></h2>
-                                        </div>
-                                        <div class="desc">
-                                            <p><?= $resultado['tipo'] ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    <?php }
-                } ?>
-            </div>
+            <a class="bt_op" href="#" id="marketplace">
+                <div class="white">
+                    <p></p>
+                    <p>Marketplace </p>
+                </div>
+            </a>
         </div>
 
+        <div class="col-12 resultados-para">
+            <h1 id="resultados_frase">Resultados para: <?= $value_search ?></h1>
+            <hr>
+        </div>
 
+        <div class="resultados" id="resultados">
+            <?php
+            if ($resultados) {
+                foreach ($resultados as $resultado) { ?>
+                    <div class="resultado" type="<?= $resultado['tipo'] ?>">
+                        <a href="<?= $resultado['link'] ?>">
+                            <div class="d-flex">
+                                <div class="img-radius">
+                                    <img src="<?= $resultado['img'] ?>" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="titulo">
+                                        <h2><?= $resultado['titulo'] ?></h2>
+                                    </div>
+                                    <div class="desc">
+                                        <p><?= $resultado['tipo'] ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <?php }
+            } ?>
+        </div>
     </div>
+
 
 <?php include 'page_parts/footer.php'; ?>

@@ -307,6 +307,12 @@ input.input_searchbar {
   align-items: center;
 }
 
+.recent_pesquisa:hover {
+  background-color: var(--parcelas);
+  padding: 0px 2px  0px 2px;
+  border-radius: 6px;
+}
+
 .recent_pesquisa i, .recent_pesquisa {
   text-decoration: none;
   cursor: pointer;

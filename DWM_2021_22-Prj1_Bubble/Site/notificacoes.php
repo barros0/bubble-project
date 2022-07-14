@@ -41,19 +41,44 @@
                             </div>
                         </div>
                 <?php }
-                } ?>
+                } else{?>
+                       <div class="sem-notificacaoes">
+                           <i class="ficon fa-solid fa-bell-slash"></i>
+                           <h2>
+                               Ainda não recebes-te nenhuma notificação <i class="fa fa-sad-tear"></i>
+
+                           </h2>
+                       </div>
+                        <?php
+                }
+                ?>
             </div>
         </div>
 
+        <style>
+            .sem-notificacaoes{
+                padding: 60px;
+text-align: center;
+                border-radius: 8px;
+                background-color: var(--parcelas);
+                margin-top: 30px;
+            }
+
+            .sem-notificacaoes .ficon{
+                margin-bottom: 30px;
+    font-size: 60px;
+                color: var(--verde);
+            }
+
+            .sem-notificacaoes h2{
+                    color: var(--white);
+            }
+        </style>
+
     </div>
-    <div class="right">
-        <div class="right_fixed">
 
-        </div>
 
-    </div>
 
-</div>
 
     <style>
 
@@ -157,7 +182,7 @@
 
         .center {
             display: flex;
-            width: 50%;
+            width: 100%;
             flex-direction: column;
             align-items: center;
             margin-top: 48px;

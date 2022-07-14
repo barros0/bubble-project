@@ -1,10 +1,10 @@
 
 .center {
     display: flex;
-    width: 70%;
-    margin-top: 98px;
-    margin-right: 70px;
+    width: 100%;
+    margin: 98px 20px;
     flex-direction: column;
+    align-items: center;
 }
 
 .filtros {
@@ -15,17 +15,17 @@
 .actions {
     display: flex;
     width: 100%;
-    height: 70px;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .bt_op {
     background-color: #404040;
     border-bottom: 2px solid transparent;
-    width: 49%;
+    width: auto;
     border-radius: 10px;
-    height: 100%;
+    height: 55px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,6 +34,7 @@
     padding: 10px;
     text-decoration: none;
     margin: 10px;
+    min-width: 200px;
 }
 
 .bt_op:hover, .bt_op:hover {
@@ -91,6 +92,7 @@
 
 .resultados {
     padding: 10px;
+    width: 85%;
 }
 
 .resultado .info {

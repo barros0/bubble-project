@@ -183,7 +183,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
                     <textarea maxlength="255" name="text" id="textarea" placeholder="O que estás a programar?"></textarea>
                 </div>
                 <div class="img_post">
-                    <img id="img_post" src="#" alt="photo_post">
+                    <img id="img_post" src="" alt="photo_post">
                     <i id="cancel_btn" class='bx bx-x'></i>
                 </div>
                 <div class="buttons_post">
