@@ -149,7 +149,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
             <form class="form_searchbar" method="get" action="pesquisa.php">
                 <div class="div_input_searchbar">
                     <input type="text" class="input_searchbar" placeholder="Search here..." name="search" required="required" value="" />
-                    <span style="margin-top: 10px;" class="input_search_group_btn">
+                    <span class="input_search_group_btn">
                         <button class="button_searchbar"><i class='bx bx-search'></i></button>
                     </span>
                 </div>
@@ -162,7 +162,6 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
             ?>
                 <a href="./pesquisa.php?search=<?= $pesquisa['pesquisa'] ?>" class="recent_pesquisa">
                     <p><?= $pesquisa['pesquisa'] ?></p>
-                    <i class='bx bx-x'></i>
                 </a>
             <?php
             }
