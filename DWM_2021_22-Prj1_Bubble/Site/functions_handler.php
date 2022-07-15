@@ -151,9 +151,10 @@ function notf_seguir($iduser_para, $seguirid, $conn){
 
 
 // funcao verifica que a publicacao ja foi ou nao guardada pelo o user se estiver retorna true senao estiver retorna false
-function check_guardado($idpub){
-    $publicacao_fav_check = $conn->prepare("select * from publicacoes_fav where pub_id = ? and id_user = ?");
-    $publicacao_fav_check->bind_param("ii", $idpub, $_SESSION['id_user']);
+function check_fav($idpub){
+    require 'bd.php';
+    $publicacao_fav_check = $conn->prepare("select * from publicacoes_fav where id_pub = ? and id_user = ?");
+    $publicacao_fav_check->bind_param("ii", $idpub, $_SESSION['user']['id_user']);
     $publicacao_fav_check->execute();
     $fav_check = $publicacao_fav_check->get_result();
 
@@ -178,10 +179,11 @@ function pub_count_likes($id,$conn){
 // recebe o id da publicacao e e verifica se a publicacao tem imagem se tiver retorna a imagem dela
 // senao retorna a imagem predefinida (noimg.png) quando se encontra sem publicacao
 function pub_thumb($id,$conn){
-$imagemq = $conn->query("SELECT * FROM publicacoes_fotos where publicacao_id=" . $id);
+$imagemq = $conn->query("SELECT * FROM publicacoes_fotos where publicacao_id = " . $id);
+    $imagem = $imagemq->fetch_assoc();
 
-if($imagemq->num_rows > 0){
-    $img = $imagemq['caminho'];
+if(!empty($imagem)){
+    $img = $imagem['caminho'];
 }
 else{
     $img = 'noimg.png';

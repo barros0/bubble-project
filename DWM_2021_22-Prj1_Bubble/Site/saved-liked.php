@@ -47,7 +47,7 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
                             <div class="box">
                                 <a href="./publicacao.php?publicacaoid=<?= $pub['publicacao_id'] ?>">
                                     <div class="img">
-                                        <img src="<?= pub_thumb($pub['publicacao_id'], $conn) ?>?>"
+                                        <img src="<?= pub_thumb($pub['publicacao_id'], $conn) ?>"
                                              alt="tumb pub<?= $pub['publicacao_id'] ?>">
                                     </div>
                                     <div class="info">
@@ -91,7 +91,7 @@ where publicacoes_fav.id_user = ' . $userq['id_user']);
                             <div class="box">
                                 <a href="./partilha.php?id_pub=<?= $pub['publicacao_id'] ?>">
                                     <div class="img">
-                                        <img src="<?= pub_thumb($pub['publicacao_id'], $conn) ?>?>"
+                                        <img src="<?= pub_thumb($pub['publicacao_id'], $conn) ?>"
                                              alt="tumb pub<?= $pub['publicacao_id'] ?>">
                                     </div>
                                     <div class="info">
