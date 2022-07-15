@@ -8,12 +8,14 @@ if (strlen($value_search) <= 0) {
     exit;
 }
 
+// vai buscar a ultima pesquisa do user
 $last_pesquisa = $conn->prepare("select * from historico_pesquisa where id_utilizador = ? order by id_historico desc LIMIT 1");
 $last_pesquisa->bind_param("i", $userq['id_user']);
 $last_pesquisa->execute();
 $val_last_pesquisa = $last_pesquisa->get_result()->fetch_assoc()['pesquisa'];
 $last_pesquisa->close();
 
+// se a pesquisa atual for igual a ultima feita pelo user nao inserre no historio -- se for diferente insere
 if ($val_last_pesquisa <> $value_search) {
     $addpesquisa = $conn->prepare("insert into historico_pesquisa (id_utilizador, pesquisa) VALUES (?, ?)");
     $addpesquisa->bind_param("is", $userq['id_user'], $value_search);
@@ -21,13 +23,20 @@ if ($val_last_pesquisa <> $value_search) {
     $addpesquisa->close();
 }
 
+// separa as palavras da pesquisa por espacos
 $search = explode(" ", $value_search);
+
+// aqui nao foram utilizados prepared statements pois seria necesario obter uma forma para colocar diversos termos
+//pois isso seria bastante mais facil numa framework mas visto o php base nao facilitar nestas situações tem de ser assim sem grandes algoritomos
+
+// inicia as variaveis fazia para as querys
 $description = "";
 $s_user = "";
 $s_pub = "";
 $s_eventos = "";
 $s_market = "";
 
+// faz as query para cada tipo de pequisa pretendida
 foreach ($search as $s) {
     //2
     $s_user .= "`nome` LIKE '%" . $s . "%' or `username` LIKE '%" . $s . "%' or ";
@@ -39,51 +48,23 @@ foreach ($search as $s) {
     $s_market .= "`titulo` LIKE '%" . $s . "%' or ";
 }
 
-
-/*
- * foreach ($search as $s) {
-    //2
-    $s_user .= "`nome` LIKE '%?%' or `username` LIKE '%?%' or ";
-    //1
-    $s_pub .= "`conteudo` LIKE '%?%' or ";
-    //3
-    $s_eventos .= "`titulo` LIKE '%?%' or `localizacao` LIKE '%?%' or `descricao` LIKE '%?%' or";
-    //1
-    $s_market .= "`titulo` LIKE '%?%' or ";
-}*/
-
+// remove os ultimos 3 caracters ou seja " or" no final
 $s_user = substr($s_user, 0, -3);
 $s_pub = substr($s_pub, 0, -3);
 $s_eventos = substr($s_eventos, 0, -3);
 $s_market = substr($s_market, 0, -3);
 
+
+// conta o numero de termos
 $n_search_terms = count($search);
 
-
-/*
-$tfields_1 = str_repeat('s', $n_search_terms);
-$tfields_2 = str_repeat('ss', $n_search_terms);
-$tfields_3 = str_repeat('sss', $n_search_terms);
-print_r($search);
-
-$evento = $conn->prepare("SELECT * FROM `users` WHERE ($s_user)");
-$evento->bind_param($tfields_1, $search);
-$evento->execute();
-
-
-exit;
-
-
-
-print_r($users);
-exit;*/
-
+// faz a querys para caa tipo de pesquisa: users publicacaoes eventos e marketplace
 $users = $conn->query("SELECT * FROM `users` WHERE ($s_user)"); // estado_pub = 1
 $publicacoes = $conn->query("SELECT * FROM `publicacoes` WHERE ($s_pub)");
 $eventos = $conn->query("SELECT * FROM `eventos` WHERE ($s_eventos)");
 $market = $conn->query("SELECT * FROM `marketplace` WHERE ($s_market)");
 
-
+// inciializa o array para os resultados
 $resultados = array();
 
 //cria sub arrays para resultaods de publicacoes
@@ -96,6 +77,7 @@ foreach ($publicacoes as $pub) {
     } else {
         $img = 'noimg.png';
     }
+    // cria array com dados do resultado, titulo subtitlo tipo imagem e link o  mesmo acontece com as outras
     $pub_ar = [
         'titulo' => substr($pub['conteudo'], 0, 50),
         'subtitulo' => substr($pub['conteudo'], 0, 80),
@@ -125,7 +107,7 @@ foreach ($eventos as $evento) {
         'subtitulo' => substr($evento['descricao'], 0, 50),
         'tipo' => 'evento',
         'img' => 'img/eventos/' . $evento['imagem'],
-        'link' => './evento.php?id=' . $evento['id_evento'],
+        'link' => './eventos.php?id=' . $evento['id_evento'],
     ];
     array_push($resultados, $eventos_arr);
 }
@@ -136,14 +118,21 @@ foreach ($market as $mark) {
         'subtitulo' => $mark['categoria'],
         'tipo' => 'marketplace',
         'img' => './img/marketplace/' . $mark['imagem'],
-        'link' => './marketplace?id=' . $mark['id_produto'],
+        'link' => './marketplace.php?id=' . $mark['id_produto'],
     ];
     array_push($resultados, $market_arr);
 }
+// baralha o array de resultados par anao ficar tudo igual e seguido
 shuffle($resultados);
 
 
 ?>
+<!-- coloca o valor da pesquisa no input de pesquisa | caso fize-se para pareceer quando get 'search' apareceria quando existissse um search em qualquer pagina-->
+    <script>
+        $(document).ready(function (){
+            $('#input_searchbar').val('<?=$value_search?>');
+        })
+    </script>
 
     <div class="parts">
 
@@ -197,7 +186,7 @@ shuffle($resultados);
             <?php
             if ($resultados) {
                 foreach ($resultados as $resultado) { ?>
-                    <div class="resultado" type="<?= $resultado['tipo'] ?>">
+                    <div class="resultado" itemtype="<?= $resultado['tipo'] ?>">
                         <a href="<?= $resultado['link'] ?>">
                             <div class="d-flex">
                                 <div class="img-radius">
@@ -218,6 +207,8 @@ shuffle($resultados);
             } ?>
         </div>
     </div>
+    </div>
+
 
 
 <?php include 'page_parts/footer.php'; ?>

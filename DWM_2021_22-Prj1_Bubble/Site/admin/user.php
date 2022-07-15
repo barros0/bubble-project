@@ -3,16 +3,24 @@ include('./partials/header.php');
 
 $userid = $_GET['userid'];
 
-$user = $conn->query('Select * from users where id_user = ' . $userid)->fetch_assoc();
+// pesquisa pelo user
+$user_s = $conn->prepare("Select * from users where id_user =  ?");
+$user_s->bind_param("i", $userid);
+$user_s->execute();
+$user = $user_s->get_result()->fetch_assoc();
+$user_s->close();
 
+// se o user nao exitir manda para a pagina de users
 if (!isset($user)) {
     array_push($_SESSION['alerts']['errors'], 'Este utilizador não existe!');
     header('location:./users.php');
     exit;
 }
 
+// obtem os estados do user
 $estados = $conn->query('select * from estados_users');
 
+// obtem as publicacoes do user
 $publicacoes = $conn->query('select * from publicacoes inner join users on publicacoes.user_id = users.id_user
 where id_user =' . $user['id_user']);
 

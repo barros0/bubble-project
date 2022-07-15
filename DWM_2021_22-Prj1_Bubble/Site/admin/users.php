@@ -2,7 +2,7 @@
 
 require_once('./partials/header.php');
 
-// get al users
+// get all users
 $users = $conn->query('select * from users inner join estados_users on users.estado = estado_user_id');
 
 include('./partials/nav_bar.php');

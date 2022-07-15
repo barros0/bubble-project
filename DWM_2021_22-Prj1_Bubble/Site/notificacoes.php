@@ -6,9 +6,13 @@
             <?php
 
             include('./functions_handler.php');
-            $query = 'select * from notificacoes where id_utilizador ="' . $_SESSION['user']['id_user'] . '"';
 
-            $notificacoes = $conn->query($query);
+// vai buscar todas as notificacoes desse utilizador
+            $notificacoesq = $conn->prepare("select * from notificacoes where id_utilizador = ?");
+            $notificacoesq->bind_param("i", $_SESSION['user']['id_user']);
+            $notificacoesq->execute();
+            $notificacoes = $notificacoesq->get_result();
+            $notificacoesq->close();
 
             ?>
 

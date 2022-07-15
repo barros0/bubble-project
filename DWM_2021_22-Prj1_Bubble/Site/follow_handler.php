@@ -13,6 +13,7 @@ if (isset($_GET['follow'])) {
     $follow->bind_param("ii", $userid, $followid);
     $follow->execute();
 
+    // cria uma notificacao para o user que seguiu
     notf_seguir($followid, $follow->insert_id);
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -32,6 +33,7 @@ if (isset($_GET['remove-follow'])) {
     $delete_follow->bind_param("ii", $userid, $followid);
     $delete_follow->execute();
 
+    // apaga a notificao do seguimento pois ficaria uma notificcaoa fantasma
     notf_remover_seguir($seguir_id,$conn);
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);

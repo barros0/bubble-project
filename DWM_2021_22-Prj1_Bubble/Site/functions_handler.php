@@ -7,6 +7,7 @@ function notificacao_handler($notificacao, $conn)
     $type = $notificacao['tipo'];
     $idnotificacao = $notificacao['id_notificacao'];
 
+    // aqui nao sao usados prepared statement pois nao existe essaq necessida pois o unico valor de entrada é $notificacao que é um resultado da base dados ja vindo anteriormente
     switch ($type) {
         //caso gosto
         case 1:
@@ -27,7 +28,7 @@ function notificacao_handler($notificacao, $conn)
                 'img' => 'img/fotos_perfil/' . $user['profile_image'],
                 'descricao' => $descricao,
                 'linkp' => './partilha.php?id_pub=' . $publicacao['publicacao_id'],
-                ];
+            ];
         // caso comentario
         case 2:
             $notif_comentario = $conn->query("Select * from notificacoes_comentario where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
@@ -46,7 +47,7 @@ function notificacao_handler($notificacao, $conn)
                 'img' => 'img/fotos_perfil/' . $user['profile_image'],
                 'descricao' => $user['nome'] . ' comentou: "' . $comentario['comentario'] . '"',
                 'linkp' => './partilha.php?id_pub=' . $publicacao['publicacao_id'],
-                ];
+            ];
 // caso mensagem
         case 3:
             $notif_mensagem = $conn->query("Select * from notificacoes_mensagem where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();

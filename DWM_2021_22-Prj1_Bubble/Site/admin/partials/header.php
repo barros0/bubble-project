@@ -22,7 +22,7 @@ if (!isset($_SESSION['user'])) {
     header('location:../login.php');
     exit();
 }
-
+// se nao for admin redireciona para o login como se a pagina nao existi-se
 if (empty($_SESSION['user']) || $_SESSION['user']['tipo'] <> 1) {
     header('location:../login.php');
     exit;
@@ -38,7 +38,7 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
 <head>
     <meta charset="utf-8" />
     <title>Admin</title>
-
+    <link rel="shortcut icon" type="image/jpg" href=".././img/header/logo_small_bubble.ico""/>
     <link rel="stylesheet" href="./public/bootstrap-5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/styles.css">
     <link rel="stylesheet" href="./public/css/menu.css">

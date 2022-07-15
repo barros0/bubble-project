@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 $_SESSION['errors'] = array();
 
-
+// se user estiver inativo a mais de $minutosExpira é feito logout automaticamente
 $minutosExpira = 30;
 if (isset($_SESSION['ULTIMA_ATIVIDADE']) && (time() - $_SESSION['ULTIMA_ATIVIDADE'] > ($minutosExpira * 60))) {
     session_unset();     // unset $_SESSION
@@ -148,7 +148,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
         <div class="wrapper_searchbar">
             <form class="form_searchbar" method="get" action="pesquisa.php">
                 <div class="div_input_searchbar">
-                    <input type="text" class="input_searchbar" placeholder="Search here..." name="search" required="required" value="" />
+                    <input id="input_searchbar" type="text" class="input_searchbar" placeholder="Search here..." name="search" required="required" value="" />
                     <span class="input_search_group_btn">
                         <button class="button_searchbar"><i class='bx bx-search'></i></button>
                     </span>
