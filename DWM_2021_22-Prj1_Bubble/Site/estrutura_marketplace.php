@@ -28,8 +28,8 @@ while ($market = $result_set->fetch_assoc()) {
                 <div class="descricao_market">
                     <p class="descricao_texto_market"><?php echo $market['descricao'] ?></p>
                 </div>
-                <div class="sitio_market">
-                    <p class="nome do sitio">Preco: <?php echo $market['preco'] ?>€</p>
+                <div class="preco_market">
+                    <p class="preco-market">Preco: <?php echo $market['preco'] ?>€</p>
                 </div>
                 <div class="texto-download">
                     <p>5.0 ⭐⭐⭐⭐⭐</p>

@@ -53,9 +53,9 @@ input.input_seach_marketplace {
   margin-top: 30px;
 }
 
-.data_market, .sitio_market {
+.data_market, .preco_market {
   color: #bdbdbd;
-  margin: 5px;
+  margin-top: 15px;
 }
 
 .titulo_market {
@@ -72,6 +72,8 @@ input.input_seach_marketplace {
 .descricao_market {
   margin-top: 5px;
   color: white;
+  width: 100%;
+  height: 60px;
 }
 
 .imagem_market {
@@ -83,9 +85,13 @@ input.input_seach_marketplace {
   padding: 20px;
 }
 
+
+
+
 .market_left {
   background-color: #404040;
-  height: 400px;
+  height: auto;
+  min-height: 470px;
   width: 250px;
   border-radius: 10px;
   /* margin: 20px; */
@@ -160,7 +166,7 @@ input.input_seach_marketplace {
   box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
   background-color: #404040;
   border-radius: 15px;
-  height: 520px;
+  height: auto;
   color: white;
   width: 50%;
 }
