@@ -29,15 +29,15 @@
             </div>
             <div class="form_evento_titulo">
                 <label for="textarea_evento_titulo">Titulo:</label>
-                <textarea name="titulo_evento_textarea" id="textarea_evento_titulo" placeholder=" Ex.: Lisboa Games Week" required="required" ></textarea>
+                <textarea data-limit=30 maxlength="30" name="titulo_evento_textarea" id="textarea_evento_titulo" placeholder=" Ex.: Lisboa Games Week" required="required" ></textarea>
             </div>
             <div class="form_evento_localizacao">
                 <label for="textarea_evento_localizacao">Localização:</label>
-                <textarea name="localizacao_evento_textarea" id="textarea_evento_localizacao" placeholder=" Ex.: Campo Pequeno, Lisboa" required="required" ></textarea>
+                <textarea data-limit=55 maxlength="55" name="localizacao_evento_textarea" id="textarea_evento_localizacao" placeholder=" Ex.: Campo Pequeno, Lisboa" required="required" ></textarea>
             </div>
             <div class="form_evento_descricao">
                 <label for="textarea_evento_descricao">Descrição:</label>
-                <textarea name="descricao_evento_textarea" id="textarea_evento_descricao" placeholder=" Ex.: Descrição da atividade, link para o site e horário e data do mesmo."required="required" ></textarea>
+                <textarea data-limit=200 maxlength="200" name="descricao_evento_textarea" id="textarea_evento_descricao" placeholder=" Ex.: Descrição da atividade, link para o site e horário e data do mesmo."required="required" ></textarea>
             </div>
             <label for="foto_evento">Foto:</label> <br>
             <input type="file" name="foto_evento" required="required" >
