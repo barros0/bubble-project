@@ -238,7 +238,7 @@ include('./partials/nav_bar.php');
                         <span class="item-titulo fs-5 ms-2">Outros</span>
                     </div>
                     <span class="text-swhite">
-                        <span id="audios-value">4</span>
+                        <span id="outros-value">4</span>
                     </span>
                 </div>
             </div>

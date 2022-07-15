@@ -62,8 +62,8 @@ include('./partials/nav_bar.php');
                            </p>
                         </td>
                         <td>
-                            <a class="text-center btn btn-danger" href="./users.php">
-                                <i class="fa fa-trash"></i>
+                            <a class="text-center btn btn-danger" href="./update_user.php?delete_userid=<?= $user['id_user'] ?>">
+                                <i class="fa-solid fa-ban"></i>
                             </a>
                         </td>
                         <td>
@@ -82,7 +82,7 @@ include('./partials/nav_bar.php');
 </div>
 
 
-</div>
+
 <script>
     $(document).ready(function() {
         $('#users').DataTable();
