@@ -26,7 +26,8 @@ function notificacao_handler($notificacao, $conn)
                 'titulo' => $titulo,
                 'img' => 'img/fotos_perfil/' . $user['profile_image'],
                 'descricao' => $descricao,
-            ];
+                'linkp' => './partilha.php?id_pub=' . $publicacao['publicacao_id'],
+                ];
         // caso comentario
         case 2:
             $notif_comentario = $conn->query("Select * from notificacoes_comentario where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
@@ -44,7 +45,8 @@ function notificacao_handler($notificacao, $conn)
                 'titulo' => $titulo,
                 'img' => 'img/fotos_perfil/' . $user['profile_image'],
                 'descricao' => $user['nome'] . ' comentou: "' . $comentario['comentario'] . '"',
-            ];
+                'linkp' => './partilha.php?id_pub=' . $publicacao['publicacao_id'],
+                ];
 // caso mensagem
         case 3:
             $notif_mensagem = $conn->query("Select * from notificacoes_mensagem where id_notificacao = '" . $idnotificacao . "'")->fetch_assoc();
@@ -60,6 +62,7 @@ function notificacao_handler($notificacao, $conn)
                 'titulo' => $titulo,
                 'img' => 'img/fotos_perfil/' . $user['profile_image'],
                 'descricao' => $descricao,
+                'linkp' => './perfil.php?username=' . $user['username'],
             ];
         // caso seguir
         case 4:
@@ -74,6 +77,7 @@ function notificacao_handler($notificacao, $conn)
                 'titulo' => $titulo,
                 'img' => 'img/fotos_perfil/' . $user['profile_image'],
                 'descricao' => $descricao,
+                'linkp' => './perfil.php?username=' . $user['username'],
             ];
 
             break;
@@ -166,22 +170,48 @@ function notf_remover_seguir($seguirid)
 {
     require 'bd.php';
 
+    // pelo id de seguir vai buscar a notificacoes_seguir do seguir
     $f_notf_s = $conn->prepare("select * from notificacoes_seguir where id_seguir = ?");
     $f_notf_s->bind_param('i', $seguirid);
     $f_notf_s->execute();
-    $id_notificao = $f_notf_s->get_result()->fetch_assoc();
+    $id_notificao = $f_notf_s->get_result()->fetch_assoc()['id_notificao'];
     $f_notf_s->close();
 
-    $f_notf = $conn->prepare("select * from notificacoes where id_notificacao = ?");
-    $f_notf->bind_param('i', $id_notificao);
-    $f_notf->execute();
-    $f_notf->close();
 
+    // apaga a notificacoes_seguir
     $delete_notf_s = $conn->prepare("delete from notificacoes_seguir where id_seguir = ?");
     $delete_notf_s->bind_param('i', $seguirid);
     $delete_notf_s->execute();
     $delete_notf_s->close();
 
+    // apaga a notificacao
+    $delete_notf = $conn->prepare("delete from notificacoes where id_notificacao = ?");
+    $delete_notf->bind_param('i', $id_notificao);
+    $delete_notf->execute();
+    $delete_notf->close();
+
+}
+
+
+function notf_remover_gosto($gostoid)
+{
+    require 'bd.php';
+
+    // pelo id de seguir vai buscar a notificacoes_seguir do gosto
+    $f_gosto_s = $conn->prepare("select * from notificacoes_gosto where id_gosto = ?");
+    $f_gosto_s->bind_param('i', $gostoid);
+    $f_gosto_s->execute();
+    $id_notificao = $f_gosto_s->get_result()->fetch_assoc()['id_notificacao'];
+    $f_gosto_s->close();
+
+
+    // apaga a notificacoes_seguir
+    $delete_notf_g = $conn->prepare("delete from notificacoes_gosto where id_gosto = ?");
+    $delete_notf_g->bind_param('i', $gostoid);
+    $delete_notf_g->execute();
+    $delete_notf_g->close();
+
+    // apaga a notificacao
     $delete_notf = $conn->prepare("delete from notificacoes where id_notificacao = ?");
     $delete_notf->bind_param('i', $id_notificao);
     $delete_notf->execute();
