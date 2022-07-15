@@ -13,7 +13,6 @@ if (isset($_GET['token'])) {
     $user = $user_s->get_result()->fetch_assoc();
     $user_s->close();
 
-
     $estado = 2;
     // verifica se o user existe se existir faz
     if (!empty($user)) {

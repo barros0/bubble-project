@@ -100,40 +100,43 @@ function addgosto($publicacaoid, $userid){
 // funcao que recebe id do user a que a notificacao se destina e o id da acao (id do gosto) e cria a nova notificacao ligada a essse gosto
 function notf_gosto($iduser_para, $gostoid, $conn){
 
-    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
-    $notf->bind_param('ii', $iduser_para, 1);
-    $notf->execute();
+    $tipo = 1;
+    $notfg = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
+    $notfg->bind_param('ii', $iduser_para, $tipo);
+    $notfg->execute();
+    $id_notificacao = $notfg->insert_id;
+    $notfg->close();
 
-    $id_notificacao = $notf->insert_id;
-
-    $notf = $conn->prepare("INSERT INTO notificacoes_gosto (id_notificacao,id_seguir) values(?,?)");
-    $notf->bind_param('ii', $id_notificacao, $gostoid);
-    $notf->execute();
-    $notf->close();
+    $notfgn = $conn->prepare("INSERT INTO notificacoes_gosto (id_notificacao,id_gosto) values(?,?)");
+    $notfgn->bind_param('ii', $id_notificacao, $gostoid);
+    $notfgn->execute();
+    $notfgn->close();
+    
 }
 
 // funcao que recebe id do user a que a notificacao se destina e o id da acao (id do comentario) e cria a nova notificacao ligada a essse comentario
 function notf_comentario($iduser_para, $comentarioid, $conn){
 
-    $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
-    $notf->bind_param('ii', $iduser_para, 2);
-    $notf->execute();
-    $notf->close();
+    $tipo = 2;
+    $notfc = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
+    $notfc->bind_param('ii', $iduser_para, $tipo);
+    $notfc->execute();
 
-    $id_notificacao = $notf->insert_id;
+    $id_notificacao = $notfc->insert_id;
+    $notfc->close();
 
-
-    $notf = $conn->prepare("INSERT INTO notificacoes_comentario (id_notificacao,id_comentario) values(?,?)");
-    $notf->bind_param('ii', $id_notificacao, $comentarioid);
-    $notf->execute();
-    $notf->close();
+    $notfcn = $conn->prepare("INSERT INTO notificacoes_comentario (id_notificacao,id_comentario) values(?,?)");
+    $notfcn->bind_param('ii', $id_notificacao, $comentarioid);
+    $notfcn->execute();
+    $notfcn->close();
 }
 
 // funcao que recebe id do user a que a notificacao se destina e o id da acao (id do seguir) e cria a nova notificacao ligada a essse seguir
 function notf_seguir($iduser_para, $seguirid, $conn){
 
+    $tipo = 4;
     $notf = $conn->prepare("INSERT INTO notificacoes (id_utilizador,tipo) values(?,?)");
-    $notf->bind_param('ii', $iduser_para, 4);
+    $notf->bind_param('ii', $iduser_para, $tipo);
     $notf->execute();
     $notf->close();
 

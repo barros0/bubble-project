@@ -24,6 +24,7 @@ if (isset($_GET['pubid'])) {
             $user_para = $publicacao->fetch_assoc()['user_id'];
             notf_gosto($user_para, $gosto->insert_id, $conn);
             header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit;
         } else {
             $remover_gosto = $conn->prepare("delete from gostos where user_id = ? and publicacao_id = ?");
             $remover_gosto->bind_param("ii", $_SESSION['user']['id_user'], $pubid);
