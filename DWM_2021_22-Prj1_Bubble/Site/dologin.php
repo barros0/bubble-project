@@ -11,6 +11,16 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $query_email = "Select * from users where email='" . $email . "'";
     $user = $conn->query($query_email)->fetch_assoc();
 
+
+    //se o user nao existir
+    if (!isset($user)) {
+        echo '<h2>Não foi encontrado nenhum utilizador registado com este email</h2>';
+        array_push($_SESSION['alerts']['errors'], 'Não foi encontrado nenhum utilizador registado com este email');
+        header('location:./login.php');
+        exit;
+    }
+
+
     $estado = $user["estado"];
     
     if($estado != 2){
@@ -49,18 +59,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     }
 
-
-
-
-
-
-    //se o user nao existir
-    if (!isset($user)) {
-        echo '<h2>Não foi encontrado nenhum utilizador registado com este email</h2>';
-        array_push($_SESSION['alerts']['errors'], 'Não foi encontrado nenhum utilizador registado com este email');
-        header('location:./login.php');
-        exit;
-    }
 
     // se a password for errada
     if (hash('sha512', $password) <> $user['password']) {

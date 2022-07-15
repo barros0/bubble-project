@@ -41,6 +41,7 @@ if ($age < 18) {
     echo '<h2>Precisas de ter mais de 18 anos.</h2>';
     array_push($_SESSION['alerts']['alert'], 'Precisas de ter mais de 18 anos.');
     header('location:./login.php');
+    exit;
 }
 
 
@@ -57,7 +58,7 @@ $jaexiste_username = mysqli_num_rows($faz_existe_username);
 if ($jaexiste == 0) {
     if ($jaexiste_username == 0) {
         $password = hash('sha512', $password);
-        $user_insert = $conn->query("INSERT INTO users (nome, username, email, password, data_nascimento, genero) VALUES('$nome','$username','$email','$password','$birthdayDate','$sexo')");
+        $user_insert = $conn->query("INSERT INTO users (nome, username, email, password, data_nascimento, estado, genero) VALUES('$nome','$username','$email','$password','$birthdayDate', 1, '$sexo')");
 $user = $conn->query('select * from users where id_user = '. mysqli_insert_id($conn))->fetch_assoc();
         confirmaremail($user);
         array_push($_SESSION['alerts']['success'], 'A sua conta foi criada, verifique a caixa de entrada do seu e-amil e confirme a sua conta!');
