@@ -11,8 +11,7 @@
 .ft-emprego {
   width: 100%;
   height: 100%;
-  /*object-fit: cover;*/
-  object-fit: fill;
+  object-fit: cover;
   border-radius: 10px 0 0 10px;
 }
 
@@ -165,20 +164,21 @@ input.input_seach_pesquisa {
 }
 
 
-.clicavel:hover{
-  cursor:pointer;
+.clicavel:hover {
+  cursor: pointer;
 }
 
 
-.link-perfil{
+.link-perfil {
   text-decoration: none;
   color: white;
 }
-.link-perfil:hover{
+
+.link-perfil:hover {
   color: #00ff8a;
 }
 
-.pesq{
+.pesq {
   color: white;
 }
 
@@ -198,88 +198,88 @@ tr {
 
   .wrap-empregos {
     padding-bottom: 80px;
-}
+  }
 
-  .conteudo{
+  .conteudo {
     width: 95%;
     max-width: 95%;
     margin-left: auto;
     margin-right: auto;
   }
 
-.caixa-emprego{
-  flex-direction: column;
-  align-items: center;
-}
+  .caixa-emprego {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.conteudo-emprego {
-  width: 100%;
-}
+  .conteudo-emprego {
+    width: 100%;
+  }
 
-.wrap-dt-emp{
-  padding-bottom: 0px;
+  .wrap-dt-emp {
+    padding-bottom: 0px;
 
-}
+  }
 
-.btn-wrp {
-  margin-top: 5%;
-}
+  .btn-wrp {
+    margin-top: 5%;
+  }
 
-.detalhes{
-width: 100%;
-justify-content: center;
-}
+  .detalhes {
+    width: 100%;
+    justify-content: center;
+  }
 
-.ind-detalhes{
-width: auto;
-margin-right: 20px;
+  .ind-detalhes {
+    width: auto;
+    margin-right: 20px;
 
-}
+  }
 
-.texto-detalhes{
-width: auto;
-}
+  .texto-detalhes {
+    width: auto;
+  }
 
-.foto-emprego {
-width: auto;
-height: auto;
-}
+  .foto-emprego {
+    width: auto;
+    height: auto;
+  }
 
-.ft-emprego{
-  border-radius: 10px 10px 0 0px;
-}
+  .ft-emprego {
+    border-radius: 10px 10px 0 0px;
+  }
 
-.wrap-conteudo-emprego{
-padding-bottom: 80px;
+  .wrap-conteudo-emprego {
+    padding-bottom: 80px;
 
-}
+  }
 
-td{
-  padding: 5px;
-}
+  td {
+    padding: 5px;
+  }
 
-.btn-emprego {
-  padding: 5px 20px;
-  border: none;
-  background-color: #00ff8a;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #404040;
-  border-radius: 5px;
-  right: 0;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  left: 0;
-  right: 0;
-  text-align: center;
-  transition: 1s;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  position: inherit;
+  .btn-emprego {
+    padding: 5px 20px;
+    border: none;
+    background-color: #00ff8a;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #404040;
+    border-radius: 5px;
+    right: 0;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: 1s;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: inherit;
 
-}
+  }
 
 }
