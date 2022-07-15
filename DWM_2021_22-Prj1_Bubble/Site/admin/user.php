@@ -58,6 +58,22 @@ $conn->close();
                     <?php } ?>
                 </select>
             </div>
+        <div class="form-group col-md-4">
+            <label for="estado">Tipo de conta/acesso</label>
+            <select name="tipo" id="tipo" class="form-control">
+                <option
+                        <?php if($user['tipo'] == 1){
+                            echo 'selected';
+                        } ?>
+                        value="1">Administrador</option>
+                <option
+                    <?php if($user['tipo'] == 2){
+                        echo 'selected';
+                    } ?>
+                        value="2">Utilizador</option>
+            </select>
+        </div>
+        
             <button type="submit" class="btn btn-primary">Gravar</button>
 
     </form>

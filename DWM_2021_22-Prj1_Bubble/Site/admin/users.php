@@ -25,6 +25,7 @@ include('./partials/nav_bar.php');
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>
                     <th scope="col">Estado</th>
+                    <th scope="col">Cargo</th>
                     <th scope="col">Eliminar</th>
                     <th scope="col">Editar</th>
                 </tr>
@@ -45,6 +46,21 @@ include('./partials/nav_bar.php');
                                 </span></p>
                         </td>
 
+                        <td>
+                           <p>
+                               <?php
+                               if($user['tipo'] == 1){
+                                   echo 'Administrador';
+                               }
+                               else if($user['tipo'] == 2){
+                                   echo 'Utilizador';
+                               }
+                               else{
+                                   echo 'Indefinido';
+                               }
+                               ?>
+                           </p>
+                        </td>
                         <td>
                             <a class="text-center btn btn-danger" href="./users.php">
                                 <i class="fa fa-trash"></i>

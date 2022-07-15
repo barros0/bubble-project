@@ -38,10 +38,18 @@ if (isset($_GET['userid'])) {
 
         $estado = $_POST['estado'];
 
+       echo $tipo = $_POST['tipo'];
 
-        $conn->query('UPDATE users SET email = "' . $email . '", password = "' .
-            $password . '", estado = ' . $estado . ' WHERE id_user =' . $userid);
 
+        $delete_post = $conn->prepare("UPDATE users SET email = ?, password = ?, estado = ?, tipo = ? WHERE id_user = ?");
+        $delete_post->bind_param("ssiii", $email, $password, $estado,$tipo,$userid);
+        $delete_post->execute();
+
+
+      /*  $conn->query('UPDATE users SET email = "' . $email . '", password = "' .
+            $password . '", estado = ' . $estado . '", tipo = "' .
+            $tipo .' WHERE id_user =' . $userid);
+*/
         array_push($_SESSION['alerts']['success'], 'Utilizador atualizado com sucesso!');
         header('location:./users.php');
         exit;

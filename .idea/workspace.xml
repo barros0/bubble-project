@@ -42,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DWM_2021_22-Prj1_Bubble/Site/page_parts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DWM_2021_22-Prj1_Bubble/Site/css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
@@ -50,6 +50,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\projeto\DWM_2021_22-Prj1_Bubble\Site\css" />
       <recent name="C:\xampp\htdocs\projeto\DWM_2021_22-Prj1_Bubble\Site\page_parts" />
       <recent name="C:\xampp\htdocs\projeto\DWM_2021_22-Prj1_Bubble\Site" />
       <recent name="C:\xampp\htdocs\projeto\DWM_2021_22-Prj1_Bubble\Site\admin" />
@@ -101,7 +102,7 @@
       <workItem from="1657744859236" duration="5123000" />
       <workItem from="1657792884580" duration="5868000" />
       <workItem from="1657824403299" duration="8822000" />
-      <workItem from="1657882185838" duration="4235000" />
+      <workItem from="1657882185838" duration="5603000" />
     </task>
     <servers />
   </component>
