@@ -56,7 +56,7 @@ function confirmaremail($user)
 
         //Recipients
         $mail->setFrom('noreply@social-bubble.pt', 'Bubble');
-        $mail->addAddress('submica99@gmail.com', 'Bubble user');
+        $mail->addAddress($user['email'], 'Bubble user');
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
