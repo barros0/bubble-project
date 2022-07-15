@@ -26,7 +26,8 @@
                         $notificacao = notificacao_handler($notificacao, $conn)
                         ?>
                         <div class="notificacao">
-                            <div class="d-flex">
+                            <a href="<?= $notificacao['link_p']?>">
+                            <div class="d-flex warp-notf-inf">
                                 <div class="img-radius">
                                     <img src="<?= $notificacao['img'] ?>" alt="">
                                 </div>
@@ -39,6 +40,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </div>
                 <?php }
                 } else{?>
