@@ -18,10 +18,10 @@ function notificacao_handler($notificacao, $conn)
 
             $publicacao = $conn->query("Select * from publicacoes where publicacao_id = '" . $pub_gosto['publicacao_id'] . "'")->fetch_assoc();
 
-            $user = $conn->query("Select * from users where id_user = '" . $notificacao['user_id'] . "'")->fetch_assoc();
+            $user = $conn->query("Select * from users where id_user = '" . $notificacao['id_utilizador'] . "'")->fetch_assoc();
 
 
-            $titulo = "<a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> deu gosto da tua <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'>publicação</a>";
+            $titulo = "<a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'> <a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> deu gosto da tua <a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'>publicação</a></a>";
             $descricao = "Descricao";
 
             return [
@@ -41,7 +41,7 @@ function notificacao_handler($notificacao, $conn)
 
 
 
-            $titulo = "<a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> comentou a tua publicação <a href='/publicacao?id=" . $publicacao['publicacao_id'] . "'> publicação</a>";
+            $titulo = "<a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'><a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> comentou a tua publicação <a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'> publicação</a></a>";
 
             return [
                 'titulo' => $titulo,
@@ -111,7 +111,7 @@ function notf_gosto($iduser_para, $gostoid, $conn){
     $notfgn->bind_param('ii', $id_notificacao, $gostoid);
     $notfgn->execute();
     $notfgn->close();
-    
+
 }
 
 // funcao que recebe id do user a que a notificacao se destina e o id da acao (id do comentario) e cria a nova notificacao ligada a essse comentario
