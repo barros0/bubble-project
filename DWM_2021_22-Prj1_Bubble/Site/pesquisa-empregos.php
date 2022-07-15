@@ -53,22 +53,28 @@ if (isset($_REQUEST["term"])) {
                         <div class="conteudo-emprego">
                             <div class="wrap-dt-emp">
                                 <h3 class="nome-emp"><?= $row['titulo'] ?></h3>
-                                <div class="detalhes">
-                                    <div class="ind-detalhes">
-                                        <span>Qualificações:</span>
-                                        <span>Experiência:</span>
-                                        <span>Localização:</span>
-                                        <span>Categoria:</span>
-                                        <span>Publicado por:</span>
-                                    </div>
-                                    <div class="texto-detalhes">
-                                        <span><?= $row['qualificacoes'] ?></span>
-                                        <span><?= $row['experiencia'] ?></span>
-                                        <span><?= $row['localizacao'] ?></span>
-                                        <span><?= $row['categoria'] ?></span>
-                                        <span><a class="link-perfil" href="./perfil.php?username=<?= $utilizador['username'] ?>"><?= $utilizador['nome'] ?></a></span>
-                                    </div>
-                                </div>
+                                <table style="width:100%">
+                                    <tr>
+                                        <td><span>Qualificações:</span></td>
+                                        <td><span><?= $row['qualificacoes'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Experiência:</span></td>
+                                        <td><span><?= $row['experiencia'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Localização:</span></td>
+                                        <td> <span><?= $row['localizacao'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Categoria:</span></td>
+                                        <td><span><?= $row['categoria'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Publicado por:</span></td>
+                                        <td><span><a class="link-perfil" href="./perfil.php?username=<?= $utilizador['username'] ?>"><?= $utilizador['nome'] ?></a></span></td>
+                                    </tr>
+                                </table>
                             </div>
                             <div class="btn-wrp">
                                 <button onClick="window.location.href='./emprego.php?id_emp=<?= $row['id_oferta'] ?>'" type="button" class="btn-emprego">Ver Emprego</button>

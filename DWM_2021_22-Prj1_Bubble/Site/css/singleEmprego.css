@@ -117,6 +117,25 @@
     padding: 10px;
   }
 
+  td {
+    width: 100%;
+  }
+  
+  tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .link-perfil{
+    text-decoration: none;
+    color: white;
+  }
+  .link-perfil:hover{
+    color: #00ff8a;
+  }
+
   @media (max-width: 900px) {
 
     .conteudo{
@@ -134,6 +153,10 @@
 
   .conteudo-emprego {
     width: 100%;
+}
+
+td{
+  padding: 5px;
 }
 
 .detalhes{

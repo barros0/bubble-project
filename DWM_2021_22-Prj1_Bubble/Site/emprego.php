@@ -22,76 +22,95 @@ $imagem = $conn->query($imagemq)->fetch_assoc();
     <div class="conteudo">
         <div class="wrap-conteudo-emprego">
 
-        <?php
+            <?php
 
-        while ($row = $lista_empregos->fetch_assoc()) {
+            while ($row = $lista_empregos->fetch_assoc()) {
 
-            //buscar pessoa que publicou o emprego
-            $queryUser =  'SELECT * FROM users WHERE id_user = ' . $row['id_user'];
-            $utilizador = $conn->query($queryUser)->fetch_assoc();
+                //buscar pessoa que publicou o emprego
+                $queryUser =  'SELECT * FROM users WHERE id_user = ' . $row['id_user'];
+                $utilizador = $conn->query($queryUser)->fetch_assoc();
 
-        ?>
+            ?>
 
-            <div class="caixa-emprego">
-                <div class="foto-emprego">
-                <?php
-                     if (!empty($imagem)){
-                    ?>
-                    <img class="ft-emprego" src="./img/empregos/<?= $imagem['foto'] ?>" alt="Emprego">
-                    <?php
-                     } else {
-                        //imagem default para quando não tem emprego
-                    ?>
-                    <img class="ft-emprego" src="./img/empregos/banner_emprego.jpg" alt="Emprego">
-                    <?php
-                     }
-                     ?>
-                </div>
-                <div class="conteudo-emprego">
-                    <div class="wrap-dt-emp">
-                        <h3 class="nome-emp"><?= $row['titulo'] ?></h3>
-                        <div class="detalhes">
-                            <div class="ind-detalhes">
-                                <span>Qualificações:</span>
-                                <span>Experiência:</span>
-                                <span>Vagas:</span>
-                                <span>Localização:</span>
-                                <span>Categoria:</span>
-                                <span>Tipo:</span>
-                                <span>Horários:</span>
-                                <span>Requisitos:</span>
-                                <span>Publicado por:</span>
-                            </div>
-                            <div class="texto-detalhes">
-                                <span><?= $row['qualificacoes'] ?></span>
-                                <span><?= $row['experiencia'] ?></span>
-                                <span><?= $row['vagas'] ?></span>
-                                <span><?= $row['localizacao'] ?></span>
-                                <span><?= $row['categoria'] ?></span>
-                                <span><?= $row['tipo'] ?></span>
-                                <span><?= $row['horario'] ?></span>
-                                <span><?= $row['requisitos'] ?></span>
-                                <span><a class="link-perfil" href="./perfil.php?username=<?= $utilizador['username'] ?>"><?= $utilizador['nome'] ?></a></span>
+                <div class="caixa-emprego">
+                    <div class="foto-emprego">
+                        <?php
+                        if (!empty($imagem)) {
+                        ?>
+                            <img class="ft-emprego" src="./img/empregos/<?= $imagem['foto'] ?>" alt="Emprego">
+                        <?php
+                        } else {
+                            //imagem default para quando não tem emprego
+                        ?>
+                            <img class="ft-emprego" src="./img/empregos/banner_emprego.jpg" alt="Emprego">
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="conteudo-emprego">
+                        <div class="wrap-dt-emp">
+                            <h3 class="nome-emp"><?= $row['titulo'] ?></h3>
+                            <div class="detalhes">
+
+
+                                <table style="width:100%">
+                                    <tr>
+                                        <td><span>Qualificações:</span></td>
+                                        <td><span><?= $row['qualificacoes'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Experiência:</span></td>
+                                        <td><span><?= $row['experiencia'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Vagas:</span></td>
+                                        <td><span><?= $row['vagas'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Localização:</span></td>
+                                        <td><span><?= $row['localizacao'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Categoria:</span></td>
+                                        <td><span><?= $row['categoria'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Tipo:</span></td>
+                                        <td><span><?= $row['tipo'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Horários:</span></td>
+                                        <td><span><?= $row['horario'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Requisitos:</span></td>
+                                        <td><span><?= $row['requisitos'] ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Publicado por:</span></td>
+                                        <td><span><a class="link-perfil" href="./perfil.php?username=<?= $utilizador['username'] ?>"><?= $utilizador['nome'] ?></a></span></td>
+                                    </tr>
+                                </table>
+
                             </div>
                         </div>
+
                     </div>
+
+
 
                 </div>
 
-             
+                <div class="caixa-descricao">
+                    <h3 class="nome-emp">Descrição</h3>
+                    <p class="descricao"><?= $row['descricao'] ?></p>
+                </div>
+        </div>
+    <?php
 
-            </div>
+            }
 
-            <div class="caixa-descricao">
-            <h3 class="nome-emp">Descrição</h3>
-            <p class="descricao"><?= $row['descricao'] ?></p>
-            </div>
-            </div>
-        <?php
-
-        }
-
-        ?>
+    ?>
 
     </div>
 </div>

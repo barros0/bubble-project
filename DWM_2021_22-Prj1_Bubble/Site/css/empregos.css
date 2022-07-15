@@ -182,6 +182,17 @@ input.input_seach_pesquisa {
   color: white;
 }
 
+td {
+  width: 100%;
+}
+
+tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 /* empregos mobile*/
 @media (max-width: 900px) {
 
@@ -205,22 +216,70 @@ input.input_seach_pesquisa {
   width: 100%;
 }
 
-.detalhes{
-  justify-content: space-evenly;
+.wrap-dt-emp{
+  padding-bottom: 0px;
 
-}
-.foto-emprego {
-  width: 100%;
-  height: 100%;
-
-}
-
-.ft-emprego{
-  border-radius: 0px;
 }
 
 .btn-wrp {
   margin-top: 5%;
+}
+
+.detalhes{
+width: 100%;
+justify-content: center;
+}
+
+.ind-detalhes{
+width: auto;
+margin-right: 20px;
+
+}
+
+.texto-detalhes{
+width: auto;
+}
+
+.foto-emprego {
+width: auto;
+height: auto;
+}
+
+.ft-emprego{
+  border-radius: 10px 10px 0 0px;
+}
+
+.wrap-conteudo-emprego{
+padding-bottom: 80px;
+
+}
+
+td{
+  padding: 5px;
+}
+
+.btn-emprego {
+  padding: 5px 20px;
+  border: none;
+  background-color: #00ff8a;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #404040;
+  border-radius: 5px;
+  right: 0;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transition: 1s;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: inherit;
+
 }
 
 }
