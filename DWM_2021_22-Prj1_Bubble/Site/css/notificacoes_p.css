@@ -20,6 +20,7 @@
 .notificacoes-p {
     border-radius: 10px;
     padding: 10px;
+    background-color: var(--parcelas);
 }
 
 .notificacoes-p button {
@@ -32,7 +33,14 @@
     background-color: var(--background);
     border-radius: 6px;
     padding: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 6px !important;
+    transition-duration: 0.25s;
+}
+
+.notificacao:hover {
+    background-color: var(--cizento);
+    border: 2px solid var(--verde);
+    padding: 8px;
 }
 
 .notificacao .info {
@@ -120,4 +128,14 @@
     flex-direction: column;
     align-items: center;
     margin-top: 48px;
+}
+
+.desc a{
+    text-decoration: none;
+    color: var(--verdeh) !important;
+}
+
+.warp-notf-inf{
+    align-items: center;
+    margin-bottom: 10px;
 }
