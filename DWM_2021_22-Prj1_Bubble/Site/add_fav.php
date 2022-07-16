@@ -23,6 +23,9 @@ if (isset($_GET['pubid'])) {
             $addfav = $conn->prepare("insert into publicacoes_fav (id_pub,id_user) values (?,?)");
             $addfav->bind_param("ii", $pubid, $_SESSION['user']['id_user']);
             $addfav->execute();
+            array_push($_SESSION['alerts']['success'], 'Publicação adicionada aos favoritos!');
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit;
         } else {
 
             $removefav = $conn->prepare("delete from publicacoes_fav where id_user = ? and id_pub = ?");
@@ -30,8 +33,9 @@ if (isset($_GET['pubid'])) {
             $removefav->execute();
             $removefav->close();
         }
-
+        array_push($_SESSION['alerts']['success'], 'Publicação removida dos favoritos!');
         header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;
     }
 
     array_push($_SESSION['alerts']['errors'], 'Publicação inválida!');
