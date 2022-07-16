@@ -65,19 +65,19 @@ input.input_seach_marketplace {
 
 }
 
-.titulo_market p{
+.titulo_market p {
   display: flex;
   justify-content: center;
   color: white;
   font-size: 20px;
 }
 
-.autor_market p{
+.autor_market p {
   display: flex;
   justify-content: center;
 }
 
-.preco-market{
+.preco-market {
   background-color: #00d372;
   height: 40px;
   width: 40px;
@@ -87,25 +87,25 @@ input.input_seach_marketplace {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
- 
+
 }
 
 
-.top-carta{
+.top-carta {
   width: 100%;
   height: 20%;
 
 
 }
 
-.center-carta{
+.center-carta {
   width: 100%;
   height: 80%;
   margin-top: 15px;
 
 }
 
-.footer-carta{
+.footer-carta {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -123,7 +123,7 @@ input.input_seach_marketplace {
 }
 
 .categoria_market {
-  
+
   /* margin-bottom: 10px; */
   font-size: 15px;
   width: 70%;
@@ -170,7 +170,7 @@ input.input_seach_marketplace {
 
 .market_right {
   width: 100%;
-  /* border-radius: 75px; */
+  object-fit: contain;
   margin-bottom: 15px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -274,18 +274,18 @@ textarea {
 @media (max-width:1200px) {
   .button_modal {
     width: 15%;
-}
+  }
 }
 
 @media (max-width:950px) {
   .button_modal {
     width: 20%;
-}
+  }
 }
 
 @media (max-width:900px) {
 
-  .home{
+  .home {
     justify-content: center;
     align-items: center;
   }
@@ -293,30 +293,30 @@ textarea {
   .wrap-market {
     justify-content: center;
 
-}
+  }
 
 }
 
 @media (max-width:670px) {
   .button_modal {
     width: 25%;
-}
+  }
 }
 
 @media (max-width:550px) {
   .button_modal {
     width: 35%;
-}
+  }
 }
 
 @media (max-width:450px) {
   .button_modal {
     width: 45%;
-}
+  }
 }
 
 @media (max-width:380px) {
   .button_modal {
     width: 50%;
-}
+  }
 }
