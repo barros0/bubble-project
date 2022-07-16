@@ -28,7 +28,7 @@
             </div>
             <div class="form_market_titulo">
                 <label for="textarea_market_titulo">Titulo:</label>
-                <textarea name="titulo_market_textarea" data-limit=25 maxlength="25" id="textarea_market_titulo" placeholder=" Ex.: Gestao de API (Max.25 caracteres)" required="required"></textarea>
+                <textarea name="titulo_market_textarea" data-limit=15 maxlength="15" id="textarea_market_titulo" placeholder=" Ex.: Gestao de API (Max.15 caracteres)" required="required"></textarea>
             </div>
             <div class="form_market_descricao">
                 <label for="textarea_market_descricao">Descrição:</label>
