@@ -45,6 +45,7 @@ $conn->close();
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>
                     <th scope="col">Conteudo</th>
+                    <th scope="col">Estado</th>
                     <th scope="col">Postado em:</th>
                     <th scope="col">Editar</th>
                 </tr>
@@ -64,6 +65,25 @@ $conn->close();
                         </td>
                         <td>
                             <p class="cut_content">  <?= $publicacao['conteudo'] ?></p>
+                        </td>
+                        <td>
+                            <?php
+                            if($publicacao['estado_pub'] == 1){
+                            ?>
+                            <span class="smini-card bg-user-e2">Ativo</span>
+                            <?php
+                            }else if($publicacao['estado_pub'] == 2){
+                            ?>
+                            <span class="smini-card bg-user-e3">Desativado</span>
+                                <?php
+                            }else{
+                            ?>
+                            <span class="smini-card bg-user-e5">Indefinido</span>
+                            <?php
+                            }
+                            ?>
+
+
                         </td>
                         <td><p>  <?= $publicacao['created_at'] ?></p></td>
                         <td>
