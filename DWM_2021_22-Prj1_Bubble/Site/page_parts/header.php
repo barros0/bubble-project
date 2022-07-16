@@ -244,8 +244,8 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
             <div class="list">
                 <ul>
                     <li class="menu_toggle"><i class='bx bx-menu menu_icon'></i></li>
-                    <li class="mensagens.php"><a href=""><i class='bx bx-chat'></i></a></li>
-                    <li class="notificacoes.php"><a href=""><i class='bx bx-bell'></i></a></li>
+                    <li class=""><a href="mensagens.php"><i class='bx bx-chat'></i></a></li>
+                    <li class=""><a href="notificacoes.php"><i class='bx bx-bell'></i></a></li>
                     <li class="searchbar_toggle"><i class='bx bx-search searchbar_icon'></i></li>
                     <li class="button_post"><i class='bx bx-plus-circle plus_icon'></i></li>
                 </ul>
