@@ -148,7 +148,7 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
         <div class="wrapper_searchbar">
             <form class="form_searchbar" method="get" action="pesquisa.php">
                 <div class="div_input_searchbar">
-                    <input id="input_searchbar" type="text" class="input_searchbar" placeholder="Search here..." name="search" required="required" value="" />
+                    <input id="input_searchbar" type="text" class="input_searchbar" placeholder="Pesquise Aqui..." name="search" required="required" value="" />
                     <span class="input_search_group_btn">
                         <button class="button_searchbar"><i class='bx bx-search'></i></button>
                     </span>
