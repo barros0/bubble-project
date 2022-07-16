@@ -6,7 +6,7 @@ include 'page_parts/header.php';
 $id_user = $_SESSION['user']['id_user'];
 
 ///Buscar utilizadores cujo user trocou mensagens
-$query = "SELECT DISTINCT to_id_user,from_id_user, created_at FROM mensagens WHERE from_id_user = '$id_user' OR to_id_user = '$id_user'  GROUP BY to_id_user ORDER BY MAX(created_at) DESC, to_id_user";
+$query = "SELECT DISTINCT to_id_user,from_id_user, created_at FROM mensagens WHERE from_id_user = '$id_user' OR to_id_user = '$id_user' GROUP BY to_id_user ORDER BY MAX(created_at) DESC, to_id_user, from_id_user";
 $lista_users_mensagens = $conn->query($query);
 
 //verificar se o url conteem id_user_msg para entao carregar as respetivas mensagens
