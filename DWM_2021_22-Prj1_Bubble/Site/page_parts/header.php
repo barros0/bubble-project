@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-PT">
-
 <?php
 require('./bd.php');
 
@@ -37,8 +34,10 @@ $historico = $conn->query('select * from historico_pesquisa where id_utilizador 
 
 ?>
 
-<head>
+<!DOCTYPE html>
+<html lang="pt-PT">
 
+<head>
     <!--Meta Tags-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
