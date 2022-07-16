@@ -23,6 +23,12 @@ while ($pub = $result_set->fetch_assoc()) {
 
     $estado = $pub['estado_pub'];
 
+    $currentPath = $_SERVER['PHP_SELF'];
+    $pathInfo = pathinfo($currentPath);
+    $hostName = $_SERVER['HTTP_HOST'];
+    $protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"], 0, 5)) == 'https' ? 'https' : 'http';
+    $result_link = $protocol . '://' . $hostName . $pathInfo['dirname'] . "/";
+
     if ($estado != 2) {
 ?>
         <div class="post">
@@ -40,7 +46,7 @@ while ($pub = $result_set->fetch_assoc()) {
                             <div class="partilhar">
                                 <i class='bx bxs-share'></i>
                                 <p class="mudar_copiado">Partilhar</p>
-                                <input class="publicacao_copiar" style="display:none;" type="text" name="publicacao_partilhada" value="http://localhost/bubble-project/DWM_2021_22-Prj1_Bubble/Site/partilha.php?id_pub=<?= $id_publicacao ?>">
+                                <input class="publicacao_copiar" style="display:none;" type="text" name="publicacao_partilhada" value="<?= $result_link ?>partilha.php?id_pub=<?= $id_publicacao ?>">
                             </div>
                             <?php
                             if ($pub["id_user"] != $userq['id_user']) {
