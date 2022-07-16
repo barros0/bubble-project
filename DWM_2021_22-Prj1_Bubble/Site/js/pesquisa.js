@@ -6,8 +6,8 @@ $(document).ready(function () {
         $(this).addClass('active_bt');
         tipo = $(this).attr('id');
         if (tipo != 'todos') {
-            $(".resultado:not([type='" + tipo + "'])").fadeOut(100)
-            $("[type='" + tipo + "']").fadeIn(100)
+            $(".resultado:not([itemtype='" + tipo + "'])").fadeOut(100)
+            $("[itemtype='" + tipo + "']").fadeIn(100)
         }
         else{
             $(".resultado").fadeIn(100)

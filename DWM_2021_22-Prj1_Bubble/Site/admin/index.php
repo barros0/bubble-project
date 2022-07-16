@@ -39,11 +39,14 @@ function tamanhoPasta($path)
     return $bytestotal;
 }
 
-$total_livre =  converteTamanho(disk_free_space('../'));
-$site_total_espaco =  converteTamanho(tamanhoPasta('../'));
-$imagens_espaco =  converteTamanho(tamanhoPasta('../img'));
-$total_espaco =  converteTamanho(disk_total_space('../'));
-$videos_espaco =  converteTamanho(tamanhoPasta('../videos'));
+$total_espaco =  disk_total_space('../');
+$total_livre =  disk_free_space('../');
+
+//system
+$site_total_espaco =  tamanhoPasta('../');
+$imagens_espaco =  tamanhoPasta('../img');
+$videos_espaco =  tamanhoPasta('../videos');
+$audios_espaco =  tamanhoPasta('../audios');
 
 
 
@@ -105,6 +108,9 @@ foreach ($generos as $key => $genero) {
     }
 }
 
+// calcula para 100% para criar a percentagem
+$propocao_calculo = 100;
+
 include('./partials/nav_bar.php');
 ?>
 
@@ -161,23 +167,23 @@ include('./partials/nav_bar.php');
             <div class="header d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-center mb-1">
                     <h4 class="text-white">Armazenamento</h4>
-                    <span class="text-swhite" style="font-size: 1rem;"> <?= $total_livre ?> livres de <span id="total-value"><?= $total_espaco ?></span></span>
+                    <span class="text-swhite" style="font-size: 1rem;"> <?= converteTamanho($total_livre) ?> livres de <span id="total-value"><?= converteTamanho($total_espaco) ?></span></span>
                 </div>
                 <div class="progress bg-transparent" style="height: 20px;">
-                    <div class="progress-bar bg-transparent" style="width: 20%;" data-bs-toggle="tooltip" title="System">
+                    <div class="progress-bar bg-transparent" style="width: <?= ($propocao_calculo / $total_espaco) * $site_total_espaco  ?>%;" data-bs-toggle="tooltip" title="System">
                         <div class="progress-bar bg-primary bg-gradient bar h-100"></div>
                     </div>
-                    <div class="progress-bar bg-transparent" style="width: 20%;" data-bs-toggle="tooltip" title="Files">
-                        <div class="progress-bar bg-warning bg-gradient bar h-100"></div>
-                    </div>
-                    <div class="progress-bar bg-transparent" style="width: 11%;" data-bs-toggle="tooltip" title="Images">
+                    <div class="progress-bar bg-transparent" style="width: <?= ($propocao_calculo / $total_espaco) * $imagens_espaco ?>%;" data-bs-toggle="tooltip" title="Files">
                         <div class="progress-bar bg-success bg-gradient bar h-100"></div>
                     </div>
-                    <div class="progress-bar bg-transparent" style="width: 32%;" data-bs-toggle="tooltip" title="Videos">
-                        <div class="progress-bar bg-info bg-gradient bar h-100"></div>
+                    <div class="progress-bar bg-transparent" style="width: <?= ($propocao_calculo / $total_espaco) * $videos_espaco ?>%;" data-bs-toggle="tooltip" title="Images">
+                        <div class="progress-bar bg-warning bg-gradient bar h-100"></div>
                     </div>
-                    <div class="progress-bar bg-transparent" style="width: 17%;" data-bs-toggle="tooltip" title="Audios">
-                        <div class="progress-bar bg-light bg-gradient bar h-100"></div>
+                    <div class="progress-bar bg-transparent" style="width: <?= ($propocao_calculo / $total_espaco) * $audios_espaco ?>%;" data-bs-toggle="tooltip" title="Videos">
+                        <div class="progress-bar bg-dark bg-gradient bar h-100"></div>
+                    </div>
+                    <div class="progress-bar bg-transparent" style="width: <?= ($propocao_calculo / $total_espaco) * ($total_espaco - $site_total_espaco) ?>%;" data-bs-toggle="tooltip" title="Videos">
+                        <div class="progress-bar bg-white bg-gradient bar h-100"></div>
                     </div>
                 </div>
             </div>
@@ -188,17 +194,7 @@ include('./partials/nav_bar.php');
                         <span class="item-titulo fs-5 ms-2">System</span>
                     </div>
                     <span class="text-swhite">
-                        <span id="system-value"><?= $site_total_espaco ?></span>
-                    </span>
-                </div>
-
-                <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
-                    <div class="d-flex align-items-center">
-                        <div class="bg-warning rounded" style="width: 25px;height: 25px;"></div>
-                        <span class="item-titulo fs-5 ms-2">Ficheiros</span>
-                    </div>
-                    <span class="text-swhite">
-                        <span id="files-value">5</span>
+                        <span id="system-value"><?= converteTamanho($site_total_espaco) ?></span>
                     </span>
                 </div>
 
@@ -208,39 +204,30 @@ include('./partials/nav_bar.php');
                         <span class="item-titulo fs-5 ms-2">Imagens</span>
                     </div>
                     <span class="text-swhite">
-                        <span id="images-value"><?= $imagens_espaco ?></span>
+                        <span id="images-value"><?= converteTamanho($imagens_espaco) ?></span>
                     </span>
                 </div>
 
                 <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
                     <div class="d-flex align-items-center">
-                        <div class="bg-info rounded" style="width: 25px;height: 25px;"></div>
+                        <div class="bg-warning rounded" style="width: 25px;height: 25px;"></div>
                         <span class="item-titulo fs-5 ms-2">Videos</span>
                     </div>
                     <span class="text-swhite">
-                        <span id="videos-value"><?= $videos_espaco ?></span>
-                    </span>
-                </div>
-
-                <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
-                    <div class="d-flex align-items-center">
-                        <div class="bg-light rounded" style="width: 25px;height: 25px;"></div>
-                        <span class="item-titulo fs-5 ms-2">Audios</span>
-                    </div>
-                    <span class="text-swhite">
-                        <span id="audios-value">4</span>
+                        <span id="videos-value"><?= converteTamanho($videos_espaco) ?></span>
                     </span>
                 </div>
 
                 <div class="item-amarzenamento d-flex align-items-center justify-content-between mt-3 border-bottom border-secondary pb-2">
                     <div class="d-flex align-items-center">
                         <div class="bg-dark rounded" style="width: 25px;height: 25px;"></div>
-                        <span class="item-titulo fs-5 ms-2">Outros</span>
+                        <span class="item-titulo fs-5 ms-2">Audios</span>
                     </div>
                     <span class="text-swhite">
-                        <span id="audios-value">4</span>
+                        <span id="audios-value"><?= converteTamanho($audios_espaco) ?></span>
                     </span>
                 </div>
+
             </div>
         </div>
         <div class="widget full ">

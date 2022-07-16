@@ -22,7 +22,7 @@ if (!isset($_SESSION['user'])) {
     header('location:../login.php');
     exit();
 }
-
+// se nao for admin redireciona para o login como se a pagina nao existi-se
 if (empty($_SESSION['user']) || $_SESSION['user']['tipo'] <> 1) {
     header('location:../login.php');
     exit;
@@ -38,14 +38,14 @@ $user = $conn->query("select * from users where id_user = " . $_SESSION['user'][
 <head>
     <meta charset="utf-8" />
     <title>Admin</title>
-
+    <link rel="shortcut icon" type="image/jpg" href=".././img/header/logo_small_bubble.ico""/>
     <link rel="stylesheet" href="./public/bootstrap-5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/styles.css">
     <link rel="stylesheet" href="./public/css/menu.css">
     <link rel="stylesheet" href="./public/fontawesome-6.0.0/css/all.css">
     <script src="./public/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="./public/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./public/bootstrap-5.1.3/js/bootstrap.min.js"></script>

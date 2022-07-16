@@ -17,8 +17,9 @@ include('./partials/nav_bar.php');
             <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Titulo</th>
-                    <th scope="col">Localização</th>
+                    <th scope="col">Preco</th>
                     <th scope="col">Descricao</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>

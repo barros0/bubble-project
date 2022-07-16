@@ -19,6 +19,7 @@ include('./partials/nav_bar.php');
                     <th scope="col">Titulo</th>
                     <th scope="col">Localização</th>
                     <th scope="col">Descricao</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>

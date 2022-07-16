@@ -16,18 +16,22 @@ if (isset($_GET['pubid'])) {
         $like_check->bind_param("ii", $pubid, $_SESSION['user']['id_user']);
         $like_check->execute();
         $like = $like_check->get_result();
-        $like = $like->num_rows;
-        if ($like == 0) {
+        $like = $like->fetch_assoc();
+
+        if (empty($like)) {
             $gosto = $conn->prepare("insert into gostos (user_id,publicacao_id) values (?,?)");
             $gosto->bind_param("ii", $_SESSION['user']['id_user'], $pubid);
             $gosto->execute();
             $user_para = $publicacao->fetch_assoc()['user_id'];
             notf_gosto($user_para, $gosto->insert_id, $conn);
             header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit;
         } else {
             $remover_gosto = $conn->prepare("delete from gostos where user_id = ? and publicacao_id = ?");
             $remover_gosto->bind_param("ii", $_SESSION['user']['id_user'], $pubid);
             $remover_gosto->execute();
+
+            notf_remover_gosto($like['gosto_id']);
             header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
     }

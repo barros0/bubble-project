@@ -2,7 +2,7 @@
 
 require_once('./partials/header.php');
 
-// get al users
+// get all users
 $users = $conn->query('select * from users inner join estados_users on users.estado = estado_user_id');
 
 include('./partials/nav_bar.php');
@@ -25,6 +25,7 @@ include('./partials/nav_bar.php');
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>
                     <th scope="col">Estado</th>
+                    <th scope="col">Cargo</th>
                     <th scope="col">Eliminar</th>
                     <th scope="col">Editar</th>
                 </tr>
@@ -46,8 +47,23 @@ include('./partials/nav_bar.php');
                         </td>
 
                         <td>
-                            <a class="text-center btn btn-danger" href="./users.php">
-                                <i class="fa fa-trash"></i>
+                           <p>
+                               <?php
+                               if($user['tipo'] == 1){
+                                   echo 'Administrador';
+                               }
+                               else if($user['tipo'] == 2){
+                                   echo 'Utilizador';
+                               }
+                               else{
+                                   echo 'Indefinido';
+                               }
+                               ?>
+                           </p>
+                        </td>
+                        <td>
+                            <a class="text-center btn btn-danger" href="./update_user.php?delete_userid=<?= $user['id_user'] ?>">
+                                <i class="fa-solid fa-ban"></i>
                             </a>
                         </td>
                         <td>
@@ -66,7 +82,7 @@ include('./partials/nav_bar.php');
 </div>
 
 
-</div>
+
 <script>
     $(document).ready(function() {
         $('#users').DataTable();

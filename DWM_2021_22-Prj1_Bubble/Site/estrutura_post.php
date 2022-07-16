@@ -3,12 +3,14 @@ $query = "select * from publicacoes INNER JOIN users
 ON publicacoes.user_id = users.id_user order by publicacoes.created_at DESC";
 
 $result_set = $conn->query($query);
+
+require 'functions_handler.php';
 ?>
 
 
 <?php
 while ($pub = $result_set->fetch_assoc()) {
-
+    $id_publicacao = $pub['publicacao_id'];
     $imagemq = "select * from publicacoes_fotos where publicacao_id =" . $pub['publicacao_id'];
     $imagem = $conn->query($imagemq)->fetch_assoc();
 
@@ -17,9 +19,8 @@ while ($pub = $result_set->fetch_assoc()) {
     $num_likes = $conn->query("select count(*) from gostos where publicacao_id=" . $pub['publicacao_id'])->fetch_assoc();
 
     $like_check_post = $conn->query("select * from gostos where publicacao_id =" . $pub['publicacao_id'] . " and user_id = " . $_SESSION['user']['id_user'] . "")->fetch_row();
-    $fav_check_post = $conn->query("select * from publicacoes_fav where id_pub =" . $pub['publicacao_id'] . " and id_user = " . $_SESSION['user']['id_user'] . "")->fetch_row();
+    $fav_check_post = check_fav($id_publicacao);
 
-    $id_publicacao = $pub['publicacao_id'];
     $estado = $pub['estado_pub'];
 
     if ($estado != 2) {

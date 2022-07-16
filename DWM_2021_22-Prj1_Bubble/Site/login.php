@@ -77,10 +77,6 @@ $generos = mysqli_query($conn, "select * from generos");
 
                     <input type="email" class="form-input" name="email" placeholder="E-Mail" required>
                     <input type="password" class="form-input" name="password" placeholder="Password" required>
-                    <label id="checkbox">
-                        <input type="checkbox" class="check-box">
-                        Manter Sessão Iniciada
-                    </label>
                     <button type="submit" name="entrarconta" class="botao-submeter">Iniciar Sessão</button>
                 </form>
                 <form method="POST" id="register" action="doregister.php" class="formulario-login">
