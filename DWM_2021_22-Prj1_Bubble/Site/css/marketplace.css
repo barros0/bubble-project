@@ -62,26 +62,80 @@ input.input_seach_marketplace {
   color: #bdbdbd;
   margin-bottom: 10px;
 
+
+}
+
+.titulo_market p {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.autor_market p {
+  display: flex;
+  justify-content: center;
+}
+
+.preco-market {
+  background-color: #00d372;
+  height: 40px;
+  width: 40px;
+  color: black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+}
+
+
+.top-carta {
+  width: 100%;
+  height: 20%;
+
+
+}
+
+.center-carta {
+  width: 100%;
+  height: 80%;
+  margin-top: 15px;
+
+}
+
+.footer-carta {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+  margin-top: 0px;
+  align-items: center;
+
 }
 
 .autor_market {
-  color: #1C1C1C;
+  color: grey;
   /* margin-bottom: 10px; */
   font-size: 15px;
+
 }
 
 .categoria_market {
-  
+
   /* margin-bottom: 10px; */
   font-size: 15px;
-  margin-bottom: 15px;
+  width: 70%;
+  margin-right: 20px;
+  color: white;
 }
 
 .descricao_market {
   color: white;
   width: 100%;
-  height: 109px;
-  font-size: 13px;
+  height: 100%;
+  font-size: 15px;
 }
 
 .imagem_market {
@@ -116,10 +170,9 @@ input.input_seach_marketplace {
 
 .market_right {
   width: 100%;
-  /* border-radius: 75px; */
+  object-fit: contain;
   margin-bottom: 15px;
   border-top-left-radius: 10px;
-  object-fit: contain;
   border-top-right-radius: 10px;
   height: 100%;
 }
@@ -221,18 +274,18 @@ textarea {
 @media (max-width:1200px) {
   .button_modal {
     width: 15%;
-}
+  }
 }
 
 @media (max-width:950px) {
   .button_modal {
     width: 20%;
-}
+  }
 }
 
 @media (max-width:900px) {
 
-  .home{
+  .home {
     justify-content: center;
     align-items: center;
   }
@@ -240,30 +293,30 @@ textarea {
   .wrap-market {
     justify-content: center;
 
-}
+  }
 
 }
 
 @media (max-width:670px) {
   .button_modal {
     width: 25%;
-}
+  }
 }
 
 @media (max-width:550px) {
   .button_modal {
     width: 35%;
-}
+  }
 }
 
 @media (max-width:450px) {
   .button_modal {
     width: 45%;
-}
+  }
 }
 
 @media (max-width:380px) {
   .button_modal {
     width: 50%;
-}
+  }
 }
