@@ -596,8 +596,7 @@ form.form-control::-webkit-scrollbar {
 .btn-danger {
     color: #fff;
     background-color: #dc3545 !important;
-    border-color: #dc3545 !important;
-    ;
+    border-color: #dc3545 !important;;
 }
 
 #faqs_filter {
@@ -841,7 +840,7 @@ p {
     padding: 10px;
 }
 
-@media (max-width:1250px) {
+@media (max-width: 1250px) {
     .title-page {
         z-index: 80;
     }
@@ -860,13 +859,13 @@ p {
     }
 
     .menu {
-position: fixed;
+        position: fixed;
         z-index: 90;
         transition-duration: 0.4s;
         margin-left: -300px;
     }
 
-    .menu.active{
+    .menu.active {
         margin-left: 0px;
     }
 
@@ -891,4 +890,16 @@ position: fixed;
     .armazenamento {
         margin-top: 20px;
     }
+}
+
+.btn-warning {
+    color: #000;
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;;
+}
+
+.cut_content {
+    max-width: 250px;
+    max-height: 50px;
+    overflow: hidden;
 }

@@ -20,10 +20,6 @@ if (!isset($user)) {
 // obtem os estados do user
 $estados = $conn->query('select * from estados_users');
 
-// obtem as publicacoes do user
-$publicacoes = $conn->query('select * from publicacoes inner join users on publicacoes.user_id = users.id_user
-where id_user =' . $user['id_user']);
-
 $conn->close();
 ?>
 
@@ -37,6 +33,8 @@ $conn->close();
             <h2>Atualizar utilizador</h2>
             <i id="fechar_modal_faq" class='bx bx-x' onClick="Javascript:window.location.href = './users.php';"></i>
         </div>
+
+
         <div class="form-group">
             <label for="email">Email</label>
             <input name="email" value="<?= $user['email'] ?>" type="email" class="form-control" id="email"
@@ -73,59 +71,17 @@ $conn->close();
             </select>
         </div>
 
+        <a href="./user_publicacoes.php?userid=<?= $userid ?>" type="submit" class="btn-warning btn ">Ver publicações do utilizador</a>
+
         <button type="submit" class="btn btn-primary">Gravar</button>
+
 
     </form>
 
 
-    <div class="table-responsive">
-        <div class="table-header row">
-            <div class="titulo col-10">
-                <h2>Publicacoes</h2>
-            </div>
-        </div>
-        <table class="table" id="publicacoes">
-            <caption></caption>
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Postado em:</th>
-                <th scope="col">Editar</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($publicacoes as $publicacao) {
-                ?>
-                <tr>
-                    <th scope="row"><?= $publicacao['publicacao_id'] ?></th>
-                    <td>
-                        <p>  <?= $publicacao['nome'] ?></p>
-                    </td>
-                    <td>
-                        <p>  <?= $publicacao['email'] ?></p>
-                    </td>
-                    <td><p>  <?= $publicacao['created_at'] ?></p></td>
-                    <td>
-                        <a href="./publicacao.php?publicacaoid=<?= $publicacao['publicacao_id'] ?>">
-                            <i class="fa fa-pen"></i>
-                        </a>
-                    </td>
-                </tr>
-            <?php } ?>
 
 
-            </tbody>
-        </table>
-    </div>
 
-
-    <script>
-        $(document).ready(function () {
-            $('#publicacoes').DataTable();
-        });
-    </script>
 </div>
 
 
