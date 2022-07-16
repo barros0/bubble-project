@@ -6,7 +6,7 @@ include 'page_parts/header.php';
 $id_user = $_SESSION['user']['id_user'];
 
 ///Buscar utilizadores cujo user trocou mensagens
-$query = "SELECT DISTINCT to_id_user, created_at FROM mensagens WHERE from_id_user = '$id_user' OR to_id_user = '$id_user'  GROUP BY to_id_user ORDER BY MAX(created_at) DESC, to_id_user";
+$query = "SELECT DISTINCT to_id_user,from_id_user, created_at FROM mensagens WHERE from_id_user = '$id_user' OR to_id_user = '$id_user'  GROUP BY to_id_user ORDER BY MAX(created_at) DESC, to_id_user";
 $lista_users_mensagens = $conn->query($query);
 
 //verificar se o url conteem id_user_msg para entao carregar as respetivas mensagens
@@ -50,14 +50,17 @@ if (isset($_GET['id_user_msg'])) {
                 while ($rows = $lista_users_mensagens->fetch_assoc()) {
 
                     //buscar dados dos users
+                    if ($id_user == $rows['to_id_user']) {
+                        $qry = "SELECT * FROM users WHERE id_user = " . $rows["from_id_user"];
+                    } else {
+                        $qry = "SELECT * FROM users WHERE id_user = " . $rows["to_id_user"];
+                    }
 
-                    $qry = "SELECT * FROM users WHERE id_user = " . $rows["to_id_user"];
                     $lista = $conn->query($qry);
 
                     while ($row = $lista->fetch_assoc()) {
-
                         //para cada utilizador buscar a ultima mensagem
-                        $qrymsg = "SELECT * FROM mensagens WHERE from_id_user = " . $rows['to_id_user'] . " AND to_id_user = '$id_user' OR from_id_user = '$id_user' AND to_id_user = " . $rows['to_id_user'] . " ORDER BY created_at DESC LIMIT 1";
+                        $qrymsg = "SELECT * FROM mensagens WHERE from_id_user = " . $rows['from_id_user'] . " AND to_id_user = " . $rows['to_id_user'] . " OR from_id_user = " . $rows['to_id_user'] . " AND to_id_user = " . $rows['from_id_user'] . " ORDER BY created_at DESC LIMIT 1";
                         $msg = $conn->query($qrymsg);
 
                         while ($roww = $msg->fetch_assoc()) {
