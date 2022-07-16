@@ -512,7 +512,7 @@ table p {
     color: white;
 }
 
-form.form-control {
+form.form-control{
     z-index: 2;
     position: fixed;
     top: 100px;
@@ -525,6 +525,34 @@ form.form-control {
     box-shadow: 0px 20px 20px rgb(0 0 0 / 40%);
     width: 50%;
 }
+
+form.form-control-s {
+    margin: auto;
+    position: inherit !important;
+    height: auto !important;
+}
+
+.form-control .title {
+    border-bottom: 2px solid white;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.form-control .title h3 {
+    color: var(--white);
+    margin: 0;
+}
+
+.form-control .title h2 {
+    color: var(--white);
+    margin: 0;
+}
+
 
 form.form-control::-webkit-scrollbar {
     width: 0;
@@ -557,26 +585,7 @@ form.form-control::-webkit-scrollbar {
     color: var(--verde);
 }
 
-.form-control .title {
-    border-bottom: 2px solid white;
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-    justify-content: space-between;
-    padding-bottom: 10px;
-}
 
-.form-control .title h3 {
-    color: var(--white);
-    margin: 0;
-}
-
-.form-control .title h2 {
-    color: var(--white);
-    margin: 0;
-}
 
 .btn {
     margin-top: 10px;

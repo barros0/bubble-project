@@ -71,7 +71,7 @@ $conn->close();
             </select>
         </div>
 
-        <a href="./user_publicacoes.php?userid=<?= $userid ?>" type="submit" class="btn-warning btn ">Ver publicações do utilizador</a>
+        <a href="./user_publicacoes.php?userid=<?= $userid ?>" class="btn-warning btn ">Ver publicações do utilizador</a>
 
         <button type="submit" class="btn btn-primary">Gravar</button>
 

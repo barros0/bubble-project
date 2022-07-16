@@ -9,17 +9,17 @@ include('./partials/nav_bar.php');
 ?>
 
 
-<div class="s-container">
+    <div class="s-container">
 
-    <div class="table-responsive">
-        <div class="table-header row">
-            <div class="titulo col-10">
-                <h2>Lista de utilizadores</h2>
+        <div class="table-responsive">
+            <div class="table-header row">
+                <div class="titulo col-10">
+                    <h2>Lista de utilizadores</h2>
+                </div>
             </div>
-        </div>
-        <table class="table" id="users">
-            <caption></caption>
-            <thead>
+            <table class="table" id="users">
+                <caption></caption>
+                <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
@@ -29,14 +29,15 @@ include('./partials/nav_bar.php');
                     <th scope="col">Eliminar</th>
                     <th scope="col">Editar</th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 <?php foreach ($users as $user) {
-                ?>
+                    ?>
                     <tr>
                         <th scope="row"><?= $user['id_user'] ?></th>
                         <td>
-                            <img class="user-img" src="../img/fotos_perfil/<?= $user['profile_image'] ?>" alt="foto_perfil">
+                            <img class="user-img" src="../img/fotos_perfil/<?= $user['profile_image'] ?>"
+                                 alt="foto_perfil">
                             <span><?= $user['nome'] ?></span>
                         </td>
                         <td><?= $user['email'] ?></td>
@@ -47,24 +48,34 @@ include('./partials/nav_bar.php');
                         </td>
 
                         <td>
-                           <p>
-                               <?php
-                               if($user['tipo'] == 1){
-                                   echo 'Administrador';
-                               }
-                               else if($user['tipo'] == 2){
-                                   echo 'Utilizador';
-                               }
-                               else{
-                                   echo 'Indefinido';
-                               }
-                               ?>
-                           </p>
+                            <p>
+                                <?php
+                                if ($user['tipo'] == 1) {
+                                    echo 'Administrador';
+                                } else if ($user['tipo'] == 2) {
+                                    echo 'Utilizador';
+                                } else {
+                                    echo 'Indefinido';
+                                }
+                                ?>
+                            </p>
                         </td>
                         <td>
-                            <a class="text-center btn btn-danger" href="./update_user.php?delete_userid=<?= $user['id_user'] ?>">
-                                <i class="fa-solid fa-ban"></i>
-                            </a>
+                            <?php if ($user['estado'] == 5) {
+                                ?>
+                                <a class="text-center btn btn-warning"
+                                   href="./update_user.php?remove_ban_userid=<?= $user['id_user'] ?>">
+                                    <i class="fa-solid fa-ban"></i>
+                                </a>
+                                <?php
+                            } else {
+                                ?>
+                                <a class="text-center btn btn-danger"
+                                   href="./update_user.php?delete_userid=<?= $user['id_user'] ?>">
+                                    <i class="fa-solid fa-ban"></i>
+                                </a>
+                                <?php
+                            } ?>
                         </td>
                         <td>
                             <a class="text-center" href="./user.php?userid=<?= $user['id_user'] ?>">
@@ -75,19 +86,17 @@ include('./partials/nav_bar.php');
                 <?php } ?>
 
 
-
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
 
-
-<script>
-    $(document).ready(function() {
-        $('#users').DataTable();
-    });
-</script>
+    <script>
+        $(document).ready(function () {
+            $('#users').DataTable();
+        });
+    </script>
 
 <?php
 include('./partials/footer.php');
