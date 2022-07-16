@@ -68,6 +68,8 @@ if (isset($_GET['id_user_msg'])) {
                         $msg = $conn->query($qrymsg);
 
                         while ($roww = $msg->fetch_assoc()) {
+
+                            
                 ?>
 
                             <a class="user-lateral" href="./mensagens.php?id_user_msg=<?= $row['id_user'] ?>#ultimaMensagem">
