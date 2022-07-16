@@ -20,7 +20,7 @@ function notificacao_handler($notificacao, $conn)
             $user = $conn->query("Select * from users where id_user = '" . $notificacao['id_utilizador'] . "'")->fetch_assoc();
 
 
-            $titulo = "<a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'> <a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> deu gosto da tua <a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'>publicação</a></a>";
+            $titulo = "<a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> deu gosto da tua <a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'>publicação</a>";
             $descricao = "Clica para veres a publicação!";
 
             return [
@@ -40,7 +40,7 @@ function notificacao_handler($notificacao, $conn)
             $user = $conn->query("select * from users where id_user = '" . $notificacao['id_utilizador'] . "'")->fetch_assoc();
 
 
-            $titulo = "<a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'><a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> comentou a tua publicação <a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'> publicação</a></a>";
+            $titulo = "<a href='./perfil.php?username=" . $user['username'] . "'>" . $user['nome'] . "</a> comentou a tua publicação <a href='./partilha.php?id_pub=" . $publicacao['publicacao_id'] . "'> publicação</a>";
 
             return [
                 'titulo' => $titulo,

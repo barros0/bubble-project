@@ -7,7 +7,7 @@
 
             include('./functions_handler.php');
 
-// vai buscar todas as notificacoes desse utilizador
+            // vai buscar todas as notificacoes desse utilizador
             $notificacoesq = $conn->prepare("select * from notificacoes where id_utilizador = ?");
             $notificacoesq->bind_param("i", $_SESSION['user']['id_user']);
             $notificacoesq->execute();
@@ -26,26 +26,30 @@
                     <?php
 
                     if ($notificacoes->num_rows > 0) {
-                        foreach ($notificacoes as $notificacao) {
+                        foreach ($notificacoes
+
+                                 as $notificacao) {
                             $notificacao = notificacao_handler($notificacao, $conn)
                             ?>
-                            <a href="<?= $notificacao['linkp'] ?>">
-                                <div class="notificacao">
-                                    <div class="d-flex warp-notf-inf">
-                                        <div class="img-radius">
-                                            <img src="<?= $notificacao['img'] ?>" alt="user image">
+                            <div class="notificacao" rel="<?= $notificacao['linkp'] ?>">
+                                <div class="d-flex warp-notf-inf">
+                                    <div class="img-radius">
+                                        <img src="<?= $notificacao['img'] ?>" alt="user image">
+                                    </div>
+                                    <div class="info">
+                                        <div class="titulo">
+                                            <h2><?= $notificacao['titulo'] ?></h2>
                                         </div>
-                                        <div class="info">
-                                            <div class="titulo">
-                                                <h2><?= $notificacao['titulo'] ?></h2>
-                                            </div>
-                                            <div class="desc">
-                                                <p><?= $notificacao['descricao'] ?></p>
-                                            </div>
+                                        <div class="desc">
+                                            <p><?= $notificacao['descricao'] ?></p>
                                         </div>
                                     </div>
+                                    <a href="<?= $notificacao['linkp'] ?>" class="btr btn btn-primary"><i
+                                                class="fa fa-eye"></i>
+                                        Ver</a>
                                 </div>
-                            </a>
+                            </div>
+
                         <?php }
                     } else { ?>
                         <div class="sem-notificacaoes">
@@ -60,7 +64,6 @@
                     ?>
                 </div>
             </div>
-
         </div>
     </div>
 

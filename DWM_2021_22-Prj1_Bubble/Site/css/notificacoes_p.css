@@ -20,7 +20,7 @@
 .notificacoes-p {
     border-radius: 10px;
     padding: 10px;
-    background-color: var(--parcelas);
+    background-color: transparent;
 }
 
 .notificacoes-p button {
@@ -30,17 +30,18 @@
 }
 
 .notificacao {
-    background-color: var(--background);
+    background-color: var(--parcelas);
     border-radius: 6px;
     padding: 10px;
     margin-bottom: 6px !important;
     transition-duration: 0.25s;
+    border: 2px solid transparent;
 }
 
 .notificacao:hover {
     background-color: var(--cizento);
     border: 2px solid var(--verde);
-    padding: 8px;
+
 }
 
 .notificacao .info {
@@ -81,6 +82,7 @@
     border-radius: 6px;
     padding: 10px;
     margin-bottom: 4px;
+   cursor: pointer;
 }
 
 .notificacao .info {
@@ -138,4 +140,24 @@
 .warp-notf-inf{
     align-items: center;
     margin-bottom: 10px;
+}
+
+.btn {
+    margin-top: 10px;
+    background-color: var(--verde);
+    border: 0;
+    color: var(--parcelas);
+    float: right;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--verdeh);
+    border: 0;
+}
+
+.btr{
+    margin-left: auto;
+    margin-right: 5%;
 }
