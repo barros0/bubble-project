@@ -50,11 +50,15 @@ if (isset($_GET['id_user_msg'])) {
                 while ($rows = $lista_users_mensagens->fetch_assoc()) {
 
                     //buscar dados dos users
+                    /*
                     if ($id_user == $rows['to_id_user']) {
                         $qry = "SELECT * FROM users WHERE id_user = " . $rows["from_id_user"];
                     } else {
                         $qry = "SELECT * FROM users WHERE id_user = " . $rows["to_id_user"];
-                    }
+                    }*/
+
+
+                    $qry = "SELECT * FROM users WHERE id_user = " . $rows["to_id_user"] . " GROUP BY id_user";
 
                     $lista = $conn->query($qry);
 

@@ -1,4 +1,13 @@
 /*wrapper da pagina*/
+
+* {
+  overflow: hidden;
+}
+
+.logo_responsive a {
+  overflow: initial;
+}
+
 .conteudo {
   height: 100%;
   margin-top: 60px;
