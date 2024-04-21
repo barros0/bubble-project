@@ -1,5 +1,5 @@
 # Bubble
-## Bubble is a Social Media Full Stack Web App /20
+## Bubble is a Social Media Full Stack Web App
 First year, 2nd semester long project
 
 • Built a web application with a team of 4 developers, focusing IT users allowing them to interact with eachother trough posts, chat,
